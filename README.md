@@ -1,0 +1,186 @@
+# Shieldbearer — Official Website
+
+Bold Christian metal. Christ proclaimed. Scripture spoken. No ambiguity.
+
+---
+
+## Project Structure
+
+```
+shieldbearer/
+├── index.html          — Home page
+├── music.html          — Music / Discography
+├── about.html          — About Moncy Abraham / Shieldbearer
+├── song-meanings.html  — Theology and intent behind each track
+├── interviews.html     — Press, interviews, and open letter
+├── contact.html        — Enquiries form and direct contact
+│
+├── css/
+│   └── style.css       — Full design system (one file, well organised)
+│
+├── js/
+│   └── main.js         — Nav, mobile menu, form, accordion
+│
+├── images/             — All images go here
+│   ├── logo.png            ← Your Shieldbearer logo (white/transparent PNG)
+│   ├── favicon.ico         ← Browser favicon
+│   ├── og-image.jpg        ← Social share preview image (1200x630)
+│   ├── galilean-art.jpg    ← Galilean single artwork
+│   ├── moncy-photo.jpg     ← Artist photo for About page
+│   └── release-art.jpg     ← Generic release art for home page
+│
+├── audio/              — Audio files go here (MP3/WAV)
+│   └── (add audio files here for future player)
+│
+└── README.md
+```
+
+---
+
+## How to Deploy on GitHub Pages
+
+1. Create a GitHub account if you don't have one: github.com
+2. Create a new repository called `shieldbearerusa` (or any name)
+3. Upload all these files to the repository root
+4. Go to repository Settings > Pages
+5. Under "Source", select "Deploy from a branch"
+6. Set branch to `main` (or `master`) and folder to `/ (root)`
+7. Click Save
+8. Your site will be live at: `https://yourusername.github.io/shieldbearerusa`
+
+To update the site later, edit the files and push/upload the changes to GitHub.
+
+---
+
+## How to Connect Your GoDaddy Domain (shieldbearerusa.com)
+
+### Step 1 — GitHub Pages custom domain
+1. In your GitHub repo, go to Settings > Pages
+2. Under "Custom domain", type: `shieldbearerusa.com`
+3. Click Save
+4. GitHub will create a `CNAME` file in your repo automatically
+
+### Step 2 — GoDaddy DNS settings
+1. Log in to GoDaddy and go to your domain's DNS settings
+2. Delete any existing A records pointing to GoDaddy's servers
+3. Add these four A records (GitHub's IPs):
+   - Type: A | Name: @ | Value: 185.199.108.153
+   - Type: A | Name: @ | Value: 185.199.109.153
+   - Type: A | Name: @ | Value: 185.199.110.153
+   - Type: A | Name: @ | Value: 185.199.111.153
+4. Add this CNAME record:
+   - Type: CNAME | Name: www | Value: yourusername.github.io
+5. Wait 10-30 minutes for DNS to propagate
+6. Back in GitHub Pages settings, check "Enforce HTTPS"
+
+---
+
+## Where to Update Content
+
+### Logo
+- Replace `images/logo.png` with your logo file
+- The logo is displayed as white (CSS `filter: invert(1)`) so a black PNG works perfectly
+
+### Artist Photo
+- Add your photo to `images/moncy-photo.jpg`
+- It shows on `about.html`
+
+### Album / Release Art
+- Add artwork to `images/galilean-art.jpg` (or change the filename in music.html)
+- Used on `music.html` and `index.html`
+
+### Merch Store URL
+- Search the project for `shieldbearerusa.com/merch`
+- Replace with your actual Shopify store URL
+- It appears in: nav, footer, index.html, contact.html
+
+### Social Links
+- Search for `https://www.instagram.com/shieldbearerusa/` etc.
+- All social links are already set to your real profiles from your Linktree
+
+### Streaming Links (Spotify, Apple Music etc.)
+- In `music.html` and `index.html`, find the `.stream-pill` links
+- Replace `href="#"` with the real URLs for each platform
+
+### Email Address
+- Already set to `shieldbearerusa@gmail.com` throughout
+
+### Adding New Tracks
+- In `music.html`, copy a `.track-card` block and fill in the new track details
+- In `song-meanings.html`, copy a `.meaning-card` block and fill in the meaning
+
+### Adding Gig Dates
+- Currently there is a "Next gig coming soon" message on `index.html`
+- To add a real gig, add a section to `index.html` with the date, venue, and location
+
+---
+
+## How to Connect the Contact Form (Formspree)
+
+1. Go to formspree.io and create a free account
+2. Click "New Form" and give it a name
+3. Copy your form endpoint URL (looks like: `https://formspree.io/f/abcd1234`)
+4. Open `contact.html`
+5. Find the `<form id="enquiryForm" action="#">` line
+6. Change `action="#"` to `action="https://formspree.io/f/YOUR_FORM_ID"`
+7. Add `method="POST"` to the form tag
+8. Open `js/main.js` and follow the instructions in the FORMSPREE INTEGRATION comment block
+9. Test by submitting the form — you will receive an email at shieldbearerusa@gmail.com
+
+Until Formspree is connected, the form opens the user's mail app as a fallback.
+
+---
+
+## How to Add Future Embeds
+
+### Spotify track embed
+In `music.html`, find the comment block labelled `SPOTIFY EMBED PLACEHOLDER`.
+Replace the `.embed-placeholder` div with your Spotify iframe embed code.
+
+### YouTube video embed
+Add an iframe anywhere in `music.html`:
+```html
+<iframe width="100%" height="400"
+  src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
+```
+
+### Custom audio player
+In `music.html`, find `FUTURE AUDIO PLAYER EMBED PLACEHOLDER` and replace with:
+```html
+<audio controls style="width:100%">
+  <source src="audio/your-track.mp3" type="audio/mpeg">
+</audio>
+```
+
+### Adding images / gallery
+- Add images to the `images/` folder
+- Reference them in HTML: `<img src="images/your-image.jpg" alt="Description">`
+- The `about.html` artist photo area is already set up for this
+
+---
+
+## Theme Colours (for reference)
+
+| Variable       | Value     | Use                    |
+|----------------|-----------|------------------------|
+| `--red`        | `#c0392b` | Primary accent         |
+| `--red-bright` | `#e74c3c` | Hover / eyebrow text   |
+| `--red-dark`   | `#6b1b13` | Gradient dark end      |
+| `--white`      | `#f0ebe0` | Headings / emphasis    |
+| `--off-white`  | `#a8a29a` | Body text              |
+| `--muted`      | `#525252` | Placeholder / dim text |
+| `--black`      | `#040404` | Page background        |
+
+All variables are in `css/style.css` at the top under `:root`.
+
+---
+
+## Contact
+
+shieldbearerusa@gmail.com
++1 571 201 5166
+linktr.ee/shieldbearerusa

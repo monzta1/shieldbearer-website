@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Shieldbearer</title>
+  <meta name="description" content="Get in touch with Shieldbearer. Bookings, press, collaboration, and general enquiries.">
+  <link rel="icon" href="images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200;300;400;500;600&family=Roboto+Condensed:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .contact-info p {
+      font-size: .92rem;
+      line-height: 1.95;
+      color: rgba(168,162,154,.6);
+      margin-bottom: 2rem;
+    }
+    .contact-links { display: flex; flex-direction: column; gap: .85rem; margin-bottom: 2.5rem; }
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: .9rem;
+      font-family: var(--font-head);
+      font-size: .7rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--off-white);
+      transition: color .2s;
+    }
+    .contact-link:hover { color: #fff; }
+    .contact-link-lbl {
+      color: var(--muted);
+      font-size: .56rem;
+      letter-spacing: .3em;
+      min-width: 80px;
+    }
+    .social-row { display: flex; gap: .55rem; flex-wrap: wrap; }
+    .soc-btn {
+      font-family: var(--font-head);
+      font-size: .58rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--off-white);
+      border: 1px solid rgba(168,162,154,.1);
+      padding: .38rem .85rem;
+      display: inline-block;
+      transition: all .2s;
+    }
+    .soc-btn:hover { border-color: var(--red-bright); color: #fff; background: rgba(192,57,43,.07); }
+    .form-box {
+      background: var(--dark-2);
+      border: 1px solid rgba(168,162,154,.06);
+      padding: 2.5rem;
+      position: relative;
+    }
+    .form-box::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(to right, transparent, var(--red), transparent);
+    }
+    @media (max-width: 900px) {
+      .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+      .form-box { padding: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mob-menu" id="mobMenu">
+    <button class="mob-close" id="mobClose">&#x2715;</button>
+    <a href="index.html">Home</a>
+    <a href="music.html">Music</a>
+    <a href="about.html">About</a>
+    <a href="song-meanings.html">Lyrics</a>
+    <a href="interviews.html">Press</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://shieldbearerusa.com/merch" target="_blank" rel="noopener" style="color:var(--red-bright)">Merch</a>
+  </div>
+
+  <nav class="site-nav" id="mainNav">
+    <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Shieldbearer"></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="song-meanings.html">Lyrics</a></li>
+      <li><a href="interviews.html">Press</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li class="nav-merch"><a href="https://shieldbearerusa.com/merch" target="_blank" rel="noopener">Merch</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="page-hero section--dark">
+    <div class="container page-hero-inner">
+      <span class="eyebrow">Get in Touch</span>
+      <h1 class="display-title">Enquiries</h1>
+      <div class="bar"></div>
+      <p>For solo gig bookings, press, licensing, collaboration, or anything else. If you love heavy music and love Jesus, you are in the right place.</p>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       CONTACT SECTION
+  ══════════════════════════════════════ -->
+  <section class="section--darker">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- Left: info -->
+        <div class="contact-info">
+          <span class="eyebrow">Direct Contact</span>
+          <h2 class="section-title" style="margin-bottom:.6rem;">Moncy responds to every serious message.</h2>
+          <div class="bar"></div>
+          <p>
+            Shieldbearer is a solo project. Every enquiry goes directly to Moncy Abraham.
+            No management layer. No filter. If what you have to say is real, it will be heard.
+          </p>
+
+          <div class="contact-links">
+            <a href="mailto:shieldbearerusa@gmail.com" class="contact-link">
+              <span class="contact-link-lbl">Email</span>
+              shieldbearerusa@gmail.com
+            </a>
+            <a href="https://wa.me/15712015166" target="_blank" rel="noopener" class="contact-link">
+              <span class="contact-link-lbl">WhatsApp</span>
+              +1 571 201 5166
+            </a>
+            <!-- UPDATE: replace with actual Shopify URL -->
+            <a href="https://shieldbearerusa.com/merch" target="_blank" rel="noopener" class="contact-link">
+              <span class="contact-link-lbl">Merch</span>
+              shieldbearerusa.com/merch
+            </a>
+            <a href="https://linktr.ee/shieldbearerusa" target="_blank" rel="noopener" class="contact-link">
+              <span class="contact-link-lbl">All Links</span>
+              linktr.ee/shieldbearerusa
+            </a>
+          </div>
+
+          <p class="eyebrow" style="margin-bottom:1rem;">Follow</p>
+          <div class="social-row">
+            <a href="https://www.instagram.com/shieldbearerusa/" target="_blank" rel="noopener" class="soc-btn">Instagram</a>
+            <a href="https://www.facebook.com/shieldbearerusa" target="_blank" rel="noopener" class="soc-btn">Facebook</a>
+            <a href="https://www.youtube.com/@ShieldbearerUSA" target="_blank" rel="noopener" class="soc-btn">YouTube</a>
+            <a href="https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz" target="_blank" rel="noopener" class="soc-btn">Spotify</a>
+            <a href="https://wa.me/15712015166" target="_blank" rel="noopener" class="soc-btn">WhatsApp</a>
+          </div>
+        </div>
+
+        <!-- Right: form -->
+        <div>
+          <div class="form-box">
+
+            <!-- -----------------------------------------------
+                 FORMSPREE INTEGRATION
+                 1. Go to formspree.io and create a free account
+                 2. Create a new form and copy your endpoint URL
+                 3. Replace the action="#" below with:
+                    action="https://formspree.io/f/YOUR_FORM_ID"
+                 4. Add method="POST" to the form tag
+                 5. Remove the onsubmit handler from main.js or
+                    keep it and remove action attribute to use
+                    the JS fetch approach instead.
+
+                 For now the form uses a mailto fallback via JS.
+                 ----------------------------------------------- -->
+            <form id="enquiryForm" action="#" novalidate>
+
+              <div class="form-grid">
+                <div class="form-row">
+                  <label for="fName">Your Name *</label>
+                  <input type="text" id="fName" name="name" placeholder="Name" required>
+                </div>
+                <div class="form-row">
+                  <label for="fEmail">Email Address *</label>
+                  <input type="email" id="fEmail" name="email" placeholder="email@address.com" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <label for="fType">Enquiry Type</label>
+                <select id="fType" name="type">
+                  <option value="">Select a reason</option>
+                  <option value="Solo Gig Booking">Solo Gig Booking</option>
+                  <option value="Press / Media">Press / Media</option>
+                  <option value="Collaboration">Collaboration</option>
+                  <option value="Licensing / Sync">Licensing / Sync</option>
+                  <option value="Merch">Merch</option>
+                  <option value="General">General</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <label for="fMsg">Message *</label>
+                <textarea id="fMsg" name="message" placeholder="Tell us what&#39;s on your mind..." required></textarea>
+              </div>
+
+              <button type="submit" class="form-submit">Send Enquiry</button>
+              <p class="form-msg" id="formMsg"></p>
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><img src="images/logo.png" alt="Shieldbearer"></a>
+        <p>Bold Christian metal. Christ proclaimed. Scripture spoken. No ambiguity.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="music.html">Music</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="song-meanings.html">Song Meanings</a></li>
+          <li><a href="interviews.html">Press</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="https://shieldbearerusa.com/merch" target="_blank" rel="noopener">Merch</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/shieldbearerusa/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/shieldbearerusa" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.youtube.com/@ShieldbearerUSA" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz" target="_blank" rel="noopener">Spotify</a></li>
+          <li><a href="https://linktr.ee/shieldbearerusa" target="_blank" rel="noopener">Linktree</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Shieldbearer. All rights reserved.</p>
+      <a href="mailto:shieldbearerusa@gmail.com">shieldbearerusa@gmail.com</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

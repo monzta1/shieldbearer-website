@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music — Shieldbearer</title>
+  <meta name="description" content="Stream and listen to Shieldbearer's Christian metal discography. Real guitars. Real faith.">
+  <link rel="icon" href="images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200;300;400;500;600&family=Roboto+Condensed:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── MUSIC PAGE STYLES ── */
+    .track-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.2rem;
+    }
+    .track-card {
+      background: var(--dark-2);
+      border: 1px solid rgba(168,162,154,.06);
+      overflow: hidden;
+      transition: border-color .2s, transform .2s;
+    }
+    .track-card:hover {
+      border-color: rgba(192,57,43,.3);
+      transform: translateY(-3px);
+    }
+    .track-art {
+      width: 100%; aspect-ratio: 1;
+      background: linear-gradient(135deg, #160707, #08080f);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .track-art img { width: 100%; height: 100%; object-fit: cover; }
+    .track-art .art-num {
+      font-family: var(--font-display);
+      font-size: 5rem;
+      color: rgba(192,57,43,.1);
+      letter-spacing: .05em;
+    }
+    .track-info { padding: 1.4rem 1.6rem; }
+    .track-info .track-name {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      letter-spacing: .06em;
+      color: #fff;
+      margin-bottom: .25rem;
+    }
+    .track-info .track-ref {
+      font-family: var(--font-head);
+      font-size: .58rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--red-bright);
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .track-info .track-desc {
+      font-size: .84rem;
+      line-height: 1.85;
+      color: rgba(168,162,154,.55);
+      margin-bottom: 1.2rem;
+    }
+    .track-links { display: flex; gap: .5rem; flex-wrap: wrap; }
+    .track-link {
+      font-family: var(--font-head);
+      font-size: .56rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--off-white);
+      border: 1px solid rgba(168,162,154,.1);
+      padding: .32rem .7rem;
+      transition: all .2s;
+    }
+    .track-link:hover { border-color: var(--red-bright); color: #fff; }
+
+    /* Embed section */
+    .embed-placeholder {
+      background: var(--dark-2);
+      border: 1px solid rgba(168,162,154,.08);
+      border-left: 2px solid var(--red);
+      padding: 1.5rem 2rem;
+      font-family: var(--font-head);
+      font-size: .65rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .embed-placeholder strong { color: var(--red-bright); display: block; margin-bottom: .4rem; }
+
+    /* YouTube row */
+    .yt-row {
+      display: flex; flex-wrap: wrap; align-items: center;
+      gap: .6rem 1.2rem;
+      padding: 1.3rem 0;
+      border-top: 1px solid rgba(168,162,154,.05);
+    }
+    .yt-row a {
+      font-family: var(--font-head);
+      font-size: .62rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--red-bright);
+      transition: color .2s;
+    }
+    .yt-row a:hover { color: #fff; }
+    .yt-sep { color: var(--muted); }
+  </style>
+</head>
+<body>
+
+  <!-- MOBILE MENU -->
+  <div class="mob-menu" id="mobMenu">
+    <button class="mob-close" id="mobClose">&#x2715;</button>
+    <a href="index.html">Home</a>
+    <a href="music.html">Music</a>
+    <a href="about.html">About</a>
+    <a href="song-meanings.html">Lyrics</a>
+    <a href="interviews.html">Press</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://shieldbearerusa.com/merch" target="_blank" rel="noopener" style="color:var(--red-bright)">Merch</a>
+  </div>
+
+  <!-- NAV -->
+  <nav class="site-nav" id="mainNav">
+    <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Shieldbearer"></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="song-meanings.html">Lyrics</a></li>
+      <li><a href="interviews.html">Press</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li class="nav-merch"><a href="https://shieldbearerusa.com/merch" target="_blank" rel="noopener">Merch</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero section--dark">
+    <div class="container page-hero-inner">
+      <span class="eyebrow">Discography</span>
+      <h1 class="display-title">Music</h1>
+      <div class="bar"></div>
+      <p>Real guitars. Real bass. Hybrid production. Every track built with conviction. Stream on your platform of choice or watch on YouTube.</p>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       FEATURED / LATEST RELEASE
+  ══════════════════════════════════════ -->
+  <section class="section--darker">
+    <div class="container">
+      <span class="eyebrow">Latest Release</span>
+      <h2 class="section-title" style="margin-bottom:.6rem;">Galilean</h2>
+      <div class="bar"></div>
+
+      <div style="display:grid;grid-template-columns:1fr 1.3fr;gap:4rem;align-items:center;">
+        <div class="art-frame">
+          <img src="images/galilean-art.jpg" alt="Galilean" onerror="this.style.display='none'">
+          <div class="art-glow"></div>
+          <div class="corner tl"></div><div class="corner tr"></div>
+          <div class="corner bl"></div><div class="corner br"></div>
+        </div>
+        <div>
+          <p class="section-body" style="margin-bottom:1.8rem;">
+            Where cosmos meets faith. The riff hits hardest on the word "Galilean"
+            because that is where the infinite became particular. Christ is not hidden in metaphor.
+            He is spoken of plainly.
+          </p>
+          <div class="stream-row">
+            <a href="https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz" target="_blank" rel="noopener" class="stream-pill"><span class="dot"></span>Spotify</a>
+            <a href="https://www.youtube.com/@ShieldbearerUSA" target="_blank" rel="noopener" class="stream-pill"><span class="dot"></span>YouTube</a>
+            <a href="#" class="stream-pill"><span class="dot"></span>Apple Music</a>
+            <a href="#" class="stream-pill"><span class="dot"></span>Amazon Music</a>
+          </div>
+
+          <!-- -----------------------------------------------
+               SPOTIFY EMBED PLACEHOLDER
+               Replace this block with your Spotify embed:
+               <iframe style="border-radius:0" src="https://open.spotify.com/embed/track/TRACK_ID?utm_source=generator&theme=0"
+                 width="100%" height="152" frameBorder="0" allowfullscreen=""
+                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+               </iframe>
+               ----------------------------------------------- -->
+          <div class="embed-placeholder">
+            <strong>Spotify Embed</strong>
+            Paste your Spotify track embed here
+          </div>
+        </div>
+      </div>
+
+      <!-- YouTube playlist links -->
+      <div class="yt-row" style="margin-top:3rem;">
+        <a href="https://www.youtube.com/watch?v=tH2GpPLY3so&list=PLLAW7WxXMMDddBhtYt5oBUNb0BhCMfzJQ" target="_blank" rel="noopener">Shieldbearer Armory</a>
+        <span class="yt-sep">&middot;</span>
+        <a href="https://www.youtube.com/watch?v=He8MIcrdoxw" target="_blank" rel="noopener">A Wretch Like Me</a>
+        <span class="yt-sep">&middot;</span>
+        <a href="https://www.youtube.com/watch?v=9FHgbbVBT1A" target="_blank" rel="noopener">Celestial Shield</a>
+        <span class="yt-sep">&middot;</span>
+        <a href="https://www.youtube.com/watch?v=Hnewej6WjkE" target="_blank" rel="noopener">Lanterns</a>
+        <span class="yt-sep">&middot;</span>
+        <a href="https://www.youtube.com/@ShieldbearerUSA" target="_blank" rel="noopener">Full Channel &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       ALL TRACKS
+  ══════════════════════════════════════ -->
+  <section class="section--dark">
+    <div class="container">
+      <span class="eyebrow">All Releases</span>
+      <h2 class="section-title" style="margin-bottom:.6rem;">Tracks</h2>
+      <div class="bar"></div>
+
+      <div class="track-grid">
+
+        <!-- TRACK: Galilean -->
+        <div class="track-card">
+          <div class="track-art">
+            <img src="images/galilean-art.jpg" alt="Galilean" onerror="this.parentElement.querySelector('.art-num').style.display='block'">
+            <div class="art-num" style="display:none">01</div>
+          </div>
+          <div class="track-info">
+            <h3 class="track-name">Galilean</h3>
+            <span class="track-ref">John 1:14 &middot; Single 2025</span>
+            <p class="track-desc">Where the infinite became particular. The God of the cosmos in Galilee.</p>
+            <div class="track-links">
+              <a href="https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz" target="_blank" rel="noopener" class="track-link">Spotify</a>
+              <a href="https://www.youtube.com/@ShieldbearerUSA" target="_blank" rel="noopener" class="track-link">YouTube</a>
+              <a href="song-meanings.html" class="track-link">Meaning</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- TRACK: Ruach -->
+        <div class="track-card">
+          <div class="track-art"><div class="art-num">02</div></div>
+          <div class="track-info">
+            <h3 class="track-name">Ruach</h3>
+            <span class="track-ref">Genesis 1:2 &middot; Single 2025</span>
+            <p class="track-desc">The breath of God over the waters. The Spirit that hovered over chaos still moves.</p>
+            <div class="track-links">
+              <a href="#" class="track-link">Spotify</a>
+              <a href="#" class="track-link">YouTube</a>
+              <a href="song-meanings.html" class="track-link">Meaning</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- TRACK: Quake -->
+        <div class="track-card">
+          <div class="track-art"><div class="art-num">03</div></div>
+          <div class="track-info">
+            <h3 class="track-name">Quake</h3>
+            <span class="track-ref">Matthew 28:2 &middot; Single 2025</span>
+            <p class="track-desc">The earth shook at the resurrection. Not metaphorically. Death lost.</p>
+            <div class="track-links">
+              <a href="#" class="track-link">Spotify</a>
+              <a href="https://heavensmetalmagazine.com/index.php/2025/09/02/news-shieldbearer-release-new-quake-video/" target="_blank" rel="noopener" class="track-link">Video</a>
+              <a href="song-meanings.html" class="track-link">Meaning</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- TRACK: The Man -->
+        <div class="track-card">
+          <div class="track-art"><div class="art-num">04</div></div>
+          <div class="track-info">
+            <h3 class="track-name">The Man</h3>
+            <span class="track-ref">John 19:5 &middot; Single 2025</span>
+            <p class="track-desc">Verbatim Scripture. "Behold the man." Pilate's words. Built entirely from the text.</p>
+            <div class="track-links">
+              <a href="#" class="track-link">Spotify</a>
+              <a href="#" class="track-link">YouTube</a>
+              <a href="song-meanings.html" class="track-link">Meaning</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- TRACK: Celestial Shield -->
+        <div class="track-card">
+          <div class="track-art"><div class="art-num">05</div></div>
+          <div class="track-info">
+            <h3 class="track-name">Celestial Shield</h3>
+            <span class="track-ref">Psalm 91:4 &middot; Single</span>
+            <p class="track-desc">He will cover you with his feathers. An active, living shield. Not passive shelter.</p>
+            <div class="track-links">
+              <a href="https://www.youtube.com/watch?v=9FHgbbVBT1A" target="_blank" rel="noopener" class="track-link">YouTube</a>
+              <a href="song-meanings.html" class="track-link">Meaning</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- TRACK: Lanterns -->
+        <div class="track-card">
+          <div class="track-art"><div class="art-num">06</div></div>
+          <div class="track-info">
+            <h3 class="track-name">Lanterns</h3>
+            <span class="track-ref">Matthew 5:14 &middot; Single</span>
+            <p class="track-desc">You are the light of the world. A city on a hill cannot be hidden. Hold the light high.</p>
+            <div class="track-links">
+              <a href="https://www.youtube.com/watch?v=Hnewej6WjkE" target="_blank" rel="noopener" class="track-link">YouTube</a>
+              <a href="song-meanings.html" class="track-link">Meaning</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- TRACK: A Wretch Like Me -->
+        <div class="track-card">
+          <div class="track-art"><div class="art-num">07</div></div>
+          <div class="track-info">
+            <h3 class="track-name">A Wretch Like Me</h3>
+            <span class="track-ref">Romans 5:8 &middot; Single</span>
+            <p class="track-desc">Amazing Grace reimagined. Newton's words stripped back to their original weight.</p>
+            <div class="track-links">
+              <a href="https://www.youtube.com/watch?v=He8MIcrdoxw" target="_blank" rel="noopener" class="track-link">YouTube</a>
+              <a href="song-meanings.html" class="track-link">Meaning</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ADD MORE TRACKS HERE following the same pattern -->
+
+      </div>
+
+      <!-- -----------------------------------------------
+           FUTURE AUDIO PLAYER EMBED PLACEHOLDER
+           Drop in a Bandcamp, SoundCloud, or custom
+           HTML5 audio player widget here when ready.
+           ----------------------------------------------- -->
+      <div class="embed-placeholder" style="margin-top:3rem;">
+        <strong>Audio Player / Radio Embed</strong>
+        Paste your custom audio player, Bandcamp widget, or SoundCloud embed here
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><img src="images/logo.png" alt="Shieldbearer"></a>
+        <p>Bold Christian metal. Christ proclaimed. Scripture spoken. No ambiguity.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="music.html">Music</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="song-meanings.html">Song Meanings</a></li>
+          <li><a href="interviews.html">Press</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="https://shieldbearerusa.com/merch" target="_blank" rel="noopener">Merch</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/shieldbearerusa/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/shieldbearerusa" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.youtube.com/@ShieldbearerUSA" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz" target="_blank" rel="noopener">Spotify</a></li>
+          <li><a href="https://linktr.ee/shieldbearerusa" target="_blank" rel="noopener">Linktree</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Shieldbearer. All rights reserved.</p>
+      <a href="mailto:shieldbearerusa@gmail.com">shieldbearerusa@gmail.com</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

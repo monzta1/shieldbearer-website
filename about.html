@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Shieldbearer</title>
+  <meta name="description" content="Shieldbearer is Moncy Abraham. Solo Christian metal artist. Real guitars, hybrid production, unashamed faith.">
+  <link rel="icon" href="images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200;300;400;500;600&family=Roboto+Condensed:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 6rem;
+      align-items: start;
+    }
+    .about-body p {
+      font-size: .93rem;
+      line-height: 2;
+      color: rgba(168,162,154,.65);
+      margin-bottom: 1.4rem;
+    }
+    .about-body strong { color: var(--white); font-weight: 400; }
+    .approach-list {
+      list-style: none;
+      margin: 1.5rem 0 2rem;
+    }
+    .approach-list li {
+      font-size: .88rem;
+      line-height: 1.9;
+      color: rgba(168,162,154,.65);
+      padding: .5rem 0 .5rem 1.4rem;
+      border-bottom: 1px solid rgba(168,162,154,.05);
+      position: relative;
+    }
+    .approach-list li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 50%;
+      transform: translateY(-50%);
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: var(--red);
+    }
+    .approach-list li strong { color: var(--white); font-weight: 400; }
+    /* Artist photo placeholder */
+    .artist-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: linear-gradient(135deg, #160707, #08080f);
+      border: 1px solid rgba(192,57,43,.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .artist-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .artist-photo .photo-ph {
+      font-family: var(--font-head);
+      font-size: .6rem;
+      letter-spacing: .3em;
+      color: var(--muted);
+      text-transform: uppercase;
+      text-align: center;
+    }
+    .artist-photo .corner {
+      position: absolute;
+      width: 14px; height: 14px;
+      border-color: var(--red);
+      border-style: solid;
+      opacity: .35;
+    }
+    .artist-photo .corner.tl { top:7px; left:7px;   border-width: 1px 0 0 1px; }
+    .artist-photo .corner.tr { top:7px; right:7px;  border-width: 1px 1px 0 0; }
+    .artist-photo .corner.bl { bottom:7px; left:7px;  border-width: 0 0 1px 1px; }
+    .artist-photo .corner.br { bottom:7px; right:7px; border-width: 0 1px 1px 0; }
+
+    @media (max-width: 900px) {
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .artist-photo { aspect-ratio: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mob-menu" id="mobMenu">
+    <button class="mob-close" id="mobClose">&#x2715;</button>
+    <a href="index.html">Home</a>
+    <a href="music.html">Music</a>
+    <a href="about.html">About</a>
+    <a href="song-meanings.html">Lyrics</a>
+    <a href="interviews.html">Press</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://shieldbearerusa.com/merch" target="_blank" rel="noopener" style="color:var(--red-bright)">Merch</a>
+  </div>
+
+  <nav class="site-nav" id="mainNav">
+    <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Shieldbearer"></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="song-meanings.html">Lyrics</a></li>
+      <li><a href="interviews.html">Press</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li class="nav-merch"><a href="https://shieldbearerusa.com/merch" target="_blank" rel="noopener">Merch</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="page-hero section--dark">
+    <div class="container page-hero-inner">
+      <span class="eyebrow">The Artist</span>
+      <h1 class="display-title">Moncy Abraham</h1>
+      <div class="bar"></div>
+      <p>One man. One conviction. Christ is worth proclaiming at full volume.</p>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       MAIN ABOUT SECTION
+  ══════════════════════════════════════ -->
+  <section class="section--darker">
+    <div class="container">
+      <div class="about-grid">
+
+        <div class="about-body">
+          <span class="eyebrow">Bio</span>
+          <h2 class="section-title" style="margin-bottom:.6rem;">Shieldbearer</h2>
+          <div class="bar"></div>
+
+          <p>
+            Shieldbearer is a bold new voice in Christian metal, forging anthems of faith,
+            battle, and unbreakable hope. Blending powerful theology with raw emotion and
+            cinematic storytelling, Shieldbearer's music carries the spirit of warriors who
+            fight not with swords, but with truth. Every song is a call to stand, to believe,
+            and to lift high the banner of Christ in a world at war.
+          </p>
+          <p>
+            Behind the name is <strong>Moncy Abraham</strong>, a solo artist and composer
+            based in the USA. Shieldbearer is a solo project built from the ground up with
+            a clear conviction: <strong>the name of Jesus is spoken plainly, Scripture is
+            quoted directly, and faith is not decoration.</strong> It is the foundation every
+            riff is built on.
+          </p>
+
+          <div class="pull-quote">
+            <p>"Christ is not hidden in metaphor here. He is spoken of plainly in the songs and in the conversation behind them."</p>
+            <cite>Eternal Flames UK</cite>
+          </div>
+
+          <p>
+            The approach is intentionally hybrid: <strong>real guitars, real bass, real amps</strong>
+            combined with AI-assisted production and cinematic sound design. No shortcuts on the theology.
+            No apologies for the method. The result ranges from crushing metal anthems to ambient
+            worship, all built with fire and purpose.
+          </p>
+          <p>
+            Moncy plays small solo gigs regularly. For booking, collaboration, or press,
+            reach out directly at <a href="mailto:shieldbearerusa@gmail.com" style="color:var(--red-bright);">shieldbearerusa@gmail.com</a>
+          </p>
+        </div>
+
+        <div>
+          <!-- UPDATE: replace placeholder with artist photo -->
+          <div class="artist-photo">
+            <img src="images/moncy-photo.jpg" alt="Moncy Abraham — Shieldbearer"
+                 onerror="this.style.display='none'">
+            <div class="photo-ph">
+              <!-- UPDATE: add your artist photo to images/moncy-photo.jpg -->
+              Artist photo
+            </div>
+            <div class="corner tl"></div><div class="corner tr"></div>
+            <div class="corner bl"></div><div class="corner br"></div>
+          </div>
+
+          <!-- -----------------------------------------------
+               FUTURE GALLERY PLACEHOLDER
+               Add more artist photos here as img tags or
+               build a grid. Structure is in place.
+               ----------------------------------------------- -->
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       THE APPROACH
+  ══════════════════════════════════════ -->
+  <section class="section--dark">
+    <div class="container">
+      <div style="max-width:720px;">
+        <span class="eyebrow">How It&rsquo;s Made</span>
+        <h2 class="section-title" style="margin-bottom:.6rem;">The Approach</h2>
+        <div class="bar"></div>
+        <p class="section-body" style="margin-bottom:2rem;">
+          Shieldbearer operates outside the traditional band model. Every element is
+          intentional, from the production method to the theological content.
+        </p>
+        <ul class="approach-list">
+          <li><strong>Real guitars</strong> &mdash; tracked through real amps. No modelling shortcuts on the core tone.</li>
+          <li><strong>Real bass</strong> &mdash; played and recorded live to give the low end real weight and movement.</li>
+          <li><strong>AI-assisted production</strong> &mdash; cinematic sound design, arrangement, and mix elements built with modern tools without apology.</li>
+          <li><strong>Self-produced</strong> &mdash; every mix and decision made by Moncy. Full creative and theological control.</li>
+          <li><strong>Scripture-first writing</strong> &mdash; lyrics are written from the text outward, not the emotion inward.</li>
+          <li><strong>Solo live performance</strong> &mdash; small, intimate gigs. No full band touring setup required.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stat-grid">
+    <div class="stat-box"><span class="stat-n">7+</span><span class="stat-l">Tracks Released</span></div>
+    <div class="stat-box"><span class="stat-n">6</span><span class="stat-l">Press Features</span></div>
+    <div class="stat-box"><span class="stat-n">Solo</span><span class="stat-l">Artist Project</span></div>
+    <div class="stat-box"><span class="stat-n">USA</span><span class="stat-l">Based</span></div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><img src="images/logo.png" alt="Shieldbearer"></a>
+        <p>Bold Christian metal. Christ proclaimed. Scripture spoken. No ambiguity.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="music.html">Music</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="song-meanings.html">Song Meanings</a></li>
+          <li><a href="interviews.html">Press</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="https://shieldbearerusa.com/merch" target="_blank" rel="noopener">Merch</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/shieldbearerusa/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/shieldbearerusa" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.youtube.com/@ShieldbearerUSA" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz" target="_blank" rel="noopener">Spotify</a></li>
+          <li><a href="https://linktr.ee/shieldbearerusa" target="_blank" rel="noopener">Linktree</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Shieldbearer. All rights reserved.</p>
+      <a href="mailto:shieldbearerusa@gmail.com">shieldbearerusa@gmail.com</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
