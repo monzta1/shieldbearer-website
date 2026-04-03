@@ -90,7 +90,7 @@ To update the site later, edit the files and push/upload the changes to GitHub.
 - Used on `music.html` and `index.html`
 
 ### Merch Store URL
-- Search the project for `shieldbearerusa.com/merch`
+- Search the project for `shop.shieldbearerusa.com`
 - Replace with your actual Shopify store URL
 - It appears in: nav, footer, index.html, contact.html
 
