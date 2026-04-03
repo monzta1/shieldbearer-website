@@ -60,7 +60,7 @@
     });
   });
 
-  /* ── ENQUIRY FORM (mailto fallback) ── */
+  /* ── ENQUIRY FORM (Formspree + mailto fallback) ── */
   var enquiryForm = document.getElementById('enquiryForm');
   if (enquiryForm) {
     enquiryForm.addEventListener('submit', function (e) {
@@ -70,6 +70,7 @@
       var type    = (document.getElementById('fType') || {}).value || 'General';
       var msg     = document.getElementById('fMsg').value.trim();
       var out     = document.getElementById('formMsg');
+      var endpoint = (enquiryForm.getAttribute('data-formspree-endpoint') || '').trim();
 
       if (!name || !email || !msg) {
         out.className = 'form-msg err';
@@ -82,23 +83,29 @@
         return;
       }
 
-      /* -------------------------------------------------------
-         FORMSPREE INTEGRATION
-         When you are ready, replace the mailto fallback below
-         with a fetch call to your Formspree endpoint:
-
-         fetch('https://formspree.io/f/YOUR_FORM_ID', {
-           method: 'POST',
-           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-           body: JSON.stringify({ name, email, type, message: msg })
-         })
-         .then(function(r) {
-           if (r.ok) { out.className = 'form-msg ok'; out.textContent = 'Message sent.'; }
-           else       { out.className = 'form-msg err'; out.textContent = 'Something went wrong. Email us directly.'; }
-         });
-         return; // add this return before the mailto fallback
-
-         ------------------------------------------------------- */
+      if (endpoint) {
+        out.className = 'form-msg ok';
+        out.textContent = 'Sending message...';
+        fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({ name: name, email: email, type: type, message: msg })
+        })
+        .then(function (r) {
+          if (!r.ok) throw new Error('Formspree request failed');
+          out.className = 'form-msg ok';
+          out.textContent = 'Message sent. Thank you.';
+          enquiryForm.reset();
+        })
+        .catch(function () {
+          out.className = 'form-msg err';
+          out.textContent = 'Direct send failed. Opening your mail app...';
+          var subjectFail = encodeURIComponent('Shieldbearer Enquiry: ' + type);
+          var bodyFail    = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nType: ' + type + '\n\n' + msg);
+          window.location.href = 'mailto:shieldbearerusa@gmail.com?subject=' + subjectFail + '&body=' + bodyFail;
+        });
+        return;
+      }
 
       /* Mailto fallback for GitHub Pages (no backend) */
       out.className = 'form-msg ok';

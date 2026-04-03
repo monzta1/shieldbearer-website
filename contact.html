@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact — Shieldbearer</title>
   <meta name="description" content="Get in touch with Shieldbearer. Bookings, press, collaboration, and general enquiries.">
-  <link rel="icon" href="images/favicon.ico">
+  <link rel="icon" href="images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200;300;400;500;600&family=Roboto+Condensed:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
@@ -163,17 +163,11 @@
             <!-- -----------------------------------------------
                  FORMSPREE INTEGRATION
                  1. Go to formspree.io and create a free account
-                 2. Create a new form and copy your endpoint URL
-                 3. Replace the action="#" below with:
-                    action="https://formspree.io/f/YOUR_FORM_ID"
-                 4. Add method="POST" to the form tag
-                 5. Remove the onsubmit handler from main.js or
-                    keep it and remove action attribute to use
-                    the JS fetch approach instead.
-
-                 For now the form uses a mailto fallback via JS.
+                 2. Create a form and copy endpoint (example: https://formspree.io/f/abcd1234)
+                 3. Paste your endpoint into data-formspree-endpoint below
+                 4. JS will send directly to Formspree and keep mailto fallback
                  ----------------------------------------------- -->
-            <form id="enquiryForm" action="#" novalidate>
+            <form id="enquiryForm" data-formspree-endpoint="" novalidate>
 
               <div class="form-grid">
                 <div class="form-row">
