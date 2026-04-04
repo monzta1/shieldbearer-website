@@ -175,41 +175,60 @@
       animation: scroll-bar 2s ease-in-out infinite;
     }
 
-    /* Galilean listening experience */
-    .galilean-listening {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-    .galilean-top {
+    /* Reusable featured-track module */
+    .featured-track {
+      background: linear-gradient(180deg, rgba(255,255,255,.025), rgba(255,255,255,.01));
+      border: 1px solid rgba(168,162,154,.2);
+      box-shadow: 0 24px 52px rgba(0,0,0,.4);
+      padding: clamp(1rem, 2.4vw, 1.6rem);
       display: grid;
-      grid-template-columns: .85fr 1.15fr;
-      gap: 1.5rem;
-      align-items: stretch;
+      grid-template-columns: 1.08fr .92fr;
+      gap: clamp(1rem, 2.2vw, 1.8rem);
+      position: relative;
     }
-    .galilean-panel {
+    .featured-track::before {
+      content: '';
+      position: absolute;
+      left: clamp(1rem, 2.4vw, 1.6rem);
+      right: clamp(1rem, 2.4vw, 1.6rem);
+      top: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(231,76,60,.42), transparent);
+    }
+    .featured-track__media {
+      display: grid;
+      gap: 1.1rem;
+      min-width: 0;
+    }
+    .featured-track__panel {
       background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
       border: 1px solid rgba(168,162,154,.18);
       padding: clamp(1.2rem, 2.5vw, 1.8rem);
-      box-shadow: 0 22px 46px rgba(0,0,0,.35);
+      min-width: 0;
     }
-    .galilean-artwork {
-      padding: 0;
+    .featured-track__artwork {
+      padding: clamp(.55rem, 1.1vw, .8rem);
       overflow: hidden;
       display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 1 / 1;
+      background: radial-gradient(ellipse at center, rgba(255,255,255,.04), rgba(255,255,255,.01));
     }
-    .galilean-artwork img {
+    .featured-track__artwork img {
       display: block;
       width: 100%;
       height: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
+      object-fit: contain;
+      border: 1px solid rgba(168,162,154,.16);
+      background: rgba(0,0,0,.35);
     }
-    .galilean-player-panel {
+    .featured-track__body {
       display: flex;
       flex-direction: column;
+      min-width: 0;
     }
-    .galilean-title {
+    .featured-track__title {
       font-family: var(--font-display);
       font-size: clamp(2.4rem, 5vw, 3.8rem);
       letter-spacing: .05em;
@@ -217,7 +236,7 @@
       line-height: 1.02;
       margin-bottom: .3rem;
     }
-    .galilean-sub {
+    .featured-track__meta {
       font-family: var(--font-head);
       font-size: .68rem;
       letter-spacing: .28em;
@@ -225,31 +244,37 @@
       text-transform: uppercase;
       margin-bottom: 1.4rem;
     }
-    .galilean-support {
+    .featured-track__desc {
       font-size: .98rem;
       line-height: 1.75;
       color: rgba(240,235,224,.78);
       margin-bottom: 1.4rem;
     }
-    .galilean-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .75rem;
-      margin-top: 1rem;
-    }
-    .spotify-embed-wrap {
-      margin-top: 1rem;
+    .featured-track__player-wrap {
+      margin-top: .35rem;
       border: 1px solid rgba(168,162,154,.2);
       background: rgba(4,4,4,.78);
       overflow: hidden;
     }
-    .spotify-embed {
+    .featured-track__player {
       display: block;
       width: 100%;
       min-height: 352px;
       border: 0;
     }
-    .lyrics-panel-title {
+    .featured-track__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      margin-top: 1rem;
+    }
+    .featured-track__actions .btn {
+      min-width: 214px;
+    }
+    .featured-track__lyrics {
+      min-width: 0;
+    }
+    .featured-track__lyrics-title {
       font-family: var(--font-head);
       font-size: .68rem;
       letter-spacing: .26em;
@@ -257,17 +282,17 @@
       color: var(--red-bright);
       margin-bottom: .8rem;
     }
-    .lyrics-scroll {
+    .featured-track__lyrics-scroll {
       max-height: 540px;
       overflow-y: auto;
       padding-right: .8rem;
       scrollbar-width: thin;
       scrollbar-color: rgba(231,76,60,.7) rgba(255,255,255,.06);
     }
-    .lyrics-scroll::-webkit-scrollbar { width: 8px; }
-    .lyrics-scroll::-webkit-scrollbar-track { background: rgba(255,255,255,.05); }
-    .lyrics-scroll::-webkit-scrollbar-thumb { background: rgba(231,76,60,.7); }
-    .lyrics-scroll p {
+    .featured-track__lyrics-scroll::-webkit-scrollbar { width: 8px; }
+    .featured-track__lyrics-scroll::-webkit-scrollbar-track { background: rgba(255,255,255,.05); }
+    .featured-track__lyrics-scroll::-webkit-scrollbar-thumb { background: rgba(231,76,60,.7); }
+    .featured-track__lyrics-scroll p {
       white-space: pre-line;
       font-size: 1rem;
       line-height: 1.86;
@@ -360,7 +385,10 @@
       .hero-bg {
         background-position: center 18%;
       }
-      .galilean-top {
+      .featured-track {
+        grid-template-columns: 1fr;
+      }
+      .featured-track__media {
         grid-template-columns: 1fr;
         gap: 1rem;
       }
@@ -401,11 +429,11 @@
         min-width: 0;
         width: 100%;
       }
-      .galilean-actions .btn {
+      .featured-track__actions .btn {
         min-width: 0;
         width: 100%;
       }
-      .lyrics-scroll { max-height: 420px; }
+      .featured-track__lyrics-scroll { max-height: 420px; }
     }
     @media (max-width: 640px) {
       .hero-bg {
@@ -483,37 +511,37 @@
   ══════════════════════════════════════ -->
   <section class="section--dark" id="release" aria-labelledby="release-heading">
     <div class="container">
-      <div class="galilean-listening">
-        <div class="galilean-top">
-          <figure class="galilean-panel galilean-artwork" aria-label="Galilean artwork thumbnail">
-            <img src="images/galilean-art.png" alt="Galilean single artwork">
+      <article class="featured-track featured-track--galilean" data-track="galilean">
+        <div class="featured-track__media">
+          <figure class="featured-track__panel featured-track__artwork" aria-label="Galilean artwork thumbnail">
+            <img src="images/galilean-art.png" alt="Galilean single artwork" width="768" height="768">
           </figure>
-          <div class="galilean-panel galilean-player-panel">
+          <div class="featured-track__panel featured-track__body">
             <span class="badge">Now Playing</span>
-            <h2 class="galilean-title" id="release-heading">Galilean</h2>
-            <p class="galilean-sub">Featured Track &middot; 2025</p>
-            <p class="galilean-support">
+            <h2 class="featured-track__title" id="release-heading">Galilean</h2>
+            <p class="featured-track__meta">Featured Track &middot; 2025</p>
+            <p class="featured-track__desc">
               Where cosmos meets faith. Press play and step into the weight of creation,
               judgment, and the Name above every star.
             </p>
-            <div class="spotify-embed-wrap">
+            <div class="featured-track__player-wrap">
               <iframe
-                class="spotify-embed"
+                class="featured-track__player"
                 src="https://open.spotify.com/embed/album/0UqnB3Kw8s4yiDUVgvvgDT?utm_source=generator"
                 title="Spotify player for Galilean"
                 loading="lazy"
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
               </iframe>
             </div>
-            <div class="galilean-actions">
+            <div class="featured-track__actions">
               <a href="https://open.spotify.com/album/0UqnB3Kw8s4yiDUVgvvgDT" target="_blank" rel="noopener" class="btn btn--red">Listen Now</a>
               <a href="https://open.spotify.com/album/0UqnB3Kw8s4yiDUVgvvgDT" target="_blank" rel="noopener" class="btn btn--ghost">Open on Spotify</a>
             </div>
           </div>
         </div>
-        <aside class="galilean-panel" aria-label="Galilean lyrics panel">
-          <h3 class="lyrics-panel-title">Galilean Lyrics</h3>
-          <div class="lyrics-scroll">
+        <aside class="featured-track__panel featured-track__lyrics" aria-label="Galilean lyrics panel">
+          <h3 class="featured-track__lyrics-title">Galilean Lyrics</h3>
+          <div class="featured-track__lyrics-scroll">
             <p>Iron dust and canyoned scars
 Frozen ground from ancient wars
 Dry river veins stretched far
@@ -591,7 +619,7 @@ Jesus reigns
 The Galilean</p>
           </div>
         </aside>
-      </div>
+      </article>
     </div>
   </section>
 
