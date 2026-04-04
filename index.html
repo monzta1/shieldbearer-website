@@ -178,14 +178,16 @@
     /* Reusable featured-track module */
     .featured-track {
       background:
-        radial-gradient(circle at 16% 12%, rgba(231,76,60,.1), transparent 42%),
-        linear-gradient(180deg, rgba(255,255,255,.032), rgba(255,255,255,.012));
+        radial-gradient(circle at 16% 12%, rgba(231,76,60,.08), transparent 44%),
+        linear-gradient(180deg, rgba(21,21,21,.9), rgba(12,12,12,.92));
       border: 1px solid rgba(168,162,154,.18);
-      box-shadow: 0 26px 56px rgba(0,0,0,.42);
-      padding: clamp(1.15rem, 2.6vw, 1.9rem);
+      box-shadow:
+        0 26px 56px rgba(0,0,0,.44),
+        0 0 0 1px rgba(255,255,255,.02) inset;
+      padding: clamp(1.25rem, 2.7vw, 2rem);
       display: grid;
       grid-template-columns: 1.08fr .92fr;
-      gap: clamp(1.15rem, 2.4vw, 2rem);
+      gap: clamp(1.25rem, 2.5vw, 2.1rem);
       position: relative;
       overflow: hidden;
     }
@@ -219,17 +221,17 @@
     .featured-track__media-panel {
       display: flex;
       flex-direction: column;
-      gap: 1.2rem;
+      gap: 1.35rem;
       height: 100%;
     }
     .featured-track__artwork {
-      padding: clamp(.75rem, 1.35vw, 1rem);
+      padding: clamp(.85rem, 1.5vw, 1.15rem);
       display: grid;
       place-items: center;
       aspect-ratio: 1 / 1;
-      background: radial-gradient(ellipse at center, rgba(255,255,255,.04), rgba(255,255,255,.01));
+      background: radial-gradient(ellipse at center, rgba(255,255,255,.045), rgba(255,255,255,.012));
       border: 1px solid rgba(168,162,154,.14);
-      margin-bottom: .4rem;
+      margin-bottom: .65rem;
     }
     .featured-track__artwork img {
       display: block;
@@ -239,7 +241,7 @@
       max-height: 100%;
       border: 1px solid rgba(168,162,154,.16);
       background: rgba(0,0,0,.35);
-      box-shadow: 0 14px 34px rgba(0,0,0,.32);
+      box-shadow: 0 18px 42px rgba(0,0,0,.34);
     }
     .featured-track__body {
       display: flex;
@@ -260,19 +262,19 @@
       letter-spacing: .28em;
       color: var(--red-bright);
       text-transform: uppercase;
-      margin-bottom: 1.4rem;
+      margin-bottom: 1.15rem;
     }
     .featured-track__desc {
       font-size: .98rem;
       line-height: 1.75;
       color: rgba(240,235,224,.78);
-      margin-bottom: 1.55rem;
+      margin-bottom: 1.7rem;
     }
     .featured-track__player-wrap {
-      margin-top: .45rem;
-      margin-bottom: .35rem;
+      margin-top: .55rem;
+      margin-bottom: .55rem;
       border: 1px solid rgba(168,162,154,.2);
-      background: rgba(4,4,4,.78);
+      background: linear-gradient(180deg, rgba(10,10,10,.9), rgba(5,5,5,.92));
       box-shadow: inset 0 0 0 1px rgba(255,255,255,.02);
       overflow: hidden;
     }
@@ -286,14 +288,15 @@
       display: flex;
       flex-wrap: wrap;
       gap: .75rem;
-      margin-top: 1.1rem;
+      margin-top: 1.25rem;
     }
     .featured-track__actions .btn {
       min-width: 214px;
     }
     .featured-track__lyrics {
       min-width: 0;
-      border-left: 1px solid rgba(168,162,154,.15);
+      border-left: 1px solid rgba(168,162,154,.13);
+      background: linear-gradient(180deg, rgba(255,255,255,.018), rgba(255,255,255,.008));
     }
     .featured-track__lyrics-title {
       font-family: var(--font-head);
@@ -301,7 +304,7 @@
       letter-spacing: .26em;
       text-transform: uppercase;
       color: var(--red-bright);
-      margin-bottom: 1rem;
+      margin-bottom: 1.1rem;
     }
     .featured-track__lyrics-scroll {
       max-height: 540px;
