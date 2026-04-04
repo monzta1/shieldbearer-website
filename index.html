@@ -226,7 +226,7 @@
     .featured-track__media-panel {
       display: flex;
       flex-direction: column;
-      gap: .55rem;
+      gap: .45rem;
       height: 100%;
     }
     .featured-track__artwork {
@@ -236,7 +236,7 @@
       aspect-ratio: 3 / 2;
       background: radial-gradient(ellipse at center, rgba(255,255,255,.045), rgba(255,255,255,.012));
       border: 1px solid rgba(168,162,154,.14);
-      margin-bottom: .12rem;
+      margin-bottom: .06rem;
     }
     .featured-track__artwork img {
       display: block;
@@ -266,17 +266,17 @@
       letter-spacing: .28em;
       color: var(--red-bright);
       text-transform: uppercase;
-      margin-bottom: .48rem;
+      margin-bottom: .38rem;
     }
     .featured-track__desc {
       font-size: .98rem;
       line-height: 1.65;
       color: rgba(240,235,224,.78);
-      margin-bottom: .55rem;
+      margin-bottom: .42rem;
     }
     .featured-track__player-wrap {
-      margin-top: .12rem;
-      margin-bottom: .14rem;
+      margin-top: .08rem;
+      margin-bottom: .1rem;
       border: 1px solid rgba(168,162,154,.2);
       background: linear-gradient(180deg, rgba(10,10,10,.9), rgba(5,5,5,.92));
       box-shadow: inset 0 0 0 1px rgba(255,255,255,.02);
@@ -292,7 +292,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: .75rem;
-      margin-top: .35rem;
+      margin-top: .25rem;
     }
     .featured-track__actions .btn {
       min-width: 214px;
@@ -304,6 +304,7 @@
       display: flex;
       flex-direction: column;
       height: 100%;
+      max-height: min(68vh, 640px);
       overflow: hidden;
     }
     .featured-track__lyrics-title {
