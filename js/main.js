@@ -152,4 +152,43 @@
     });
   }
 
+  /* ── FEATURED TRACK HEIGHT SYNC (desktop only) ── */
+  function syncFeaturedTrackLyricsHeight() {
+    var desktopMq = window.matchMedia('(min-width: 901px)');
+    var tracks = document.querySelectorAll('.featured-track');
+    if (!tracks.length) return;
+
+    tracks.forEach(function (trackEl) {
+      if (!desktopMq.matches) {
+        trackEl.style.removeProperty('--featured-lyrics-panel-h');
+        return;
+      }
+
+      var mediaPanel = trackEl.querySelector('.featured-track__media-panel');
+      if (!mediaPanel) {
+        trackEl.style.removeProperty('--featured-lyrics-panel-h');
+        return;
+      }
+
+      var mediaHeight = Math.ceil(mediaPanel.getBoundingClientRect().height);
+      if (mediaHeight > 0) {
+        trackEl.style.setProperty('--featured-lyrics-panel-h', mediaHeight + 'px');
+      }
+    });
+  }
+
+  function scheduleFeaturedTrackSync() {
+    window.requestAnimationFrame(syncFeaturedTrackLyricsHeight);
+  }
+
+  window.addEventListener('load', scheduleFeaturedTrackSync);
+  window.addEventListener('resize', scheduleFeaturedTrackSync);
+  window.addEventListener('orientationchange', scheduleFeaturedTrackSync);
+  setTimeout(scheduleFeaturedTrackSync, 120);
+  setTimeout(scheduleFeaturedTrackSync, 420);
+
+  document.querySelectorAll('.featured-track__artwork img').forEach(function (imgEl) {
+    imgEl.addEventListener('load', scheduleFeaturedTrackSync);
+  });
+
 })();
