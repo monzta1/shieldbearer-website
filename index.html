@@ -175,24 +175,82 @@
       animation: scroll-bar 2s ease-in-out infinite;
     }
 
-    /* Featured release */
-    .release-grid {
+    /* Galilean listening experience */
+    .galilean-grid {
       display: grid;
-      grid-template-columns: 1fr 1.3fr;
-      gap: 5rem;
-      align-items: center;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 2rem;
+      align-items: start;
     }
-    .release-title {
+    .galilean-panel {
+      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+      border: 1px solid rgba(168,162,154,.18);
+      padding: clamp(1.2rem, 2.5vw, 1.8rem);
+      box-shadow: 0 22px 46px rgba(0,0,0,.35);
+    }
+    .galilean-title {
       font-family: var(--font-display);
       font-size: clamp(2.4rem, 5vw, 3.8rem);
-      letter-spacing: .05em; color: #fff;
-      line-height: 1.05; margin-bottom: .3rem;
+      letter-spacing: .05em;
+      color: #fff;
+      line-height: 1.02;
+      margin-bottom: .3rem;
     }
-    .release-sub {
+    .galilean-sub {
       font-family: var(--font-head);
-      font-size: .68rem; letter-spacing: .28em;
-      color: var(--red-bright); text-transform: uppercase;
+      font-size: .68rem;
+      letter-spacing: .28em;
+      color: var(--red-bright);
+      text-transform: uppercase;
       margin-bottom: 1.4rem;
+    }
+    .galilean-support {
+      font-size: .98rem;
+      line-height: 1.75;
+      color: rgba(240,235,224,.78);
+      margin-bottom: 1.4rem;
+    }
+    .galilean-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      margin-top: 1rem;
+    }
+    .spotify-embed-wrap {
+      margin-top: 1rem;
+      border: 1px solid rgba(168,162,154,.2);
+      background: rgba(4,4,4,.78);
+      overflow: hidden;
+    }
+    .spotify-embed {
+      display: block;
+      width: 100%;
+      min-height: 352px;
+      border: 0;
+    }
+    .lyrics-panel-title {
+      font-family: var(--font-head);
+      font-size: .68rem;
+      letter-spacing: .26em;
+      text-transform: uppercase;
+      color: var(--red-bright);
+      margin-bottom: .8rem;
+    }
+    .lyrics-scroll {
+      max-height: 540px;
+      overflow-y: auto;
+      padding-right: .8rem;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(231,76,60,.7) rgba(255,255,255,.06);
+    }
+    .lyrics-scroll::-webkit-scrollbar { width: 8px; }
+    .lyrics-scroll::-webkit-scrollbar-track { background: rgba(255,255,255,.05); }
+    .lyrics-scroll::-webkit-scrollbar-thumb { background: rgba(231,76,60,.7); }
+    .lyrics-scroll p {
+      white-space: pre-line;
+      font-size: 1rem;
+      line-height: 1.86;
+      color: rgba(240,235,224,.9);
     }
 
     /* Preview grid (3-col teasers) */
@@ -278,7 +336,7 @@
     }
 
     @media (max-width: 900px) {
-      .release-grid   { grid-template-columns: 1fr; gap: 2.5rem; }
+      .galilean-grid  { grid-template-columns: 1fr; gap: 1.25rem; }
       .preview-grid   { grid-template-columns: 1fr; }
       #hero { min-height: 100svh; height: 100svh; }
       .hero-content-section {
@@ -316,6 +374,7 @@
         min-width: 0;
         width: 100%;
       }
+      .lyrics-scroll { max-height: 420px; }
     }
   </style>
 </head>
@@ -388,54 +447,109 @@
   ══════════════════════════════════════ -->
   <section class="section--dark" id="release" aria-labelledby="release-heading">
     <div class="container">
-      <div class="release-grid">
-
-        <!-- Album art -->
-        <div>
-          <div class="art-frame">
-            <!-- UPDATE: replace with actual album art -->
-            <img src="images/galilean-art.png" alt="Galilean single artwork"
-                 onerror="this.style.display='none'">
-            <div class="art-glow"></div>
-            <div class="corner tl"></div><div class="corner tr"></div>
-            <div class="corner bl"></div><div class="corner br"></div>
-          </div>
-        </div>
-
-        <!-- Release info -->
-        <div>
-          <span class="badge">Latest Release</span>
-          <h2 class="release-title" id="release-heading">Galilean</h2>
-          <p class="release-sub">Single &middot; 2025</p>
-          <p class="section-body" style="margin-bottom:2rem;">
-            Where cosmos meets faith. Heavy, uncompromising, unashamed.
-            Real guitars. Real bass. Fully self-produced.
-            Christ is not hidden in metaphor.
-            He is named plainly, proclaimed with the full weight of the music behind every word.
+      <div class="galilean-grid">
+        <div class="galilean-panel">
+          <span class="badge">Now Playing</span>
+          <h2 class="galilean-title" id="release-heading">Galilean</h2>
+          <p class="galilean-sub">Featured Track &middot; 2025</p>
+          <p class="galilean-support">
+            Where cosmos meets faith. Press play and step into the weight of creation,
+            judgment, and the Name above every star.
           </p>
-
-          <!-- Stream links — UPDATE hrefs with real URLs -->
-          <div class="stream-row">
-            <a href="https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz" target="_blank" rel="noopener" class="stream-pill"><span class="dot"></span>Spotify</a>
-            <a href="https://www.youtube.com/@ShieldbearerUSA" target="_blank" rel="noopener" class="stream-pill"><span class="dot"></span>YouTube</a>
-            <a href="https://music.apple.com/us/search?term=Shieldbearer" target="_blank" rel="noopener" class="stream-pill"><span class="dot"></span>Apple Music</a>
-            <a href="https://music.amazon.com/search/Shieldbearer" target="_blank" rel="noopener" class="stream-pill"><span class="dot"></span>Amazon Music</a>
+          <div class="spotify-embed-wrap">
+            <iframe
+              class="spotify-embed"
+              src="https://open.spotify.com/embed/album/0UqnB3Kw8s4yiDUVgvvgDT?utm_source=generator"
+              title="Spotify player for Galilean"
+              loading="lazy"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+            </iframe>
           </div>
-
-          <!-- -----------------------------------------------
-               FUTURE EMBED PLACEHOLDER
-               Paste a Spotify, YouTube, or SoundCloud embed
-               iframe here when ready.
-               Example:
-               <iframe src="https://open.spotify.com/embed/track/TRACK_ID"
-                 width="100%" height="152" frameborder="0"
-                 allow="autoplay; clipboard-write; encrypted-media; fullscreen">
-               </iframe>
-               ----------------------------------------------- -->
-
-          <a href="music.html" class="btn btn--red">All Music</a>
+          <div class="galilean-actions">
+            <a href="https://open.spotify.com/album/0UqnB3Kw8s4yiDUVgvvgDT" target="_blank" rel="noopener" class="btn btn--red">Listen Now</a>
+            <a href="https://open.spotify.com/album/0UqnB3Kw8s4yiDUVgvvgDT" target="_blank" rel="noopener" class="btn btn--ghost">Open on Spotify</a>
+          </div>
         </div>
+        <aside class="galilean-panel" aria-label="Galilean lyrics panel">
+          <h3 class="lyrics-panel-title">Galilean Lyrics</h3>
+          <div class="lyrics-scroll">
+            <p>Iron dust and canyoned scars
+Frozen ground from ancient wars
+Dry river veins stretched far
+The wounded red of Mars
 
+Endless storms of rolling thunder
+Clouds that tear the dark asunder
+Gravity that drags us under
+The burning giant Jupiter
+
+Orbits lock
+Pressure climbs
+Mass obeys
+Curves of time
+
+Galilean
+Lord of flame
+Before the stars
+You bore the Name
+
+Galilean
+Christ alone
+Darkness breaks
+The void is torn
+
+A sun implodes and leaves a scar
+Its burning shell is ripped apart
+Matter crushed beyond the far
+The shattered core, neutron star
+
+A spiral flood of burning rays
+A hundred billion suns ablaze
+We drift within its ancient sway
+The endless wheel, Milky Way
+
+Light departs
+Still arrives
+Ages pass
+Before our eyes
+
+Galilean
+Lord of flame
+Before the stars
+You bore the Name
+
+Galilean
+Christ alone
+Darkness breaks
+The void is torn
+
+Stars ignite
+Stars decay
+Light arrives
+Far too late
+
+Worlds collapse
+Time is torn
+Ash remains
+Where fire was born
+
+Galilean
+King of all
+When stars collapse
+And heavens fall
+
+Galilean
+End and start
+All creation
+Bears Your mark
+
+Fire fades from every sky
+Night stands bare before the dawn
+What was made will pass and die
+Jesus reigns
+The Galilean</p>
+          </div>
+        </aside>
       </div>
     </div>
   </section>
