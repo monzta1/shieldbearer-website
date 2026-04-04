@@ -11,20 +11,30 @@
   <link rel="stylesheet" href="css/style.css">
   <style>
     /* ── MUSIC PAGE STYLES ── */
+    .armory-intro {
+      max-width: 760px;
+      margin-bottom: 2.4rem;
+    }
+    .armory-intro p {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: rgba(168,162,154,.75);
+    }
     .track-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.2rem;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
     }
     .track-card {
       background: var(--dark-2);
-      border: 1px solid rgba(168,162,154,.06);
+      border: 1px solid rgba(168,162,154,.16);
       overflow: hidden;
-      transition: border-color .2s, transform .2s;
+      transition: border-color .2s, transform .2s, box-shadow .2s;
     }
     .track-card:hover {
-      border-color: rgba(192,57,43,.3);
-      transform: translateY(-3px);
+      border-color: rgba(192,57,43,.55);
+      transform: translateY(-6px);
+      box-shadow: 0 18px 34px rgba(0,0,0,.45);
     }
     .track-art {
       width: 100%; aspect-ratio: 1;
@@ -39,38 +49,38 @@
       color: rgba(192,57,43,.1);
       letter-spacing: .05em;
     }
-    .track-info { padding: 1.4rem 1.6rem; }
+    .track-info { padding: 1.8rem; }
     .track-info .track-name {
       font-family: var(--font-display);
-      font-size: 1.3rem;
+      font-size: 1.55rem;
       letter-spacing: .06em;
       color: #fff;
       margin-bottom: .25rem;
     }
     .track-info .track-ref {
       font-family: var(--font-head);
-      font-size: .58rem;
-      letter-spacing: .28em;
+      font-size: .62rem;
+      letter-spacing: .24em;
       text-transform: uppercase;
       color: var(--red-bright);
       margin-bottom: 1rem;
       display: block;
     }
     .track-info .track-desc {
-      font-size: .84rem;
-      line-height: 1.85;
-      color: rgba(168,162,154,.55);
+      font-size: .94rem;
+      line-height: 1.82;
+      color: rgba(168,162,154,.72);
       margin-bottom: 1.2rem;
     }
     .track-links { display: flex; gap: .5rem; flex-wrap: wrap; }
     .track-link {
       font-family: var(--font-head);
-      font-size: .56rem;
-      letter-spacing: .16em;
+      font-size: .62rem;
+      letter-spacing: .14em;
       text-transform: uppercase;
       color: var(--off-white);
-      border: 1px solid rgba(168,162,154,.1);
-      padding: .32rem .7rem;
+      border: 1px solid rgba(168,162,154,.2);
+      padding: .42rem .8rem;
       transition: all .2s;
     }
     .track-link:hover { border-color: var(--red-bright); color: #fff; }
@@ -140,21 +150,27 @@
   <!-- PAGE HERO -->
   <div class="page-hero section--dark">
     <div class="container page-hero-inner">
-      <span class="eyebrow">Discography</span>
-      <h1 class="display-title">Music</h1>
+      <span class="eyebrow">The Armory</span>
+      <h1 class="display-title">Music Arsenal</h1>
       <div class="bar"></div>
-      <p>Real guitars. Real bass. Hybrid production. Every track built with conviction. Stream on your platform of choice or watch on YouTube.</p>
+      <p>Every release is forged to proclaim Christ with clarity. Stream, watch, read meaning, and move through the catalog with purpose.</p>
     </div>
   </div>
 
   <!-- ══════════════════════════════════════
        FEATURED / LATEST RELEASE
   ══════════════════════════════════════ -->
-  <section class="section--darker">
+  <section class="section--darker" id="armory">
     <div class="container">
-      <span class="eyebrow">Latest Release</span>
+      <span class="eyebrow">Latest Drop</span>
       <h2 class="section-title" style="margin-bottom:.6rem;">Galilean</h2>
       <div class="bar"></div>
+      <div class="armory-intro">
+        <p>
+          Welcome to the Armory. This is not filler content and not passive background music.
+          Each track carries theological weight, sonic force, and a clear call to allegiance.
+        </p>
+      </div>
 
       <div style="display:grid;grid-template-columns:1fr 1.3fr;gap:4rem;align-items:center;">
         <div class="art-frame">
@@ -216,8 +232,8 @@
   ══════════════════════════════════════ -->
   <section class="section--dark">
     <div class="container">
-      <span class="eyebrow">All Releases</span>
-      <h2 class="section-title" style="margin-bottom:.6rem;">Tracks</h2>
+      <span class="eyebrow">Full Armory</span>
+      <h2 class="section-title" style="margin-bottom:.6rem;">Tracks and Releases</h2>
       <div class="bar"></div>
 
       <div class="track-grid">
@@ -235,6 +251,8 @@
             <div class="track-links">
               <a href="https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz" target="_blank" rel="noopener" class="track-link">Spotify</a>
               <a href="https://www.youtube.com/@ShieldbearerUSA" target="_blank" rel="noopener" class="track-link">YouTube</a>
+              <a href="https://music.apple.com/us/search?term=Shieldbearer" target="_blank" rel="noopener" class="track-link">Apple Music</a>
+              <a href="https://music.amazon.com/search/Shieldbearer" target="_blank" rel="noopener" class="track-link">Amazon Music</a>
               <a href="song-meanings.html" class="track-link">Meaning</a>
             </div>
           </div>
@@ -253,6 +271,8 @@
             <div class="track-links">
               <a href="https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz" target="_blank" rel="noopener" class="track-link">Spotify</a>
               <a href="https://www.youtube.com/@ShieldbearerUSA" target="_blank" rel="noopener" class="track-link">YouTube</a>
+              <a href="https://music.apple.com/us/search?term=Shieldbearer" target="_blank" rel="noopener" class="track-link">Apple Music</a>
+              <a href="https://music.amazon.com/search/Shieldbearer" target="_blank" rel="noopener" class="track-link">Amazon Music</a>
               <a href="song-meanings.html" class="track-link">Meaning</a>
             </div>
           </div>
@@ -271,6 +291,8 @@
             <div class="track-links">
               <a href="https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz" target="_blank" rel="noopener" class="track-link">Spotify</a>
               <a href="https://heavensmetalmagazine.com/index.php/2025/09/02/news-shieldbearer-release-new-quake-video/" target="_blank" rel="noopener" class="track-link">Video</a>
+              <a href="https://music.apple.com/us/search?term=Shieldbearer" target="_blank" rel="noopener" class="track-link">Apple Music</a>
+              <a href="https://music.amazon.com/search/Shieldbearer" target="_blank" rel="noopener" class="track-link">Amazon Music</a>
               <a href="song-meanings.html" class="track-link">Meaning</a>
             </div>
           </div>
@@ -289,6 +311,8 @@
             <div class="track-links">
               <a href="https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz" target="_blank" rel="noopener" class="track-link">Spotify</a>
               <a href="https://www.youtube.com/@ShieldbearerUSA" target="_blank" rel="noopener" class="track-link">YouTube</a>
+              <a href="https://music.apple.com/us/search?term=Shieldbearer" target="_blank" rel="noopener" class="track-link">Apple Music</a>
+              <a href="https://music.amazon.com/search/Shieldbearer" target="_blank" rel="noopener" class="track-link">Amazon Music</a>
               <a href="song-meanings.html" class="track-link">Meaning</a>
             </div>
           </div>
@@ -305,7 +329,10 @@
             <span class="track-ref">Psalm 91:4 &middot; Single</span>
             <p class="track-desc">He will cover you with his feathers. An active, living shield. Not passive shelter.</p>
             <div class="track-links">
+              <a href="https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz" target="_blank" rel="noopener" class="track-link">Spotify</a>
               <a href="https://www.youtube.com/watch?v=9FHgbbVBT1A" target="_blank" rel="noopener" class="track-link">YouTube</a>
+              <a href="https://music.apple.com/us/search?term=Shieldbearer" target="_blank" rel="noopener" class="track-link">Apple Music</a>
+              <a href="https://music.amazon.com/search/Shieldbearer" target="_blank" rel="noopener" class="track-link">Amazon Music</a>
               <a href="song-meanings.html" class="track-link">Meaning</a>
             </div>
           </div>
@@ -322,7 +349,10 @@
             <span class="track-ref">Matthew 5:14 &middot; Single</span>
             <p class="track-desc">You are the light of the world. A city on a hill cannot be hidden. Hold the light high.</p>
             <div class="track-links">
+              <a href="https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz" target="_blank" rel="noopener" class="track-link">Spotify</a>
               <a href="https://www.youtube.com/watch?v=Hnewej6WjkE" target="_blank" rel="noopener" class="track-link">YouTube</a>
+              <a href="https://music.apple.com/us/search?term=Shieldbearer" target="_blank" rel="noopener" class="track-link">Apple Music</a>
+              <a href="https://music.amazon.com/search/Shieldbearer" target="_blank" rel="noopener" class="track-link">Amazon Music</a>
               <a href="song-meanings.html" class="track-link">Meaning</a>
             </div>
           </div>
@@ -339,7 +369,10 @@
             <span class="track-ref">Romans 5:8 &middot; Single</span>
             <p class="track-desc">Amazing Grace reimagined. Newton's words stripped back to their original weight.</p>
             <div class="track-links">
+              <a href="https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz" target="_blank" rel="noopener" class="track-link">Spotify</a>
               <a href="https://www.youtube.com/watch?v=He8MIcrdoxw" target="_blank" rel="noopener" class="track-link">YouTube</a>
+              <a href="https://music.apple.com/us/search?term=Shieldbearer" target="_blank" rel="noopener" class="track-link">Apple Music</a>
+              <a href="https://music.amazon.com/search/Shieldbearer" target="_blank" rel="noopener" class="track-link">Amazon Music</a>
               <a href="song-meanings.html" class="track-link">Meaning</a>
             </div>
           </div>
@@ -362,12 +395,30 @@
     </div>
   </section>
 
+  <section class="signal-band" aria-label="Join the Signal">
+    <div class="signal-wrap">
+      <div>
+        <h2 class="signal-title">Stay in the Signal</h2>
+        <p class="signal-copy">
+          Get release alerts, lyric drops, and video premieres first. Direct updates from Shieldbearer.
+        </p>
+      </div>
+      <div>
+        <form class="signal-form" id="signalForm" novalidate>
+          <input type="email" id="signalEmail" placeholder="Email address" required>
+          <button type="submit">Join the Signal</button>
+        </form>
+        <p class="signal-note">No noise. Only important drops and mission updates.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-main">
       <div class="footer-brand">
         <a href="index.html" class="logo"><img src="images/logo.png" alt="Shieldbearer"></a>
-        <p>Bold Christian metal. Christ proclaimed. Scripture spoken. No ambiguity.</p>
+        <p>Shieldbearer is Christian metal with Scripture at the center. Christ is named plainly in every release and every conversation.</p>
       </div>
       <div class="footer-col">
         <h4>Navigate</h4>
@@ -375,7 +426,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="music.html">Music</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="song-meanings.html">Song Meanings</a></li>
+          <li><a href="song-meanings.html">Lyrics</a></li>
           <li><a href="interviews.html">Press</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener">Merch</a></li>
@@ -391,9 +442,19 @@
           <li><a href="https://linktr.ee/shieldbearerusa" target="_blank" rel="noopener">Linktree</a></li>
         </ul>
       </div>
+      <div class="footer-col">
+        <h4>Take Action</h4>
+        <ul>
+          <li><a href="music.html#armory">Enter the Armory</a></li>
+          <li><a href="song-meanings.html">Read the Scrolls</a></li>
+          <li><a href="interviews.html">Catch the Signal</a></li>
+          <li><a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener">Raise the Banner</a></li>
+          <li><a href="contact.html">Join the Mission</a></li>
+        </ul>
+      </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2025 Shieldbearer. All rights reserved.</p>
+      <p>&copy; 2026 Shieldbearer. All rights reserved.</p>
       <a href="mailto:shieldbearerusa@gmail.com">shieldbearerusa@gmail.com</a>
     </div>
   </footer>

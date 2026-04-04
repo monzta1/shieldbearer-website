@@ -116,4 +116,23 @@
     });
   }
 
+  /* ── SIGNAL SIGNUP (mailto capture fallback) ── */
+  var signalForm = document.getElementById('signalForm');
+  if (signalForm) {
+    signalForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var emailField = document.getElementById('signalEmail');
+      if (!emailField) return;
+      var emailValue = emailField.value.trim();
+      if (!emailValue || !emailValue.includes('@')) {
+        emailField.focus();
+        return;
+      }
+      var subject = encodeURIComponent('Join the Signal');
+      var body = encodeURIComponent('Please add this email to Shieldbearer release updates:\n\n' + emailValue);
+      window.location.href = 'mailto:shieldbearerusa@gmail.com?subject=' + subject + '&body=' + body;
+      signalForm.reset();
+    });
+  }
+
 })();

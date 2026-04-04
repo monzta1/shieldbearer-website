@@ -32,8 +32,9 @@
     .hero-bg {
       position: absolute; inset: 0;
       background:
-        radial-gradient(ellipse 80% 55% at 50% 44%, rgba(192,57,43,.13) 0%, transparent 65%),
-        linear-gradient(180deg, #060202 0%, #040404 100%);
+        linear-gradient(180deg, rgba(4,4,4,.38) 0%, rgba(4,4,4,.9) 78%, #040404 100%),
+        radial-gradient(ellipse 70% 48% at 52% 30%, rgba(231,76,60,.24) 0%, transparent 62%),
+        url('images/galilean-art.png') center top/cover no-repeat;
     }
     .hero-geo {
       position: absolute; inset: 0; pointer-events: none;
@@ -73,12 +74,31 @@
       font-size: .82rem; font-weight: 300;
       letter-spacing: .42em; text-transform: uppercase;
       color: rgba(168,162,154,.55);
-      margin-bottom: 3rem;
+      margin-bottom: 1.2rem;
       animation: fade-up 1.5s .7s ease forwards; opacity: 0;
+    }
+    .hero-headline {
+      font-family: var(--font-display);
+      font-size: clamp(3.4rem, 10vw, 8rem);
+      letter-spacing: .05em;
+      line-height: .96;
+      color: #fff;
+      text-transform: uppercase;
+      margin-bottom: .9rem;
+      text-shadow: 0 10px 30px rgba(0,0,0,.58);
+      animation: fade-up 1.5s .8s ease forwards; opacity: 0;
+    }
+    .hero-subline {
+      max-width: 720px;
+      font-size: 1.04rem;
+      line-height: 1.82;
+      color: rgba(240,235,224,.84);
+      margin-bottom: 2.2rem;
+      animation: fade-up 1.5s .9s ease forwards; opacity: 0;
     }
     .hero-ctas {
       display: flex; gap: 1.2rem; flex-wrap: wrap; justify-content: center;
-      animation: fade-up 1.5s .95s ease forwards; opacity: 0;
+      animation: fade-up 1.5s 1s ease forwards; opacity: 0;
     }
     .scroll-cue {
       position: absolute; bottom: 2rem; left: 50%;
@@ -247,13 +267,18 @@
     <div class="hero-bg"></div>
     <div class="hero-geo"></div>
     <div class="hero-inner">
-      <!-- UPDATE: replace with your actual logo file -->
       <img class="hero-logo" src="images/logo.png" alt="Shieldbearer">
       <div class="hero-rule"></div>
       <p class="hero-tagline">Christ Proclaimed &nbsp;&bull;&nbsp; Scripture Spoken &nbsp;&bull;&nbsp; No Ambiguity</p>
+      <h1 class="hero-headline">Jesus Reigns at Full Volume</h1>
+      <p class="hero-subline">
+        Heavy guitars. Scripture spoken plainly. Metal that points directly to Christ with conviction,
+        clarity, and no compromise.
+      </p>
       <div class="hero-ctas">
-        <a href="music.html" class="btn btn--red">Latest Release</a>
-        <a href="about.html" class="btn btn--ghost">About Shieldbearer</a>
+        <a href="music.html" class="btn btn--red">Listen Now</a>
+        <a href="music.html#armory" class="btn btn--ghost">Enter the Armory</a>
+        <a href="song-meanings.html" class="btn btn--ghost">Read the Scrolls</a>
       </div>
     </div>
     <div class="scroll-cue" aria-hidden="true">
@@ -324,29 +349,65 @@
   ══════════════════════════════════════ -->
   <section class="section--darker" aria-label="Site sections">
     <div class="container">
-      <div class="preview-grid">
+      <span class="eyebrow">Step Inside</span>
+      <h2 class="section-title" style="margin-bottom:.6rem;">The Shieldbearer World</h2>
+      <div class="bar"></div>
+      <div class="world-grid">
 
-        <div class="preview-tile">
-          <div class="tile-icon">01</div>
-          <h3>Song Meanings</h3>
-          <p>Every lyric is intentional. The theology is real. Read what each track is actually saying and why it was written that way.</p>
-          <a href="song-meanings.html">Read the Meanings &rarr;</a>
+        <div class="world-tile">
+          <span class="world-kicker">01</span>
+          <h3 class="world-title">The Armory</h3>
+          <p class="world-copy">Full releases, singles, embeds, and platform links in one clear command center.</p>
+          <a class="world-link" href="music.html">Open the Armory &rarr;</a>
         </div>
 
-        <div class="preview-tile">
-          <div class="tile-icon">02</div>
-          <h3>Press &amp; Interviews</h3>
-          <p>Covered by Eternal Flames UK and Heaven&rsquo;s Metal. The conversations go straight to faith, Scripture, and the weight of proclaiming Christ.</p>
-          <a href="interviews.html">Read the Press &rarr;</a>
+        <div class="world-tile">
+          <span class="world-kicker">02</span>
+          <h3 class="world-title">The Scrolls</h3>
+          <p class="world-copy">Lyrics, meaning, and scripture references for each track. Theology up front, no fog.</p>
+          <a class="world-link" href="song-meanings.html">Read the Scrolls &rarr;</a>
         </div>
 
-        <div class="preview-tile">
-          <div class="tile-icon">03</div>
-          <h3>The Artist</h3>
-          <p>Shieldbearer is Moncy Abraham. Solo. Hybrid. Real guitars through real amps, cinematic production, and a theology that doesn&rsquo;t dilute.</p>
-          <a href="about.html">About Shieldbearer &rarr;</a>
+        <div class="world-tile">
+          <span class="world-kicker">03</span>
+          <h3 class="world-title">The Signal</h3>
+          <p class="world-copy">Press coverage, interviews, and updates for listeners who want the story behind each release.</p>
+          <a class="world-link" href="interviews.html">Catch the Signal &rarr;</a>
         </div>
 
+        <div class="world-tile">
+          <span class="world-kicker">04</span>
+          <h3 class="world-title">The Banner</h3>
+          <p class="world-copy">Official merch built around conviction. Wear the mission and carry it into your city.</p>
+          <a class="world-link" href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener">Raise the Banner &rarr;</a>
+        </div>
+
+        <div class="world-tile">
+          <span class="world-kicker">05</span>
+          <h3 class="world-title">The Mission</h3>
+          <p class="world-copy">The artist, the calling, and direct contact for booking, collaboration, and media.</p>
+          <a class="world-link" href="about.html">Read the Mission &rarr;</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="signal-band" aria-label="Join the Signal">
+    <div class="signal-wrap">
+      <div>
+        <h2 class="signal-title">Join the Signal</h2>
+        <p class="signal-copy">
+          Get new drops, video releases, and major updates first. No spam and no noise.
+          Just direct updates from Shieldbearer.
+        </p>
+      </div>
+      <div>
+        <form class="signal-form" id="signalForm" novalidate>
+          <input type="email" id="signalEmail" placeholder="Email address" required>
+          <button type="submit">Get Updates</button>
+        </form>
+        <p class="signal-note">By joining, you agree to receive release and tour updates.</p>
       </div>
     </div>
   </section>
@@ -366,14 +427,14 @@
   ══════════════════════════════════════ -->
   <section class="section--dark" style="text-align:center;">
     <div class="container">
-      <span class="eyebrow">Get in Touch</span>
-      <h2 class="section-title" style="margin-bottom:.6rem;">Enquiries</h2>
+      <span class="eyebrow">The Mission</span>
+      <h2 class="section-title" style="margin-bottom:.6rem;">Book, Collaborate, or Connect</h2>
       <div class="bar bar--center"></div>
       <p class="section-body" style="max-width:520px;margin:0 auto 2.5rem;">
-        Booking a solo gig, press, licensing, collaboration, or anything else.
-        If you love heavy music and love Jesus, you are in the right place.
+        Solo shows, media, licensing, and collaboration requests go directly to Moncy.
+        If your message is real, it will be heard.
       </p>
-      <a href="contact.html" class="btn btn--red">Send an Enquiry</a>
+      <a href="contact.html" class="btn btn--red">Open Contact</a>
     </div>
   </section>
 
@@ -382,24 +443,23 @@
     <div class="footer-main">
       <div class="footer-brand">
         <a href="index.html" class="logo"><img src="images/logo.png" alt="Shieldbearer"></a>
-        <p>Bold Christian metal. Christ proclaimed. Scripture spoken. No ambiguity.</p>
+        <p>Shieldbearer is Christian metal with Scripture at the center. Christ is named plainly in every release and every conversation.</p>
       </div>
       <div class="footer-col">
         <h4>Navigate</h4>
         <ul>
+          <li><a href="index.html">Home</a></li>
           <li><a href="music.html">Music</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="song-meanings.html">Song Meanings</a></li>
+          <li><a href="song-meanings.html">Lyrics</a></li>
           <li><a href="interviews.html">Press</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <!-- UPDATE: Shopify URL -->
           <li><a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener">Merch</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Follow</h4>
         <ul>
-          <!-- UPDATE: replace # with real profile URLs -->
           <li><a href="https://www.instagram.com/shieldbearerusa/" target="_blank" rel="noopener">Instagram</a></li>
           <li><a href="https://www.facebook.com/shieldbearerusa" target="_blank" rel="noopener">Facebook</a></li>
           <li><a href="https://www.youtube.com/@ShieldbearerUSA" target="_blank" rel="noopener">YouTube</a></li>
@@ -408,9 +468,19 @@
           <li><a href="https://linktr.ee/shieldbearerusa" target="_blank" rel="noopener">Linktree</a></li>
         </ul>
       </div>
+      <div class="footer-col">
+        <h4>Take Action</h4>
+        <ul>
+          <li><a href="music.html#armory">Enter the Armory</a></li>
+          <li><a href="song-meanings.html">Read the Scrolls</a></li>
+          <li><a href="interviews.html">Catch the Signal</a></li>
+          <li><a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener">Raise the Banner</a></li>
+          <li><a href="contact.html">Join the Mission</a></li>
+        </ul>
+      </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2025 Shieldbearer. All rights reserved.</p>
+      <p>&copy; 2026 Shieldbearer. All rights reserved.</p>
       <a href="mailto:shieldbearerusa@gmail.com">shieldbearerusa@gmail.com</a>
     </div>
   </footer>

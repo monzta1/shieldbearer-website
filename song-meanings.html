@@ -10,12 +10,32 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200;300;400;500;600&family=Roboto+Condensed:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <style>
+    .scrolls-banner {
+      margin-top: 1.2rem;
+      border: 1px solid rgba(168,162,154,.14);
+      overflow: hidden;
+      position: relative;
+      max-width: 860px;
+    }
+    .scrolls-banner img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      filter: saturate(1.05) contrast(1.05) brightness(.85);
+    }
+    .scrolls-banner::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 0%, rgba(4,4,4,.7) 100%);
+      pointer-events: none;
+    }
     .meanings-intro {
-      font-size: .93rem;
-      line-height: 1.95;
-      color: rgba(168,162,154,.58);
-      max-width: 620px;
-      margin-bottom: 3rem;
+      font-size: 1rem;
+      line-height: 1.9;
+      color: rgba(168,162,154,.72);
+      max-width: 760px;
+      margin-bottom: 2.2rem;
     }
     .meanings-list {
       display: grid;
@@ -54,10 +74,13 @@
 
   <div class="page-hero section--dark">
     <div class="container page-hero-inner">
-      <span class="eyebrow">Theology &amp; Intent</span>
-      <h1 class="display-title">Song Meanings</h1>
+      <span class="eyebrow">The Scrolls</span>
+      <h1 class="display-title">Lyrics and Meaning</h1>
       <div class="bar"></div>
-      <p>Every lyric is intentional. The theology is real. Click any track to read what it is actually saying and why it was written that way.</p>
+      <p>Every lyric is intentional. Every theme is rooted in Scripture. Open each scroll to read the words, meaning, and references in full.</p>
+      <div class="scrolls-banner" aria-hidden="true">
+        <img src="images/galilean-art.png" alt="">
+      </div>
     </div>
   </div>
 
@@ -70,11 +93,20 @@
         Christ is not hidden in metaphor here. Scripture is the source, not the decoration.
         Each song begins with a text and works outward into sound, emotion, and weight.
       </p>
+      <div class="scroll-jump" aria-label="Song navigation">
+        <a href="#scroll-galilean">Galilean</a>
+        <a href="#scroll-ruach">Ruach</a>
+        <a href="#scroll-quake">Quake</a>
+        <a href="#scroll-the-man">The Man</a>
+        <a href="#scroll-celestial">Celestial</a>
+        <a href="#scroll-wretch">Wretch</a>
+        <a href="#scroll-lanterns">Lanterns</a>
+      </div>
 
       <div class="meanings-list">
 
         <!-- 01: Galilean -->
-        <div class="meaning-card">
+        <div class="meaning-card" id="scroll-galilean">
           <div class="mc-num">01</div>
           <h2 class="mc-title">Galilean</h2>
           <span class="mc-ref">John 1:14</span>
@@ -222,12 +254,21 @@
               Jesus reigns<br>
               The Galilean
             </p>
+            <div class="song-tools">
+              <a href="https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz" target="_blank" rel="noopener">Spotify</a>
+              <a href="https://www.youtube.com/@ShieldbearerUSA" target="_blank" rel="noopener">YouTube</a>
+              <a href="music.html#armory">Back to Armory</a>
+            </div>
+            <div class="song-nav">
+              <a href="#scroll-lanterns">Previous Scroll</a>
+              <a href="#scroll-ruach">Next Scroll</a>
+            </div>
           </div>
           <div class="mc-toggle"><span class="mc-arrow">&#8595;</span>&nbsp; Read Meaning + Lyrics</div>
         </div>
 
         <!-- 02: Ruach -->
-        <div class="meaning-card">
+        <div class="meaning-card" id="scroll-ruach">
           <div class="mc-num">02</div>
           <h2 class="mc-title">Ruach</h2>
           <span class="mc-ref">Genesis 1 &middot; Ezekiel 37 &middot; Zechariah 4</span>
@@ -336,12 +377,21 @@
               When the final roar is spoken<br>
               The one who cries is me
             </p>
+            <div class="song-tools">
+              <a href="https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz" target="_blank" rel="noopener">Spotify</a>
+              <a href="https://www.youtube.com/@ShieldbearerUSA" target="_blank" rel="noopener">YouTube</a>
+              <a href="music.html#armory">Back to Armory</a>
+            </div>
+            <div class="song-nav">
+              <a href="#scroll-galilean">Previous Scroll</a>
+              <a href="#scroll-quake">Next Scroll</a>
+            </div>
           </div>
           <div class="mc-toggle"><span class="mc-arrow">&#8595;</span>&nbsp; Read Meaning + Lyrics</div>
         </div>
 
         <!-- 03: Quake -->
-        <div class="meaning-card">
+        <div class="meaning-card" id="scroll-quake">
           <div class="mc-num">03</div>
           <h2 class="mc-title">Quake</h2>
           <span class="mc-ref">Matthew 28:2</span>
@@ -362,12 +412,21 @@
               <p>"And behold, there was a great earthquake, for an angel of the Lord descended from heaven."</p>
             </div>
             <!-- UPDATE: add your own meaning here -->
+            <div class="song-tools">
+              <a href="https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz" target="_blank" rel="noopener">Spotify</a>
+              <a href="https://heavensmetalmagazine.com/index.php/2025/09/02/news-shieldbearer-release-new-quake-video/" target="_blank" rel="noopener">Video</a>
+              <a href="music.html#armory">Back to Armory</a>
+            </div>
+            <div class="song-nav">
+              <a href="#scroll-ruach">Previous Scroll</a>
+              <a href="#scroll-the-man">Next Scroll</a>
+            </div>
           </div>
           <div class="mc-toggle"><span class="mc-arrow">&#8595;</span>&nbsp; Read the Meaning</div>
         </div>
 
         <!-- 04: The Man -->
-        <div class="meaning-card">
+        <div class="meaning-card" id="scroll-the-man">
           <div class="mc-num">04</div>
           <h2 class="mc-title">The Man</h2>
           <span class="mc-ref">John 19:5</span>
@@ -389,12 +448,21 @@
               <p>"So Jesus came out, wearing the crown of thorns and the purple robe. Pilate said to them, 'Behold the man!'"</p>
             </div>
             <!-- UPDATE: add your own meaning here -->
+            <div class="song-tools">
+              <a href="https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz" target="_blank" rel="noopener">Spotify</a>
+              <a href="https://www.youtube.com/@ShieldbearerUSA" target="_blank" rel="noopener">YouTube</a>
+              <a href="music.html#armory">Back to Armory</a>
+            </div>
+            <div class="song-nav">
+              <a href="#scroll-quake">Previous Scroll</a>
+              <a href="#scroll-celestial">Next Scroll</a>
+            </div>
           </div>
           <div class="mc-toggle"><span class="mc-arrow">&#8595;</span>&nbsp; Read the Meaning</div>
         </div>
 
         <!-- 05: Celestial Shield -->
-        <div class="meaning-card">
+        <div class="meaning-card" id="scroll-celestial">
           <div class="mc-num">05</div>
           <h2 class="mc-title">Celestial Shield</h2>
           <span class="mc-ref">Psalm 91:4</span>
@@ -415,12 +483,21 @@
               <p>"He will cover you with his pinions, and under his wings you will find refuge; his faithfulness is a shield and buckler."</p>
             </div>
             <!-- UPDATE: add your own meaning here -->
+            <div class="song-tools">
+              <a href="https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz" target="_blank" rel="noopener">Spotify</a>
+              <a href="https://www.youtube.com/watch?v=9FHgbbVBT1A" target="_blank" rel="noopener">YouTube</a>
+              <a href="music.html#armory">Back to Armory</a>
+            </div>
+            <div class="song-nav">
+              <a href="#scroll-the-man">Previous Scroll</a>
+              <a href="#scroll-wretch">Next Scroll</a>
+            </div>
           </div>
           <div class="mc-toggle"><span class="mc-arrow">&#8595;</span>&nbsp; Read the Meaning</div>
         </div>
 
         <!-- 06: A Wretch Like Me -->
-        <div class="meaning-card">
+        <div class="meaning-card" id="scroll-wretch">
           <div class="mc-num">06</div>
           <h2 class="mc-title">A Wretch Like Me</h2>
           <span class="mc-ref">Romans 5:8</span>
@@ -441,12 +518,21 @@
               <p>"But God shows his love for us in that while we were still sinners, Christ died for us."</p>
             </div>
             <!-- UPDATE: add your own meaning here -->
+            <div class="song-tools">
+              <a href="https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz" target="_blank" rel="noopener">Spotify</a>
+              <a href="https://www.youtube.com/watch?v=He8MIcrdoxw" target="_blank" rel="noopener">YouTube</a>
+              <a href="music.html#armory">Back to Armory</a>
+            </div>
+            <div class="song-nav">
+              <a href="#scroll-celestial">Previous Scroll</a>
+              <a href="#scroll-lanterns">Next Scroll</a>
+            </div>
           </div>
           <div class="mc-toggle"><span class="mc-arrow">&#8595;</span>&nbsp; Read the Meaning</div>
         </div>
 
         <!-- 07: Lanterns -->
-        <div class="meaning-card">
+        <div class="meaning-card" id="scroll-lanterns">
           <div class="mc-num">07</div>
           <h2 class="mc-title">Lanterns</h2>
           <span class="mc-ref">Matthew 5:14</span>
@@ -468,6 +554,15 @@
               <p>"You are the light of the world. A city set on a hill cannot be hidden. Nor do people light a lamp and put it under a basket, but on a stand, and it gives light to all in the house."</p>
             </div>
             <!-- UPDATE: add your own meaning here -->
+            <div class="song-tools">
+              <a href="https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz" target="_blank" rel="noopener">Spotify</a>
+              <a href="https://www.youtube.com/watch?v=Hnewej6WjkE" target="_blank" rel="noopener">YouTube</a>
+              <a href="music.html#armory">Back to Armory</a>
+            </div>
+            <div class="song-nav">
+              <a href="#scroll-wretch">Previous Scroll</a>
+              <a href="#scroll-galilean">Next Scroll</a>
+            </div>
           </div>
           <div class="mc-toggle"><span class="mc-arrow">&#8595;</span>&nbsp; Read the Meaning</div>
         </div>
@@ -478,12 +573,30 @@
     </div>
   </section>
 
+  <section class="signal-band" aria-label="Join the Signal">
+    <div class="signal-wrap">
+      <div>
+        <h2 class="signal-title">Get New Scrolls First</h2>
+        <p class="signal-copy">
+          Join the Signal for lyric drops, scripture breakdowns, and new release alerts before public push.
+        </p>
+      </div>
+      <div>
+        <form class="signal-form" id="signalForm" novalidate>
+          <input type="email" id="signalEmail" placeholder="Email address" required>
+          <button type="submit">Join the Signal</button>
+        </form>
+        <p class="signal-note">Direct updates only. No fluff and no spam.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-main">
       <div class="footer-brand">
         <a href="index.html" class="logo"><img src="images/logo.png" alt="Shieldbearer"></a>
-        <p>Bold Christian metal. Christ proclaimed. Scripture spoken. No ambiguity.</p>
+        <p>Shieldbearer is Christian metal with Scripture at the center. Christ is named plainly in every release and every conversation.</p>
       </div>
       <div class="footer-col">
         <h4>Navigate</h4>
@@ -491,7 +604,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="music.html">Music</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="song-meanings.html">Song Meanings</a></li>
+          <li><a href="song-meanings.html">Lyrics</a></li>
           <li><a href="interviews.html">Press</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener">Merch</a></li>
@@ -507,9 +620,19 @@
           <li><a href="https://linktr.ee/shieldbearerusa" target="_blank" rel="noopener">Linktree</a></li>
         </ul>
       </div>
+      <div class="footer-col">
+        <h4>Take Action</h4>
+        <ul>
+          <li><a href="music.html#armory">Enter the Armory</a></li>
+          <li><a href="song-meanings.html">Read the Scrolls</a></li>
+          <li><a href="interviews.html">Catch the Signal</a></li>
+          <li><a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener">Raise the Banner</a></li>
+          <li><a href="contact.html">Join the Mission</a></li>
+        </ul>
+      </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2025 Shieldbearer. All rights reserved.</p>
+      <p>&copy; 2026 Shieldbearer. All rights reserved.</p>
       <a href="mailto:shieldbearerusa@gmail.com">shieldbearerusa@gmail.com</a>
     </div>
   </footer>
