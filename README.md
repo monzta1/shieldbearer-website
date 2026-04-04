@@ -37,6 +37,14 @@ shieldbearer/
 
 ---
 
+## Analytics Setup
+
+For GTM, GA4, Search Console, and Clarity setup and usage, see:
+
+- `ANALYTICS_SETUP.md`
+
+---
+
 ## How to Deploy on GitHub Pages
 
 1. Create a GitHub account if you don't have one: github.com

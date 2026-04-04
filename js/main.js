@@ -6,6 +6,12 @@
 (function () {
   'use strict';
 
+  function track(eventName, params) {
+    if (typeof window.sbTrack === 'function') {
+      window.sbTrack(eventName, params || {});
+    }
+  }
+
   /* ── NAV SCROLL STATE ── */
   var nav = document.querySelector('.site-nav');
   if (nav) {
@@ -56,7 +62,14 @@
       document.querySelectorAll('.meaning-card.open').forEach(function (c) {
         c.classList.remove('open');
       });
-      if (!isOpen) card.classList.add('open');
+      if (!isOpen) {
+        card.classList.add('open');
+        var titleEl = card.querySelector('.mc-title');
+        track('scroll_open', {
+          song_title: titleEl ? titleEl.textContent.trim() : '',
+          from_path: window.location.pathname || '/'
+        });
+      }
     });
   });
 
@@ -95,11 +108,13 @@
           if (!r.ok) throw new Error('Formspree request failed');
           out.className = 'form-msg ok';
           out.textContent = 'Message sent. Thank you.';
+          track('contact_submit_success', { method: 'formspree', from_path: window.location.pathname || '/' });
           enquiryForm.reset();
         })
         .catch(function () {
           out.className = 'form-msg err';
           out.textContent = 'Direct send failed. Opening your mail app...';
+          track('contact_submit_fallback', { method: 'mailto', from_path: window.location.pathname || '/' });
           var subjectFail = encodeURIComponent('Shieldbearer Enquiry: ' + type);
           var bodyFail    = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nType: ' + type + '\n\n' + msg);
           window.location.href = 'mailto:shieldbearerusa@gmail.com?subject=' + subjectFail + '&body=' + bodyFail;
@@ -110,6 +125,7 @@
       /* Mailto fallback for GitHub Pages (no backend) */
       out.className = 'form-msg ok';
       out.textContent = 'Opening your mail app...';
+      track('contact_submit_fallback', { method: 'mailto', from_path: window.location.pathname || '/' });
       var subject = encodeURIComponent('Shieldbearer Enquiry: ' + type);
       var body    = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nType: ' + type + '\n\n' + msg);
       window.location.href = 'mailto:shieldbearerusa@gmail.com?subject=' + subject + '&body=' + body;
@@ -130,6 +146,7 @@
       }
       var subject = encodeURIComponent('Join the Signal');
       var body = encodeURIComponent('Please add this email to Shieldbearer release updates:\n\n' + emailValue);
+      track('signal_signup_submit', { method: 'mailto', from_path: window.location.pathname || '/' });
       window.location.href = 'mailto:shieldbearerusa@gmail.com?subject=' + subject + '&body=' + body;
       signalForm.reset();
     });
