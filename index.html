@@ -302,7 +302,9 @@
       min-width: 0;
       border-left: 1px solid rgba(168,162,154,.13);
       background: linear-gradient(180deg, rgba(255,255,255,.018), rgba(255,255,255,.008));
-      max-height: 430px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
       overflow: hidden;
     }
     .featured-track__lyrics-title {
@@ -314,7 +316,8 @@
       margin-bottom: 1.1rem;
     }
     .featured-track__lyrics-scroll {
-      max-height: 382px;
+      flex: 1 1 auto;
+      min-height: 0;
       overflow-y: auto;
       padding-right: .8rem;
       line-height: 1.72;
@@ -425,6 +428,7 @@
       }
       .featured-track__lyrics {
         max-height: none;
+        height: auto;
       }
       .preview-grid   { grid-template-columns: 1fr; }
       #hero { min-height: 74svh; height: 74svh; }
