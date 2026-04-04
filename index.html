@@ -24,6 +24,15 @@
       position: relative;
       overflow: hidden;
     }
+    #hero::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: clamp(90px, 16vh, 170px);
+      background: linear-gradient(to bottom, rgba(4,4,4,0), rgba(4,4,4,.62) 68%, var(--black) 100%);
+      z-index: 1;
+      pointer-events: none;
+    }
     .hero-bg {
       position: absolute; inset: 0;
       background:
@@ -56,7 +65,20 @@
     }
     .hero-content-section {
       background: var(--black);
-      padding: clamp(5rem, 9vw, 8rem) 0 clamp(4.5rem, 8vw, 7rem);
+      position: relative;
+      z-index: 2;
+      margin-top: clamp(-3.8rem, -6vw, -2.2rem);
+      padding: clamp(6rem, 10vw, 9rem) 0 clamp(4.5rem, 8vw, 7rem);
+    }
+    .hero-content-section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: min(980px, calc(100% - 3rem));
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(231,76,60,.42), transparent);
+      opacity: .7;
     }
     .hero-content-inner {
       position: relative;
@@ -117,11 +139,12 @@
     .scroll-cue span {
       font-family: var(--font-head);
       font-size: .52rem; letter-spacing: .4em;
-      color: rgba(168,162,154,.2); text-transform: uppercase;
+      color: rgba(240,235,224,.44); text-transform: uppercase;
+      text-shadow: 0 2px 8px rgba(0,0,0,.35);
     }
     .scroll-cue-bar {
-      width: 1px; height: 34px;
-      background: linear-gradient(to bottom, var(--red), transparent);
+      width: 1px; height: 38px;
+      background: linear-gradient(to bottom, rgba(231,76,60,.92), rgba(231,76,60,.24), transparent);
       animation: scroll-bar 2s ease-in-out infinite;
     }
 
@@ -231,6 +254,10 @@
       .release-grid   { grid-template-columns: 1fr; gap: 2.5rem; }
       .preview-grid   { grid-template-columns: 1fr; }
       #hero { min-height: 100svh; height: 100svh; }
+      .hero-content-section {
+        margin-top: clamp(-2.2rem, -7vw, -1.2rem);
+        padding-top: clamp(5.2rem, 11vw, 6.5rem);
+      }
     }
   </style>
 </head>
