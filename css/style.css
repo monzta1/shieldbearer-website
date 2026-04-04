@@ -537,7 +537,7 @@ section { padding: 5.5rem 0; position: relative; }
   transition: max-height .5s ease, opacity .4s;
   opacity: 0;
 }
-.meaning-card.open .mc-body { max-height: 600px; opacity: 1; }
+.meaning-card.open .mc-body { max-height: 4000px; opacity: 1; }
 .meaning-card .mc-toggle {
   font-family: var(--font-head);
   font-size: .57rem;
