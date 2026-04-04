@@ -196,8 +196,8 @@
       background: linear-gradient(to right, transparent, rgba(231,76,60,.42), transparent);
     }
     .featured-track__media {
-      display: grid;
-      gap: 1.1rem;
+      display: flex;
+      flex-direction: column;
       min-width: 0;
     }
     .featured-track__panel {
@@ -206,20 +206,26 @@
       padding: clamp(1.2rem, 2.5vw, 1.8rem);
       min-width: 0;
     }
-    .featured-track__artwork {
-      padding: clamp(.55rem, 1.1vw, .8rem);
-      overflow: hidden;
+    .featured-track__media-panel {
       display: flex;
-      align-items: center;
-      justify-content: center;
+      flex-direction: column;
+      gap: 1.2rem;
+      height: 100%;
+    }
+    .featured-track__artwork {
+      padding: clamp(.65rem, 1.2vw, .9rem);
+      display: grid;
+      place-items: center;
       aspect-ratio: 1 / 1;
       background: radial-gradient(ellipse at center, rgba(255,255,255,.04), rgba(255,255,255,.01));
+      border: 1px solid rgba(168,162,154,.14);
     }
     .featured-track__artwork img {
       display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
       border: 1px solid rgba(168,162,154,.16);
       background: rgba(0,0,0,.35);
     }
@@ -389,7 +395,6 @@
         grid-template-columns: 1fr;
       }
       .featured-track__media {
-        grid-template-columns: 1fr;
         gap: 1rem;
       }
       .preview-grid   { grid-template-columns: 1fr; }
@@ -513,29 +518,31 @@
     <div class="container">
       <article class="featured-track featured-track--galilean" data-track="galilean">
         <div class="featured-track__media">
-          <figure class="featured-track__panel featured-track__artwork" aria-label="Galilean artwork thumbnail">
-            <img src="images/galilean-art.png" alt="Galilean single artwork" width="768" height="768">
-          </figure>
-          <div class="featured-track__panel featured-track__body">
-            <span class="badge">Now Playing</span>
-            <h2 class="featured-track__title" id="release-heading">Galilean</h2>
-            <p class="featured-track__meta">Featured Track &middot; 2025</p>
-            <p class="featured-track__desc">
-              Where cosmos meets faith. Press play and step into the weight of creation,
-              judgment, and the Name above every star.
-            </p>
-            <div class="featured-track__player-wrap">
-              <iframe
-                class="featured-track__player"
-                src="https://open.spotify.com/embed/album/0UqnB3Kw8s4yiDUVgvvgDT?utm_source=generator"
-                title="Spotify player for Galilean"
-                loading="lazy"
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
-              </iframe>
-            </div>
-            <div class="featured-track__actions">
-              <a href="https://open.spotify.com/album/0UqnB3Kw8s4yiDUVgvvgDT" target="_blank" rel="noopener" class="btn btn--red">Listen Now</a>
-              <a href="https://open.spotify.com/album/0UqnB3Kw8s4yiDUVgvvgDT" target="_blank" rel="noopener" class="btn btn--ghost">Open on Spotify</a>
+          <div class="featured-track__panel featured-track__media-panel">
+            <figure class="featured-track__artwork" aria-label="Galilean artwork thumbnail">
+              <img src="images/galilean-art.png" alt="Galilean single artwork" width="768" height="768">
+            </figure>
+            <div class="featured-track__body">
+              <span class="badge">Now Playing</span>
+              <h2 class="featured-track__title" id="release-heading">Galilean</h2>
+              <p class="featured-track__meta">Featured Track &middot; 2025</p>
+              <p class="featured-track__desc">
+                Where cosmos meets faith. Press play and step into the weight of creation,
+                judgment, and the Name above every star.
+              </p>
+              <div class="featured-track__player-wrap">
+                <iframe
+                  class="featured-track__player"
+                  src="https://open.spotify.com/embed/album/0UqnB3Kw8s4yiDUVgvvgDT?utm_source=generator"
+                  title="Spotify player for Galilean"
+                  loading="lazy"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+                </iframe>
+              </div>
+              <div class="featured-track__actions">
+                <a href="https://open.spotify.com/album/0UqnB3Kw8s4yiDUVgvvgDT" target="_blank" rel="noopener" class="btn btn--red">Listen Now</a>
+                <a href="https://open.spotify.com/album/0UqnB3Kw8s4yiDUVgvvgDT" target="_blank" rel="noopener" class="btn btn--ghost">Open on Spotify</a>
+              </div>
             </div>
           </div>
         </div>
