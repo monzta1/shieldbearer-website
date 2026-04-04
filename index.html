@@ -23,26 +23,27 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-end;
       text-align: center;
       position: relative;
       overflow: hidden;
       padding-top: calc(var(--nav-h) + clamp(1.5rem, 3vw, 2.75rem));
+      padding-bottom: clamp(5rem, 13vh, 11rem);
     }
     .hero-bg {
       position: absolute; inset: 0;
       background:
-        linear-gradient(180deg, rgba(4,4,4,.12) 0%, rgba(4,4,4,.34) 60%, rgba(4,4,4,.56) 100%),
-        radial-gradient(ellipse 72% 56% at 52% 28%, rgba(231,76,60,.2) 0%, transparent 64%),
-        radial-gradient(circle at 20% 18%, rgba(124, 255, 234, .14) 0%, transparent 35%),
-        radial-gradient(circle at 80% 22%, rgba(94, 130, 255, .16) 0%, transparent 36%),
+        linear-gradient(180deg, rgba(4,4,4,.02) 0%, rgba(4,4,4,.16) 62%, rgba(4,4,4,.34) 100%),
+        radial-gradient(ellipse 74% 58% at 52% 28%, rgba(231,76,60,.16) 0%, transparent 65%),
+        radial-gradient(circle at 22% 18%, rgba(124, 255, 234, .2) 0%, transparent 36%),
+        radial-gradient(circle at 80% 20%, rgba(100, 136, 255, .22) 0%, transparent 38%),
         url('images/galilean-art.png') center top/cover no-repeat;
-      filter: saturate(1.24) contrast(1.08) brightness(1.08);
+      filter: saturate(1.4) contrast(1.12) brightness(1.18);
     }
     .hero-bg::after {
       content: '';
       position: absolute; inset: 0;
-      background: linear-gradient(180deg, rgba(4,4,4,0) 0%, rgba(4,4,4,.22) 55%, rgba(4,4,4,.48) 100%);
+      background: linear-gradient(180deg, rgba(4,4,4,0) 0%, rgba(4,4,4,.1) 62%, rgba(4,4,4,.26) 100%);
     }
     .hero-geo {
       position: absolute; inset: 0; pointer-events: none;
@@ -64,6 +65,7 @@
       display: flex; flex-direction: column; align-items: center;
       max-width: 980px;
       padding: 0 1.5rem;
+      margin-top: clamp(8rem, 23vh, 16rem);
     }
     .hero-rule {
       width: 2px; height: 68px;
@@ -88,7 +90,7 @@
       color: #fff;
       text-transform: uppercase;
       margin-bottom: .9rem;
-      text-shadow: 0 10px 34px rgba(0,0,0,.52);
+      text-shadow: 0 8px 24px rgba(0,0,0,.42);
       animation: fade-up 1.5s .8s ease forwards; opacity: 0;
     }
     .hero-subline {
@@ -96,7 +98,7 @@
       font-size: 1.04rem;
       line-height: 1.82;
       color: rgba(240,235,224,.92);
-      text-shadow: 0 2px 12px rgba(0,0,0,.44);
+      text-shadow: 0 2px 10px rgba(0,0,0,.36);
       margin-bottom: 2.2rem;
       animation: fade-up 1.5s .9s ease forwards; opacity: 0;
     }
@@ -226,6 +228,13 @@
     @media (max-width: 900px) {
       .release-grid   { grid-template-columns: 1fr; gap: 2.5rem; }
       .preview-grid   { grid-template-columns: 1fr; }
+      #hero {
+        justify-content: flex-end;
+        padding-bottom: clamp(4.2rem, 11vh, 7rem);
+      }
+      .hero-inner {
+        margin-top: clamp(5rem, 16vh, 9rem);
+      }
     }
   </style>
 </head>
