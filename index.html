@@ -303,8 +303,6 @@
       background: linear-gradient(180deg, rgba(255,255,255,.018), rgba(255,255,255,.008));
       display: flex;
       flex-direction: column;
-      height: var(--featured-lyrics-panel-h, auto);
-      max-height: var(--featured-lyrics-panel-h, none);
       overflow: hidden;
     }
     .featured-track__lyrics-title {
@@ -316,8 +314,7 @@
       margin-bottom: 1.1rem;
     }
     .featured-track__lyrics-scroll {
-      flex: 1 1 auto;
-      min-height: 0;
+      height: 560px;
       overflow-y: auto;
       padding-right: .8rem;
       line-height: 1.72;
@@ -427,7 +424,6 @@
         gap: 1rem;
       }
       .featured-track__lyrics {
-        max-height: none;
         height: auto;
       }
       .preview-grid   { grid-template-columns: 1fr; }
@@ -471,7 +467,7 @@
         min-width: 0;
         width: 100%;
       }
-      .featured-track__lyrics-scroll { max-height: 420px; }
+      .featured-track__lyrics-scroll { height: 360px; }
       .featured-track__lyrics { border-left: 0; }
     }
     @media (max-width: 640px) {
