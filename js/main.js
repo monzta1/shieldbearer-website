@@ -73,7 +73,7 @@
     });
   });
 
-  /* ── ENQUIRY FORM (Formspree + mailto fallback) ── */
+  /* ── ENQUIRY FORM (Formspree) ── */
   var enquiryForm = document.getElementById('enquiryForm');
   if (enquiryForm) {
     enquiryForm.addEventListener('submit', function (e) {
@@ -96,43 +96,34 @@
         return;
       }
 
-      if (endpoint) {
-        out.className = 'form-msg ok';
-        out.textContent = 'Sending message...';
-        fetch(endpoint, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({ name: name, email: email, type: type, message: msg })
-        })
-        .then(function (r) {
-          if (!r.ok) throw new Error('Formspree request failed');
-          out.className = 'form-msg ok';
-          out.textContent = 'Message sent. Thank you.';
-          track('contact_submit_success', { method: 'formspree', from_path: window.location.pathname || '/' });
-          enquiryForm.reset();
-        })
-        .catch(function () {
-          out.className = 'form-msg err';
-          out.textContent = 'Direct send failed. Opening your mail app...';
-          track('contact_submit_fallback', { method: 'mailto', from_path: window.location.pathname || '/' });
-          var subjectFail = encodeURIComponent('Shieldbearer Enquiry: ' + type);
-          var bodyFail    = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nType: ' + type + '\n\n' + msg);
-          window.location.href = 'mailto:shieldbearerusa@gmail.com?subject=' + subjectFail + '&body=' + bodyFail;
-        });
+      if (!endpoint || endpoint.indexOf('REPLACE_WITH_YOUR_FORMSPREE_ID') !== -1) {
+        out.className = 'form-msg err';
+        out.textContent = 'Form endpoint not configured yet.';
         return;
       }
 
-      /* Mailto fallback for GitHub Pages (no backend) */
       out.className = 'form-msg ok';
-      out.textContent = 'Opening your mail app...';
-      track('contact_submit_fallback', { method: 'mailto', from_path: window.location.pathname || '/' });
-      var subject = encodeURIComponent('Shieldbearer Enquiry: ' + type);
-      var body    = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nType: ' + type + '\n\n' + msg);
-      window.location.href = 'mailto:shieldbearerusa@gmail.com?subject=' + subject + '&body=' + body;
+      out.textContent = 'Sending message...';
+      fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ name: name, email: email, type: type, message: msg })
+      })
+      .then(function (r) {
+        if (!r.ok) throw new Error('Formspree request failed');
+        out.className = 'form-msg ok';
+        out.textContent = 'Message sent. Thank you.';
+        track('contact_submit_success', { method: 'formspree', from_path: window.location.pathname || '/' });
+        enquiryForm.reset();
+      })
+      .catch(function () {
+        out.className = 'form-msg err';
+        out.textContent = 'Message failed. Please try again in a moment.';
+      });
     });
   }
 
-  /* ── SIGNAL SIGNUP (mailto capture fallback) ── */
+  /* ── SIGNAL SIGNUP (ConvertKit) ── */
   var signalForm = document.getElementById('signalForm');
   if (signalForm) {
     signalForm.addEventListener('submit', function (e) {
@@ -140,15 +131,30 @@
       var emailField = document.getElementById('signalEmail');
       if (!emailField) return;
       var emailValue = emailField.value.trim();
+      var endpoint = (signalForm.getAttribute('data-convertkit-endpoint') || '').trim();
+      var note = signalForm.parentElement ? signalForm.parentElement.querySelector('.signal-note') : null;
       if (!emailValue || !emailValue.includes('@')) {
         emailField.focus();
         return;
       }
-      var subject = encodeURIComponent('Join the Signal');
-      var body = encodeURIComponent('Please add this email to Shieldbearer release updates:\n\n' + emailValue);
-      track('signal_signup_submit', { method: 'mailto', from_path: window.location.pathname || '/' });
-      window.location.href = 'mailto:shieldbearerusa@gmail.com?subject=' + subject + '&body=' + body;
-      signalForm.reset();
+      if (!endpoint || endpoint.indexOf('REPLACE_WITH_YOUR_CONVERTKIT_FORM_ID') !== -1) {
+        if (note) note.textContent = 'Email form is not configured yet.';
+        return;
+      }
+      fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Accept': 'application/json' },
+        body: new URLSearchParams({ email_address: emailValue }).toString()
+      })
+      .then(function (r) {
+        if (!r.ok) throw new Error('ConvertKit request failed');
+        if (note) note.textContent = 'You are in. Watch for the next drop.';
+        track('signal_signup_submit', { method: 'convertkit', from_path: window.location.pathname || '/' });
+        signalForm.reset();
+      })
+      .catch(function () {
+        if (note) note.textContent = 'Signup failed. Please try again.';
+      });
     });
   }
 
