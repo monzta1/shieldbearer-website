@@ -216,9 +216,11 @@
     .song-dossier__lyrics-text {
       white-space: pre-line;
       font-size: .97rem;
-      line-height: 1.75;
+      line-height: 1.9;
       color: rgba(240,235,224,.93);
       max-width: 72ch;
+      font-style: italic;
+      letter-spacing: .01em;
     }
     .song-dossier__actions {
       display: flex;
@@ -620,6 +622,7 @@
         var tagsHtml = (song.tags || []).map(function (t) {
           return '<span class="song-dossier__tag">' + escapeHtml(t) + '</span>';
         }).join('');
+        var lyricsText = escapeHtml(String(song.lyrics || '').replace(/\\n/g, '\n'));
 
         return '' +
           '<article class="song-dossier-panel song-dossier">' +
@@ -644,7 +647,7 @@
             '</section>' +
             '<section class="song-dossier__block song-dossier__lyrics">' +
               '<h3 class="song-dossier__block-title">Lyrics</h3>' +
-              '<div class="song-dossier__lyrics-text">' + escapeHtml(song.lyrics) + '</div>' +
+              '<div class="song-dossier__lyrics-text">' + lyricsText + '</div>' +
             '</section>' +
             '<div class="song-dossier__actions">' +
               '<a href="' + escapeHtml(song.actions.spotify) + '" target="_blank" rel="noopener">Spotify</a>' +
