@@ -233,7 +233,7 @@
       padding: clamp(.85rem, 1.5vw, 1.15rem);
       display: grid;
       place-items: center;
-      aspect-ratio: 3 / 2;
+      aspect-ratio: 1;
       background: radial-gradient(ellipse at center, rgba(255,255,255,.045), rgba(255,255,255,.012));
       border: 1px solid rgba(168,162,154,.14);
       margin-bottom: .06rem;
@@ -299,6 +299,7 @@
     }
     .featured-track__lyrics {
       min-width: 0;
+      min-height: 0;
       border-left: 1px solid rgba(168,162,154,.13);
       background: linear-gradient(180deg, rgba(255,255,255,.018), rgba(255,255,255,.008));
       display: flex;
@@ -316,7 +317,8 @@
       margin-bottom: .62rem;
     }
     .featured-track__lyrics-scroll {
-      height: 840px;
+      flex: 1;
+      min-height: 0;
       overflow-y: auto;
       padding-right: .8rem;
       line-height: 1.72;
@@ -406,6 +408,7 @@
       }
     }
     @media (max-width: 640px) {
+      .hero-bg { background-position: center 16%; }
       .hero-rule { margin-bottom: 1.6rem; }
       .hero-tagline { margin-bottom: 1.2rem; }
       .hero-headline { margin-bottom: 1.05rem; }
@@ -416,21 +419,9 @@
         max-width: 390px;
         gap: .72rem;
       }
-      .hero-ctas .btn {
-        min-width: 0;
-        width: 100%;
-      }
-      .featured-track__actions .btn {
-        min-width: 0;
-        width: 100%;
-      }
-      .featured-track__lyrics-scroll { height: 360px; }
-      .featured-track__lyrics { border-left: 0; }
-    }
-    @media (max-width: 640px) {
-      .hero-bg {
-        background-position: center 16%;
-      }
+      .hero-ctas .btn { min-width: 0; width: 100%; }
+      .featured-track__actions .btn { min-width: 0; width: 100%; }
+      .featured-track__lyrics { border-left: 0; max-height: 400px; }
     }
   </style>
 </head>

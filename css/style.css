@@ -23,6 +23,14 @@
   --nav-h: 68px;
   --max-w: 1240px;
   --pad:   3rem;
+
+  /* ── SPACING SCALE ── */
+  --sp-xs:      0.5rem;   /*  8px — tight gaps, icon spacing */
+  --sp-sm:      1rem;     /* 16px — inline spacing, small gaps */
+  --sp-md:      1.5rem;   /* 24px — component internal padding */
+  --sp-lg:      2rem;     /* 32px — between components */
+  --sp-xl:      3rem;     /* 48px — generous layout breathing room */
+  --sp-section: 5rem;     /* 80px — vertical section padding */
 }
 
 /* ── RESET ── */
@@ -244,7 +252,7 @@ button { cursor: pointer; font-family: inherit; }
 }
 
 /* ── SECTIONS ── */
-section { padding: 6.8rem 0; position: relative; }
+section { padding: var(--sp-section) 0; position: relative; }
 .section--dark    { background: var(--black-2); }
 .section--darker  { background: var(--dark); }
 
@@ -874,7 +882,7 @@ section { padding: 6.8rem 0; position: relative; }
   body { font-size: 16px; }
   .display-title { font-size: clamp(2.3rem, 12vw, 3.8rem); }
   .section-title { font-size: clamp(2rem, 10vw, 3.3rem); }
-  section { padding: 5.6rem 0; }
+  section { padding: 3.5rem 0; }
   .footer-main { grid-template-columns: 1fr; gap: 2rem; }
   .world-grid   { grid-template-columns: 1fr; }
   .signal-form  { flex-direction: column; }
