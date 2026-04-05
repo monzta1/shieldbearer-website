@@ -486,7 +486,7 @@
           },
           lyrics: 'Master, we proclaim You, sovereign over all\\nBy Your breath the void surrendered and the silent depths were called\\nWhen the final trumpet tears the heavens from the sky\\nEvery nation sees the scars of the Lamb who rose to life\\n\\nRUACH, shake the ages\\nLet the firmament awake\\nIf the stones erupt in thunder\\nThen ignite my very frame\\nRUACH, shake the ages\\nAll You fashioned bow and see\\nWhen the final roar is spoken\\nThe one who cries is me',
           actions: {
-            spotify: 'https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz',
+            spotify: 'https://open.spotify.com/track/54vAgzYCsp5k2lAJ76CYHx',
             youtube: 'https://www.youtube.com/@ShieldbearerUSA',
             armory: 'music.html#armory'
           }
@@ -632,7 +632,7 @@
         var clean = String(url || '').trim();
         if (!clean || clean.indexOf('open.spotify.com') === -1) return '';
         clean = clean.replace(/\?.*$/, '');
-        var m = clean.match(/open\.spotify\.com\/(track|album|playlist|artist)\/([A-Za-z0-9]+)/);
+        var m = clean.match(/open\.spotify\.com\/(track|album|playlist)\/([A-Za-z0-9]+)/);
         if (!m) return '';
         return 'https://open.spotify.com/embed/' + m[1] + '/' + m[2] + '?utm_source=generator';
       }
