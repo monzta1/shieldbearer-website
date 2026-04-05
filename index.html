@@ -334,6 +334,48 @@
       color: rgba(240,235,224,.9);
     }
 
+    /* Featured video */
+    .featured-video-section {
+      background: var(--black-2);
+      padding: clamp(4.2rem, 7vw, 5.6rem) 0;
+    }
+    .featured-video {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 var(--pad);
+      text-align: center;
+    }
+    .featured-video-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.1rem, 4.8vw, 3.4rem);
+      letter-spacing: .06em;
+      color: #fff;
+      margin-bottom: .55rem;
+    }
+    .featured-video-copy {
+      max-width: 760px;
+      margin: 0 auto 1.5rem;
+      font-size: .98rem;
+      line-height: 1.78;
+      color: rgba(240,235,224,.74);
+    }
+    .featured-video-frame {
+      border: 1px solid rgba(168,162,154,.2);
+      background: rgba(4,4,4,.86);
+      box-shadow: 0 20px 40px rgba(0,0,0,.42);
+      overflow: hidden;
+    }
+    .featured-video-frame iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      height: auto;
+      display: block;
+      border: 0;
+    }
+    .featured-video-actions {
+      margin-top: 1.1rem;
+    }
+
     /* Merch CTA strip */
     .merch-strip {
       background: var(--red);
@@ -606,6 +648,27 @@ The Galilean</p>
           </div>
         </aside>
       </article>
+    </div>
+  </section>
+
+  <section class="featured-video-section" aria-labelledby="featured-video-heading">
+    <div class="featured-video">
+      <span class="eyebrow">Featured Video</span>
+      <h2 class="featured-video-title" id="featured-video-heading">Worth It All</h2>
+      <p class="featured-video-copy">
+        A focused visual proclamation from Shieldbearer. Press play and step into the message.
+      </p>
+      <div class="featured-video-frame">
+        <iframe
+          src="https://www.youtube.com/embed/BwWB95z6lKg"
+          title="Worth It All - Shieldbearer"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="featured-video-actions">
+        <a href="https://www.youtube.com/watch?v=BwWB95z6lKg" target="_blank" rel="noopener" class="btn btn--ghost">Watch on YouTube</a>
+      </div>
     </div>
   </section>
 
