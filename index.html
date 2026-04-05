@@ -5,11 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shieldbearer — Official</title>
   <meta name="description" content="Shieldbearer — Christian Metal. Heavy guitars. Unashamed faith. Jesus reigns.">
-  <!-- Open Graph -->
-  <meta property="og:title" content="Shieldbearer — Official">
-  <meta property="og:description" content="Bold Christian metal. Christ proclaimed. Scripture spoken. No ambiguity.">
-  <meta property="og:image" content="https://shieldbearerusa.com/images/og-image.jpg">
-  <meta property="og:url" content="https://shieldbearerusa.com">
+  <meta property="og:title" content="Shieldbearer — Christian Metal" />
+  <meta property="og:description" content="Christian metal with Scripture at the center. Christ proclaimed without compromise." />
+  <meta property="og:image" content="https://shieldbearerusa.com/galilean-art.png" />
+  <meta property="og:url" content="https://shieldbearerusa.com/index.html" />
+  <meta property="og:type" content="website" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Shieldbearer — Christian Metal" />
+  <meta name="twitter:description" content="Christian metal with Scripture at the center. Christ proclaimed without compromise." />
+  <meta name="twitter:image" content="https://shieldbearerusa.com/galilean-art.png" />
   <link rel="icon" href="images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200;300;400;500;600&family=Roboto+Condensed:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
@@ -19,22 +24,34 @@
 
     /* Hero */
     #hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
+      min-height: 100svh;
+      height: 100svh;
       position: relative;
       overflow: hidden;
-      padding-top: var(--nav-h);
+    }
+    #hero::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: clamp(90px, 16vh, 170px);
+      background: linear-gradient(to bottom, rgba(4,4,4,0), rgba(4,4,4,.62) 68%, var(--black) 100%);
+      z-index: 1;
+      pointer-events: none;
     }
     .hero-bg {
       position: absolute; inset: 0;
       background:
-        linear-gradient(180deg, rgba(4,4,4,.38) 0%, rgba(4,4,4,.9) 78%, #040404 100%),
-        radial-gradient(ellipse 70% 48% at 52% 30%, rgba(231,76,60,.24) 0%, transparent 62%),
-        url('images/galilean-art.png') center top/cover no-repeat;
+        linear-gradient(180deg, rgba(4,4,4,.02) 0%, rgba(4,4,4,.16) 62%, rgba(4,4,4,.34) 100%),
+        radial-gradient(ellipse 74% 58% at 52% 28%, rgba(231,76,60,.16) 0%, transparent 65%),
+        radial-gradient(circle at 22% 18%, rgba(124, 255, 234, .2) 0%, transparent 36%),
+        radial-gradient(circle at 80% 20%, rgba(100, 136, 255, .22) 0%, transparent 38%),
+        url('images/galilean-art.png') center 22%/cover no-repeat;
+      filter: saturate(1.4) contrast(1.12) brightness(1.18);
+    }
+    .hero-bg::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(4,4,4,0) 0%, rgba(4,4,4,.1) 62%, rgba(4,4,4,.26) 100%);
     }
     .hero-geo {
       position: absolute; inset: 0; pointer-events: none;
@@ -51,54 +68,99 @@
       width: 1px;
       background: linear-gradient(to bottom, transparent, rgba(192,57,43,.06), transparent);
     }
-    .hero-inner {
-      position: relative; z-index: 2;
-      display: flex; flex-direction: column; align-items: center;
-      padding: 0 1.5rem;
+    .hero-content-section {
+      background: var(--black);
+      position: relative;
+      z-index: 2;
+      margin-top: clamp(-3.8rem, -6vw, -2.2rem);
+      padding: clamp(7.2rem, 13vw, 11.2rem) 0 clamp(5.2rem, 8vw, 7.6rem);
     }
-    .hero-logo {
-      width: min(760px, 92vw);
-      margin-bottom: 2.5rem;
-      filter: invert(1) brightness(1.05) drop-shadow(0 0 55px rgba(192,57,43,.55));
-      animation: logo-in 2s cubic-bezier(.16,1,.3,1) forwards;
-      opacity: 0;
+    .hero-content-section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: min(980px, calc(100% - 3rem));
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(231,76,60,.42), transparent);
+      opacity: .7;
+    }
+    .hero-content-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1020px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
     .hero-rule {
       width: 2px; height: 68px;
       background: linear-gradient(to bottom, transparent, var(--red), transparent);
-      margin-bottom: 1.8rem;
+      margin-bottom: 2.1rem;
       animation: fade-up 1.5s .5s ease forwards; opacity: 0;
     }
     .hero-tagline {
       font-family: var(--font-head);
-      font-size: .82rem; font-weight: 300;
-      letter-spacing: .42em; text-transform: uppercase;
-      color: rgba(168,162,154,.55);
-      margin-bottom: 1.2rem;
+      font-size: .86rem; font-weight: 500;
+      letter-spacing: .5em; text-transform: uppercase;
+      color: rgba(240,235,224,.84);
+      text-shadow: 0 3px 10px rgba(0,0,0,.34);
+      margin-bottom: 1.7rem;
       animation: fade-up 1.5s .7s ease forwards; opacity: 0;
     }
     .hero-headline {
       font-family: var(--font-display);
-      font-size: clamp(3.4rem, 10vw, 8rem);
-      letter-spacing: .05em;
-      line-height: .96;
+      font-size: clamp(4.2rem, 11.6vw, 9.4rem);
+      letter-spacing: .045em;
+      line-height: .9;
       color: #fff;
       text-transform: uppercase;
-      margin-bottom: .9rem;
-      text-shadow: 0 10px 30px rgba(0,0,0,.58);
+      margin-bottom: 1.4rem;
+      text-shadow:
+        0 10px 26px rgba(0,0,0,.46),
+        0 0 22px rgba(231,76,60,.14);
       animation: fade-up 1.5s .8s ease forwards; opacity: 0;
     }
     .hero-subline {
       max-width: 720px;
-      font-size: 1.04rem;
-      line-height: 1.82;
-      color: rgba(240,235,224,.84);
-      margin-bottom: 2.2rem;
+      font-size: 1.08rem;
+      line-height: 1.86;
+      color: rgba(240,235,224,.82);
+      text-shadow: 0 2px 10px rgba(0,0,0,.32);
+      margin-bottom: 3rem;
       animation: fade-up 1.5s .9s ease forwards; opacity: 0;
     }
     .hero-ctas {
-      display: flex; gap: 1.2rem; flex-wrap: wrap; justify-content: center;
+      display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
       animation: fade-up 1.5s 1s ease forwards; opacity: 0;
+    }
+    .hero-ctas .btn {
+      min-width: 228px;
+      padding: 1.06rem 2rem;
+      font-size: .78rem;
+      letter-spacing: .24em;
+      border-width: 1.5px;
+      transition: background .2s, box-shadow .2s, border-color .2s, color .2s, transform .2s;
+    }
+    .hero-ctas .btn--red {
+      box-shadow: 0 10px 26px rgba(192,57,43,.34);
+    }
+    .hero-ctas .btn--red:hover {
+      box-shadow: 0 14px 34px rgba(231,76,60,.48);
+      transform: translateY(-1px);
+    }
+    .hero-ctas .btn--ghost {
+      border-color: rgba(240,235,224,.36);
+      color: rgba(240,235,224,.94);
+      background: rgba(255,255,255,.02);
+    }
+    .hero-ctas .btn--ghost:hover {
+      background: rgba(231,76,60,.12);
+      border-color: rgba(231,76,60,.56);
+      color: #fff;
     }
     .scroll-cue {
       position: absolute; bottom: 2rem; left: 50%;
@@ -109,77 +171,294 @@
     .scroll-cue span {
       font-family: var(--font-head);
       font-size: .52rem; letter-spacing: .4em;
-      color: rgba(168,162,154,.2); text-transform: uppercase;
+      color: rgba(240,235,224,.44); text-transform: uppercase;
+      text-shadow: 0 2px 8px rgba(0,0,0,.35);
     }
     .scroll-cue-bar {
-      width: 1px; height: 34px;
-      background: linear-gradient(to bottom, var(--red), transparent);
+      width: 1px; height: 38px;
+      background: linear-gradient(to bottom, rgba(231,76,60,.92), rgba(231,76,60,.24), transparent);
       animation: scroll-bar 2s ease-in-out infinite;
     }
 
-    /* Featured release */
-    .release-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.3fr;
-      gap: 5rem;
-      align-items: center;
+    /* Reusable featured-track module */
+    #release {
+      padding: clamp(4rem, 7vw, 5.2rem) 0;
     }
-    .release-title {
+    .featured-track {
+      background:
+        radial-gradient(circle at 16% 12%, rgba(231,76,60,.08), transparent 44%),
+        linear-gradient(180deg, rgba(21,21,21,.9), rgba(12,12,12,.92));
+      border: 1px solid rgba(168,162,154,.18);
+      box-shadow:
+        0 26px 56px rgba(0,0,0,.44),
+        0 0 0 1px rgba(255,255,255,.02) inset;
+      padding: clamp(1rem, 2.1vw, 1.45rem);
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: clamp(.8rem, 1.6vw, 1.1rem);
+      position: relative;
+      overflow: hidden;
+      max-width: 1100px;
+      margin-inline: auto;
+    }
+    .featured-track::before {
+      content: '';
+      position: absolute;
+      left: clamp(1.15rem, 2.6vw, 1.9rem);
+      right: clamp(1.15rem, 2.6vw, 1.9rem);
+      top: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(231,76,60,.42), transparent);
+    }
+    .featured-track::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      border: 1px solid rgba(255,255,255,.02);
+    }
+    .featured-track__media {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+    .featured-track__panel {
+      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+      border: 1px solid rgba(168,162,154,.18);
+      padding: clamp(.9rem, 1.8vw, 1.25rem);
+      min-width: 0;
+    }
+    .featured-track__media-panel {
+      display: flex;
+      flex-direction: column;
+      gap: .45rem;
+      height: 100%;
+    }
+    .featured-track__artwork {
+      padding: clamp(.85rem, 1.5vw, 1.15rem);
+      display: grid;
+      place-items: center;
+      aspect-ratio: 3 / 2;
+      background: radial-gradient(ellipse at center, rgba(255,255,255,.045), rgba(255,255,255,.012));
+      border: 1px solid rgba(168,162,154,.14);
+      margin-bottom: .06rem;
+    }
+    .featured-track__artwork img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border: 1px solid rgba(168,162,154,.16);
+      background: rgba(0,0,0,.35);
+      box-shadow: 0 18px 42px rgba(0,0,0,.34);
+    }
+    .featured-track__body {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+    .featured-track__title {
       font-family: var(--font-display);
       font-size: clamp(2.4rem, 5vw, 3.8rem);
-      letter-spacing: .05em; color: #fff;
-      line-height: 1.05; margin-bottom: .3rem;
-    }
-    .release-sub {
-      font-family: var(--font-head);
-      font-size: .68rem; letter-spacing: .28em;
-      color: var(--red-bright); text-transform: uppercase;
-      margin-bottom: 1.4rem;
-    }
-
-    /* Preview grid (3-col teasers) */
-    .preview-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: rgba(168,162,154,.05);
-    }
-    .preview-tile {
-      background: var(--dark);
-      padding: 2.5rem 2rem;
-      transition: background .2s;
-    }
-    .preview-tile:hover { background: rgba(168,162,154,.03); }
-    .preview-tile .tile-icon {
-      font-family: var(--font-display);
-      font-size: 3rem;
-      color: rgba(192,57,43,.12);
-      line-height: 1;
-      margin-bottom: .8rem;
       letter-spacing: .05em;
-    }
-    .preview-tile h3 {
-      font-family: var(--font-display);
-      font-size: 1.55rem;
-      letter-spacing: .07em;
       color: #fff;
-      margin-bottom: .7rem;
+      line-height: 1.02;
+      margin-bottom: .18rem;
     }
-    .preview-tile p {
-      font-size: .95rem;
-      line-height: 1.85;
-      color: rgba(168,162,154,.55);
-      margin-bottom: 1.4rem;
-    }
-    .preview-tile a {
+    .featured-track__meta {
       font-family: var(--font-head);
-      font-size: .6rem;
-      letter-spacing: .25em;
+      font-size: .68rem;
+      letter-spacing: .28em;
+      color: var(--red-bright);
+      text-transform: uppercase;
+      margin-bottom: .38rem;
+    }
+    .featured-track__desc {
+      font-size: .98rem;
+      line-height: 1.65;
+      color: rgba(240,235,224,.78);
+      margin-bottom: .42rem;
+    }
+    .featured-track__player-wrap {
+      margin-top: .08rem;
+      margin-bottom: .1rem;
+      border: 1px solid rgba(168,162,154,.2);
+      background: linear-gradient(180deg, rgba(10,10,10,.9), rgba(5,5,5,.92));
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.02);
+      overflow: hidden;
+    }
+    .featured-track__player {
+      display: block;
+      width: 100%;
+      height: 152px;
+      border: 0;
+    }
+    .featured-track__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      margin-top: .25rem;
+    }
+    .featured-track__actions .btn {
+      min-width: 214px;
+    }
+    .featured-track__lyrics {
+      min-width: 0;
+      min-height: 0;
+      border-left: 1px solid rgba(168,162,154,.13);
+      background: linear-gradient(180deg, rgba(255,255,255,.018), rgba(255,255,255,.008));
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      padding-top: .72rem;
+      padding-bottom: .78rem;
+    }
+    .featured-track__lyrics-title {
+      font-family: var(--font-head);
+      font-size: .68rem;
+      letter-spacing: .26em;
       text-transform: uppercase;
       color: var(--red-bright);
-      transition: color .2s;
+      margin-bottom: .62rem;
     }
-    .preview-tile a:hover { color: #fff; }
+    .featured-track__lyrics-scroll {
+      height: 680px;
+      overflow-y: auto;
+      padding-right: .8rem;
+      line-height: 1.72;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(231,76,60,.7) rgba(255,255,255,.06);
+    }
+    .featured-track__lyrics-scroll::-webkit-scrollbar { width: 8px; }
+    .featured-track__lyrics-scroll::-webkit-scrollbar-track { background: rgba(255,255,255,.05); }
+    .featured-track__lyrics-scroll::-webkit-scrollbar-thumb { background: rgba(231,76,60,.7); }
+    .featured-track__lyrics-scroll p {
+      white-space: pre-line;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: rgba(240,235,224,.9);
+    }
+
+    /* Featured video */
+    .featured-video-section {
+      background: var(--black-2);
+      padding: clamp(4.2rem, 7vw, 5.6rem) 0;
+    }
+    .featured-video {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 var(--pad);
+      text-align: center;
+    }
+    .featured-video-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.1rem, 4.8vw, 3.4rem);
+      letter-spacing: .06em;
+      color: #fff;
+      margin-bottom: .55rem;
+    }
+    .featured-video-copy {
+      max-width: 760px;
+      margin: 0 auto 1.5rem;
+      font-size: .98rem;
+      line-height: 1.78;
+      color: rgba(240,235,224,.74);
+    }
+    .featured-video-frame {
+      border: 1px solid rgba(168,162,154,.2);
+      background: rgba(4,4,4,.86);
+      box-shadow: 0 20px 40px rgba(0,0,0,.42);
+      overflow: hidden;
+    }
+    .featured-video-frame iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      height: auto;
+      display: block;
+      border: 0;
+    }
+    .featured-video-actions {
+      margin-top: 1.1rem;
+    }
+
+    /* Featured merch */
+    .featured-merch-section {
+      background: var(--dark);
+      padding: clamp(4rem, 7vw, 5.4rem) 0;
+    }
+    .featured-merch {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0 var(--pad);
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      gap: clamp(1rem, 2.8vw, 2.2rem);
+      align-items: center;
+    }
+    .featured-merch-art {
+      border: 1px solid rgba(168,162,154,.2);
+      background:
+        radial-gradient(circle at 30% 15%, rgba(231,76,60,.12), transparent 42%),
+        linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.008));
+      min-height: 320px;
+      display: grid;
+      place-items: center;
+      padding: clamp(1rem, 2vw, 1.4rem);
+    }
+    .featured-merch-art img {
+      width: min(78%, 340px);
+      height: auto;
+      object-fit: contain;
+    }
+    .featured-merch-copy {
+      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.008));
+      border: 1px solid rgba(168,162,154,.18);
+      padding: clamp(1rem, 2vw, 1.4rem);
+    }
+    .featured-merch-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4.8vw, 3.2rem);
+      letter-spacing: .06em;
+      color: #fff;
+      margin-bottom: .55rem;
+      line-height: 1.02;
+    }
+    .featured-merch-copy p {
+      font-size: .98rem;
+      line-height: 1.78;
+      color: rgba(240,235,224,.78);
+      margin-bottom: 1.3rem;
+      max-width: 560px;
+    }
+
+    /* Manifesto teaser */
+    .manifesto-teaser {
+      background: var(--black-2);
+      border-top: 1px solid rgba(168,162,154,.08);
+      border-bottom: 1px solid rgba(168,162,154,.08);
+      padding: clamp(4rem, 7vw, 5.4rem) 0;
+    }
+    .manifesto-teaser-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 var(--pad);
+      text-align: center;
+    }
+    .manifesto-teaser-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3.3rem);
+      letter-spacing: .07em;
+      color: #fff;
+      margin-bottom: .9rem;
+      line-height: 1;
+    }
+    .manifesto-teaser-copy {
+      max-width: 760px;
+      margin: 0 auto 1.5rem;
+      font-size: 1rem;
+      line-height: 1.85;
+      color: rgba(240,235,224,.8);
+    }
 
     /* Merch CTA strip */
     .merch-strip {
@@ -220,8 +499,62 @@
     }
 
     @media (max-width: 900px) {
-      .release-grid   { grid-template-columns: 1fr; gap: 2.5rem; }
-      .preview-grid   { grid-template-columns: 1fr; }
+      .hero-bg {
+        background-position: center 18%;
+      }
+      .featured-track {
+        grid-template-columns: 1fr;
+      }
+      .featured-track__media {
+        gap: 1rem;
+      }
+      .featured-track__lyrics {
+        height: auto;
+      }
+      .featured-track__lyrics-scroll {
+        height: 420px;
+      }
+      #hero { min-height: 74svh; height: 74svh; }
+      .hero-content-section {
+        margin-top: clamp(-2.2rem, -7vw, -1.2rem);
+        padding-top: clamp(6rem, 13vw, 8rem);
+      }
+      .hero-tagline {
+        font-size: .76rem;
+        letter-spacing: .34em;
+      }
+      .hero-headline {
+        font-size: clamp(3.2rem, 14vw, 6rem);
+        line-height: .92;
+      }
+      .hero-subline {
+        font-size: 1rem;
+        margin-bottom: 2.4rem;
+      }
+      .hero-ctas .btn {
+        min-width: 210px;
+      }
+      .featured-merch {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+    }
+    @media (max-width: 640px) {
+      .hero-bg { background-position: center 16%; }
+      .hero-rule { margin-bottom: 1.6rem; }
+      .hero-tagline { margin-bottom: 1.2rem; }
+      .hero-headline { margin-bottom: 1.05rem; }
+      .hero-subline { margin-bottom: 2rem; }
+      .hero-ctas {
+        flex-direction: column;
+        width: 100%;
+        max-width: 390px;
+        gap: .72rem;
+      }
+      .hero-ctas .btn { min-width: 0; width: 100%; }
+      .featured-track__actions .btn { min-width: 0; width: 100%; }
+      .featured-track__lyrics { border-left: 0; max-height: 400px; }
+      .featured-track__lyrics-scroll { height: 360px; }
     }
   </style>
 </head>
@@ -235,8 +568,8 @@
     <a href="about.html">About</a>
     <a href="song-meanings.html">Lyrics</a>
     <a href="interviews.html">Press</a>
+    <a href="manifesto.html">Manifesto</a>
     <a href="contact.html">Contact</a>
-    <!-- UPDATE: replace # with your Shopify store URL -->
     <a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener" style="color:var(--red-bright)">Merch</a>
   </div>
 
@@ -251,8 +584,8 @@
       <li><a href="about.html">About</a></li>
       <li><a href="song-meanings.html">Lyrics</a></li>
       <li><a href="interviews.html">Press</a></li>
+      <li><a href="manifesto.html">Manifesto</a></li>
       <li><a href="contact.html">Contact</a></li>
-      <!-- UPDATE: replace # with your Shopify store URL -->
       <li class="nav-merch"><a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener">Merch</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
@@ -266,11 +599,17 @@
   <section id="hero" aria-label="Hero">
     <div class="hero-bg"></div>
     <div class="hero-geo"></div>
-    <div class="hero-inner">
-      <img class="hero-logo" src="images/logo.png" alt="Shieldbearer">
+    <div class="scroll-cue" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-cue-bar"></div>
+    </div>
+  </section>
+
+  <section class="hero-content-section" aria-labelledby="hero-message-title">
+    <div class="hero-content-inner">
       <div class="hero-rule"></div>
       <p class="hero-tagline">Christ Proclaimed &nbsp;&bull;&nbsp; Scripture Spoken &nbsp;&bull;&nbsp; No Ambiguity</p>
-      <h1 class="hero-headline">Jesus Reigns at Full Volume</h1>
+      <h1 class="hero-headline" id="hero-message-title">Jesus Reigns at Full Volume</h1>
       <p class="hero-subline">
         Heavy guitars. Scripture spoken plainly. Metal that points directly to Christ with conviction,
         clarity, and no compromise.
@@ -278,12 +617,8 @@
       <div class="hero-ctas">
         <a href="music.html" class="btn btn--red">Listen Now</a>
         <a href="music.html#armory" class="btn btn--ghost">Enter the Armory</a>
-        <a href="song-meanings.html" class="btn btn--ghost">Read the Scrolls</a>
+        <a href="song-meanings.html" class="btn btn--ghost">Read the Lyrics</a>
       </div>
-    </div>
-    <div class="scroll-cue" aria-hidden="true">
-      <span>Scroll</span>
-      <div class="scroll-cue-bar"></div>
     </div>
   </section>
 
@@ -292,55 +627,167 @@
   ══════════════════════════════════════ -->
   <section class="section--dark" id="release" aria-labelledby="release-heading">
     <div class="container">
-      <div class="release-grid">
-
-        <!-- Album art -->
-        <div>
-          <div class="art-frame">
-            <!-- UPDATE: replace with actual album art -->
-            <img src="images/galilean-art.png" alt="Galilean single artwork"
-                 onerror="this.style.display='none'">
-            <div class="art-glow"></div>
-            <div class="corner tl"></div><div class="corner tr"></div>
-            <div class="corner bl"></div><div class="corner br"></div>
+      <article class="featured-track">
+        <div class="featured-track__media">
+          <div class="featured-track__panel featured-track__media-panel">
+            <figure class="featured-track__artwork" aria-label="Galilean artwork thumbnail">
+              <img src="images/galilean-art.png" alt="Galilean single artwork" width="768" height="768">
+            </figure>
+            <div class="featured-track__body">
+              <span class="badge">Now Playing</span>
+              <h2 class="featured-track__title" id="release-heading">Galilean</h2>
+              <p class="featured-track__meta">Featured Track &middot; 2025</p>
+              <p class="featured-track__desc">
+                Where cosmos meets faith. Press play and step into the weight of creation,
+                judgment, and the Name above every star.
+              </p>
+              <div class="featured-track__player-wrap">
+                <iframe
+                  class="featured-track__player"
+                  src="https://open.spotify.com/embed/album/0UqnB3Kw8s4yiDUVgvvgDT?utm_source=generator"
+                  title="Spotify player for Galilean"
+                  loading="lazy"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+                </iframe>
+              </div>
+              <div class="featured-track__actions">
+                <a href="https://open.spotify.com/album/0UqnB3Kw8s4yiDUVgvvgDT" target="_blank" rel="noopener" class="btn btn--red">Listen Now</a>
+                <a href="https://open.spotify.com/album/0UqnB3Kw8s4yiDUVgvvgDT" target="_blank" rel="noopener" class="btn btn--ghost">Open on Spotify</a>
+              </div>
+            </div>
           </div>
         </div>
+        <aside class="featured-track__panel featured-track__lyrics" aria-label="Galilean lyrics panel">
+          <h3 class="featured-track__lyrics-title">Galilean Lyrics</h3>
+          <div class="featured-track__lyrics-scroll">
+            <p>Iron dust and canyoned scars
+Frozen ground from ancient wars
+Dry river veins stretched far
+The wounded red of Mars
 
-        <!-- Release info -->
-        <div>
-          <span class="badge">Latest Release</span>
-          <h2 class="release-title" id="release-heading">Galilean</h2>
-          <p class="release-sub">Single &middot; 2025</p>
-          <p class="section-body" style="margin-bottom:2rem;">
-            Where cosmos meets faith. Heavy, uncompromising, unashamed.
-            Real guitars. Real bass. Fully self-produced.
-            Christ is not hidden in metaphor.
-            He is named plainly, proclaimed with the full weight of the music behind every word.
-          </p>
+Endless storms of rolling thunder
+Clouds that tear the dark asunder
+Gravity that drags us under
+The burning giant Jupiter
 
-          <!-- Stream links — UPDATE hrefs with real URLs -->
-          <div class="stream-row">
-            <a href="https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz" target="_blank" rel="noopener" class="stream-pill"><span class="dot"></span>Spotify</a>
-            <a href="https://www.youtube.com/@ShieldbearerUSA" target="_blank" rel="noopener" class="stream-pill"><span class="dot"></span>YouTube</a>
-            <a href="https://music.apple.com/us/search?term=Shieldbearer" target="_blank" rel="noopener" class="stream-pill"><span class="dot"></span>Apple Music</a>
-            <a href="https://music.amazon.com/search/Shieldbearer" target="_blank" rel="noopener" class="stream-pill"><span class="dot"></span>Amazon Music</a>
+Orbits lock
+Pressure climbs
+Mass obeys
+Curves of time
+
+Galilean
+Lord of flame
+Before the stars
+You bore the Name
+
+Galilean
+Christ alone
+Darkness breaks
+The void is torn
+
+A sun implodes and leaves a scar
+Its burning shell is ripped apart
+Matter crushed beyond the far
+The shattered core, neutron star
+
+A spiral flood of burning rays
+A hundred billion suns ablaze
+We drift within its ancient sway
+The endless wheel, Milky Way
+
+Light departs
+Still arrives
+Ages pass
+Before our eyes
+
+Galilean
+Lord of flame
+Before the stars
+You bore the Name
+
+Galilean
+Christ alone
+Darkness breaks
+The void is torn
+
+Stars ignite
+Stars decay
+Light arrives
+Far too late
+
+Worlds collapse
+Time is torn
+Ash remains
+Where fire was born
+
+Galilean
+King of all
+When stars collapse
+And heavens fall
+
+Galilean
+End and start
+All creation
+Bears Your mark
+
+Fire fades from every sky
+Night stands bare before the dawn
+What was made will pass and die
+Jesus reigns
+The Galilean</p>
           </div>
+        </aside>
+      </article>
+    </div>
+  </section>
 
-          <!-- -----------------------------------------------
-               FUTURE EMBED PLACEHOLDER
-               Paste a Spotify, YouTube, or SoundCloud embed
-               iframe here when ready.
-               Example:
-               <iframe src="https://open.spotify.com/embed/track/TRACK_ID"
-                 width="100%" height="152" frameborder="0"
-                 allow="autoplay; clipboard-write; encrypted-media; fullscreen">
-               </iframe>
-               ----------------------------------------------- -->
-
-          <a href="music.html" class="btn btn--red">All Music</a>
-        </div>
-
+  <section class="featured-video-section" aria-labelledby="featured-video-heading">
+    <div class="featured-video">
+      <span class="eyebrow">Featured Video</span>
+      <h2 class="featured-video-title" id="featured-video-heading">Worth It All</h2>
+      <p class="featured-video-copy">
+        A focused visual proclamation from Shieldbearer. Press play and step into the message.
+      </p>
+      <div class="featured-video-frame">
+        <iframe
+          src="https://www.youtube.com/embed/BwWB95z6lKg"
+          title="Worth It All - Shieldbearer"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
       </div>
+      <div class="featured-video-actions">
+        <a href="https://www.youtube.com/watch?v=BwWB95z6lKg" target="_blank" rel="noopener" class="btn btn--ghost">Watch on YouTube</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="featured-merch-section" aria-labelledby="featured-merch-heading">
+    <div class="featured-merch">
+      <div class="featured-merch-art" aria-label="Shieldbearer logo tee visual">
+        <img src="images/logo-tee.webp" alt="Shieldbearer logo t-shirt">
+      </div>
+      <div class="featured-merch-copy">
+        <span class="eyebrow">Featured Merch</span>
+        <h2 class="featured-merch-title" id="featured-merch-heading">Shieldbearer Logo Tee</h2>
+        <p>
+          Clean black tee with the Shieldbearer mark front and center. Built to wear on stage,
+          in the pit, and in the everyday mission.
+        </p>
+        <a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener" class="btn btn--red">Wear the Banner</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="manifesto-teaser" aria-labelledby="manifesto-teaser-heading">
+    <div class="manifesto-teaser-inner">
+      <span class="eyebrow">Declaration</span>
+      <h2 class="manifesto-teaser-title" id="manifesto-teaser-heading">The Shieldbearer Manifesto</h2>
+      <p class="manifesto-teaser-copy">
+        This is not a new gospel and not a private idea. Truth was always public, but access was controlled.
+        We reject censorship, stand on Scripture, and defend the freedom to read, speak, test, and proclaim.
+      </p>
+      <a href="manifesto.html" class="btn btn--red">Read the Full Manifesto</a>
     </div>
   </section>
 
@@ -363,9 +810,9 @@
 
         <div class="world-tile">
           <span class="world-kicker">02</span>
-          <h3 class="world-title">The Scrolls</h3>
+          <h3 class="world-title">Lyrics</h3>
           <p class="world-copy">Lyrics, meaning, and scripture references for each track. Theology up front, no fog.</p>
-          <a class="world-link" href="song-meanings.html">Read the Scrolls &rarr;</a>
+          <a class="world-link" href="song-meanings.html">Read the Lyrics &rarr;</a>
         </div>
 
         <div class="world-tile">
@@ -403,9 +850,9 @@
         </p>
       </div>
       <div>
-        <form class="signal-form" id="signalForm" novalidate>
+        <form class="signal-form" id="signalForm" data-convertkit-endpoint="https://app.convertkit.com/forms/REPLACE_WITH_YOUR_CONVERTKIT_FORM_ID/subscriptions" novalidate>
           <input type="email" id="signalEmail" placeholder="Email address" required>
-          <button type="submit">Get Updates</button>
+          <button type="submit">Join the Signal</button>
         </form>
         <p class="signal-note">By joining, you agree to receive release and tour updates.</p>
       </div>
@@ -415,7 +862,6 @@
   <!-- ══════════════════════════════════════
        MERCH CTA STRIP
   ══════════════════════════════════════ -->
-  <!-- UPDATE: replace href with your actual Shopify store URL -->
   <div class="merch-strip">
     <h2>Represent the Mission</h2>
     <p>Official Shieldbearer merch. Wear the conviction.</p>
@@ -453,6 +899,7 @@
           <li><a href="about.html">About</a></li>
           <li><a href="song-meanings.html">Lyrics</a></li>
           <li><a href="interviews.html">Press</a></li>
+      <li><a href="manifesto.html">Manifesto</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener">Merch</a></li>
         </ul>
@@ -472,7 +919,7 @@
         <h4>Take Action</h4>
         <ul>
           <li><a href="music.html#armory">Enter the Armory</a></li>
-          <li><a href="song-meanings.html">Read the Scrolls</a></li>
+          <li><a href="song-meanings.html">Read the Lyrics</a></li>
           <li><a href="interviews.html">Catch the Signal</a></li>
           <li><a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener">Raise the Banner</a></li>
           <li><a href="contact.html">Join the Mission</a></li>
