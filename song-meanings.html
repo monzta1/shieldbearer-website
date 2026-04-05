@@ -154,6 +154,19 @@
       color: rgba(240,235,224,.86);
       margin-bottom: .9rem;
     }
+    .song-dossier__player-wrap {
+      margin-bottom: .95rem;
+      border: 1px solid rgba(168,162,154,.2);
+      background: linear-gradient(180deg, rgba(10,10,10,.9), rgba(5,5,5,.92));
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.02);
+      overflow: hidden;
+    }
+    .song-dossier__player {
+      display: block;
+      width: 100%;
+      height: 152px;
+      border: 0;
+    }
     .song-dossier__tags {
       display: flex;
       flex-wrap: wrap;
@@ -615,7 +628,16 @@
           .replace(/'/g, '&#39;');
       }
 
-      function renderDossierBody(song) {
+      function spotifyEmbedFromUrl(url) {
+        var clean = String(url || '').trim();
+        if (!clean || clean.indexOf('open.spotify.com') === -1) return '';
+        clean = clean.replace(/\?.*$/, '');
+        var m = clean.match(/open\.spotify\.com\/(track|album|playlist|artist)\/([A-Za-z0-9]+)/);
+        if (!m) return '';
+        return 'https://open.spotify.com/embed/' + m[1] + '/' + m[2] + '?utm_source=generator';
+      }
+
+      function renderDossierBody(song, includePlayer) {
         var meaningHtml = song.meaning.map(function (p) {
           return '<p>' + escapeHtml(p) + '</p>';
         }).join('');
@@ -623,6 +645,14 @@
           return '<span class="song-dossier__tag">' + escapeHtml(t) + '</span>';
         }).join('');
         var lyricsText = escapeHtml(String(song.lyrics || '').replace(/\\n/g, '\n'));
+        var embedUrl = spotifyEmbedFromUrl(song.actions && song.actions.spotify);
+        var playerHtml = '';
+        if (includePlayer && embedUrl) {
+          playerHtml =
+            '<div class="song-dossier__player-wrap">' +
+              '<iframe class="song-dossier__player" src="' + escapeHtml(embedUrl) + '" title="Spotify player for ' + escapeHtml(song.title) + '" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>' +
+            '</div>';
+        }
 
         return '' +
           '<article class="song-dossier-panel song-dossier">' +
@@ -634,6 +664,7 @@
                 '<p class="song-dossier__ref">' + escapeHtml(song.reference) + '</p>' +
               '</div>' +
             '</header>' +
+            playerHtml +
             '<p class="song-dossier__thesis">' + escapeHtml(song.thesis) + '</p>' +
             '<div class="song-dossier__tags">' + tagsHtml + '</div>' +
             '<section class="song-dossier__block song-dossier__meaning">' +
@@ -678,7 +709,7 @@
       function renderDesktop() {
         var target = document.getElementById('songDossierDesktop');
         if (!target) return;
-        target.innerHTML = renderDossierBody(byId(desktopActive));
+        target.innerHTML = renderDossierBody(byId(desktopActive), true);
       }
 
       function renderMobile() {
@@ -695,7 +726,7 @@
                   '<span>Track ' + escapeHtml(song.number) + ' | ' + escapeHtml(song.reference) + '</span>' +
                 '</span>' +
               '</button>' +
-              '<div class="song-dossier-mobile__panel">' + renderDossierBody(song) + '</div>' +
+              '<div class="song-dossier-mobile__panel">' + (open ? renderDossierBody(song, true) : '') + '</div>' +
             '</article>';
         }).join('');
       }
