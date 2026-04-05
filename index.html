@@ -426,6 +426,35 @@
       max-width: 560px;
     }
 
+    /* Manifesto teaser */
+    .manifesto-teaser {
+      background: var(--black-2);
+      border-top: 1px solid rgba(168,162,154,.08);
+      border-bottom: 1px solid rgba(168,162,154,.08);
+      padding: clamp(4rem, 7vw, 5.4rem) 0;
+    }
+    .manifesto-teaser-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 var(--pad);
+      text-align: center;
+    }
+    .manifesto-teaser-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3.3rem);
+      letter-spacing: .07em;
+      color: #fff;
+      margin-bottom: .9rem;
+      line-height: 1;
+    }
+    .manifesto-teaser-copy {
+      max-width: 760px;
+      margin: 0 auto 1.5rem;
+      font-size: 1rem;
+      line-height: 1.85;
+      color: rgba(240,235,224,.8);
+    }
+
     /* Merch CTA strip */
     .merch-strip {
       background: var(--red);
@@ -740,6 +769,18 @@ The Galilean</p>
         </p>
         <a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener" class="btn btn--red">Wear the Banner</a>
       </div>
+    </div>
+  </section>
+
+  <section class="manifesto-teaser" aria-labelledby="manifesto-teaser-heading">
+    <div class="manifesto-teaser-inner">
+      <span class="eyebrow">Declaration</span>
+      <h2 class="manifesto-teaser-title" id="manifesto-teaser-heading">The Shieldbearer Manifesto</h2>
+      <p class="manifesto-teaser-copy">
+        This is not a new gospel and not a private idea. Truth was always public, but access was controlled.
+        We reject censorship, stand on Scripture, and defend the freedom to read, speak, test, and proclaim.
+      </p>
+      <a href="manifesto.html" class="btn btn--red">Read the Full Manifesto</a>
     </div>
   </section>
 

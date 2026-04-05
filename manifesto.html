@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manifesto — Shieldbearer</title>
+  <meta name="description" content="The Shieldbearer Manifesto: a clear stance on Scripture, freedom, censorship, and public truth.">
+  <link rel="icon" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200;300;400;500;600&family=Roboto+Condensed:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .manifesto-wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 var(--pad);
+    }
+    .manifesto-intro {
+      max-width: 760px;
+      margin-bottom: 2.4rem;
+    }
+    .manifesto-intro p {
+      font-size: 1rem;
+      line-height: 1.9;
+      color: rgba(240,235,224,.8);
+    }
+    .manifesto-sections {
+      display: grid;
+      gap: 1rem;
+    }
+    .manifesto-block {
+      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.008));
+      border: 1px solid rgba(168,162,154,.14);
+      padding: clamp(1rem, 2vw, 1.5rem);
+    }
+    .manifesto-block h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+      letter-spacing: .06em;
+      color: #fff;
+      margin-bottom: .55rem;
+      line-height: 1.03;
+    }
+    .manifesto-block p {
+      font-size: .97rem;
+      line-height: 1.85;
+      color: rgba(240,235,224,.78);
+    }
+    .manifesto-scripture {
+      margin-top: 2rem;
+      border-left: 2px solid var(--red);
+      padding: .8rem 0 .8rem 1.2rem;
+      max-width: 760px;
+    }
+    .manifesto-scripture .ref {
+      font-family: var(--font-head);
+      font-size: .6rem;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--red-bright);
+      margin-bottom: .35rem;
+      display: block;
+    }
+    .manifesto-scripture p {
+      font-size: .95rem;
+      line-height: 1.85;
+      color: rgba(240,235,224,.82);
+      font-style: italic;
+    }
+    @media (max-width: 640px) {
+      .manifesto-sections { gap: .85rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mob-menu" id="mobMenu" role="dialog" aria-label="Navigation">
+    <button class="mob-close" id="mobClose" aria-label="Close menu">&#x2715;</button>
+    <a href="index.html">Home</a>
+    <a href="music.html">Music</a>
+    <a href="about.html">About</a>
+    <a href="song-meanings.html">Lyrics</a>
+    <a href="interviews.html">Press</a>
+    <a href="manifesto.html">Manifesto</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener" style="color:var(--red-bright)">Merch</a>
+  </div>
+
+  <nav class="site-nav" id="mainNav" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo" aria-label="Shieldbearer home"><img src="images/logo.png" alt="Shieldbearer"></a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="song-meanings.html">Lyrics</a></li>
+      <li><a href="interviews.html">Press</a></li>
+      <li><a href="manifesto.html">Manifesto</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li class="nav-merch"><a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener">Merch</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="page-hero section--dark">
+    <div class="container page-hero-inner">
+      <span class="eyebrow">Declaration</span>
+      <h1 class="display-title">The Shieldbearer Manifesto</h1>
+      <div class="bar"></div>
+      <p>This is a public statement about truth, censorship, and the freedom to read, test, and proclaim.</p>
+    </div>
+  </div>
+
+  <section class="section--darker">
+    <div class="manifesto-wrap">
+      <div class="manifesto-intro">
+        <p>
+          We are not inventing doctrine and we are not chasing controversy for attention.
+          We are naming what has always been true and defending the freedom to examine it openly.
+        </p>
+      </div>
+
+      <div class="manifesto-sections">
+        <article class="manifesto-block">
+          <h2>This Is Not New</h2>
+          <p>
+            The core claims of Scripture are ancient, public, and consistent. Shieldbearer is not introducing a new revelation.
+            We are returning to what has already been written and proclaimed for generations.
+          </p>
+        </article>
+
+        <article class="manifesto-block">
+          <h2>The Industry Hid This</h2>
+          <p>
+            Gatekeepers treated theological clarity as a commercial risk. They rewarded ambiguity and pushed conviction to the margins.
+            That was never neutral. It trained audiences to accept fog where truth should be plain.
+          </p>
+        </article>
+
+        <article class="manifesto-block">
+          <h2>Now You Have Access</h2>
+          <p>
+            Distribution is no longer controlled by a handful of executives. Artists can publish directly and listeners can decide directly.
+            The wall between source and audience is breaking, and that changes everything.
+          </p>
+        </article>
+
+        <article class="manifesto-block">
+          <h2>Censorship Is The Real Issue</h2>
+          <p>
+            Censorship is not only deletion. It is also suppression, algorithmic burial, selective amplification, and soft pressure to self-censor.
+            When people cannot test claims in public, power replaces truth.
+          </p>
+        </article>
+
+        <article class="manifesto-block">
+          <h2>Scripture Affirms Freedom</h2>
+          <p>
+            Scripture calls people to discern, test, reason, and choose. Faith is not coerced. Truth does not fear examination.
+            A biblical posture requires open witness and honest testing, not protected narratives.
+          </p>
+        </article>
+
+        <article class="manifesto-block">
+          <h2>This Is About Freedom</h2>
+          <p>
+            This is about the freedom to hear the whole case, compare claims, and respond before God with a clear conscience.
+            We reject propaganda from every side. We defend open proclamation and open accountability.
+          </p>
+        </article>
+
+        <article class="manifesto-block">
+          <h2>Our Stance</h2>
+          <p>
+            Shieldbearer will keep speaking Christ plainly, quoting Scripture directly, and refusing strategic ambiguity.
+            We will not trade clarity for acceptance. We will not mute truth for reach.
+            We stand for conviction, transparency, and the freedom to test all things in the light.
+          </p>
+        </article>
+      </div>
+
+      <div class="manifesto-scripture">
+        <span class="ref">1 Thessalonians 5:21</span>
+        <p>Test all things. Hold fast what is good.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><img src="images/logo.png" alt="Shieldbearer"></a>
+        <p>Shieldbearer is Christian metal with Scripture at the center. Christ is named plainly in every release and every conversation.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="music.html">Music</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="song-meanings.html">Lyrics</a></li>
+          <li><a href="interviews.html">Press</a></li>
+          <li><a href="manifesto.html">Manifesto</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener">Merch</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/shieldbearerusa/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/shieldbearerusa" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.youtube.com/@ShieldbearerUSA" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz" target="_blank" rel="noopener">Spotify</a></li>
+          <li><a href="https://linktr.ee/shieldbearerusa" target="_blank" rel="noopener">Linktree</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Take Action</h4>
+        <ul>
+          <li><a href="music.html#armory">Enter the Armory</a></li>
+          <li><a href="song-meanings.html">Read the Scrolls</a></li>
+          <li><a href="interviews.html">Catch the Signal</a></li>
+          <li><a href="manifesto.html">Read the Manifesto</a></li>
+          <li><a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener">Raise the Banner</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Shieldbearer. All rights reserved.</p>
+      <a href="mailto:shieldbearerusa@gmail.com">shieldbearerusa@gmail.com</a>
+    </div>
+  </footer>
+
+  <script src="js/analytics.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
