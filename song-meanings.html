@@ -33,18 +33,263 @@
       display: block;
       filter: saturate(1.05) contrast(1.02);
     }
-    .meanings-intro {
+    .dossier-intro {
       font-size: 1rem;
-      line-height: 1.9;
-      color: rgba(168,162,154,.72);
-      max-width: 760px;
-      margin-bottom: 2.2rem;
+      line-height: 1.85;
+      color: rgba(168,162,154,.76);
+      max-width: 820px;
+      margin-bottom: 2rem;
     }
-    .meanings-list {
+    .song-dossier-system {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1px;
-      background: rgba(168,162,154,.05);
+      grid-template-columns: minmax(250px, 320px) minmax(0, 1fr);
+      gap: clamp(1rem, 2.2vw, 1.8rem);
+      align-items: start;
+    }
+    .song-index {
+      position: sticky;
+      top: 92px;
+      border: 1px solid rgba(168,162,154,.16);
+      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.008));
+      padding: .5rem;
+      max-height: calc(100vh - 120px);
+      overflow-y: auto;
+    }
+    .song-index__btn {
+      width: 100%;
+      border: 1px solid rgba(168,162,154,.14);
+      background: rgba(0,0,0,.22);
+      color: var(--off-white);
+      text-align: left;
+      padding: .52rem;
+      margin-bottom: .5rem;
+      display: grid;
+      grid-template-columns: 56px minmax(0, 1fr);
+      gap: .7rem;
+      cursor: pointer;
+      transition: border-color .2s, background .2s;
+    }
+    .song-index__btn:hover,
+    .song-index__btn.is-active {
+      border-color: rgba(231,76,60,.55);
+      background: rgba(192,57,43,.1);
+    }
+    .song-index__thumb {
+      width: 56px;
+      height: 56px;
+      object-fit: cover;
+      border: 1px solid rgba(168,162,154,.22);
+    }
+    .song-index__meta-num {
+      font-family: var(--font-head);
+      font-size: .6rem;
+      letter-spacing: .23em;
+      color: var(--red-bright);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: .22rem;
+    }
+    .song-index__meta-title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      letter-spacing: .04em;
+      color: #fff;
+      line-height: 1.02;
+      display: block;
+    }
+    .song-index__meta-ref {
+      display: block;
+      margin-top: .28rem;
+      font-size: .76rem;
+      color: rgba(240,235,224,.66);
+      line-height: 1.4;
+    }
+    .song-dossier-panel {
+      border: 1px solid rgba(168,162,154,.16);
+      background:
+        radial-gradient(circle at 78% 7%, rgba(231,76,60,.07), transparent 30%),
+        linear-gradient(180deg, rgba(255,255,255,.018), rgba(255,255,255,.008));
+      padding: clamp(1rem, 2vw, 1.4rem);
+    }
+    .song-dossier__header {
+      display: grid;
+      grid-template-columns: 90px minmax(0, 1fr);
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .song-dossier__thumb {
+      width: 90px;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border: 1px solid rgba(168,162,154,.2);
+    }
+    .song-dossier__number {
+      font-family: var(--font-head);
+      font-size: .63rem;
+      letter-spacing: .26em;
+      text-transform: uppercase;
+      color: var(--red-bright);
+      display: block;
+      margin-bottom: .2rem;
+    }
+    .song-dossier__title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: .05em;
+      line-height: 1;
+      color: #fff;
+      margin-bottom: .2rem;
+    }
+    .song-dossier__ref {
+      font-family: var(--font-head);
+      font-size: .66rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: rgba(240,235,224,.72);
+    }
+    .song-dossier__thesis {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: rgba(240,235,224,.86);
+      margin-bottom: .9rem;
+    }
+    .song-dossier__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+      margin-bottom: 1rem;
+    }
+    .song-dossier__tag {
+      font-family: var(--font-head);
+      font-size: .58rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      border: 1px solid rgba(168,162,154,.25);
+      color: rgba(240,235,224,.78);
+      padding: .26rem .56rem;
+    }
+    .song-dossier__block {
+      margin-bottom: 1rem;
+      border: 1px solid rgba(168,162,154,.14);
+      background: rgba(0,0,0,.2);
+      padding: .95rem;
+    }
+    .song-dossier__block-title {
+      font-family: var(--font-head);
+      font-size: .62rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--red-bright);
+      margin-bottom: .55rem;
+    }
+    .song-dossier__meaning p {
+      font-size: .94rem;
+      line-height: 1.8;
+      color: rgba(240,235,224,.83);
+      margin-bottom: .7rem;
+    }
+    .song-dossier__meaning p:last-child { margin-bottom: 0; }
+    .song-dossier__scripture {
+      background: linear-gradient(180deg, rgba(192,57,43,.14), rgba(192,57,43,.06));
+      border: 1px solid rgba(192,57,43,.32);
+    }
+    .song-dossier__scripture-ref {
+      display: inline-block;
+      font-family: var(--font-head);
+      font-size: .58rem;
+      letter-spacing: .22em;
+      color: var(--red-bright);
+      text-transform: uppercase;
+      margin-bottom: .46rem;
+    }
+    .song-dossier__scripture-quote {
+      color: rgba(255,255,255,.9);
+      font-size: 1rem;
+      line-height: 1.75;
+      font-style: italic;
+    }
+    .song-dossier__lyrics {
+      background: linear-gradient(180deg, rgba(255,255,255,.028), rgba(255,255,255,.012));
+      border: 1px solid rgba(168,162,154,.22);
+    }
+    .song-dossier__lyrics-text {
+      white-space: pre-line;
+      font-size: .97rem;
+      line-height: 1.75;
+      color: rgba(240,235,224,.93);
+      max-width: 72ch;
+    }
+    .song-dossier__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6rem;
+      margin-top: .22rem;
+    }
+    .song-dossier__actions a {
+      font-family: var(--font-head);
+      font-size: .62rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      border: 1px solid rgba(168,162,154,.25);
+      color: var(--off-white);
+      padding: .5rem .9rem;
+      transition: border-color .2s, color .2s, background .2s;
+    }
+    .song-dossier__actions a:hover {
+      border-color: var(--red);
+      background: rgba(192,57,43,.14);
+      color: #fff;
+    }
+    .song-dossier-mobile { display: none; }
+    .song-dossier-mobile__item {
+      border: 1px solid rgba(168,162,154,.16);
+      background: rgba(255,255,255,.01);
+      margin-bottom: .75rem;
+    }
+    .song-dossier-mobile__toggle {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 52px minmax(0, 1fr);
+      gap: .65rem;
+      text-align: left;
+      padding: .62rem;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      cursor: pointer;
+    }
+    .song-dossier-mobile__thumb {
+      width: 52px;
+      height: 52px;
+      object-fit: cover;
+      border: 1px solid rgba(168,162,154,.2);
+    }
+    .song-dossier-mobile__meta strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      letter-spacing: .04em;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: .18rem;
+    }
+    .song-dossier-mobile__meta span {
+      display: block;
+      font-size: .78rem;
+      color: rgba(240,235,224,.66);
+      line-height: 1.4;
+    }
+    .song-dossier-mobile__panel {
+      display: none;
+      padding: 0 .75rem .78rem;
+    }
+    .song-dossier-mobile__item.is-open .song-dossier-mobile__panel { display: block; }
+    @media (max-width: 980px) {
+      .song-dossier-system { display: block; }
+      .song-index,
+      .song-dossier-desktop { display: none; }
+      .song-dossier-mobile { display: block; }
     }
   </style>
 </head>
@@ -90,490 +335,25 @@
   </div>
 
   <!-- ══════════════════════════════════════
-       MEANINGS ACCORDION
+       SONG DOSSIER SYSTEM
   ══════════════════════════════════════ -->
   <section class="section--darker">
     <div class="container">
-      <p class="meanings-intro">
+      <p class="dossier-intro">
         Christ is not hidden in metaphor here. Scripture is the source, not the decoration.
-        Each song begins with a text and works outward into sound, emotion, and weight.
+        Each song begins with a text and works outward into sound, emotion, and weight. This archive is designed to scale as the catalog grows.
       </p>
-      <div class="scroll-jump" aria-label="Song navigation">
-        <a href="#scroll-galilean">Galilean</a>
-        <a href="#scroll-ruach">Ruach</a>
-        <a href="#scroll-quake">Quake</a>
-        <a href="#scroll-the-man">The Man</a>
-        <a href="#scroll-celestial">Celestial</a>
-        <a href="#scroll-wretch">Wretch</a>
-        <a href="#scroll-lanterns">Lanterns</a>
-      </div>
 
-      <div class="meanings-list">
+      <div class="song-dossier-system">
+        <aside class="song-index" aria-label="Song dossier navigation">
+          <div id="songIndexRail"></div>
+        </aside>
 
-        <!-- 01: Galilean -->
-        <div class="meaning-card" id="scroll-galilean">
-          <div class="mc-num">01</div>
-          <h2 class="mc-title">Galilean</h2>
-          <span class="mc-ref">John 1:14</span>
-          <div class="mc-body">
-            <p>
-              This one started simply. We were watching a video about the Galilean moons:
-              Jupiter, Io, Europa, Ganymede, Callisto. Just facts. Just space. But the word stuck.
-              Galilean.
-            </p>
-            <br>
-            <p>
-              On the surface, it is an astronomy term. Dig a little and it is Galileo: observation,
-              looking up. Dig deeper and it is a man from Galilee. Same word, completely different worlds.
-            </p>
-            <br>
-            <p>
-              Science uses it to name moons orbiting a giant planet. History uses it for a man
-              walking dusty roads. Faith says that man spoke light into existence.
-            </p>
-            <br>
-            <p>
-              That tension was too good to ignore, so we leaned into it. Not to explain it. Not to be clever.
-              Just to let the weight of the word sit there.
-            </p>
-            <br>
-            <p>
-              Galilean became a collision point: space and incarnation, scale and humility, things orbiting,
-              and the One everything orbits around.
-            </p>
-            <br>
-            <p>
-              The song does not spell all of that out. It moves through creation and lets the title hang over it.
-              If you catch the wordplay, cool. If you do not, the song still hits.
-            </p>
-            <br>
-            <div class="scripture-block">
-              <span class="ref">John 1:14</span>
-              <p>"And the Word became flesh and dwelt among us, and we have seen his glory."</p>
-            </div>
-            <p style="font-family:var(--font-head);font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--red-bright);margin:1.3rem 0 .8rem;">
-              Galilean - Lyrics
-            </p>
-            <p>
-              Iron dust and canyoned scars<br>
-              Frozen ground from ancient wars<br>
-              Dry river veins stretched far<br>
-              The wounded red of Mars
-            </p>
-            <br>
-            <p>
-              Endless storms of rolling thunder<br>
-              Clouds that tear the dark asunder<br>
-              Gravity that drags us under<br>
-              The burning giant Jupiter
-            </p>
-            <br>
-            <p>
-              Orbits lock<br>
-              Pressure climbs<br>
-              Mass obeys<br>
-              Curves of time
-            </p>
-            <br>
-            <p>
-              Galilean<br>
-              Lord of flame<br>
-              Before the stars<br>
-              You bore the Name
-            </p>
-            <br>
-            <p>
-              Galilean<br>
-              Christ alone<br>
-              Darkness breaks<br>
-              The void is torn
-            </p>
-            <br>
-            <p>
-              A sun implodes and leaves a scar<br>
-              Its burning shell is ripped apart<br>
-              Matter crushed beyond the far<br>
-              The shattered core, neutron star
-            </p>
-            <br>
-            <p>
-              A spiral flood of burning rays<br>
-              A hundred billion suns ablaze<br>
-              We drift within its ancient sway<br>
-              The endless wheel, Milky Way
-            </p>
-            <br>
-            <p>
-              Light departs<br>
-              Still arrives<br>
-              Ages pass<br>
-              Before our eyes
-            </p>
-            <br>
-            <p>
-              Galilean<br>
-              Lord of flame<br>
-              Before the stars<br>
-              You bore the Name
-            </p>
-            <br>
-            <p>
-              Galilean<br>
-              Christ alone<br>
-              Darkness breaks<br>
-              The void is torn
-            </p>
-            <br>
-            <p>
-              Stars ignite<br>
-              Stars decay<br>
-              Light arrives<br>
-              Far too late
-            </p>
-            <br>
-            <p>
-              Worlds collapse<br>
-              Time is torn<br>
-              Ash remains<br>
-              Where fire was born
-            </p>
-            <br>
-            <p>
-              Galilean<br>
-              King of all<br>
-              When stars collapse<br>
-              And heavens fall
-            </p>
-            <br>
-            <p>
-              Galilean<br>
-              End and start<br>
-              All creation<br>
-              Bears Your mark
-            </p>
-            <br>
-            <p>
-              Fire fades from every sky<br>
-              Night stands bare before the dawn<br>
-              What was made will pass and die<br>
-              Jesus reigns<br>
-              The Galilean
-            </p>
-            <div class="song-tools">
-              <a href="https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz" target="_blank" rel="noopener">Spotify</a>
-              <a href="https://www.youtube.com/@ShieldbearerUSA" target="_blank" rel="noopener">YouTube</a>
-              <a href="music.html#armory">Back to Armory</a>
-            </div>
-            <div class="song-nav">
-              <a href="#scroll-lanterns">Previous</a>
-              <a href="#scroll-ruach">Next</a>
-            </div>
-          </div>
-          <div class="mc-toggle"><span class="mc-arrow">&#8595;</span>&nbsp; Read Meaning + Lyrics</div>
+        <div class="song-dossier-desktop">
+          <div id="songDossierDesktop"></div>
         </div>
 
-        <!-- 02: Ruach -->
-        <div class="meaning-card" id="scroll-ruach">
-          <div class="mc-num">02</div>
-          <h2 class="mc-title">Ruach</h2>
-          <span class="mc-ref">Genesis 1 &middot; Ezekiel 37 &middot; Zechariah 4</span>
-          <div class="mc-body">
-            <p>
-              RUACH is the opening statement of a new album by Shieldbearer.
-            </p>
-            <br>
-            <p>
-              Ruach is the ancient Hebrew word for breath, wind, and Spirit: the unseen force that moved over creation,
-              the breath that raises the dead, the Spirit that still moves with power.
-            </p>
-            <br>
-            <p>
-              This song draws its lyrics from Scripture and from two very different songs that shaped Christian music history.
-              No melodies were borrowed. No music was copied. Just words, Scripture, and conviction.
-            </p>
-            <br>
-            <p>
-              Heavy guitars. Growled worship. Cosmic scale. This is Christian metal without apology.
-            </p>
-            <br>
-            <p style="font-family:var(--font-head);font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--red-bright);margin:.2rem 0 .8rem;">
-              Scriptural themes behind RUACH
-            </p>
-            <p>
-              Genesis 1<br>
-              Job 33<br>
-              Ezekiel 37<br>
-              Psalm 51<br>
-              Isaiah 59<br>
-              Zechariah 4
-            </p>
-            <br>
-            <p>
-              The breath of God still moves. And creation still responds.
-            </p>
-            <br>
-            <div class="scripture-block">
-              <span class="ref">Genesis 1:2</span>
-              <p>"The Spirit of God was hovering over the face of the waters."</p>
-            </div>
-            <p style="font-family:var(--font-head);font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--red-bright);margin:1.3rem 0 .8rem;">
-              RUACH - Lyrics
-            </p>
-            <p>
-              Master, we proclaim You, sovereign over all<br>
-              By Your breath the void surrendered and the silent depths were called<br>
-              When the final trumpet tears the heavens from the sky<br>
-              Every nation sees the scars of the Lamb who rose to life
-            </p>
-            <br>
-            <p>
-              Evil hunts my footsteps, flesh is drawn toward the fall<br>
-              RUACH, drive the dark away, let no deceit remain at all<br>
-              You who scattered legions with the thunder of Your word<br>
-              You who left the heights of glory for redemption undeserved
-            </p>
-            <br>
-            <p>
-              If Your people go to silence, then the stones awake and cry<br>
-              Earth itself erupts in witness to the King enthroned on high<br>
-              Mountains quake with reverence, oceans echo Your decree<br>
-              All creation answers back with a truth no soul can flee
-            </p>
-            <br>
-            <p>
-              RUACH, shake the ages<br>
-              Let the firmament awake<br>
-              If the stones erupt in thunder<br>
-              Then ignite my very frame<br>
-              RUACH, shake the ages<br>
-              All You fashioned bow and see<br>
-              When the cosmos roars allegiance<br>
-              The one who cries is me
-            </p>
-            <br>
-            <p>
-              Where no shadow ever reaches, that is where my soul will rise<br>
-              Where the everlasting brightness burns, I stand before Your eyes<br>
-              Hosts of blazing warriors wait the whisper of Your will<br>
-              And with their ranks unending I will praise You standing still
-            </p>
-            <br>
-            <p>
-              Lord of Lords, Your lifeblood fell and broke the captive chain<br>
-              Then You rose in power conquering the darkness and its reign<br>
-              Tyrant night was shattered when You called the sleepers free<br>
-              Master, I surrender, I fall prostrate at Your feet
-            </p>
-            <br>
-            <p>
-              RUACH moving, judgment waking<br>
-              Night collapsing, strongholds breaking<br>
-              Earth responding, fire ascending<br>
-              Every knee to You bending
-            </p>
-            <br>
-            <p>
-              RUACH, shake the ages<br>
-              Let the firmament awake<br>
-              If the stones erupt in thunder<br>
-              Then ignite my very frame<br>
-              RUACH, shake the ages<br>
-              All You fashioned bow and see<br>
-              When the final roar is spoken<br>
-              The one who cries is me
-            </p>
-            <div class="song-tools">
-              <a href="https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz" target="_blank" rel="noopener">Spotify</a>
-              <a href="https://www.youtube.com/@ShieldbearerUSA" target="_blank" rel="noopener">YouTube</a>
-              <a href="music.html#armory">Back to Armory</a>
-            </div>
-            <div class="song-nav">
-              <a href="#scroll-galilean">Previous</a>
-              <a href="#scroll-quake">Next</a>
-            </div>
-          </div>
-          <div class="mc-toggle"><span class="mc-arrow">&#8595;</span>&nbsp; Read Meaning + Lyrics</div>
-        </div>
-
-        <!-- 03: Quake -->
-        <div class="meaning-card" id="scroll-quake">
-          <div class="mc-num">03</div>
-          <h2 class="mc-title">Quake</h2>
-          <span class="mc-ref">Matthew 28:2</span>
-          <div class="mc-body">
-            <p>
-              The earth shook at the resurrection. Not metaphorically. The guards fell as dead men.
-              Angels moved stones. The power of God collided with death and death lost.
-            </p>
-            <br>
-            <p>
-              This song is about that moment and its ongoing implications. The Quake is not past.
-              The same power that shook the ground at the empty tomb is the power available to
-              every believer. The resurrection is not a historical footnote. It is the loudest
-              event in the universe.
-            </p>
-            <div class="scripture-block" style="margin-top:1.2rem;">
-              <span class="ref">Matthew 28:2</span>
-              <p>"And behold, there was a great earthquake, for an angel of the Lord descended from heaven."</p>
-            </div>
-            <!-- UPDATE: add your own meaning here -->
-            <div class="song-tools">
-              <a href="https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz" target="_blank" rel="noopener">Spotify</a>
-              <a href="https://heavensmetalmagazine.com/index.php/2025/09/02/news-shieldbearer-release-new-quake-video/" target="_blank" rel="noopener">Video</a>
-              <a href="music.html#armory">Back to Armory</a>
-            </div>
-            <div class="song-nav">
-              <a href="#scroll-ruach">Previous</a>
-              <a href="#scroll-the-man">Next</a>
-            </div>
-          </div>
-          <div class="mc-toggle"><span class="mc-arrow">&#8595;</span>&nbsp; Read the Meaning</div>
-        </div>
-
-        <!-- 04: The Man -->
-        <div class="meaning-card" id="scroll-the-man">
-          <div class="mc-num">04</div>
-          <h2 class="mc-title">The Man</h2>
-          <span class="mc-ref">John 19:5</span>
-          <div class="mc-body">
-            <p>
-              "Behold the man." Pilate said those words not knowing the full weight of what he was
-              declaring. The condemned king. The one who willingly stood there. Verbatim Scripture
-              as the lyrical foundation.
-            </p>
-            <br>
-            <p>
-              This track was inspired in part by the gravity of Johnny Cash's "When the Man Comes Around."
-              That same weight, that same inevitability, applied to the one who already came, suffered,
-              died, and rose. The Man is Jesus. Every line is drawn from the text. Nothing invented.
-              Nothing softened.
-            </p>
-            <div class="scripture-block" style="margin-top:1.2rem;">
-              <span class="ref">John 19:5</span>
-              <p>"So Jesus came out, wearing the crown of thorns and the purple robe. Pilate said to them, 'Behold the man!'"</p>
-            </div>
-            <!-- UPDATE: add your own meaning here -->
-            <div class="song-tools">
-              <a href="https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz" target="_blank" rel="noopener">Spotify</a>
-              <a href="https://www.youtube.com/@ShieldbearerUSA" target="_blank" rel="noopener">YouTube</a>
-              <a href="music.html#armory">Back to Armory</a>
-            </div>
-            <div class="song-nav">
-              <a href="#scroll-quake">Previous</a>
-              <a href="#scroll-celestial">Next</a>
-            </div>
-          </div>
-          <div class="mc-toggle"><span class="mc-arrow">&#8595;</span>&nbsp; Read the Meaning</div>
-        </div>
-
-        <!-- 05: Celestial Shield -->
-        <div class="meaning-card" id="scroll-celestial">
-          <div class="mc-num">05</div>
-          <h2 class="mc-title">Celestial Shield</h2>
-          <span class="mc-ref">Psalm 91:4</span>
-          <div class="mc-body">
-            <p>
-              He will cover you with his feathers. A song about the protection of God. Not passive
-              shelter but an active, living shield. The image in Psalm 91 is both tender and fierce.
-              Feathers and a shield in the same breath.
-            </p>
-            <br>
-            <p>
-              The name Shieldbearer carries this weight. The bearer of the shield is not the one
-              defending themselves. They are the ones who go out, who face the enemy, who stand.
-              Because the shield is not theirs. It is His.
-            </p>
-            <div class="scripture-block" style="margin-top:1.2rem;">
-              <span class="ref">Psalm 91:4</span>
-              <p>"He will cover you with his pinions, and under his wings you will find refuge; his faithfulness is a shield and buckler."</p>
-            </div>
-            <!-- UPDATE: add your own meaning here -->
-            <div class="song-tools">
-              <a href="https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz" target="_blank" rel="noopener">Spotify</a>
-              <a href="https://www.youtube.com/watch?v=9FHgbbVBT1A" target="_blank" rel="noopener">YouTube</a>
-              <a href="music.html#armory">Back to Armory</a>
-            </div>
-            <div class="song-nav">
-              <a href="#scroll-the-man">Previous</a>
-              <a href="#scroll-wretch">Next</a>
-            </div>
-          </div>
-          <div class="mc-toggle"><span class="mc-arrow">&#8595;</span>&nbsp; Read the Meaning</div>
-        </div>
-
-        <!-- 06: A Wretch Like Me -->
-        <div class="meaning-card" id="scroll-wretch">
-          <div class="mc-num">06</div>
-          <h2 class="mc-title">A Wretch Like Me</h2>
-          <span class="mc-ref">Romans 5:8</span>
-          <div class="mc-body">
-            <p>
-              Amazing Grace reimagined. John Newton's words stripped back down to their original
-              weight. What does it mean that grace reached a wretch? It means it can reach anyone.
-            </p>
-            <br>
-            <p>
-              The word "wretch" has been softened in modern Christianity. This track restores it.
-              If grace only reaches the respectable, it is not grace. The gospel's power is
-              precisely that it reaches those who have no business being reached. That is the point.
-              That is the song.
-            </p>
-            <div class="scripture-block" style="margin-top:1.2rem;">
-              <span class="ref">Romans 5:8</span>
-              <p>"But God shows his love for us in that while we were still sinners, Christ died for us."</p>
-            </div>
-            <!-- UPDATE: add your own meaning here -->
-            <div class="song-tools">
-              <a href="https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz" target="_blank" rel="noopener">Spotify</a>
-              <a href="https://www.youtube.com/watch?v=He8MIcrdoxw" target="_blank" rel="noopener">YouTube</a>
-              <a href="music.html#armory">Back to Armory</a>
-            </div>
-            <div class="song-nav">
-              <a href="#scroll-celestial">Previous</a>
-              <a href="#scroll-lanterns">Next</a>
-            </div>
-          </div>
-          <div class="mc-toggle"><span class="mc-arrow">&#8595;</span>&nbsp; Read the Meaning</div>
-        </div>
-
-        <!-- 07: Lanterns -->
-        <div class="meaning-card" id="scroll-lanterns">
-          <div class="mc-num">07</div>
-          <h2 class="mc-title">Lanterns</h2>
-          <span class="mc-ref">Matthew 5:14</span>
-          <div class="mc-body">
-            <p>
-              You are the light of the world. A city on a hill cannot be hidden.
-              This song is about not shrinking back. Not hiding faith. Not apologising for
-              conviction. Holding the light high in a world that wants it extinguished.
-            </p>
-            <br>
-            <p>
-              The lantern is not decorative. It exists to push back darkness. The song is a
-              call to those who carry the light to stop hiding it under cultural pressure,
-              social awkwardness, or fear of rejection. Christ said you are the light.
-              That is not a suggestion. It is a declaration.
-            </p>
-            <div class="scripture-block" style="margin-top:1.2rem;">
-              <span class="ref">Matthew 5:14-16</span>
-              <p>"You are the light of the world. A city set on a hill cannot be hidden. Nor do people light a lamp and put it under a basket, but on a stand, and it gives light to all in the house."</p>
-            </div>
-            <!-- UPDATE: add your own meaning here -->
-            <div class="song-tools">
-              <a href="https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz" target="_blank" rel="noopener">Spotify</a>
-              <a href="https://www.youtube.com/watch?v=Hnewej6WjkE" target="_blank" rel="noopener">YouTube</a>
-              <a href="music.html#armory">Back to Armory</a>
-            </div>
-            <div class="song-nav">
-              <a href="#scroll-wretch">Previous</a>
-              <a href="#scroll-galilean">Next</a>
-            </div>
-          </div>
-          <div class="mc-toggle"><span class="mc-arrow">&#8595;</span>&nbsp; Read the Meaning</div>
-        </div>
-
-        <!-- ADD MORE TRACKS: copy a meaning-card block and fill in the details -->
-
+        <div class="song-dossier-mobile" id="songDossierMobile" aria-label="Song dossier mobile list"></div>
       </div>
     </div>
   </section>
@@ -645,5 +425,324 @@
 
   <script src="js/analytics.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    (function () {
+      var SONG_DOSSIERS = [
+        {
+          id: 'galilean',
+          number: '01',
+          title: 'Galilean',
+          reference: 'John 1:14',
+          thesis: 'A collision point of cosmos and incarnation. The One everything orbits around entered history.',
+          tags: ['Creation', 'Incarnation', 'Cosmos'],
+          artwork: 'images/galilean-art.png',
+          meaning: [
+            'This one started with the Galilean moons. Just space facts at first. Then the word stayed.',
+            'Galilean can mean astronomy, observation, and Galilee. Same word. Different worlds. That tension became the center of the song.',
+            'The track moves through creation and scale while pointing to Christ without hiding Him in vague language.'
+          ],
+          scripture: {
+            ref: 'John 1:14',
+            quote: '"And the Word became flesh and dwelt among us, and we have seen his glory."'
+          },
+          lyrics: 'Iron dust and canyoned scars\\nFrozen ground from ancient wars\\nDry river veins stretched far\\nThe wounded red of Mars\\n\\nEndless storms of rolling thunder\\nClouds that tear the dark asunder\\nGravity that drags us under\\nThe burning giant Jupiter\\n\\nOrbits lock\\nPressure climbs\\nMass obeys\\nCurves of time\\n\\nGalilean\\nLord of flame\\nBefore the stars\\nYou bore the Name\\n\\nGalilean\\nChrist alone\\nDarkness breaks\\nThe void is torn\\n\\nStars ignite\\nStars decay\\nLight arrives\\nFar too late\\n\\nWorlds collapse\\nTime is torn\\nAsh remains\\nWhere fire was born\\n\\nGalilean\\nKing of all\\nWhen stars collapse\\nAnd heavens fall\\n\\nGalilean\\nEnd and start\\nAll creation\\nBears Your mark\\n\\nFire fades from every sky\\nNight stands bare before the dawn\\nWhat was made will pass and die\\nJesus reigns\\nThe Galilean',
+          actions: {
+            spotify: 'https://open.spotify.com/album/0UqnB3Kw8s4yiDUVgvvgDT',
+            youtube: 'https://www.youtube.com/@ShieldbearerUSA',
+            armory: 'music.html#armory'
+          }
+        },
+        {
+          id: 'ruach',
+          number: '02',
+          title: 'Ruach',
+          reference: 'Genesis 1 | Ezekiel 37 | Zechariah 4',
+          thesis: 'Breath, wind, Spirit. The unseen force of God over creation, judgment, and renewal.',
+          tags: ['Spirit', 'Breath', 'Power'],
+          artwork: 'images/ruach-art.png',
+          meaning: [
+            'Ruach is the Hebrew word for breath, wind, and Spirit. The song was built as a declaration, not an abstraction.',
+            'Lyrics are anchored in Scripture and conviction. Heavy guitars, growled worship, and unapologetic theological focus.',
+            'The point is simple: the breath of God still moves, and creation still responds.'
+          ],
+          scripture: {
+            ref: 'Genesis 1:2',
+            quote: '"The Spirit of God was hovering over the face of the waters."'
+          },
+          lyrics: 'Master, we proclaim You, sovereign over all\\nBy Your breath the void surrendered and the silent depths were called\\nWhen the final trumpet tears the heavens from the sky\\nEvery nation sees the scars of the Lamb who rose to life\\n\\nRUACH, shake the ages\\nLet the firmament awake\\nIf the stones erupt in thunder\\nThen ignite my very frame\\nRUACH, shake the ages\\nAll You fashioned bow and see\\nWhen the final roar is spoken\\nThe one who cries is me',
+          actions: {
+            spotify: 'https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz',
+            youtube: 'https://www.youtube.com/@ShieldbearerUSA',
+            armory: 'music.html#armory'
+          }
+        },
+        {
+          id: 'quake',
+          number: '03',
+          title: 'Quake',
+          reference: 'Matthew 28:2',
+          thesis: 'The resurrection is not metaphorical memory. It is violent power breaking history open.',
+          tags: ['Resurrection', 'Victory', 'Judgment'],
+          artwork: 'images/quake-art.png',
+          meaning: [
+            'The earth shook at the resurrection and death lost. Quake is about that moment and its continuing force.',
+            'This is not symbolic softness. It is the loudest event in history, still declaring Christ is alive.'
+          ],
+          scripture: {
+            ref: 'Matthew 28:2',
+            quote: '"And behold, there was a great earthquake, for an angel of the Lord descended from heaven."'
+          },
+          lyrics: 'The Quake dossier currently includes scripture-grounded meaning and release context. Full official lyric manuscript will be added in the next content pass.',
+          actions: {
+            spotify: 'https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz',
+            youtube: 'https://heavensmetalmagazine.com/index.php/2025/09/02/news-shieldbearer-release-new-quake-video/',
+            armory: 'music.html#armory'
+          }
+        },
+        {
+          id: 'the-man',
+          number: '04',
+          title: 'The Man',
+          reference: 'John 19:5',
+          thesis: 'Verbatim Scripture metal. Pilate spoke more truth than he understood.',
+          tags: ['Passion', 'Scripture', 'Christ'],
+          artwork: 'images/the-man-art.png',
+          meaning: [
+            'The lyrical foundation is drawn from Scripture and centered on "Behold the man."',
+            'This dossier holds the theological core now and can be expanded with full lyric manuscript in the same structure.'
+          ],
+          scripture: {
+            ref: 'John 19:5',
+            quote: '"So Jesus came out, wearing the crown of thorns and the purple robe. Pilate said to them, \'Behold the man!\'"'
+          },
+          lyrics: 'Full lyric manuscript for The Man is queued for upload. Structure is already in place in this dossier system.',
+          actions: {
+            spotify: 'https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz',
+            youtube: 'https://eternalflames.co.uk/en/video-2/shieldbearer-the-man-verbatim-scripture-en',
+            armory: 'music.html#armory'
+          }
+        },
+        {
+          id: 'celestial-shield',
+          number: '05',
+          title: 'Celestial Shield',
+          reference: 'Psalm 91:4',
+          thesis: 'Protection is not passive. God shelters and sends.',
+          tags: ['Protection', 'Faithfulness'],
+          artwork: 'images/celestial-shield-art.jpg',
+          meaning: [
+            'Psalm 91 holds both tenderness and warfare. Feathers and shield in one breath.',
+            'The song explores refuge as active faithfulness, not retreat.'
+          ],
+          scripture: {
+            ref: 'Psalm 91:4',
+            quote: '"His faithfulness is a shield and buckler."'
+          },
+          lyrics: 'Celestial Shield lyric manuscript can be dropped into this dossier block without changing layout.',
+          actions: {
+            spotify: 'https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz',
+            youtube: 'https://www.youtube.com/watch?v=9FHgbbVBT1A',
+            armory: 'music.html#armory'
+          }
+        },
+        {
+          id: 'wretch-like-me',
+          number: '06',
+          title: 'A Wretch Like Me',
+          reference: 'Romans 5:8',
+          thesis: 'Grace reaches the unworthy. That is the scandal and the power.',
+          tags: ['Grace', 'Repentance'],
+          artwork: 'images/wretch-like-me-art.png',
+          meaning: [
+            'This track restores the weight of grace by restoring the weight of "wretch."',
+            'If grace only reaches the respectable, it is no grace at all.'
+          ],
+          scripture: {
+            ref: 'Romans 5:8',
+            quote: '"While we were still sinners, Christ died for us."'
+          },
+          lyrics: 'Wretch lyric manuscript can be inserted here directly in stanza form with no layout changes.',
+          actions: {
+            spotify: 'https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz',
+            youtube: 'https://www.youtube.com/watch?v=He8MIcrdoxw',
+            armory: 'music.html#armory'
+          }
+        },
+        {
+          id: 'lanterns',
+          number: '07',
+          title: 'Lanterns',
+          reference: 'Matthew 5:14-16',
+          thesis: 'Light is assignment, not decoration. Public witness, no retreat.',
+          tags: ['Witness', 'Light', 'Mission'],
+          artwork: 'images/lanterns-art.jpg',
+          meaning: [
+            'Lanterns is a refusal to hide conviction under pressure.',
+            'The call is to carry light into public darkness with obedience and clarity.'
+          ],
+          scripture: {
+            ref: 'Matthew 5:14-16',
+            quote: '"You are the light of the world. A city set on a hill cannot be hidden."'
+          },
+          lyrics: 'Lanterns lyric manuscript can be inserted here in full with preserved stanza spacing.',
+          actions: {
+            spotify: 'https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz',
+            youtube: 'https://www.youtube.com/watch?v=Hnewej6WjkE',
+            armory: 'music.html#armory'
+          }
+        }
+      ];
+
+      var desktopActive = SONG_DOSSIERS[0].id;
+      var mobileActive = SONG_DOSSIERS[0].id;
+
+      function byId(id) {
+        for (var i = 0; i < SONG_DOSSIERS.length; i++) {
+          if (SONG_DOSSIERS[i].id === id) return SONG_DOSSIERS[i];
+        }
+        return SONG_DOSSIERS[0];
+      }
+
+      function escapeHtml(s) {
+        return String(s || '')
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;');
+      }
+
+      function renderDossierBody(song) {
+        var meaningHtml = song.meaning.map(function (p) {
+          return '<p>' + escapeHtml(p) + '</p>';
+        }).join('');
+        var tagsHtml = (song.tags || []).map(function (t) {
+          return '<span class="song-dossier__tag">' + escapeHtml(t) + '</span>';
+        }).join('');
+
+        return '' +
+          '<article class="song-dossier-panel song-dossier">' +
+            '<header class="song-dossier__header">' +
+              '<img class="song-dossier__thumb" src="' + escapeHtml(song.artwork) + '" alt="' + escapeHtml(song.title) + ' artwork">' +
+              '<div>' +
+                '<span class="song-dossier__number">Track ' + escapeHtml(song.number) + '</span>' +
+                '<h2 class="song-dossier__title">' + escapeHtml(song.title) + '</h2>' +
+                '<p class="song-dossier__ref">' + escapeHtml(song.reference) + '</p>' +
+              '</div>' +
+            '</header>' +
+            '<p class="song-dossier__thesis">' + escapeHtml(song.thesis) + '</p>' +
+            '<div class="song-dossier__tags">' + tagsHtml + '</div>' +
+            '<section class="song-dossier__block song-dossier__meaning">' +
+              '<h3 class="song-dossier__block-title">Meaning</h3>' +
+              meaningHtml +
+            '</section>' +
+            '<section class="song-dossier__block song-dossier__scripture">' +
+              '<h3 class="song-dossier__block-title">Scripture Source</h3>' +
+              '<span class="song-dossier__scripture-ref">' + escapeHtml(song.scripture.ref) + '</span>' +
+              '<p class="song-dossier__scripture-quote">' + escapeHtml(song.scripture.quote) + '</p>' +
+            '</section>' +
+            '<section class="song-dossier__block song-dossier__lyrics">' +
+              '<h3 class="song-dossier__block-title">Lyrics</h3>' +
+              '<div class="song-dossier__lyrics-text">' + escapeHtml(song.lyrics) + '</div>' +
+            '</section>' +
+            '<div class="song-dossier__actions">' +
+              '<a href="' + escapeHtml(song.actions.spotify) + '" target="_blank" rel="noopener">Spotify</a>' +
+              '<a href="' + escapeHtml(song.actions.youtube) + '" target="_blank" rel="noopener">YouTube</a>' +
+              '<a href="' + escapeHtml(song.actions.armory) + '">Armory</a>' +
+              '<a href="#' + escapeHtml(song.id) + '">Share</a>' +
+            '</div>' +
+          '</article>';
+      }
+
+      function renderRail() {
+        var rail = document.getElementById('songIndexRail');
+        if (!rail) return;
+        rail.innerHTML = SONG_DOSSIERS.map(function (song) {
+          var activeClass = song.id === desktopActive ? ' is-active' : '';
+          return '' +
+            '<button class="song-index__btn' + activeClass + '" data-song-id="' + escapeHtml(song.id) + '">' +
+              '<img class="song-index__thumb" src="' + escapeHtml(song.artwork) + '" alt="' + escapeHtml(song.title) + ' thumb">' +
+              '<span class="song-index__meta">' +
+                '<span class="song-index__meta-num">Track ' + escapeHtml(song.number) + '</span>' +
+                '<span class="song-index__meta-title">' + escapeHtml(song.title) + '</span>' +
+                '<span class="song-index__meta-ref">' + escapeHtml(song.reference) + '</span>' +
+              '</span>' +
+            '</button>';
+        }).join('');
+      }
+
+      function renderDesktop() {
+        var target = document.getElementById('songDossierDesktop');
+        if (!target) return;
+        target.innerHTML = renderDossierBody(byId(desktopActive));
+      }
+
+      function renderMobile() {
+        var target = document.getElementById('songDossierMobile');
+        if (!target) return;
+        target.innerHTML = SONG_DOSSIERS.map(function (song) {
+          var open = song.id === mobileActive;
+          return '' +
+            '<article class="song-dossier-mobile__item' + (open ? ' is-open' : '') + '">' +
+              '<button class="song-dossier-mobile__toggle" data-song-id="' + escapeHtml(song.id) + '">' +
+                '<img class="song-dossier-mobile__thumb" src="' + escapeHtml(song.artwork) + '" alt="' + escapeHtml(song.title) + ' thumb">' +
+                '<span class="song-dossier-mobile__meta">' +
+                  '<strong>' + escapeHtml(song.title) + '</strong>' +
+                  '<span>Track ' + escapeHtml(song.number) + ' | ' + escapeHtml(song.reference) + '</span>' +
+                '</span>' +
+              '</button>' +
+              '<div class="song-dossier-mobile__panel">' + renderDossierBody(song) + '</div>' +
+            '</article>';
+        }).join('');
+      }
+
+      function setHash(songId) {
+        if (history.replaceState) history.replaceState(null, '', '#' + songId);
+        else window.location.hash = songId;
+      }
+
+      function applyHash() {
+        var hash = (window.location.hash || '').replace('#', '');
+        if (!hash) return;
+        if (byId(hash).id === hash) {
+          desktopActive = hash;
+          mobileActive = hash;
+        }
+      }
+
+      function renderAll() {
+        renderRail();
+        renderDesktop();
+        renderMobile();
+
+        document.querySelectorAll('.song-index__btn').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var id = btn.getAttribute('data-song-id');
+            desktopActive = id;
+            mobileActive = id;
+            setHash(id);
+            renderAll();
+          });
+        });
+
+        document.querySelectorAll('.song-dossier-mobile__toggle').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var id = btn.getAttribute('data-song-id');
+            mobileActive = id;
+            desktopActive = id;
+            setHash(id);
+            renderAll();
+          });
+        });
+      }
+
+      applyHash();
+      renderAll();
+      window.addEventListener('hashchange', function () {
+        applyHash();
+        renderAll();
+      });
+    })();
+  </script>
 </body>
 </html>
