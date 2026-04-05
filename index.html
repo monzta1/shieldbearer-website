@@ -333,50 +333,6 @@
       color: rgba(240,235,224,.9);
     }
 
-    /* Preview grid (3-col teasers) */
-    .preview-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: rgba(168,162,154,.05);
-    }
-    .preview-tile {
-      background: var(--dark);
-      padding: 2.5rem 2rem;
-      transition: background .2s;
-    }
-    .preview-tile:hover { background: rgba(168,162,154,.03); }
-    .preview-tile .tile-icon {
-      font-family: var(--font-display);
-      font-size: 3rem;
-      color: rgba(192,57,43,.12);
-      line-height: 1;
-      margin-bottom: .8rem;
-      letter-spacing: .05em;
-    }
-    .preview-tile h3 {
-      font-family: var(--font-display);
-      font-size: 1.55rem;
-      letter-spacing: .07em;
-      color: #fff;
-      margin-bottom: .7rem;
-    }
-    .preview-tile p {
-      font-size: .95rem;
-      line-height: 1.85;
-      color: rgba(168,162,154,.55);
-      margin-bottom: 1.4rem;
-    }
-    .preview-tile a {
-      font-family: var(--font-head);
-      font-size: .6rem;
-      letter-spacing: .25em;
-      text-transform: uppercase;
-      color: var(--red-bright);
-      transition: color .2s;
-    }
-    .preview-tile a:hover { color: #fff; }
-
     /* Merch CTA strip */
     .merch-strip {
       background: var(--red);
@@ -428,7 +384,6 @@
       .featured-track__lyrics {
         height: auto;
       }
-      .preview-grid   { grid-template-columns: 1fr; }
       #hero { min-height: 74svh; height: 74svh; }
       .hero-content-section {
         margin-top: clamp(-2.2rem, -7vw, -1.2rem);
@@ -490,7 +445,6 @@
     <a href="song-meanings.html">Lyrics</a>
     <a href="interviews.html">Press</a>
     <a href="contact.html">Contact</a>
-    <!-- UPDATE: replace # with your Shopify store URL -->
     <a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener" style="color:var(--red-bright)">Merch</a>
   </div>
 
@@ -506,7 +460,6 @@
       <li><a href="song-meanings.html">Lyrics</a></li>
       <li><a href="interviews.html">Press</a></li>
       <li><a href="contact.html">Contact</a></li>
-      <!-- UPDATE: replace # with your Shopify store URL -->
       <li class="nav-merch"><a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener">Merch</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
@@ -548,7 +501,7 @@
   ══════════════════════════════════════ -->
   <section class="section--dark" id="release" aria-labelledby="release-heading">
     <div class="container">
-      <article class="featured-track featured-track--galilean" data-track="galilean">
+      <article class="featured-track">
         <div class="featured-track__media">
           <div class="featured-track__panel featured-track__media-panel">
             <figure class="featured-track__artwork" aria-label="Galilean artwork thumbnail">
@@ -733,7 +686,6 @@ The Galilean</p>
   <!-- ══════════════════════════════════════
        MERCH CTA STRIP
   ══════════════════════════════════════ -->
-  <!-- UPDATE: replace href with your actual Shopify store URL -->
   <div class="merch-strip">
     <h2>Represent the Mission</h2>
     <p>Official Shieldbearer merch. Wear the conviction.</p>
