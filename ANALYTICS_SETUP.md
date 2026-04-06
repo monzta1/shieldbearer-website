@@ -62,6 +62,31 @@ The site now includes:
 
 Configure Clarity in GTM. Do not add Clarity direct script snippets to the site when GTM is enabled.
 
+Use this exact setup:
+
+1. Tags -> New
+2. Tag Type -> `Custom HTML`
+3. Tag name -> `Clarity - Shieldbearer USA`
+4. Trigger -> `All Pages`
+5. Paste this script:
+
+```html
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "w7gal18ekh");
+</script>
+```
+
+6. Save and Publish container.
+
+Rules:
+
+- Do not hardcode Clarity in website files.
+- Only GTM should load Clarity.
+
 ## 4) Tracked events already wired
 
 The site is pre-wired to capture:
@@ -117,7 +142,9 @@ Then map each to GA4 event tags.
 
 1. Open GTM Preview and load `https://shieldbearerusa.com`
 2. Confirm `GA4 - Shieldbearer USA - Base` fires on every tested page
-3. In GA4 Realtime, confirm `page_view` events are received
+3. Confirm `Clarity - Shieldbearer USA` fires on every tested page
+4. In GA4 Realtime, confirm `page_view` events are received
+5. In Clarity, confirm sessions/recordings begin appearing (usually within a few minutes)
 
 ## Search Console
 
