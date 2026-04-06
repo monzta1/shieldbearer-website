@@ -3,36 +3,27 @@
 This project now includes instrumentation hooks for:
 
 1. Google Tag Manager (GTM)
-2. Google Analytics 4 (GA4)
+2. Google Analytics 4 (GA4) via GTM tags
 3. Google Search Console
-4. Microsoft Clarity
+4. Microsoft Clarity via GTM tags
 
 ## 1) GTM and GA4
 
-All pages now load `js/analytics.js`, which is the central analytics bootstrap.
+All pages include the official GTM web container snippets using container ID:
 
-Update this config at the top of `js/analytics.js`:
+`GTM-N7SR64KL`
 
-```js
-var cfg = window.SHIELDBEARER_ANALYTICS || {
-  gtmId: 'GTM-XXXXXXX',
-  ga4Id: '',
-  clarityId: ''
-};
-```
+`js/analytics.js` only pushes custom events to `window.dataLayer` and does not directly load GA4/Clarity scripts.
 
 ### Recommended setup
 
 1. Create a GTM container for `shieldbearerusa.com`
-2. Replace `gtmId` with your real container ID
+2. Use container ID `GTM-N7SR64KL`
 3. In GTM, add a GA4 Configuration tag and connect your GA4 Measurement ID
+4. In GTM, add a Microsoft Clarity tag if needed
 4. Add cross-domain measurement in GA4 for:
    - `shieldbearerusa.com`
    - `shop.shieldbearerusa.com`
-
-### GA4 fallback
-
-If you want direct GA4 loading without GTM, set `ga4Id` to `G-XXXXXXXXXX`.
 
 ## 2) Search Console
 
@@ -52,9 +43,7 @@ The site now includes:
 
 ## 3) Microsoft Clarity
 
-1. Create a Clarity project
-2. Copy project ID
-3. Set `clarityId` in `js/analytics.js`
+Configure Clarity in GTM. Do not add Clarity direct script snippets to the site when GTM is enabled.
 
 ## 4) Tracked events already wired
 
@@ -131,15 +120,13 @@ Use Clarity for behavior diagnostics:
 
 ## Quick go-live checklist
 
-1. Set real `gtmId`
-2. Set real `clarityId`
-3. Publish GTM container
-4. Confirm GA4 event stream receives custom events
-5. Verify Search Console property and submit sitemap
-6. Run one manual test journey:
+1. Confirm snippets use `GTM-N7SR64KL` on every page
+2. Publish GTM container
+3. Confirm GA4 event stream receives custom events
+4. Verify Search Console property and submit sitemap
+5. Run one manual test journey:
    - open home
    - click Listen
    - open lyrics
    - click Merch
    - submit contact
-
