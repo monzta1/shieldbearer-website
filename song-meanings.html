@@ -306,6 +306,83 @@
       .song-dossier-desktop { display: none; }
       .song-dossier-mobile { display: block; }
     }
+    /* ── CATALOG STATS & TAG FILTER ── */
+    .dossier-meta-bar {
+      display: flex;
+      align-items: center;
+      gap: 1.6rem;
+      margin-bottom: .9rem;
+      flex-wrap: wrap;
+    }
+    .dossier-stat {
+      font-family: var(--font-head);
+      font-size: .58rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: rgba(168,162,154,.42);
+    }
+    .dossier-stat strong { color: rgba(240,235,224,.6); }
+    .tag-filter-bar {
+      display: flex;
+      gap: .32rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.3rem;
+    }
+    .tag-filter-btn {
+      font-family: var(--font-head);
+      font-size: .53rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      border: 1px solid rgba(168,162,154,.18);
+      color: rgba(240,235,224,.5);
+      background: transparent;
+      padding: .22rem .5rem;
+      cursor: pointer;
+      transition: border-color .18s, color .18s, background .18s;
+    }
+    .tag-filter-btn:hover,
+    .tag-filter-btn.active {
+      border-color: rgba(231,76,60,.5);
+      color: var(--red-bright);
+      background: rgba(231,76,60,.07);
+    }
+    /* ── DOSSIER PREV/NEXT NAV ── */
+    .dossier-nav-bar {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      margin-bottom: .75rem;
+    }
+    .dossier-nav-btn {
+      font-family: var(--font-head);
+      font-size: .55rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      border: 1px solid rgba(168,162,154,.18);
+      color: rgba(240,235,224,.45);
+      background: transparent;
+      padding: .28rem .64rem;
+      cursor: pointer;
+      transition: border-color .18s, color .18s;
+    }
+    .dossier-nav-btn:hover:not([disabled]) {
+      border-color: rgba(168,162,154,.4);
+      color: var(--off-white);
+    }
+    .dossier-nav-btn[disabled] { opacity: .2; cursor: default; }
+    .dossier-nav-pos {
+      font-family: var(--font-head);
+      font-size: .55rem;
+      letter-spacing: .2em;
+      color: rgba(168,162,154,.36);
+      padding: 0 .3rem;
+    }
+    /* ── DOSSIER FADE-IN ANIMATION ── */
+    @keyframes dossierIn {
+      from { opacity: 0; transform: translateY(7px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .dossier-anim { animation: dossierIn .22s ease both; }
   </style>
 </head>
 <body>
@@ -315,6 +392,7 @@
     <a href="index.html">Home</a>
     <a href="music.html">Music</a>
     <a href="about.html">About</a>
+    <a href="process.html">Process</a>
     <a href="song-meanings.html">Lyrics</a>
     <a href="interviews.html">Press</a>
     <a href="manifesto.html">Manifesto</a>
@@ -328,6 +406,7 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="music.html">Music</a></li>
       <li><a href="about.html">About</a></li>
+      <li><a href="process.html">Process</a></li>
       <li><a href="song-meanings.html">Lyrics</a></li>
       <li><a href="interviews.html">Press</a></li>
       <li><a href="manifesto.html">Manifesto</a></li>
@@ -359,12 +438,16 @@
         Each song begins with a text and works outward into sound, emotion, and weight. This archive is designed to scale as the catalog grows.
       </p>
 
+      <div id="dossierMetaBar"></div>
+      <div id="tagFilterBar" class="tag-filter-bar"></div>
+
       <div class="song-dossier-system">
         <aside class="song-index" aria-label="Song dossier navigation">
           <div id="songIndexRail"></div>
         </aside>
 
         <div class="song-dossier-desktop">
+          <div id="dossierNavBar"></div>
           <div id="songDossierDesktop"></div>
         </div>
 
@@ -404,10 +487,12 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="music.html">Music</a></li>
           <li><a href="about.html">About</a></li>
+          <li><a href="process.html">Process</a></li>
           <li><a href="song-meanings.html">Lyrics</a></li>
           <li><a href="interviews.html">Press</a></li>
-      <li><a href="manifesto.html">Manifesto</a></li>
+          <li><a href="manifesto.html">Manifesto</a></li>
           <li><a href="contact.html">Contact</a></li>
+          <li><a href="epk.html">Press Kit</a></li>
           <li><a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener">Merch</a></li>
         </ul>
       </div>
@@ -427,6 +512,7 @@
           <li><a href="music.html#armory">Enter the Armory</a></li>
           <li><a href="song-meanings.html">Read the Lyrics</a></li>
           <li><a href="interviews.html">Catch the Signal</a></li>
+          <li><a href="epk.html">Download Press Kit</a></li>
           <li><a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener">Raise the Banner</a></li>
           <li><a href="contact.html">Join the Mission</a></li>
         </ul>
@@ -609,24 +695,15 @@
       ];
 
       var desktopActive = SONG_DOSSIERS[0].id;
-      var mobileActive = SONG_DOSSIERS[0].id;
+      var mobileActive  = null;
+      var activeTag     = null;
 
-      function byId(id) {
-        for (var i = 0; i < SONG_DOSSIERS.length; i++) {
-          if (SONG_DOSSIERS[i].id === id) return SONG_DOSSIERS[i];
-        }
-        return SONG_DOSSIERS[0];
-      }
-
+      /* ── helpers ── */
       function escapeHtml(s) {
         return String(s || '')
-          .replace(/&/g, '&amp;')
-          .replace(/</g, '&lt;')
-          .replace(/>/g, '&gt;')
-          .replace(/"/g, '&quot;')
-          .replace(/'/g, '&#39;');
+          .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
       }
-
       function spotifyEmbedFromUrl(url) {
         var clean = String(url || '').trim();
         if (!clean || clean.indexOf('open.spotify.com') === -1) return '';
@@ -635,26 +712,105 @@
         if (!m) return '';
         return 'https://open.spotify.com/embed/' + m[1] + '/' + m[2] + '?utm_source=generator';
       }
+      function allTags() {
+        var seen = {}, tags = [];
+        for (var i = 0; i < SONG_DOSSIERS.length; i++) {
+          var t = SONG_DOSSIERS[i].tags || [];
+          for (var j = 0; j < t.length; j++) {
+            if (!seen[t[j]]) { seen[t[j]] = true; tags.push(t[j]); }
+          }
+        }
+        return tags;
+      }
+      function filteredDossiers() {
+        if (!activeTag) return SONG_DOSSIERS;
+        return SONG_DOSSIERS.filter(function (s) {
+          return (s.tags || []).indexOf(activeTag) !== -1;
+        });
+      }
+      function indexIn(songs, id) {
+        for (var i = 0; i < songs.length; i++) { if (songs[i].id === id) return i; }
+        return -1;
+      }
 
+      /* ── catalog stats ── */
+      function renderMetaBar() {
+        var el = document.getElementById('dossierMetaBar');
+        if (!el) return;
+        el.innerHTML =
+          '<div class="dossier-meta-bar">' +
+          '<span class="dossier-stat"><strong>' + SONG_DOSSIERS.length + '</strong> Tracks</span>' +
+          '<span class="dossier-stat">Catalog &middot; <strong>2024&ndash;2026</strong></span>' +
+          '<span class="dossier-stat">Growing Archive</span>' +
+          '</div>';
+      }
+
+      /* ── tag filter ── */
+      function renderTagFilter() {
+        var bar = document.getElementById('tagFilterBar');
+        if (!bar) return;
+        var tags = allTags();
+        bar.innerHTML =
+          '<button class="tag-filter-btn' + (!activeTag ? ' active' : '') + '" data-tag="">All</button>' +
+          tags.map(function (t) {
+            return '<button class="tag-filter-btn' + (activeTag === t ? ' active' : '') +
+              '" data-tag="' + escapeHtml(t) + '">' + escapeHtml(t) + '</button>';
+          }).join('');
+        bar.querySelectorAll('.tag-filter-btn').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            activeTag = btn.getAttribute('data-tag') || null;
+            var songs = filteredDossiers();
+            if (songs.length && indexIn(songs, desktopActive) === -1) {
+              desktopActive = songs[0].id;
+              mobileActive  = null;
+            }
+            renderAll();
+          });
+        });
+      }
+
+      /* ── prev/next nav bar (desktop) ── */
+      function renderNavBar() {
+        var bar = document.getElementById('dossierNavBar');
+        if (!bar) return;
+        var songs = filteredDossiers();
+        var idx   = indexIn(songs, desktopActive);
+        if (idx === -1) idx = 0;
+        bar.innerHTML =
+          '<div class="dossier-nav-bar">' +
+          '<button class="dossier-nav-btn" id="navPrev"' + (idx === 0 ? ' disabled' : '') + '>\u2190 Prev</button>' +
+          '<span class="dossier-nav-pos">' + (idx + 1) + ' / ' + songs.length + '</span>' +
+          '<button class="dossier-nav-btn" id="navNext"' + (idx >= songs.length - 1 ? ' disabled' : '') + '>Next \u2192</button>' +
+          '</div>';
+        var p = document.getElementById('navPrev');
+        var n = document.getElementById('navNext');
+        if (p && !p.disabled) p.addEventListener('click', function () {
+          var s = filteredDossiers(), ci = indexIn(s, desktopActive);
+          if (ci > 0) { desktopActive = s[ci - 1].id; setHash(desktopActive); renderAll(); }
+        });
+        if (n && !n.disabled) n.addEventListener('click', function () {
+          var s = filteredDossiers(), ci = indexIn(s, desktopActive);
+          if (ci < s.length - 1) { desktopActive = s[ci + 1].id; setHash(desktopActive); renderAll(); }
+        });
+      }
+
+      /* ── dossier body ── */
       function renderDossierBody(song, includePlayer) {
-        var meaningHtml = song.meaning.map(function (p) {
-          return '<p>' + escapeHtml(p) + '</p>';
-        }).join('');
-        var tagsHtml = (song.tags || []).map(function (t) {
-          return '<span class="song-dossier__tag">' + escapeHtml(t) + '</span>';
-        }).join('');
-        var lyricsText = escapeHtml(String(song.lyrics || '').replace(/\\n/g, '\n'));
-        var embedUrl = spotifyEmbedFromUrl(song.actions && song.actions.spotify);
-        var playerHtml = '';
+        var meaningHtml = song.meaning.map(function (p) { return '<p>' + escapeHtml(p) + '</p>'; }).join('');
+        var tagsHtml    = (song.tags || []).map(function (t) { return '<span class="song-dossier__tag">' + escapeHtml(t) + '</span>'; }).join('');
+        var lyricsText  = escapeHtml(String(song.lyrics || '').replace(/\\n/g, '\n'));
+        var embedUrl    = spotifyEmbedFromUrl(song.actions && song.actions.spotify);
+        var playerHtml  = '';
         if (includePlayer && embedUrl) {
           playerHtml =
             '<div class="song-dossier__player-wrap">' +
-              '<iframe class="song-dossier__player" src="' + escapeHtml(embedUrl) + '" title="Spotify player for ' + escapeHtml(song.title) + '" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>' +
+              '<iframe class="song-dossier__player" src="' + escapeHtml(embedUrl) +
+              '" title="Spotify player for ' + escapeHtml(song.title) +
+              '" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>' +
             '</div>';
         }
-
         return '' +
-          '<article class="song-dossier-panel song-dossier">' +
+          '<article class="song-dossier-panel song-dossier dossier-anim">' +
             '<header class="song-dossier__header">' +
               '<img class="song-dossier__thumb" src="' + escapeHtml(song.artwork) + '" alt="' + escapeHtml(song.title) + ' artwork">' +
               '<div>' +
@@ -667,8 +823,7 @@
             '<p class="song-dossier__thesis">' + escapeHtml(song.thesis) + '</p>' +
             '<div class="song-dossier__tags">' + tagsHtml + '</div>' +
             '<section class="song-dossier__block song-dossier__meaning">' +
-              '<h3 class="song-dossier__block-title">Meaning</h3>' +
-              meaningHtml +
+              '<h3 class="song-dossier__block-title">Meaning</h3>' + meaningHtml +
             '</section>' +
             '<section class="song-dossier__block song-dossier__scripture">' +
               '<h3 class="song-dossier__block-title">Scripture Source</h3>' +
@@ -688,13 +843,19 @@
           '</article>';
       }
 
+      /* ── sidebar rail ── */
       function renderRail() {
-        var rail = document.getElementById('songIndexRail');
+        var rail  = document.getElementById('songIndexRail');
         if (!rail) return;
-        rail.innerHTML = SONG_DOSSIERS.map(function (song) {
-          var activeClass = song.id === desktopActive ? ' is-active' : '';
+        var songs = filteredDossiers();
+        if (!songs.length) {
+          rail.innerHTML = '<p style="font-size:.72rem;color:rgba(168,162,154,.4);padding:.6rem .5rem;">No tracks match.</p>';
+          return;
+        }
+        rail.innerHTML = songs.map(function (song) {
           return '' +
-            '<button class="song-index__btn' + activeClass + '" data-song-id="' + escapeHtml(song.id) + '">' +
+            '<button class="song-index__btn' + (song.id === desktopActive ? ' is-active' : '') +
+            '" data-song-id="' + escapeHtml(song.id) + '">' +
               '<img class="song-index__thumb" src="' + escapeHtml(song.artwork) + '" alt="' + escapeHtml(song.title) + ' thumb">' +
               '<span class="song-index__meta">' +
                 '<span class="song-index__meta-num">Track ' + escapeHtml(song.number) + '</span>' +
@@ -703,18 +864,34 @@
               '</span>' +
             '</button>';
         }).join('');
+        rail.querySelectorAll('.song-index__btn').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            desktopActive = btn.getAttribute('data-song-id');
+            mobileActive  = desktopActive;
+            setHash(desktopActive);
+            renderAll();
+          });
+        });
+        var active = rail.querySelector('.is-active');
+        if (active) active.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
       }
 
+      /* ── desktop panel ── */
       function renderDesktop() {
         var target = document.getElementById('songDossierDesktop');
         if (!target) return;
-        target.innerHTML = renderDossierBody(byId(desktopActive), true);
+        var songs = filteredDossiers(), song = null;
+        for (var i = 0; i < songs.length; i++) { if (songs[i].id === desktopActive) { song = songs[i]; break; } }
+        if (!song && songs.length) { song = songs[0]; desktopActive = song.id; }
+        target.innerHTML = song ? renderDossierBody(song, true) : '';
       }
 
+      /* ── mobile accordion ── */
       function renderMobile() {
         var target = document.getElementById('songDossierMobile');
         if (!target) return;
-        target.innerHTML = SONG_DOSSIERS.map(function (song) {
+        var songs = filteredDossiers();
+        target.innerHTML = songs.map(function (song) {
           var open = song.id === mobileActive;
           return '' +
             '<article class="song-dossier-mobile__item' + (open ? ' is-open' : '') + '">' +
@@ -728,54 +905,49 @@
               '<div class="song-dossier-mobile__panel">' + (open ? renderDossierBody(song, true) : '') + '</div>' +
             '</article>';
         }).join('');
+        target.querySelectorAll('.song-dossier-mobile__toggle').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var id = btn.getAttribute('data-song-id');
+            mobileActive  = (mobileActive === id) ? null : id;
+            desktopActive = id;
+            if (mobileActive) setHash(id);
+            renderAll();
+          });
+        });
       }
 
-      function setHash(songId) {
-        if (history.replaceState) history.replaceState(null, '', '#' + songId);
-        else window.location.hash = songId;
+      function setHash(id) {
+        if (history.replaceState) history.replaceState(null, '', '#' + id);
+        else window.location.hash = id;
       }
-
       function applyHash() {
         var hash = (window.location.hash || '').replace('#', '');
         if (!hash) return;
-        if (byId(hash).id === hash) {
-          desktopActive = hash;
-          mobileActive = hash;
+        for (var i = 0; i < SONG_DOSSIERS.length; i++) {
+          if (SONG_DOSSIERS[i].id === hash) { desktopActive = hash; mobileActive = hash; break; }
         }
       }
-
       function renderAll() {
+        renderMetaBar();
+        renderTagFilter();
         renderRail();
+        renderNavBar();
         renderDesktop();
         renderMobile();
-
-        document.querySelectorAll('.song-index__btn').forEach(function (btn) {
-          btn.addEventListener('click', function () {
-            var id = btn.getAttribute('data-song-id');
-            desktopActive = id;
-            mobileActive = id;
-            setHash(id);
-            renderAll();
-          });
-        });
-
-        document.querySelectorAll('.song-dossier-mobile__toggle').forEach(function (btn) {
-          btn.addEventListener('click', function () {
-            var id = btn.getAttribute('data-song-id');
-            mobileActive = id;
-            desktopActive = id;
-            setHash(id);
-            renderAll();
-          });
-        });
       }
+
+      /* ── keyboard navigation (desktop only) ── */
+      document.addEventListener('keydown', function (e) {
+        if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+        if (window.innerWidth <= 980) return;
+        var songs = filteredDossiers(), ci = indexIn(songs, desktopActive);
+        if (e.key === 'ArrowLeft'  && ci > 0)              { desktopActive = songs[ci - 1].id; setHash(desktopActive); renderAll(); }
+        if (e.key === 'ArrowRight' && ci < songs.length - 1) { desktopActive = songs[ci + 1].id; setHash(desktopActive); renderAll(); }
+      });
 
       applyHash();
       renderAll();
-      window.addEventListener('hashchange', function () {
-        applyHash();
-        renderAll();
-      });
+      window.addEventListener('hashchange', function () { applyHash(); renderAll(); });
     })();
   </script>
 </body>
