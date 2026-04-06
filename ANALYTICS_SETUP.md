@@ -15,6 +15,23 @@ All pages include the official GTM web container snippets using container ID:
 
 `js/analytics.js` only pushes custom events to `window.dataLayer` and does not directly load GA4/Clarity scripts.
 
+### GA4 Base Tag (required in GTM)
+
+Create this tag in GTM exactly once:
+
+1. Tags -> New
+2. Tag Type -> Google tag
+3. Measurement ID -> `G-QTHJRB1B7G`
+4. Triggering -> `All Pages`
+5. Tag name -> `GA4 - Shieldbearer USA - Base`
+6. Save and Publish container
+
+Rules:
+
+- Do not use numeric stream ID.
+- Do not add hardcoded GA4 scripts to site files.
+- Do not create duplicate GA4 base tags in GTM.
+
 ### Recommended setup
 
 1. Create a GTM container for `shieldbearerusa.com`
@@ -95,6 +112,12 @@ Add custom event triggers for:
 - `signal_signup`
 
 Then map each to GA4 event tags.
+
+### Verification
+
+1. Open GTM Preview and load `https://shieldbearerusa.com`
+2. Confirm `GA4 - Shieldbearer USA - Base` fires on every tested page
+3. In GA4 Realtime, confirm `page_view` events are received
 
 ## Search Console
 
