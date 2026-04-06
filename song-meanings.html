@@ -383,6 +383,90 @@
       to   { opacity: 1; transform: translateY(0); }
     }
     .dossier-anim { animation: dossierIn .22s ease both; }
+    #staticDossierFallback {
+      margin-top: 1.3rem;
+      display: grid;
+      gap: 1rem;
+    }
+    .song-dossier-fallback__item {
+      border: 1px solid rgba(168,162,154,.16);
+      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.008));
+      padding: 1rem;
+    }
+    .song-dossier-fallback__item h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      letter-spacing: .05em;
+      color: #fff;
+      margin-bottom: .24rem;
+      line-height: 1;
+    }
+    .song-dossier-fallback__meta {
+      font-family: var(--font-head);
+      font-size: .62rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(240,235,224,.75);
+      margin-bottom: .48rem;
+    }
+    .song-dossier-fallback__thesis {
+      font-size: .98rem;
+      line-height: 1.75;
+      color: rgba(240,235,224,.88);
+      margin-bottom: .7rem;
+    }
+    .song-dossier-fallback__tags {
+      font-family: var(--font-head);
+      font-size: .58rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--red-bright);
+      margin-bottom: .75rem;
+    }
+    .song-dossier-fallback__player {
+      margin-bottom: .8rem;
+      border: 1px solid rgba(168,162,154,.2);
+      overflow: hidden;
+    }
+    .song-dossier-fallback__player iframe {
+      display: block;
+      width: 100%;
+      height: 152px;
+      border: 0;
+    }
+    .song-dossier-fallback__item h3 {
+      font-family: var(--font-head);
+      font-size: .62rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--red-bright);
+      margin: .75rem 0 .45rem;
+    }
+    .song-dossier-fallback__item p {
+      font-size: .95rem;
+      line-height: 1.82;
+      color: rgba(240,235,224,.86);
+      margin-bottom: .55rem;
+    }
+    .song-dossier-fallback__item p:last-child { margin-bottom: 0; }
+    .song-dossier-fallback__scripture {
+      border: 1px solid rgba(192,57,43,.32);
+      background: linear-gradient(180deg, rgba(192,57,43,.14), rgba(192,57,43,.06));
+      padding: .72rem;
+      font-style: italic;
+      color: rgba(255,255,255,.92);
+    }
+    .song-dossier-fallback__lyrics {
+      border: 1px solid rgba(168,162,154,.2);
+      background: linear-gradient(180deg, rgba(255,255,255,.025), rgba(255,255,255,.012));
+      padding: .8rem;
+      white-space: pre-wrap;
+      line-height: 1.86;
+      font-size: .96rem;
+      color: rgba(240,235,224,.94);
+      font-style: italic;
+      margin: 0;
+    }
   </style>
 </head>
 <body>
@@ -452,6 +536,534 @@
         </div>
 
         <div class="song-dossier-mobile" id="songDossierMobile" aria-label="Song dossier mobile list"></div>
+      </div>
+
+      <!-- SEO / crawler fallback: visible in raw HTML, hidden after JS enhancement succeeds -->
+      <div id="staticDossierFallback">
+        <section class="song-dossier-fallback__item" id="galilean">
+          <h2>Galilean</h2>
+          <p class="song-dossier-fallback__meta">Track 01 · John 1:14 · Single 2025</p>
+          <p class="song-dossier-fallback__thesis">A collision point of cosmos and incarnation. The One everything orbits around entered history.</p>
+          <p class="song-dossier-fallback__tags">Tags: Creation, Incarnation, Cosmos</p>
+          <div class="song-dossier-fallback__player">
+            <iframe src="https://open.spotify.com/embed/album/0UqnB3Kw8s4yiDUVgvvgDT?utm_source=generator" title="Galilean on Spotify" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+          </div>
+          <h3>Meaning</h3>
+          <p>This one started with the Galilean moons. Just space facts at first. Then the word stayed.</p>
+          <p>Galilean can mean astronomy, observation, and Galilee. Same word. Different worlds. That tension became the center of the song.</p>
+          <p>The track moves through creation and scale while pointing to Christ without hiding Him in vague language.</p>
+          <h3>Scripture Source</h3>
+          <p class="song-dossier-fallback__scripture">John 1:14 — "And the Word became flesh and dwelt among us, and we have seen his glory."</p>
+          <h3>Lyrics</h3>
+          <pre class="song-dossier-fallback__lyrics">Iron dust and canyoned scars
+Frozen ground from ancient wars
+Dry river veins stretched far
+The wounded red of Mars
+
+Endless storms of rolling thunder
+Clouds that tear the dark asunder
+Gravity that drags us under
+The burning giant Jupiter
+
+Orbits lock
+Pressure climbs
+Mass obeys
+Curves of time
+
+Galilean
+Lord of flame
+Before the stars
+You bore the Name
+
+Galilean
+Christ alone
+Darkness breaks
+The void is torn
+
+Stars ignite
+Stars decay
+Light arrives
+Far too late
+
+Worlds collapse
+Time is torn
+Ash remains
+Where fire was born
+
+Galilean
+King of all
+When stars collapse
+And heavens fall
+
+Galilean
+End and start
+All creation
+Bears Your mark
+
+Fire fades from every sky
+Night stands bare before the dawn
+What was made will pass and die
+Jesus reigns
+The Galilean</pre>
+        </section>
+
+        <section class="song-dossier-fallback__item" id="ruach">
+          <h2>Ruach</h2>
+          <p class="song-dossier-fallback__meta">Track 02 · Genesis 1 | Ezekiel 37 | Zechariah 4</p>
+          <p class="song-dossier-fallback__thesis">Breath, wind, Spirit. The unseen force of God over creation, judgment, and renewal.</p>
+          <p class="song-dossier-fallback__tags">Tags: Spirit, Breath, Power</p>
+          <div class="song-dossier-fallback__player">
+            <iframe src="https://open.spotify.com/embed/track/54vAgzYCsp5k2lAJ76CYHx?utm_source=generator" title="Ruach on Spotify" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+          </div>
+          <h3>Meaning</h3>
+          <p>Ruach is the Hebrew word for breath, wind, and Spirit. The song was built as a declaration, not an abstraction.</p>
+          <p>Lyrics are anchored in Scripture and conviction. Heavy guitars, growled worship, and unapologetic theological focus.</p>
+          <p>The point is simple: the breath of God still moves, and creation still responds.</p>
+          <h3>Scripture Source</h3>
+          <p class="song-dossier-fallback__scripture">Genesis 1:2 — "The Spirit of God was hovering over the face of the waters."</p>
+          <h3>Lyrics</h3>
+          <pre class="song-dossier-fallback__lyrics">Master, we proclaim You, sovereign over all
+By Your breath the void surrendered and the silent depths were called
+When the final trumpet tears the heavens from the sky
+Every nation sees the scars of the Lamb who rose to life
+
+RUACH, shake the ages
+Let the firmament awake
+If the stones erupt in thunder
+Then ignite my very frame
+RUACH, shake the ages
+All You fashioned bow and see
+When the final roar is spoken
+The one who cries is me</pre>
+        </section>
+
+        <section class="song-dossier-fallback__item" id="quake">
+          <h2>Quake</h2>
+          <p class="song-dossier-fallback__meta">Track 03 · Matthew 28:2</p>
+          <p class="song-dossier-fallback__thesis">The resurrection is not metaphorical memory. It is violent power breaking history open.</p>
+          <p class="song-dossier-fallback__tags">Tags: Resurrection, Victory, Judgment</p>
+          <div class="song-dossier-fallback__player">
+            <iframe src="https://open.spotify.com/embed/track/0hNjSmXUg9WsLxAfGf1nDV?utm_source=generator" title="Quake on Spotify" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+          </div>
+          <h3>Meaning</h3>
+          <p>The earth shook at the resurrection and death lost. Quake is about that moment and its continuing force.</p>
+          <p>This is not symbolic softness. It is the loudest event in history, still declaring Christ is alive.</p>
+          <h3>Scripture Source</h3>
+          <p class="song-dossier-fallback__scripture">Matthew 28:2 — "And behold, there was a great earthquake, for an angel of the Lord descended from heaven."</p>
+          <h3>Lyrics</h3>
+          <pre class="song-dossier-fallback__lyrics">Low growl in the ground, I hear your walls break
+Name on my lips, and the night starts to quake
+
+Your banners burn where you claimed the streets
+Your captives run as they hear His feet
+No courtroom trial, the verdict’s screamed
+The Word made flesh rips apart your schemes
+
+Ash on the air, your fortress shakes
+The sky cracks open, and the earth awakes
+
+QUAKE, when the Name cuts through the haze
+QUAKE, every shadow splits in blaze
+Your crown falls, your strongholds break
+JESUS JESUS JESUS, you quake
+
+Your venom’s dry, your claws turn dust
+Every curse you wrote just turns to rust
+The Lamb stands crowned where you thought Him slain
+He steps through fire, and He calls your name
+
+Ash on the air, your fortress shakes
+The sky cracks open, and the earth awakes
+
+QUAKE, when the Name cuts through the haze
+QUAKE, every shadow splits in blaze
+Your crown falls, your strongholds break
+JESUS JESUS JESUS, you quake
+
+Bow down (QUAKE)
+Spit out the lies (QUAKE)
+Your kingdom cracks under holy eyes (QUAKE)
+The grave lies empty, the risen Christ (QUAKE)
+
+QUAKE, QUAKE
+Name of JESUS makes you QUAKE
+
+QUAKE, when the Name cuts through the haze
+QUAKE, every shadow splits in blaze
+Your crown falls, your strongholds break
+JESUS JESUS JESUS, you quake
+
+Night goes silent when the demons quake</pre>
+        </section>
+
+        <section class="song-dossier-fallback__item" id="the-man">
+          <h2>The Man</h2>
+          <p class="song-dossier-fallback__meta">Track 04 · John 19:5</p>
+          <p class="song-dossier-fallback__thesis">Verbatim Scripture metal. Pilate spoke more truth than he understood.</p>
+          <p class="song-dossier-fallback__tags">Tags: Passion, Scripture, Christ</p>
+          <div class="song-dossier-fallback__player">
+            <iframe src="https://open.spotify.com/embed/track/31TZ3S9WFnHrW80XuDimH4?utm_source=generator" title="The Man on Spotify" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+          </div>
+          <h3>Meaning</h3>
+          <p>The lyrical foundation is drawn from Scripture and centered on "Behold the man."</p>
+          <p>This dossier holds the theological core and full lyric manuscript inside one structured archive entry.</p>
+          <h3>Scripture Source</h3>
+          <p class="song-dossier-fallback__scripture">John 19:5 — "So Jesus came out, wearing the crown of thorns and the purple robe. Pilate said to them, 'Behold the man!'"</p>
+          <h3>Lyrics</h3>
+          <pre class="song-dossier-fallback__lyrics">[Verse]
+
+And you will hear
+Of wars
+And rumors of wars
+[Matthew 24:6]
+
+See that you are not troubled
+For all these things must come to pass
+But the end is not yet
+[Matthew 24:6]
+
+Nation will rise against nation
+Kingdom against kingdom
+[Matthew 24:7]
+
+Famines
+Pestilences
+Earthquakes
+In various places
+[Matthew 24:7]
+
+All these
+Are the beginning
+Of sorrows
+[Matthew 24:8]
+
+When the Man comes around
+
+[Verse]
+
+There will be signs
+In the sun
+In the moon
+In the stars
+[Luke 21:25]
+
+On the earth
+Distress of nations
+With perplexity
+[Luke 21:25]
+
+The sea
+And the waves
+Roaring
+[Luke 21:25]
+
+Men’s hearts failing them
+From fear
+From expectation
+[Luke 21:26]
+
+Of those things
+Which are coming
+On the earth
+[Luke 21:26]
+
+For the powers
+Of the heavens
+Will be shaken
+[Luke 21:26]
+
+When the Man comes around
+
+[Pre-Chorus]
+
+Watch therefore
+You do not know
+What hour
+Your Lord is coming
+[Matthew 24:42]
+
+When the Man comes around
+
+[Chorus]
+
+When the Man
+When the Man
+When the Man comes around
+
+Behold
+He is coming
+With clouds
+[Revelation 1:7]
+
+Every eye
+Will see Him
+[Revelation 1:7]
+
+When the Man
+When the Man
+When the Man comes around
+
+[Verse]
+
+Jerusalem
+Will be trampled
+By Gentiles
+[Luke 21:24]
+
+Until the times
+Of the Gentiles
+Are fulfilled
+[Luke 21:24]
+
+Blindness in part
+Has happened
+To Israel
+[Romans 11:25]
+
+Until the fullness
+Of the Gentiles
+Has come in
+[Romans 11:25]
+
+When the Man comes around
+
+[Section]
+
+When
+The
+Man
+
+When
+The
+Man
+
+The day of the Lord
+Will come
+As a thief
+In the night
+[2 Peter 3:10]
+
+The heavens
+Will pass away
+With a great noise
+[2 Peter 3:10]
+
+The elements
+Will melt
+With fervent heat
+[2 Peter 3:10]
+
+The earth
+And the works
+That are in it
+Will be burned up
+[2 Peter 3:10]
+
+It is a fearful thing
+To fall
+Into the hands
+Of the living God
+[Hebrews 10:31]
+
+When the Man comes around
+
+[Chorus]
+
+When the Man
+When the Man
+When the Man comes around
+
+The kingdoms
+Of this world
+Have become
+The kingdoms
+Of our Lord
+And of His Christ
+[Revelation 11:15]
+
+He shall reign
+Forever
+And ever
+[Revelation 11:15]
+
+When the Man comes around
+
+[Outro]
+
+I am
+The Alpha
+And the Omega
+[Revelation 22:13]
+
+The Beginning
+And the End
+[Revelation 22:13]
+
+The First
+And the Last
+[Revelation 22:13]
+
+Surely
+I am coming
+Quickly
+[Revelation 22:20]
+
+Amen
+Even so
+Come
+Lord Jesus
+[Revelation 22:20]</pre>
+        </section>
+
+        <section class="song-dossier-fallback__item" id="over-the-skies-of-hell">
+          <h2>Over the Skies of Hell</h2>
+          <p class="song-dossier-fallback__meta">Track 05 · Resurrection Victory | Christ Triumphant</p>
+          <p class="song-dossier-fallback__thesis">Christ storms the kingdom of darkness, shatters chains, and reigns over hell itself.</p>
+          <p class="song-dossier-fallback__tags">Tags: Victory, Resurrection, Warfare</p>
+          <div class="song-dossier-fallback__player">
+            <iframe src="https://open.spotify.com/embed/track/4pFRPN0h48NoUcXTmUy6hz?utm_source=generator" title="Over the Skies of Hell on Spotify" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+          </div>
+          <h3>Meaning</h3>
+          <p>This song is a war proclamation of Christ triumphant over death, hell, and every throne of darkness.</p>
+          <p>Every stanza drives one declaration: the risen King reigns, chains break, and no power can stand against Him.</p>
+          <h3>Scripture Source</h3>
+          <p class="song-dossier-fallback__scripture">Revelation 1:18 — "I died, and behold I am alive forevermore, and I have the keys of Death and Hades."</p>
+          <h3>Lyrics</h3>
+          <pre class="song-dossier-fallback__lyrics">Flames rose high in the dragon’s den,
+Chains were clamped on the souls of men.
+Darkness laughed at the world He made,
+But the sky was split and the grave betrayed.
+
+He walked through ash and fire’s breath,
+He shattered hell, He silenced death.
+
+With fury and light in His burning strides,
+He storms the realm where the serpent hides.
+The chains all snapped with a single word,
+His roar the last that hell ever heard.
+Now crowned in flame and clothed in might,
+He rides… over the skies of hell.
+
+The keys He claimed from Satan’s grip,
+The throne of lies began to slip.
+He rose with power none could quell,
+King of Heaven, Slayer of Hell.
+
+No demon stood, no gate remained,
+His voice alone unmade the flame.
+
+With fury and light in His burning strides,
+He storms the realm where the serpent hides.
+The chains all snapped with a single word,
+His roar the last that hell ever heard.
+Now crowned in flame and clothed in might,
+He rides… over the skies of hell.
+
+He took their sting, He burned the scroll,
+He stormed the dark to save my soul.
+
+He rides on flame with stars in tow,
+He speaks and kingdoms rise or bow.
+His robe is drenched in holy war,
+His voice, the flood, the lion’s roar.
+The grave lies torn beneath His will,
+He reigns over the skies of hell.
+
+Over the skies of hell,
+Over the skies of hell,
+Over the skies of hell,
+Over the skies of hell.</pre>
+        </section>
+
+        <section class="song-dossier-fallback__item" id="unaliving-the-giant">
+          <h2>Unaliving the Giant</h2>
+          <p class="song-dossier-fallback__meta">Track 06 · 1 Samuel 17</p>
+          <p class="song-dossier-fallback__thesis">The Lord of Hosts brings giants down. Pride falls when faith steps forward.</p>
+          <p class="song-dossier-fallback__tags">Tags: Battle, Faith, Victory</p>
+          <div class="song-dossier-fallback__player">
+            <iframe src="https://open.spotify.com/embed/track/03YjoeGtB4vJHNBI0x3aFK?utm_source=generator" title="Unaliving the Giant on Spotify" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+          </div>
+          <h3>Meaning</h3>
+          <p>This song stands in the David and Goliath line: not confidence in size, but confidence in the Name.</p>
+          <p>The core claim is simple. Giants fall, thrones crack, and the field belongs to the Lord alone.</p>
+          <h3>Scripture Source</h3>
+          <p class="song-dossier-fallback__scripture">1 Samuel 17:47 — "The battle is the LORD’s, and he will give you into our hand."</p>
+          <h3>Lyrics</h3>
+          <pre class="song-dossier-fallback__lyrics">The valley waits beneath the haze,
+Heatline ghosts in the sun’s red gaze.
+A giant laughs, his challenge thrown,
+He dares the God I’ve always known.
+
+My hands still quake, the ground resounds,
+A tremor rolls through sacred ground.
+The paw was crushed, the claw was torn,
+The same right hand will strike once more.
+
+You trust your height, your blade, your name,
+I walk beside the One untamed.
+
+Your crown hits the dust as Skull Meets Stone,
+Your crown hits the dust as Skull Meets Stone.
+Fall to the ground, your name dethroned,
+Your crown hits the dust as Skull Meets Stone.
+
+The ranks hold breath, the moment bends,
+Each heartbeat counts, the stillness ends.
+The cord swings wide, the line is cast,
+The air divides, the die is passed.
+
+His grin decays, the watchers stare,
+A single sound cuts through the air.
+The cord releases, the world convicts,
+The ground remembers what it hits.
+
+You trust your height, your blade, your name,
+I walk beside the One untamed.
+
+Your crown hits the dust as Skull Meets Stone,
+Your crown hits the dust as Skull Meets Stone.
+Fall to the ground, your name dethroned,
+Your crown hits the dust as Skull Meets Stone.
+
+Stone to skull, the pride erased,
+The tyrant falls, the field retraced.
+Raise your voice, let every line,
+Unalive the giant, this field is mine.
+The ranks surge forward, the nations know,
+The Lord of Hosts has struck His blow.
+
+The ground still hums where giants bled,
+The call resounds, the Word was said.
+The breath of God through dust and bone,
+The field belongs to Him alone.
+
+Your crown hits the dust as Skull Meets Stone,
+Your crown hits the dust as Skull Meets Stone.
+Fall to the ground, your name dethroned,
+Your crown hits the dust as Skull Meets Stone.
+
+The giant’s fallen, his name undone,
+Unalive the giant, the field is won.
+The dust drifts slow, the earth has known,
+The day was His as Skull Meets Stone.</pre>
+        </section>
+
+        <section class="song-dossier-fallback__item" id="tidings-of-comfort-and-joy">
+          <h2>Tidings of Comfort and Joy</h2>
+          <p class="song-dossier-fallback__meta">Track 07 · God Rest Ye Merry, Gentlemen - Reloaded | Luke 2:10</p>
+          <p class="song-dossier-fallback__thesis">A re-forged proclamation of comfort and joy for a restless generation.</p>
+          <p class="song-dossier-fallback__tags">Tags: Hymn Reloaded, Worship, Hope, Christmas</p>
+          <div class="song-dossier-fallback__player">
+            <iframe src="https://open.spotify.com/embed/track/01Bp4hqrgYAIqUg1kQnj3e?utm_source=generator" title="Tidings of Comfort and Joy on Spotify" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+          </div>
+          <h3>Meaning</h3>
+          <p>This track reworks the old hymn language into a modern Shieldbearer frame without losing its core proclamation.</p>
+          <p>It carries the same declaration through a new sonic world: comfort and joy under the rule of Christ.</p>
+          <h3>Scripture Source</h3>
+          <p class="song-dossier-fallback__scripture">Luke 2:10 — "I bring you good news of great joy that will be for all the people."</p>
+          <h3>Lyrics</h3>
+          <pre class="song-dossier-fallback__lyrics">Full lyric manuscript for Tidings of Comfort and Joy will be added in this dossier slot.</pre>
+        </section>
       </div>
     </div>
   </section>
@@ -947,6 +1559,8 @@
 
       applyHash();
       renderAll();
+      var staticDossierFallback = document.getElementById('staticDossierFallback');
+      if (staticDossierFallback) staticDossierFallback.style.display = 'none';
       window.addEventListener('hashchange', function () { applyHash(); renderAll(); });
     })();
   </script>
