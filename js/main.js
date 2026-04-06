@@ -12,6 +12,14 @@
     }
   }
 
+  function trackSbClick(action, params) {
+    track('sb_click', Object.assign({
+      sb_action: String(action || '').replace(/-/g, '_'),
+      page_title: document.title || '',
+      page_path: window.location.pathname || '/'
+    }, params || {}));
+  }
+
   /* ── NAV SCROLL STATE ── */
   var nav = document.querySelector('.site-nav');
   if (nav) {
@@ -65,9 +73,10 @@
       if (!isOpen) {
         card.classList.add('open');
         var titleEl = card.querySelector('.mc-title');
-        track('scroll_open', {
-          song_title: titleEl ? titleEl.textContent.trim() : '',
-          from_path: window.location.pathname || '/'
+        trackSbClick('lyrics-expand', {
+          sb_location: 'song_card',
+          sb_song_name: titleEl ? titleEl.textContent.trim() : '',
+          sb_link_text: titleEl ? titleEl.textContent.trim() : ''
         });
       }
     });
@@ -104,6 +113,13 @@
 
       out.className = 'form-msg ok';
       out.textContent = 'Sending message...';
+      trackSbClick('contact-submit', {
+        sb_platform: 'email',
+        sb_location: 'contact_form',
+        sb_destination: endpoint,
+        sb_link_text: 'Contact Form Submit',
+        sb_status: 'attempt'
+      });
       fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
@@ -113,7 +129,13 @@
         if (!r.ok) throw new Error('Formspree request failed');
         out.className = 'form-msg ok';
         out.textContent = 'Message sent. Thank you.';
-        track('contact_submit_success', { method: 'formspree', from_path: window.location.pathname || '/' });
+        trackSbClick('contact-submit-success', {
+          sb_platform: 'email',
+          sb_location: 'contact_form',
+          sb_destination: endpoint,
+          sb_link_text: 'Contact Form Submit',
+          sb_status: 'success'
+        });
         enquiryForm.reset();
       })
       .catch(function () {
@@ -141,6 +163,13 @@
         if (note) note.textContent = 'Email form is not configured yet.';
         return;
       }
+      trackSbClick('email-click', {
+        sb_platform: 'email',
+        sb_location: 'cta',
+        sb_destination: endpoint,
+        sb_link_text: 'Signal Signup Submit',
+        sb_status: 'attempt'
+      });
       fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Accept': 'application/json' },
@@ -149,7 +178,13 @@
       .then(function (r) {
         if (!r.ok) throw new Error('ConvertKit request failed');
         if (note) note.textContent = 'You are in. Watch for the next drop.';
-        track('signal_signup_submit', { method: 'convertkit', from_path: window.location.pathname || '/' });
+        trackSbClick('email-submit-success', {
+          sb_platform: 'email',
+          sb_location: 'cta',
+          sb_destination: endpoint,
+          sb_link_text: 'Signal Signup Submit',
+          sb_status: 'success'
+        });
         signalForm.reset();
       })
       .catch(function () {

@@ -89,19 +89,14 @@ Rules:
 
 ## 4) Tracked events already wired
 
-The site is pre-wired to capture:
+The site now uses a GTM-first custom event transport:
 
-- `listen_click` (Spotify, YouTube, Apple Music, Amazon Music)
-- `merch_click` (shop link clicks)
-- `outbound_press_click` (press links)
-- `follow_click` (social/linktree clicks)
-- `contact_submit`
-- `contact_submit_success`
-- `contact_submit_fallback`
-- `signal_signup`
-- `signal_signup_submit`
-- `scroll_open` (lyrics/meaning card open)
-- `scroll_depth` (25, 50, 75, 100)
+- `event = sb_click`
+- action + metadata parameters (`sb_action`, `sb_platform`, `sb_location`, `sb_destination`, etc.)
+
+Canonical event model and GTM mapping are documented in:
+
+- `TRACKING_MAP.md`
 
 ## How to use the dashboards
 
@@ -116,7 +111,7 @@ Use these reports first:
 Suggested funnels:
 
 1. `page_view` (home)
-2. `listen_click` or `scroll_open`
+2. `spotify_click` or `lyrics_expand`
 3. `merch_click` or `contact_submit`
 
 Build comparisons:
@@ -131,12 +126,9 @@ Use GTM Preview mode to validate every event before publish.
 
 Add custom event triggers for:
 
-- `listen_click`
-- `merch_click`
-- `contact_submit`
-- `signal_signup`
+- `sb_click`
 
-Then map each to GA4 event tags.
+Then map filtered `sb_action` values to GA4 event tags (see `TRACKING_MAP.md`).
 
 ### Verification
 
