@@ -20,6 +20,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200;300;400;500;600&family=Roboto+Condensed:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <style>
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .dossier-anim { animation: none; }
+    }
     .scrolls-banner {
       margin-top: 1.2rem;
       border: 1px solid rgba(168,162,154,.14);
@@ -149,10 +154,10 @@
       color: rgba(240,235,224,.72);
     }
     .song-dossier__thesis {
-      font-size: 1rem;
-      line-height: 1.7;
-      color: rgba(240,235,224,.86);
-      margin-bottom: .9rem;
+      font-size: 1.03rem;
+      line-height: 1.72;
+      color: rgba(255,255,255,.94);
+      margin: .3rem 0 .48rem;
     }
     .song-dossier__player-wrap {
       margin-bottom: .95rem;
@@ -206,6 +211,7 @@
     .song-dossier__scripture {
       background: linear-gradient(180deg, rgba(192,57,43,.14), rgba(192,57,43,.06));
       border: 1px solid rgba(192,57,43,.32);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.04);
     }
     .song-dossier__scripture-ref {
       display: inline-block;
@@ -217,10 +223,11 @@
       margin-bottom: .46rem;
     }
     .song-dossier__scripture-quote {
-      color: rgba(255,255,255,.9);
-      font-size: 1rem;
-      line-height: 1.75;
+      color: rgba(255,255,255,.95);
+      font-size: 1.05rem;
+      line-height: 1.82;
       font-style: italic;
+      max-width: 70ch;
     }
     .song-dossier__lyrics {
       background: linear-gradient(180deg, rgba(255,255,255,.028), rgba(255,255,255,.012));
@@ -228,10 +235,10 @@
     }
     .song-dossier__lyrics-text {
       white-space: pre-line;
-      font-size: .97rem;
-      line-height: 1.9;
+      font-size: 1rem;
+      line-height: 1.95;
       color: rgba(240,235,224,.93);
-      max-width: 72ch;
+      max-width: 68ch;
       font-style: italic;
       letter-spacing: .01em;
     }
@@ -239,7 +246,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: .6rem;
-      margin-top: .22rem;
+      margin-top: .35rem;
     }
     .song-dossier__actions a {
       font-family: var(--font-head);
@@ -255,6 +262,34 @@
       border-color: var(--red);
       background: rgba(192,57,43,.14);
       color: #fff;
+    }
+    .song-dossier__footer-nav {
+      display: flex;
+      justify-content: space-between;
+      gap: .6rem;
+      margin-top: .72rem;
+      padding-top: .72rem;
+      border-top: 1px solid rgba(168,162,154,.2);
+    }
+    .song-dossier__footer-nav a,
+    .song-dossier__footer-nav span {
+      font-family: var(--font-head);
+      font-size: .57rem;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+      border: 1px solid rgba(168,162,154,.2);
+      padding: .42rem .72rem;
+      color: rgba(240,235,224,.7);
+      transition: border-color .2s, color .2s, background .2s;
+      white-space: nowrap;
+    }
+    .song-dossier__footer-nav a:hover {
+      border-color: rgba(231,76,60,.55);
+      color: #fff;
+      background: rgba(192,57,43,.12);
+    }
+    .song-dossier__footer-nav span {
+      opacity: .34;
     }
     .song-dossier-mobile { display: none; }
     .song-dossier-mobile__item {
@@ -1407,11 +1442,15 @@ The day was His as Skull Meets Stone.</pre>
       }
 
       /* ── dossier body ── */
-      function renderDossierBody(song, includePlayer) {
+      function renderDossierBody(song, includePlayer, songs) {
         var meaningHtml = song.meaning.map(function (p) { return '<p>' + escapeHtml(p) + '</p>'; }).join('');
         var tagsHtml    = (song.tags || []).map(function (t) { return '<span class="song-dossier__tag">' + escapeHtml(t) + '</span>'; }).join('');
         var lyricsText  = escapeHtml(String(song.lyrics || '').replace(/\\n/g, '\n'));
         var embedUrl    = spotifyEmbedFromUrl(song.actions && song.actions.spotify);
+        var currentList = songs && songs.length ? songs : SONG_DOSSIERS;
+        var idx = indexIn(currentList, song.id);
+        var prevSong = idx > 0 ? currentList[idx - 1] : null;
+        var nextSong = idx >= 0 && idx < currentList.length - 1 ? currentList[idx + 1] : null;
         var playerHtml  = '';
         if (includePlayer && embedUrl) {
           playerHtml =
@@ -1428,12 +1467,12 @@ The day was His as Skull Meets Stone.</pre>
               '<div>' +
                 '<span class="song-dossier__number">Track ' + escapeHtml(song.number) + '</span>' +
                 '<h2 class="song-dossier__title">' + escapeHtml(song.title) + '</h2>' +
+                '<p class="song-dossier__thesis">' + escapeHtml(song.thesis) + '</p>' +
                 '<p class="song-dossier__ref">' + escapeHtml(song.reference) + '</p>' +
+                '<div class="song-dossier__tags">' + tagsHtml + '</div>' +
               '</div>' +
             '</header>' +
             playerHtml +
-            '<p class="song-dossier__thesis">' + escapeHtml(song.thesis) + '</p>' +
-            '<div class="song-dossier__tags">' + tagsHtml + '</div>' +
             '<section class="song-dossier__block song-dossier__meaning">' +
               '<h3 class="song-dossier__block-title">Meaning</h3>' + meaningHtml +
             '</section>' +
@@ -1449,8 +1488,10 @@ The day was His as Skull Meets Stone.</pre>
             '<div class="song-dossier__actions">' +
               '<a href="' + escapeHtml(song.actions.spotify) + '" target="_blank" rel="noopener">Spotify</a>' +
               '<a href="' + escapeHtml(song.actions.youtube) + '" target="_blank" rel="noopener">YouTube</a>' +
-              '<a href="' + escapeHtml(song.actions.armory) + '">Armory</a>' +
-              '<a href="#' + escapeHtml(song.id) + '">Share</a>' +
+            '</div>' +
+            '<div class="song-dossier__footer-nav">' +
+              (prevSong ? '<a href="#' + escapeHtml(prevSong.id) + '">← Prev: ' + escapeHtml(prevSong.title) + '</a>' : '<span>← Start of Archive</span>') +
+              (nextSong ? '<a href="#' + escapeHtml(nextSong.id) + '">Next: ' + escapeHtml(nextSong.title) + ' →</a>' : '<span>End of Archive →</span>') +
             '</div>' +
           '</article>';
       }
@@ -1495,7 +1536,7 @@ The day was His as Skull Meets Stone.</pre>
         var songs = filteredDossiers(), song = null;
         for (var i = 0; i < songs.length; i++) { if (songs[i].id === desktopActive) { song = songs[i]; break; } }
         if (!song && songs.length) { song = songs[0]; desktopActive = song.id; }
-        target.innerHTML = song ? renderDossierBody(song, true) : '';
+        target.innerHTML = song ? renderDossierBody(song, true, songs) : '';
       }
 
       /* ── mobile accordion ── */
@@ -1514,7 +1555,7 @@ The day was His as Skull Meets Stone.</pre>
                   '<span>Track ' + escapeHtml(song.number) + ' | ' + escapeHtml(song.reference) + '</span>' +
                 '</span>' +
               '</button>' +
-              '<div class="song-dossier-mobile__panel">' + (open ? renderDossierBody(song, true) : '') + '</div>' +
+              '<div class="song-dossier-mobile__panel">' + (open ? renderDossierBody(song, true, songs) : '') + '</div>' +
             '</article>';
         }).join('');
         target.querySelectorAll('.song-dossier-mobile__toggle').forEach(function (btn) {
