@@ -404,11 +404,15 @@
       display: grid;
       place-items: center;
       padding: clamp(1rem, 2vw, 1.4rem);
+      position: relative;
+      overflow: hidden;
     }
     .featured-merch-art img {
-      width: min(78%, 340px);
+      width: 100%;
+      max-width: 360px;
       height: auto;
       object-fit: contain;
+      display: block;
     }
     .featured-merch-copy {
       background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.008));
@@ -429,6 +433,64 @@
       color: rgba(240,235,224,.78);
       margin-bottom: 1.3rem;
       max-width: 560px;
+    }
+    .featured-merch-price {
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 1rem;
+      padding: .36rem .62rem;
+      border: 1px solid rgba(231,76,60,.34);
+      color: var(--red-bright);
+      font-family: var(--font-head);
+      font-size: .68rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      background: rgba(192,57,43,.08);
+    }
+    .featured-merch-art-link {
+      width: 100%;
+      display: grid;
+      place-items: center;
+      min-height: 100%;
+    }
+    .featured-merch.is-loading .featured-merch-price,
+    .featured-merch.is-loading .featured-merch-actions {
+      visibility: hidden;
+    }
+    .featured-merch.is-loading .featured-merch-title,
+    .featured-merch.is-loading .featured-merch-copy p {
+      color: transparent;
+      position: relative;
+      min-height: 1em;
+    }
+    .featured-merch.is-loading .featured-merch-title::after,
+    .featured-merch.is-loading .featured-merch-copy p::after,
+    .featured-merch-skeleton::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(255,255,255,.04), rgba(255,255,255,.12), rgba(255,255,255,.04));
+      background-size: 220% 100%;
+      animation: merchShimmer 1.4s linear infinite;
+    }
+    .featured-merch.is-loading .featured-merch-title::after {
+      height: 1.05em;
+      top: .1em;
+    }
+    .featured-merch.is-loading .featured-merch-copy p::after {
+      height: 5.8em;
+      top: 0;
+    }
+    .featured-merch-skeleton {
+      width: min(84%, 360px);
+      aspect-ratio: 1 / 1;
+      position: relative;
+      border: 1px solid rgba(168,162,154,.16);
+      background: rgba(0,0,0,.18);
+    }
+    @keyframes merchShimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
     }
 
     /* Manifesto teaser */
@@ -770,20 +832,44 @@ The Galilean</p>
   </section>
 
   <section class="featured-merch-section" aria-labelledby="featured-merch-heading">
-    <div class="featured-merch">
-      <div class="featured-merch-art" aria-label="Shieldbearer logo tee visual">
-        <img src="images/logo-tee.webp" alt="Shieldbearer logo t-shirt">
+    <div
+      class="featured-merch is-loading"
+      id="featuredMerch"
+      data-shop-url="https://shop.shieldbearerusa.com"
+      data-fallback-image="images/logo-tee.webp"
+      data-fallback-title="Official Shieldbearer Merch"
+      data-fallback-copy="Official Shieldbearer merch built around conviction. Wear the mission and carry it into your city."
+      data-fallback-cta="Shop Now">
+      <div class="featured-merch-art" aria-live="polite">
+        <div class="featured-merch-skeleton" aria-hidden="true"></div>
       </div>
       <div class="featured-merch-copy">
         <span class="eyebrow">Featured Merch</span>
-        <h2 class="featured-merch-title" id="featured-merch-heading">Shieldbearer Logo Tee</h2>
-        <p>
-          Clean black tee with the Shieldbearer mark front and center. Built to wear on stage,
-          in the pit, and in the everyday mission.
-        </p>
-        <a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener" class="btn btn--red">Wear the Banner</a>
+        <h2 class="featured-merch-title" id="featured-merch-heading">Loading Featured Merch</h2>
+        <div class="featured-merch-price" aria-hidden="true">$0.00</div>
+        <p>Loading a featured item from the official Shieldbearer store.</p>
+        <div class="featured-merch-actions">
+          <a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener" class="btn btn--red">Shop Now</a>
+        </div>
       </div>
     </div>
+    <noscript>
+      <div class="featured-merch" style="margin-top:1.2rem;">
+        <div class="featured-merch-art" aria-label="Official Shieldbearer merch">
+          <a class="featured-merch-art-link" href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener">
+            <img src="images/logo-tee.webp" alt="Official Shieldbearer merch" width="720" height="720">
+          </a>
+        </div>
+        <div class="featured-merch-copy">
+          <span class="eyebrow">Featured Merch</span>
+          <h2 class="featured-merch-title">Official Shieldbearer Merch</h2>
+          <p>Official Shieldbearer merch built around conviction. Wear the mission and carry it into your city.</p>
+          <div class="featured-merch-actions">
+            <a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener" class="btn btn--red">Shop Now</a>
+          </div>
+        </div>
+      </div>
+    </noscript>
   </section>
 
   <section class="manifesto-teaser" aria-labelledby="manifesto-teaser-heading">
@@ -945,6 +1031,8 @@ The Galilean</p>
   </footer>
 
   <script src="js/analytics.js"></script>
+  <script src="js/site-config.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/featured-merch.js"></script>
 </body>
 </html>

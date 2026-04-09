@@ -19,7 +19,9 @@ shieldbearer/
 │   └── style.css       — Full design system (one file, well organised)
 │
 ├── js/
-│   └── main.js         — Nav, mobile menu, form, accordion
+│   ├── main.js             — Nav, mobile menu, form, accordion
+│   ├── featured-merch.js   — Shopify-powered homepage merch card
+│   └── site-config.js      — Public runtime config for storefront features
 │
 ├── images/             — All images go here
 │   ├── logo.png            ← Your Shieldbearer logo (white/transparent PNG)
@@ -101,6 +103,26 @@ To update the site later, edit the files and push/upload the changes to GitHub.
 - Search the project for `shop.shieldbearerusa.com`
 - Replace with your actual Shopify store URL
 - It appears in: nav, footer, index.html, contact.html
+
+### Featured Shopify Merch
+- Homepage featured merch now pulls one random item from a curated Shopify collection
+- Configure the public storefront settings in `js/site-config.js`
+- Required public config keys:
+  - `NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN`
+  - `NEXT_PUBLIC_SHOPIFY_STOREFRONT_TOKEN`
+  - `NEXT_PUBLIC_SHOPIFY_FEATURED_COLLECTION_HANDLE`
+- Recommended collection handle: `featured-homepage`
+- Only public Storefront API values belong here. Never paste an Admin API token or any private Shopify credential into this repo.
+- If config is missing, the request fails, times out, or the collection has no valid in-stock products with images, the homepage automatically falls back to the static merch card and store link.
+
+Example `js/site-config.js` values:
+```js
+window.SHIELDBEARER_RUNTIME_CONFIG = {
+  NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN: 'shop.shieldbearerusa.com',
+  NEXT_PUBLIC_SHOPIFY_STOREFRONT_TOKEN: 'your-public-storefront-token',
+  NEXT_PUBLIC_SHOPIFY_FEATURED_COLLECTION_HANDLE: 'featured-homepage'
+};
+```
 
 ### Social Links
 - Search for `https://www.instagram.com/shieldbearerusa/` etc.
