@@ -15,7 +15,7 @@
   var cfg = window.SHIELDBEARER_ANALYTICS || {
     gtmId: 'GTM-N7SR64KL',
     ga4Id: 'G-QTHJRB1B7G',
-    clarityId: ''
+    clarityId: 'w7gal18ekh'
   };
 
   function hasValue(v) {
