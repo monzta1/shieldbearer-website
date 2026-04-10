@@ -69,9 +69,12 @@
       background: linear-gradient(to bottom, transparent, rgba(192,57,43,.06), transparent);
     }
     .hero-content-section {
-      background: var(--black);
+      background:
+        url('images/over-the-skies-of-hell-art.jpg') center top / cover no-repeat,
+        var(--black);
       position: relative;
       z-index: 2;
+      overflow: hidden;
       margin-top: clamp(-3.8rem, -6vw, -2.2rem);
       padding: clamp(7.2rem, 13vw, 11.2rem) 0 clamp(5.2rem, 8vw, 7.6rem);
     }
@@ -84,6 +87,19 @@
       height: 1px;
       background: linear-gradient(to right, transparent, rgba(231,76,60,.42), transparent);
       opacity: .7;
+      z-index: 2;
+    }
+    .hero-content-section::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.72) 0%,
+        rgba(0, 0, 0, 0.55) 50%,
+        rgba(0, 0, 0, 0.85) 100%
+      );
+      z-index: 0;
     }
     .hero-content-inner {
       position: relative;
