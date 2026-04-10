@@ -14,7 +14,7 @@
      ----------------------------------------------------------- */
   var cfg = window.SHIELDBEARER_ANALYTICS || {
     gtmId: 'GTM-N7SR64KL',
-    ga4Id: '',
+    ga4Id: 'G-QTHJRB1B7G',
     clarityId: ''
   };
 
