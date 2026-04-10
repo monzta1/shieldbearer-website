@@ -226,6 +226,44 @@ button { cursor: pointer; font-family: inherit; }
 }
 .mob-close:hover { opacity: 1; }
 
+/* ── SHARE BAR ── */
+.share-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-top: 1.4rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid rgba(168,162,154,.16);
+}
+.share-bar__label {
+  font-family: var(--font-head);
+  font-size: .58rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: rgba(168,162,154,.42);
+  display: flex;
+  align-items: center;
+  margin-right: .3rem;
+}
+.share-bar__btn {
+  font-family: var(--font-head);
+  font-size: .58rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  border: 1px solid rgba(168,162,154,.22);
+  color: rgba(240,235,224,.65);
+  background: transparent;
+  padding: .28rem .62rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color .18s, color .18s, background .18s;
+}
+.share-bar__btn:hover {
+  border-color: rgba(231,76,60,.5);
+  color: var(--red-bright);
+  background: rgba(231,76,60,.07);
+}
+
 /* ── PAGE HERO (inner pages) ── */
 .page-hero {
   padding-top: calc(var(--nav-h) + 6.2rem);
