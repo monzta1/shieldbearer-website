@@ -21,7 +21,8 @@ shieldbearer/
 ├── js/
 │   ├── main.js             — Nav, mobile menu, form, accordion
 │   ├── featured-merch.js   — Shopify-powered homepage merch card
-│   └── site-config.js      — Public runtime config for storefront features
+│   ├── site-config.example.js — Template for local storefront config
+│   └── site-config.js      — Local-only storefront config (gitignored)
 │
 ├── images/             — All images go here
 │   ├── logo.png            ← Your Shieldbearer logo (white/transparent PNG)
@@ -106,7 +107,9 @@ To update the site later, edit the files and push/upload the changes to GitHub.
 
 ### Featured Shopify Merch
 - Homepage featured merch now pulls one random item from a curated Shopify collection
-- Configure the public storefront settings in `js/site-config.js`
+- Copy `js/site-config.example.js` to `js/site-config.js`
+- `js/site-config.js` is gitignored and should stay local-only
+- Configure storefront settings in `js/site-config.js`
 - Required public config keys:
   - `NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN`
   - `NEXT_PUBLIC_SHOPIFY_STOREFRONT_TOKEN`
@@ -117,12 +120,52 @@ To update the site later, edit the files and push/upload the changes to GitHub.
 
 Example `js/site-config.js` values:
 ```js
-window.SHIELDBEARER_RUNTIME_CONFIG = {
+window.SHOPIFY_CONFIG = {
   NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN: 'shop.shieldbearerusa.com',
   NEXT_PUBLIC_SHOPIFY_STOREFRONT_TOKEN: 'your-public-storefront-token',
   NEXT_PUBLIC_SHOPIFY_FEATURED_COLLECTION_HANDLE: 'featured-homepage'
 };
 ```
+
+Minimal browser-console test for token validity:
+```js
+fetch('https://shop.shieldbearerusa.com/api/2025-01/graphql.json', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'X-Shopify-Storefront-Access-Token': 'YOUR_STOREFRONT_TOKEN'
+  },
+  body: JSON.stringify({
+    query: 'query { shop { name } }'
+  })
+})
+  .then(r => r.json())
+  .then(console.log)
+  .catch(console.error);
+```
+
+If that works, test the featured collection handle:
+```js
+fetch('https://shop.shieldbearerusa.com/api/2025-01/graphql.json', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'X-Shopify-Storefront-Access-Token': 'YOUR_STOREFRONT_TOKEN'
+  },
+  body: JSON.stringify({
+    query: 'query($handle: String!) { collection(handle: $handle) { handle title } }',
+    variables: { handle: 'featured-homepage' }
+  })
+})
+  .then(r => r.json())
+  .then(console.log)
+  .catch(console.error);
+```
+
+Production-safe options for this static site:
+- Best option: generate `js/site-config.js` during deployment from environment variables, and never commit the real file
+- Simple manual option: after deployment, upload a local `js/site-config.js` with the public storefront config to the site root `js/` directory
+- If production config is missing or invalid, the homepage will keep showing the static merch fallback
 
 ### Social Links
 - Search for `https://www.instagram.com/shieldbearerusa/` etc.

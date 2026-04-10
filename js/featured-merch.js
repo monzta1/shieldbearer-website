@@ -40,7 +40,7 @@
   ].join('\n');
 
   function getConfig() {
-    var runtime = window.SHIELDBEARER_RUNTIME_CONFIG || {};
+    var runtime = window.SHOPIFY_CONFIG || {};
     return {
       storeDomain: String(runtime.NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN || '').trim(),
       storefrontToken: String(runtime.NEXT_PUBLIC_SHOPIFY_STOREFRONT_TOKEN || '').trim(),
