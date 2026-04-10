@@ -106,63 +106,57 @@ To update the site later, edit the files and push/upload the changes to GitHub.
 - It appears in: nav, footer, index.html, contact.html
 
 ### Featured Shopify Merch
-- Homepage featured merch now pulls one random item from a curated Shopify collection
+- Homepage featured merch now pulls one random item from a serverless `/api/featured-merch` endpoint
 - Copy `js/site-config.example.js` to `js/site-config.js`
 - `js/site-config.js` is gitignored and should stay local-only
-- Configure storefront settings in `js/site-config.js`
-- Required public config keys:
-  - `NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN`
-  - `NEXT_PUBLIC_SHOPIFY_STOREFRONT_TOKEN`
-  - `NEXT_PUBLIC_SHOPIFY_FEATURED_COLLECTION_HANDLE`
-- Recommended collection handle: `featured-homepage`
-- Only public Storefront API values belong here. Never paste an Admin API token or any private Shopify credential into this repo.
-- If the storefront token is present, the homepage tries token mode first
-- If the token is missing, the homepage tries a tokenless Storefront GraphQL request for testing
-- If config is missing, the request fails, times out, or the collection has no valid in-stock products with images, the homepage automatically falls back to the static merch card and store link.
+- Optional local frontend config in `js/site-config.js`:
+  - `FEATURED_MERCH_API_PATH`
+- All Shopify secrets now stay on the serverless side only
+- If the API is missing, times out, or returns invalid data, the homepage automatically falls back to the static merch card and store link.
 
 Example `js/site-config.js` values:
 ```js
 window.SHOPIFY_CONFIG = {
-  NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN: 'shop.shieldbearerusa.com',
-  NEXT_PUBLIC_SHOPIFY_STOREFRONT_TOKEN: 'your-public-storefront-token',
-  NEXT_PUBLIC_SHOPIFY_FEATURED_COLLECTION_HANDLE: 'featured-homepage'
+  FEATURED_MERCH_API_PATH: '/api/featured-merch'
 };
 ```
 
-Minimal browser-console test for token validity:
+Server env vars required by `/api/featured-merch`:
+- `SHOPIFY_STORE_DOMAIN`
+- `SHOPIFY_STOREFRONT_TOKEN`
+- `SHOPIFY_FEATURED_COLLECTION_HANDLE`
+
+Recommended values:
+- `SHOPIFY_STORE_DOMAIN=shop.shieldbearerusa.com`
+- `SHOPIFY_FEATURED_COLLECTION_HANDLE=featured-homepage`
+
+Minimal browser-console test for the homepage proxy:
 ```js
-fetch('https://shop.shieldbearerusa.com/api/2025-01/graphql.json', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-    'X-Shopify-Storefront-Access-Token': 'YOUR_STOREFRONT_TOKEN'
-  },
-  body: JSON.stringify({
-    query: 'query { shop { name } }'
-  })
-})
+fetch('/api/featured-merch')
   .then(r => r.json())
   .then(console.log)
   .catch(console.error);
 ```
 
-Minimal browser-console test for tokenless mode:
+If you want to test the anti-repeat behavior:
 ```js
-fetch('https://shop.shieldbearerusa.com/api/2025-01/graphql.json', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({
-    query: 'query { shop { name } }'
-  })
-})
+fetch('/api/featured-merch?excludeHandle=YOUR_LAST_HANDLE')
   .then(r => r.json())
   .then(console.log)
   .catch(console.error);
 ```
 
-If that works, test the featured collection handle:
+Direct curl test for the serverless endpoint:
+```bash
+curl -sS https://your-site-domain/api/featured-merch
+```
+
+Direct curl test for local dev:
+```bash
+curl -sS http://localhost:3000/api/featured-merch
+```
+
+If you need to validate Shopify server access directly from a server environment:
 ```js
 fetch('https://shop.shieldbearerusa.com/api/2025-01/graphql.json', {
   method: 'POST',
@@ -181,13 +175,24 @@ fetch('https://shop.shieldbearerusa.com/api/2025-01/graphql.json', {
 ```
 
 Production-safe options for this static site:
-- Best option: generate `js/site-config.js` during deployment from environment variables, and never commit the real file
-- Simple manual option: after deployment, upload a local `js/site-config.js` with the public storefront config to the site root `js/` directory
+- Best option: deploy on a platform that supports serverless functions, such as Vercel or Netlify Functions
+- Set server env vars in that platform's dashboard:
+  - `SHOPIFY_STORE_DOMAIN`
+  - `SHOPIFY_STOREFRONT_TOKEN`
+  - `SHOPIFY_FEATURED_COLLECTION_HANDLE`
+- Keep `js/site-config.js` local-only and optional
 - If production config is missing or invalid, the homepage will keep showing the static merch fallback
 
-If tokenless mode also fails:
-- Next best Shopify-native path: create or reconfigure a custom app that exposes a real Storefront API access token with storefront product and collection read access
-- If that still proves unreliable, the simplest code-side fallback is a tiny serverless proxy that keeps the storefront token in an environment variable and returns only the curated featured merch payload to the homepage
+Local development env example:
+```bash
+SHOPIFY_STORE_DOMAIN=shop.shieldbearerusa.com
+SHOPIFY_STOREFRONT_TOKEN=your_storefront_token
+SHOPIFY_FEATURED_COLLECTION_HANDLE=featured-homepage
+```
+
+If the proxy still fails:
+- First choice: verify the custom Shopify app has a working Storefront token with collection/product read access
+- Next best path: keep this exact proxy and fix only the env vars rather than touching the homepage code again
 
 ### Social Links
 - Search for `https://www.instagram.com/shieldbearerusa/` etc.

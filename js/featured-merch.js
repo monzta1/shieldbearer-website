@@ -1,6 +1,6 @@
 /* =============================================================
    SHIELDBEARER — Featured Merch
-   Pulls one random product from a curated Shopify collection.
+   Pulls one random product from a serverless Shopify proxy.
    Falls back to the static merch card if the request fails.
    ============================================================= */
 
@@ -10,41 +10,10 @@
   var merchRoot = document.getElementById('featuredMerch');
   if (!merchRoot) return;
 
-  var GRAPHQL_QUERY = [
-    'query FeaturedCollection($handle: String!) {',
-    '  collection(handle: $handle) {',
-    '    products(first: 12) {',
-    '      edges {',
-    '        node {',
-    '          id',
-    '          title',
-    '          handle',
-    '          availableForSale',
-    '          featuredImage {',
-    '            url',
-    '            altText',
-    '            width',
-    '            height',
-    '          }',
-    '          priceRange {',
-    '            minVariantPrice {',
-    '              amount',
-    '              currencyCode',
-    '            }',
-    '          }',
-    '        }',
-    '      }',
-    '    }',
-    '  }',
-    '}'
-  ].join('\n');
-
   function getConfig() {
     var runtime = window.SHOPIFY_CONFIG || {};
     return {
-      storeDomain: String(runtime.NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN || '').trim(),
-      storefrontToken: String(runtime.NEXT_PUBLIC_SHOPIFY_STOREFRONT_TOKEN || '').trim(),
-      collectionHandle: String(runtime.NEXT_PUBLIC_SHOPIFY_FEATURED_COLLECTION_HANDLE || 'featured-homepage').trim()
+      apiPath: String(runtime.FEATURED_MERCH_API_PATH || '/api/featured-merch').trim()
     };
   }
 
@@ -63,16 +32,6 @@
       return;
     }
     console.info('[featured-merch] ' + message, detail);
-  }
-
-  function normalizeStoreDomain(domain) {
-    return String(domain || '')
-      .replace(/^https?:\/\//i, '')
-      .replace(/\/+$/, '');
-  }
-
-  function storeOrigin(domain) {
-    return 'https://' + normalizeStoreDomain(domain);
   }
 
   function escapeHtml(value) {
@@ -112,84 +71,23 @@
     });
   }
 
-  function fetchShopifyProducts(config, mode) {
-    if (!config.storeDomain) {
-      return Promise.reject(new Error('Missing Shopify store domain'));
-    }
+  function fetchFeaturedMerch(config, excludeHandle) {
+    var apiPath = config.apiPath || '/api/featured-merch';
+    var separator = apiPath.indexOf('?') === -1 ? '?' : '&';
+    var url = apiPath + (excludeHandle ? separator + 'excludeHandle=' + encodeURIComponent(excludeHandle) : '');
 
-    var headers = {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    };
-
-    if (mode === 'token') {
-      if (!config.storefrontToken) {
-        return Promise.reject(new Error('Missing Shopify storefront token'));
+    return withTimeout(url, {
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json'
       }
-      headers['X-Shopify-Storefront-Access-Token'] = config.storefrontToken;
-    }
-
-    return withTimeout(storeOrigin(config.storeDomain) + '/api/2025-01/graphql.json', {
-      method: 'POST',
-      headers: headers,
-      body: JSON.stringify({
-        query: GRAPHQL_QUERY,
-        variables: { handle: config.collectionHandle }
-      })
     }, 2500)
       .then(function (response) {
         if (!response.ok) {
-          throw new Error('Shopify request failed with status ' + response.status);
+          throw new Error('Featured merch proxy failed with status ' + response.status);
         }
         return response.json();
-      })
-      .then(function (payload) {
-        if (payload.errors && payload.errors.length) {
-          throw new Error(payload.errors[0].message || 'Shopify GraphQL error');
-        }
-        var edges = (((payload || {}).data || {}).collection || {}).products;
-        edges = edges && edges.edges ? edges.edges : [];
-        return edges.map(function (edge) {
-          return edge && edge.node ? edge.node : null;
-        }).filter(Boolean);
       });
-  }
-
-  function selectRandomProduct(products) {
-    var available = products.filter(function (product) {
-      return product &&
-        product.availableForSale &&
-        product.featuredImage &&
-        product.featuredImage.url &&
-        product.handle;
-    });
-
-    if (!available.length) {
-      throw new Error('No valid products');
-    }
-
-    var randomPool = available.slice();
-    try {
-      var previousHandle = window.sessionStorage.getItem('sb_featured_merch_handle');
-      if (previousHandle && randomPool.length > 1) {
-        randomPool = randomPool.filter(function (item) {
-          return item.handle !== previousHandle;
-        });
-        if (!randomPool.length) randomPool = available.slice();
-      }
-    } catch (err) {
-      randomPool = available.slice();
-    }
-
-    var randomProduct = randomPool[Math.floor(Math.random() * randomPool.length)];
-
-    try {
-      window.sessionStorage.setItem('sb_featured_merch_handle', randomProduct.handle);
-    } catch (err) {
-      /* Ignore session storage failures */
-    }
-
-    return randomProduct;
   }
 
   function getFallbackData() {
@@ -202,11 +100,10 @@
     };
   }
 
-  function renderDynamicProduct(product, config) {
-    var price = formatPrice(product.priceRange && product.priceRange.minVariantPrice);
-    var image = product.featuredImage || {};
-    var origin = merchRoot.getAttribute('data-shop-url') || storeOrigin(config.storeDomain);
-    var productUrl = String(origin || '').replace(/\/+$/, '') + '/products/' + product.handle;
+  function renderDynamicProduct(product) {
+    var price = formatPrice(product.price);
+    var image = product.image || {};
+    var productUrl = product.url || merchRoot.getAttribute('data-shop-url') || 'https://shop.shieldbearerusa.com';
     var altText = image.altText || product.title + ' merch product image';
     var description = 'Randomly selected from the curated Shieldbearer merch collection. Available now from the official store.';
 
@@ -250,63 +147,48 @@
     merchRoot.classList.remove('is-loading');
   }
 
-  function normalizeProducts(products) {
-    if (!products || !products.length) {
-      throw new Error('No products');
-    }
-    return products;
-  }
-
   function getFeaturedProduct() {
     var config = getConfig();
+    var excludeHandle = '';
 
-    if (config.storefrontToken) {
-      return fetchShopifyProducts(config, 'token')
-        .then(normalizeProducts)
-        .then(function (products) {
-          debugLog('token mode succeeded', {
-            collectionHandle: config.collectionHandle,
-            productCount: products.length
-          });
-          return {
-            type: 'dynamic',
-            product: selectRandomProduct(products),
-            config: config
-          };
-        })
-        .catch(function (err) {
-          debugLog('token mode failed, showing fallback', err && err.message ? err.message : err);
-          throw err;
-        })
-        .catch(function () {
-          debugLog('both failed, fallback shown');
-          return { type: 'fallback' };
-        });
+    try {
+      excludeHandle = window.sessionStorage.getItem('sb_featured_merch_handle') || '';
+    } catch (err) {
+      excludeHandle = '';
     }
 
-    return fetchShopifyProducts(config, 'tokenless')
-      .then(normalizeProducts)
-      .then(function (products) {
-        debugLog('tokenless mode succeeded', {
-          collectionHandle: config.collectionHandle,
-          productCount: products.length
+    return fetchFeaturedMerch(config, excludeHandle)
+      .then(function (product) {
+        if (!product || !product.title || !product.image || !product.image.url || !product.url) {
+          throw new Error('Invalid featured merch payload');
+        }
+
+        try {
+          if (product.handle) window.sessionStorage.setItem('sb_featured_merch_handle', product.handle);
+        } catch (err) {
+          /* Ignore session storage failures */
+        }
+
+        debugLog('proxy mode succeeded', {
+          handle: product.handle || '',
+          title: product.title
         });
+
         return {
           type: 'dynamic',
-          product: selectRandomProduct(products),
-          config: config
+          product: product
         };
       })
       .catch(function (err) {
-        debugLog('both failed, fallback shown', err && err.message ? err.message : err);
-        console.warn('Shopify merch fetch failed, using fallback', err);
+        debugLog('proxy failed, fallback shown', err && err.message ? err.message : err);
+        console.warn('Featured merch proxy failed, using fallback', err);
         return { type: 'fallback' };
       });
   }
 
   getFeaturedProduct().then(function (merchData) {
     if (merchData.type === 'dynamic') {
-      renderDynamicProduct(merchData.product, merchData.config);
+      renderDynamicProduct(merchData.product);
       return;
     }
     renderFallbackStatic();
