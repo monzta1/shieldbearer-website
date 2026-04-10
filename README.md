@@ -48,7 +48,110 @@ For GTM, GA4, Search Console, and Clarity setup and usage, see:
 
 ---
 
+## Vercel Deployment
+
+The homepage featured merch block now depends on `/api/featured-merch`, which is a serverless API route.
+
+That means:
+- `GitHub Pages` can only serve the static fallback merch card
+- `Vercel` can serve both the static site and the `/api/featured-merch` function
+
+### Does this repo need a Vercel config file?
+
+No. Not for the current setup.
+
+This repo already works with Vercel's default behavior:
+- root `.html` files are served as static pages
+- files inside `/api/*.js` are treated as serverless functions
+
+### Are any path changes needed?
+
+No.
+
+The current paths are already Vercel-compatible:
+- homepage calls `/api/featured-merch`
+- API route lives at `api/featured-merch.js`
+- no frontend path rewrites are required
+
+### Required Vercel env vars
+
+Set these in the Vercel project dashboard:
+- `SHOPIFY_STORE_DOMAIN`
+- `SHOPIFY_STOREFRONT_TOKEN`
+- `SHOPIFY_FEATURED_COLLECTION_HANDLE`
+
+Recommended values:
+- `SHOPIFY_STORE_DOMAIN=shop.shieldbearerusa.com`
+- `SHOPIFY_FEATURED_COLLECTION_HANDLE=featured-homepage`
+
+### Deploy this repo to Vercel
+
+1. Push the repo to GitHub
+2. Log in to Vercel
+3. Click `Add New...` -> `Project`
+4. Import this GitHub repository
+5. Framework preset:
+   - choose `Other`
+6. Build settings:
+   - no special build command required
+   - no special output directory required
+7. Add the env vars:
+   - `SHOPIFY_STORE_DOMAIN`
+   - `SHOPIFY_STOREFRONT_TOKEN`
+   - `SHOPIFY_FEATURED_COLLECTION_HANDLE`
+8. Click `Deploy`
+
+### Test the API route after deploy
+
+In the browser:
+- `https://your-vercel-domain/api/featured-merch`
+
+With curl:
+```bash
+curl -sS https://your-vercel-domain/api/featured-merch
+```
+
+Expected result:
+- JSON with `title`, `image`, `url`, and optionally `price`
+
+If the route fails:
+- the homepage should still show the existing static fallback merch card
+
+### Local Vercel development
+
+If you use Vercel CLI locally:
+
+```bash
+vercel dev
+```
+
+Then test:
+
+```bash
+curl -sS http://localhost:3000/api/featured-merch
+```
+
+### Cache behavior
+
+`/api/featured-merch` already sets cache headers:
+- `Cache-Control: public, s-maxage=300, stale-while-revalidate=600`
+
+That gives you:
+- brief CDN caching on Vercel
+- lower Shopify request volume
+- fast repeat loads without changing homepage layout logic
+
+---
+
 ## How to Deploy on GitHub Pages
+
+GitHub Pages still works for the static site, but it cannot execute `/api/featured-merch`.
+
+That means:
+- all normal pages will load
+- the homepage merch block will show the static fallback image/card only
+
+If you want dynamic featured merch, deploy this repo on Vercel instead of GitHub Pages.
 
 1. Create a GitHub account if you don't have one: github.com
 2. Create a new repository called `shieldbearerusa` (or any name)
@@ -175,7 +278,7 @@ fetch('https://shop.shieldbearerusa.com/api/2025-01/graphql.json', {
 ```
 
 Production-safe options for this static site:
-- Best option: deploy on a platform that supports serverless functions, such as Vercel or Netlify Functions
+- Best option: deploy on a platform that supports serverless functions, such as Vercel
 - Set server env vars in that platform's dashboard:
   - `SHOPIFY_STORE_DOMAIN`
   - `SHOPIFY_STOREFRONT_TOKEN`
