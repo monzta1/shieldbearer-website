@@ -349,6 +349,30 @@
       margin-bottom: .9rem;
       flex-wrap: wrap;
     }
+    .genre-filter-bar {
+      display: flex;
+      gap: .4rem;
+      flex-wrap: wrap;
+      margin-bottom: .75rem;
+    }
+    .genre-filter-btn {
+      font-family: var(--font-head);
+      font-size: .56rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      border: 1px solid rgba(168,162,154,.2);
+      color: rgba(240,235,224,.56);
+      background: transparent;
+      padding: .32rem .68rem;
+      cursor: pointer;
+      transition: border-color .18s, color .18s, background .18s;
+    }
+    .genre-filter-btn:hover,
+    .genre-filter-btn.active {
+      border-color: rgba(231,76,60,.58);
+      color: #fff;
+      background: rgba(231,76,60,.09);
+    }
     .dossier-stat {
       font-family: var(--font-head);
       font-size: .58rem;
@@ -357,6 +381,29 @@
       color: rgba(168,162,154,.42);
     }
     .dossier-stat strong { color: rgba(240,235,224,.6); }
+    .song-index__group + .song-index__group {
+      margin-top: .9rem;
+      padding-top: .9rem;
+      border-top: 1px solid rgba(168,162,154,.12);
+    }
+    .song-index__group-title,
+    .song-dossier-mobile__group-title,
+    .song-dossier-fallback__group-title {
+      font-family: var(--font-head);
+      font-size: .64rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--red-bright);
+    }
+    .song-index__group-title {
+      display: block;
+      padding: .2rem .28rem .55rem;
+    }
+    .song-dossier-mobile__group-title {
+      display: block;
+      margin: 1rem 0 .55rem;
+    }
+    .song-dossier-mobile__group-title:first-child { margin-top: 0; }
     .tag-filter-bar {
       display: flex;
       gap: .32rem;
@@ -427,6 +474,9 @@
       border: 1px solid rgba(168,162,154,.16);
       background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.008));
       padding: 1rem;
+    }
+    .song-dossier-fallback__group-title {
+      margin: .2rem 0 -.1rem;
     }
     .song-dossier-fallback__item h2 {
       font-family: var(--font-display);
@@ -558,10 +608,11 @@
     <div class="container">
       <p class="dossier-intro">
         Christ is not hidden in metaphor here. Scripture is the source, not the decoration.
-        Each song begins with a text and works outward into sound, emotion, and weight. This archive is designed to scale as the catalog grows.
+        Each song begins with a text and works outward into sound, emotion, and weight. This archive is designed to scale as the catalog grows, and now it can be browsed by genre as well as theme.
       </p>
 
       <div id="dossierMetaBar"></div>
+      <div id="genreFilterBar" class="genre-filter-bar"></div>
       <div id="tagFilterBar" class="tag-filter-bar"></div>
 
       <div class="song-dossier-system">
@@ -579,6 +630,7 @@
 
       <!-- SEO / crawler fallback: visible in raw HTML, hidden after JS enhancement succeeds -->
       <div id="staticDossierFallback">
+        <h2 class="song-dossier-fallback__group-title">Metal</h2>
         <section class="song-dossier-fallback__item" id="galilean">
           <h2>Galilean</h2>
           <p class="song-dossier-fallback__meta">Track 01 · John 1:14 · Single 2025</p>
@@ -1230,6 +1282,59 @@ Glad tidings of comfort and of joy,
 Comfort and joy!
 Glad tidings of comfort and of joy!</pre>
         </section>
+
+        <h2 class="song-dossier-fallback__group-title">Country</h2>
+        <section class="song-dossier-fallback__item" id="gut-punch">
+          <h2>Gut Punch</h2>
+          <p class="song-dossier-fallback__meta">Track 08 · Country · Prayer for America</p>
+          <p class="song-dossier-fallback__thesis">A raw prayer over a fractured country. Unpolished on purpose, because the wound itself is part of the message.</p>
+          <p class="song-dossier-fallback__tags">Tags: Country, America, Lament, Prayer</p>
+          <div class="song-dossier-fallback__player">
+            <iframe src="https://www.youtube.com/embed/3xi9eDriB-E" title="Gut Punch on YouTube" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <h3>Meaning</h3>
+          <p>Gut Punch is a prayer for America written in a season when the news kept coming and nothing made sense.</p>
+          <p>It stays raw on purpose. The point is not polish for its own sake. The point is to tell the truth about grief, disorientation, and the only place left to run.</p>
+          <p>External lyrics sites may censor lines or flatten the message. This archive entry exists so the song has a home at the source.</p>
+          <h3>Lyrics</h3>
+          <pre class="song-dossier-fallback__lyrics">Full lyrics manuscript will be archived here on Shieldbearer.
+
+This song now has a home in the Country section so it is not dependent on outside lyric platforms.</pre>
+        </section>
+
+        <section class="song-dossier-fallback__item" id="broken-helicopter">
+          <h2>Broken Helicopter</h2>
+          <p class="song-dossier-fallback__meta">Track 09 · Country · Fatherhood Story Ballad</p>
+          <p class="song-dossier-fallback__thesis">A small domestic moment turned into a testimony about fatherhood, time, and the love that keeps showing up.</p>
+          <p class="song-dossier-fallback__tags">Tags: Country, Fatherhood, Story, Family</p>
+          <div class="song-dossier-fallback__player">
+            <iframe src="https://www.youtube.com/embed/CNr54CpYz7o" title="Broken Helicopter on YouTube" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <h3>Meaning</h3>
+          <p>A little kid walks up with a broken toy helicopter and asks, &ldquo;Dada, can you fix it?&rdquo; That moment becomes the whole song.</p>
+          <p>Broken Helicopter is built around fatherhood, presence, and the ordinary acts of love that end up carrying real weight over time.</p>
+          <h3>Lyrics</h3>
+          <pre class="song-dossier-fallback__lyrics">Full lyrics manuscript will be archived here on Shieldbearer.
+
+For now, this entry preserves the song inside the Country section of the official archive.</pre>
+        </section>
+
+        <section class="song-dossier-fallback__item" id="he-found-his-voice">
+          <h2>He Found His Voice</h2>
+          <p class="song-dossier-fallback__meta">Track 10 · Country · Autism Testimony</p>
+          <p class="song-dossier-fallback__thesis">A testimony song for Leo and for every family waiting, praying, and refusing to give up.</p>
+          <p class="song-dossier-fallback__tags">Tags: Country, Testimony, Family, Hope</p>
+          <div class="song-dossier-fallback__player">
+            <iframe src="https://www.youtube.com/embed/DFfIX-mlS-k" title="He Found His Voice on YouTube" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <h3>Meaning</h3>
+          <p>This song comes out of Leo&rsquo;s autism diagnosis, the uncertainty that followed, and the joy of watching him begin to speak and shine.</p>
+          <p>It is a family testimony, but also a song for every child still finding their voice and every parent still praying through the waiting.</p>
+          <h3>Lyrics</h3>
+          <pre class="song-dossier-fallback__lyrics">Full lyrics manuscript will be archived here on Shieldbearer.
+
+This Country section entry makes sure the song is represented here in the official catalog.</pre>
+        </section>
       </div>
     </div>
   </section>
@@ -1313,6 +1418,7 @@ Glad tidings of comfort and of joy!</pre>
           id: 'galilean',
           number: '01',
           title: 'Galilean',
+          genre: 'Metal',
           reference: 'John 1:14',
           thesis: 'A collision point of cosmos and incarnation. The One everything orbits around entered history.',
           tags: ['Creation', 'Incarnation', 'Cosmos'],
@@ -1337,6 +1443,7 @@ Glad tidings of comfort and of joy!</pre>
           id: 'ruach',
           number: '02',
           title: 'Ruach',
+          genre: 'Metal',
           reference: 'Genesis 1 | Ezekiel 37 | Zechariah 4',
           thesis: 'Breath, wind, Spirit. The unseen force of God over creation, judgment, and renewal.',
           tags: ['Spirit', 'Breath', 'Power'],
@@ -1361,6 +1468,7 @@ Glad tidings of comfort and of joy!</pre>
           id: 'quake',
           number: '03',
           title: 'Quake',
+          genre: 'Metal',
           reference: 'Matthew 28:2',
           thesis: 'The resurrection is not metaphorical memory. It is violent power breaking history open.',
           tags: ['Resurrection', 'Victory', 'Judgment'],
@@ -1384,6 +1492,7 @@ Glad tidings of comfort and of joy!</pre>
           id: 'the-man',
           number: '04',
           title: 'The Man',
+          genre: 'Metal',
           reference: 'John 19:5',
           thesis: 'Verbatim Scripture metal. Pilate spoke more truth than he understood.',
           tags: ['Passion', 'Scripture', 'Christ'],
@@ -1407,6 +1516,7 @@ Glad tidings of comfort and of joy!</pre>
           id: 'over-the-skies-of-hell',
           number: '05',
           title: 'Over the Skies of Hell',
+          genre: 'Metal',
           reference: 'Resurrection Victory | Christ Triumphant',
           thesis: 'Christ storms the kingdom of darkness, shatters chains, and reigns over hell itself.',
           tags: ['Victory', 'Resurrection', 'Warfare'],
@@ -1430,6 +1540,7 @@ Glad tidings of comfort and of joy!</pre>
           id: 'unaliving-the-giant',
           number: '06',
           title: 'Unaliving the Giant',
+          genre: 'Metal',
           reference: '1 Samuel 17',
           thesis: 'The Lord of Hosts brings giants down. Pride falls when faith steps forward.',
           tags: ['Battle', 'Faith', 'Victory'],
@@ -1453,6 +1564,7 @@ Glad tidings of comfort and of joy!</pre>
           id: 'tidings-of-comfort-and-joy',
           number: '07',
           title: 'Tidings of Comfort and Joy',
+          genre: 'Metal',
           reference: 'God Rest Ye Merry, Gentlemen - Reloaded | Luke 2:10',
           thesis: 'A re-forged proclamation of comfort and joy for a restless generation.',
           tags: ['Hymn Reloaded', 'Worship', 'Hope', 'Christmas'],
@@ -1471,12 +1583,71 @@ Glad tidings of comfort and of joy!</pre>
             youtube: 'https://www.youtube.com/@ShieldbearerUSA',
             armory: 'music.html#armory'
           }
+        },
+        {
+          id: 'gut-punch',
+          number: '08',
+          title: 'Gut Punch',
+          genre: 'Country',
+          reference: 'Prayer for America',
+          thesis: 'A raw prayer over a fractured country. Unpolished on purpose, because the wound itself is part of the message.',
+          tags: ['Country', 'America', 'Lament', 'Prayer'],
+          artwork: 'images/logo.png',
+          meaning: [
+            'Gut Punch is a prayer for America written in a season when the news kept coming and nothing made sense.',
+            'It stays raw on purpose. The point is not polish for its own sake. The point is to tell the truth about grief, disorientation, and the only place left to run.',
+            'External lyrics sites may censor lines or flatten the message. This archive entry exists so the song has a home at the source.'
+          ],
+          lyrics: 'Full lyrics manuscript will be archived here on Shieldbearer.\\n\\nThis song now has a home in the Country section so it is not dependent on outside lyric platforms.',
+          actions: {
+            youtube: 'https://www.youtube.com/watch?v=3xi9eDriB-E',
+            armory: 'videos.html'
+          }
+        },
+        {
+          id: 'broken-helicopter',
+          number: '09',
+          title: 'Broken Helicopter',
+          genre: 'Country',
+          reference: 'Fatherhood Story Ballad',
+          thesis: 'A small domestic moment turned into a testimony about fatherhood, time, and the love that keeps showing up.',
+          tags: ['Country', 'Fatherhood', 'Story', 'Family'],
+          artwork: 'images/logo.png',
+          meaning: [
+            'A little kid walks up with a broken toy helicopter and asks, "Dada, can you fix it?" That moment becomes the whole song.',
+            'Broken Helicopter is built around fatherhood, presence, and the ordinary acts of love that end up carrying real weight over time.'
+          ],
+          lyrics: 'Full lyrics manuscript will be archived here on Shieldbearer.\\n\\nFor now, this entry preserves the song inside the Country section of the official archive.',
+          actions: {
+            youtube: 'https://www.youtube.com/watch?v=CNr54CpYz7o',
+            armory: 'videos.html'
+          }
+        },
+        {
+          id: 'he-found-his-voice',
+          number: '10',
+          title: 'He Found His Voice',
+          genre: 'Country',
+          reference: 'Autism Testimony',
+          thesis: 'A testimony song for Leo and for every family waiting, praying, and refusing to give up.',
+          tags: ['Country', 'Testimony', 'Family', 'Hope'],
+          artwork: 'images/logo.png',
+          meaning: [
+            'This song comes out of Leo’s autism diagnosis, the uncertainty that followed, and the joy of watching him begin to speak and shine.',
+            'It is a family testimony, but also a song for every child still finding their voice and every parent still praying through the waiting.'
+          ],
+          lyrics: 'Full lyrics manuscript will be archived here on Shieldbearer.\\n\\nThis Country section entry makes sure the song is represented here in the official catalog.',
+          actions: {
+            youtube: 'https://www.youtube.com/watch?v=DFfIX-mlS-k',
+            armory: 'videos.html'
+          }
         }
       ];
 
       var desktopActive = SONG_DOSSIERS[0].id;
       var mobileActive  = null;
       var activeTag     = null;
+      var activeGenre   = null;
 
       /* ── helpers ── */
       function escapeHtml(s) {
@@ -1492,6 +1663,25 @@ Glad tidings of comfort and of joy!</pre>
         if (!m) return '';
         return 'https://open.spotify.com/embed/' + m[1] + '/' + m[2] + '?utm_source=generator';
       }
+      function youtubeEmbedFromUrl(url) {
+        var clean = String(url || '').trim();
+        if (!clean) return '';
+        var m = clean.match(/[?&]v=([^&#]+)/);
+        if (m) return 'https://www.youtube.com/embed/' + m[1];
+        m = clean.match(/youtu\.be\/([^?&#]+)/);
+        if (m) return 'https://www.youtube.com/embed/' + m[1];
+        m = clean.match(/youtube\.com\/embed\/([^?&#]+)/);
+        if (m) return 'https://www.youtube.com/embed/' + m[1];
+        return '';
+      }
+      function allGenres() {
+        var seen = {}, genres = [];
+        for (var i = 0; i < SONG_DOSSIERS.length; i++) {
+          var g = SONG_DOSSIERS[i].genre || 'Archive';
+          if (!seen[g]) { seen[g] = true; genres.push(g); }
+        }
+        return genres;
+      }
       function allTags() {
         var seen = {}, tags = [];
         for (var i = 0; i < SONG_DOSSIERS.length; i++) {
@@ -1503,10 +1693,24 @@ Glad tidings of comfort and of joy!</pre>
         return tags;
       }
       function filteredDossiers() {
-        if (!activeTag) return SONG_DOSSIERS;
         return SONG_DOSSIERS.filter(function (s) {
-          return (s.tags || []).indexOf(activeTag) !== -1;
+          var genreMatch = !activeGenre || s.genre === activeGenre;
+          var tagMatch = !activeTag || (s.tags || []).indexOf(activeTag) !== -1;
+          return genreMatch && tagMatch;
         });
+      }
+      function groupedByGenre(songs) {
+        var groups = [];
+        var current = null;
+        for (var i = 0; i < songs.length; i++) {
+          var genre = songs[i].genre || 'Archive';
+          if (!current || current.genre !== genre) {
+            current = { genre: genre, songs: [] };
+            groups.push(current);
+          }
+          current.songs.push(songs[i]);
+        }
+        return groups;
       }
       function indexIn(songs, id) {
         for (var i = 0; i < songs.length; i++) { if (songs[i].id === id) return i; }
@@ -1520,9 +1724,33 @@ Glad tidings of comfort and of joy!</pre>
         el.innerHTML =
           '<div class="dossier-meta-bar">' +
           '<span class="dossier-stat"><strong>' + SONG_DOSSIERS.length + '</strong> Tracks</span>' +
+          '<span class="dossier-stat"><strong>' + allGenres().length + '</strong> Genres</span>' +
           '<span class="dossier-stat">Catalog &middot; <strong>2024&ndash;2026</strong></span>' +
           '<span class="dossier-stat">Growing Archive</span>' +
           '</div>';
+      }
+
+      function renderGenreFilter() {
+        var bar = document.getElementById('genreFilterBar');
+        if (!bar) return;
+        var genres = allGenres();
+        bar.innerHTML =
+          '<button class="genre-filter-btn' + (!activeGenre ? ' active' : '') + '" data-genre="">All Genres</button>' +
+          genres.map(function (g) {
+            return '<button class="genre-filter-btn' + (activeGenre === g ? ' active' : '') +
+              '" data-genre="' + escapeHtml(g) + '">' + escapeHtml(g) + '</button>';
+          }).join('');
+        bar.querySelectorAll('.genre-filter-btn').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            activeGenre = btn.getAttribute('data-genre') || null;
+            var songs = filteredDossiers();
+            if (songs.length && indexIn(songs, desktopActive) === -1) {
+              desktopActive = songs[0].id;
+              mobileActive = null;
+            }
+            renderAll();
+          });
+        });
       }
 
       /* ── tag filter ── */
@@ -1554,6 +1782,10 @@ Glad tidings of comfort and of joy!</pre>
         var bar = document.getElementById('dossierNavBar');
         if (!bar) return;
         var songs = filteredDossiers();
+        if (!songs.length) {
+          bar.innerHTML = '<div class="dossier-nav-bar"><span class="dossier-nav-pos">0 / 0</span></div>';
+          return;
+        }
         var idx   = indexIn(songs, desktopActive);
         if (idx === -1) idx = 0;
         bar.innerHTML =
@@ -1579,7 +1811,11 @@ Glad tidings of comfort and of joy!</pre>
         var meaningHtml = song.meaning.map(function (p) { return '<p>' + escapeHtml(p) + '</p>'; }).join('');
         var tagsHtml    = (song.tags || []).map(function (t) { return '<span class="song-dossier__tag">' + escapeHtml(t) + '</span>'; }).join('');
         var lyricsText  = escapeHtml(String(song.lyrics || '').replace(/\\n/g, '\n'));
-        var embedUrl    = spotifyEmbedFromUrl(song.actions && song.actions.spotify);
+        var embedUrl    = spotifyEmbedFromUrl(song.actions && song.actions.spotify) || youtubeEmbedFromUrl(song.actions && song.actions.youtube);
+        var actionLinks = [];
+        if (song.actions && song.actions.spotify) actionLinks.push('<a href="' + escapeHtml(song.actions.spotify) + '" target="_blank" rel="noopener">Spotify</a>');
+        if (song.actions && song.actions.youtube) actionLinks.push('<a href="' + escapeHtml(song.actions.youtube) + '" target="_blank" rel="noopener">YouTube</a>');
+        if (song.actions && song.actions.armory) actionLinks.push('<a href="' + escapeHtml(song.actions.armory) + '">Archive</a>');
         var currentList = songs && songs.length ? songs : SONG_DOSSIERS;
         var idx = indexIn(currentList, song.id);
         var prevSong = idx > 0 ? currentList[idx - 1] : null;
@@ -1601,7 +1837,7 @@ Glad tidings of comfort and of joy!</pre>
                 '<span class="song-dossier__number">Track ' + escapeHtml(song.number) + '</span>' +
                 '<h2 class="song-dossier__title">' + escapeHtml(song.title) + '</h2>' +
                 '<p class="song-dossier__thesis">' + escapeHtml(song.thesis) + '</p>' +
-                '<p class="song-dossier__ref">' + escapeHtml(song.reference) + '</p>' +
+                '<p class="song-dossier__ref">' + escapeHtml(song.genre || 'Archive') + ' &middot; ' + escapeHtml(song.reference) + '</p>' +
                 '<div class="song-dossier__tags">' + tagsHtml + '</div>' +
               '</div>' +
             '</header>' +
@@ -1609,19 +1845,16 @@ Glad tidings of comfort and of joy!</pre>
             '<section class="song-dossier__block song-dossier__meaning">' +
               '<h3 class="song-dossier__block-title">Meaning</h3>' + meaningHtml +
             '</section>' +
-            '<section class="song-dossier__block song-dossier__scripture">' +
+            (song.scripture ? '<section class="song-dossier__block song-dossier__scripture">' +
               '<h3 class="song-dossier__block-title">Scripture Source</h3>' +
               '<span class="song-dossier__scripture-ref">' + escapeHtml(song.scripture.ref) + '</span>' +
               '<p class="song-dossier__scripture-quote">' + escapeHtml(song.scripture.quote) + '</p>' +
-            '</section>' +
+            '</section>' : '') +
             '<section class="song-dossier__block song-dossier__lyrics">' +
               '<h3 class="song-dossier__block-title">Lyrics</h3>' +
               '<div class="song-dossier__lyrics-text">' + lyricsText + '</div>' +
             '</section>' +
-            '<div class="song-dossier__actions">' +
-              '<a href="' + escapeHtml(song.actions.spotify) + '" target="_blank" rel="noopener">Spotify</a>' +
-              '<a href="' + escapeHtml(song.actions.youtube) + '" target="_blank" rel="noopener">YouTube</a>' +
-            '</div>' +
+            '<div class="song-dossier__actions">' + actionLinks.join('') + '</div>' +
             '<div class="song-dossier__footer-nav">' +
               (prevSong ? '<a href="#' + escapeHtml(prevSong.id) + '">← Prev: ' + escapeHtml(prevSong.title) + '</a>' : '<span>← Start of Archive</span>') +
               (nextSong ? '<a href="#' + escapeHtml(nextSong.id) + '">Next: ' + escapeHtml(nextSong.title) + ' →</a>' : '<span>End of Archive →</span>') +
@@ -1638,17 +1871,23 @@ Glad tidings of comfort and of joy!</pre>
           rail.innerHTML = '<p style="font-size:.72rem;color:rgba(168,162,154,.4);padding:.6rem .5rem;">No tracks match.</p>';
           return;
         }
-        rail.innerHTML = songs.map(function (song) {
-          return '' +
-            '<button class="song-index__btn' + (song.id === desktopActive ? ' is-active' : '') +
-            '" data-song-id="' + escapeHtml(song.id) + '">' +
-              '<img class="song-index__thumb" src="' + escapeHtml(song.artwork) + '" alt="' + escapeHtml(song.title) + ' thumb">' +
-              '<span class="song-index__meta">' +
-                '<span class="song-index__meta-num">Track ' + escapeHtml(song.number) + '</span>' +
-                '<span class="song-index__meta-title">' + escapeHtml(song.title) + '</span>' +
-                '<span class="song-index__meta-ref">' + escapeHtml(song.reference) + '</span>' +
-              '</span>' +
-            '</button>';
+        var groups = groupedByGenre(songs);
+        rail.innerHTML = groups.map(function (group) {
+          return '<div class="song-index__group">' +
+            '<span class="song-index__group-title">' + escapeHtml(group.genre) + '</span>' +
+            group.songs.map(function (song) {
+              return '' +
+                '<button class="song-index__btn' + (song.id === desktopActive ? ' is-active' : '') +
+                '" data-song-id="' + escapeHtml(song.id) + '">' +
+                  '<img class="song-index__thumb" src="' + escapeHtml(song.artwork) + '" alt="' + escapeHtml(song.title) + ' thumb">' +
+                  '<span class="song-index__meta">' +
+                    '<span class="song-index__meta-num">' + escapeHtml(song.genre || 'Archive') + ' · Track ' + escapeHtml(song.number) + '</span>' +
+                    '<span class="song-index__meta-title">' + escapeHtml(song.title) + '</span>' +
+                    '<span class="song-index__meta-ref">' + escapeHtml(song.reference) + '</span>' +
+                  '</span>' +
+                '</button>';
+            }).join('') +
+          '</div>';
         }).join('');
         rail.querySelectorAll('.song-index__btn').forEach(function (btn) {
           btn.addEventListener('click', function () {
@@ -1677,19 +1916,23 @@ Glad tidings of comfort and of joy!</pre>
         var target = document.getElementById('songDossierMobile');
         if (!target) return;
         var songs = filteredDossiers();
-        target.innerHTML = songs.map(function (song) {
-          var open = song.id === mobileActive;
-          return '' +
-            '<article class="song-dossier-mobile__item' + (open ? ' is-open' : '') + '">' +
-              '<button class="song-dossier-mobile__toggle" data-song-id="' + escapeHtml(song.id) + '">' +
-                '<img class="song-dossier-mobile__thumb" src="' + escapeHtml(song.artwork) + '" alt="' + escapeHtml(song.title) + ' thumb">' +
-                '<span class="song-dossier-mobile__meta">' +
-                  '<strong>' + escapeHtml(song.title) + '</strong>' +
-                  '<span>Track ' + escapeHtml(song.number) + ' | ' + escapeHtml(song.reference) + '</span>' +
-                '</span>' +
-              '</button>' +
-              '<div class="song-dossier-mobile__panel">' + (open ? renderDossierBody(song, true, songs) : '') + '</div>' +
-            '</article>';
+        var groups = groupedByGenre(songs);
+        target.innerHTML = groups.map(function (group) {
+          return '<span class="song-dossier-mobile__group-title">' + escapeHtml(group.genre) + '</span>' +
+            group.songs.map(function (song) {
+              var open = song.id === mobileActive;
+              return '' +
+                '<article class="song-dossier-mobile__item' + (open ? ' is-open' : '') + '">' +
+                  '<button class="song-dossier-mobile__toggle" data-song-id="' + escapeHtml(song.id) + '">' +
+                    '<img class="song-dossier-mobile__thumb" src="' + escapeHtml(song.artwork) + '" alt="' + escapeHtml(song.title) + ' thumb">' +
+                    '<span class="song-dossier-mobile__meta">' +
+                      '<strong>' + escapeHtml(song.title) + '</strong>' +
+                      '<span>' + escapeHtml(song.genre || 'Archive') + ' | Track ' + escapeHtml(song.number) + ' | ' + escapeHtml(song.reference) + '</span>' +
+                    '</span>' +
+                  '</button>' +
+                  '<div class="song-dossier-mobile__panel">' + (open ? renderDossierBody(song, true, songs) : '') + '</div>' +
+                '</article>';
+            }).join('');
         }).join('');
         target.querySelectorAll('.song-dossier-mobile__toggle').forEach(function (btn) {
           btn.addEventListener('click', function () {
@@ -1715,6 +1958,7 @@ Glad tidings of comfort and of joy!</pre>
       }
       function renderAll() {
         renderMetaBar();
+        renderGenreFilter();
         renderTagFilter();
         renderRail();
         renderNavBar();
