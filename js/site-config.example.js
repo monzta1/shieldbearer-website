@@ -1,5 +1,0 @@
-window.SHOPIFY_CONFIG = window.SHOPIFY_CONFIG || {};
-
-if (!window.SHOPIFY_CONFIG.FEATURED_MERCH_API_PATH) {
-  window.SHOPIFY_CONFIG.FEATURED_MERCH_API_PATH = '/api/featured-merch';
-}
