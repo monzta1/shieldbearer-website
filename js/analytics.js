@@ -13,7 +13,7 @@
      3) Clarity: project ID from clarity.microsoft.com
      ----------------------------------------------------------- */
   var cfg = window.SHIELDBEARER_ANALYTICS || {
-    gtmId: 'GTM-XXXXXXX',
+    gtmId: 'GTM-N7SR64KL',
     ga4Id: '',
     clarityId: ''
   };
