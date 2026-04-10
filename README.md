@@ -116,6 +116,8 @@ To update the site later, edit the files and push/upload the changes to GitHub.
   - `NEXT_PUBLIC_SHOPIFY_FEATURED_COLLECTION_HANDLE`
 - Recommended collection handle: `featured-homepage`
 - Only public Storefront API values belong here. Never paste an Admin API token or any private Shopify credential into this repo.
+- If the storefront token is present, the homepage tries token mode first
+- If the token is missing, the homepage tries a tokenless Storefront GraphQL request for testing
 - If config is missing, the request fails, times out, or the collection has no valid in-stock products with images, the homepage automatically falls back to the static merch card and store link.
 
 Example `js/site-config.js` values:
@@ -134,6 +136,22 @@ fetch('https://shop.shieldbearerusa.com/api/2025-01/graphql.json', {
   headers: {
     'Content-Type': 'application/json',
     'X-Shopify-Storefront-Access-Token': 'YOUR_STOREFRONT_TOKEN'
+  },
+  body: JSON.stringify({
+    query: 'query { shop { name } }'
+  })
+})
+  .then(r => r.json())
+  .then(console.log)
+  .catch(console.error);
+```
+
+Minimal browser-console test for tokenless mode:
+```js
+fetch('https://shop.shieldbearerusa.com/api/2025-01/graphql.json', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
   },
   body: JSON.stringify({
     query: 'query { shop { name } }'
@@ -166,6 +184,10 @@ Production-safe options for this static site:
 - Best option: generate `js/site-config.js` during deployment from environment variables, and never commit the real file
 - Simple manual option: after deployment, upload a local `js/site-config.js` with the public storefront config to the site root `js/` directory
 - If production config is missing or invalid, the homepage will keep showing the static merch fallback
+
+If tokenless mode also fails:
+- Next best Shopify-native path: create or reconfigure a custom app that exposes a real Storefront API access token with storefront product and collection read access
+- If that still proves unreliable, the simplest code-side fallback is a tiny serverless proxy that keeps the storefront token in an environment variable and returns only the curated featured merch payload to the homepage
 
 ### Social Links
 - Search for `https://www.instagram.com/shieldbearerusa/` etc.

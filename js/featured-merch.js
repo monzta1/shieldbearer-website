@@ -48,6 +48,23 @@
     };
   }
 
+  function isDevelopment() {
+    var host = window.location.hostname || '';
+    return host === 'localhost' ||
+      host === '127.0.0.1' ||
+      host === '' ||
+      /\.local$/.test(host);
+  }
+
+  function debugLog(message, detail) {
+    if (!isDevelopment()) return;
+    if (typeof detail === 'undefined') {
+      console.info('[featured-merch] ' + message);
+      return;
+    }
+    console.info('[featured-merch] ' + message, detail);
+  }
+
   function normalizeStoreDomain(domain) {
     return String(domain || '')
       .replace(/^https?:\/\//i, '')
@@ -95,18 +112,26 @@
     });
   }
 
-  function fetchShopifyProducts(config) {
-    if (!config.storeDomain || !config.storefrontToken) {
-      return Promise.reject(new Error('Missing Shopify storefront configuration'));
+  function fetchShopifyProducts(config, mode) {
+    if (!config.storeDomain) {
+      return Promise.reject(new Error('Missing Shopify store domain'));
+    }
+
+    var headers = {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    };
+
+    if (mode === 'token') {
+      if (!config.storefrontToken) {
+        return Promise.reject(new Error('Missing Shopify storefront token'));
+      }
+      headers['X-Shopify-Storefront-Access-Token'] = config.storefrontToken;
     }
 
     return withTimeout(storeOrigin(config.storeDomain) + '/api/2025-01/graphql.json', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        'X-Shopify-Storefront-Access-Token': config.storefrontToken
-      },
+      headers: headers,
       body: JSON.stringify({
         query: GRAPHQL_QUERY,
         variables: { handle: config.collectionHandle }
@@ -225,17 +250,47 @@
     merchRoot.classList.remove('is-loading');
   }
 
+  function normalizeProducts(products) {
+    if (!products || !products.length) {
+      throw new Error('No products');
+    }
+    return products;
+  }
+
   function getFeaturedProduct() {
     var config = getConfig();
 
-    return fetchShopifyProducts(config)
-      .catch(function () {
-        return fetchShopifyProducts(config);
-      })
+    if (config.storefrontToken) {
+      return fetchShopifyProducts(config, 'token')
+        .then(normalizeProducts)
+        .then(function (products) {
+          debugLog('token mode succeeded', {
+            collectionHandle: config.collectionHandle,
+            productCount: products.length
+          });
+          return {
+            type: 'dynamic',
+            product: selectRandomProduct(products),
+            config: config
+          };
+        })
+        .catch(function (err) {
+          debugLog('token mode failed, showing fallback', err && err.message ? err.message : err);
+          throw err;
+        })
+        .catch(function () {
+          debugLog('both failed, fallback shown');
+          return { type: 'fallback' };
+        });
+    }
+
+    return fetchShopifyProducts(config, 'tokenless')
+      .then(normalizeProducts)
       .then(function (products) {
-        if (!products || !products.length) {
-          throw new Error('No products');
-        }
+        debugLog('tokenless mode succeeded', {
+          collectionHandle: config.collectionHandle,
+          productCount: products.length
+        });
         return {
           type: 'dynamic',
           product: selectRandomProduct(products),
@@ -243,6 +298,7 @@
         };
       })
       .catch(function (err) {
+        debugLog('both failed, fallback shown', err && err.message ? err.message : err);
         console.warn('Shopify merch fetch failed, using fallback', err);
         return { type: 'fallback' };
       });
