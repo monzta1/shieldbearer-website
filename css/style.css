@@ -152,6 +152,7 @@ button { cursor: pointer; font-family: inherit; }
   display: flex;
   gap: 1.6rem;
   align-items: center;
+  flex-wrap: nowrap;
 }
 .nav-links a {
   font-family: var(--font-head);
@@ -866,7 +867,7 @@ section { padding: var(--sp-section) 0; position: relative; }
 }
 
 /* ── RESPONSIVE ── */
-@media (max-width: 960px) {
+@media (max-width: 1200px) {
   :root { --pad: 1.8rem; --nav-h: 62px; }
   .nav-links  { display: none; }
   .hamburger  { display: flex; }
