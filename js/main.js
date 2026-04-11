@@ -94,6 +94,7 @@
       if (!endpoint || endpoint.indexOf('REPLACE_WITH_YOUR_FORMSPREE_ID') !== -1) {
         out.className = 'form-msg err';
         out.textContent = 'Form endpoint not configured yet.';
+        // Fires when the contact form is submitted without a real configured backend endpoint.
         track('form_submit_error', {
           form_id: 'contact_enquiry',
           reason: 'missing_endpoint',
@@ -123,6 +124,7 @@
       .catch(function () {
         out.className = 'form-msg err';
         out.textContent = 'Message failed. Please try again in a moment.';
+        // Fires when the backend request itself fails after submission.
         track('form_submit_error', {
           form_id: 'contact_enquiry',
           reason: 'request_failed',
@@ -148,6 +150,7 @@
       }
       if (!endpoint || endpoint.indexOf('REPLACE_WITH_YOUR_CONVERTKIT_FORM_ID') !== -1) {
         if (note) note.textContent = 'Email form is not configured yet.';
+        // Fires when signup is attempted before ConvertKit is configured.
         track('form_submit_error', {
           form_id: 'signal_signup',
           reason: 'missing_endpoint',
@@ -172,6 +175,7 @@
       })
       .catch(function () {
         if (note) note.textContent = 'Signup failed. Please try again.';
+        // Fires when the ConvertKit request fails after a real submit attempt.
         track('form_submit_error', {
           form_id: 'signal_signup',
           reason: 'request_failed',

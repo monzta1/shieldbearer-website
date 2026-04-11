@@ -1927,6 +1927,21 @@ He found his voice, where it belonged.</pre>
         return -1;
       }
 
+      var lastLyricsViewId = null;
+      function trackLyricsView(song) {
+        if (!song || !song.id || song.id === lastLyricsViewId) return;
+        lastLyricsViewId = song.id;
+        if (typeof window.sbTrack === 'function') {
+          window.sbTrack('lyrics_view', {
+            song_id: song.id,
+            song_title: song.title || '',
+            genre: song.genre || 'Archive',
+            reference: song.reference || '',
+            from_path: window.location.pathname || '/'
+          });
+        }
+      }
+
       /* ── catalog stats ── */
       function renderMetaBar() {
         var el = document.getElementById('dossierMetaBar');
@@ -2122,6 +2137,9 @@ He found his voice, where it belonged.</pre>
         for (var i = 0; i < songs.length; i++) { if (songs[i].id === desktopActive) { song = songs[i]; break; } }
         if (!song && songs.length) { song = songs[0]; desktopActive = song.id; }
         target.innerHTML = song ? renderDossierBody(song, true, songs) : '';
+        if (song && typeof window.sbTrack === 'function') {
+          trackLyricsView(song);
+        }
       }
 
       /* ── mobile accordion ── */
