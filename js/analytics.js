@@ -57,13 +57,6 @@
     document.head.appendChild(s);
   }
 
-  function initGTM() {
-    if (!/^GTM-[A-Z0-9]+$/i.test(gtmId)) return;
-    pushDataLayer('gtm_init', { gtm_id: gtmId });
-    window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-    loadScript('https://www.googletagmanager.com/gtm.js?id=' + encodeURIComponent(gtmId));
-  }
-
   function initGA4Fallback() {
     if (!/^G-[A-Z0-9]+$/i.test(ga4Id)) return;
     loadScript('https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(ga4Id));
@@ -185,7 +178,6 @@
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 
-  initGTM();
   initGA4Fallback();
   initClarity();
   initClickTracking();
