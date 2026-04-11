@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Story | Shieldbearer</title>
+  <meta name="description" content="A visual timeline of Moncy Abraham's journey from Bangalore, India to the solo project behind Shieldbearer.">
+  <meta property="og:title" content="The Story | Shieldbearer" />
+  <meta property="og:description" content="From Bangalore to Shieldbearer: a visual story of music, ministry, roots, and calling." />
+  <meta property="og:image" content="https://shieldbearerusa.com/images/story/performing-2025.jpg" />
+  <meta property="og:url" content="https://shieldbearerusa.com/story.html" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Story | Shieldbearer" />
+  <meta name="twitter:description" content="From Bangalore to Shieldbearer: a visual story of music, ministry, roots, and calling." />
+  <meta name="twitter:image" content="https://shieldbearerusa.com/images/story/performing-2025.jpg" />
+  <link rel="icon" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200;300;400;500;600&family=Roboto+Condensed:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .story-hero {
+      position: relative;
+      min-height: 100vh;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      background: #060606;
+      border-bottom: 1px solid rgba(192,57,43,.12);
+    }
+    .story-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(4,4,4,.94) 0%, rgba(4,4,4,.74) 40%, rgba(4,4,4,.22) 100%),
+        radial-gradient(circle at top right, rgba(231,76,60,.22), transparent 28%);
+      z-index: 1;
+      pointer-events: none;
+    }
+    .story-hero__media {
+      position: absolute;
+      inset: 0;
+    }
+    .story-hero__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 18%;
+      filter: saturate(.92) contrast(1.02) brightness(.6);
+      transform: scale(1.04);
+    }
+    .story-hero__inner {
+      position: relative;
+      z-index: 2;
+      width: min(var(--max-w), 100%);
+      margin: 0 auto;
+      padding: calc(var(--nav-h) + 4rem) var(--pad) 4.6rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+      gap: 2rem;
+      align-items: end;
+    }
+    .story-hero__copy p {
+      max-width: 54ch;
+      font-size: clamp(1rem, 1.8vw, 1.14rem);
+      color: rgba(240,235,224,.78);
+      line-height: 1.9;
+    }
+    .story-hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .story-hero__card {
+      align-self: center;
+      background: linear-gradient(180deg, rgba(14,14,14,.95), rgba(8,8,8,.95));
+      border: 1px solid rgba(168,162,154,.12);
+      padding: 1.35rem;
+      box-shadow: 0 24px 80px rgba(0,0,0,.42);
+    }
+    .story-hero__card-label {
+      display: block;
+      font-family: var(--font-head);
+      font-size: .62rem;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--red-bright);
+      margin-bottom: .8rem;
+    }
+    .story-hero__card p {
+      color: rgba(240,235,224,.72);
+      line-height: 1.85;
+    }
+
+    .story-origin {
+      background:
+        linear-gradient(180deg, rgba(7,7,7,.97), rgba(11,11,11,.97)),
+        radial-gradient(circle at 15% 20%, rgba(231,76,60,.08), transparent 20%);
+    }
+    .story-origin__grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(300px, .95fr);
+      gap: 2rem;
+      align-items: start;
+    }
+    .story-body p {
+      color: rgba(240,235,224,.72);
+      margin-bottom: 1rem;
+      line-height: 1.9;
+    }
+    .story-body p:last-child { margin-bottom: 0; }
+    .story-quote {
+      border: 1px solid rgba(168,162,154,.14);
+      border-left: 3px solid var(--red);
+      background: linear-gradient(180deg, rgba(15,15,15,.96), rgba(8,8,8,.96));
+      padding: 1.55rem 1.55rem 1.7rem;
+      box-shadow: 0 24px 80px rgba(0,0,0,.32);
+    }
+    .story-quote blockquote {
+      font-family: var(--font-head);
+      font-size: 1.02rem;
+      line-height: 1.85;
+      color: var(--white);
+    }
+    .story-quote footer {
+      margin-top: 1rem;
+      font-family: var(--font-head);
+      font-size: .58rem;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .scripture-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .7rem;
+      margin-top: 1.3rem;
+    }
+    .scripture-pills span {
+      padding: .46rem .8rem;
+      border: 1px solid rgba(168,162,154,.14);
+      background: rgba(255,255,255,.03);
+      font-family: var(--font-head);
+      font-size: .58rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: rgba(240,235,224,.7);
+    }
+
+    .story-timeline {
+      position: relative;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--pad);
+    }
+    .story-timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, transparent, rgba(192,57,43,.58) 8%, rgba(192,57,43,.2) 92%, transparent);
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+    .story-chapter {
+      display: grid;
+      grid-template-columns: 1fr 88px 1fr;
+      align-items: start;
+      margin-bottom: 6.5rem;
+    }
+    .story-chapter:last-child { margin-bottom: 0; }
+    .story-chapter--left .story-media { grid-column: 1; padding-right: 2.6rem; }
+    .story-chapter--left .story-node { grid-column: 2; }
+    .story-chapter--left .story-copy { grid-column: 3; padding-left: 2.6rem; }
+    .story-chapter--right .story-copy { grid-column: 1; padding-right: 2.6rem; }
+    .story-chapter--right .story-node { grid-column: 2; }
+    .story-chapter--right .story-media { grid-column: 3; padding-left: 2.6rem; }
+    .story-node {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 1.2rem;
+    }
+    .story-dot {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: var(--red-bright);
+      border: 3px solid var(--dark);
+      box-shadow: 0 0 16px rgba(231,76,60,.65);
+    }
+    .story-year {
+      margin-top: .55rem;
+      font-family: var(--font-head);
+      font-size: .74rem;
+      letter-spacing: .18em;
+      color: var(--red-bright);
+      text-transform: uppercase;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .story-copy {
+      padding-top: .55rem;
+    }
+    .story-num {
+      font-family: var(--font-display);
+      font-size: 4.2rem;
+      line-height: 1;
+      color: rgba(192,57,43,.08);
+      margin-bottom: -.2rem;
+    }
+    .story-copy .bar { margin-bottom: 1.55rem; }
+    .story-note {
+      margin-top: 1.35rem;
+      padding: .95rem 1rem;
+      border: 1px solid rgba(168,162,154,.12);
+      background: rgba(255,255,255,.02);
+      font-size: .94rem;
+      color: rgba(240,235,224,.72);
+      line-height: 1.8;
+    }
+
+    .story-grid-2,
+    .story-grid-3,
+    .story-grid-2x2,
+    .story-grid-feature,
+    .story-stack {
+      display: grid;
+      gap: 8px;
+    }
+    .story-grid-2 { grid-template-columns: 1fr 1fr; }
+    .story-grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .story-grid-2x2 { grid-template-columns: 1fr 1fr; }
+    .story-grid-feature {
+      grid-template-columns: 1.25fr 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+    .story-grid-feature .story-frame--feature {
+      grid-row: 1 / 3;
+    }
+    .story-frame--square { aspect-ratio: 1; }
+    .story-frame--landscape { aspect-ratio: 16 / 10; }
+    .story-frame--portrait { aspect-ratio: 3 / 4; }
+    .story-frame--hero { aspect-ratio: 4 / 5; }
+    .story-caption {
+      display: block;
+      margin-top: .85rem;
+      font-family: var(--font-head);
+      font-size: .56rem;
+      letter-spacing: .26em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .story-close {
+      background:
+        linear-gradient(180deg, rgba(7,7,7,.98), rgba(5,5,5,.98)),
+        radial-gradient(circle at 80% 15%, rgba(231,76,60,.1), transparent 20%);
+    }
+    .story-close__grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+      gap: 2rem;
+      align-items: center;
+    }
+    .story-close__card {
+      background: linear-gradient(180deg, rgba(12,12,12,.96), rgba(7,7,7,.98));
+      border: 1px solid rgba(168,162,154,.14);
+      padding: 1.6rem;
+      box-shadow: 0 24px 80px rgba(0,0,0,.32);
+    }
+    .story-close__card h3 {
+      font-family: var(--font-display);
+      font-size: 2.1rem;
+      letter-spacing: .06em;
+      color: #fff;
+    }
+    .story-close__card p {
+      margin-top: .8rem;
+      color: rgba(240,235,224,.72);
+      line-height: 1.85;
+    }
+    .story-close__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .72s ease, transform .72s ease;
+    }
+    [data-reveal].is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1080px) {
+      .story-hero__inner,
+      .story-origin__grid,
+      .story-close__grid {
+        grid-template-columns: 1fr;
+      }
+      .story-hero__card {
+        max-width: 420px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .story-timeline::before {
+        left: calc(var(--pad) + 20px);
+      }
+      .story-chapter {
+        grid-template-columns: 42px 1fr;
+        margin-bottom: 4.5rem;
+      }
+      .story-chapter--left .story-node,
+      .story-chapter--right .story-node {
+        grid-column: 1;
+        grid-row: 1 / 3;
+        align-items: flex-start;
+      }
+      .story-chapter--left .story-copy,
+      .story-chapter--right .story-copy {
+        grid-column: 2;
+        padding: 0 0 0 1.45rem;
+      }
+      .story-chapter--left .story-media,
+      .story-chapter--right .story-media {
+        grid-column: 2;
+        padding: 1.45rem 0 0 1.45rem;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .story-hero__inner {
+        padding-top: calc(var(--nav-h) + 3.5rem);
+        padding-bottom: 3.8rem;
+      }
+      .story-hero__actions,
+      .story-close__actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .story-grid-3,
+      .story-grid-2,
+      .story-grid-2x2 {
+        grid-template-columns: 1fr 1fr;
+      }
+      .story-grid-feature {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+      }
+      .story-grid-feature .story-frame--feature {
+        grid-column: 1 / 3;
+        grid-row: 1;
+      }
+      .story-frame--hero {
+        aspect-ratio: 3 / 4;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mob-menu" id="mobMenu" role="dialog" aria-label="Navigation">
+    <button class="mob-close" id="mobClose">&#x2715;</button>
+    <a href="index.html">Home</a>
+    <a href="music.html">Music</a>
+    <a href="videos.html">Videos</a>
+    <a href="about.html">About</a>
+    <a href="story.html">Story</a>
+    <a href="process.html">Process</a>
+    <a href="song-meanings.html">Lyrics</a>
+    <a href="interviews.html">Press</a>
+    <a href="epk.html">Press Kit</a>
+    <a href="manifesto.html">Manifesto</a>
+    <a href="open-letter.html">Open Letter</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener" style="color:var(--red-bright)">Merch</a>
+  </div>
+
+  <nav class="site-nav" id="mainNav" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo" aria-label="Shieldbearer home">
+      <img src="images/logo.png" alt="Shieldbearer">
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="videos.html">Videos</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="story.html" class="active">Story</a></li>
+      <li><a href="process.html">Process</a></li>
+      <li><a href="song-meanings.html">Lyrics</a></li>
+      <li class="nav-dropdown">
+        <a href="interviews.html">Press</a>
+        <div class="nav-dropdown__menu">
+          <a href="interviews.html">Press Coverage</a>
+          <a href="epk.html">Press Kit</a>
+        </div>
+      </li>
+      <li><a href="manifesto.html">Manifesto</a></li>
+      <li><a href="open-letter.html">Open Letter</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li class="nav-merch"><a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener">Merch</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <header class="story-hero">
+    <div class="story-hero__media">
+      <img src="images/story/performing-2025.jpg" alt="Moncy Abraham performing onstage in 2025">
+    </div>
+    <div class="story-hero__inner">
+      <div class="story-hero__copy" data-reveal>
+        <span class="eyebrow">The Journey Behind the Name</span>
+        <h1 class="display-title">From Bangalore to<br>Shieldbearer</h1>
+        <div class="bar"></div>
+        <p>
+          This is not a resume. It is the road behind the sound: India, church stages, old band photos,
+          late-night writing, unexpected doors, deep roots in faith, and the solo project that finally gave
+          the calling its right name.
+        </p>
+        <div class="story-hero__actions">
+          <a href="#timeline" class="btn btn--red">Enter the Timeline</a>
+          <a href="music.html" class="btn btn--ghost">Hear the Music</a>
+        </div>
+      </div>
+      <aside class="story-hero__card" data-reveal>
+        <span class="story-hero__card-label">Current Era · 2025</span>
+        <p>
+          The present image belongs at the top for a reason. Shieldbearer is the clearest expression yet:
+          solo, faith-rooted, guitar-driven, cinematic, and centered on Christ without apology.
+        </p>
+      </aside>
+    </div>
+  </header>
+
+  <section class="story-origin">
+    <div class="container story-origin__grid">
+      <div class="story-body" data-reveal>
+        <span class="eyebrow">Why the Name Exists</span>
+        <h2 class="section-title">The Shield Was Never Ours</h2>
+        <div class="bar"></div>
+        <p>
+          In ancient warfare, a shieldbearer walked ahead. He absorbed what was coming. He stood close enough
+          to protect without retreating. The deeper that picture was studied in Scripture, the clearer it became:
+          Christ is our Shieldbearer.
+        </p>
+        <p>
+          He took our place. He stepped into a battle we could never win. He stood between us and judgment.
+          That truth became the theological center of the songs, the sound, and eventually the name itself.
+        </p>
+        <div class="scripture-pills">
+          <span>1 Samuel 14</span>
+          <span>1 Samuel 17:7</span>
+          <span>Isaiah 53:4</span>
+          <span>Psalm 3:3</span>
+          <span>Psalm 28:7</span>
+        </div>
+      </div>
+
+      <aside class="story-quote" data-reveal>
+        <blockquote>
+          “He bore the shield so we could lift our heads. He bore the cross so we could rise.
+          The shield we trust is Christ. This is where it started. This is why we continue.”
+        </blockquote>
+        <footer>Shieldbearer Origin Story</footer>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section--darker" id="timeline">
+    <div class="story-timeline">
+
+      <article class="story-chapter story-chapter--left" data-reveal>
+        <div class="story-media">
+          <div class="story-grid-2x2">
+            <div class="art-frame story-frame--square"><img src="images/story/moncy-2005.jpg" alt="Moncy Abraham in Bangalore in 2005 with long hair"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div></div>
+            <div class="art-frame story-frame--landscape"><img src="images/story/whitenoiz-bangalore-2007.jpg" alt="Playing with WhitenoiZ in Bangalore in 2007"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div></div>
+            <div class="art-frame story-frame--landscape"><img src="images/story/whitenoiz-2009.jpg" alt="Moncy performing with WhitenoiZ in 2009"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div></div>
+            <div class="art-frame story-frame--landscape"><img src="images/story/whitenoiz-kerala-2011.jpg" alt="WhitenoiZ performing in Kerala in 2011"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div></div>
+          </div>
+          <span class="story-caption">Bangalore and Kerala · 2005–2011</span>
+        </div>
+        <div class="story-node">
+          <div class="story-dot"></div>
+          <div class="story-year">2005–2011</div>
+        </div>
+        <div class="story-copy story-body">
+          <div class="story-num">01</div>
+          <span class="eyebrow">Origins</span>
+          <h2 class="section-title">Where the Guitar Found Its Voice</h2>
+          <div class="bar"></div>
+          <p>
+            The story begins in Bangalore, India. Long hair. Early rock years. Outdoor stages. WhitenoiZ.
+            The photos are grainy because the season was real before it was polished. That is part of the point.
+          </p>
+          <p>
+            These were the years of identity taking shape as a guitarist. The sound was loud, raw, and still becoming.
+            What mattered most was learning that music could carry conviction, not just volume.
+          </p>
+          <p>
+            From Bangalore to Kerala, the earliest chapter already held the instinct that still drives the work now:
+            when the guitar says something true, people feel it before they can explain it.
+          </p>
+        </div>
+      </article>
+
+      <article class="story-chapter story-chapter--right" data-reveal>
+        <div class="story-copy story-body">
+          <div class="story-num">02</div>
+          <span class="eyebrow">Expanding</span>
+          <h2 class="section-title">Larger Rooms, Clearer Direction</h2>
+          <div class="bar"></div>
+          <p>
+            Opening for John Schlitt with Scarlet Robe was one of the first moments the horizon visibly widened.
+            The rooms got bigger, but the deeper shift was internal. Music was no longer just something to develop.
+            It was something to steward.
+          </p>
+          <p>
+            Dubai widened that sense of calling even more. Playing with Steve Kuban, recording, composing at home,
+            and moving through a different city made one thing plain: the skyline could change without changing the assignment.
+          </p>
+          <p>
+            In 2016 the move to the United States became part of the timeline. India was never erased. It remained the root.
+            But the map changed, and the next chapter opened.
+          </p>
+        </div>
+        <div class="story-node">
+          <div class="story-dot"></div>
+          <div class="story-year">2012–2016</div>
+        </div>
+        <div class="story-media">
+          <div class="story-grid-feature">
+            <div class="art-frame story-frame--feature story-frame--landscape"><img src="images/story/scarlet-robe-2012.jpg" alt="Scarlet Robe opening for John Schlitt in 2012"><div class="art-glow"></div><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div></div>
+            <div class="art-frame story-frame--square"><img src="images/story/dubai-steve-kuban-2015.jpg" alt="Moncy performing with Steve Kuban in Dubai in 2015"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div></div>
+            <div class="art-frame story-frame--square"><img src="images/story/composing-2015.jpg" alt="Moncy composing at home in 2015"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div></div>
+          </div>
+          <div class="story-stack" style="margin-top:8px;">
+            <div class="art-frame story-frame--landscape"><img src="images/story/dubai-2016.jpg" alt="Moncy playing in Dubai in 2016"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div></div>
+          </div>
+          <span class="story-caption">Scarlet Robe · Dubai · The road toward the United States</span>
+        </div>
+      </article>
+
+      <article class="story-chapter story-chapter--left" data-reveal>
+        <div class="story-media">
+          <div class="story-grid-2x2">
+            <div class="art-frame story-frame--landscape"><img src="images/story/church-2017.jpg" alt="Moncy playing a 7-string guitar at church in 2017"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div></div>
+            <div class="art-frame story-frame--square"><img src="images/story/grace-covenant-2019.jpg" alt="Moncy at Grace Covenant Church in 2019"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div></div>
+            <div class="art-frame story-frame--landscape"><img src="images/story/performing-2020.jpg" alt="Moncy performing in 2020"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div></div>
+            <div class="art-frame story-frame--portrait"><img src="images/story/grace-covenant-2020.jpg" alt="Moncy at Grace Covenant Church in 2020"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div></div>
+          </div>
+          <span class="story-caption">Church stages · Grace Covenant · 2017–2020</span>
+        </div>
+        <div class="story-node">
+          <div class="story-dot"></div>
+          <div class="story-year">2017–2020</div>
+        </div>
+        <div class="story-copy story-body">
+          <div class="story-num">03</div>
+          <span class="eyebrow">Ministry & Roots</span>
+          <h2 class="section-title">The Calling Went Deeper</h2>
+          <div class="bar"></div>
+          <p>
+            Once in the United States, the center of gravity shifted. The church stage mattered. The 7-string mattered.
+            Grace Covenant mattered. These were not years of chasing image. They were years of being rooted.
+          </p>
+          <p>
+            Music became more intentional, more prayerful, more grounded in faith and calling. The riffs did not get softer.
+            The purpose got clearer. What had started as identity and opportunity was becoming ministry.
+          </p>
+          <p>
+            A solo project does not begin the day it gets named. It begins when the interior language becomes unavoidable.
+            This chapter is where that inner architecture was built.
+          </p>
+        </div>
+      </article>
+
+      <article class="story-chapter story-chapter--right" data-reveal>
+        <div class="story-copy story-body">
+          <div class="story-num">04</div>
+          <span class="eyebrow">Connections & Legacy</span>
+          <h2 class="section-title">From Influence to Fellowship</h2>
+          <div class="bar"></div>
+          <p>
+            Some photos mark community. Some mark gratitude. Some mark the strange grace of going from fan to peer-level conversation.
+            Across these years came encounters with John Schlitt, John Lawry, Michael Sweet, Dan Weyandt, Bob Hartman, Petra, and others
+            who shaped both faith and sound in different ways.
+          </p>
+          <p>
+            Andy Timmons belongs in this story too, but in a different lane: not as Christian rock, rather as a guitar voice admired
+            for feel, expression, and craft. Influence matters, even when it comes from outside the exact ministry lane.
+          </p>
+          <div class="story-note">
+            The Bob Hartman photo matters because it tells the truth. Those are Petra caps, not Shieldbearer caps.
+            It is a fan-to-peer moment, and that honesty makes it stronger.
+          </div>
+        </div>
+        <div class="story-node">
+          <div class="story-dot"></div>
+          <div class="story-year">2017–2024</div>
+        </div>
+        <div class="story-media">
+          <div class="story-grid-3">
+            <div class="art-frame story-frame--portrait"><img src="images/story/michael-sweet-2017.jpg" alt="Moncy meeting Michael Sweet in 2017"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div></div>
+            <div class="art-frame story-frame--portrait"><img src="images/story/andy-timmons-2018.jpg" alt="Moncy meeting Andy Timmons in 2018"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div></div>
+            <div class="art-frame story-frame--landscape"><img src="images/story/john-schlitt-lawry.jpg" alt="Moncy meeting John Schlitt and John Lawry"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div></div>
+            <div class="art-frame story-frame--portrait"><img src="images/story/dan-weyandt-zao.jpg" alt="Moncy meeting Dan Weyandt of Zao"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div></div>
+            <div class="art-frame story-frame--portrait"><img src="images/story/bob-hartman-2024.jpg" alt="Moncy meeting Bob Hartman in 2024, both wearing Petra caps"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div></div>
+            <div class="art-frame story-frame--landscape"><img src="images/story/petra-2024.jpg" alt="Moncy meeting Petra in 2024"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div></div>
+          </div>
+          <span class="story-caption">Faith community, legacy artists, and wider guitar influence</span>
+        </div>
+      </article>
+
+      <article class="story-chapter story-chapter--left" data-reveal>
+        <div class="story-media">
+          <div class="story-grid-2">
+            <div class="art-frame story-frame--hero"><img src="images/story/performing-2025.jpg" alt="Moncy performing as Shieldbearer in 2025"><div class="art-glow"></div><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div></div>
+            <div class="art-frame story-frame--hero"><img src="images/story/shieldbearer-current.jpg" alt="Moncy in Shieldbearer hoodie in the current era"><div class="art-glow"></div><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div></div>
+          </div>
+          <span class="story-caption">Present identity · 2024–2025</span>
+        </div>
+        <div class="story-node">
+          <div class="story-dot"></div>
+          <div class="story-year">2024–2025</div>
+        </div>
+        <div class="story-copy story-body">
+          <div class="story-num">05</div>
+          <span class="eyebrow">Shieldbearer</span>
+          <h2 class="section-title">The Name Finally Matched the Calling</h2>
+          <div class="bar"></div>
+          <p>
+            Shieldbearer is a solo project, but it does not sound small. It draws from hybrid production, real guitars,
+            cinematic AI, and years of instinct shaped by faith, rock, church, and persistence. It carries the scale of a larger
+            vision because the point was never minimalism. The point was clarity.
+          </p>
+          <p>
+            This era is not a cosmetic reset. It is the strongest articulation yet of what the whole road was trying to say:
+            Christ named plainly. Songs for the weary, the wounded, and the faithful still standing. Heavy music with a center.
+          </p>
+          <p>
+            The result is present tense, but it was built by everything before it: India, Dubai, church stages, old heroes,
+            deeper convictions, and the refusal to separate sound from substance.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="story-close">
+    <div class="container story-close__grid">
+      <div class="story-body" data-reveal>
+        <span class="eyebrow">Why This Story Continues</span>
+        <h2 class="section-title">Christ Went Ahead</h2>
+        <div class="bar"></div>
+        <p>
+          The road behind Shieldbearer matters, but it is not the object of worship. The center is the One who went ahead,
+          absorbed every blow, and never retreated. That is the ground beneath the name, the songs, and the reason the work keeps moving.
+        </p>
+        <p>
+          This page is meant to show the line clearly: from Bangalore roots to present-day Shieldbearer, the story has always been
+          heading toward a more open declaration of Christ.
+        </p>
+        <div class="story-close__actions">
+          <a href="music.html" class="btn btn--red">Listen to Shieldbearer</a>
+          <a href="contact.html" class="btn btn--ghost">Contact Moncy</a>
+        </div>
+      </div>
+      <aside class="story-close__card" data-reveal>
+        <h3>The Story in One Line</h3>
+        <p>
+          A guitarist from Bangalore moved across continents, deepened into ministry, gathered influence and fellowship along the way,
+          and eventually built a solo project named for the Christ who carries the shield in front of His people.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><img src="images/logo.png" alt="Shieldbearer"></a>
+        <p>Shieldbearer is Christian metal with Scripture at the center. Christ is named plainly in every release and every conversation.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="music.html">Music</a></li>
+          <li><a href="videos.html">Videos</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="story.html">Story</a></li>
+          <li><a href="process.html">Process</a></li>
+          <li><a href="song-meanings.html">Lyrics</a></li>
+          <li><a href="interviews.html">Press</a></li>
+          <li><a href="manifesto.html">Manifesto</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="epk.html">Press Kit</a></li>
+          <li><a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener">Merch</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/shieldbearerusa/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/shieldbearerusa" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.youtube.com/@ShieldbearerUSA" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz" target="_blank" rel="noopener">Spotify</a></li>
+          <li><a href="https://linktr.ee/shieldbearerusa" target="_blank" rel="noopener">Linktree</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Take Action</h4>
+        <ul>
+          <li><a href="music.html#armory">Enter the Armory</a></li>
+          <li><a href="videos.html">Watch the Videos</a></li>
+          <li><a href="song-meanings.html">Read the Lyrics</a></li>
+          <li><a href="interviews.html">Catch the Signal</a></li>
+          <li><a href="epk.html">Download Press Kit</a></li>
+          <li><a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener">Raise the Banner</a></li>
+          <li><a href="contact.html">Join the Mission</a></li>
+          <li><a href="https://buymeacoffee.com/shieldbearer" target="_blank" rel="noopener">Support the Mission</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Shieldbearer. All rights reserved.</p>
+      <a href="mailto:shieldbearerusa@gmail.com">shieldbearerusa@gmail.com</a>
+    </div>
+  </footer>
+
+  <script src="js/analytics.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    (function () {
+      var revealItems = document.querySelectorAll('[data-reveal]');
+      if (!('IntersectionObserver' in window) || !revealItems.length) {
+        revealItems.forEach(function (item) { item.classList.add('is-visible'); });
+        return;
+      }
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.16 });
+      revealItems.forEach(function (item) { observer.observe(item); });
+    })();
+  </script>
+</body>
+</html>
