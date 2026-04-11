@@ -146,14 +146,14 @@
 <body>
 
   <div class="mob-menu" id="mobMenu">
-    <button class="mob-close" id="mobClose">&#x2715;</button>
+    <button class="mob-close" id="mobClose" aria-label="Close menu">&#x2715;</button>
     <a href="index.html">Home</a>
     <a href="music.html">Music</a>
-    <a href="videos.html">Videos</a>
-    <a href="about.html">About</a>
-    <a href="story.html">Story</a>
-    <a href="process.html" style="color:var(--red-bright)">Process</a>
+    <a href="videos.html">Signal Fire</a>
     <a href="song-meanings.html">Lyrics</a>
+    <a href="about.html">About</a>
+    <a href="story.html">The Story</a>
+    <a href="process.html">The Process</a>
     <a href="interviews.html">Press</a>
     <a href="epk.html">Press Kit</a>
     <a href="manifesto.html">Manifesto</a>
@@ -166,12 +166,22 @@
     <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Shieldbearer"></a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="music.html">Music</a></li>
-      <li><a href="videos.html">Videos</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="story.html">Story</a></li>
-      <li><a href="process.html" class="active">Process</a></li>
-      <li><a href="song-meanings.html">Lyrics</a></li>
+      <li class="nav-dropdown">
+        <a href="music.html">Music</a>
+        <div class="nav-dropdown__menu">
+          <a href="music.html">The Armory</a>
+          <a href="videos.html">Signal Fire</a>
+          <a href="song-meanings.html">Lyrics</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="about.html">Artist</a>
+        <div class="nav-dropdown__menu">
+          <a href="about.html">About</a>
+          <a href="story.html">The Story</a>
+          <a href="process.html">The Process</a>
+        </div>
+      </li>
       <li class="nav-dropdown">
         <a href="interviews.html">Press</a>
         <div class="nav-dropdown__menu">
@@ -179,8 +189,13 @@
           <a href="epk.html">Press Kit</a>
         </div>
       </li>
-      <li><a href="manifesto.html">Manifesto</a></li>
-      <li><a href="open-letter.html">Open Letter</a></li>
+      <li class="nav-dropdown">
+        <a href="manifesto.html">Words</a>
+        <div class="nav-dropdown__menu">
+          <a href="manifesto.html">The Manifesto</a>
+          <a href="open-letter.html">Open Letter</a>
+        </div>
+      </li>
       <li><a href="contact.html">Contact</a></li>
       <li class="nav-merch"><a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener">Merch</a></li>
     </ul>
