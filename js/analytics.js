@@ -103,18 +103,37 @@
       if (!target) return;
       var link = target.closest('a');
       if (!link) return;
-      var href = (link.getAttribute('href') || '').trim();
+      var href = (link.href || link.getAttribute('href') || '').trim();
       if (!href) return;
 
-      var label = (link.textContent || '').trim().toLowerCase();
+      var rawText = (link.textContent || '').trim();
+      var label = rawText.toLowerCase();
       var path = window.location.pathname || '/';
       var platform = platformFromUrl(href);
 
       if (platform) {
         sbTrack('listen_click', { platform: platform, label: label, from_path: path, to_url: href });
       }
+      if (href.indexOf('spotify.com') !== -1) {
+        sbTrack('spotify_click', { link_text: rawText, link_url: href });
+      }
+      if (href.indexOf('youtube.com') !== -1 || href.indexOf('youtu.be') !== -1) {
+        sbTrack('youtube_click', { link_text: rawText, link_url: href });
+      }
+      if (href.indexOf('buymeacoffee.com') !== -1) {
+        sbTrack('support_click', { link_text: rawText, link_url: href });
+      }
       if (href.indexOf('shop.shieldbearerusa.com') !== -1) {
-        sbTrack('merch_click', { label: label, from_path: path, to_url: href });
+        sbTrack('merch_click', {
+          label: label,
+          link_text: rawText,
+          from_path: path,
+          to_url: href,
+          link_url: href
+        });
+      }
+      if (href.indexOf('contact.html') !== -1) {
+        sbTrack('contact_intent', { link_text: rawText, link_url: href });
       }
       if (href.indexOf('eternalflames.co.uk') !== -1 || href.indexOf('heavensmetalmagazine.com') !== -1) {
         sbTrack('outbound_press_click', { label: label, from_path: path, to_url: href });
@@ -126,22 +145,26 @@
   }
 
   function initFormTracking() {
-    var enquiry = document.getElementById('enquiryForm');
-    if (enquiry) {
-      enquiry.addEventListener('submit', function () {
+    var contactForm = document.getElementById('contactForm') || document.getElementById('enquiryForm');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function () {
+        sbTrack('form_submit', { form_id: 'contact' });
         sbTrack('contact_submit', { from_path: window.location.pathname || '/' });
       }, true);
     }
 
-    var signal = document.getElementById('signalForm');
-    if (signal) {
-      signal.addEventListener('submit', function () {
+    var signalForm = document.getElementById('signalForm');
+    if (signalForm) {
+      signalForm.addEventListener('submit', function () {
+        sbTrack('form_submit', { form_id: 'signal_signup' });
         sbTrack('signal_signup', { from_path: window.location.pathname || '/' });
       }, true);
     }
   }
 
   function initScrollTracking() {
+    if ((window.location.pathname || '').indexOf('song-meanings') === -1) return;
+
     var marks = [25, 50, 75, 100];
     var sent = {};
 
@@ -154,7 +177,7 @@
         var m = marks[i];
         if (pct >= m && !sent[m]) {
           sent[m] = true;
-          sbTrack('scroll_depth', { percent: m, path: window.location.pathname || '/' });
+          sbTrack('scroll_depth', { page: 'lyrics', depth: m, path: window.location.pathname || '/' });
         }
       }
     }
