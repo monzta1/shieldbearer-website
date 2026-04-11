@@ -120,7 +120,7 @@
       if (href.indexOf('youtube.com') !== -1 || href.indexOf('youtu.be') !== -1) {
         sbTrack('youtube_click', { link_text: rawText, link_url: href });
       }
-      if (href.indexOf('buymeacoffee.com') !== -1) {
+      if (href.indexOf('buymeacoffee.com') !== -1 || href.indexOf('www.buymeacoffee.com') !== -1) {
         sbTrack('support_click', { link_text: rawText, link_url: href });
       }
       if (href.indexOf('shop.shieldbearerusa.com') !== -1) {
@@ -145,10 +145,10 @@
   }
 
   function initFormTracking() {
-    var contactForm = document.getElementById('contactForm') || document.getElementById('enquiryForm');
-    if (contactForm) {
-      contactForm.addEventListener('submit', function () {
-        sbTrack('form_submit', { form_id: 'contact' });
+    var enquiryForm = document.getElementById('enquiryForm');
+    if (enquiryForm) {
+      enquiryForm.addEventListener('submit', function () {
+        sbTrack('form_submit', { form_id: 'contact_enquiry' });
         sbTrack('contact_submit', { from_path: window.location.pathname || '/' });
       }, true);
     }
