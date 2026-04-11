@@ -99,6 +99,11 @@
       if (!endpoint || endpoint.indexOf('REPLACE_WITH_YOUR_FORMSPREE_ID') !== -1) {
         out.className = 'form-msg err';
         out.textContent = 'Form endpoint not configured yet.';
+        track('form_submit_error', {
+          form_id: 'contact_enquiry',
+          reason: 'missing_endpoint',
+          from_path: window.location.pathname || '/'
+        });
         return;
       }
 
@@ -113,12 +118,22 @@
         if (!r.ok) throw new Error('Formspree request failed');
         out.className = 'form-msg ok';
         out.textContent = 'Message sent. Thank you.';
+        track('form_submit', {
+          form_id: 'contact_enquiry',
+          method: 'formspree',
+          from_path: window.location.pathname || '/'
+        });
         track('contact_submit_success', { method: 'formspree', from_path: window.location.pathname || '/' });
         enquiryForm.reset();
       })
       .catch(function () {
         out.className = 'form-msg err';
         out.textContent = 'Message failed. Please try again in a moment.';
+        track('form_submit_error', {
+          form_id: 'contact_enquiry',
+          reason: 'request_failed',
+          from_path: window.location.pathname || '/'
+        });
       });
     });
   }
@@ -139,6 +154,11 @@
       }
       if (!endpoint || endpoint.indexOf('REPLACE_WITH_YOUR_CONVERTKIT_FORM_ID') !== -1) {
         if (note) note.textContent = 'Email form is not configured yet.';
+        track('form_submit_error', {
+          form_id: 'signal_signup',
+          reason: 'missing_endpoint',
+          from_path: window.location.pathname || '/'
+        });
         return;
       }
       fetch(endpoint, {
@@ -149,11 +169,21 @@
       .then(function (r) {
         if (!r.ok) throw new Error('ConvertKit request failed');
         if (note) note.textContent = 'You are in. Watch for the next drop.';
+        track('form_submit', {
+          form_id: 'signal_signup',
+          method: 'convertkit',
+          from_path: window.location.pathname || '/'
+        });
         track('signal_signup_submit', { method: 'convertkit', from_path: window.location.pathname || '/' });
         signalForm.reset();
       })
       .catch(function () {
         if (note) note.textContent = 'Signup failed. Please try again.';
+        track('form_submit_error', {
+          form_id: 'signal_signup',
+          reason: 'request_failed',
+          from_path: window.location.pathname || '/'
+        });
       });
     });
   }

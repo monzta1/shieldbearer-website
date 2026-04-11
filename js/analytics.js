@@ -120,22 +120,6 @@
     }, { passive: true });
   }
 
-  function initFormTracking() {
-    var enquiryForm = document.getElementById('enquiryForm');
-    if (enquiryForm) {
-      enquiryForm.addEventListener('submit', function () {
-        sbTrack('form_submit', { form_id: 'contact_enquiry' });
-      }, true);
-    }
-
-    var signalForm = document.getElementById('signalForm');
-    if (signalForm) {
-      signalForm.addEventListener('submit', function () {
-        sbTrack('form_submit', { form_id: 'signal_signup' });
-      }, true);
-    }
-  }
-
   function initScrollTracking() {
     if ((window.location.pathname || '').indexOf('song-meanings') === -1) return;
 
@@ -162,6 +146,5 @@
   initGA4Fallback();
   initClarity();
   initClickTracking();
-  initFormTracking();
   initScrollTracking();
 })();
