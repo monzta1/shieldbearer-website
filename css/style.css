@@ -172,7 +172,7 @@ button { cursor: pointer; font-family: inherit; }
 .nav-dropdown__menu {
   display: none;
   position: absolute;
-  top: calc(100% + 8px);
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
   background: rgba(10,10,10,.97);
@@ -180,6 +180,14 @@ button { cursor: pointer; font-family: inherit; }
   min-width: 148px;
   z-index: 999;
   padding: .4rem 0;
+}
+.nav-dropdown__menu::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 12px;
 }
 .nav-dropdown:hover .nav-dropdown__menu,
 .nav-dropdown:focus-within .nav-dropdown__menu {
