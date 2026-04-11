@@ -105,12 +105,6 @@
       if (platform) {
         sbTrack('listen_click', { platform: platform, label: label, from_path: path, to_url: href });
       }
-      if (href.indexOf('spotify.com') !== -1) {
-        sbTrack('spotify_click', { link_text: rawText, link_url: href });
-      }
-      if (href.indexOf('youtube.com') !== -1 || href.indexOf('youtu.be') !== -1) {
-        sbTrack('youtube_click', { link_text: rawText, link_url: href });
-      }
       if (href.indexOf('buymeacoffee.com') !== -1 || href.indexOf('www.buymeacoffee.com') !== -1) {
         sbTrack('support_click', { link_text: rawText, link_url: href });
       }
@@ -123,15 +117,6 @@
           link_url: href
         });
       }
-      if (href.indexOf('contact.html') !== -1) {
-        sbTrack('contact_intent', { link_text: rawText, link_url: href });
-      }
-      if (href.indexOf('eternalflames.co.uk') !== -1 || href.indexOf('heavensmetalmagazine.com') !== -1) {
-        sbTrack('outbound_press_click', { label: label, from_path: path, to_url: href });
-      }
-      if (href.indexOf('linktr.ee') !== -1 || href.indexOf('instagram.com') !== -1 || href.indexOf('facebook.com') !== -1) {
-        sbTrack('follow_click', { label: label, from_path: path, to_url: href });
-      }
     }, { passive: true });
   }
 
@@ -140,7 +125,6 @@
     if (enquiryForm) {
       enquiryForm.addEventListener('submit', function () {
         sbTrack('form_submit', { form_id: 'contact_enquiry' });
-        sbTrack('contact_submit', { from_path: window.location.pathname || '/' });
       }, true);
     }
 
@@ -148,7 +132,6 @@
     if (signalForm) {
       signalForm.addEventListener('submit', function () {
         sbTrack('form_submit', { form_id: 'signal_signup' });
-        sbTrack('signal_signup', { from_path: window.location.pathname || '/' });
       }, true);
     }
   }
