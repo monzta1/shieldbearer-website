@@ -33,6 +33,7 @@
   window.dataLayer = window.dataLayer || [];
 
   function pushDataLayer(eventName, params) {
+    window.dataLayer = window.dataLayer || [];
     var payload = Object.assign({ event: eventName }, params || {});
     window.dataLayer.push(payload);
   }
@@ -43,9 +44,6 @@
 
   function sbTrack(eventName, params) {
     pushDataLayer(eventName, params);
-    if (typeof window.gtag === 'function') {
-      window.gtag('event', eventName, params || {});
-    }
   }
 
   window.sbTrack = sbTrack;
