@@ -153,10 +153,6 @@ button { cursor: pointer; font-family: inherit; }
   gap: 1.6rem;
   align-items: center;
   flex-wrap: nowrap;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 .nav-links a {
   font-family: var(--font-head);
