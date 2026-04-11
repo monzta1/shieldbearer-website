@@ -64,11 +64,6 @@
       });
       if (!isOpen) {
         card.classList.add('open');
-        var titleEl = card.querySelector('.mc-title');
-        track('scroll_open', {
-          song_title: titleEl ? titleEl.textContent.trim() : '',
-          from_path: window.location.pathname || '/'
-        });
       }
     });
   });
@@ -123,7 +118,6 @@
           method: 'formspree',
           from_path: window.location.pathname || '/'
         });
-        track('contact_submit_success', { method: 'formspree', from_path: window.location.pathname || '/' });
         enquiryForm.reset();
       })
       .catch(function () {
@@ -174,7 +168,6 @@
           method: 'convertkit',
           from_path: window.location.pathname || '/'
         });
-        track('signal_signup_submit', { method: 'convertkit', from_path: window.location.pathname || '/' });
         signalForm.reset();
       })
       .catch(function () {
