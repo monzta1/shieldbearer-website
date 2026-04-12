@@ -13,15 +13,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>For AI Christian Artists | Shieldbearer</title>
-  <meta name="description" content="If you are an AI Christian artist facing criticism, backlash, or doubt about your method — this page was written for you. Scripture answers the argument. Clearly.">
+  <meta name="description" content="If you are an AI Christian artist facing criticism, backlash, or doubt about your method, this page was written for you. Scripture answers the argument. Clearly.">
   <meta property="og:title" content="For AI Christian Artists | Shieldbearer" />
-  <meta property="og:description" content="If you are an AI Christian artist facing criticism, backlash, or doubt — Scripture answers the argument. Clearly. No apology required." />
+  <meta property="og:description" content="If you are an AI Christian artist facing criticism, backlash, or doubt, Scripture answers the argument. Clearly. No apology required." />
   <meta property="og:image" content="https://shieldbearerusa.com/images/galilean-art.png" />
   <meta property="og:url" content="https://shieldbearerusa.com/for-ai-artists.html" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="For AI Christian Artists | Shieldbearer" />
-  <meta name="twitter:description" content="If you are an AI Christian artist facing criticism, backlash, or doubt — Scripture answers the argument. Clearly. No apology required." />
+  <meta name="twitter:description" content="If you are an AI Christian artist facing criticism, backlash, or doubt, Scripture answers the argument. Clearly. No apology required." />
   <meta name="twitter:image" content="https://shieldbearerusa.com/images/galilean-art.png" />
   <!-- Security meta tags -->
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
@@ -69,6 +69,40 @@
       text-transform: uppercase;
       color: var(--red-bright);
       margin-top: 1.8rem;
+    }
+    .resource-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: .85rem;
+    }
+    .resource-link {
+      display: block;
+      padding: 14px 18px;
+      border-left: 3px solid #e74c3c;
+      border-radius: 8px;
+      background: rgba(192,57,43,.12);
+      text-decoration: none;
+      transition: background .18s ease;
+    }
+    .resource-link:hover {
+      background: rgba(192,57,43,.18);
+    }
+    .resource-name {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #e74c3c;
+      margin-bottom: .3rem;
+      line-height: 1.1;
+    }
+    .resource-desc {
+      display: block;
+      font-size: .9rem;
+      line-height: 1.65;
+      color: rgba(240,235,224,.65);
     }
   </style>
 </head>
@@ -187,7 +221,7 @@
 
           <h2>How to Respond</h2>
           <p>You do not owe anyone a lengthy defence of your method. But if you want to engage, engage with Scripture. Not with opinion. Not with frustration. With the text.</p>
-          <p>Every question that gets asked about AI and Christian music has already been answered on the <a href="faq.html">FAQ page</a>. Share it. Let the answers do the talking. And if someone demands to know why you are not disclosing your tools, the answer is at <a href="no-rulebook.html">no-rulebook.html</a> — no artist ever has and there is no rule that says you must.</p>
+          <p>Every question that gets asked about AI and Christian music has already been answered on the <a href="faq.html">FAQ page</a>. Share it. Let the answers do the talking. And if someone demands to know why you are not disclosing your tools, the answer is at <a href="no-rulebook.html">no-rulebook.html</a>. No artist ever has and there is no rule that says you must.</p>
           <p>The gatekeeping page traces the same argument through seven biblical examples. Every single time, God was on the side of the person being silenced, not the person doing the silencing. Share that too.</p>
           <p>And then get back to making music. The argument is not the mission. The mission is the mission.</p>
 
@@ -211,12 +245,29 @@
 
           <div style="margin-top:2rem; padding:1.2rem; border:1px solid rgba(231,76,60,.3); background:rgba(192,57,43,.08);">
             <p style="margin-bottom:.6rem; font-family:var(--font-head); font-size:.62rem; letter-spacing:.2em; text-transform:uppercase; color:var(--red-bright);">Resources on this site</p>
-          <p style="margin-bottom:.5rem;"><a href="faq.html">FAQ — including a full AI and Faith section answering every common argument</a></p>
-          <p style="margin-bottom:.5rem;"><a href="gatekeeping.html">On Gatekeeping — seven biblical passages exposing the same pattern</a></p>
-          <p style="margin-bottom:.5rem;"><a href="open-letter.html">Open Letter — on pride, talent, and why God has never required credentials</a></p>
-          <p style="margin-bottom:0;"><a href="manifesto.html">The Manifesto — on truth, censorship, and the freedom to proclaim without gatekeepers</a></p>
-          <p style="margin-bottom:0;"><a href="no-rulebook.html">No Rulebook — on why AI is the only tool that has ever been demanded to explain itself</a></p>
-        </div>
+            <div class="resource-stack">
+              <a href="faq.html" class="resource-link">
+                <span class="resource-name">FAQ</span>
+                <span class="resource-desc">Including a full AI and Faith section answering every common argument</span>
+              </a>
+              <a href="gatekeeping.html" class="resource-link">
+                <span class="resource-name">On Gatekeeping</span>
+                <span class="resource-desc">Seven biblical passages exposing the same pattern</span>
+              </a>
+              <a href="open-letter.html" class="resource-link">
+                <span class="resource-name">Open Letter</span>
+                <span class="resource-desc">On pride, talent, and why God has never required credentials</span>
+              </a>
+              <a href="manifesto.html" class="resource-link">
+                <span class="resource-name">The Manifesto</span>
+                <span class="resource-desc">On truth, censorship, and the freedom to proclaim without gatekeepers</span>
+              </a>
+              <a href="no-rulebook.html" class="resource-link">
+                <span class="resource-name">No Rulebook</span>
+                <span class="resource-desc">On why AI is the only tool that has ever been demanded to explain itself</span>
+              </a>
+            </div>
+          </div>
 
         </div>
       </div>
