@@ -71,6 +71,10 @@
   /* ── ENQUIRY FORM (Formspree) ── */
   var enquiryForm = document.getElementById('enquiryForm');
   if (enquiryForm) {
+    var sent = new URLSearchParams(window.location.search).get('sent');
+    if (sent === 'true') {
+      enquiryForm.outerHTML = '<p class="form-msg ok">Message received. Moncy will respond to every serious message directly.</p>';
+    } else {
     enquiryForm.addEventListener('submit', function (e) {
       e.preventDefault();
       var name    = document.getElementById('fName').value.trim();
@@ -78,7 +82,10 @@
       var type    = (document.getElementById('fType') || {}).value || 'General';
       var msg     = document.getElementById('fMsg').value.trim();
       var out     = document.getElementById('formMsg');
-      var endpoint = (enquiryForm.getAttribute('data-formspree-endpoint') || '').trim();
+      var endpoint = (enquiryForm.getAttribute('action') || '').trim();
+      var nextUrl = '';
+      var nextField = enquiryForm.querySelector('input[name="_next"]');
+      if (nextField) nextUrl = nextField.value.trim();
 
       if (!name || !email || !msg) {
         out.className = 'form-msg err';
@@ -91,10 +98,9 @@
         return;
       }
 
-      if (!endpoint || endpoint.indexOf('REPLACE_WITH_YOUR_FORMSPREE_ID') !== -1) {
+      if (!endpoint) {
         out.className = 'form-msg err';
         out.textContent = 'Form endpoint not configured yet.';
-        // Fires when the contact form is submitted without a real configured backend endpoint.
         track('form_submit_error', {
           form_id: 'contact_enquiry',
           reason: 'missing_endpoint',
@@ -105,26 +111,30 @@
 
       out.className = 'form-msg ok';
       out.textContent = 'Sending message...';
+      var formData = new FormData(enquiryForm);
       fetch(endpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({ name: name, email: email, type: type, message: msg })
+        method: enquiryForm.getAttribute('method') || 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: formData
       })
       .then(function (r) {
         if (!r.ok) throw new Error('Formspree request failed');
-        out.className = 'form-msg ok';
-        out.textContent = 'Message sent. Thank you.';
         track('form_submit', {
           form_id: 'contact_enquiry',
           method: 'formspree',
           from_path: window.location.pathname || '/'
         });
+        if (nextUrl) {
+          window.location.href = nextUrl;
+          return;
+        }
+        out.className = 'form-msg ok';
+        out.textContent = 'Message received. Moncy will respond to every serious message directly.';
         enquiryForm.reset();
       })
       .catch(function () {
         out.className = 'form-msg err';
         out.textContent = 'Message failed. Please try again in a moment.';
-        // Fires when the backend request itself fails after submission.
         track('form_submit_error', {
           form_id: 'contact_enquiry',
           reason: 'request_failed',
@@ -132,9 +142,10 @@
         });
       });
     });
+    }
   }
 
-  /* ── SIGNAL SIGNUP (ConvertKit) ── */
+  /* ── SIGNAL SIGNUP (Formspree) ── */
   var signalForm = document.getElementById('signalForm');
   if (signalForm) {
     signalForm.addEventListener('submit', function (e) {
@@ -142,15 +153,14 @@
       var emailField = document.getElementById('signalEmail');
       if (!emailField) return;
       var emailValue = emailField.value.trim();
-      var endpoint = (signalForm.getAttribute('data-convertkit-endpoint') || '').trim();
+      var endpoint = (signalForm.getAttribute('action') || '').trim();
       var note = signalForm.parentElement ? signalForm.parentElement.querySelector('.signal-note') : null;
       if (!emailValue || !emailValue.includes('@')) {
         emailField.focus();
         return;
       }
-      if (!endpoint || endpoint.indexOf('REPLACE_WITH_YOUR_CONVERTKIT_FORM_ID') !== -1) {
+      if (!endpoint) {
         if (note) note.textContent = 'Email form is not configured yet.';
-        // Fires when signup is attempted before ConvertKit is configured.
         track('form_submit_error', {
           form_id: 'signal_signup',
           reason: 'missing_endpoint',
@@ -158,24 +168,24 @@
         });
         return;
       }
+      var signalData = new FormData(signalForm);
       fetch(endpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Accept': 'application/json' },
-        body: new URLSearchParams({ email_address: emailValue }).toString()
+        method: signalForm.getAttribute('method') || 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: signalData
       })
       .then(function (r) {
-        if (!r.ok) throw new Error('ConvertKit request failed');
+        if (!r.ok) throw new Error('Signal request failed');
         if (note) note.textContent = 'You are in. Watch for the next drop.';
         track('form_submit', {
           form_id: 'signal_signup',
-          method: 'convertkit',
+          method: 'formspree',
           from_path: window.location.pathname || '/'
         });
         signalForm.reset();
       })
       .catch(function () {
         if (note) note.textContent = 'Signup failed. Please try again.';
-        // Fires when the ConvertKit request fails after a real submit attempt.
         track('form_submit_error', {
           form_id: 'signal_signup',
           reason: 'request_failed',

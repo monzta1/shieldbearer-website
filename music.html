@@ -453,8 +453,9 @@
         </p>
       </div>
       <div>
-        <form class="signal-form" id="signalForm" data-convertkit-endpoint="https://app.convertkit.com/forms/REPLACE_WITH_YOUR_CONVERTKIT_FORM_ID/subscriptions" novalidate>
-          <input type="email" id="signalEmail" placeholder="Email address" required>
+        <form class="signal-form" id="signalForm" action="https://formspree.io/f/mwvwgdjq" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="New Shieldbearer Signal Signup">
+          <input type="email" id="signalEmail" name="email" placeholder="Email address" required>
           <button type="submit">Join the Signal</button>
         </form>
         <p class="signal-note">No noise. Only important drops and mission updates.</p>

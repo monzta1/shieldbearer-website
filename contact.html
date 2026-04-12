@@ -228,14 +228,9 @@
         <div>
           <div class="form-box">
 
-            <!-- -----------------------------------------------
-                 FORMSPREE INTEGRATION
-                 1. Go to formspree.io and create a free account
-                 2. Create a form and copy endpoint (example: https://formspree.io/f/abcd1234)
-                 3. Paste your endpoint into data-formspree-endpoint below
-                 4. JS will send directly to Formspree and show inline success/error states
-                 ----------------------------------------------- -->
-            <form id="enquiryForm" data-formspree-endpoint="https://formspree.io/f/REPLACE_WITH_YOUR_FORMSPREE_ID" novalidate>
+            <form id="enquiryForm" action="https://formspree.io/f/mgopgjbo" method="POST" novalidate>
+              <input type="hidden" name="_subject" value="New Shieldbearer Enquiry">
+              <input type="hidden" name="_next" value="https://shieldbearerusa.com/contact.html?sent=true">
 
               <div class="form-grid">
                 <div class="form-row">
