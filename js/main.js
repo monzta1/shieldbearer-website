@@ -71,127 +71,25 @@
   /* ── ENQUIRY FORM (Formspree) ── */
   var enquiryForm = document.getElementById('enquiryForm');
   if (enquiryForm) {
-    var sent = new URLSearchParams(window.location.search).get('sent');
-    if (sent === 'true') {
-      enquiryForm.outerHTML = '<p class="form-msg ok">Message received. Moncy will respond to every serious message directly.</p>';
-    } else {
-    enquiryForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var name    = document.getElementById('fName').value.trim();
-      var email   = document.getElementById('fEmail').value.trim();
-      var type    = (document.getElementById('fType') || {}).value || 'General';
-      var msg     = document.getElementById('fMsg').value.trim();
-      var out     = document.getElementById('formMsg');
-      var endpoint = (enquiryForm.getAttribute('action') || '').trim();
-      var nextUrl = '';
-      var nextField = enquiryForm.querySelector('input[name="_next"]');
-      if (nextField) nextUrl = nextField.value.trim();
-
-      if (!name || !email || !msg) {
-        out.className = 'form-msg err';
-        out.textContent = 'Please fill in all required fields.';
-        return;
-      }
-      if (!email.includes('@')) {
-        out.className = 'form-msg err';
-        out.textContent = 'Please enter a valid email address.';
-        return;
-      }
-
-      if (!endpoint) {
-        out.className = 'form-msg err';
-        out.textContent = 'Form endpoint not configured yet.';
-        track('form_submit_error', {
-          form_id: 'contact_enquiry',
-          reason: 'missing_endpoint',
-          from_path: window.location.pathname || '/'
-        });
-        return;
-      }
-
-      out.className = 'form-msg ok';
-      out.textContent = 'Sending message...';
-      var formData = new FormData(enquiryForm);
-      fetch(endpoint, {
-        method: enquiryForm.getAttribute('method') || 'POST',
-        headers: { 'Accept': 'application/json' },
-        body: formData
-      })
-      .then(function (r) {
-        if (!r.ok) throw new Error('Formspree request failed');
-        track('form_submit', {
-          form_id: 'contact_enquiry',
-          method: 'formspree',
-          from_path: window.location.pathname || '/'
-        });
-        if (nextUrl) {
-          window.location.href = nextUrl;
-          return;
-        }
-        out.className = 'form-msg ok';
-        out.textContent = 'Message received. Moncy will respond to every serious message directly.';
-        enquiryForm.reset();
-      })
-      .catch(function () {
-        out.className = 'form-msg err';
-        out.textContent = 'Message failed. Please try again in a moment.';
-        track('form_submit_error', {
-          form_id: 'contact_enquiry',
-          reason: 'request_failed',
-          from_path: window.location.pathname || '/'
-        });
-      });
+    enquiryForm.addEventListener('submit', function () {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'form_submit', form_id: 'contact_enquiry' });
     });
+    if (window.location.search.includes('sent=true')) {
+      enquiryForm.style.display = 'none';
+      var msg = document.createElement('p');
+      msg.style.cssText = 'color:#fff;font-size:1.1rem;line-height:1.8;padding:1rem 0;';
+      msg.innerText = 'Message received. Moncy responds to every serious message directly.';
+      enquiryForm.parentNode.insertBefore(msg, enquiryForm);
     }
   }
 
   /* ── SIGNAL SIGNUP (Formspree) ── */
   var signalForm = document.getElementById('signalForm');
   if (signalForm) {
-    signalForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var emailField = document.getElementById('signalEmail');
-      if (!emailField) return;
-      var emailValue = emailField.value.trim();
-      var endpoint = (signalForm.getAttribute('action') || '').trim();
-      var note = signalForm.parentElement ? signalForm.parentElement.querySelector('.signal-note') : null;
-      if (!emailValue || !emailValue.includes('@')) {
-        emailField.focus();
-        return;
-      }
-      if (!endpoint) {
-        if (note) note.textContent = 'Email form is not configured yet.';
-        track('form_submit_error', {
-          form_id: 'signal_signup',
-          reason: 'missing_endpoint',
-          from_path: window.location.pathname || '/'
-        });
-        return;
-      }
-      var signalData = new FormData(signalForm);
-      fetch(endpoint, {
-        method: signalForm.getAttribute('method') || 'POST',
-        headers: { 'Accept': 'application/json' },
-        body: signalData
-      })
-      .then(function (r) {
-        if (!r.ok) throw new Error('Signal request failed');
-        if (note) note.textContent = 'You are in. Watch for the next drop.';
-        track('form_submit', {
-          form_id: 'signal_signup',
-          method: 'formspree',
-          from_path: window.location.pathname || '/'
-        });
-        signalForm.reset();
-      })
-      .catch(function () {
-        if (note) note.textContent = 'Signup failed. Please try again.';
-        track('form_submit_error', {
-          form_id: 'signal_signup',
-          reason: 'request_failed',
-          from_path: window.location.pathname || '/'
-        });
-      });
+    signalForm.addEventListener('submit', function () {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'form_submit', form_id: 'signal_signup' });
     });
   }
 
