@@ -1123,6 +1123,23 @@ section { padding: var(--sp-section) 0; position: relative; }
   color: rgba(240,235,224,.6);
   margin-bottom: 1.4rem;
 }
+.faq-section-header {
+  margin: 2.8rem 0 1.2rem;
+  padding-bottom: .8rem;
+  border-bottom: 1px solid rgba(231,76,60,.3);
+}
+.faq-section-header .eyebrow {
+  display: block;
+  margin-bottom: .4rem;
+}
+.faq-section-header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  letter-spacing: .05em;
+  color: #fff;
+  margin: 0;
+  line-height: 1.1;
+}
 .faq-track {
   display: flex;
   flex-wrap: wrap;
