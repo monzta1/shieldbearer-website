@@ -80,26 +80,27 @@
     /* Artist photo placeholder */
     .artist-photo {
       width: 100%;
-      aspect-ratio: 3/4;
       background: linear-gradient(135deg, #160707, #08080f);
       border: 1px solid rgba(192,57,43,.15);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: block;
       position: relative;
       overflow: hidden;
     }
-    .artist-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .artist-photo--portrait { aspect-ratio: 3/4; }
+    .artist-photo--portrait img { width: 100%; height: 100%; object-fit: cover; }
     .artist-photo .photo-ph {
-      display: none;
       font-family: var(--font-head);
       font-size: .6rem;
       letter-spacing: .3em;
       color: var(--muted);
       text-transform: uppercase;
       text-align: center;
+      position: absolute;
+      inset: 0;
+      display: none;
+      place-items: center;
     }
-    .artist-photo.is-empty .photo-ph { display: block; }
+    .artist-photo.is-empty .photo-ph { display: grid; }
     .artist-photo .corner {
       position: absolute;
       width: 14px; height: 14px;
@@ -114,7 +115,7 @@
 
     @media (max-width: 900px) {
       .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .artist-photo { aspect-ratio: 1; }
+      .artist-photo--portrait { aspect-ratio: 1; }
     }
   </style>
 </head>
@@ -254,7 +255,7 @@
 
         <div>
           <!-- UPDATE: replace placeholder with artist photo -->
-          <div class="artist-photo">
+          <div class="artist-photo artist-photo--portrait">
             <img src="images/moncy-photo.jpg" alt="Moncy Abraham — Shieldbearer"
                  onerror="this.remove();this.parentElement.classList.add('is-empty');">
             <div class="photo-ph">
@@ -264,6 +265,11 @@
             <div class="corner tl"></div><div class="corner tr"></div>
             <div class="corner bl"></div><div class="corner br"></div>
           </div>
+
+          <figure class="artist-photo">
+            <img src="images/playinglive.png" alt="Shieldbearer live on stage - guitar and pedalboard under blue stage lighting">
+            <figcaption class="artist-photo__caption">On stage. The pedalboard, the guitar, and the light.</figcaption>
+          </figure>
 
           <!-- -----------------------------------------------
                FUTURE GALLERY PLACEHOLDER

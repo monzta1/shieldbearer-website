@@ -858,6 +858,36 @@ section { padding: var(--sp-section) 0; position: relative; }
   display: block;
   margin-bottom: .8rem;
 }
+.process-stage-photo {
+  margin: 0 0 2rem;
+  border: 1px solid rgba(168,162,154,.18);
+  overflow: hidden;
+}
+.process-stage-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: saturate(1.05) contrast(1.02);
+}
+.artist-photo {
+  margin: 1.5rem 0;
+  border: 1px solid rgba(168,162,154,.18);
+  overflow: hidden;
+}
+.artist-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.artist-photo__caption {
+  font-family: var(--font-head);
+  font-size: .58rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(168,162,154,.5);
+  padding: .5rem .75rem;
+  display: block;
+}
 .world-title {
   font-family: var(--font-display);
   font-size: 1.45rem;
