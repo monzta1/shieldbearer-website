@@ -186,6 +186,69 @@
       border-color: var(--red-bright);
       color: #fff;
     }
+    .video-card--featured {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(320px, .75fr);
+    }
+    .video-card--featured .video-embed {
+      position: relative;
+      min-height: 100%;
+      background: linear-gradient(135deg, #050505, #140707);
+      border-right: 1px solid rgba(168,162,154,.12);
+    }
+    .video-card--featured .video-embed::before {
+      content: '';
+      display: block;
+      padding-top: 56.25%;
+    }
+    .video-card--featured .video-embed iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .video-card--featured .video-meta {
+      padding: 1.35rem 1.35rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .video-card--featured .video-tag {
+      display: inline-flex;
+      align-self: flex-start;
+      margin-bottom: .8rem;
+      padding: .28rem .52rem;
+      font-family: var(--font-head);
+      font-size: .58rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: #fff;
+      background: rgba(231,76,60,.2);
+      border: 1px solid rgba(231,76,60,.4);
+    }
+    .video-card--featured h3 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.7vw, 3rem);
+      letter-spacing: .05em;
+      color: #fff;
+      margin-bottom: .7rem;
+    }
+    .video-card--featured p {
+      font-size: .97rem;
+      line-height: 1.9;
+      color: rgba(240,235,224,.84);
+    }
+    @media (max-width: 900px) {
+      .video-card--featured {
+        grid-template-columns: 1fr;
+      }
+      .video-card--featured .video-embed {
+        border-right: 0;
+        border-bottom: 1px solid rgba(168,162,154,.12);
+      }
+    }
     @media (max-width: 900px) {
       .video-grid--metal {
         grid-template-columns: 1fr;
@@ -280,7 +343,7 @@
       <span class="eyebrow">Signal Fire</span>
       <h1 class="display-title">Official Videos</h1>
       <div class="bar"></div>
-      <p>Eleven official videos across metal, rock, stripped-down confession, and worship. No filler. No softening. Every frame aimed straight at the point.</p>
+      <p>Twelve official videos across metal, rock, stripped-down confession, and worship. No filler. No softening. Every frame aimed straight at the point.</p>
     </div>
   </div>
 
@@ -296,10 +359,26 @@
       <section class="video-band">
         <div class="video-band__heading">
           <h3 class="video-band__title">Metal</h3>
-          <span class="video-band__count">5 Videos</span>
+          <span class="video-band__count">6 Videos</span>
         </div>
         <p class="video-band__copy">This is what we do. Battle anthems, prophetic warfare, and declarations of faith.</p>
         <div class="video-grid video-grid--metal">
+          <div class="video-card video-card--featured">
+            <div class="video-embed">
+              <iframe src="https://www.youtube.com/embed/0jPL3Mg88ZQ"
+                title="Shieldbearer – Sentinels"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="video-meta">
+              <span class="video-tag">New Release</span>
+              <h3>Sentinels</h3>
+              <p>A battle cry for those who stay awake when the world drifts, who guard the truth when silence is easier, and who sound the warning when the sword is near. Ezekiel 33:7. Joel 2:1. Matthew 24:42.</p>
+            </div>
+          </div>
+
           <article class="video-card">
             <div class="video-frame-wrap">
               <iframe src="https://www.youtube.com/embed/9FHgbbVBT1A" title="Ruler of the Storm – Shieldbearer (Official Lyric Video | Christian Metal Anthem)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
