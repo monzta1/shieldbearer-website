@@ -6,6 +6,14 @@ if [ -z "$1" ]; then
   exit 1
 fi
 
+# Run structural tests before checkpointing
+echo "Running pre-commit tests..."
+bash scripts/test.sh
+if [ $? -ne 0 ]; then
+  echo "Tests failed. Fix issues before creating checkpoint."
+  exit 1
+fi
+
 BRANCH=$(git branch --show-current)
 LABEL="checkpoint-$(date +%Y%m%d-%H%M)"
 
