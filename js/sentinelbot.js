@@ -159,6 +159,17 @@
     return linked.replace(/\n/g, "<br>");
   }
 
+  function botHistoryText(text) {
+    return String(text || "")
+      .replace(/<br\s*\/?>/gi, "\n")
+      .replace(/<[^>]+>/g, "")
+      .replace(/\*\*(.*?)\*\*/g, "$1")
+      .replace(/\*(.*?)\*/g, "$1")
+      .replace(/`(.*?)`/g, "$1")
+      .replace(/#{1,6}\s/g, "")
+      .trim();
+  }
+
   function renderMessage(text, type) {
     const div = document.createElement("div");
     div.className = `sentinelbot-msg ${type}`;
@@ -223,7 +234,7 @@
       const delay = Math.min(800 + answer.length * 5, 2000);
 
       history.push({ role: "user", content: question });
-      history.push({ role: "assistant", content: answer });
+      history.push({ role: "assistant", content: botHistoryText(answer) });
       history = history.slice(-10);
 
       setTimeout(() => {
