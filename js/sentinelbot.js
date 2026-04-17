@@ -123,20 +123,52 @@
   const input = win.querySelector("#sentinelbot-input");
   const sendBtn = win.querySelector("#sentinelbot-send");
 
+  function escapeHtml(text) {
+    return String(text)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
+  function formatBotMessage(text) {
+    const raw = String(text || "");
+    const hasHtml = /<\/?[a-z][\s\S]*>/i.test(raw);
+
+    if (hasHtml) {
+      return raw.replace(/<a\b([^>]*)>/gi, (match, attrs) => {
+        if (/target=/i.test(attrs)) {
+          return `<a${attrs.replace(/\brel="[^"]*"/i, "").trim()} rel="noopener noreferrer">`;
+        }
+        return `<a${attrs} target="_blank" rel="noopener noreferrer">`;
+      });
+    }
+
+    const stripped = raw
+      .replace(/\*\*(.*?)\*\*/g, "$1")
+      .replace(/\*(.*?)\*/g, "$1")
+      .replace(/`(.*?)`/g, "$1")
+      .replace(/#{1,6}\s/g, "");
+
+    const linked = escapeHtml(stripped).replace(
+      /(https?:\/\/[^\s<]+)/g,
+      '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>'
+    );
+
+    return linked.replace(/\n/g, "<br>");
+  }
+
   function renderMessage(text, type) {
     const div = document.createElement("div");
     div.className = `sentinelbot-msg ${type}`;
-    div.textContent = text;
+    if (type === "sentinelbot-bot") {
+      div.innerHTML = formatBotMessage(text);
+    } else {
+      div.textContent = text;
+    }
     messages.appendChild(div);
     messages.scrollTop = messages.scrollHeight;
-  }
-
-  function stripMarkdown(text) {
-    return text
-      .replace(/\*\*(.*?)\*\*/g, '$1')
-      .replace(/\*(.*?)\*/g, '$1')
-      .replace(/`(.*?)`/g, '$1')
-      .replace(/#{1,6}\s/g, '');
   }
 
   function toggleWindow() {
@@ -197,7 +229,7 @@
       setTimeout(() => {
         clearInterval(interval);
         thinking.remove();
-        renderMessage(stripMarkdown(answer), "sentinelbot-bot");
+        renderMessage(answer, "sentinelbot-bot");
         input.disabled = false;
         sendBtn.disabled = false;
         input.focus();
