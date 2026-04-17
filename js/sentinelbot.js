@@ -131,6 +131,14 @@
     messages.scrollTop = messages.scrollHeight;
   }
 
+  function stripMarkdown(text) {
+    return text
+      .replace(/\*\*(.*?)\*\*/g, '$1')
+      .replace(/\*(.*?)\*/g, '$1')
+      .replace(/`(.*?)`/g, '$1')
+      .replace(/#{1,6}\s/g, '');
+  }
+
   function toggleWindow() {
     isOpen = !isOpen;
     win.style.display = isOpen ? "flex" : "none";
@@ -189,7 +197,7 @@
       setTimeout(() => {
         clearInterval(interval);
         thinking.remove();
-        renderMessage(answer, "sentinelbot-bot");
+        renderMessage(stripMarkdown(answer), "sentinelbot-bot");
         input.disabled = false;
         sendBtn.disabled = false;
         input.focus();
