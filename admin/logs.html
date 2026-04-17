@@ -193,6 +193,34 @@
       word-break: break-word;
     }
 
+    .insight-table-shell {
+      overflow-x: auto;
+      border: 1px solid rgba(28, 255, 87, 0.14);
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .insight-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+    }
+
+    .insight-table th,
+    .insight-table td {
+      padding: 8px 10px;
+      border-bottom: 1px solid rgba(28, 255, 87, 0.12);
+      vertical-align: top;
+      text-align: left;
+      font-size: 13px;
+      word-break: break-word;
+    }
+
+    .insight-table th {
+      position: static;
+      background: #031203;
+      font-size: 11px;
+    }
+
     .count-pill {
       display: inline-block;
       margin-left: 6px;
@@ -342,6 +370,24 @@
           <div id="slowCount" class="summary-value">0</div>
         </div>
       </div>
+      <div class="insight-card" style="margin-top: 12px;">
+        <h3>Rare Unanswered Questions</h3>
+        <div class="summary-value" style="margin-bottom: 10px;">Rare unanswered count: <span id="rareCount">0</span></div>
+        <div class="insight-table-shell">
+          <table class="insight-table">
+            <thead>
+              <tr>
+                <th>timestamp</th>
+                <th>page</th>
+                <th>question</th>
+                <th>short answer snippet</th>
+                <th>source</th>
+              </tr>
+            </thead>
+            <tbody id="rareRows"></tbody>
+          </table>
+        </div>
+      </div>
     </div>
 
     <div id="status" class="status">Loading logs...</div>
@@ -377,6 +423,8 @@
       topQuestions: document.getElementById("topQuestions"),
       weakCount: document.getElementById("weakCount"),
       slowCount: document.getElementById("slowCount"),
+      rareCount: document.getElementById("rareCount"),
+      rareRows: document.getElementById("rareRows"),
       rows: document.getElementById("rows")
     };
 
@@ -417,6 +465,26 @@
       return Number(item?.responseTimeMs || 0) > 2000;
     }
 
+    function isRareUnanswered(item, counts) {
+      const question = normalizeQuestion(item.question);
+      const count = counts.get(question) || 0;
+      if (count !== 1) return false;
+
+      const answer = String(item.answer || "");
+      return (
+        answer.includes("No response") ||
+        answer.includes("Signal lost") ||
+        item.status === "error" ||
+        answer.toLowerCase().includes("outside my watch")
+      );
+    }
+
+    function shortSnippet(value) {
+      const text = String(value || "").trim();
+      if (!text) return "-";
+      return escapeHtml(text.length > 80 ? `${text.slice(0, 80)}...` : text);
+    }
+
     function renderSummary(items) {
       els.totalCount.textContent = String(items.length);
       els.cacheCount.textContent = String(items.filter((item) => item.source === "app-cache-hit").length);
@@ -446,6 +514,23 @@
 
       els.weakCount.textContent = String(items.filter((item) => isWeakAnswer(item.answer)).length);
       els.slowCount.textContent = String(items.filter((item) => isSlowResponse(item)).length);
+
+      const rare = items
+        .filter((item) => isRareUnanswered(item, counts))
+        .sort(compareTimestampDesc);
+
+      els.rareCount.textContent = String(rare.length);
+      els.rareRows.innerHTML = rare.length
+        ? rare.map((item) => `
+            <tr>
+              <td>${formatCell(item.timestamp)}</td>
+              <td>${formatCell(item.page)}</td>
+              <td>${formatCell(item.question)}</td>
+              <td>${shortSnippet(item.answer)}</td>
+              <td>${formatCell(item.source)}</td>
+            </tr>
+          `).join("")
+        : '<tr><td colspan="5" class="muted">No rare unanswered questions found.</td></tr>';
     }
 
     function renderRows(items) {
