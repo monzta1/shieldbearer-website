@@ -367,6 +367,30 @@
       min-width: 280px;
     }
 
+    .answer-wrap {
+      display: grid;
+      gap: 8px;
+    }
+
+    .answer-body {
+      max-height: 6.5em;
+      overflow: hidden;
+      white-space: pre-wrap;
+      line-height: 1.45;
+      word-break: break-word;
+    }
+
+    .answer-wrap.is-expanded .answer-body {
+      max-height: none;
+    }
+
+    .answer-toggle {
+      align-self: start;
+      width: fit-content;
+      padding: 4px 8px;
+      font-size: 11px;
+    }
+
     .dash {
       color: rgba(125, 255, 155, 0.55);
     }
@@ -622,6 +646,31 @@
       return escapeHtml(text.length > 80 ? `${text.slice(0, 80)}...` : text);
     }
 
+    function escapeHtmlPreserveBreaks(value) {
+      return escapeHtml(value).replace(/\r?\n/g, "<br>");
+    }
+
+    function isExpandableAnswer(value) {
+      return String(value || "").trim().length > 180;
+    }
+
+    function renderAnswerCell(item) {
+      const answer = String(item?.answer || "");
+      const rowId = escapeHtml(String(item?.id || `${item?.timestamp || ""}-${item?.question || ""}`));
+      const safeAnswer = escapeHtmlPreserveBreaks(answer);
+
+      if (!isExpandableAnswer(answer)) {
+        return safeAnswer || '<span class="dash">-</span>';
+      }
+
+      return `
+        <div class="answer-wrap" data-answer-wrap="${rowId}">
+          <div class="answer-body">${safeAnswer}</div>
+          <button class="mini-button answer-toggle" type="button" data-expand-answer="${rowId}">Show full</button>
+        </div>
+      `;
+    }
+
     function escapeSingleQuoted(value) {
       return String(value || "")
         .replace(/\\/g, "\\\\")
@@ -759,7 +808,7 @@
           <td>${formatCell(item.sourceIp || "-")}</td>
           <td>${formatCell(item.page)}</td>
           <td>${formatCell(item.question)}</td>
-          <td>${formatCell(item.answer)}</td>
+          <td>${renderAnswerCell(item)}</td>
           <td>${formatCell(item.source)}</td>
           <td>${formatCell(item.status)}</td>
           <td>${formatCell(item.responseTimeMs)}</td>
@@ -852,6 +901,16 @@
     });
     els.filter.addEventListener("input", applyFilter);
     els.loadMoreBtn.addEventListener("click", () => loadLogs({ cursor: nextCursor, append: true }));
+    els.rows.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-expand-answer]");
+      if (!button) return;
+
+      const wrap = els.rows.querySelector(`[data-answer-wrap="${CSS.escape(button.dataset.expandAnswer)}"]`);
+      if (!wrap) return;
+
+      const expanded = wrap.classList.toggle("is-expanded");
+      button.textContent = expanded ? "Show less" : "Show full";
+    });
     els.cacheCandidateRows.addEventListener("click", (event) => {
       const button = event.target.closest("[data-copy-question]");
       if (!button) return;
