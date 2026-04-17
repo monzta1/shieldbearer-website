@@ -152,9 +152,15 @@
 
     const thinking = document.createElement("div");
     thinking.className = "sentinelbot-msg sentinelbot-bot";
-    thinking.textContent = "processing signal...";
+    thinking.textContent = "processing signal";
     messages.appendChild(thinking);
     messages.scrollTop = messages.scrollHeight;
+
+    let dots = 0;
+    const interval = setInterval(() => {
+      dots = (dots + 1) % 4;
+      thinking.textContent = "processing signal" + ".".repeat(dots);
+    }, 300);
 
     try {
       const res = await fetch(API_URL, {
@@ -181,6 +187,7 @@
       history = history.slice(-10);
 
       setTimeout(() => {
+        clearInterval(interval);
         thinking.remove();
         renderMessage(answer, "sentinelbot-bot");
         input.disabled = false;
@@ -189,6 +196,7 @@
       }, delay);
 
     } catch (err) {
+      clearInterval(interval);
       thinking.remove();
       renderMessage("Signal lost. Try again.", "sentinelbot-bot");
       input.disabled = false;
