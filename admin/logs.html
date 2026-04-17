@@ -359,7 +359,12 @@
       els.status.textContent = "Loading logs...";
 
       try {
-        const res = await fetch(LOGS_URL, { method: "GET" });
+        const res = await fetch("https://g7a5tqlxaj.execute-api.us-east-1.amazonaws.com/logs", {
+          method: "GET",
+          headers: {
+            "x-admin-key": "shieldbearer-admin-2026"
+          }
+        });
         if (!res.ok) {
           throw new Error(`HTTP ${res.status}`);
         }
