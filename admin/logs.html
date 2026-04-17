@@ -527,6 +527,7 @@
     };
 
     let allItems = [];
+    let totalLogCount = 0;
     let nextCursor = null;
     let hasMore = false;
     let loading = false;
@@ -643,7 +644,7 @@
     }
 
     function renderSummary(items) {
-      els.totalCount.textContent = String(items.length);
+      els.totalCount.textContent = String(totalLogCount || items.length);
       els.cacheCount.textContent = String(items.filter((item) => item.source === "app-cache-hit").length);
       els.anthropicCount.textContent = String(items.filter((item) => item.source === "anthropic").length);
     }
@@ -816,6 +817,7 @@
         items.sort(compareTimestampDesc);
         allItems = append ? allItems.concat(items) : items;
         allItems.sort(compareTimestampDesc);
+        totalLogCount = Number(data?.totalLogCount ?? totalLogCount ?? allItems.length);
         nextCursor = data?.nextCursor || null;
         hasMore = Boolean(data?.hasMore && nextCursor);
 
@@ -827,6 +829,7 @@
         els.status.textContent = `Loaded ${allItems.length} log entries.`;
       } catch (err) {
         allItems = [];
+        totalLogCount = 0;
         nextCursor = null;
         hasMore = false;
         renderSummary(allItems);
