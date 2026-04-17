@@ -150,6 +150,12 @@
     input.disabled = true;
     sendBtn.disabled = true;
 
+    const thinking = document.createElement("div");
+    thinking.className = "sentinelbot-msg sentinelbot-bot";
+    thinking.textContent = "processing signal...";
+    messages.appendChild(thinking);
+    messages.scrollTop = messages.scrollHeight;
+
     try {
       const res = await fetch(API_URL, {
         method: "POST",
@@ -161,22 +167,34 @@
         })
       });
 
+      if (!res.ok) {
+        throw new Error(`HTTP ${res.status}`);
+      }
+
       const data = await res.json();
       const answer = data.answer || data.error || "Signal lost. Try again.";
 
-      renderMessage(answer, "sentinelbot-bot");
+      const delay = Math.min(800 + answer.length * 5, 2000);
 
       history.push({ role: "user", content: question });
       history.push({ role: "assistant", content: answer });
       history = history.slice(-10);
 
+      setTimeout(() => {
+        thinking.remove();
+        renderMessage(answer, "sentinelbot-bot");
+        input.disabled = false;
+        sendBtn.disabled = false;
+        input.focus();
+      }, delay);
+
     } catch (err) {
+      thinking.remove();
       renderMessage("Signal lost. Try again.", "sentinelbot-bot");
-      console.error(err);
-    } finally {
       input.disabled = false;
       sendBtn.disabled = false;
       input.focus();
+      console.error(err);
     }
   }
 
