@@ -71,6 +71,14 @@
       content: "// ";
       color: #00ff41;
     }
+    .sentinelbot-bot a {
+      color: #8fd3ff;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .sentinelbot-bot a:hover {
+      color: #c5e8ff;
+    }
     #sentinelbot-inputbar {
       display: flex;
       gap: 8px;
