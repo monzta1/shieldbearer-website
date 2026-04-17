@@ -134,29 +134,74 @@
 
   function formatBotMessage(text) {
     const raw = String(text || "");
-    const hasHtml = /<\/?[a-z][\s\S]*>/i.test(raw);
+    const wrapped = `<div>${raw}</div>`;
+    const doc = new DOMParser().parseFromString(wrapped, "text/html");
 
-    if (hasHtml) {
-      return raw.replace(/<a\b([^>]*)>/gi, (match, attrs) => {
-        if (/target=/i.test(attrs)) {
-          return `<a${attrs.replace(/\brel="[^"]*"/i, "").trim()} rel="noopener noreferrer">`;
+    function linkifyText(textNode) {
+      const fragment = document.createDocumentFragment();
+      const text = textNode.nodeValue || "";
+      const urlPattern = /((https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(\/[^\s<]*)?)/g;
+      let lastIndex = 0;
+      let match;
+
+      while ((match = urlPattern.exec(text)) !== null) {
+        if (match.index > lastIndex) {
+          fragment.appendChild(document.createTextNode(text.slice(lastIndex, match.index)));
         }
-        return `<a${attrs} target="_blank" rel="noopener noreferrer">`;
-      });
+
+        const href = match[1].startsWith("http") ? match[1] : `https://${match[1]}`;
+        const anchor = document.createElement("a");
+        anchor.href = href;
+        anchor.target = "_blank";
+        anchor.rel = "noopener noreferrer";
+        anchor.textContent = match[1];
+        fragment.appendChild(anchor);
+        lastIndex = match.index + match[1].length;
+      }
+
+      if (lastIndex < text.length) {
+        fragment.appendChild(document.createTextNode(text.slice(lastIndex)));
+      }
+
+      return fragment;
     }
 
-    const stripped = raw
-      .replace(/\*\*(.*?)\*\*/g, "$1")
-      .replace(/\*(.*?)\*/g, "$1")
-      .replace(/`(.*?)`/g, "$1")
-      .replace(/#{1,6}\s/g, "");
+    function sanitizeNode(node) {
+      if (node.nodeType === Node.TEXT_NODE) {
+        return linkifyText(node);
+      }
 
-    const linked = escapeHtml(stripped).replace(
-      /(https?:\/\/[^\s<]+)/g,
-      '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>'
-    );
+      if (node.nodeType === Node.ELEMENT_NODE) {
+        if (node.tagName === "BR") {
+          return document.createElement("br");
+        }
 
-    return linked.replace(/\n/g, "<br>");
+        if (node.tagName === "A") {
+          const anchor = document.createElement("a");
+          const href = node.getAttribute("href") || "";
+          anchor.href = href.startsWith("http") ? href : `https://${href}`;
+          anchor.target = "_blank";
+          anchor.rel = "noopener noreferrer";
+          anchor.textContent = node.textContent || anchor.href;
+          return anchor;
+        }
+
+        const fragment = document.createDocumentFragment();
+        for (const child of Array.from(node.childNodes)) {
+          fragment.appendChild(sanitizeNode(child));
+        }
+        return fragment;
+      }
+
+      return document.createDocumentFragment();
+    }
+
+    const out = document.createElement("div");
+    for (const child of Array.from(doc.body.firstChild?.childNodes || [])) {
+      out.appendChild(sanitizeNode(child));
+    }
+
+    return out.innerHTML.replace(/\n/g, "<br>");
   }
 
   function botHistoryText(text) {
