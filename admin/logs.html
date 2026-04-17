@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SENTINELBOT LOGS</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #000000;
+      --panel: #020802;
+      --panel-2: #061406;
+      --line: #1cff57;
+      --line-soft: rgba(28, 255, 87, 0.2);
+      --text: #7dff9b;
+      --text-strong: #c8ffd3;
+      --muted: #64c77a;
+      --danger: #ff5f5f;
+      --shadow: 0 0 18px rgba(28, 255, 87, 0.18);
+      --font: "Courier New", Courier, monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top, rgba(28, 255, 87, 0.08), transparent 35%),
+        linear-gradient(180deg, #000 0%, #020402 100%);
+      color: var(--text);
+      font-family: var(--font);
+    }
+
+    .wrap {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 24px 16px 40px;
+    }
+
+    .header {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 44px);
+      letter-spacing: 0.12em;
+      color: var(--text-strong);
+      text-shadow: 0 0 12px rgba(28, 255, 87, 0.28);
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      padding: 14px;
+      background: rgba(2, 8, 2, 0.9);
+      border: 1px solid var(--line-soft);
+      box-shadow: var(--shadow);
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      flex: 1;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    button {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, #041004, #000);
+      color: var(--text-strong);
+      padding: 10px 14px;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(28, 255, 87, 0.12);
+      transition: transform 0.12s ease, box-shadow 0.12s ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 14px rgba(28, 255, 87, 0.22);
+    }
+
+    .filter {
+      flex: 1 1 320px;
+      min-width: 220px;
+      background: #000;
+      color: var(--text-strong);
+      border: 1px solid var(--line);
+      padding: 10px 12px;
+      outline: none;
+      box-shadow: inset 0 0 0 1px rgba(28, 255, 87, 0.04);
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .summary-card {
+      background: rgba(2, 8, 2, 0.9);
+      border: 1px solid var(--line-soft);
+      box-shadow: var(--shadow);
+      padding: 12px 14px;
+    }
+
+    .summary-label {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .summary-value {
+      color: var(--text-strong);
+      font-size: 22px;
+      line-height: 1.1;
+    }
+
+    .status {
+      margin-bottom: 14px;
+      padding: 12px 14px;
+      border: 1px solid var(--line-soft);
+      background: rgba(2, 8, 2, 0.9);
+      box-shadow: var(--shadow);
+      color: var(--muted);
+      min-height: 48px;
+      white-space: pre-wrap;
+    }
+
+    .status.error {
+      color: var(--danger);
+      border-color: rgba(255, 95, 95, 0.35);
+      box-shadow: 0 0 18px rgba(255, 95, 95, 0.12);
+    }
+
+    .table-shell {
+      border: 1px solid var(--line-soft);
+      background: rgba(2, 8, 2, 0.92);
+      box-shadow: var(--shadow);
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 1100px;
+    }
+
+    th,
+    td {
+      border-bottom: 1px solid rgba(28, 255, 87, 0.14);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+      white-space: normal;
+      word-break: break-word;
+    }
+
+    th {
+      position: sticky;
+      top: 0;
+      background: #041004;
+      color: var(--text-strong);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      z-index: 1;
+    }
+
+    tbody tr:hover {
+      background: rgba(28, 255, 87, 0.04);
+    }
+
+    .col-timestamp { width: 180px; }
+    .col-page { width: 140px; }
+    .col-source { width: 140px; }
+    .col-status { width: 120px; }
+    .col-time { width: 120px; }
+    .col-question,
+    .col-answer {
+      min-width: 280px;
+    }
+
+    .dash {
+      color: rgba(125, 255, 155, 0.55);
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    @media (max-width: 720px) {
+      .wrap {
+        padding: 18px 12px 30px;
+      }
+
+      .toolbar {
+        align-items: stretch;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <h1>SENTINELBOT LOGS</h1>
+    </div>
+
+    <div class="toolbar">
+      <div class="controls">
+        <input id="filter" class="filter" type="text" placeholder="Filter by question or answer..." />
+      </div>
+      <button id="refreshBtn" type="button">Refresh</button>
+    </div>
+
+    <div class="summary" aria-live="polite">
+      <div class="summary-card">
+        <span class="summary-label">Total Log Count</span>
+        <div id="totalCount" class="summary-value">0</div>
+      </div>
+      <div class="summary-card">
+        <span class="summary-label">app-cache-hit</span>
+        <div id="cacheCount" class="summary-value">0</div>
+      </div>
+      <div class="summary-card">
+        <span class="summary-label">anthropic</span>
+        <div id="anthropicCount" class="summary-value">0</div>
+      </div>
+    </div>
+
+    <div id="status" class="status">Loading logs...</div>
+
+    <div class="table-shell">
+      <table>
+        <thead>
+          <tr>
+            <th class="col-timestamp">timestamp</th>
+            <th class="col-page">page</th>
+            <th class="col-question">question</th>
+            <th class="col-answer">answer</th>
+            <th class="col-source">source</th>
+            <th class="col-status">status</th>
+            <th class="col-time">responseTimeMs</th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    const LOGS_URL = "https://g7a5tqlxaj.execute-api.us-east-1.amazonaws.com/logs";
+
+    const els = {
+      filter: document.getElementById("filter"),
+      refreshBtn: document.getElementById("refreshBtn"),
+      status: document.getElementById("status"),
+      totalCount: document.getElementById("totalCount"),
+      cacheCount: document.getElementById("cacheCount"),
+      anthropicCount: document.getElementById("anthropicCount"),
+      rows: document.getElementById("rows")
+    };
+
+    let allItems = [];
+
+    function escapeHtml(value) {
+      return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    function formatCell(value) {
+      if (value === null || value === undefined || value === "") {
+        return '<span class="dash">-</span>';
+      }
+      return escapeHtml(value);
+    }
+
+    function compareTimestampDesc(a, b) {
+      const aTime = Date.parse(a?.timestamp || "") || 0;
+      const bTime = Date.parse(b?.timestamp || "") || 0;
+      return bTime - aTime;
+    }
+
+    function renderSummary(items) {
+      els.totalCount.textContent = String(items.length);
+      els.cacheCount.textContent = String(items.filter((item) => item.source === "app-cache-hit").length);
+      els.anthropicCount.textContent = String(items.filter((item) => item.source === "anthropic").length);
+    }
+
+    function renderRows(items) {
+      if (!items.length) {
+        els.rows.innerHTML = `
+          <tr>
+            <td colspan="7" class="muted">No logs found.</td>
+          </tr>
+        `;
+        return;
+      }
+
+      els.rows.innerHTML = items.map((item) => `
+        <tr>
+          <td>${formatCell(item.timestamp)}</td>
+          <td>${formatCell(item.page)}</td>
+          <td>${formatCell(item.question)}</td>
+          <td>${formatCell(item.answer)}</td>
+          <td>${formatCell(item.source)}</td>
+          <td>${formatCell(item.status)}</td>
+          <td>${formatCell(item.responseTimeMs)}</td>
+        </tr>
+      `).join("");
+    }
+
+    function applyFilter() {
+      const term = els.filter.value.trim().toLowerCase();
+      const filtered = !term
+        ? allItems
+        : allItems.filter((item) => {
+            const question = String(item.question || "").toLowerCase();
+            const answer = String(item.answer || "").toLowerCase();
+            return question.includes(term) || answer.includes(term);
+          });
+
+      renderRows(filtered);
+      renderSummary(allItems);
+    }
+
+    async function loadLogs() {
+      els.status.classList.remove("error");
+      els.status.textContent = "Loading logs...";
+
+      try {
+        const res = await fetch(LOGS_URL, { method: "GET" });
+        if (!res.ok) {
+          throw new Error(`HTTP ${res.status}`);
+        }
+
+        const data = await res.json();
+        const items = Array.isArray(data?.items) ? data.items.slice() : [];
+        items.sort(compareTimestampDesc);
+        allItems = items;
+
+        renderSummary(allItems);
+        applyFilter();
+
+        els.status.textContent = `Loaded ${allItems.length} log entries.`;
+      } catch (err) {
+        allItems = [];
+        renderSummary(allItems);
+        renderRows([]);
+        els.status.classList.add("error");
+        els.status.textContent = `Failed to load logs: ${err.message}`;
+      }
+    }
+
+    els.refreshBtn.addEventListener("click", loadLogs);
+    els.filter.addEventListener("input", applyFilter);
+
+    loadLogs();
+  </script>
+</body>
+</html>
