@@ -221,6 +221,49 @@
       font-size: 11px;
     }
 
+    .insight-actions {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    .mini-button {
+      padding: 7px 10px;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .cache-table-shell {
+      overflow-x: auto;
+      border: 1px solid rgba(28, 255, 87, 0.14);
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .cache-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 980px;
+    }
+
+    .cache-table th,
+    .cache-table td {
+      padding: 8px 10px;
+      border-bottom: 1px solid rgba(28, 255, 87, 0.12);
+      vertical-align: top;
+      text-align: left;
+      font-size: 13px;
+      word-break: break-word;
+    }
+
+    .cache-table th {
+      position: static;
+      background: #031203;
+      font-size: 11px;
+    }
+
     .count-pill {
       display: inline-block;
       margin-left: 6px;
@@ -371,6 +414,28 @@
         </div>
       </div>
       <div class="insight-card" style="margin-top: 12px;">
+        <h3>CACHE CANDIDATES</h3>
+        <div class="insight-actions">
+          <div class="summary-value" style="font-size: 16px;">Cache candidate count: <span id="cacheCandidateCount">0</span></div>
+        </div>
+        <div class="cache-table-shell">
+          <table class="cache-table">
+            <thead>
+              <tr>
+                <th>normalized question</th>
+                <th>ask count</th>
+                <th>latest timestamp</th>
+                <th>latest answer</th>
+                <th>source</th>
+                <th>page</th>
+                <th>action</th>
+              </tr>
+            </thead>
+            <tbody id="cacheCandidateRows"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="insight-card" style="margin-top: 12px;">
         <h3>Rare Unanswered Questions</h3>
         <div class="summary-value" style="margin-bottom: 10px;">Rare unanswered count: <span id="rareCount">0</span></div>
         <div class="insight-table-shell">
@@ -423,6 +488,8 @@
       topQuestions: document.getElementById("topQuestions"),
       weakCount: document.getElementById("weakCount"),
       slowCount: document.getElementById("slowCount"),
+      cacheCandidateCount: document.getElementById("cacheCandidateCount"),
+      cacheCandidateRows: document.getElementById("cacheCandidateRows"),
       rareCount: document.getElementById("rareCount"),
       rareRows: document.getElementById("rareRows"),
       rows: document.getElementById("rows")
@@ -465,6 +532,20 @@
       return Number(item?.responseTimeMs || 0) > 2000;
     }
 
+    function shouldExcludeFromCacheCandidates(item) {
+      const answer = String(item?.answer || "");
+      return (
+        answer.includes("No response") ||
+        answer.includes("Signal lost") ||
+        item?.status === "error" ||
+        answer.toLowerCase().includes("outside my watch")
+      );
+    }
+
+    function isCacheCandidateSingle(item, count) {
+      return count === 1 && item?.source === "anthropic" && !shouldExcludeFromCacheCandidates(item);
+    }
+
     function isRareUnanswered(item, counts) {
       const question = normalizeQuestion(item.question);
       const count = counts.get(question) || 0;
@@ -483,6 +564,27 @@
       const text = String(value || "").trim();
       if (!text) return "-";
       return escapeHtml(text.length > 80 ? `${text.slice(0, 80)}...` : text);
+    }
+
+    function escapeSingleQuoted(value) {
+      return String(value || "")
+        .replace(/\\/g, "\\\\")
+        .replace(/'/g, "\\'")
+        .replace(/\r?\n/g, " ");
+    }
+
+    function copyCacheEntry(question, answer) {
+      const text = `'${escapeSingleQuoted(question)}': '${escapeSingleQuoted(answer)}',`;
+      navigator.clipboard.writeText(text).catch(() => {
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.position = "fixed";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        ta.remove();
+      });
     }
 
     function renderSummary(items) {
@@ -514,6 +616,56 @@
 
       els.weakCount.textContent = String(items.filter((item) => isWeakAnswer(item.answer)).length);
       els.slowCount.textContent = String(items.filter((item) => isSlowResponse(item)).length);
+
+      const cacheGroups = new Map();
+      for (const item of items) {
+        const key = normalizeQuestion(item.question);
+        if (!key) continue;
+        const group = cacheGroups.get(key) || {
+          question: key,
+          count: 0,
+          latest: null
+        };
+        group.count += 1;
+        if (!group.latest || compareTimestampDesc(item, group.latest) < 0) {
+          group.latest = item;
+        }
+        cacheGroups.set(key, group);
+      }
+
+      const cacheCandidates = Array.from(cacheGroups.values())
+        .filter((group) => {
+          const latest = group.latest || {};
+          return !shouldExcludeFromCacheCandidates(latest) && (
+            group.count >= 2 || isCacheCandidateSingle(latest, group.count)
+          );
+        })
+        .map((group) => ({
+          question: group.question,
+          count: group.count,
+          latest: group.latest
+        }))
+        .sort((a, b) => {
+          if (b.count !== a.count) return b.count - a.count;
+          return compareTimestampDesc(a.latest, b.latest);
+        });
+
+      els.cacheCandidateCount.textContent = String(cacheCandidates.length);
+      els.cacheCandidateRows.innerHTML = cacheCandidates.length
+        ? cacheCandidates.map((entry) => `
+            <tr>
+              <td>${escapeHtml(entry.question)}</td>
+              <td>${formatCell(entry.count)}</td>
+              <td>${formatCell(entry.latest?.timestamp)}</td>
+              <td>${shortSnippet(entry.latest?.answer)}</td>
+              <td>${formatCell(entry.latest?.source)}</td>
+              <td>${formatCell(entry.latest?.page)}</td>
+              <td>
+                <button class="mini-button" type="button" data-copy-question="${escapeHtml(entry.question)}" data-copy-answer="${escapeHtml(String(entry.latest?.answer || ""))}">Copy cache entry</button>
+              </td>
+            </tr>
+          `).join("")
+        : '<tr><td colspan="7" class="muted">No cache candidates yet.</td></tr>';
 
       const rare = items
         .filter((item) => isRareUnanswered(item, counts))
@@ -608,6 +760,15 @@
 
     els.refreshBtn.addEventListener("click", loadLogs);
     els.filter.addEventListener("input", applyFilter);
+    els.cacheCandidateRows.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-copy-question]");
+      if (!button) return;
+      copyCacheEntry(button.dataset.copyQuestion, button.dataset.copyAnswer);
+      button.textContent = "Copied";
+      setTimeout(() => {
+        button.textContent = "Copy cache entry";
+      }, 1200);
+    });
 
     loadLogs();
   </script>
