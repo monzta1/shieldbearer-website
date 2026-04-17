@@ -146,6 +146,62 @@
       line-height: 1.1;
     }
 
+    .insights {
+      margin-bottom: 14px;
+      padding: 14px;
+      background: rgba(2, 8, 2, 0.9);
+      border: 1px solid var(--line-soft);
+      box-shadow: var(--shadow);
+    }
+
+    .insights h2 {
+      margin: 0 0 12px;
+      font-size: 18px;
+      letter-spacing: 0.14em;
+      color: var(--text-strong);
+    }
+
+    .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+    }
+
+    .insight-card {
+      border: 1px solid rgba(28, 255, 87, 0.14);
+      padding: 12px;
+      background: rgba(0, 0, 0, 0.55);
+    }
+
+    .insight-card h3 {
+      margin: 0 0 10px;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .insight-list {
+      margin: 0;
+      padding-left: 18px;
+      display: grid;
+      gap: 6px;
+    }
+
+    .insight-list li {
+      line-height: 1.45;
+      word-break: break-word;
+    }
+
+    .count-pill {
+      display: inline-block;
+      margin-left: 6px;
+      padding: 1px 6px;
+      border: 1px solid var(--line-soft);
+      color: var(--text-strong);
+      font-size: 12px;
+    }
+
     .status {
       margin-bottom: 14px;
       padding: 12px 14px;
@@ -199,6 +255,14 @@
 
     tbody tr:hover {
       background: rgba(28, 255, 87, 0.04);
+    }
+
+    tbody tr.weak-row {
+      background: rgba(255, 95, 95, 0.07);
+    }
+
+    tbody tr.slow-row {
+      background: rgba(255, 206, 95, 0.06);
     }
 
     .col-timestamp { width: 180px; }
@@ -262,6 +326,24 @@
       </div>
     </div>
 
+    <div class="insights">
+      <h2>SENTINEL INSIGHTS</h2>
+      <div class="insights-grid">
+        <div class="insight-card">
+          <h3>Top Questions</h3>
+          <ol id="topQuestions" class="insight-list"></ol>
+        </div>
+        <div class="insight-card">
+          <h3>Weak Answers</h3>
+          <div id="weakCount" class="summary-value">0</div>
+        </div>
+        <div class="insight-card">
+          <h3>Slow Responses</h3>
+          <div id="slowCount" class="summary-value">0</div>
+        </div>
+      </div>
+    </div>
+
     <div id="status" class="status">Loading logs...</div>
 
     <div class="table-shell">
@@ -292,6 +374,9 @@
       totalCount: document.getElementById("totalCount"),
       cacheCount: document.getElementById("cacheCount"),
       anthropicCount: document.getElementById("anthropicCount"),
+      topQuestions: document.getElementById("topQuestions"),
+      weakCount: document.getElementById("weakCount"),
+      slowCount: document.getElementById("slowCount"),
       rows: document.getElementById("rows")
     };
 
@@ -319,10 +404,48 @@
       return bTime - aTime;
     }
 
+    function normalizeQuestion(value) {
+      return String(value || "").toLowerCase().trim();
+    }
+
+    function isWeakAnswer(answer) {
+      const text = String(answer || "");
+      return text.includes("No response") || text.includes("Signal lost");
+    }
+
+    function isSlowResponse(item) {
+      return Number(item?.responseTimeMs || 0) > 2000;
+    }
+
     function renderSummary(items) {
       els.totalCount.textContent = String(items.length);
       els.cacheCount.textContent = String(items.filter((item) => item.source === "app-cache-hit").length);
       els.anthropicCount.textContent = String(items.filter((item) => item.source === "anthropic").length);
+    }
+
+    function renderInsights(items) {
+      const counts = new Map();
+      for (const item of items) {
+        const key = normalizeQuestion(item.question);
+        if (!key) continue;
+        counts.set(key, (counts.get(key) || 0) + 1);
+      }
+
+      const topQuestions = Array.from(counts.entries())
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 5);
+
+      els.topQuestions.innerHTML = topQuestions.length
+        ? topQuestions.map(([question, count]) => `
+            <li>
+              ${escapeHtml(question)}
+              <span class="count-pill">${count}</span>
+            </li>
+          `).join("")
+        : '<li class="muted">No questions yet.</li>';
+
+      els.weakCount.textContent = String(items.filter((item) => isWeakAnswer(item.answer)).length);
+      els.slowCount.textContent = String(items.filter((item) => isSlowResponse(item)).length);
     }
 
     function renderRows(items) {
@@ -336,7 +459,7 @@
       }
 
       els.rows.innerHTML = items.map((item) => `
-        <tr>
+        <tr class="${isWeakAnswer(item.answer) ? 'weak-row' : ''} ${isSlowResponse(item) ? 'slow-row' : ''}">
           <td>${formatCell(item.timestamp)}</td>
           <td>${formatCell(item.page)}</td>
           <td>${formatCell(item.question)}</td>
@@ -360,6 +483,7 @@
 
       renderRows(filtered);
       renderSummary(allItems);
+      renderInsights(allItems);
     }
 
     async function loadLogs() {
@@ -383,12 +507,14 @@
         allItems = items;
 
         renderSummary(allItems);
+        renderInsights(allItems);
         applyFilter();
 
         els.status.textContent = `Loaded ${allItems.length} log entries.`;
       } catch (err) {
         allItems = [];
         renderSummary(allItems);
+        renderInsights(allItems);
         renderRows([]);
         els.status.classList.add("error");
         els.status.textContent = `Failed to load logs: ${err.message}`;
