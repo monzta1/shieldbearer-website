@@ -140,8 +140,17 @@
       .replace(/'/g, "&#39;");
   }
 
+  function stripMarkdown(text) {
+    return String(text || "")
+      .replace(/\*\*(.*?)\*\*/g, "$1")
+      .replace(/\*(.*?)\*/g, "$1")
+      .replace(/`(.*?)`/g, "$1")
+      .replace(/#{1,6}\s/g, "")
+      .replace(/—/g, " ");
+  }
+
   function formatBotMessage(text) {
-    const raw = String(text || "");
+    const raw = stripMarkdown(String(text || ""));
     const wrapped = `<div>${raw}</div>`;
     const doc = new DOMParser().parseFromString(wrapped, "text/html");
 
@@ -213,13 +222,9 @@
   }
 
   function botHistoryText(text) {
-    return String(text || "")
+    return stripMarkdown(String(text || ""))
       .replace(/<br\s*\/?>/gi, "\n")
       .replace(/<[^>]+>/g, "")
-      .replace(/\*\*(.*?)\*\*/g, "$1")
-      .replace(/\*(.*?)\*/g, "$1")
-      .replace(/`(.*?)`/g, "$1")
-      .replace(/#{1,6}\s/g, "")
       .trim();
   }
 
