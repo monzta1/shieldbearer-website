@@ -264,6 +264,18 @@
       font-size: 11px;
     }
 
+    .pagination {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      align-items: center;
+      margin-top: 12px;
+    }
+
+    .pagination button {
+      min-width: 180px;
+    }
+
     .count-pill {
       display: inline-block;
       margin-left: 6px;
@@ -483,6 +495,10 @@
         <tbody id="rows"></tbody>
       </table>
     </div>
+
+    <div class="pagination">
+      <button id="loadMoreBtn" type="button" hidden>Load more</button>
+    </div>
   </div>
 
   <script>
@@ -502,10 +518,14 @@
       cacheCandidateRows: document.getElementById("cacheCandidateRows"),
       rareCount: document.getElementById("rareCount"),
       rareRows: document.getElementById("rareRows"),
-      rows: document.getElementById("rows")
+      rows: document.getElementById("rows"),
+      loadMoreBtn: document.getElementById("loadMoreBtn")
     };
 
     let allItems = [];
+    let nextCursor = null;
+    let hasMore = false;
+    let loading = false;
 
     function escapeHtml(value) {
       return String(value)
@@ -754,12 +774,27 @@
       renderInsights(allItems);
     }
 
-    async function loadLogs() {
+    function updateLoadMoreButton() {
+      els.loadMoreBtn.hidden = !hasMore;
+      els.loadMoreBtn.disabled = loading;
+    }
+
+    async function loadLogs({ cursor = null, append = false } = {}) {
+      if (loading) return;
+      loading = true;
+      updateLoadMoreButton();
+
       els.status.classList.remove("error");
-      els.status.textContent = "Loading logs...";
+      els.status.textContent = append ? "Loading more logs..." : "Loading logs...";
 
       try {
-        const res = await fetch("https://g7a5tqlxaj.execute-api.us-east-1.amazonaws.com/logs", {
+        const url = new URL("https://g7a5tqlxaj.execute-api.us-east-1.amazonaws.com/logs");
+        url.searchParams.set("limit", "25");
+        if (cursor) {
+          url.searchParams.set("cursor", cursor);
+        }
+
+        const res = await fetch(url.toString(), {
           method: "GET",
           headers: {
             "x-admin-key": "shieldbearer-admin-2026"
@@ -772,25 +807,41 @@
         const data = await res.json();
         const items = Array.isArray(data?.items) ? data.items.slice() : [];
         items.sort(compareTimestampDesc);
-        allItems = items;
+        allItems = append ? allItems.concat(items) : items;
+        allItems.sort(compareTimestampDesc);
+        nextCursor = data?.nextCursor || null;
+        hasMore = Boolean(data?.hasMore && nextCursor);
 
         renderSummary(allItems);
         renderInsights(allItems);
         applyFilter();
+        updateLoadMoreButton();
 
         els.status.textContent = `Loaded ${allItems.length} log entries.`;
       } catch (err) {
         allItems = [];
+        nextCursor = null;
+        hasMore = false;
         renderSummary(allItems);
         renderInsights(allItems);
         renderRows([]);
+        updateLoadMoreButton();
         els.status.classList.add("error");
         els.status.textContent = `Failed to load logs: ${err.message}`;
+      } finally {
+        loading = false;
+        updateLoadMoreButton();
       }
     }
 
-    els.refreshBtn.addEventListener("click", loadLogs);
+    els.refreshBtn.addEventListener("click", () => {
+      allItems = [];
+      nextCursor = null;
+      hasMore = false;
+      loadLogs();
+    });
     els.filter.addEventListener("input", applyFilter);
+    els.loadMoreBtn.addEventListener("click", () => loadLogs({ cursor: nextCursor, append: true }));
     els.cacheCandidateRows.addEventListener("click", (event) => {
       const button = event.target.closest("[data-copy-question]");
       if (!button) return;
