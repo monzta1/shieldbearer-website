@@ -19,7 +19,6 @@
       cursor: pointer;
       box-shadow: 0 0 12px rgba(0,255,65,0.35);
     }
-
     #sentinelbot-window {
       position: fixed;
       bottom: 70px;
@@ -37,7 +36,6 @@
       flex-direction: column;
       font-family: Courier New, monospace;
     }
-
     #sentinelbot-header {
       display: flex;
       justify-content: space-between;
@@ -47,7 +45,6 @@
       background: #031b08;
       font-weight: bold;
     }
-
     #sentinelbot-close {
       background: transparent;
       border: none;
@@ -55,7 +52,6 @@
       font-size: 18px;
       cursor: pointer;
     }
-
     #sentinelbot-messages {
       flex: 1;
       overflow-y: auto;
@@ -63,29 +59,24 @@
       font-size: 14px;
       line-height: 1.45;
     }
-
     .sentinelbot-msg {
       margin-bottom: 12px;
       white-space: pre-wrap;
     }
-
     .sentinelbot-user::before {
       content: "> ";
       color: #00ff41;
     }
-
     .sentinelbot-bot::before {
       content: "// ";
       color: #00ff41;
     }
-
     #sentinelbot-inputbar {
       display: flex;
       gap: 8px;
       padding: 10px;
       border-top: 1px solid #00ff41;
     }
-
     #sentinelbot-input {
       flex: 1;
       background: #000;
@@ -95,7 +86,6 @@
       font-family: Courier New, monospace;
       outline: none;
     }
-
     #sentinelbot-send {
       background: #000;
       color: #00ff41;
@@ -179,6 +169,7 @@
       history.push({ role: "user", content: question });
       history.push({ role: "assistant", content: answer });
       history = history.slice(-10);
+
     } catch (err) {
       renderMessage("Signal lost. Try again.", "sentinelbot-bot");
       console.error(err);
