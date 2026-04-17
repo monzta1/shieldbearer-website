@@ -48,6 +48,49 @@
       grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
       gap: 1.2rem;
     }
+    .press-card--credential {
+      border: 1px solid rgba(231,76,60,.35);
+      background:
+        radial-gradient(circle at 85% 15%, rgba(231,76,60,.12), transparent 38%),
+        linear-gradient(180deg, rgba(255,255,255,.03), rgba(0,0,0,.2));
+      box-shadow: 0 18px 42px rgba(0,0,0,.22);
+    }
+    .press-card--credential .press-card__source {
+      font-family: var(--font-head);
+      font-size: .58rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--red-bright);
+      margin-bottom: .55rem;
+    }
+    .press-card--credential .press-card__title {
+      font-family: var(--font-display);
+      font-size: 1.55rem;
+      letter-spacing: .05em;
+      line-height: 1.08;
+      color: #fff;
+      margin-bottom: .7rem;
+    }
+    .press-card--credential .press-card__desc {
+      color: rgba(240,235,224,.72);
+      line-height: 1.75;
+      font-size: .95rem;
+      margin-bottom: 1rem;
+    }
+    .press-card--credential .press-card__link {
+      display: inline-block;
+      font-family: var(--font-head);
+      font-size: .58rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--red-bright);
+      border-bottom: 1px solid rgba(231,76,60,.35);
+      padding-bottom: .12rem;
+    }
+    .press-card--credential .press-card__link:hover {
+      color: #fff;
+      border-color: rgba(255,255,255,.45);
+    }
     .expand-btn {
       font-family: var(--font-head);
       font-size: .63rem;
@@ -230,6 +273,13 @@
           <p class="excerpt">A Dutch metal publication credit from 2011 documenting Moncy&apos;s earlier history long before Shieldbearer existed.</p>
           <div class="tags"><span class="tag">Interview</span><span class="tag">Archive</span></div>
         </a>
+
+        <div class="press-card press-card--credential">
+          <p class="press-card__source">ENCYCLOPAEDIA METALLUM</p>
+          <h3 class="press-card__title">Moncy Abraham &mdash; Metal Archives</h3>
+          <p class="press-card__desc">Independent verification by the world&apos;s most authoritative metal database. WhitenoiZ guitarist, 2004&ndash;2012. Listed since 2018. This was not submitted by Shieldbearer.</p>
+          <a href="https://www.metal-archives.com/artists/Moncy_Abraham/766040" target="_blank" rel="noopener" class="press-card__link">View Entry &rarr;</a>
+        </div>
 
         <!-- ADD MORE PRESS CARDS HERE following the same pattern -->
 

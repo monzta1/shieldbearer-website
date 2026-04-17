@@ -183,6 +183,28 @@
       transition: color .2s;
     }
     .epk-press-card__link:hover { color: var(--red-bright); }
+    .press-link {
+      display: block;
+      margin-top: .5rem;
+      padding-top: .6rem;
+      border-top: 1px solid rgba(168,162,154,.12);
+      font-family: var(--font-head);
+      font-size: .68rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--red-bright);
+      line-height: 1.55;
+    }
+    .press-link__meta {
+      display: block;
+      margin-top: .45rem;
+      font-family: var(--font-body);
+      font-size: .9rem;
+      letter-spacing: 0;
+      text-transform: none;
+      color: rgba(240,235,224,.72);
+      line-height: 1.7;
+    }
 
     /* ── LINKS GRID ── */
     .epk-links {
@@ -589,6 +611,10 @@
           <a href="https://mauce.nl/interview-with-whitenoiz/"
              target="_blank" rel="noopener" class="epk-press-card__link">
             WhitenoiZ Interview &rarr;
+          </a>
+          <a class="press-link" href="https://www.metal-archives.com/artists/Moncy_Abraham/766040" target="_blank" rel="noopener">
+            Encyclopaedia Metallum &rarr;
+            <span class="press-link__meta">Independent verification of Moncy Abraham&apos;s metal credentials &mdash; WhitenoiZ guitarist listed in the world&apos;s most authoritative metal database.</span>
           </a>
         </div>
 
