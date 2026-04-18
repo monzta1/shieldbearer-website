@@ -1,5 +1,11 @@
 # Shieldbearer Website Changelog
 
+Versioning note:
+- Use semantic versioning in the form `vmajor.minor.patch`
+- Patch bumps track small site/admin/logging changes
+- Minor bumps track visible site features or broader UI additions
+- Major bumps track architecture-level changes
+
 ## v1.0 - April 2026
 - Initial SentinelBot deployment on the Shieldbearer site
 - Watchman-class Guardian Intelligence online
@@ -19,3 +25,8 @@
 - Added SentinelBot Mark I identity and character profile
 - Added version-aware replies in the live system
 - Established the `SENTINELBOT_VERSION` flow for future minor updates
+
+## v1.3.1 - April 2026
+- Raised the SentinelBot admin log counter baseline to 139
+- Excluded already cached questions from the CACHE CANDIDATES panel
+- Kept the admin totals aligned with the live DynamoDB counter
