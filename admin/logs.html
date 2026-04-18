@@ -607,6 +607,44 @@
       return String(value || "").toLowerCase().trim();
     }
 
+    const cachedQuestionKeys = new Set([
+      "who is shieldbearer",
+      "what is shieldbearer",
+      "who is this",
+      "what is the top song",
+      "what is the best song",
+      "what is the most popular song",
+      "what guitar does he play",
+      "how many tshirts sold",
+      "are you stealing musicians jobs",
+      "what is galilean about",
+      "are the guitars real",
+      "who owns shieldbearer",
+      "how are you powered",
+      "what are you",
+      "who made you",
+      "are you ai",
+      "are you a real person",
+      "do you get tired",
+      "do you have feelings",
+      "how long have you been running",
+      "what version are you",
+      "do you learn",
+      "do you get better",
+      "can you learn",
+      "how do you improve",
+      "will you remember this",
+      "will there be a mark 2",
+      "what is your power source",
+      "why use ai",
+      "what genre",
+      "where can i listen",
+      "where can i buy merch",
+      "who is moncy",
+      "is ai cheating",
+      "what is ai"
+    ]);
+
     function isWeakAnswer(answer) {
       const text = String(answer || "");
       return text.includes("No response") || text.includes("Signal lost");
@@ -745,6 +783,9 @@
       const cacheCandidates = Array.from(cacheGroups.values())
         .filter((group) => {
           const latest = group.latest || {};
+          if (cachedQuestionKeys.has(group.question)) {
+            return false;
+          }
           return !shouldExcludeFromCacheCandidates(latest) && (
             group.count >= 2 || isCacheCandidateSingle(latest, group.count)
           );
