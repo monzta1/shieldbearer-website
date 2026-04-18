@@ -1,4 +1,4 @@
-# SentinelBot Changelog
+# Shieldbearer Website Changelog
 
 ## v1.0 - April 2026
 - Initial SentinelBot deployment on the Shieldbearer site
