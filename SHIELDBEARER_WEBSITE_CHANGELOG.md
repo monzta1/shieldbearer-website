@@ -44,3 +44,7 @@ Versioning note:
 
 ## v1.5.1 - April 2026
 - Added the Release Timeline link to the AI and Faith navigation dropdown across the site
+
+## v1.5.2 - April 2026
+- Moved Release Timeline to the top-level nav directly after Music
+- Removed the duplicate Release Timeline entry from the AI and Faith dropdown
