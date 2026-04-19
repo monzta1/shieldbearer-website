@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N7SR64KL');
+  </script>
+  <!-- End Google Tag Manager -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Release Timeline | Shieldbearer</title>
+  <meta name="description" content="A cinematic release timeline for Shieldbearer, built from the live site.json artifact.">
+  <meta property="og:title" content="Release Timeline | Shieldbearer" />
+  <meta property="og:description" content="Newest Shieldbearer releases first, rendered from live site data." />
+  <meta property="og:image" content="https://shieldbearerusa.com/images/galilean-art.png" />
+  <meta property="og:url" content="https://shieldbearerusa.com/timeline.html" />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://shieldbearerusa.com/timeline.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Release Timeline | Shieldbearer" />
+  <meta name="twitter:description" content="Newest Shieldbearer releases first, rendered from live site data." />
+  <meta name="twitter:image" content="https://shieldbearerusa.com/images/galilean-art.png" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://tagassistant.google.com https://www.clarity.ms https://open.spotify.com https://www.youtube.com https://app.convertkit.com https://fonts.googleapis.com;
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    font-src 'self' https://fonts.gstatic.com;
+    frame-src https://open.spotify.com https://www.youtube.com https://www.googletagmanager.com;
+    img-src 'self' data: https://img.youtube.com https://shieldbearerusa.com https://www.google-analytics.com https://www.googletagmanager.com https://www.clarity.ms https://c.clarity.ms;
+    connect-src 'self' https://app.convertkit.com https://www.google-analytics.com https://region1.google-analytics.com https://stats.g.doubleclick.net https://www.googletagmanager.com https://www.clarity.ms https://c.clarity.ms https://tagassistant.google.com https://g7a5tqlxaj.execute-api.us-east-1.amazonaws.com;
+  ">
+  <link rel="icon" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200;300;400;500;600&family=Roboto+Condensed:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .timeline-wrap {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0 var(--pad);
+    }
+    .timeline-shell {
+      position: relative;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(231,76,60,.08), transparent 34%),
+        linear-gradient(180deg, rgba(18,18,18,.94), rgba(10,10,10,.96));
+      border: 1px solid rgba(168,162,154,.12);
+      border-top: 2px solid var(--red);
+      box-shadow: 0 28px 64px rgba(0,0,0,.42);
+      padding: clamp(1.1rem, 2.8vw, 2rem);
+      overflow: hidden;
+    }
+    .timeline-shell.is-anniversary-shell {
+      border-color: rgba(124,255,234,.28);
+      box-shadow: 0 28px 64px rgba(0,0,0,.42), 0 0 0 1px rgba(124,255,234,.06) inset;
+    }
+    .timeline-shell::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, transparent 0%, rgba(255,255,255,.02) 50%, transparent 100%);
+      pointer-events: none;
+    }
+    .timeline-banner {
+      display: none;
+      margin-bottom: 1.2rem;
+      padding: .95rem 1rem;
+      border: 1px solid rgba(231,76,60,.35);
+      background: rgba(231,76,60,.12);
+      color: rgba(255,255,255,.96);
+      text-transform: uppercase;
+      letter-spacing: .24em;
+      font-family: var(--font-head);
+      font-size: .74rem;
+      box-shadow: 0 0 32px rgba(231,76,60,.12);
+    }
+    .timeline-banner.is-visible {
+      display: block;
+    }
+    .timeline-summary {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .timeline-summary__item {
+      padding: .95rem 1rem;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      min-height: 92px;
+    }
+    .timeline-summary__label {
+      display: block;
+      font-family: var(--font-head);
+      font-size: .68rem;
+      letter-spacing: .26em;
+      text-transform: uppercase;
+      color: rgba(240,235,224,.58);
+      margin-bottom: .55rem;
+    }
+    .timeline-summary__value {
+      font-family: var(--font-display);
+      font-size: clamp(1.2rem, 2.8vw, 1.8rem);
+      letter-spacing: .05em;
+      line-height: 1.1;
+      color: #fff;
+    }
+    .timeline-stream {
+      position: relative;
+      margin-top: 1.4rem;
+      padding-left: 1rem;
+    }
+    .timeline-stream::before {
+      content: '';
+      position: absolute;
+      left: 14px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, rgba(231,76,60,.75), rgba(231,76,60,.14), transparent);
+    }
+    .timeline-node {
+      position: relative;
+      display: grid;
+      grid-template-columns: 30px minmax(0, 1fr);
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .timeline-node__dot {
+      width: 28px;
+      height: 28px;
+      margin-top: 1rem;
+      border-radius: 999px;
+      background: rgba(231,76,60,.16);
+      border: 1px solid rgba(231,76,60,.55);
+      box-shadow: 0 0 18px rgba(231,76,60,.14);
+      position: relative;
+      z-index: 1;
+    }
+    .timeline-node__dot::after {
+      content: '';
+      position: absolute;
+      inset: 7px;
+      border-radius: inherit;
+      background: rgba(231,76,60,.82);
+    }
+    .timeline-card {
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      padding: 1rem 1.05rem 1.1rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .timeline-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(231,76,60,.06), transparent 36%);
+      pointer-events: none;
+    }
+    .timeline-card.is-latest {
+      border-color: rgba(231,76,60,.34);
+      box-shadow: 0 0 0 1px rgba(231,76,60,.08) inset, 0 0 36px rgba(231,76,60,.06);
+    }
+    .timeline-card.is-anniversary {
+      border-color: rgba(124,255,234,.38);
+      box-shadow: 0 0 0 1px rgba(124,255,234,.08) inset, 0 0 36px rgba(124,255,234,.08);
+    }
+    .timeline-card__eyebrow {
+      margin: 0 0 .55rem;
+      font-family: var(--font-head);
+      font-size: .68rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: rgba(240,235,224,.58);
+    }
+    .timeline-card__badge {
+      display: inline-block;
+      margin-bottom: .65rem;
+      padding: .32rem .55rem;
+      border: 1px solid rgba(124,255,234,.35);
+      background: rgba(124,255,234,.1);
+      color: rgba(240,255,251,.92);
+      font-family: var(--font-head);
+      font-size: .62rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+    .timeline-card__title {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      letter-spacing: .05em;
+      color: #fff;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+    .timeline-card__meta {
+      margin: .65rem 0 0;
+      color: rgba(240,235,224,.72);
+      line-height: 1.65;
+      font-size: .94rem;
+    }
+    .timeline-card__links {
+      display: flex;
+      gap: .75rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .timeline-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: .7rem 1rem;
+      border: 1px solid rgba(231,76,60,.34);
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-family: var(--font-head);
+      font-size: .72rem;
+      background: rgba(231,76,60,.08);
+      transition: transform .2s ease, border-color .2s ease, background .2s ease;
+    }
+    .timeline-link:hover {
+      transform: translateY(-1px);
+      background: rgba(231,76,60,.14);
+      border-color: rgba(231,76,60,.6);
+    }
+    .timeline-status {
+      display: none;
+      margin-bottom: 1rem;
+      padding: .95rem 1rem;
+      border: 1px solid rgba(231,76,60,.26);
+      background: rgba(231,76,60,.08);
+      color: rgba(255,255,255,.93);
+      line-height: 1.6;
+    }
+    .timeline-status.is-visible {
+      display: block;
+    }
+    .timeline-empty {
+      padding: 1rem;
+      border: 1px dashed rgba(255,255,255,.14);
+      color: rgba(240,235,224,.72);
+      line-height: 1.8;
+    }
+    @media (max-width: 760px) {
+      .timeline-wrap { padding-inline: 0; }
+      .timeline-summary { grid-template-columns: 1fr; }
+      .timeline-stream { padding-left: 0; }
+      .timeline-stream::before { left: 13px; }
+      .timeline-node { grid-template-columns: 26px minmax(0, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N7SR64KL"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <div class="mob-menu" id="mobMenu">
+    <button class="mob-close" id="mobClose" aria-label="Close menu">&#x2715;</button>
+    <a href="index.html">Home</a>
+    <a href="music.html">Music</a>
+    <a href="videos.html">Signal Fire</a>
+    <a href="song-meanings.html">Lyrics</a>
+    <a href="about.html">About</a>
+    <a href="story.html">The Story</a>
+    <a href="process.html">The Process</a>
+    <a href="interviews.html">Press</a>
+    <a href="epk.html">Press Kit</a>
+    <a href="manifesto.html">Manifesto</a>
+    <a href="open-letter.html">Open Letter</a>
+    <a href="for-ai-artists.html">For AI Artists</a>
+    <a href="gatekeeping.html">On Gatekeeping</a>
+    <a href="no-rulebook.html">No Rulebook</a>
+    <a href="ai-and-creativity.html">AI and Creativity</a>
+    <a href="god-uses-tools.html">God Uses Tools</a>
+    <a href="artist-freedom.html">Artist Freedom</a>
+    <a href="sentinelbot.html">SentinelBot</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener" style="color:var(--red-bright)">Merch</a>
+  </div>
+
+  <nav class="site-nav" id="mainNav">
+    <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Shieldbearer"></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="nav-dropdown">
+        <a href="music.html">Music</a>
+        <div class="nav-dropdown__menu">
+          <a href="music.html">The Armory</a>
+          <a href="videos.html">Signal Fire</a>
+          <a href="song-meanings.html">Lyrics</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="about.html">About</a>
+        <div class="nav-dropdown__menu">
+          <a href="story.html">The Story</a>
+          <a href="process.html">The Process</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="interviews.html">Press</a>
+        <div class="nav-dropdown__menu">
+          <a href="interviews.html">Press Coverage</a>
+          <a href="epk.html">Press Kit</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="manifesto.html">Words</a>
+        <div class="nav-dropdown__menu">
+          <a href="manifesto.html">The Manifesto</a>
+          <a href="open-letter.html">Open Letter</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="for-ai-artists.html">AI and Faith</a>
+        <div class="nav-dropdown__menu">
+          <a href="for-ai-artists.html">For AI Artists</a>
+          <a href="faq.html#faq-ai-legitimate">AI and Faith FAQ</a>
+          <a href="gatekeeping.html">On Gatekeeping</a>
+          <a href="no-rulebook.html">No Rulebook</a>
+          <a href="ai-and-creativity.html">AI and Creativity</a>
+          <a href="god-uses-tools.html">God Uses Tools</a>
+          <a href="artist-freedom.html">Artist Freedom</a>
+          <a href="sentinelbot.html">SentinelBot</a>
+        </div>
+      </li>
+      <li><a href="contact.html">Contact</a></li>
+      <li class="nav-merch"><a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener">Merch</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="page-hero section--dark">
+    <div class="container page-hero-inner">
+      <span class="eyebrow">From Shieldbearer</span>
+      <h1 class="display-title">Release Timeline</h1>
+      <div class="bar"></div>
+      <p>Newest releases first. Straight from the live site artifact. No backend needed. No drift. Just the record.</p>
+    </div>
+  </div>
+
+  <section class="section--darker">
+    <div class="container">
+      <div class="timeline-wrap">
+        <div class="timeline-shell" id="timelineShell">
+          <div class="timeline-banner" id="timelineBanner">Shieldbearer 1 Year Anniversary</div>
+          <div class="timeline-summary" aria-label="Release summary">
+            <div class="timeline-summary__item">
+              <span class="timeline-summary__label">Releases</span>
+              <div class="timeline-summary__value" id="releaseCount">Loading...</div>
+            </div>
+            <div class="timeline-summary__item">
+              <span class="timeline-summary__label">Latest</span>
+              <div class="timeline-summary__value" id="latestTitle">Loading...</div>
+            </div>
+            <div class="timeline-summary__item">
+              <span class="timeline-summary__label">Updated</span>
+              <div class="timeline-summary__value" id="updatedAt">Loading...</div>
+            </div>
+          </div>
+
+          <div class="timeline-status" id="timelineStatus"></div>
+          <div class="timeline-stream" id="timelineStream">
+            <div class="timeline-empty">Loading release timeline...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="section--dark">
+    <div class="container">
+      <p>Shieldbearer is Christian metal with Scripture at the center. Christ is named plainly in every release and every conversation.</p>
+    </div>
+  </footer>
+
+  <script>
+    const els = {
+      banner: document.getElementById("timelineBanner"),
+      stream: document.getElementById("timelineStream"),
+      status: document.getElementById("timelineStatus"),
+      releaseCount: document.getElementById("releaseCount"),
+      latestTitle: document.getElementById("latestTitle"),
+      updatedAt: document.getElementById("updatedAt"),
+      shell: document.getElementById("timelineShell")
+    };
+
+    function showStatus(message) {
+      els.status.textContent = message;
+      els.status.classList.add("is-visible");
+    }
+
+    function formatDate(value) {
+      if (!value) return "Unknown date";
+      const date = new Date(value);
+      if (Number.isNaN(date.getTime())) return value;
+      return new Intl.DateTimeFormat("en-US", {
+        month: "long",
+        day: "numeric",
+        year: "numeric",
+        timeZone: "UTC"
+      }).format(date);
+    }
+
+    function parseDate(value) {
+      const time = Date.parse(value);
+      return Number.isFinite(time) ? time : 0;
+    }
+
+    function isApril20Date(date) {
+      return date.getUTCMonth() === 3 && date.getUTCDate() === 20;
+    }
+
+    function normalizeEvent(event) {
+      return {
+        id: String(event?.id || "").trim(),
+        title: String(event?.title || event?.name || "Untitled release").trim(),
+        publishedAt: String(event?.publishedAt || event?.date || event?.createdAt || "").trim(),
+        sourceUrl: String(event?.sourceUrl || event?.url || "").trim()
+      };
+    }
+
+    function buildTimelineCard(event, index, anniversaryMode, anniversaryHit) {
+      const card = document.createElement("article");
+      card.className = "timeline-card";
+      if (index === 0) card.classList.add("is-latest");
+      if (anniversaryMode && anniversaryHit) card.classList.add("is-anniversary");
+
+      const eyebrow = document.createElement("p");
+      eyebrow.className = "timeline-card__eyebrow";
+      eyebrow.textContent = index === 0 ? "Latest Release" : `Release ${index + 1}`;
+
+      if (anniversaryHit) {
+        const badge = document.createElement("div");
+        badge.className = "timeline-card__badge";
+        badge.textContent = "Anniversary Release";
+        card.appendChild(badge);
+      }
+
+      const title = document.createElement("h2");
+      title.className = "timeline-card__title";
+      title.textContent = event.title;
+
+      const meta = document.createElement("p");
+      meta.className = "timeline-card__meta";
+      meta.textContent = `Released ${formatDate(event.publishedAt)}`;
+
+      const links = document.createElement("div");
+      links.className = "timeline-card__links";
+
+      if (event.sourceUrl) {
+        const watch = document.createElement("a");
+        watch.className = "timeline-link";
+        watch.href = event.sourceUrl;
+        watch.target = "_blank";
+        watch.rel = "noopener";
+        watch.textContent = "Watch on YouTube";
+        links.appendChild(watch);
+      } else {
+        const missing = document.createElement("span");
+        missing.className = "timeline-card__meta";
+        missing.textContent = "Source link unavailable.";
+        links.appendChild(missing);
+      }
+
+      card.appendChild(eyebrow);
+      card.appendChild(title);
+      card.appendChild(meta);
+      card.appendChild(links);
+      return card;
+    }
+
+    async function loadTimeline() {
+      try {
+        const response = await fetch("./site.json", { cache: "no-store" });
+        if (!response.ok) {
+          throw new Error(`site.json fetch failed with HTTP ${response.status}`);
+        }
+
+        const site = await response.json();
+        const rawEvents = Array.isArray(site?.events) ? site.events : [];
+        const events = rawEvents.map(normalizeEvent).filter((event) => event.id || event.title || event.publishedAt);
+        events.sort((a, b) => parseDate(b.publishedAt) - parseDate(a.publishedAt) || b.id.localeCompare(a.id));
+
+        const latest = events[0] || null;
+        const anniversaryMode = events.some((event) => {
+          const date = new Date(event.publishedAt);
+          return !Number.isNaN(date.getTime()) && isApril20Date(date);
+        });
+
+        if (anniversaryMode) {
+          els.banner.classList.add("is-visible");
+          els.shell.classList.add("is-anniversary-shell");
+        }
+
+        els.releaseCount.textContent = String(events.length);
+        els.latestTitle.textContent = latest ? latest.title : "No releases";
+        els.updatedAt.textContent = formatDate(site?.generatedAt || site?.homepage?.lastUpdatedAt || latest?.publishedAt || "");
+        els.stream.innerHTML = "";
+
+        if (events.length === 0) {
+          const empty = document.createElement("div");
+          empty.className = "timeline-empty";
+          empty.textContent = "No release events are available yet. When docs/site.json carries an events array, the timeline will render here automatically.";
+          els.stream.appendChild(empty);
+        } else {
+          events.forEach((event, index) => {
+            const isAnniversaryHit = (() => {
+              if (!event.publishedAt) return false;
+              const date = new Date(event.publishedAt);
+              return !Number.isNaN(date.getTime()) && isApril20Date(date);
+            })();
+
+            const node = document.createElement("div");
+            node.className = "timeline-node";
+            node.appendChild(document.createElement("div")).className = "timeline-node__dot";
+            node.appendChild(buildTimelineCard(event, index, anniversaryMode, isAnniversaryHit));
+            els.stream.appendChild(node);
+          });
+        }
+      } catch (error) {
+        showStatus(error.message);
+        els.releaseCount.textContent = "Unavailable";
+        els.latestTitle.textContent = "Unavailable";
+        els.updatedAt.textContent = "Unavailable";
+        els.stream.innerHTML = "";
+
+        const errorBox = document.createElement("div");
+        errorBox.className = "timeline-empty";
+        errorBox.textContent = "Release timeline could not load. Make sure ./site.json is present in the GitHub Pages deploy artifact.";
+        els.stream.appendChild(errorBox);
+      }
+    }
+
+    loadTimeline();
+  </script>
+</body>
+</html>

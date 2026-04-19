@@ -30,3 +30,14 @@ Versioning note:
 - Raised the SentinelBot admin log counter baseline to 139
 - Excluded already cached questions from the CACHE CANDIDATES panel
 - Kept the admin totals aligned with the live DynamoDB counter
+
+## v1.4 - April 2026
+- Added the public `sentinelbot.html` page to the AI and Faith section
+- Added SentinelBot to the site navigation dropdowns
+- Added `sentinelbot.html` to the sitemap for search indexing
+- Published the Watchman-class SentinelBot story as a permanent site page
+
+## v1.5.0 - April 2026
+- Added a client-side release timeline view driven by `site.json`
+- Highlighted the latest release and milestone anniversary states
+- Added a homepage CTA and sitemap entry for the release timeline page
