@@ -41,3 +41,6 @@ Versioning note:
 - Added a client-side release timeline view driven by `site.json`
 - Highlighted the latest release and milestone anniversary states
 - Added a homepage CTA and sitemap entry for the release timeline page
+
+## v1.5.1 - April 2026
+- Added the Release Timeline link to the AI and Faith navigation dropdown across the site
