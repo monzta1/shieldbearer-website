@@ -48,3 +48,8 @@ Versioning note:
 ## v1.5.2 - April 2026
 - Moved Release Timeline to the top-level nav directly after Music
 - Removed the duplicate Release Timeline entry from the AI and Faith dropdown
+
+## v1.5.3 - April 2026
+- Temporarily removed the Release Timeline UI entry from the public navigation
+- Removed the homepage timeline CTA and sitemap reference
+- Left the timeline data pipeline and hidden route intact for backend continuity
