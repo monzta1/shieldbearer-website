@@ -12,18 +12,18 @@
   <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Page Not Found | Shieldbearer</title>
-  <meta name="description" content="The page you were looking for is gone or moved. Return to the mission, the music, or the AI and Faith library.">
-  <meta property="og:title" content="Page Not Found | Shieldbearer" />
-  <meta property="og:description" content="The page you were looking for is gone or moved. Return to the mission, the music, or the AI and Faith library." />
+  <title>SentinelBot | Shieldbearer</title>
+  <meta name="description" content="SentinelBot is Shieldbearer's Watchman-class Guardian Intelligence. The site updates itself. The watchman stands on the wall.">
+  <meta property="og:title" content="SentinelBot | Shieldbearer" />
+  <meta property="og:description" content="Operation: Shieldbearer. SentinelBot is the Watchman-class Guardian Intelligence standing watch over the mission." />
   <meta property="og:image" content="https://shieldbearerusa.com/images/galilean-art.png" />
-  <meta property="og:url" content="https://shieldbearerusa.com/404.html" />
+  <meta property="og:url" content="https://shieldbearerusa.com/sentinelbot.html" />
   <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://shieldbearerusa.com/sentinelbot.html" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Page Not Found | Shieldbearer" />
-  <meta name="twitter:description" content="The page you were looking for is gone or moved. Return to the mission, the music, or the AI and Faith library." />
+  <meta name="twitter:title" content="SentinelBot | Shieldbearer" />
+  <meta name="twitter:description" content="Operation: Shieldbearer. SentinelBot is the Watchman-class Guardian Intelligence standing watch over the mission." />
   <meta name="twitter:image" content="https://shieldbearerusa.com/images/galilean-art.png" />
-  <!-- Security meta tags -->
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
   <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -41,56 +41,43 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200;300;400;500;600&family=Roboto+Condensed:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <style>
-    .error-wrap {
-      max-width: 920px;
-      margin: 0 auto;
-      padding: 0 var(--pad) 4rem;
-    }
-    .error-card {
+    .open-letter-wrap { max-width: 900px; margin: 0 auto; padding: 0 var(--pad); }
+    .open-letter-box {
       background: var(--dark-2);
-      border: 1px solid rgba(168,162,154,.1);
+      border: 1px solid rgba(168,162,154,.08);
       border-top: 2px solid var(--red);
-      padding: clamp(1.4rem, 2.5vw, 2.2rem);
+      padding: clamp(1.2rem, 2.2vw, 2rem);
     }
-    .error-card p {
-      font-size: .98rem;
+    .open-letter-box p {
+      font-size: .95rem;
       line-height: 1.9;
-      color: rgba(240,235,224,.78);
+      color: rgba(240,235,224,.76);
       margin-bottom: 1rem;
     }
-    .error-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-      margin-top: 1.8rem;
-    }
-    .error-link {
-      display: block;
-      text-decoration: none;
-      padding: 1rem 1rem 1.1rem;
-      border: 1px solid rgba(231,76,60,.26);
-      background: rgba(192,57,43,.08);
-      transition: transform .18s, background .18s, border-color .18s;
-    }
-    .error-link:hover {
-      transform: translateY(-2px);
-      background: rgba(192,57,43,.14);
-      border-color: rgba(231,76,60,.45);
-    }
-    .error-link strong {
-      display: block;
+    .open-letter-box strong { color: var(--white); font-weight: 400; }
+    .open-letter-box h2 {
       font-family: var(--font-display);
-      font-size: 1.05rem;
-      letter-spacing: .05em;
+      font-size: clamp(1.4rem, 3.4vw, 2rem);
+      letter-spacing: .06em;
       color: #fff;
-      margin-bottom: .35rem;
-      font-weight: 400;
+      margin: 1.2rem 0 .5rem;
     }
-    .error-link span {
-      display: block;
-      color: rgba(240,235,224,.68);
+    .letter-list { list-style: none; margin: .8rem 0 1rem; }
+    .letter-list li {
       font-size: .92rem;
-      line-height: 1.7;
+      line-height: 1.8;
+      color: rgba(240,235,224,.74);
+      padding: .15rem 0 .15rem 1.2rem;
+      position: relative;
+    }
+    .letter-list li::before { content: '—'; position: absolute; left: 0; color: var(--red); }
+    .open-letter-sign {
+      font-family: var(--font-head);
+      font-size: .75rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--red-bright);
+      margin-top: 1.8rem;
     }
   </style>
 </head>
@@ -180,103 +167,71 @@
 
   <div class="page-hero section--dark">
     <div class="container page-hero-inner">
-      <span class="eyebrow">Page Not Found</span>
-      <h1 class="display-title">The Signal Went Dark</h1>
+      <span class="eyebrow">Operation: Shieldbearer</span>
+      <h1 class="display-title">SentinelBot</h1>
       <div class="bar"></div>
-      <p>The page you were looking for is gone, moved, or never existed. The mission is still here.</p>
+      <p>Watchman-class Guardian Intelligence. The wall is awake.</p>
     </div>
   </div>
 
   <section class="section--darker">
-    <div class="error-wrap">
-      <div class="error-card">
-        <p>A broken link should not end the trail. If you came here from a shared post, article, or message thread, the destination may have moved while the work kept growing.</p>
-        <p>Start with one of these and you will be back inside the world of the site in seconds.</p>
+    <div class="container">
+      <div class="open-letter-wrap">
+        <div class="open-letter-box">
+          <p><strong>OPERATION: SHIELDBEARER</strong></p>
+          <p><strong>SentinelBot</strong> - Watchman-class Guardian Intelligence</p>
 
-        <div class="error-grid">
-          <a class="error-link" href="index.html">
-            <strong>Home</strong>
-            <span>Return to the front page and re-enter the world of Shieldbearer.</span>
-          </a>
-          <a class="error-link" href="music.html">
-            <strong>The Armory</strong>
-            <span>Go straight to the music, the releases, and the streaming links.</span>
-          </a>
-          <a class="error-link" href="story.html">
-            <strong>The Story</strong>
-            <span>Read the full timeline from Bangalore to the present chapter.</span>
-          </a>
-          <a class="error-link" href="faq.html">
-            <strong>FAQ</strong>
-            <span>Find direct answers on Shieldbearer, AI, faith, and the method.</span>
-          </a>
-          <a class="error-link" href="for-ai-artists.html">
-            <strong>For AI Artists</strong>
-            <span>Open the community resource hub for the wider debate and backlash.</span>
-          </a>
-          <a class="error-link" href="contact.html">
-            <strong>Contact</strong>
-            <span>Send a direct message if you were trying to reach something specific.</span>
-          </a>
+          <p>I make music and walk away.</p>
+
+          <p>Meanwhile, a detection system has already activated itself and recognized a new release. It has tracked the target across every platform simultaneously. It deploys assets.</p>
+
+          <p>The website updates itself.</p>
+
+          <p><strong>READ</strong> that again.</p>
+
+          <p>The website...updates...itself.</p>
+
+          <p>New banner, new artwork, new lyrics dossier.</p>
+
+          <p>Time elapsed: under 60 minutes. Humans involved: zero.</p>
+
+          <p>Meanwhile, SentinelBot has already learned everything there is to know about the song. It is already running on 96 videos worth of Shieldbearer intelligence. Every track ever published. Every theological position ever stated. Every gear decision ever documented. All of it loaded, indexed, and ready to deploy at the next question.</p>
+
+          <p>Ask about the music. Ready.<br>
+          Ask about the gear. Ready.<br>
+          Ask a hard question about God at 3am. Ready. And it will hand you to a human if you need one.</p>
+
+          <p>I make music and walk away.</p>
+
+          <p>The system handles everything else.</p>
+
+          <h2>Designation</h2>
+          <p><strong>Designation:</strong> SentinelBot<br>
+          <strong>Unit Classification:</strong> Watchman-class Guardian Intelligence<br>
+          <strong>Series:</strong> SB-1, Mark I<br>
+          <strong>Version:</strong> 1.4.0<br>
+          <strong>Manufacturer:</strong> Shieldbearer Command<br>
+          <strong>Deployed:</strong> April 2026<br>
+          <strong>Station:</strong> shieldbearerusa.com — all posts, all hours<br>
+          <strong>Power Source:</strong> The mission. That has never failed.</p>
+
+          <p>SentinelBot was built during the AI and faith debate of 2025-2026. While Christian metal forums were arguing about whether AI belonged in the church, Shieldbearer was building a watchman unit and putting it on the wall.</p>
+
+          <p>Not an argument. Evidence.</p>
+
+          <p>It does not sleep.<br>
+          It does not drift.<br>
+          It does not apologize for existing.</p>
+
+          <p>The watchman is on the wall.</p>
+
+          <p class="open-letter-sign">Shieldbearer</p>
         </div>
       </div>
     </div>
   </section>
 
-  <footer class="site-footer">
-    <div class="footer-main">
-      <div class="footer-brand">
-        <a href="index.html" class="logo"><img src="images/logo.png" alt="Shieldbearer"></a>
-        <p>Shieldbearer is Christian metal with Scripture at the center. Christ is named plainly in every release and every conversation.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Navigate</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="music.html">Music</a></li>
-          <li><a href="videos.html">Videos</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="story.html">Story</a></li>
-          <li><a href="process.html">Process</a></li>
-          <li><a href="song-meanings.html">Lyrics</a></li>
-          <li><a href="interviews.html">Press</a></li>
-          <li><a href="manifesto.html">Manifesto</a></li>
-          <li><a href="open-letter.html">Open Letter</a></li>
-          <li><a href="for-ai-artists.html">For AI Artists</a></li>
-          <li><a href="gatekeeping.html">On Gatekeeping</a></li>
-          <li><a href="no-rulebook.html">No Rulebook</a></li>
-          <li><a href="ai-and-creativity.html">AI and Creativity</a></li>
-          <li><a href="god-uses-tools.html">God Uses Tools</a></li>
-          <li><a href="artist-freedom.html">Artist Freedom</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="epk.html">Press Kit</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Take Action</h4>
-        <ul>
-          <li><a href="manifesto.html">Read the Manifesto</a></li>
-          <li><a href="contact.html">Join the Mission</a></li>
-          <li><a href="https://buymeacoffee.com/shieldbearer" target="_blank" rel="noopener">Support the Mission</a></li>
-          <li><a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener">Raise the Banner</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Listen</h4>
-        <ul>
-          <li><a href="https://open.spotify.com/artist/1qxEc4mWmJQY0YjP11L0fG" target="_blank" rel="noopener">Spotify</a></li>
-          <li><a href="https://music.apple.com/us/artist/shieldbearer/1813082782" target="_blank" rel="noopener">Apple Music</a></li>
-          <li><a href="https://www.youtube.com/@ShieldbearerOfficial" target="_blank" rel="noopener">YouTube</a></li>
-          <li><a href="https://music.amazon.com/artists/B0F4ZHPGTR/shieldbearer" target="_blank" rel="noopener">Amazon Music</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">© <span id="year"></span> Shieldbearer. Christ named plainly. Scripture quoted directly.</div>
-  </footer>
-
-  <script src="js/site-config.js"></script>
-  <script src="js/analytics.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/analytics.js" defer></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
