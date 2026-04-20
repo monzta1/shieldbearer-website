@@ -100,6 +100,10 @@ Versioning note:
 - Added archive share buttons for Facebook, X, and copy-link sharing
 - Added milestone YouTube embeds to highlighted release cards on the timeline
 
+## v1.5.15 - April 2026
+- Added the shared SentinelBot launcher script to the SentinelBot page itself
+- Kept the page content and structure intact while restoring the site-wide assistant behavior
+
 ## v1.5.14 - April 2026
 - Added a prominent Year One Release Archive link to the EPK
 - Broke the SentinelBot page into clearer sections for easier scanning without changing the wording
