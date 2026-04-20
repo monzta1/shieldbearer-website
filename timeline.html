@@ -255,6 +255,42 @@
     }
     .archive-hero {
       max-width: 980px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.08);
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.36), rgba(0,0,0,.78)),
+        rgba(10,10,10,.88);
+    }
+    .archive-hero__mosaic {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 0;
+      opacity: .8;
+      filter: blur(12px) brightness(.25);
+      transform: scale(1.12);
+      pointer-events: none;
+    }
+    .archive-hero__mosaic::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,.28), rgba(10,10,10,.88));
+    }
+    .archive-hero__mosaic-item {
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      min-height: 100%;
+    }
+    .archive-hero__inner {
+      position: relative;
+      z-index: 1;
+      padding: clamp(1.1rem, 3vw, 2rem);
+      backdrop-filter: saturate(110%);
     }
     .archive-hero__range {
       margin: .2rem 0 .35rem;
@@ -275,23 +311,32 @@
       width: min(420px, 100%);
       margin: 1.5rem auto 1.1rem;
       padding: .9rem 1rem;
-      border: 1px solid rgba(201,168,76,.18);
-      background: rgba(255,255,255,.03);
-      box-shadow: 0 18px 34px rgba(0,0,0,.22);
+      border: 1px solid rgba(201,168,76,.24);
+      background: rgba(5,5,5,.68);
+      box-shadow: 0 0 8px rgba(180,120,40,.4), 0 18px 34px rgba(0,0,0,.22);
       display: grid;
       gap: .35rem;
       text-align: left;
+      font-family: monospace;
+      color: rgba(201,168,76,.92);
+      position: relative;
     }
     .archive-hero__counter span {
       display: block;
-      font-family: var(--font-head);
-      font-size: .82rem;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,.92);
+      font-family: inherit;
+      font-size: .86rem;
+      letter-spacing: .08em;
+      text-transform: none;
+      color: inherit;
     }
     .archive-hero__counter span:first-child {
-      color: #fff;
+      color: rgba(225,232,216,.94);
+    }
+    .archive-hero__counter span:last-child::after {
+      content: '|';
+      margin-left: .15rem;
+      animation: blink 1s steps(1, end) infinite;
+      color: rgba(225,232,216,.84);
     }
     .archive-hero__actions {
       display: flex;
@@ -326,11 +371,18 @@
     .timeline-year::after {
       content: '';
       flex: 1;
-      height: 1px;
-      background: linear-gradient(to right, transparent, rgba(201,168,76,.54));
+      height: 2px;
+      background: linear-gradient(to right, transparent, rgba(201,168,76,.64), rgba(201,168,76,.1));
     }
     .timeline-year::after {
-      background: linear-gradient(to left, transparent, rgba(201,168,76,.54));
+      background: linear-gradient(to left, transparent, rgba(201,168,76,.64), rgba(201,168,76,.1));
+    }
+    .timeline-year__label {
+      padding: .45rem 1rem .38rem;
+      border: 1px solid rgba(201,168,76,.32);
+      background: rgba(201,168,76,.12);
+      box-shadow: 0 0 18px rgba(201,168,76,.1);
+      letter-spacing: .3em;
     }
     .timeline-stream {
       padding-left: 0;
@@ -384,6 +436,13 @@
       aspect-ratio: 16 / 9;
       border-bottom: 1px solid rgba(255,255,255,.08);
     }
+    .timeline-card__thumb-link {
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      color: inherit;
+    }
     .timeline-card__thumb img {
       width: 100%;
       height: 100%;
@@ -407,12 +466,33 @@
       width: 3.2rem;
       height: 3.2rem;
       transform: translate(-50%, -50%);
-      background: rgba(192,57,43,.26);
-      clip-path: polygon(28% 20%, 28% 80%, 80% 50%);
-      box-shadow: 0 0 18px rgba(192,57,43,.16);
+      background: transparent;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 0 18px rgba(0,0,0,.12);
       z-index: 1;
-      opacity: .82;
-      transition: opacity .25s ease, transform .25s ease, background .25s ease, box-shadow .25s ease;
+      opacity: .45;
+      transition: opacity .25s ease, transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+    }
+    .timeline-card__thumb-play {
+      position: absolute;
+      inset: 50% auto auto 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 999px;
+      border: 1px solid rgba(240,235,224,.42);
+      background: rgba(0,0,0,.22);
+      box-shadow: 0 0 18px rgba(0,0,0,.18);
+      display: grid;
+      place-items: center;
+      color: rgba(255,255,255,.88);
+      font-size: 1.05rem;
+      line-height: 1;
+      text-indent: .1rem;
+      transition: transform .25s ease, color .25s ease, border-color .25s ease, background .25s ease;
+      pointer-events: none;
     }
     .timeline-card:hover .timeline-card__thumb img,
     .timeline-card:focus-within .timeline-card__thumb img {
@@ -422,8 +502,15 @@
     .timeline-card:focus-within .timeline-card__thumb::before {
       opacity: 1;
       transform: translate(-50%, -50%) scale(1.06);
-      background: rgba(231,76,60,.42);
-      box-shadow: 0 0 22px rgba(231,76,60,.22);
+      border-color: rgba(201,168,76,.68);
+      box-shadow: 0 0 22px rgba(201,168,76,.16);
+    }
+    .timeline-card:hover .timeline-card__thumb-play,
+    .timeline-card:focus-within .timeline-card__thumb-play {
+      color: #fff;
+      border-color: rgba(201,168,76,.7);
+      background: rgba(201,168,76,.12);
+      transform: translate(-50%, -50%) scale(1.05);
     }
     .timeline-card__pill {
       display: inline-flex;
@@ -441,9 +528,15 @@
       text-transform: uppercase;
     }
     .timeline-card__pill--audio { border-color: rgba(201,168,76,.32); }
-    .timeline-card__pill--lyric { border-color: rgba(231,76,60,.34); }
-    .timeline-card__pill--video { border-color: rgba(124,255,234,.3); }
-    .timeline-card__pill--album { border-color: rgba(201,168,76,.42); color: #f7e7bc; }
+    .timeline-card__pill--official-audio { border-color: rgba(240,235,224,.26); color: rgba(240,235,224,.92); }
+    .timeline-card__pill--official-video { border-color: rgba(201,168,76,.52); color: #f8e8bd; }
+    .timeline-card__pill--lyric-video { border-color: rgba(160,179,202,.48); color: #d5deea; }
+    .timeline-card__pill--live { border-color: rgba(231,76,60,.42); color: #ffb8b1; }
+    .timeline-card__pill--album { border-color: rgba(201,168,76,.42); color: #f7e7bd; min-height: 34px; padding-inline: .7rem; font-size: .68rem; letter-spacing: .24em; }
+    .timeline-card__pill--album-badge {
+      border-color: rgba(201,168,76,.42);
+      color: #f7e7bd;
+    }
     .timeline-card__date-chip {
       display: inline-flex;
       align-items: center;
@@ -565,6 +658,10 @@
     }
     @media (max-width: 760px) {
       .timeline-wrap { padding-inline: 0; }
+      .archive-hero__mosaic {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+      }
       .archive-hero__counter {
         width: 100%;
       }
@@ -591,6 +688,14 @@
         justify-content: flex-start;
         gap: .6rem;
       }
+      .timeline-year::before,
+      .timeline-year::after {
+        flex-basis: 18px;
+      }
+    }
+    @keyframes blink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
     }
   </style>
 </head>
@@ -680,20 +785,23 @@
 
   <div class="page-hero section--dark">
     <div class="container page-hero-inner archive-hero">
-      <span class="eyebrow">Anniversary Archive</span>
-      <h1 class="display-title">One Year. One Mission.</h1>
-      <div class="bar"></div>
-      <p class="archive-hero__range">April 20, 2025 — April 20, 2026</p>
-      <p class="archive-hero__lede">One voice. One name. Every track counted. Every declaration preserved.</p>
-      <div class="archive-hero__counter" aria-label="Archive counter">
-        <span>96 releases detected.</span>
-        <span>71 in the archive.</span>
-        <span>One year.</span>
-        <span>One mission.</span>
-      </div>
-      <div class="archive-hero__actions">
-        <a href="index.html" class="timeline-link timeline-link--ghost">Back Home</a>
-        <a href="#timelineShell" class="timeline-link">Enter the Archive</a>
+      <div class="archive-hero__mosaic" id="archiveHeroMosaic" aria-hidden="true"></div>
+      <div class="archive-hero__inner">
+        <span class="eyebrow">Anniversary Archive</span>
+        <h1 class="display-title">One Year. One Mission.</h1>
+        <div class="bar"></div>
+        <p class="archive-hero__range">April 20, 2025 — April 20, 2026</p>
+        <p class="archive-hero__lede">One voice. One name. Every track counted. Every declaration preserved.</p>
+        <div class="archive-hero__counter" aria-label="Archive counter">
+          <span>96 releases detected.</span>
+          <span>71 in the archive.</span>
+          <span>One year.</span>
+          <span>One mission.</span>
+        </div>
+        <div class="archive-hero__actions">
+          <a href="index.html" class="timeline-link timeline-link--ghost">Back Home</a>
+          <a href="#timelineShell" class="timeline-link">Enter the Archive</a>
+        </div>
       </div>
     </div>
   </div>
@@ -742,6 +850,7 @@
   <script>
     const els = {
       banner: document.getElementById("timelineBanner"),
+      heroMosaic: document.getElementById("archiveHeroMosaic"),
       stream: document.getElementById("timelineStream"),
       status: document.getElementById("timelineStatus"),
       releaseCount: document.getElementById("releaseCount"),
@@ -849,13 +958,14 @@
     }
 
     function getSourcePill(event) {
-      if (event.videoType) return event.videoType;
-
       const title = normalizeText(event.title).toLowerCase();
+      const videoType = normalizeText(event.videoType);
+      if (videoType) return videoType;
       if (title.includes("lyric video")) return "Lyric Video";
       if (title.includes("official video")) return "Official Video";
       if (title.includes("official audio")) return "Official Audio";
       if (title.includes("live")) return "Live";
+      if (title.includes("album")) return "Album";
       return "Official Audio";
     }
 
@@ -882,26 +992,68 @@
       return videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : "";
     }
 
+    function populateHeroMosaic(events) {
+      if (!els.heroMosaic) return;
+      const thumbs = events
+        .filter((event) => event.sourceUrl && !isShortRelease(event))
+        .slice(0, 6)
+        .map((event) => getYouTubeThumbnailUrl(event.sourceUrl))
+        .filter(Boolean);
+
+      els.heroMosaic.innerHTML = "";
+      if (thumbs.length === 0) return;
+
+      while (thumbs.length < 6) {
+        thumbs.push(thumbs[thumbs.length - 1]);
+      }
+
+      thumbs.slice(0, 6).forEach((src) => {
+        const tile = document.createElement("div");
+        tile.className = "archive-hero__mosaic-item";
+        tile.style.backgroundImage = `url("${src}")`;
+        els.heroMosaic.appendChild(tile);
+      });
+    }
+
     function buildThumbnail(event, altText) {
       const thumb = document.createElement("div");
       thumb.className = "timeline-card__thumb";
       const src = getYouTubeThumbnailUrl(event.sourceUrl);
       if (!src) return thumb;
 
+      const link = document.createElement("a");
+      link.className = "timeline-card__thumb-link";
+      link.href = event.sourceUrl;
+      link.target = "_blank";
+      link.rel = "noopener";
+      link.setAttribute("aria-label", `Watch ${event.title || "release"} on YouTube`);
+
       const img = document.createElement("img");
       img.loading = "lazy";
       img.decoding = "async";
       img.alt = altText;
       img.src = src;
-      thumb.appendChild(img);
+      link.appendChild(img);
+
+      const play = document.createElement("span");
+      play.className = "timeline-card__thumb-play";
+      play.setAttribute("aria-hidden", "true");
+      play.textContent = "▶";
+      link.appendChild(play);
+
+      thumb.appendChild(link);
       return thumb;
     }
 
     function getPillClass(pill, albumMode) {
-      if (albumMode) return "timeline-card__pill timeline-card__pill--album";
+      if (albumMode) return "timeline-card__pill timeline-card__pill--album timeline-card__pill--album-badge";
       const lowered = String(pill || "").toLowerCase();
-      if (lowered.includes("lyric")) return "timeline-card__pill timeline-card__pill--lyric";
-      if (lowered.includes("video")) return "timeline-card__pill timeline-card__pill--video";
+      if (lowered.includes("official video")) return "timeline-card__pill timeline-card__pill--official-video";
+      if (lowered.includes("lyric video")) return "timeline-card__pill timeline-card__pill--lyric-video";
+      if (lowered.includes("live")) return "timeline-card__pill timeline-card__pill--live";
+      if (lowered.includes("official audio")) return "timeline-card__pill timeline-card__pill--official-audio";
+      if (lowered.includes("album")) return "timeline-card__pill timeline-card__pill--album-badge";
+      if (lowered.includes("video")) return "timeline-card__pill timeline-card__pill--official-video";
       return "timeline-card__pill timeline-card__pill--audio";
     }
 
@@ -1161,7 +1313,10 @@
     function renderYearSeparator(year) {
       const separator = document.createElement("div");
       separator.className = "timeline-year";
-      separator.textContent = String(year);
+      const label = document.createElement("span");
+      label.className = "timeline-year__label";
+      label.textContent = String(year);
+      separator.appendChild(label);
       return separator;
     }
 
@@ -1180,6 +1335,8 @@
         const visibleEvents = events.filter((event) => !isShortRelease(event));
         const archiveEntries = buildArchiveEntries(events);
         const latest = archiveEntries[0] || null;
+
+        populateHeroMosaic(events);
 
         els.banner.classList.add("is-visible");
         els.shell.classList.add("is-anniversary-shell");

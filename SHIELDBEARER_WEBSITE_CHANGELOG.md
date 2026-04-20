@@ -72,3 +72,8 @@ Versioning note:
 ## v1.5.7 - April 2026
 - Removed Eagle’s Wrath Incoming! 🦅🔥 Operation Fire Begins from the archive timeline
 - Marked the short-form release record as excluded so the public archive stays clean
+
+## v1.5.8 - April 2026
+- Added YouTube thumbnails to archive cards for a more visual release story
+- Turned the hero into a blurred thumbnail collage for a cinematic first impression
+- Upgraded the year dividers, source pills, and mission stats styling for the anniversary page
