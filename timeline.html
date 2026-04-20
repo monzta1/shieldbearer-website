@@ -1098,7 +1098,7 @@
         if (archiveEntries.length === 0) {
           const empty = document.createElement("div");
           empty.className = "timeline-empty";
-          empty.textContent = "No release events are available yet. When docs/site.json carries an events array, the archive will render here automatically.";
+          empty.textContent = "No release events are available yet. When site.json is present at the GitHub Pages root, the archive will render here automatically.";
           els.stream.appendChild(empty);
         } else {
           let lastYear = null;
@@ -1141,7 +1141,7 @@
 
         const errorBox = document.createElement("div");
         errorBox.className = "timeline-empty";
-        errorBox.textContent = "Release timeline could not load. Make sure ./site.json is present in the GitHub Pages deploy artifact.";
+        errorBox.textContent = "Release timeline could not load. Make sure site.json is present at the GitHub Pages root.";
         els.stream.appendChild(errorBox);
       }
     }

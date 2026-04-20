@@ -1,0 +1,20 @@
+{
+  "generatedAt": "2026-04-19T00:00:00.000Z",
+  "source": "sentinelbot-event-consumer",
+  "homepage": {
+    "banner": {
+      "title": "Shieldbearer Release Archive",
+      "image": null,
+      "sourceUrl": "https://shieldbearerusa.com/timeline.html",
+      "activeReleaseId": "archive"
+    },
+    "lastUpdatedAt": "2026-04-19T00:00:00.000Z"
+  },
+  "release": {
+    "id": "archive",
+    "source": "website",
+    "publishedAt": "2026-04-19T00:00:00.000Z"
+  },
+  "events": [],
+  "releaseIndex": {}
+}

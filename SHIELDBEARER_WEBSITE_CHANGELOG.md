@@ -58,3 +58,8 @@ Versioning note:
 - Re-enabled the top-level Release Timeline navigation link site-wide
 - Upgraded the archive page into a one-year anniversary layout with album blocks and year chapters
 - Added the homepage archive CTA and restored timeline indexing in the sitemap
+
+## v1.5.5 - April 2026
+- Added a root-level `site.json` so the archive page fetch resolves on GitHub Pages
+- Kept the timeline page bound to the same root-relative fetch path
+- Aligned the live site asset location with the served Pages root
