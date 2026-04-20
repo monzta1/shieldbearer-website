@@ -208,12 +208,6 @@
       "publishedAt": "2025-08-11T13:37:12Z",
       "sourceUrl": "https://www.youtube.com/watch?v=zv70Ibp9Be0"
     },
-    "worth it all": {
-      "id": "JKAOgpWaNEY",
-      "title": "Worth It All",
-      "publishedAt": "2025-08-07T21:05:00Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=JKAOgpWaNEY"
-    },
     "shieldbearer worth it all official video": {
       "id": "BwWB95z6lKg",
       "title": "Shieldbearer – Worth It All (Official Video)",
@@ -1271,27 +1265,6 @@
       "albumUrl": "",
       "videoType": "",
       "excludeFromTimelineReason": "short-form"
-    },
-    {
-      "sourceUrl": "https://www.youtube.com/watch?v=JKAOgpWaNEY",
-      "processed": false,
-      "createdAt": "2026-04-19T02:19:55.769Z",
-      "publishedAt": "2025-08-07T21:05:00Z",
-      "sk": "releaseevent#youtube#JKAOgpWaNEY",
-      "id": "JKAOgpWaNEY",
-      "pk": "releaseevent#youtube#JKAOgpWaNEY",
-      "eventType": "new_content_detected",
-      "source": "youtube",
-      "title": "Worth It All",
-      "updatedAt": "2026-04-19T02:19:55.769Z",
-      "isShort": false,
-      "contentFormat": "full",
-      "excludeFromTimeline": false,
-      "shortMarker": "",
-      "albumId": "",
-      "albumTitle": "",
-      "albumUrl": "",
-      "videoType": ""
     },
     {
       "sourceUrl": "https://www.youtube.com/watch?v=BwWB95z6lKg",

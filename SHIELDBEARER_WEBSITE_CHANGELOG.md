@@ -82,3 +82,7 @@ Versioning note:
 - Added editorial notes and milestone badges to the anniversary archive entries
 - Tagged the five defining releases with story context in `site.json`
 - Kept the timeline visually rich while preserving the release archive structure
+
+## v1.5.10 - April 2026
+- Removed the short-form `Worth It All` entry from the archive timeline
+- Kept the official video release in the archive while excluding the stray short
