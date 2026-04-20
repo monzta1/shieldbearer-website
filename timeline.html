@@ -551,6 +551,27 @@
       letter-spacing: .2em;
       text-transform: uppercase;
     }
+    .timeline-card__milestone {
+      display: inline-block;
+      font-size: 10px;
+      font-family: 'Courier New', monospace;
+      color: #c9a84c;
+      border: 1px solid #c9a84c;
+      padding: 2px 6px;
+      letter-spacing: .12em;
+      margin: .55rem 0 .1rem;
+      width: fit-content;
+    }
+    .timeline-card__note {
+      font-size: 12px;
+      color: #c9a84c;
+      font-style: italic;
+      margin-top: 8px;
+      line-height: 1.5;
+      border-left: 2px solid #c9a84c;
+      padding-left: 8px;
+      opacity: 0.85;
+    }
     .timeline-card__period {
       margin: .3rem 0 0;
       font-size: .92rem;
@@ -911,7 +932,9 @@
         videoType: String(event?.videoType || event?.sourceType || "").trim(),
         isShort: event?.isShort === true,
         contentFormat: String(event?.contentFormat || "").trim(),
-        excludeFromTimeline: event?.excludeFromTimeline === true
+        excludeFromTimeline: event?.excludeFromTimeline === true,
+        note: String(event?.note || "").trim(),
+        milestone: event?.milestone === true
       };
     }
 
@@ -1088,6 +1111,18 @@
       dateChip.className = "timeline-card__date-chip";
       dateChip.textContent = formatDate(event.publishedAt);
 
+      const milestone = event.milestone ? document.createElement("span") : null;
+      if (milestone) {
+        milestone.className = "timeline-card__milestone";
+        milestone.textContent = "★ MILESTONE";
+      }
+
+      const note = event.note ? document.createElement("p") : null;
+      if (note) {
+        note.className = "timeline-card__note";
+        note.textContent = event.note;
+      }
+
       const meta = document.createElement("p");
       meta.className = "timeline-card__period";
       meta.textContent = "Released";
@@ -1114,6 +1149,8 @@
       card.appendChild(title);
       card.appendChild(pill);
       card.appendChild(dateChip);
+      if (milestone) card.appendChild(milestone);
+      if (note) card.appendChild(note);
       card.appendChild(meta);
       card.appendChild(links);
       return card;
@@ -1150,6 +1187,18 @@
       const dateChip = document.createElement("div");
       dateChip.className = "timeline-card__date-chip";
       dateChip.textContent = group.period;
+
+      const milestone = group.milestone ? document.createElement("span") : null;
+      if (milestone) {
+        milestone.className = "timeline-card__milestone";
+        milestone.textContent = "★ MILESTONE";
+      }
+
+      const note = group.note ? document.createElement("p") : null;
+      if (note) {
+        note.className = "timeline-card__note";
+        note.textContent = group.note;
+      }
 
       const meta = document.createElement("p");
       meta.className = "timeline-card__period";
@@ -1214,6 +1263,8 @@
       card.appendChild(pill);
       card.appendChild(title);
       card.appendChild(dateChip);
+      if (milestone) card.appendChild(milestone);
+      if (note) card.appendChild(note);
       card.appendChild(meta);
       card.appendChild(details);
       if (links.childElementCount) {
@@ -1256,6 +1307,10 @@
           if (!group.albumUrl && event.albumUrl) {
             group.albumUrl = event.albumUrl;
           }
+          if (!group.note && event.note) {
+            group.note = event.note;
+          }
+          group.milestone = group.milestone || event.milestone === true;
           group.sortDate = Math.max(group.sortDate, parseDate(event.publishedAt));
           return;
         }
@@ -1280,6 +1335,8 @@
           sortDate: group.sortDate,
           period: formatPeriod(first && first.publishedAt, last && last.publishedAt),
           albumUrl: group.albumUrl,
+          note: group.note || "",
+          milestone: group.milestone === true,
           isAnniversary: group.items.some((item) => {
             const date = new Date(item.publishedAt);
             return !Number.isNaN(date.getTime()) && isApril20Date(date);
@@ -1294,6 +1351,8 @@
         title: event.title,
         item: event,
         sortDate: parseDate(event.publishedAt),
+        note: event.note || "",
+        milestone: event.milestone === true,
         isAnniversary: (() => {
           const date = new Date(event.publishedAt);
           return !Number.isNaN(date.getTime()) && isApril20Date(date);

@@ -77,3 +77,8 @@ Versioning note:
 - Added YouTube thumbnails to archive cards for a more visual release story
 - Turned the hero into a blurred thumbnail collage for a cinematic first impression
 - Upgraded the year dividers, source pills, and mission stats styling for the anniversary page
+
+## v1.5.9 - April 2026
+- Added editorial notes and milestone badges to the anniversary archive entries
+- Tagged the five defining releases with story context in `site.json`
+- Kept the timeline visually rich while preserving the release archive structure
