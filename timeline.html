@@ -237,6 +237,21 @@
       flex-wrap: wrap;
       margin-top: 1rem;
     }
+    .timeline-card__embed {
+      margin-top: 16px;
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+    }
+    .timeline-card__embed iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 1px solid #222;
+    }
     .timeline-link {
       display: inline-flex;
       align-items: center;
@@ -374,6 +389,53 @@
       justify-content: center;
       margin-top: 1.1rem;
     }
+    .share-strip {
+      background: #0a0a0a;
+      padding: 28px 0;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    .share-strip__inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .share-strip__label {
+      font-family: 'Courier New', monospace;
+      font-size: 11px;
+      color: #444;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      margin: 0;
+      flex-shrink: 0;
+    }
+    .share-strip__buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .share-btn {
+      font-family: 'Courier New', monospace;
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 7px 14px;
+      border: 1px solid #333;
+      color: #888;
+      text-decoration: none;
+      transition: border-color .2s, color .2s;
+      cursor: pointer;
+      background: transparent;
+    }
+    .share-btn:hover {
+      border-color: #c9a84c;
+      color: #c9a84c;
+    }
+    .share-btn--facebook:hover { border-color: #4267B2; color: #4267B2; }
+    .share-btn--twitter:hover { border-color: #1DA1F2; color: #1DA1F2; }
     .achievements-section {
       background: #0d0d0d;
       padding: 80px 0;
@@ -977,6 +1039,27 @@
     </div>
   </div>
 
+  <section class="share-strip">
+    <div class="share-strip__inner container">
+      <p class="share-strip__label">SHARE THE ARCHIVE</p>
+      <div class="share-strip__buttons">
+        <a class="share-btn share-btn--facebook"
+          href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fshieldbearerusa.com%2Ftimeline.html"
+          target="_blank" rel="noopener">
+          Share on Facebook
+        </a>
+        <a class="share-btn share-btn--twitter"
+          href="https://twitter.com/intent/tweet?text=One%20year.%20One%20mission.%2096%20releases.%20The%20complete%20Shieldbearer%20archive%20is%20live.&url=https%3A%2F%2Fshieldbearerusa.com%2Ftimeline.html"
+          target="_blank" rel="noopener">
+          Share on X
+        </a>
+        <a class="share-btn share-btn--copy" onclick="navigator.clipboard.writeText('https://shieldbearerusa.com/timeline.html');this.textContent='Copied';setTimeout(()=>this.textContent='Copy Link',2000);return false;" href="#">
+          Copy Link
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- ACHIEVEMENTS-BLOCK-START -->
   <section class="achievements-section">
     <div class="achievements-inner container">
@@ -1391,6 +1474,21 @@
       if (note) card.appendChild(note);
       card.appendChild(meta);
       card.appendChild(links);
+      if (event.milestone && event.id) {
+        const embed = document.createElement("div");
+        embed.className = "timeline-card__embed";
+        const titleAttr = String(event.title || "").replace(/"/g, "&quot;");
+        embed.innerHTML = `
+          <iframe
+            src="https://www.youtube.com/embed/${event.id}?rel=0&modestbranding=1"
+            title="${titleAttr}"
+            frameborder="0"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>`;
+        card.appendChild(embed);
+      }
       return card;
     }
 
@@ -1507,6 +1605,21 @@
       card.appendChild(details);
       if (links.childElementCount) {
         card.appendChild(links);
+      }
+      if (group.milestone && group.items && group.items[0] && group.items[0].id) {
+        const embed = document.createElement("div");
+        embed.className = "timeline-card__embed";
+        const titleAttr = String(group.title || "").replace(/"/g, "&quot;");
+        embed.innerHTML = `
+          <iframe
+            src="https://www.youtube.com/embed/${group.items[0].id}?rel=0&modestbranding=1"
+            title="${titleAttr}"
+            frameborder="0"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>`;
+        card.appendChild(embed);
       }
 
       return card;

@@ -96,6 +96,10 @@ Versioning note:
 - Added the Ruach Spotify playlist directly below the Armory embed on the music page
 - Kept the music page playlist section grouped and consistent with the site structure
 
+## v1.5.13 - April 2026
+- Added archive share buttons for Facebook, X, and copy-link sharing
+- Added milestone YouTube embeds to highlighted release cards on the timeline
+
 ## v1.5.9 - April 2026
 - Added editorial notes and milestone badges to the anniversary archive entries
 - Tagged the five defining releases with story context in `site.json`
