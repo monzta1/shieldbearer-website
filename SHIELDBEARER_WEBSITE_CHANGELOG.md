@@ -68,3 +68,7 @@ Versioning note:
 - Excluded short-form archive noise from the timeline feed
 - Flagged livestreams and subscriber-count live posts so they stay out of the public archive
 - Kept the anniversary archive focused on actual releases only
+
+## v1.5.7 - April 2026
+- Removed Eagle’s Wrath Incoming! 🦅🔥 Operation Fire Begins from the archive timeline
+- Marked the short-form release record as excluded so the public archive stays clean

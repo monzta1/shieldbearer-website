@@ -1998,14 +1998,15 @@
       "source": "youtube",
       "title": "Eagle’s Wrath Incoming! 🦅🔥 Operation Fire Begins",
       "updatedAt": "2026-04-19T02:19:57.089Z",
-      "isShort": false,
-      "contentFormat": "full",
-      "excludeFromTimeline": false,
-      "shortMarker": "",
+      "isShort": true,
+      "contentFormat": "short",
+      "excludeFromTimeline": true,
+      "shortMarker": "manual-review",
       "albumId": "",
       "albumTitle": "",
       "albumUrl": "",
-      "videoType": ""
+      "videoType": "",
+      "excludeFromTimelineReason": "short-form"
     },
     {
       "sourceUrl": "https://www.youtube.com/watch?v=9FHgbbVBT1A",
