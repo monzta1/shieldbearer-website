@@ -374,6 +374,56 @@
       border-color: rgba(255,255,255,.1);
       background: rgba(255,255,255,.035);
       box-shadow: 0 0 0 1px rgba(255,255,255,.02) inset;
+      overflow: hidden;
+    }
+    .timeline-card__thumb {
+      position: relative;
+      margin: -1rem -1.05rem 1rem;
+      overflow: hidden;
+      background: #090909;
+      aspect-ratio: 16 / 9;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .timeline-card__thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1);
+      transition: transform .45s ease, filter .35s ease;
+      filter: saturate(.94) contrast(1.02);
+    }
+    .timeline-card__thumb::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,.02) 42%, rgba(0,0,0,.28) 70%, rgba(13,13,13,.94) 100%);
+      pointer-events: none;
+    }
+    .timeline-card__thumb::before {
+      content: '';
+      position: absolute;
+      inset: 50% auto auto 50%;
+      width: 3.2rem;
+      height: 3.2rem;
+      transform: translate(-50%, -50%);
+      background: rgba(192,57,43,.26);
+      clip-path: polygon(28% 20%, 28% 80%, 80% 50%);
+      box-shadow: 0 0 18px rgba(192,57,43,.16);
+      z-index: 1;
+      opacity: .82;
+      transition: opacity .25s ease, transform .25s ease, background .25s ease, box-shadow .25s ease;
+    }
+    .timeline-card:hover .timeline-card__thumb img,
+    .timeline-card:focus-within .timeline-card__thumb img {
+      transform: scale(1.03);
+    }
+    .timeline-card:hover .timeline-card__thumb::before,
+    .timeline-card:focus-within .timeline-card__thumb::before {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1.06);
+      background: rgba(231,76,60,.42);
+      box-shadow: 0 0 22px rgba(231,76,60,.22);
     }
     .timeline-card__pill {
       display: inline-flex;
@@ -486,6 +536,9 @@
         radial-gradient(circle at 0 0, rgba(201,168,76,.09), transparent 36%),
         rgba(12,12,12,.98);
       box-shadow: 0 0 0 1px rgba(201,168,76,.08) inset, 0 22px 42px rgba(0,0,0,.3);
+    }
+    .timeline-card--album .timeline-card__thumb {
+      margin-bottom: 1rem;
     }
     .timeline-card--album .timeline-card__title {
       color: #f8e8bd;
@@ -806,6 +859,44 @@
       return "Official Audio";
     }
 
+    function getYouTubeVideoId(url) {
+      const value = String(url || "").trim();
+      if (!value) return "";
+      try {
+        const parsed = new URL(value);
+        if (parsed.hostname.includes("youtu.be")) {
+          return parsed.pathname.replace(/^\/+/, "").split("/")[0] || "";
+        }
+        if (parsed.hostname.includes("youtube.com")) {
+          return parsed.searchParams.get("v") || "";
+        }
+      } catch {
+        // fall through
+      }
+      const match = value.match(/[?&]v=([A-Za-z0-9_-]{6,})/) || value.match(/youtu\.be\/([A-Za-z0-9_-]{6,})/);
+      return match ? match[1] : "";
+    }
+
+    function getYouTubeThumbnailUrl(url) {
+      const videoId = getYouTubeVideoId(url);
+      return videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : "";
+    }
+
+    function buildThumbnail(event, altText) {
+      const thumb = document.createElement("div");
+      thumb.className = "timeline-card__thumb";
+      const src = getYouTubeThumbnailUrl(event.sourceUrl);
+      if (!src) return thumb;
+
+      const img = document.createElement("img");
+      img.loading = "lazy";
+      img.decoding = "async";
+      img.alt = altText;
+      img.src = src;
+      thumb.appendChild(img);
+      return thumb;
+    }
+
     function getPillClass(pill, albumMode) {
       if (albumMode) return "timeline-card__pill timeline-card__pill--album";
       const lowered = String(pill || "").toLowerCase();
@@ -819,6 +910,8 @@
       card.className = "timeline-card";
       if (index === 0) card.classList.add("is-latest");
       if (anniversaryHit) card.classList.add("is-anniversary");
+
+      card.appendChild(buildThumbnail(event, `${event.title} thumbnail`));
 
       const eyebrow = document.createElement("p");
       eyebrow.className = "timeline-card__eyebrow";
@@ -879,6 +972,9 @@
       card.className = "timeline-card timeline-card--album";
       if (index === 0) card.classList.add("is-latest");
       if (anniversaryHit) card.classList.add("is-anniversary");
+
+      const albumThumbEvent = group.items[0] || {};
+      card.appendChild(buildThumbnail(albumThumbEvent, `${group.title} album thumbnail`));
 
       const eyebrow = document.createElement("p");
       eyebrow.className = "timeline-card__eyebrow";
