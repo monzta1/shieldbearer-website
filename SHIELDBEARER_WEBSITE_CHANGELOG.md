@@ -53,3 +53,8 @@ Versioning note:
 - Temporarily removed the Release Timeline UI entry from the public navigation
 - Removed the homepage timeline CTA and sitemap reference
 - Left the timeline data pipeline and hidden route intact for backend continuity
+
+## v1.5.4 - April 2026
+- Re-enabled the top-level Release Timeline navigation link site-wide
+- Upgraded the archive page into a one-year anniversary layout with album blocks and year chapters
+- Added the homepage archive CTA and restored timeline indexing in the sitemap

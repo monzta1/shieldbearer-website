@@ -12,6 +12,55 @@
     }
   }
 
+  /* ── TIMELINE NAV LINK ── */
+  function addTimelineNavLink() {
+    var timelineHref = 'timeline.html';
+    var timelineLabel = 'Release Timeline';
+
+    var desktopNav = document.querySelector('.nav-links');
+    if (desktopNav && !desktopNav.querySelector('a[href="' + timelineHref + '"]')) {
+      var musicItem = desktopNav.querySelector('li.nav-dropdown > a[href="music.html"]');
+      var desktopItem = document.createElement('li');
+      var desktopLink = document.createElement('a');
+
+      desktopItem.className = 'nav-timeline';
+      desktopLink.href = timelineHref;
+      desktopLink.textContent = timelineLabel;
+      desktopItem.appendChild(desktopLink);
+
+      if (musicItem && musicItem.parentElement && musicItem.parentElement.nextElementSibling) {
+        musicItem.parentElement.insertAdjacentElement('afterend', desktopItem);
+      } else if (musicItem && musicItem.parentElement) {
+        musicItem.parentElement.insertAdjacentElement('afterend', desktopItem);
+      } else if (desktopNav.children.length > 1) {
+        desktopNav.insertBefore(desktopItem, desktopNav.children[1]);
+      } else {
+        desktopNav.appendChild(desktopItem);
+      }
+    }
+
+    var mobileNav = document.getElementById('mobMenu');
+    if (mobileNav && !mobileNav.querySelector('a[href="' + timelineHref + '"]')) {
+      var mobileMusic = mobileNav.querySelector('a[href="music.html"]');
+      var mobileLink = document.createElement('a');
+      mobileLink.href = timelineHref;
+      mobileLink.textContent = timelineLabel;
+
+      if (mobileMusic) {
+        mobileMusic.insertAdjacentElement('afterend', mobileLink);
+      } else {
+        var mobClose = mobileNav.querySelector('.mob-close');
+        if (mobClose && mobClose.nextSibling) {
+          mobClose.insertAdjacentElement('afterend', mobileLink);
+        } else {
+          mobileNav.appendChild(mobileLink);
+        }
+      }
+    }
+  }
+
+  addTimelineNavLink();
+
   /* ── NAV SCROLL STATE ── */
   var nav = document.querySelector('.site-nav');
   if (nav) {

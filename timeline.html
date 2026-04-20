@@ -12,17 +12,17 @@
   <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Release Timeline | Shieldbearer</title>
-  <meta name="description" content="A cinematic release timeline for Shieldbearer, built from the live site.json artifact.">
-  <meta property="og:title" content="Release Timeline | Shieldbearer" />
-  <meta property="og:description" content="Newest Shieldbearer releases first, rendered from live site data." />
+  <title>One Year | Shieldbearer Release Archive</title>
+  <meta name="description" content="A cinematic one-year release archive for Shieldbearer, built exclusively from the live site.json artifact.">
+  <meta property="og:title" content="One Year | Shieldbearer Release Archive" />
+  <meta property="og:description" content="A dark, cinematic archive of Shieldbearer releases rendered from live site data." />
   <meta property="og:image" content="https://shieldbearerusa.com/images/galilean-art.png" />
   <meta property="og:url" content="https://shieldbearerusa.com/timeline.html" />
   <meta property="og:type" content="website" />
   <link rel="canonical" href="https://shieldbearerusa.com/timeline.html" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Release Timeline | Shieldbearer" />
-  <meta name="twitter:description" content="Newest Shieldbearer releases first, rendered from live site data." />
+  <meta name="twitter:title" content="One Year | Shieldbearer Release Archive" />
+  <meta name="twitter:description" content="A dark, cinematic archive of Shieldbearer releases rendered from live site data." />
   <meta name="twitter:image" content="https://shieldbearerusa.com/images/galilean-art.png" />
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
@@ -253,12 +253,291 @@
       color: rgba(240,235,224,.72);
       line-height: 1.8;
     }
+    .archive-hero {
+      max-width: 980px;
+    }
+    .archive-hero__range {
+      margin: .2rem 0 .35rem;
+      font-family: var(--font-head);
+      font-size: .92rem;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: rgba(201,168,76,.9);
+    }
+    .archive-hero__lede {
+      margin: 0 auto;
+      max-width: 760px;
+      font-size: 1.02rem;
+      line-height: 1.8;
+      color: rgba(240,235,224,.84);
+    }
+    .archive-hero__counter {
+      width: min(420px, 100%);
+      margin: 1.5rem auto 1.1rem;
+      padding: .9rem 1rem;
+      border: 1px solid rgba(201,168,76,.18);
+      background: rgba(255,255,255,.03);
+      box-shadow: 0 18px 34px rgba(0,0,0,.22);
+      display: grid;
+      gap: .35rem;
+      text-align: left;
+    }
+    .archive-hero__counter span {
+      display: block;
+      font-family: var(--font-head);
+      font-size: .82rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.92);
+    }
+    .archive-hero__counter span:first-child {
+      color: #fff;
+    }
+    .archive-hero__actions {
+      display: flex;
+      gap: .8rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 1.1rem;
+    }
+    .timeline-link--ghost {
+      background: rgba(255,255,255,.02);
+      border-color: rgba(255,255,255,.12);
+    }
+    .timeline-link--ghost:hover {
+      background: rgba(255,255,255,.05);
+      border-color: rgba(201,168,76,.32);
+    }
+    .timeline-year {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .9rem;
+      margin: .65rem 0 .9rem;
+      padding: .65rem 0;
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 3vw, 2.25rem);
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.92);
+    }
+    .timeline-year::before,
+    .timeline-year::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(201,168,76,.54));
+    }
+    .timeline-year::after {
+      background: linear-gradient(to left, transparent, rgba(201,168,76,.54));
+    }
+    .timeline-stream {
+      padding-left: 0;
+      display: grid;
+      gap: 1rem;
+    }
+    .timeline-stream::before {
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      background: linear-gradient(to bottom, rgba(201,168,76,.72), rgba(201,168,76,.2), transparent);
+    }
+    .timeline-node {
+      grid-template-columns: minmax(0, 1fr) 34px minmax(0, 1fr);
+      gap: 0 1rem;
+      align-items: start;
+    }
+    .timeline-node__dot {
+      grid-column: 2;
+      justify-self: center;
+      margin-top: 1.2rem;
+      width: 30px;
+      height: 30px;
+      border-color: rgba(201,168,76,.54);
+      background: rgba(201,168,76,.12);
+      box-shadow: 0 0 18px rgba(201,168,76,.12);
+    }
+    .timeline-node__dot::after {
+      background: rgba(201,168,76,.88);
+    }
+    .timeline-node__content {
+      grid-column: 1;
+      justify-self: end;
+      width: min(100%, 520px);
+    }
+    .timeline-node--right .timeline-node__content {
+      grid-column: 3;
+      justify-self: start;
+    }
+    .timeline-card {
+      border-color: rgba(255,255,255,.1);
+      background: rgba(255,255,255,.035);
+      box-shadow: 0 0 0 1px rgba(255,255,255,.02) inset;
+    }
+    .timeline-card__pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 30px;
+      padding: .24rem .6rem;
+      margin-bottom: .65rem;
+      border: 1px solid rgba(255,255,255,.14);
+      background: #1a1a1a;
+      color: rgba(240,235,224,.86);
+      font-family: var(--font-head);
+      font-size: .62rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+    .timeline-card__pill--audio { border-color: rgba(201,168,76,.32); }
+    .timeline-card__pill--lyric { border-color: rgba(231,76,60,.34); }
+    .timeline-card__pill--video { border-color: rgba(124,255,234,.3); }
+    .timeline-card__pill--album { border-color: rgba(201,168,76,.42); color: #f7e7bc; }
+    .timeline-card__date-chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 30px;
+      padding: .24rem .6rem;
+      border: 1px solid rgba(255,255,255,.08);
+      background: #333;
+      color: #888;
+      font-family: var(--font-head);
+      font-size: .62rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+    .timeline-card__period {
+      margin: .3rem 0 0;
+      font-size: .92rem;
+      color: rgba(240,235,224,.72);
+    }
+    .timeline-card__details {
+      margin-top: 1rem;
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: .85rem;
+    }
+    .timeline-card__details summary {
+      cursor: pointer;
+      list-style: none;
+      font-family: var(--font-head);
+      font-size: .72rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.84);
+    }
+    .timeline-card__details summary::-webkit-details-marker {
+      display: none;
+    }
+    .timeline-card__tracklist {
+      margin: .95rem 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: .7rem;
+    }
+    .timeline-card__track {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: .5rem 1rem;
+      padding-bottom: .7rem;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .timeline-card__track:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+    .timeline-card__track-title {
+      margin: 0;
+      color: #fff;
+      line-height: 1.5;
+    }
+    .timeline-card__track-meta {
+      margin: 0;
+      font-family: var(--font-head);
+      font-size: .64rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: rgba(240,235,224,.56);
+    }
+    .timeline-card__track-link {
+      justify-self: start;
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: .55rem .8rem;
+      border: 1px solid rgba(255,255,255,.12);
+      color: rgba(255,255,255,.92);
+      font-family: var(--font-head);
+      font-size: .64rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      background: rgba(255,255,255,.03);
+    }
+    .timeline-card__track-link:hover {
+      border-color: rgba(201,168,76,.32);
+      background: rgba(201,168,76,.08);
+    }
+    .timeline-card--album {
+      border-color: rgba(201,168,76,.2);
+      background:
+        radial-gradient(circle at 0 0, rgba(201,168,76,.09), transparent 36%),
+        rgba(12,12,12,.98);
+      box-shadow: 0 0 0 1px rgba(201,168,76,.08) inset, 0 22px 42px rgba(0,0,0,.3);
+    }
+    .timeline-card--album .timeline-card__title {
+      color: #f8e8bd;
+    }
+    .timeline-card--album .timeline-card__eyebrow {
+      color: rgba(201,168,76,.72);
+    }
+    .timeline-card.is-latest {
+      border-color: rgba(0,255,65,.3);
+      box-shadow: 0 0 0 1px rgba(0,255,65,.08) inset, 0 0 40px rgba(0,255,65,.14);
+    }
+    .timeline-card.is-anniversary {
+      border-color: rgba(201,168,76,.38);
+      box-shadow: 0 0 0 1px rgba(201,168,76,.08) inset, 0 0 40px rgba(201,168,76,.12);
+    }
+    .timeline-footer-note {
+      margin: 1.25rem auto 0;
+      text-align: center;
+      font-family: var(--font-head);
+      font-size: .74rem;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: rgba(240,235,224,.62);
+    }
     @media (max-width: 760px) {
       .timeline-wrap { padding-inline: 0; }
+      .archive-hero__counter {
+        width: 100%;
+      }
       .timeline-summary { grid-template-columns: 1fr; }
       .timeline-stream { padding-left: 0; }
-      .timeline-stream::before { left: 13px; }
-      .timeline-node { grid-template-columns: 26px minmax(0, 1fr); }
+      .timeline-stream::before { left: 13px; transform: none; }
+      .timeline-node {
+        grid-template-columns: 26px minmax(0, 1fr);
+        gap: 0 .85rem;
+      }
+      .timeline-node__dot {
+        grid-column: 1;
+        margin-top: 1rem;
+        width: 26px;
+        height: 26px;
+      }
+      .timeline-node__content,
+      .timeline-node--right .timeline-node__content {
+        grid-column: 2;
+        justify-self: stretch;
+        width: auto;
+      }
+      .timeline-year {
+        justify-content: flex-start;
+        gap: .6rem;
+      }
     }
   </style>
 </head>
@@ -347,11 +626,22 @@
   </nav>
 
   <div class="page-hero section--dark">
-    <div class="container page-hero-inner">
-      <span class="eyebrow">From Shieldbearer</span>
-      <h1 class="display-title">Release Timeline</h1>
+    <div class="container page-hero-inner archive-hero">
+      <span class="eyebrow">Anniversary Archive</span>
+      <h1 class="display-title">One Year. One Mission.</h1>
       <div class="bar"></div>
-      <p>Newest releases first. Straight from the live site artifact. No backend needed. No drift. Just the record.</p>
+      <p class="archive-hero__range">April 20, 2025 — April 20, 2026</p>
+      <p class="archive-hero__lede">One voice. One name. Every track counted. Every declaration preserved.</p>
+      <div class="archive-hero__counter" aria-label="Archive counter">
+        <span>96 releases detected.</span>
+        <span>71 in the archive.</span>
+        <span>One year.</span>
+        <span>One mission.</span>
+      </div>
+      <div class="archive-hero__actions">
+        <a href="index.html" class="timeline-link timeline-link--ghost">Back Home</a>
+        <a href="#timelineShell" class="timeline-link">Enter the Archive</a>
+      </div>
     </div>
   </div>
 
@@ -359,11 +649,15 @@
     <div class="container">
       <div class="timeline-wrap">
         <div class="timeline-shell" id="timelineShell">
-          <div class="timeline-banner" id="timelineBanner">Shieldbearer 1 Year Anniversary</div>
+          <div class="timeline-banner is-visible" id="timelineBanner">Shieldbearer 1 Year Anniversary Archive</div>
           <div class="timeline-summary" aria-label="Release summary">
             <div class="timeline-summary__item">
-              <span class="timeline-summary__label">Releases</span>
+              <span class="timeline-summary__label">Detected</span>
               <div class="timeline-summary__value" id="releaseCount">Loading...</div>
+            </div>
+            <div class="timeline-summary__item">
+              <span class="timeline-summary__label">Archive</span>
+              <div class="timeline-summary__value" id="archiveCount">Loading...</div>
             </div>
             <div class="timeline-summary__item">
               <span class="timeline-summary__label">Latest</span>
@@ -379,6 +673,7 @@
           <div class="timeline-stream" id="timelineStream">
             <div class="timeline-empty">Loading release timeline...</div>
           </div>
+          <p class="timeline-footer-note" id="timelineNote">25 short-form posts excluded from this archive.</p>
         </div>
       </div>
     </div>
@@ -390,20 +685,35 @@
     </div>
   </footer>
 
+  <script src="js/main.js"></script>
   <script>
     const els = {
       banner: document.getElementById("timelineBanner"),
       stream: document.getElementById("timelineStream"),
       status: document.getElementById("timelineStatus"),
       releaseCount: document.getElementById("releaseCount"),
+      archiveCount: document.getElementById("archiveCount"),
       latestTitle: document.getElementById("latestTitle"),
       updatedAt: document.getElementById("updatedAt"),
-      shell: document.getElementById("timelineShell")
+      shell: document.getElementById("timelineShell"),
+      note: document.getElementById("timelineNote")
     };
 
     function showStatus(message) {
       els.status.textContent = message;
       els.status.classList.add("is-visible");
+    }
+
+    function normalizeText(value) {
+      return String(value || "").trim();
+    }
+
+    function normalizeKey(value) {
+      return normalizeText(value)
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
     }
 
     function formatDate(value) {
@@ -432,15 +742,83 @@
         id: String(event?.id || "").trim(),
         title: String(event?.title || event?.name || "Untitled release").trim(),
         publishedAt: String(event?.publishedAt || event?.date || event?.createdAt || "").trim(),
-        sourceUrl: String(event?.sourceUrl || event?.url || "").trim()
+        sourceUrl: String(event?.sourceUrl || event?.url || "").trim(),
+        albumId: String(event?.albumId || "").trim(),
+        albumTitle: String(event?.albumTitle || "").trim(),
+        albumUrl: String(event?.albumUrl || "").trim(),
+        videoType: String(event?.videoType || event?.sourceType || "").trim(),
+        isShort: event?.isShort === true,
+        contentFormat: String(event?.contentFormat || "").trim(),
+        excludeFromTimeline: event?.excludeFromTimeline === true
       };
     }
 
-    function buildTimelineCard(event, index, anniversaryMode, anniversaryHit) {
+    function normalizeTrackKey(title) {
+      return normalizeKey(
+        String(title || "")
+          .replace(/^shieldbearer\s*[–-]\s*/i, "")
+          .replace(/\s*\[[^\]]*\]\s*/g, " ")
+          .replace(/\s*https?:\/\/\S+/g, " ")
+      );
+    }
+
+    function isShortRelease(event) {
+      if (event.isShort || event.contentFormat === "short" || event.excludeFromTimeline) {
+        return true;
+      }
+
+      const title = normalizeText(event.title).toLowerCase();
+      if (title.includes("#shorts")) return true;
+      if (/\bshorts?\b/.test(title) && !title.includes("official audio") && !title.includes("official video") && !title.includes("lyric video")) {
+        return true;
+      }
+
+      return false;
+    }
+
+    function getAlbumKey(event) {
+      const direct = normalizeKey(event.albumId || event.albumTitle);
+      if (direct) {
+        return direct.replace(/\s+/g, "-");
+      }
+
+      const title = normalizeKey(event.title);
+      if (title.includes("lanterns")) return "lanterns";
+      if (title.includes("wretch like me")) return "a-wretch-like-me";
+      return "";
+    }
+
+    function getAlbumLabel(key, event) {
+      if (event.albumTitle) return event.albumTitle;
+      if (key === "lanterns") return "Lanterns";
+      if (key === "a-wretch-like-me") return "A Wretch Like Me";
+      return "Album";
+    }
+
+    function getSourcePill(event) {
+      if (event.videoType) return event.videoType;
+
+      const title = normalizeText(event.title).toLowerCase();
+      if (title.includes("lyric video")) return "Lyric Video";
+      if (title.includes("official video")) return "Official Video";
+      if (title.includes("official audio")) return "Official Audio";
+      if (title.includes("live")) return "Live";
+      return "Official Audio";
+    }
+
+    function getPillClass(pill, albumMode) {
+      if (albumMode) return "timeline-card__pill timeline-card__pill--album";
+      const lowered = String(pill || "").toLowerCase();
+      if (lowered.includes("lyric")) return "timeline-card__pill timeline-card__pill--lyric";
+      if (lowered.includes("video")) return "timeline-card__pill timeline-card__pill--video";
+      return "timeline-card__pill timeline-card__pill--audio";
+    }
+
+    function buildSingleCard(event, index, anniversaryHit) {
       const card = document.createElement("article");
       card.className = "timeline-card";
       if (index === 0) card.classList.add("is-latest");
-      if (anniversaryMode && anniversaryHit) card.classList.add("is-anniversary");
+      if (anniversaryHit) card.classList.add("is-anniversary");
 
       const eyebrow = document.createElement("p");
       eyebrow.className = "timeline-card__eyebrow";
@@ -457,9 +835,17 @@
       title.className = "timeline-card__title";
       title.textContent = event.title;
 
+      const pill = document.createElement("div");
+      pill.className = getPillClass(getSourcePill(event), false);
+      pill.textContent = getSourcePill(event);
+
+      const dateChip = document.createElement("div");
+      dateChip.className = "timeline-card__date-chip";
+      dateChip.textContent = formatDate(event.publishedAt);
+
       const meta = document.createElement("p");
-      meta.className = "timeline-card__meta";
-      meta.textContent = `Released ${formatDate(event.publishedAt)}`;
+      meta.className = "timeline-card__period";
+      meta.textContent = "Released";
 
       const links = document.createElement("div");
       links.className = "timeline-card__links";
@@ -481,9 +867,206 @@
 
       card.appendChild(eyebrow);
       card.appendChild(title);
+      card.appendChild(pill);
+      card.appendChild(dateChip);
       card.appendChild(meta);
       card.appendChild(links);
       return card;
+    }
+
+    function buildAlbumCard(group, index, anniversaryHit) {
+      const card = document.createElement("article");
+      card.className = "timeline-card timeline-card--album";
+      if (index === 0) card.classList.add("is-latest");
+      if (anniversaryHit) card.classList.add("is-anniversary");
+
+      const eyebrow = document.createElement("p");
+      eyebrow.className = "timeline-card__eyebrow";
+      eyebrow.textContent = index === 0 ? "Latest Archive Block" : `Album Block ${index + 1}`;
+
+      if (anniversaryHit) {
+        const badge = document.createElement("div");
+        badge.className = "timeline-card__badge";
+        badge.textContent = "Anniversary Release";
+        card.appendChild(badge);
+      }
+
+      const pill = document.createElement("div");
+      pill.className = getPillClass("Album", true);
+      pill.textContent = "Album";
+
+      const title = document.createElement("h2");
+      title.className = "timeline-card__title";
+      title.textContent = group.title;
+
+      const dateChip = document.createElement("div");
+      dateChip.className = "timeline-card__date-chip";
+      dateChip.textContent = group.period;
+
+      const meta = document.createElement("p");
+      meta.className = "timeline-card__period";
+      meta.textContent = `${group.trackCount} tracks`;
+
+      const details = document.createElement("details");
+      details.className = "timeline-card__details";
+
+      const summary = document.createElement("summary");
+      summary.textContent = "Tracklist";
+
+      const tracklist = document.createElement("ol");
+      tracklist.className = "timeline-card__tracklist";
+
+      group.items.forEach((track) => {
+        const li = document.createElement("li");
+        li.className = "timeline-card__track";
+
+        const titleWrap = document.createElement("div");
+        const trackTitle = document.createElement("p");
+        trackTitle.className = "timeline-card__track-title";
+        trackTitle.textContent = track.title;
+
+        const trackMeta = document.createElement("p");
+        trackMeta.className = "timeline-card__track-meta";
+        trackMeta.textContent = formatDate(track.publishedAt);
+
+        titleWrap.appendChild(trackTitle);
+        titleWrap.appendChild(trackMeta);
+        li.appendChild(titleWrap);
+
+        if (track.sourceUrl) {
+          const trackLink = document.createElement("a");
+          trackLink.className = "timeline-card__track-link";
+          trackLink.href = track.sourceUrl;
+          trackLink.target = "_blank";
+          trackLink.rel = "noopener";
+          trackLink.textContent = "Watch";
+          li.appendChild(trackLink);
+        }
+
+        tracklist.appendChild(li);
+      });
+
+      details.appendChild(summary);
+      details.appendChild(tracklist);
+
+      const links = document.createElement("div");
+      links.className = "timeline-card__links";
+      const albumHref = group.albumUrl || (group.items[0] && group.items[0].sourceUrl) || "";
+      if (albumHref) {
+        const albumLink = document.createElement("a");
+        albumLink.className = "timeline-link";
+        albumLink.href = albumHref;
+        albumLink.target = "_blank";
+        albumLink.rel = "noopener";
+        albumLink.textContent = "Open Album";
+        links.appendChild(albumLink);
+      }
+
+      card.appendChild(eyebrow);
+      card.appendChild(pill);
+      card.appendChild(title);
+      card.appendChild(dateChip);
+      card.appendChild(meta);
+      card.appendChild(details);
+      if (links.childElementCount) {
+        card.appendChild(links);
+      }
+
+      return card;
+    }
+
+    function buildArchiveEntries(events) {
+      const groups = new Map();
+      const singles = [];
+      const seenSingles = new Set();
+
+      events.forEach((event) => {
+        if (isShortRelease(event)) {
+          return;
+        }
+
+        const albumKey = getAlbumKey(event);
+        if (albumKey) {
+          if (!groups.has(albumKey)) {
+            groups.set(albumKey, {
+              key: albumKey,
+              title: getAlbumLabel(albumKey, event),
+              items: [],
+              seen: new Set(),
+              sortDate: 0,
+              albumUrl: event.albumUrl || ""
+            });
+          }
+
+          const group = groups.get(albumKey);
+          const trackKey = normalizeTrackKey(event.title);
+          if (!group.seen.has(trackKey)) {
+            group.seen.add(trackKey);
+            group.items.push(event);
+          }
+
+          if (!group.albumUrl && event.albumUrl) {
+            group.albumUrl = event.albumUrl;
+          }
+          group.sortDate = Math.max(group.sortDate, parseDate(event.publishedAt));
+          return;
+        }
+
+        const singleKey = `${normalizeTrackKey(event.title)}|${event.publishedAt}`;
+        if (seenSingles.has(singleKey)) {
+          return;
+        }
+        seenSingles.add(singleKey);
+        singles.push(event);
+      });
+
+      const albumEntries = Array.from(groups.values()).map((group) => {
+        group.items.sort((a, b) => parseDate(a.publishedAt) - parseDate(b.publishedAt) || a.title.localeCompare(b.title));
+        const first = group.items[0] || null;
+        const last = group.items[group.items.length - 1] || null;
+        return {
+          type: "album",
+          title: group.title,
+          items: group.items,
+          trackCount: group.items.length,
+          sortDate: group.sortDate,
+          period: formatPeriod(first && first.publishedAt, last && last.publishedAt),
+          albumUrl: group.albumUrl,
+          isAnniversary: group.items.some((item) => {
+            const date = new Date(item.publishedAt);
+            return !Number.isNaN(date.getTime()) && isApril20Date(date);
+          })
+        };
+      });
+
+      singles.sort((a, b) => parseDate(b.publishedAt) - parseDate(a.publishedAt) || b.id.localeCompare(a.id));
+
+      const singleEntries = singles.map((event) => ({
+        type: "single",
+        title: event.title,
+        item: event,
+        sortDate: parseDate(event.publishedAt),
+        isAnniversary: (() => {
+          const date = new Date(event.publishedAt);
+          return !Number.isNaN(date.getTime()) && isApril20Date(date);
+        })()
+      }));
+
+      return [...albumEntries, ...singleEntries].sort((a, b) => b.sortDate - a.sortDate || a.title.localeCompare(b.title));
+    }
+
+    function formatPeriod(start, end) {
+      const startLabel = formatDate(start);
+      const endLabel = formatDate(end);
+      if (startLabel === endLabel) return startLabel;
+      return `${startLabel} — ${endLabel}`;
+    }
+
+    function renderYearSeparator(year) {
+      const separator = document.createElement("div");
+      separator.className = "timeline-year";
+      separator.textContent = String(year);
+      return separator;
     }
 
     async function loadTimeline() {
@@ -498,48 +1081,63 @@
         const events = rawEvents.map(normalizeEvent).filter((event) => event.id || event.title || event.publishedAt);
         events.sort((a, b) => parseDate(b.publishedAt) - parseDate(a.publishedAt) || b.id.localeCompare(a.id));
 
-        const latest = events[0] || null;
-        const anniversaryMode = events.some((event) => {
-          const date = new Date(event.publishedAt);
-          return !Number.isNaN(date.getTime()) && isApril20Date(date);
-        });
+        const visibleEvents = events.filter((event) => !isShortRelease(event));
+        const archiveEntries = buildArchiveEntries(events);
+        const latest = archiveEntries[0] || null;
 
-        if (anniversaryMode) {
-          els.banner.classList.add("is-visible");
-          els.shell.classList.add("is-anniversary-shell");
-        }
+        els.banner.classList.add("is-visible");
+        els.shell.classList.add("is-anniversary-shell");
 
         els.releaseCount.textContent = String(events.length);
+        els.archiveCount.textContent = String(visibleEvents.length);
         els.latestTitle.textContent = latest ? latest.title : "No releases";
         els.updatedAt.textContent = formatDate(site?.generatedAt || site?.homepage?.lastUpdatedAt || latest?.publishedAt || "");
         els.stream.innerHTML = "";
+        els.note.textContent = `${Math.max(0, events.length - visibleEvents.length)} short-form posts excluded from this archive.`;
 
-        if (events.length === 0) {
+        if (archiveEntries.length === 0) {
           const empty = document.createElement("div");
           empty.className = "timeline-empty";
-          empty.textContent = "No release events are available yet. When docs/site.json carries an events array, the timeline will render here automatically.";
+          empty.textContent = "No release events are available yet. When docs/site.json carries an events array, the archive will render here automatically.";
           els.stream.appendChild(empty);
         } else {
-          events.forEach((event, index) => {
-            const isAnniversaryHit = (() => {
-              if (!event.publishedAt) return false;
-              const date = new Date(event.publishedAt);
-              return !Number.isNaN(date.getTime()) && isApril20Date(date);
-            })();
+          let lastYear = null;
+          let releaseIndex = 0;
+          archiveEntries.forEach((entry) => {
+            const year = entry.sortDate ? new Date(entry.sortDate).getUTCFullYear() : null;
+            if (year && year !== lastYear) {
+              els.stream.appendChild(renderYearSeparator(year));
+              lastYear = year;
+            }
 
             const node = document.createElement("div");
             node.className = "timeline-node";
-            node.appendChild(document.createElement("div")).className = "timeline-node__dot";
-            node.appendChild(buildTimelineCard(event, index, anniversaryMode, isAnniversaryHit));
+            node.classList.add(releaseIndex % 2 === 0 ? "timeline-node--left" : "timeline-node--right");
+
+            const dot = document.createElement("div");
+            dot.className = "timeline-node__dot";
+            node.appendChild(dot);
+
+            const content = document.createElement("div");
+            content.className = "timeline-node__content";
+            if (entry.type === "album") {
+              content.appendChild(buildAlbumCard(entry, releaseIndex, entry.isAnniversary));
+            } else {
+              content.appendChild(buildSingleCard(entry.item, releaseIndex, entry.isAnniversary));
+            }
+            node.appendChild(content);
             els.stream.appendChild(node);
+            releaseIndex += 1;
           });
         }
       } catch (error) {
         showStatus(error.message);
         els.releaseCount.textContent = "Unavailable";
+        els.archiveCount.textContent = "Unavailable";
         els.latestTitle.textContent = "Unavailable";
         els.updatedAt.textContent = "Unavailable";
         els.stream.innerHTML = "";
+        els.note.textContent = "Short-form posts could not be evaluated.";
 
         const errorBox = document.createElement("div");
         errorBox.className = "timeline-empty";
