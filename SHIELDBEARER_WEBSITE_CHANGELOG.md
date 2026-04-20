@@ -92,6 +92,10 @@ Versioning note:
 - Added the shared SentinelBot assistant to the archive page so it matches the rest of the site
 - Kept the timeline page visually and behaviorally consistent with other Shieldbearer pages
 
+## v1.5.12 - April 2026
+- Added the Ruach Spotify playlist directly below the Armory embed on the music page
+- Kept the music page playlist section grouped and consistent with the site structure
+
 ## v1.5.9 - April 2026
 - Added editorial notes and milestone badges to the anniversary archive entries
 - Tagged the five defining releases with story context in `site.json`
