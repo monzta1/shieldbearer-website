@@ -83,6 +83,11 @@ Versioning note:
 - Updated the achievements section subtitle to include the merch store in the year-one story
 - Reflected the expanded achievement count in the anniversary hero stats
 
+## v1.5.10 - April 2026
+- Added a tenth Year One achievement for the 12,300 YouTube subscriber milestone
+- Updated the achievements section subtitle to include the subscriber milestone in the year-one story
+- Reflected the expanded achievement count in the anniversary hero stats
+
 ## v1.5.9 - April 2026
 - Added editorial notes and milestone badges to the anniversary archive entries
 - Tagged the five defining releases with story context in `site.json`
