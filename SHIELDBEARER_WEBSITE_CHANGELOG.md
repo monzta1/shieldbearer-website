@@ -88,6 +88,10 @@ Versioning note:
 - Updated the achievements section subtitle to include the subscriber milestone in the year-one story
 - Reflected the expanded achievement count in the anniversary hero stats
 
+## v1.5.11 - April 2026
+- Added the shared SentinelBot assistant to the archive page so it matches the rest of the site
+- Kept the timeline page visually and behaviorally consistent with other Shieldbearer pages
+
 ## v1.5.9 - April 2026
 - Added editorial notes and milestone badges to the anniversary archive entries
 - Tagged the five defining releases with story context in `site.json`
