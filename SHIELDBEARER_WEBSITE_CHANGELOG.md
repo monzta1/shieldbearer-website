@@ -63,3 +63,8 @@ Versioning note:
 - Added a root-level `site.json` so the archive page fetch resolves on GitHub Pages
 - Kept the timeline page bound to the same root-relative fetch path
 - Aligned the live site asset location with the served Pages root
+
+## v1.5.6 - April 2026
+- Excluded short-form archive noise from the timeline feed
+- Flagged livestreams and subscriber-count live posts so they stay out of the public archive
+- Kept the anniversary archive focused on actual releases only
