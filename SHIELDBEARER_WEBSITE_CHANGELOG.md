@@ -94,3 +94,7 @@ Versioning note:
 ## v1.5.12 - April 2026
 - Added a Year One achievements section above the release archive
 - Framed the archive with a mission-first summary before the catalog timeline begins
+
+## v1.5.13 - April 2026
+- Removed the incorrect "written in defence of Israel" note from the Celestial Shield archive entries for Slayer of the Grave and Prison Break
+- Kept the archive notes aligned with the actual release context
