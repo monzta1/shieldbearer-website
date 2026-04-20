@@ -79,6 +79,11 @@ Versioning note:
 - Upgraded the year dividers, source pills, and mission stats styling for the anniversary page
 
 ## v1.5.9 - April 2026
+- Added a ninth Year One achievement for the live merch store milestone
+- Updated the achievements section subtitle to include the merch store in the year-one story
+- Reflected the expanded achievement count in the anniversary hero stats
+
+## v1.5.9 - April 2026
 - Added editorial notes and milestone badges to the anniversary archive entries
 - Tagged the five defining releases with story context in `site.json`
 - Kept the timeline visually rich while preserving the release archive structure
