@@ -345,6 +345,77 @@
       justify-content: center;
       margin-top: 1.1rem;
     }
+    .achievements-section {
+      background: #0d0d0d;
+      padding: 80px 0;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    .achievements-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .achievements-heading {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(28px, 5vw, 48px);
+      color: #c9a84c;
+      letter-spacing: .15em;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+    .achievements-sub {
+      text-align: center;
+      color: #666;
+      font-size: 14px;
+      letter-spacing: .08em;
+      margin-bottom: 48px;
+      font-family: 'Courier New', monospace;
+    }
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .achievement-card {
+      background: #111;
+      border: 1px solid #222;
+      padding: 24px;
+      position: relative;
+    }
+    .achievement-card--highlight {
+      border-color: #c9a84c;
+      box-shadow: 0 0 20px rgba(201, 168, 76, 0.08);
+    }
+    .achievement-number {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 48px;
+      color: #1a1a1a;
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      line-height: 1;
+      user-select: none;
+    }
+    .achievement-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 18px;
+      color: #e0e0e0;
+      letter-spacing: .1em;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+    }
+    .achievement-card--highlight .achievement-title {
+      color: #c9a84c;
+    }
+    .achievement-desc {
+      font-size: 13px;
+      color: #888;
+      line-height: 1.65;
+      position: relative;
+      z-index: 1;
+    }
     .timeline-link--ghost {
       background: rgba(255,255,255,.02);
       border-color: rgba(255,255,255,.12);
@@ -826,6 +897,64 @@
       </div>
     </div>
   </div>
+
+  <!-- ACHIEVEMENTS-BLOCK-START -->
+  <section class="achievements-section">
+    <div class="achievements-inner container">
+      <h2 class="achievements-heading">YEAR ONE — WHAT WAS BUILT</h2>
+      <p class="achievements-sub">From zero to a full platform, catalog, and AI system in twelve months.</p>
+      <div class="achievements-grid">
+        <div class="achievement-card">
+          <span class="achievement-number">01</span>
+          <h3 class="achievement-title">Real Music Catalog</h3>
+          <p class="achievement-desc">Multiple completed and released tracks. Strong thematic consistency — Christ-centered, battle imagery, theology-driven. Not experiments. Finished, intentional songs.</p>
+        </div>
+
+        <div class="achievement-card">
+          <span class="achievement-number">02</span>
+          <h3 class="achievement-title">A Platform Most Artists Never Build</h3>
+          <p class="achievement-desc">Official website with embedded Spotify and YouTube players, lyrics and meanings, a FAQ that answers critics directly, a manifesto, press kit, merch store, and full analytics. Infrastructure. Not just a landing page.</p>
+        </div>
+
+        <div class="achievement-card achievement-card--highlight">
+          <span class="achievement-number">03</span>
+          <h3 class="achievement-title">SentinelBot — First of Its Kind</h3>
+          <p class="achievement-desc">A live AI system on the official website answering questions about song meanings, theology, lyrics, and the production process. Continuously improving. As far as we can tell, no band or artist has done this. Not one.</p>
+        </div>
+
+        <div class="achievement-card">
+          <span class="achievement-number">04</span>
+          <h3 class="achievement-title">A Position in the AI and Faith Debate</h3>
+          <p class="achievement-desc">Took a stance instead of staying neutral. Documented it publicly. Turned criticism into structured answers. Built a repeatable response system instead of arguing manually in comment threads.</p>
+        </div>
+
+        <div class="achievement-card">
+          <span class="achievement-number">05</span>
+          <h3 class="achievement-title">A Defined Identity</h3>
+          <p class="achievement-desc">Not vague. Not experimental. Consistent themes — spiritual warfare, Christ as victory, historical and modern parallels. A strong, recognizable voice that does not change based on who is watching.</p>
+        </div>
+
+        <div class="achievement-card">
+          <span class="achievement-number">06</span>
+          <h3 class="achievement-title">Releases With Meaning and Narrative</h3>
+          <p class="achievement-desc">Not random drops. Every release tied to Scripture, a theological position, or a specific moment in history. Building toward cohesive album experiences. Lanterns. A Wretch Like Me. Pahalgam. Celestial Shield.</p>
+        </div>
+
+        <div class="achievement-card achievement-card--highlight">
+          <span class="achievement-number">07</span>
+          <h3 class="achievement-title">An Ecosystem — Not Just Songs</h3>
+          <p class="achievement-desc">Music. Website. AI bot. Content library. Merch. Analytics. A system that runs while the artist makes music. That is not a hobby project. That is infrastructure built for a mission.</p>
+        </div>
+
+        <div class="achievement-card">
+          <span class="achievement-number">08</span>
+          <h3 class="achievement-title">Execution Speed</h3>
+          <p class="achievement-desc">Zero to full platform, catalog, and AI integration in twelve months. Most artists do not get past demos in that time. The system handles everything else. The artist makes music.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ACHIEVEMENTS-BLOCK-END -->
 
   <section class="section--darker">
     <div class="container">

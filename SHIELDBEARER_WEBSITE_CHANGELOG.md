@@ -90,3 +90,7 @@ Versioning note:
 ## v1.5.11 - April 2026
 - Removed the short-form `Silence In The Face Of Evil` entry from the archive timeline
 - Kept the archive focused on release-level entries instead of short-form clips
+
+## v1.5.12 - April 2026
+- Added a Year One achievements section above the release archive
+- Framed the archive with a mission-first summary before the catalog timeline begins
