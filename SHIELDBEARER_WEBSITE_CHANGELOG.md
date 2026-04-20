@@ -86,3 +86,7 @@ Versioning note:
 ## v1.5.10 - April 2026
 - Removed the short-form `Worth It All` entry from the archive timeline
 - Kept the official video release in the archive while excluding the stray short
+
+## v1.5.11 - April 2026
+- Removed the short-form `Silence In The Face Of Evil` entry from the archive timeline
+- Kept the archive focused on release-level entries instead of short-form clips

@@ -250,12 +250,6 @@
       "publishedAt": "2025-07-02T10:00:06Z",
       "sourceUrl": "https://www.youtube.com/watch?v=C4tXr2RSxPI"
     },
-    "silence in the face of evil shieldbearer shieldbearer": {
-      "id": "-G44grqk0Xo",
-      "title": "Silence In The Face Of Evil - (Shieldbearer) #shieldbearer",
-      "publishedAt": "2025-06-24T13:59:01Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=-G44grqk0Xo"
-    },
     "silence in the face of evil christian metal anthem tribute to bonhoeffer shieldbearer": {
       "id": "FXnl-yPO-OE",
       "title": "SILENCE IN THE FACE OF EVIL — Christian Metal Anthem | Tribute to Bonhoeffer | Shieldbearer",
@@ -1456,27 +1450,6 @@
       "source": "youtube",
       "title": "Still Be My Vision (A Modern Worship Hymn Inspired by “Be Thou My Vision”)",
       "updatedAt": "2026-04-19T02:19:56.109Z",
-      "isShort": false,
-      "contentFormat": "full",
-      "excludeFromTimeline": false,
-      "shortMarker": "",
-      "albumId": "",
-      "albumTitle": "",
-      "albumUrl": "",
-      "videoType": ""
-    },
-    {
-      "sourceUrl": "https://www.youtube.com/watch?v=-G44grqk0Xo",
-      "processed": false,
-      "createdAt": "2026-04-19T02:19:56.149Z",
-      "publishedAt": "2025-06-24T13:59:01Z",
-      "sk": "releaseevent#youtube#-G44grqk0Xo",
-      "id": "-G44grqk0Xo",
-      "pk": "releaseevent#youtube#-G44grqk0Xo",
-      "eventType": "new_content_detected",
-      "source": "youtube",
-      "title": "Silence In The Face Of Evil - (Shieldbearer) #shieldbearer",
-      "updatedAt": "2026-04-19T02:19:56.149Z",
       "isShort": false,
       "contentFormat": "full",
       "excludeFromTimeline": false,
