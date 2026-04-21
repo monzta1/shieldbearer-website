@@ -5,6 +5,7 @@ Versioning note:
 - Patch bumps track small site/admin/logging changes
 - Minor bumps track visible site features or broader UI additions
 - Major bumps track architecture-level changes
+- Always add the newest entry at the top of the file
 
 ## v1.0 - April 2026
 - Initial SentinelBot deployment on the Shieldbearer site
@@ -78,28 +79,6 @@ Versioning note:
 - Turned the hero into a blurred thumbnail collage for a cinematic first impression
 - Upgraded the year dividers, source pills, and mission stats styling for the anniversary page
 
-## v1.5.9 - April 2026
-- Added a ninth Year One achievement for the live merch store milestone
-- Updated the achievements section subtitle to include the merch store in the year-one story
-- Reflected the expanded achievement count in the anniversary hero stats
-
-## v1.5.10 - April 2026
-- Added a tenth Year One achievement for the 12,300 YouTube subscriber milestone
-- Updated the achievements section subtitle to include the subscriber milestone in the year-one story
-- Reflected the expanded achievement count in the anniversary hero stats
-
-## v1.5.11 - April 2026
-- Added the shared SentinelBot assistant to the archive page so it matches the rest of the site
-- Kept the timeline page visually and behaviorally consistent with other Shieldbearer pages
-
-## v1.5.12 - April 2026
-- Added the Ruach Spotify playlist directly below the Armory embed on the music page
-- Kept the music page playlist section grouped and consistent with the site structure
-
-## v1.5.13 - April 2026
-- Added archive share buttons for Facebook, X, and copy-link sharing
-- Added milestone YouTube embeds to highlighted release cards on the timeline
-
 ## v1.5.15 - April 2026
 - Added the shared SentinelBot launcher script to the SentinelBot page itself
 - Kept the page content and structure intact while restoring the site-wide assistant behavior
@@ -108,23 +87,24 @@ Versioning note:
 - Added a prominent Year One Release Archive link to the EPK
 - Broke the SentinelBot page into clearer sections for easier scanning without changing the wording
 
-## v1.5.9 - April 2026
-- Added editorial notes and milestone badges to the anniversary archive entries
-- Tagged the five defining releases with story context in `site.json`
-- Kept the timeline visually rich while preserving the release archive structure
-
-## v1.5.10 - April 2026
-- Removed the short-form `Worth It All` entry from the archive timeline
-- Kept the official video release in the archive while excluding the stray short
-
-## v1.5.11 - April 2026
-- Removed the short-form `Silence In The Face Of Evil` entry from the archive timeline
-- Kept the archive focused on release-level entries instead of short-form clips
+## v1.5.13 - April 2026
+- Added archive share buttons for Facebook, X, and copy-link sharing
+- Added milestone YouTube embeds to highlighted release cards on the timeline
 
 ## v1.5.12 - April 2026
-- Added a Year One achievements section above the release archive
-- Framed the archive with a mission-first summary before the catalog timeline begins
+- Added the Ruach Spotify playlist directly below the Armory embed on the music page
+- Kept the music page playlist section grouped and consistent with the site structure
 
-## v1.5.13 - April 2026
-- Removed the incorrect "written in defence of Israel" note from the Celestial Shield archive entries for Slayer of the Grave and Prison Break
-- Kept the archive notes aligned with the actual release context
+## v1.5.11 - April 2026
+- Added the shared SentinelBot assistant to the archive page so it matches the rest of the site
+- Kept the timeline page visually and behaviorally consistent with other Shieldbearer pages
+
+## v1.5.10 - April 2026
+- Added a tenth Year One achievement for the 12,300 YouTube subscriber milestone
+- Updated the achievements section subtitle to include the subscriber milestone in the year-one story
+- Reflected the expanded achievement count in the anniversary hero stats
+
+## v1.5.9 - April 2026
+- Added a ninth Year One achievement for the live merch store milestone
+- Updated the achievements section subtitle to include the merch store in the year-one story
+- Reflected the expanded achievement count in the anniversary hero stats
