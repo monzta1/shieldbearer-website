@@ -83,6 +83,7 @@
       border-radius: 20px;
       padding: 22px;
       overflow: auto;
+      display: none;
     }
     .signal-room {
       margin-top: 22px;
@@ -110,6 +111,28 @@
       margin: 0;
       color: var(--muted);
       font-size: .9rem;
+    }
+    .signal-room__live {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(243,239,230,.88);
+      font-family: var(--mono);
+      font-size: .72rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      opacity: .9;
+    }
+    .signal-room__live::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #7dff9b;
+      box-shadow: 0 0 0 0 rgba(125,255,155,.0);
+    }
+    .signal-room__live.is-pulsing::before {
+      animation: livePulse 1.1s ease-out;
     }
     .signal-room__controls {
       display: flex;
@@ -163,6 +186,25 @@
       border-radius: 16px;
       padding: 14px;
       min-height: 180px;
+      transition: transform .28s ease, border-color .28s ease, background .28s ease, box-shadow .28s ease;
+    }
+    .signal-room__lane--signal {
+      background:
+        linear-gradient(180deg, rgba(183,111,27,.12), rgba(0,0,0,.20)),
+        rgba(0,0,0,.24);
+      border-color: rgba(183,111,27,.22);
+    }
+    .signal-room__lane--incoming {
+      background:
+        linear-gradient(180deg, rgba(64,137,214,.12), rgba(0,0,0,.20)),
+        rgba(0,0,0,.24);
+      border-color: rgba(64,137,214,.22);
+    }
+    .signal-room__lane--released {
+      background:
+        linear-gradient(180deg, rgba(69,171,102,.10), rgba(0,0,0,.18)),
+        rgba(0,0,0,.24);
+      border-color: rgba(69,171,102,.18);
     }
     .signal-room__lane h3 {
       margin: 0 0 10px;
@@ -184,16 +226,42 @@
       position: relative;
       overflow: hidden;
       border: 1px solid rgba(255,255,255,.08);
-      border-radius: 14px;
-      padding: 12px;
-      background: rgba(255,255,255,.03);
+      border-radius: 16px;
+      padding: 14px 14px 12px;
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      box-shadow: 0 10px 28px rgba(0,0,0,.18);
+      transform: translateY(0);
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
+      cursor: pointer;
+    }
+    .song-row:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 34px rgba(0,0,0,.24);
+    }
+    .song-row--signal {
+      background:
+        linear-gradient(180deg, rgba(183,111,27,.14), rgba(255,255,255,.03)),
+        rgba(255,255,255,.02);
+      border-color: rgba(183,111,27,.22);
+    }
+    .song-row--incoming {
+      background:
+        linear-gradient(180deg, rgba(64,137,214,.14), rgba(255,255,255,.03)),
+        rgba(255,255,255,.02);
+      border-color: rgba(64,137,214,.22);
+    }
+    .song-row--released {
+      background:
+        linear-gradient(180deg, rgba(69,171,102,.12), rgba(255,255,255,.03)),
+        rgba(255,255,255,.02);
+      border-color: rgba(69,171,102,.20);
     }
     .song-row--hot {
-      border-color: rgba(231,76,60,.34);
-      box-shadow: 0 0 0 1px rgba(231,76,60,.12), 0 0 18px rgba(231,76,60,.12);
+      border-color: rgba(231,76,60,.42);
+      box-shadow: 0 0 0 1px rgba(231,76,60,.12), 0 0 24px rgba(231,76,60,.14);
     }
     .song-row.event-created {
-      animation: eventCreatedPulse 1.05s ease-out both;
+      animation: eventCreatedPulse .9s ease-out both;
     }
     .song-row.event-created::after {
       content: "";
@@ -201,10 +269,10 @@
       inset: -2px;
       border-radius: 14px;
       pointer-events: none;
-      animation: createdPulseRing 1.05s ease-out both;
+      animation: createdPulseRing .9s ease-out both;
     }
     .song-row.event-updated {
-      animation: eventUpdatedFlicker .95s ease-out both;
+      animation: eventUpdatedFlicker .85s ease-out both;
     }
     .song-row.event-updated::after {
       content: "";
@@ -212,10 +280,10 @@
       inset: -2px;
       border-radius: 14px;
       pointer-events: none;
-      animation: updatedFlickerRing .95s ease-out both;
+      animation: updatedFlickerRing .85s ease-out both;
     }
     .song-row.event-released {
-      animation: eventReleasedMove 1.1s ease-out both;
+      animation: eventReleasedMove 1s ease-out both;
     }
     .song-row.event-released::after {
       content: "";
@@ -223,32 +291,96 @@
       inset: -2px;
       border-radius: 14px;
       pointer-events: none;
-      animation: releasedGlow 1.1s ease-out both;
+      animation: releasedGlow 1s ease-out both;
+    }
+    .song-row.transition-signal-incoming {
+      animation: signalToIncoming .75s ease-out both;
+    }
+    .song-row.transition-signal-incoming::after {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      border-radius: 16px;
+      pointer-events: none;
+      animation: signalIncomingGlow .75s ease-out both;
+    }
+    .song-row.transition-incoming-released {
+      animation: incomingToReleased .82s ease-out both;
+    }
+    .song-row.transition-incoming-released::after {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      border-radius: 16px;
+      pointer-events: none;
+      animation: incomingReleasedGlow .82s ease-out both;
+    }
+    .song-row.transition-signal-released {
+      animation: signalToReleased .7s ease-out both;
+    }
+    .song-row.transition-signal-released::after {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      border-radius: 16px;
+      pointer-events: none;
+      animation: signalReleasedBurst .7s ease-out both;
     }
     .song-row__title {
       margin: 0;
-      font-size: .98rem;
-      font-weight: 600;
-      line-height: 1.35;
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.32;
+      letter-spacing: .01em;
+    }
+    .song-row__footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 10px;
+      margin-top: 10px;
     }
     .song-row__meta {
-      margin-top: 4px;
-      font-size: .8rem;
-      color: var(--muted);
+      font-size: .76rem;
+      color: rgba(243,239,230,.68);
       font-family: var(--mono);
       word-break: break-word;
     }
     .song-row__state {
       display: inline-block;
-      margin-top: 8px;
-      padding: 2px 8px;
+      padding: 3px 9px;
       border-radius: 999px;
-      font-size: .7rem;
-      letter-spacing: .12em;
+      font-size: .68rem;
+      letter-spacing: .16em;
       text-transform: uppercase;
       font-family: var(--mono);
-      background: rgba(231,76,60,.12);
-      color: #f3b6ad;
+      background: rgba(255,255,255,.08);
+      color: rgba(255,255,255,.84);
+    }
+    .song-row__timestamp {
+      font-size: .72rem;
+      color: rgba(243,239,230,.58);
+      font-family: var(--mono);
+      white-space: nowrap;
+      text-align: right;
+    }
+    .song-row__empty {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(243,239,230,.66);
+      font-size: .9rem;
+      min-height: 88px;
+    }
+    .song-row__empty::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: currentColor;
+      opacity: .55;
+      box-shadow: 0 0 0 0 rgba(255,255,255,.0);
+      animation: emptyPulse 1.4s ease-in-out infinite;
     }
     pre {
       margin: 0;
@@ -304,6 +436,45 @@
       45% { box-shadow: 0 0 0 12px rgba(90,220,120,.18), inset 0 0 0 1px rgba(90,220,120,.24); }
       100% { box-shadow: 0 0 0 0 rgba(90,220,120,0), inset 0 0 0 0 rgba(90,220,120,0); }
     }
+    @keyframes signalToIncoming {
+      0% { opacity: 0; transform: translateX(-8px) translateY(6px) scale(.985); }
+      55% { opacity: 1; transform: translateX(4px) translateY(-1px) scale(1.01); }
+      100% { opacity: 1; transform: translateX(0) translateY(0) scale(1); }
+    }
+    @keyframes signalIncomingGlow {
+      0% { box-shadow: 0 0 0 0 rgba(64,137,214,.0), inset 0 0 0 0 rgba(64,137,214,.0); }
+      40% { box-shadow: 0 0 0 11px rgba(64,137,214,.16), inset 0 0 0 1px rgba(64,137,214,.22); }
+      100% { box-shadow: 0 0 0 0 rgba(64,137,214,0), inset 0 0 0 0 rgba(64,137,214,0); }
+    }
+    @keyframes incomingToReleased {
+      0% { opacity: .2; transform: translateY(8px) scale(.98); filter: saturate(1.1); }
+      38% { opacity: 1; transform: translateY(-2px) scale(1.03); filter: saturate(1.15); }
+      100% { opacity: 1; transform: translateY(0) scale(1); filter: saturate(1); }
+    }
+    @keyframes incomingReleasedGlow {
+      0% { box-shadow: 0 0 0 0 rgba(69,171,102,.0), inset 0 0 0 0 rgba(69,171,102,.0); }
+      45% { box-shadow: 0 0 0 14px rgba(69,171,102,.18), inset 0 0 0 1px rgba(69,171,102,.24); }
+      100% { box-shadow: 0 0 0 0 rgba(69,171,102,0), inset 0 0 0 0 rgba(69,171,102,0); }
+    }
+    @keyframes signalToReleased {
+      0% { opacity: 0; transform: translateY(4px) scale(.975); }
+      25% { opacity: 1; transform: translateY(-3px) scale(1.04); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @keyframes signalReleasedBurst {
+      0% { box-shadow: 0 0 0 0 rgba(69,171,102,.0), inset 0 0 0 0 rgba(69,171,102,.0); }
+      25% { box-shadow: 0 0 0 16px rgba(69,171,102,.22), inset 0 0 0 1px rgba(69,171,102,.26); }
+      100% { box-shadow: 0 0 0 0 rgba(69,171,102,0), inset 0 0 0 0 rgba(69,171,102,0); }
+    }
+    @keyframes emptyPulse {
+      0%, 100% { transform: scale(1); opacity: .42; }
+      50% { transform: scale(1.15); opacity: .82; }
+    }
+    @keyframes livePulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(125,255,155,.42); }
+      70% { transform: scale(1.1); box-shadow: 0 0 0 12px rgba(125,255,155,0); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(125,255,155,0); }
+    }
     @media (max-width: 760px) {
       .wrap { padding-inline: 14px; }
       .hero { padding: 28px 18px; border-radius: 20px; }
@@ -344,8 +515,11 @@
 
       <section class="signal-room" id="signalRoom">
         <div class="signal-room__head">
-          <h2>Signal Room</h2>
-          <p>Event-driven grouping from the EventStream feed only.</p>
+          <div>
+            <h2>Signal Room</h2>
+            <p>Event-driven grouping from the EventStream feed only.</p>
+          </div>
+          <div class="signal-room__live" id="liveIndicator">Live</div>
         </div>
         <div class="signal-room__controls">
           <button type="button" id="playReplayBtn">Play Replay</button>
@@ -356,15 +530,15 @@
           </label>
         </div>
         <div class="signal-room__grid">
-          <section class="signal-room__lane">
+          <section class="signal-room__lane signal-room__lane--signal">
             <h3>In the Signal <span class="signal-room__count" id="signalCount">0</span></h3>
             <div class="song-list" id="signalList"></div>
           </section>
-          <section class="signal-room__lane">
+          <section class="signal-room__lane signal-room__lane--incoming">
             <h3>Incoming <span class="signal-room__count" id="incomingCount">0</span></h3>
             <div class="song-list" id="incomingList"></div>
           </section>
-          <section class="signal-room__lane">
+          <section class="signal-room__lane signal-room__lane--released">
             <h3>Released <span class="signal-room__count" id="releasedCount">0</span></h3>
             <div class="song-list" id="releasedList"></div>
           </section>
@@ -372,7 +546,7 @@
       </section>
 
       <div class="status" id="status"></div>
-      <div class="panel">
+      <div class="panel" id="debugPanel">
         <pre id="json">Loading event stream...</pre>
       </div>
       <div class="footer">
@@ -411,7 +585,9 @@
       resetReplayBtn: document.getElementById("resetReplayBtn"),
       replaySpeedMs: document.getElementById("replaySpeedMs"),
       json: document.getElementById("json"),
-      status: document.getElementById("status")
+      status: document.getElementById("status"),
+      debugPanel: document.getElementById("debugPanel"),
+      liveIndicator: document.getElementById("liveIndicator")
     };
 
     function createSignalState() {
@@ -424,6 +600,11 @@
     }
 
     function setStatus(message) {
+      if (!message) {
+        state.status.textContent = "";
+        state.status.style.display = "none";
+        return;
+      }
       state.status.textContent = message;
       state.status.style.display = "block";
     }
@@ -553,21 +734,54 @@
     }
 
     function getSongStatusLabel(phase) {
-      if (phase === "incoming") return "incoming";
-      if (phase === "released") return "released";
-      return "in the signal";
+      if (phase === "incoming") return "INCOMING";
+      if (phase === "released") return "RELEASED";
+      return "SIGNAL";
     }
 
     function getEmptyStateMessage(phase) {
-      if (phase === "signal") return "No songs yet";
-      if (phase === "incoming") return "Waiting for releases";
-      if (phase === "released") return "Nothing released yet";
-      return "No songs yet";
+      if (phase === "signal") return "Waiting for events...";
+      if (phase === "incoming") return "No incoming transitions yet...";
+      if (phase === "released") return "No releases yet";
+      return "Waiting for events...";
+    }
+
+    function pulseLiveIndicator() {
+      const el = state.liveIndicator;
+      if (!el) return;
+      el.classList.remove("is-pulsing");
+      void el.offsetWidth;
+      el.classList.add("is-pulsing");
+      window.setTimeout(() => el.classList.remove("is-pulsing"), 1150);
+    }
+
+    function getTransitionAnimation(previousPhase, nextPhase, eventType) {
+      if (eventType === "SONG_CREATED") {
+        return "event-created";
+      }
+      if (previousPhase === "signal" && nextPhase === "incoming") {
+        return "transition-signal-incoming";
+      }
+      if (previousPhase === "incoming" && nextPhase === "released") {
+        return "transition-incoming-released";
+      }
+      if (previousPhase === "signal" && nextPhase === "released") {
+        return "transition-signal-released";
+      }
+      if (eventType === "SONG_RELEASED") {
+        return "event-released";
+      }
+      if (eventType === "SONG_UPDATED") {
+        return "event-updated";
+      }
+      return "";
     }
 
     function renderSongRow(song, hotSongId) {
       const row = document.createElement("article");
       row.className = "song-row";
+      const phase = getSongPhase(song);
+      row.classList.add(`song-row--${phase}`);
       if (songIdOf(song) && songIdOf(song) === hotSongId) {
         row.classList.add("song-row--hot");
       }
@@ -579,17 +793,22 @@
       title.className = "song-row__title";
       title.textContent = song?.title || songIdOf(song) || "Untitled";
 
-      const meta = document.createElement("div");
-      meta.className = "song-row__meta";
-      meta.textContent = [songIdOf(song) || "unknown-song", song?.youtubeUrl || song?.sourceUrl || ""].filter(Boolean).join(" • ");
+      const footer = document.createElement("div");
+      footer.className = "song-row__footer";
 
       const badge = document.createElement("div");
       badge.className = "song-row__state";
-      badge.textContent = getSongStatusLabel(getSongPhase(song));
+      badge.textContent = getSongStatusLabel(phase);
+
+      const timestamp = document.createElement("div");
+      timestamp.className = "song-row__timestamp";
+      timestamp.textContent = song?.lastEventTimestamp || song?.timestamp || "";
+
+      footer.appendChild(badge);
+      footer.appendChild(timestamp);
 
       row.appendChild(title);
-      row.appendChild(meta);
-      row.appendChild(badge);
+      row.appendChild(footer);
       return row;
     }
 
@@ -650,6 +869,7 @@
         lastEventTimestamp: "",
         animationClass: ""
       };
+      const previousPhase = getSongPhase(previous);
 
       const next = { ...previous };
       if (event.title) next.title = event.title;
@@ -663,15 +883,13 @@
       if (event.eventType === "SONG_CREATED") {
         next.phase = "signal";
         next.released = false;
-        next.animationClass = animate ? "event-created" : "";
       } else if (event.eventType === "SONG_UPDATED") {
         next.phase = next.released ? "released" : "incoming";
-        next.animationClass = animate ? "event-updated" : "";
       } else if (event.eventType === "SONG_RELEASED") {
         next.phase = "released";
         next.released = true;
-        next.animationClass = animate ? "event-released" : "";
       }
+      next.animationClass = animate ? getTransitionAnimation(previousPhase, next.phase, event.eventType) : "";
 
       stateModel.songsById[event.songId] = next;
       stateModel.latestEvent = event;
@@ -681,6 +899,9 @@
       }
       if (animate && next.animationClass) {
         clearSongAnimation(stateModel, event.songId, next.animationClass);
+      }
+      if (animate) {
+        pulseLiveIndicator();
       }
 
       return next;
@@ -738,7 +959,7 @@
         countNode.textContent = String(rows.length);
         if (rows.length === 0) {
           const empty = document.createElement("div");
-          empty.className = "song-row";
+          empty.className = "song-row song-row__empty";
           empty.textContent = getEmptyStateMessage(phase);
           listNode.appendChild(empty);
           continue;
@@ -756,7 +977,9 @@
       state.bannerTitle.textContent = formatValue(latestReleased?.title || latestSong?.title);
       state.sourceUrl.textContent = formatValue(latestReleased?.sourceUrl || latestReleased?.youtubeUrl || latestSong?.sourceUrl || latestSong?.youtubeUrl);
       state.lastUpdatedAt.textContent = formatValue(stateModel.latestEvent?.timestamp || latestReleased?.lastEventTimestamp || latestSong?.lastEventTimestamp);
-      if (window.__SIGNAL_DEBUG__ === true) {
+      const debugEnabled = window.__SIGNAL_DEBUG__ === true;
+      state.debugPanel.style.display = debugEnabled ? "block" : "none";
+      if (debugEnabled) {
         state.json.textContent = JSON.stringify({
           eventFeedUrl: EVENT_FEED_URL,
           latestEvent: stateModel.latestEvent,
@@ -830,6 +1053,7 @@
 
       activeState = liveState;
       renderSignalRoom(liveState);
+      pulseLiveIndicator();
     }
 
     async function loadEventFeed({ fromPoll = false } = {}) {
@@ -838,6 +1062,9 @@
         if (!replayMode) {
           if (!liveState.appliedEvents.length) {
             rebuildStateFromEvents(liveState, events, { animate: false });
+            if (events.length) {
+              pulseLiveIndicator();
+            }
           } else {
             applyIncomingEvents(events);
           }
