@@ -234,6 +234,34 @@
       transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
       cursor: pointer;
     }
+    .song-row__art {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(0,0,0,.28);
+      display: block;
+      margin-bottom: 12px;
+    }
+    .song-row__lyrics {
+      margin-top: 10px;
+      color: rgba(243,239,230,.82);
+      font-size: .84rem;
+      line-height: 1.6;
+      white-space: pre-line;
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .song-row__meaning {
+      margin-top: 8px;
+      color: rgba(243,239,230,.66);
+      font-size: .8rem;
+      line-height: 1.5;
+      opacity: .9;
+    }
     .song-row:hover {
       transform: translateY(-2px);
       box-shadow: 0 14px 34px rgba(0,0,0,.24);
@@ -681,6 +709,11 @@
         source: String(item.source || payload?.source || "").trim(),
         contentHash: String(item.contentHash || payload?.contentHash || "").trim(),
         timestamp,
+        data: {
+          lyrics: String(item.lyrics || payload?.lyrics || "").trim(),
+          artworkUrl: String(item.artworkUrl || payload?.artworkUrl || "").trim(),
+          songMeaning: String(item.songMeaning || payload?.songMeaning || "").trim()
+        },
         payload
       };
     }
@@ -739,6 +772,10 @@
       return "SIGNAL";
     }
 
+    const PLACEHOLDER_ART = "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450"><defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#222" offset="0"/><stop stop-color="#0b0b0b" offset="1"/></linearGradient></defs><rect width="800" height="450" fill="url(#g)"/><circle cx="400" cy="225" r="86" fill="#151515" stroke="#e74c3c" stroke-opacity=".35" stroke-width="4"/><path d="M400 172v102" stroke="#f3efe6" stroke-opacity=".4" stroke-width="8" stroke-linecap="round"/><path d="M350 225h100" stroke="#f3efe6" stroke-opacity=".4" stroke-width="8" stroke-linecap="round"/></svg>'
+    );
+
     function getEmptyStateMessage(phase) {
       if (phase === "signal") return "Waiting for events...";
       if (phase === "incoming") return "No incoming transitions yet...";
@@ -793,6 +830,27 @@
       title.className = "song-row__title";
       title.textContent = song?.title || songIdOf(song) || "Untitled";
 
+      const art = document.createElement("img");
+      art.className = "song-row__art";
+      art.alt = song?.title || "Song artwork";
+      art.loading = "lazy";
+      art.src = song?.artworkUrl || PLACEHOLDER_ART;
+      art.onerror = () => {
+        art.onerror = null;
+        art.src = PLACEHOLDER_ART;
+      };
+
+      const lyrics = document.createElement("div");
+      lyrics.className = "song-row__lyrics";
+      lyrics.textContent = song?.lyrics
+        ? song.lyrics.split(/\r?\n/).filter(Boolean).slice(0, 5).join("\n")
+        : "No lyrics yet";
+
+      const meaning = document.createElement("div");
+      meaning.className = "song-row__meaning";
+      meaning.title = song?.songMeaning || "";
+      meaning.textContent = song?.songMeaning ? song.songMeaning : "";
+
       const footer = document.createElement("div");
       footer.className = "song-row__footer";
 
@@ -807,7 +865,12 @@
       footer.appendChild(badge);
       footer.appendChild(timestamp);
 
+      row.appendChild(art);
       row.appendChild(title);
+      row.appendChild(lyrics);
+      if (song?.songMeaning) {
+        row.appendChild(meaning);
+      }
       row.appendChild(footer);
       return row;
     }
@@ -863,6 +926,9 @@
         youtubeUrl: "",
         sourceUrl: "",
         contentHash: "",
+        lyrics: "",
+        artworkUrl: "",
+        songMeaning: "",
         phase: "signal",
         released: false,
         lastEventType: "",
@@ -876,6 +942,9 @@
       if (event.youtubeUrl) next.youtubeUrl = event.youtubeUrl;
       if (event.sourceUrl) next.sourceUrl = event.sourceUrl;
       if (event.contentHash) next.contentHash = event.contentHash;
+      if (event.data?.lyrics) next.lyrics = event.data.lyrics;
+      if (event.data?.artworkUrl) next.artworkUrl = event.data.artworkUrl;
+      if (event.data?.songMeaning) next.songMeaning = event.data.songMeaning;
       next.lastEventType = event.eventType;
       next.lastEventTimestamp = event.timestamp;
       next.lastAppliedEventId = event.id;
