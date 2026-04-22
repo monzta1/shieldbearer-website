@@ -558,6 +558,13 @@
       return "in the signal";
     }
 
+    function getEmptyStateMessage(phase) {
+      if (phase === "signal") return "No songs yet";
+      if (phase === "incoming") return "Waiting for releases";
+      if (phase === "released") return "Nothing released yet";
+      return "No songs yet";
+    }
+
     function renderSongRow(song, hotSongId) {
       const row = document.createElement("article");
       row.className = "song-row";
@@ -732,7 +739,7 @@
         if (rows.length === 0) {
           const empty = document.createElement("div");
           empty.className = "song-row";
-          empty.textContent = "No songs";
+          empty.textContent = getEmptyStateMessage(phase);
           listNode.appendChild(empty);
           continue;
         }
@@ -749,12 +756,16 @@
       state.bannerTitle.textContent = formatValue(latestReleased?.title || latestSong?.title);
       state.sourceUrl.textContent = formatValue(latestReleased?.sourceUrl || latestReleased?.youtubeUrl || latestSong?.sourceUrl || latestSong?.youtubeUrl);
       state.lastUpdatedAt.textContent = formatValue(stateModel.latestEvent?.timestamp || latestReleased?.lastEventTimestamp || latestSong?.lastEventTimestamp);
-      state.json.textContent = JSON.stringify({
-        eventFeedUrl: EVENT_FEED_URL,
-        latestEvent: stateModel.latestEvent,
-        eventCount: stateModel.appliedEvents.length,
-        songs: Object.values(stateModel.songsById)
-      }, null, 2);
+      if (window.__SIGNAL_DEBUG__ === true) {
+        state.json.textContent = JSON.stringify({
+          eventFeedUrl: EVENT_FEED_URL,
+          latestEvent: stateModel.latestEvent,
+          eventCount: stateModel.appliedEvents.length,
+          songs: Object.values(stateModel.songsById)
+        }, null, 2);
+      } else {
+        state.json.textContent = "";
+      }
     }
 
     async function runReplay({ restart = false } = {}) {
@@ -836,21 +847,25 @@
           renderSignalRoom(replayState || liveState);
         }
 
-        setStatus("event stream loaded successfully.");
+        setStatus("");
         updateControlState();
       } catch (error) {
         rebuildStateFromEvents(liveState, [], { animate: false });
         activeState = liveState;
         renderSignalRoom(liveState);
-        setStatus("event stream unavailable; showing empty state.");
+        setStatus("");
         state.signalCount.textContent = "0";
         state.incomingCount.textContent = "0";
         state.releasedCount.textContent = "0";
-        state.json.textContent = JSON.stringify({
-          eventFeedUrl: EVENT_FEED_URL,
-          events: [],
-          note: "empty state rendered because the event API is unavailable"
-        }, null, 2);
+        if (window.__SIGNAL_DEBUG__ === true) {
+          state.json.textContent = JSON.stringify({
+            eventFeedUrl: EVENT_FEED_URL,
+            events: [],
+            note: "empty state rendered because the event API is unavailable"
+          }, null, 2);
+        } else {
+          state.json.textContent = "";
+        }
       }
     }
 
