@@ -382,7 +382,7 @@
   </main>
 
   <script>
-    const EVENT_FEED_URL = window.SIGNAL_ROOM_EVENT_SOURCE || "./site.json";
+    const EVENT_FEED_URL = window.SIGNAL_ROOM_EVENT_SOURCE || "/api/events";
 
     const liveState = createSignalState();
     let replayState = null;
@@ -390,6 +390,8 @@
     let replayMode = false;
     let replayPaused = false;
     let replayRunId = 0;
+    let replayEvents = [];
+    let replayIndex = 0;
     let livePollTimer = null;
 
     const state = {
@@ -416,7 +418,7 @@
         songsById: {},
         appliedEvents: [],
         latestEvent: null,
-        cursor: { timestamp: "", id: "" }
+        lastEventTimestamp: ""
       };
     }
 
@@ -469,6 +471,38 @@
       };
     }
 
+    function normalizeApiEvent(item) {
+      const record = normalizeEventRecord(item);
+      if (record) {
+        return record;
+      }
+
+      if (!item || typeof item !== "object") {
+        return null;
+      }
+
+      const payload = item.payload && typeof item.payload === "object" ? item.payload : null;
+      const eventType = normalizeEventType(item.eventType || payload?.eventType);
+      const songId = String(item.songId || payload?.songId || payload?.id || "").trim();
+      const timestamp = String(item.timestamp || payload?.timestamp || payload?.publishedAt || item.createdAt || item.updatedAt || "").trim();
+      if (!eventType || !songId || !timestamp) {
+        return null;
+      }
+
+      return {
+        id: String(item.id || payload?.id || `${songId}#${eventType}#${timestamp}`).trim(),
+        songId,
+        eventType,
+        title: String(item.title || payload?.title || "").trim(),
+        youtubeUrl: String(item.youtubeUrl || payload?.youtubeUrl || payload?.sourceUrl || "").trim(),
+        sourceUrl: String(item.sourceUrl || payload?.sourceUrl || payload?.youtubeUrl || "").trim(),
+        source: String(item.source || payload?.source || "").trim(),
+        contentHash: String(item.contentHash || payload?.contentHash || "").trim(),
+        timestamp,
+        payload
+      };
+    }
+
     function compareEventsAsc(a, b) {
       const aTime = parseTimestamp(a.timestamp);
       const bTime = parseTimestamp(b.timestamp);
@@ -479,36 +513,30 @@
       return String(a.id || a.songId || "").localeCompare(String(b.id || b.songId || ""));
     }
 
-    function isEventNewer(event, cursor) {
-      if (!cursor || !cursor.timestamp) {
+    function isEventNewer(event, lastEventTimestamp) {
+      if (!lastEventTimestamp) {
         return true;
       }
 
       const eventTime = parseTimestamp(event.timestamp);
-      const cursorTime = parseTimestamp(cursor.timestamp);
-      if (eventTime !== cursorTime) {
-        return eventTime > cursorTime;
-      }
-
-      return String(event.id || event.songId || "").localeCompare(String(cursor.id || "")) > 0;
+      const cursorTime = parseTimestamp(lastEventTimestamp);
+      return eventTime > cursorTime;
     }
 
-    async function fetchEventFeedFromSource() {
-      const res = await fetch(EVENT_FEED_URL, { cache: "no-store" });
+    async function fetchEventFeedFromSource(since = "") {
+      const cleanSince = String(since || "").trim();
+      const url = cleanSince
+        ? `${EVENT_FEED_URL}?since=${encodeURIComponent(cleanSince)}`
+        : EVENT_FEED_URL;
+      const res = await fetch(url, { cache: "no-store" });
       if (!res.ok) {
         throw new Error("event feed fetch failed with HTTP " + res.status);
       }
 
-      const site = await res.json();
-      const events = Array.isArray(site?.eventsStream)
-        ? site.eventsStream
-        : Array.isArray(site?.events)
-          ? site.events
-          : Array.isArray(site)
-            ? site
-            : [];
+      const data = await res.json();
+      const events = Array.isArray(data?.events) ? data.events : [];
 
-      return events.map(normalizeEventRecord).filter(Boolean).sort(compareEventsAsc);
+      return events.map(normalizeApiEvent).filter(Boolean).sort(compareEventsAsc);
     }
 
     function songIdOf(song) {
@@ -639,10 +667,7 @@
 
       stateModel.songsById[event.songId] = next;
       stateModel.latestEvent = event;
-      stateModel.cursor = {
-        timestamp: event.timestamp,
-        id: event.id
-      };
+      stateModel.lastEventTimestamp = event.timestamp;
       if (record) {
         stateModel.appliedEvents.push(event);
       }
@@ -657,7 +682,7 @@
       stateModel.songsById = {};
       stateModel.appliedEvents = [];
       stateModel.latestEvent = null;
-      stateModel.cursor = { timestamp: "", id: "" };
+      stateModel.lastEventTimestamp = "";
 
       for (const event of [...events].sort(compareEventsAsc)) {
         applyEvent(stateModel, event, { animate, record: true });
@@ -781,7 +806,7 @@
     }
 
     function applyIncomingEvents(events) {
-      const freshEvents = events.filter((event) => isEventNewer(event, liveState.cursor));
+      const freshEvents = events.filter((event) => isEventNewer(event, liveState.lastEventTimestamp));
       if (!freshEvents.length) {
         renderSignalRoom(liveState);
         return;
@@ -797,7 +822,7 @@
 
     async function loadEventFeed({ fromPoll = false } = {}) {
       try {
-        const events = await fetchEventFeedFromSource();
+        const events = await fetchEventFeedFromSource(fromPoll ? liveState.lastEventTimestamp : "");
         if (!replayMode) {
           if (!liveState.appliedEvents.length) {
             rebuildStateFromEvents(liveState, events, { animate: false });
@@ -816,7 +841,7 @@
         setStatus(error.message);
         state.json.textContent = JSON.stringify({
           error: error.message,
-          hint: "Ensure the EventStream feed is available."
+          hint: "Ensure the EventStream API is available."
         }, null, 2);
         state.releaseId.textContent = "Unavailable";
         state.bannerTitle.textContent = "Unavailable";
@@ -849,7 +874,7 @@
       liveState.songsById = {};
       liveState.appliedEvents = [];
       liveState.latestEvent = null;
-      liveState.cursor = { timestamp: "", id: "" };
+      liveState.lastEventTimestamp = "";
       activeState = liveState;
       await loadEventFeed({ fromPoll: false });
     });
