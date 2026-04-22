@@ -61,6 +61,48 @@
 
   addTimelineNavLink();
 
+  /* ── SIGNAL ROOM NAV LINK ── */
+  function addSignalRoomNavLink() {
+    var signalRoomHref = 'signal-room.html';
+    var signalRoomLabel = 'Signal Room';
+
+    var desktopMusic = document.querySelector('li.nav-dropdown > a[href="music.html"]');
+    if (desktopMusic) {
+      var dropdown = desktopMusic.parentElement.querySelector('.nav-dropdown__menu');
+      if (dropdown && !dropdown.querySelector('a[href="' + signalRoomHref + '"]')) {
+        var signalLink = document.createElement('a');
+        signalLink.href = signalRoomHref;
+        signalLink.textContent = signalRoomLabel;
+        var lyricLink = dropdown.querySelector('a[href="song-meanings.html"]');
+        if (lyricLink) {
+          lyricLink.insertAdjacentElement('afterend', signalLink);
+        } else {
+          dropdown.appendChild(signalLink);
+        }
+      }
+    }
+
+    var mobileNav = document.getElementById('mobMenu');
+    if (mobileNav && !mobileNav.querySelector('a[href="' + signalRoomHref + '"]')) {
+      var mobileMusic = mobileNav.querySelector('a[href="music.html"]');
+      var mobileSignalLink = document.createElement('a');
+      mobileSignalLink.href = signalRoomHref;
+      mobileSignalLink.textContent = signalRoomLabel;
+      if (mobileMusic) {
+        mobileMusic.insertAdjacentElement('afterend', mobileSignalLink);
+      } else {
+        var mobClose = mobileNav.querySelector('.mob-close');
+        if (mobClose && mobClose.nextSibling) {
+          mobClose.insertAdjacentElement('afterend', mobileSignalLink);
+        } else {
+          mobileNav.appendChild(mobileSignalLink);
+        }
+      }
+    }
+  }
+
+  addSignalRoomNavLink();
+
   /* ── NAV SCROLL STATE ── */
   var nav = document.querySelector('.site-nav');
   if (nav) {
