@@ -382,7 +382,8 @@
   </main>
 
   <script>
-    const EVENT_FEED_URL = window.SIGNAL_ROOM_EVENT_SOURCE || "/api/events";
+    const API_BASE_URL = window.SIGNAL_ROOM_API_BASE_URL || "https://fqrwmix2rihepzod7vffjsexn40ofjay.lambda-url.us-east-1.on.aws";
+    const EVENT_FEED_URL = window.SIGNAL_ROOM_EVENT_SOURCE || `${String(API_BASE_URL).replace(/\/+$/, "")}/api/events`;
 
     const liveState = createSignalState();
     let replayState = null;
@@ -838,18 +839,18 @@
         setStatus("event stream loaded successfully.");
         updateControlState();
       } catch (error) {
-        setStatus(error.message);
-        state.json.textContent = JSON.stringify({
-          error: error.message,
-          hint: "Ensure the EventStream API is available."
-        }, null, 2);
-        state.releaseId.textContent = "Unavailable";
-        state.bannerTitle.textContent = "Unavailable";
-        state.sourceUrl.textContent = "Unavailable";
-        state.lastUpdatedAt.textContent = "Unavailable";
+        rebuildStateFromEvents(liveState, [], { animate: false });
+        activeState = liveState;
+        renderSignalRoom(liveState);
+        setStatus("event stream unavailable; showing empty state.");
         state.signalCount.textContent = "0";
         state.incomingCount.textContent = "0";
         state.releasedCount.textContent = "0";
+        state.json.textContent = JSON.stringify({
+          eventFeedUrl: EVENT_FEED_URL,
+          events: [],
+          note: "empty state rendered because the event API is unavailable"
+        }, null, 2);
       }
     }
 
