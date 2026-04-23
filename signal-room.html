@@ -31,19 +31,12 @@
       color: #3b2615;
       background-color: #7a4c27;
       background-image:
-        radial-gradient(ellipse 90px 55px at 12% 18%, rgba(22,12,4,0.65) 0%, transparent 72%),
-        radial-gradient(ellipse 72px 46px at 83% 66%, rgba(22,12,4,0.55) 0%, transparent 72%),
-        radial-gradient(ellipse 52px 32px at 46% 88%, rgba(28,16,6,0.5) 0%, transparent 70%),
-        radial-gradient(ellipse 62px 38px at 68% 14%, rgba(22,12,4,0.5) 0%, transparent 72%),
-        radial-gradient(ellipse 48px 28px at 30% 62%, rgba(26,14,5,0.45) 0%, transparent 70%),
-        url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='1200'%3E%3Cfilter id='w'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.012 0.22' numOctaves='2' seed='3'/%3E%3CfeColorMatrix values='0 0 0 0 0.22  0 0 0 0 0.12  0 0 0 0 0.04  0 0 0 0.34 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23w)'/%3E%3C/svg%3E"),
-        linear-gradient(90deg,
-          transparent calc(16% - 1.5px), rgba(18,9,3,0.7) 16%, rgba(18,9,3,0.7) calc(16% + 2px), transparent calc(16% + 4px),
-          transparent calc(41% - 1.5px), rgba(18,9,3,0.65) 41%, rgba(18,9,3,0.65) calc(41% + 2px), transparent calc(41% + 4px),
-          transparent calc(58% - 1.5px), rgba(18,9,3,0.65) 58%, rgba(18,9,3,0.65) calc(58% + 2px), transparent calc(58% + 4px),
-          transparent calc(83% - 1.5px), rgba(18,9,3,0.7) 83%, rgba(18,9,3,0.7) calc(83% + 2px), transparent calc(83% + 4px)
-        ),
-        linear-gradient(180deg, #8b5a32 0%, #7a4d27 50%, #603818 100%);
+        radial-gradient(ellipse at center, rgba(255, 220, 160, 0.06) 0%, transparent 58%),
+        linear-gradient(180deg, rgba(38, 20, 8, 0.18) 0%, rgba(18, 10, 4, 0.08) 48%, rgba(10, 6, 3, 0.22) 100%),
+        url("./images/signal-room/table-top.png");
+      background-size: cover, cover, cover;
+      background-position: center top, center center, center center;
+      background-repeat: no-repeat, no-repeat, no-repeat;
       overflow-x: hidden;
     }
     body.is-loaded { opacity: 1; }
