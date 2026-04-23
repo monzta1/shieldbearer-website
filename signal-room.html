@@ -373,6 +373,125 @@
       color: var(--muted);
       font-size: .88rem;
     }
+    .room-grain {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0.55;
+      mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.6  0 0 0 0 0.5  0 0 0 0 0.35  0 0 0 0.55 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+    .room-vignette {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background: radial-gradient(ellipse 120% 90% at 50% 55%, transparent 40%, rgba(0,0,0,0.35) 72%, rgba(0,0,0,0.7) 100%);
+    }
+    .room-light-shaft {
+      position: fixed;
+      top: -20vh;
+      right: -10vw;
+      width: 80vw;
+      height: 140vh;
+      z-index: 1;
+      pointer-events: none;
+      background: linear-gradient(220deg, rgba(255,220,130,0.14) 0%, rgba(255,220,130,0.07) 30%, transparent 55%);
+      transform: rotate(8deg);
+      mix-blend-mode: screen;
+      filter: blur(40px);
+      opacity: 0.85;
+    }
+    .wall-panel {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 55vh;
+      z-index: 0;
+      pointer-events: none;
+      background:
+        repeating-linear-gradient(90deg, transparent 0px, transparent 180px, rgba(255,255,255,0.012) 180px, rgba(255,255,255,0.012) 181px),
+        radial-gradient(ellipse 50% 35% at 35% 38%, rgba(180,140,80,0.08) 0%, transparent 70%);
+    }
+    .wall-polaroid {
+      position: fixed;
+      top: 10vh;
+      left: 7vw;
+      width: 120px;
+      padding: 10px 10px 28px;
+      background: linear-gradient(180deg, #f2ebd4 0%, #e8dec0 100%);
+      box-shadow:
+        0 18px 30px rgba(0,0,0,0.55),
+        0 6px 12px rgba(0,0,0,0.35),
+        inset 0 0 0 1px rgba(110,90,60,0.2);
+      transform: rotate(-7deg);
+      z-index: 2;
+      pointer-events: none;
+    }
+    .wall-polaroid__photo {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background:
+        radial-gradient(circle at 35% 30%, rgba(255,200,110,0.55) 0%, rgba(60,30,10,0.8) 55%, #0d0805 100%),
+        linear-gradient(180deg, #2a1608 0%, #050302 100%);
+      filter: contrast(0.92) saturate(1.1);
+    }
+    .wall-polaroid__caption {
+      margin-top: 8px;
+      text-align: center;
+      font-family: "Caveat", cursive;
+      font-size: 1rem;
+      color: #5a3c1e;
+    }
+    .wall-polaroid__pin {
+      position: absolute;
+      top: -5px;
+      left: 50%;
+      width: 10px;
+      height: 10px;
+      margin-left: -5px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #e26a46 0 35%, #8a2a14 36% 100%);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.35);
+    }
+    .desk-pencil {
+      position: fixed;
+      bottom: 6vh;
+      left: 4vw;
+      transform: rotate(-20deg);
+      z-index: 2;
+      pointer-events: none;
+      filter: drop-shadow(2px 6px 8px rgba(0,0,0,0.55));
+    }
+    .desk-scrap {
+      position: fixed;
+      bottom: 5vh;
+      right: 18vw;
+      width: 140px;
+      padding: 8px 10px;
+      background: linear-gradient(180deg, #eadcb4 0%, #d9c797 100%);
+      transform: rotate(6deg);
+      z-index: 2;
+      pointer-events: none;
+      box-shadow:
+        0 10px 18px rgba(0,0,0,0.5),
+        0 3px 6px rgba(0,0,0,0.3),
+        inset 0 0 0 1px rgba(90,70,40,0.18);
+      font-family: "Caveat", cursive;
+      color: #3f2a17;
+      clip-path: polygon(0 6%, 96% 0, 100% 100%, 4% 98%);
+    }
+    .desk-scrap__line {
+      font-size: 1.15rem;
+      line-height: 1.1;
+    }
+    .desk-scrap__line--small {
+      margin-top: 2px;
+      font-size: 0.9rem;
+      color: #5a3c1e;
+    }
     .studio-lamp {
       position: fixed;
       top: 0;
@@ -381,6 +500,18 @@
       pointer-events: none;
       opacity: 0;
       transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .lamp-bulb {
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      width: 28px;
+      height: 10px;
+      margin-left: -14px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse at center, rgba(255,230,140,0.95) 0%, rgba(255,180,80,0.4) 55%, transparent 100%);
+      filter: blur(2px);
+      pointer-events: none;
     }
     .lamp-arm {
       width: 4px;
@@ -495,6 +626,14 @@
         left: 28px;
         bottom: 24px;
       }
+      .wall-polaroid,
+      .desk-pencil,
+      .desk-scrap {
+        display: none;
+      }
+      .room-light-shaft {
+        opacity: 0.5;
+      }
       .signal-room--empty .signal-desk-scene {
         padding-top: 12vh;
       }
@@ -502,10 +641,35 @@
   </style>
 </head>
 <body>
+  <div class="room-grain" aria-hidden="true"></div>
+  <div class="room-vignette" aria-hidden="true"></div>
+  <div class="room-light-shaft" aria-hidden="true"></div>
+  <div class="wall-panel" aria-hidden="true"></div>
+  <div class="wall-polaroid" aria-hidden="true">
+    <div class="wall-polaroid__photo"></div>
+    <div class="wall-polaroid__caption">signal test 03</div>
+    <div class="wall-polaroid__pin"></div>
+  </div>
   <div class="studio-lamp" aria-hidden="true">
     <div class="lamp-arm"></div>
-    <div class="lamp-head"></div>
+    <div class="lamp-head">
+      <div class="lamp-bulb"></div>
+    </div>
     <div class="lamp-light-cone"></div>
+  </div>
+  <div class="desk-pencil" aria-hidden="true">
+    <svg viewBox="0 0 180 20" width="180" height="20">
+      <rect x="6" y="4" width="140" height="12" fill="#d4a02a" stroke="#7a5a10" stroke-width="0.5"/>
+      <rect x="6" y="4" width="140" height="3" fill="#e8b840" opacity="0.8"/>
+      <rect x="146" y="3" width="14" height="14" fill="#3b342b" stroke="#1e1a14" stroke-width="0.5"/>
+      <rect x="160" y="5" width="10" height="10" fill="#d26a4a" stroke="#7a3a20" stroke-width="0.5"/>
+      <polygon points="0,10 6,4 6,16" fill="#efd7a8" stroke="#7a5a10" stroke-width="0.5"/>
+      <polygon points="0,10 6,4 3,10" fill="#2a2218"/>
+    </svg>
+  </div>
+  <div class="desk-scrap" aria-hidden="true">
+    <div class="desk-scrap__line">G — D — Em — C</div>
+    <div class="desk-scrap__line desk-scrap__line--small">capo 2 ·  bridge?</div>
   </div>
   <div class="wrap">
     <header class="signal-room-header">
