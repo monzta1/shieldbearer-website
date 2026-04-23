@@ -20,8 +20,16 @@
       --sans: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
     * { box-sizing: border-box; }
-    html, body { margin: 0; min-height: 100%; background: radial-gradient(circle at top, #161616 0%, #090909 58%); color: var(--text); font-family: var(--sans); }
-    body { padding: 0; }
+    html, body { margin: 0; min-height: 100%; color: var(--text); font-family: var(--sans); }
+    body {
+      min-height: 100vh;
+      padding: 0;
+      background-color: #0d0a07;
+      background-image:
+        repeating-linear-gradient(90deg, transparent 0 80px, rgba(255,255,255,0.008) 80px 81px),
+        repeating-linear-gradient(88deg, transparent 0 120px, rgba(0,0,0,0.04) 120px 122px),
+        linear-gradient(180deg, #0d0a07, #100c08, #0a0805);
+    }
     .wrap { max-width: 1120px; margin: 0 auto; padding: 40px 20px 72px; }
     .hero {
       padding: 42px 28px;
