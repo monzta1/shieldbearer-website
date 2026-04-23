@@ -328,6 +328,7 @@
     const SITE_JSON_URL = window.SIGNAL_ROOM_SITE_JSON_URL || "./site.json";
     const artworkNode = document.getElementById("artwork");
     const notebookNode = document.getElementById("notebook");
+    const ARTWORK_CACHE_BUSTER = Date.now().toString(36);
 
     function normalizeText(value) {
       return String(value || "").trim();
@@ -373,6 +374,15 @@
 
     function isChorusMarker(line) {
       return /(?:^|\b)(chorus|refrain|hook)(?:\b|:|\s|-)/i.test(String(line || "").trim());
+    }
+
+    function withCacheBust(url) {
+      const normalized = String(url || "").trim();
+      if (!normalized) {
+        return "";
+      }
+      const separator = normalized.includes("?") ? "&" : "?";
+      return `${normalized}${separator}v=${encodeURIComponent(ARTWORK_CACHE_BUSTER)}`;
     }
 
     function buildNotebookPreviewLines(song) {
@@ -459,7 +469,7 @@
       const img = document.createElement("img");
       img.className = "signal-artframe__image";
       img.alt = song?.title || "Song artwork";
-      img.src = song?.artwork || "";
+      img.src = withCacheBust(song?.artwork || "");
 
       const caption = document.createElement("p");
       caption.className = "signal-artframe__caption";
