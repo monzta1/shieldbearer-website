@@ -7,6 +7,8 @@
   <meta name="description" content="Event-driven Signal Room rendered from the EventStream feed on GitHub Pages.">
   <meta name="theme-color" content="#090909">
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
+
     :root {
       --bg: #090909;
       --panel: rgba(255,255,255,.04);
@@ -87,16 +89,131 @@
       display: block;
       margin: 0 0 18px;
     }
-    .signal-room-view__lyrics {
-      white-space: pre-line;
-      line-height: 1.7;
-      color: rgba(243,239,230,.88);
-      margin: 0 0 14px;
+    .signal-artframe {
+      position: relative;
+      width: min(100%, 560px);
+      margin: 0 auto 12px;
+      padding: 18px 18px 16px;
+      border-radius: 20px;
+      background: linear-gradient(180deg, #16110c 0%, #0c0906 100%);
+      box-shadow:
+        0 16px 28px rgba(0, 0, 0, .34),
+        inset 0 0 0 1px rgba(255,255,255,.06);
+      transform: rotate(-2deg);
+      transform-origin: center top;
     }
-    .signal-room-view__meaning {
-      color: rgba(243,239,230,.68);
-      line-height: 1.6;
-      margin: 0;
+    .signal-artframe::before {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      width: 12px;
+      height: 12px;
+      margin-left: -6px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #d9cab7 0 20%, #5b4630 21% 100%);
+      box-shadow: 0 1px 0 rgba(255,255,255,.35), 0 3px 10px rgba(0,0,0,.35);
+    }
+    .signal-artframe__mat {
+      padding: 18px;
+      border-radius: 14px;
+      background: linear-gradient(180deg, #f2e8d4 0%, #eadfc5 100%);
+      box-shadow: inset 0 0 0 1px rgba(96, 74, 48, .16);
+    }
+    .signal-artframe__image {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, .22);
+    }
+    .signal-artframe__caption {
+      margin: 12px 0 0;
+      text-align: center;
+      font-family: "Caveat", cursive;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      line-height: 1;
+      color: #3b2615;
+    }
+    .signal-notebook {
+      width: min(100%, 620px);
+      margin: 0 auto;
+      position: relative;
+      transform: rotate(0.3deg);
+      transform-origin: center top;
+      border-radius: 18px;
+      padding: 26px 24px 26px 42px;
+      background:
+        linear-gradient(90deg, rgba(185, 146, 92, .18) 0 18px, transparent 18px 100%),
+        repeating-linear-gradient(180deg, rgba(88, 61, 31, .06) 0 1px, transparent 1px 34px),
+        linear-gradient(180deg, #f4e9cf 0%, #efe1bf 100%);
+      box-shadow:
+        0 20px 45px rgba(0, 0, 0, .26),
+        inset 0 0 0 1px rgba(91, 63, 28, .18);
+      color: #3f2a17;
+      overflow: hidden;
+    }
+    .signal-notebook::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 22px;
+      width: 2px;
+      background: rgba(168, 61, 35, .24);
+      pointer-events: none;
+    }
+    .signal-notebook__title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 10px;
+      font-family: "Caveat", cursive;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: .95;
+      font-weight: 700;
+      letter-spacing: .01em;
+      color: #2f1c0f;
+    }
+    .signal-notebook__pencil {
+      width: 22px;
+      height: 22px;
+      flex: 0 0 auto;
+      color: #8d5b22;
+      filter: drop-shadow(0 1px 0 rgba(255,255,255,.18));
+    }
+    .signal-notebook__paper {
+      position: relative;
+      padding: 6px 0 2px;
+    }
+    .signal-notebook__line {
+      font-family: "Caveat", cursive;
+      font-size: clamp(1.55rem, 2.7vw, 2rem);
+      line-height: 1.04;
+      letter-spacing: .01em;
+      color: #422714;
+      margin: 0 0 4px;
+      white-space: pre-wrap;
+    }
+    .signal-notebook__line--blank {
+      min-height: 1em;
+    }
+    .signal-notebook__fade {
+      position: absolute;
+      left: 42px;
+      right: 20px;
+      bottom: 20px;
+      height: 96px;
+      background: linear-gradient(180deg, rgba(239, 225, 191, 0) 0%, rgba(239, 225, 191, .84) 62%, rgba(239, 225, 191, 1) 100%);
+      pointer-events: none;
+    }
+    .signal-notebook--teaser .signal-notebook__paper {
+      max-height: 320px;
+      overflow: hidden;
+    }
+    .signal-notebook--teaser .signal-notebook__line:last-of-type {
+      margin-bottom: 0;
     }
     .signal-room-view__empty {
       color: rgba(243,239,230,.66);
@@ -193,11 +310,68 @@
         notebookNode.className = "";
         notebookNode.innerHTML = "";
       }
+      const frame = document.createElement("section");
+      frame.className = "signal-artframe";
+
+      const mat = document.createElement("div");
+      mat.className = "signal-artframe__mat";
+
       const img = document.createElement("img");
-      img.className = "signal-room-view__artwork";
+      img.className = "signal-artframe__image";
       img.alt = song?.title || "Song artwork";
       img.src = song?.artwork || "";
-      artworkNode.appendChild(img);
+
+      const caption = document.createElement("p");
+      caption.className = "signal-artframe__caption";
+      caption.textContent = song?.title || "Untitled";
+
+      mat.appendChild(img);
+      frame.appendChild(mat);
+      frame.appendChild(caption);
+      artworkNode.appendChild(frame);
+    }
+
+    function renderNotebook(song) {
+      if (notebookNode) {
+        notebookNode.className = "";
+        notebookNode.innerHTML = "";
+      }
+
+      const notebook = document.createElement("section");
+      notebook.className = "signal-notebook";
+
+      const title = document.createElement("h2");
+      title.className = "signal-notebook__title";
+      title.innerHTML = `
+        <svg class="signal-notebook__pencil" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="currentColor" d="M3 17.25V21h3.75L17.8 9.95l-3.75-3.75L3 17.25Zm14.71-8.04a1 1 0 0 0 0-1.41l-1.51-1.51a1 1 0 0 0-1.41 0l-1.2 1.2 2.93 2.93 1.19-1.21Z"/>
+        </svg>
+        <span>${song?.title || "Untitled"}</span>
+      `;
+
+      const paper = document.createElement("div");
+      paper.className = "signal-notebook__paper";
+
+      const lines = String(song?.lyrics || song?.teaserLyrics || "")
+        .split(/\r?\n/)
+        .map((line) => line.trimEnd());
+      lines.forEach((line) => {
+        const row = document.createElement("div");
+        row.className = line.trim() ? "signal-notebook__line" : "signal-notebook__line signal-notebook__line--blank";
+        row.textContent = line;
+        paper.appendChild(row);
+      });
+
+      if ((song?.teaserLyrics || "").trim() && !(song?.lyrics || "").trim()) {
+        notebook.classList.add("signal-notebook--teaser");
+        const fade = document.createElement("div");
+        fade.className = "signal-notebook__fade";
+        notebook.appendChild(fade);
+      }
+
+      notebook.appendChild(title);
+      notebook.appendChild(paper);
+      notebookNode.appendChild(notebook);
     }
 
     function renderLyricsOnly(song) {
@@ -205,46 +379,12 @@
         artworkNode.className = "";
         artworkNode.innerHTML = "";
       }
-      if (notebookNode) {
-        notebookNode.className = "";
-        notebookNode.innerHTML = "";
-      }
-      const title = document.createElement("div");
-      title.className = "signal-room-view__title";
-      title.textContent = song?.title || "Untitled";
-      const lyrics = document.createElement("div");
-      lyrics.className = "signal-room-view__lyrics";
-      lyrics.textContent = song?.lyrics || song?.teaserLyrics || "";
-      notebookNode.appendChild(title);
-      notebookNode.appendChild(lyrics);
+      renderNotebook(song);
     }
 
     function renderFull(song) {
-      if (artworkNode) {
-        artworkNode.className = "";
-        artworkNode.innerHTML = "";
-      }
-      if (notebookNode) {
-        notebookNode.className = "";
-        notebookNode.innerHTML = "";
-      }
-      const img = document.createElement("img");
-      img.className = "signal-room-view__artwork";
-      img.alt = song?.title || "Song artwork";
-      img.src = song?.artwork || "";
-      const title = document.createElement("div");
-      title.className = "signal-room-view__title";
-      title.textContent = song?.title || "Untitled";
-      const lyrics = document.createElement("div");
-      lyrics.className = "signal-room-view__lyrics";
-      lyrics.textContent = song?.lyrics || song?.teaserLyrics || "";
-      const meaning = document.createElement("p");
-      meaning.className = "signal-room-view__meaning";
-      meaning.textContent = song?.songMeaning || "";
-      artworkNode.appendChild(img);
-      notebookNode.appendChild(title);
-      notebookNode.appendChild(lyrics);
-      notebookNode.appendChild(meaning);
+      renderArtworkOnly(song);
+      renderNotebook(song);
     }
 
     function renderFromModel(data) {
