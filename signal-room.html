@@ -101,22 +101,64 @@
   </main>
 
   <script>
-    const API_BASE_URL = window.SIGNAL_ROOM_API_BASE_URL || "https://fqrwmix2rihepzod7vffjsexn40ofjay.lambda-url.us-east-1.on.aws";
-    const EVENT_FEED_URL = window.SIGNAL_ROOM_EVENT_SOURCE || `${String(API_BASE_URL).replace(/\/+$/, "")}/api/events`;
-    async function loadEventFeed({ fromPoll = false } = {}) {
+    const SITE_JSON_URL = window.SIGNAL_ROOM_SITE_JSON_URL || "./site.json";
+
+    function normalizeText(value) {
+      return String(value || "").trim();
+    }
+
+    function normalizeComingSoonEntry(item) {
+      return {
+        title: normalizeText(item?.title),
+        lyrics: normalizeText(item?.lyrics),
+        teaserLyrics: normalizeText(item?.teaserLyrics || item?.lyricsPreview || item?.teaser || ""),
+        artwork: normalizeText(item?.artwork),
+        songMeaning: normalizeText(item?.songMeaning || item?.meaning || ""),
+        status: normalizeText(item?.status || "coming_soon")
+      };
+    }
+
+    function extractNormalizedSongModel(siteJson) {
+      const comingSoon = Array.isArray(siteJson?.comingSoon)
+        ? siteJson.comingSoon
+        : Array.isArray(siteJson?.incoming)
+          ? siteJson.incoming
+          : Array.isArray(siteJson?.signal)
+            ? siteJson.signal
+            : [];
+      const source = comingSoon[0] || {};
+
+      return normalizeComingSoonEntry(source);
+    }
+
+    async function loadSongModel() {
       try {
-        const url = fromPoll ? `${EVENT_FEED_URL}?since=${encodeURIComponent("")}` : EVENT_FEED_URL;
-        const res = await fetch(url, { cache: "no-store" });
+        const res = await fetch(SITE_JSON_URL, { cache: "no-store" });
         if (!res.ok) {
-          throw new Error("event feed fetch failed with HTTP " + res.status);
+          throw new Error("site.json fetch failed with HTTP " + res.status);
         }
-        await res.json();
+        const siteJson = await res.json();
+        const model = extractNormalizedSongModel(siteJson);
+        window.__SIGNAL_ROOM_MODEL__ = model;
+        window.__SIGNAL_ROOM_SOURCE__ = SITE_JSON_URL;
+        return model;
       } catch (error) {
+        const emptyModel = {
+          title: "",
+          lyrics: "",
+          teaserLyrics: "",
+          artwork: "",
+          songMeaning: "",
+          status: ""
+        };
+        window.__SIGNAL_ROOM_MODEL__ = emptyModel;
+        window.__SIGNAL_ROOM_SOURCE__ = SITE_JSON_URL;
         console.error(error);
+        return emptyModel;
       }
     }
 
-    loadEventFeed();
+    loadSongModel();
   </script>
 </body>
 </html>
