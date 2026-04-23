@@ -300,8 +300,51 @@
 
   <script>
     const SITE_JSON_URL = window.SIGNAL_ROOM_SITE_JSON_URL || "./site.json";
+    const SIGNAL_ROOM_TEST_MODE = true;
     const artworkNode = document.getElementById("artwork");
     const notebookNode = document.getElementById("notebook");
+    const SIGNAL_ROOM_TEST_SONGS = {
+      empty: {
+        title: "",
+        lyrics: "",
+        teaserLyrics: "",
+        artwork: "",
+        songMeaning: "",
+        status: ""
+      },
+      title: {
+        title: "Let My People Go",
+        lyrics: "",
+        teaserLyrics: "",
+        artwork: "",
+        songMeaning: "",
+        status: "coming_soon"
+      },
+      lyrics: {
+        title: "Let My People Go",
+        lyrics: "Verse 1\nA quiet room before the dawn\nThe signal hums and pulls us on\n\nChorus\nLet my people go\nLet the river move again\n\nVerse 2\nHands in the air and hearts aligned",
+        teaserLyrics: "",
+        artwork: "",
+        songMeaning: "",
+        status: "coming_soon"
+      },
+      artwork: {
+        title: "Let My People Go",
+        lyrics: "",
+        teaserLyrics: "",
+        artwork: "https://shieldbearerusa.com/images/signal-room/let-my-people-go.jpg",
+        songMeaning: "",
+        status: "coming_soon"
+      },
+      full: {
+        title: "Let My People Go",
+        lyrics: "Verse 1\nA quiet room before the dawn\nThe signal hums and pulls us on\n\nChorus\nLet my people go\nLet the river move again\n\nVerse 2\nHands in the air and hearts aligned",
+        teaserLyrics: "",
+        artwork: "https://shieldbearerusa.com/images/signal-room/let-my-people-go.jpg",
+        songMeaning: "A song about release, renewal, and walking out into the light.",
+        status: "coming_soon"
+      }
+    };
 
     function normalizeText(value) {
       return String(value || "").trim();
@@ -539,6 +582,16 @@
     }
 
     async function loadSongModel() {
+      if (SIGNAL_ROOM_TEST_MODE) {
+        const params = new URLSearchParams(window.location.search);
+        const testState = params.get("state") || window.location.hash.replace(/^#/, "") || "empty";
+        const model = SIGNAL_ROOM_TEST_SONGS[testState] || SIGNAL_ROOM_TEST_SONGS.empty;
+        renderFromModel({ comingSoon: [model] });
+        window.__SIGNAL_ROOM_MODEL__ = model;
+        window.__SIGNAL_ROOM_SOURCE__ = "signal-room-test-mode";
+        return model;
+      }
+
       try {
         const res = await fetch(SITE_JSON_URL, { cache: "no-store" });
         if (!res.ok) {
