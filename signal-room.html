@@ -79,6 +79,46 @@
       color: var(--muted);
       font-size: .88rem;
     }
+    .signal-room-view {
+      margin-top: 22px;
+      padding: 22px;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 20px;
+      background: rgba(255,255,255,.03);
+    }
+    .signal-room-view__title {
+      margin: 0 0 12px;
+      font-size: .82rem;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .signal-room-view__artwork {
+      width: 100%;
+      max-width: 560px;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.08);
+      display: block;
+      margin: 0 0 18px;
+    }
+    .signal-room-view__lyrics {
+      white-space: pre-line;
+      line-height: 1.7;
+      color: rgba(243,239,230,.88);
+      margin: 0 0 14px;
+    }
+    .signal-room-view__meaning {
+      color: rgba(243,239,230,.68);
+      line-height: 1.6;
+      margin: 0;
+    }
+    .signal-room-view__empty {
+      color: rgba(243,239,230,.66);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
   </style>
 </head>
 <body>
@@ -94,6 +134,10 @@
         The old Signal Room dashboard has been removed. This page now keeps the
         site frame and the data fetch hook only.
       </p>
+      <section class="signal-room-view" id="signalRoomView" aria-live="polite">
+        <div class="signal-room-view__title">Signal Room State</div>
+        <div id="signalRoomContent" class="signal-room-view__empty">Loading site.json...</div>
+      </section>
       <div class="footer">
         Powered by the Shieldbearer event pipeline.
       </div>
@@ -102,6 +146,7 @@
 
   <script>
     const SITE_JSON_URL = window.SIGNAL_ROOM_SITE_JSON_URL || "./site.json";
+    const signalRoomContent = document.getElementById("signalRoomContent");
 
     function normalizeText(value) {
       return String(value || "").trim();
@@ -131,6 +176,80 @@
       return normalizeComingSoonEntry(source);
     }
 
+    function renderEmpty() {
+      if (!signalRoomContent) return;
+      signalRoomContent.className = "signal-room-view__empty";
+      signalRoomContent.textContent = "No song is ready yet.";
+    }
+
+    function renderTitleOnly(song) {
+      if (!signalRoomContent) return;
+      signalRoomContent.className = "signal-room-view__empty";
+      signalRoomContent.textContent = song?.title || "Untitled";
+    }
+
+    function renderArtworkOnly(song) {
+      if (!signalRoomContent) return;
+      signalRoomContent.className = "";
+      signalRoomContent.innerHTML = "";
+      const img = document.createElement("img");
+      img.className = "signal-room-view__artwork";
+      img.alt = song?.title || "Song artwork";
+      img.src = song?.artwork || "";
+      signalRoomContent.appendChild(img);
+    }
+
+    function renderLyricsOnly(song) {
+      if (!signalRoomContent) return;
+      signalRoomContent.className = "";
+      signalRoomContent.innerHTML = "";
+      const title = document.createElement("div");
+      title.className = "signal-room-view__title";
+      title.textContent = song?.title || "Untitled";
+      const lyrics = document.createElement("div");
+      lyrics.className = "signal-room-view__lyrics";
+      lyrics.textContent = song?.lyrics || song?.teaserLyrics || "";
+      signalRoomContent.appendChild(title);
+      signalRoomContent.appendChild(lyrics);
+    }
+
+    function renderFull(song) {
+      if (!signalRoomContent) return;
+      signalRoomContent.className = "";
+      signalRoomContent.innerHTML = "";
+      const img = document.createElement("img");
+      img.className = "signal-room-view__artwork";
+      img.alt = song?.title || "Song artwork";
+      img.src = song?.artwork || "";
+      const title = document.createElement("div");
+      title.className = "signal-room-view__title";
+      title.textContent = song?.title || "Untitled";
+      const lyrics = document.createElement("div");
+      lyrics.className = "signal-room-view__lyrics";
+      lyrics.textContent = song?.lyrics || song?.teaserLyrics || "";
+      const meaning = document.createElement("p");
+      meaning.className = "signal-room-view__meaning";
+      meaning.textContent = song?.songMeaning || "";
+      signalRoomContent.appendChild(img);
+      signalRoomContent.appendChild(title);
+      signalRoomContent.appendChild(lyrics);
+      signalRoomContent.appendChild(meaning);
+    }
+
+    function renderFromModel(data) {
+      const song = data?.comingSoon?.[0];
+
+      const hasTitle = !!song?.title;
+      const hasLyrics = !!(song?.lyrics || song?.teaserLyrics);
+      const hasArtwork = !!song?.artwork;
+
+      if (!hasTitle) renderEmpty();
+      else if (hasLyrics && hasArtwork) renderFull(song);
+      else if (hasLyrics) renderLyricsOnly(song);
+      else if (hasArtwork) renderArtworkOnly(song);
+      else renderTitleOnly(song);
+    }
+
     async function loadSongModel() {
       try {
         const res = await fetch(SITE_JSON_URL, { cache: "no-store" });
@@ -139,6 +258,7 @@
         }
         const siteJson = await res.json();
         const model = extractNormalizedSongModel(siteJson);
+        renderFromModel({ comingSoon: [model] });
         window.__SIGNAL_ROOM_MODEL__ = model;
         window.__SIGNAL_ROOM_SOURCE__ = SITE_JSON_URL;
         return model;
@@ -153,6 +273,7 @@
         };
         window.__SIGNAL_ROOM_MODEL__ = emptyModel;
         window.__SIGNAL_ROOM_SOURCE__ = SITE_JSON_URL;
+        renderFromModel({ comingSoon: [emptyModel] });
         console.error(error);
         return emptyModel;
       }
