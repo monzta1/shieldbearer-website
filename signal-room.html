@@ -659,7 +659,9 @@
         return null;
       }
 
-      const payload = item.payload && typeof item.payload === "object" ? item.payload : null;
+      const data = item.data && typeof item.data === "object" ? item.data : null;
+      const payload = (item.payload && typeof item.payload === "object" ? item.payload : null)
+        || (data?.payload && typeof data.payload === "object" ? data.payload : null);
       const eventType = normalizeEventType(item.eventType || payload?.eventType);
       const songId = String(item.songId || payload?.songId || payload?.id || "").trim();
       if (!eventType || !songId) {
@@ -668,15 +670,20 @@
 
       const timestamp = String(item.timestamp || payload?.timestamp || payload?.publishedAt || item.createdAt || item.updatedAt || "").trim();
       return {
-        id: String(item.id || payload?.id || `${songId}#${eventType}#${timestamp}`).trim(),
+        id: String(item.id || data?.id || payload?.id || `${songId}#${eventType}#${timestamp}`).trim(),
         songId,
         eventType,
         title: String(item.title || payload?.title || "").trim(),
-        youtubeUrl: String(item.youtubeUrl || payload?.youtubeUrl || payload?.sourceUrl || "").trim(),
-        sourceUrl: String(item.sourceUrl || payload?.sourceUrl || payload?.youtubeUrl || "").trim(),
-        source: String(item.source || payload?.source || "").trim(),
-        contentHash: String(item.contentHash || payload?.contentHash || "").trim(),
+        youtubeUrl: String(item.youtubeUrl || data?.youtubeUrl || payload?.youtubeUrl || payload?.sourceUrl || "").trim(),
+        sourceUrl: String(item.sourceUrl || data?.sourceUrl || payload?.sourceUrl || payload?.youtubeUrl || "").trim(),
+        source: String(item.source || data?.source || payload?.source || "").trim(),
+        contentHash: String(item.contentHash || data?.contentHash || payload?.contentHash || "").trim(),
         timestamp,
+        data: {
+          lyrics: String(data?.lyrics || item.lyrics || payload?.lyrics || "").trim(),
+          artworkUrl: String(data?.artworkUrl || item.artworkUrl || payload?.artworkUrl || "").trim(),
+          songMeaning: String(data?.songMeaning || item.songMeaning || payload?.songMeaning || "").trim()
+        },
         payload
       };
     }
