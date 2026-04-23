@@ -301,6 +301,64 @@
       return normalizeComingSoonEntry(source);
     }
 
+    function splitLyricsIntoStanzas(lyricsText) {
+      return String(lyricsText || "")
+        .replace(/\r\n?/g, "\n")
+        .trim()
+        .split(/\n\s*\n+/)
+        .map((stanza) =>
+          stanza
+            .split("\n")
+            .map((line) => line.trimEnd())
+            .filter((line, index, lines) => line.length || lines.length === 1)
+        )
+        .filter((stanza) => stanza.some((line) => line.trim().length));
+    }
+
+    function isChorusMarker(line) {
+      return /(?:^|\b)(chorus|refrain|hook)(?:\b|:|\s|-)/i.test(String(line || "").trim());
+    }
+
+    function buildNotebookPreviewLines(song) {
+      const fullLyrics = String(song?.lyrics || "").trim();
+      const teaserLyrics = String(song?.teaserLyrics || "").trim();
+      const source = fullLyrics || teaserLyrics;
+      if (!source) {
+        return [];
+      }
+
+      const stanzas = splitLyricsIntoStanzas(source);
+      if (!stanzas.length) {
+        return source.split(/\r?\n/).map((line) => line.trimEnd());
+      }
+
+      const preview = [];
+      const firstVerse = stanzas[0];
+      preview.push(...firstVerse);
+
+      const chorusIndex = stanzas.findIndex((stanza, index) => {
+        if (index === 0) {
+          return false;
+        }
+        return stanza.some((line) => isChorusMarker(line));
+      });
+
+      if (chorusIndex > 0) {
+        preview.push("");
+        const chorus = stanzas[chorusIndex].filter((line, lineIndex) => {
+          if (lineIndex === 0 && isChorusMarker(line)) {
+            return false;
+          }
+          return true;
+        });
+        preview.push(...chorus);
+      } else if (stanzas.length > 1) {
+        preview.push("");
+      }
+
+      return preview;
+    }
+
     function renderEmpty() {
       const scene = document.querySelector(".signal-desk-scene");
       if (scene) {
@@ -394,9 +452,7 @@
       const paper = document.createElement("div");
       paper.className = "signal-notebook__paper";
 
-      const lines = String(song?.lyrics || song?.teaserLyrics || "")
-        .split(/\r?\n/)
-        .map((line) => line.trimEnd());
+      const lines = buildNotebookPreviewLines(song);
       lines.forEach((line) => {
         const row = document.createElement("div");
         row.className = line.trim() ? "signal-notebook__line" : "signal-notebook__line signal-notebook__line--blank";
@@ -404,7 +460,7 @@
         paper.appendChild(row);
       });
 
-      if ((song?.teaserLyrics || "").trim() && !(song?.lyrics || "").trim()) {
+      if ((song?.lyrics || song?.teaserLyrics || "").trim()) {
         notebook.classList.add("signal-notebook--teaser");
         const fade = document.createElement("div");
         fade.className = "signal-notebook__fade";
