@@ -260,6 +260,32 @@
       font-size: 1rem;
       line-height: 1.7;
     }
+    .signal-room--empty header,
+    .signal-room--empty footer,
+    .signal-room--empty #artwork {
+      display: none;
+    }
+    .signal-room--empty .wrap {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-block: 0;
+    }
+    .signal-room--empty .signal-desk-scene {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: auto;
+      width: 100%;
+    }
+    .signal-room--empty #notebook {
+      width: min(100%, 680px);
+      border: none;
+      background: transparent;
+      padding: 0;
+      text-align: center;
+    }
     footer {
       margin-top: 22px;
       color: var(--muted);
@@ -390,6 +416,7 @@
     }
 
     function renderEmpty() {
+      document.body.classList.add("signal-room--empty");
       const scene = document.querySelector(".signal-desk-scene");
       if (scene) {
         scene.classList.add("signal-desk-scene--single");
@@ -404,6 +431,7 @@
     }
 
     function renderTitleOnly(song) {
+      document.body.classList.remove("signal-room--empty");
       const scene = document.querySelector(".signal-desk-scene");
       if (scene) {
         scene.classList.add("signal-desk-scene--single");
@@ -444,6 +472,7 @@
     }
 
     function renderArtworkOnly(song) {
+      document.body.classList.remove("signal-room--empty");
       const scene = document.querySelector(".signal-desk-scene");
       if (scene) {
         scene.classList.add("signal-desk-scene--single");
@@ -504,6 +533,7 @@
     }
 
     function renderLyricsOnly(song) {
+      document.body.classList.remove("signal-room--empty");
       const scene = document.querySelector(".signal-desk-scene");
       if (scene) {
         scene.classList.add("signal-desk-scene--single");
@@ -516,6 +546,7 @@
     }
 
     function renderFull(song) {
+      document.body.classList.remove("signal-room--empty");
       const scene = document.querySelector(".signal-desk-scene");
       if (scene) {
         scene.classList.remove("signal-desk-scene--single");
