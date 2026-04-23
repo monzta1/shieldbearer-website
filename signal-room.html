@@ -463,231 +463,6 @@
       font-size: clamp(1.05rem, 2vw, 1.35rem);
       line-height: 1.35;
     }
-    .desk-crumpled {
-      position: fixed;
-      width: 82px;
-      height: 82px;
-      z-index: 3;
-      pointer-events: none;
-      filter: drop-shadow(4px 10px 14px rgba(0,0,0,0.55));
-      opacity: 0;
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    .desk-crumpled--a {
-      top: 16vh;
-      right: 22vw;
-      transform: rotate(-12deg) scale(0.95);
-    }
-    .desk-crumpled--b {
-      bottom: 18vh;
-      left: 12vw;
-      transform: rotate(22deg) scale(0.85);
-    }
-    .desk-pencil {
-      position: fixed;
-      bottom: 6vh;
-      left: 4vw;
-      transform: rotate(-20deg);
-      z-index: 2;
-      pointer-events: none;
-      filter: drop-shadow(2px 6px 8px rgba(0,0,0,0.55));
-      opacity: 0;
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    .desk-scrap {
-      position: fixed;
-      bottom: 5vh;
-      right: 18vw;
-      width: 140px;
-      padding: 8px 10px;
-      background: linear-gradient(180deg, #eadcb4 0%, #d9c797 100%);
-      transform: rotate(6deg);
-      z-index: 2;
-      pointer-events: none;
-      box-shadow:
-        0 10px 18px rgba(0,0,0,0.5),
-        0 3px 6px rgba(0,0,0,0.3),
-        inset 0 0 0 1px rgba(90,70,40,0.18);
-      font-family: "Caveat", cursive;
-      color: #3f2a17;
-      clip-path: polygon(0 6%, 96% 0, 100% 100%, 4% 98%);
-      opacity: 0;
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    .desk-scrap__line {
-      font-size: 1.15rem;
-      line-height: 1.1;
-    }
-    .desk-scrap__line--small {
-      margin-top: 2px;
-      font-size: 0.9rem;
-      color: #5a3c1e;
-    }
-    .desk-pick {
-      position: fixed;
-      bottom: 60px;
-      right: 8vw;
-      transform: rotate(25deg);
-      opacity: 0.7;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6));
-      z-index: 2;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    .desk-coffee-ring {
-      position: fixed;
-      bottom: 80px;
-      left: 10vw;
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      border: 2px solid rgba(150, 100, 50, 0.4);
-      box-shadow:
-        0 0 0 1px rgba(150, 100, 50, 0.22),
-        inset 0 0 10px rgba(150, 100, 50, 0.18);
-      z-index: 2;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    .desk-laptop {
-      position: fixed;
-      top: -2vh;
-      left: -2vw;
-      width: 34vw;
-      max-width: 390px;
-      min-width: 220px;
-      aspect-ratio: 1.25 / 1;
-      z-index: 2;
-      pointer-events: none;
-      filter: drop-shadow(8px 18px 20px rgba(0,0,0,0.52));
-      transform: rotate(-11deg);
-    }
-    .desk-laptop__base {
-      position: absolute;
-      inset: 18% 0 0 0;
-      border-radius: 20px 20px 10px 10px;
-      background: linear-gradient(180deg, #d8d5d0 0%, #aaa49d 22%, #56514d 24%, #1e1c1b 100%);
-      box-shadow:
-        inset 0 2px 0 rgba(255,255,255,0.45),
-        inset 0 -8px 12px rgba(0,0,0,0.42);
-    }
-    .desk-laptop__screen {
-      position: absolute;
-      top: 0;
-      left: 10%;
-      right: 10%;
-      height: 68%;
-      border-radius: 16px 16px 6px 6px;
-      background: linear-gradient(180deg, #16171a 0%, #0d0f12 100%);
-      box-shadow:
-        inset 0 0 0 6px #24272b,
-        inset 0 0 28px rgba(255,255,255,0.02);
-    }
-    .desk-laptop__screen::after {
-      content: "";
-      position: absolute;
-      inset: 9% 5%;
-      border-radius: 10px;
-      background: linear-gradient(160deg, #8e7f6b 0%, #4d402c 26%, #201710 100%);
-      opacity: .28;
-    }
-    .desk-phone {
-      position: fixed;
-      top: 4vh;
-      right: 8vw;
-      width: 108px;
-      height: 190px;
-      border-radius: 22px;
-      background: linear-gradient(180deg, #121212 0%, #050505 100%);
-      z-index: 2;
-      transform: rotate(14deg);
-      box-shadow:
-        0 18px 24px rgba(0,0,0,0.52),
-        inset 0 0 0 2px rgba(255,255,255,0.05);
-      pointer-events: none;
-    }
-    .desk-phone::before {
-      content: "";
-      position: absolute;
-      inset: 12px 10px 16px;
-      border-radius: 14px;
-      background: linear-gradient(180deg, #f7f1e3 0%, #f0ead9 100%);
-    }
-    .desk-phone::after {
-      content: "";
-      position: absolute;
-      top: 8px;
-      left: 50%;
-      width: 38px;
-      height: 5px;
-      margin-left: -19px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.14);
-    }
-    .sticky-note {
-      position: fixed;
-      left: 20vw;
-      top: 52vh;
-      width: 118px;
-      min-height: 118px;
-      padding: 12px 10px;
-      background: linear-gradient(180deg, #f4f19e 0%, #eadf76 100%);
-      transform: rotate(-7deg);
-      box-shadow:
-        0 12px 18px rgba(0,0,0,0.32),
-        inset 0 0 0 1px rgba(90,70,20,0.12);
-      z-index: 2;
-      pointer-events: none;
-      font-family: "Caveat", cursive;
-      color: #544110;
-    }
-    .sticky-note__title {
-      font-size: 1.15rem;
-      line-height: 1;
-      margin-bottom: 6px;
-    }
-    .sticky-note__line {
-      font-size: 1rem;
-      line-height: 1.05;
-    }
-    .desk-pen {
-      position: fixed;
-      right: 14vw;
-      bottom: 7vh;
-      width: 220px;
-      height: 24px;
-      transform: rotate(22deg);
-      z-index: 2;
-      pointer-events: none;
-      filter: drop-shadow(3px 8px 10px rgba(0,0,0,0.52));
-    }
-    .desk-pen__barrel {
-      position: absolute;
-      inset: 6px 18px 6px 0;
-      border-radius: 999px;
-      background: linear-gradient(180deg, #1e1d1c 0%, #090909 100%);
-    }
-    .desk-pen__tip {
-      position: absolute;
-      right: 0;
-      top: 4px;
-      width: 30px;
-      height: 16px;
-      clip-path: polygon(0 50%, 65% 0, 100% 50%, 65% 100%);
-      background: linear-gradient(180deg, #f0d18b 0%, #b08a3d 100%);
-    }
-    .desk-pen__clip {
-      position: absolute;
-      left: 18px;
-      top: 3px;
-      width: 28px;
-      height: 18px;
-      border-radius: 999px;
-      background: linear-gradient(180deg, #6f6f72 0%, #34353b 100%);
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
-    }
     .signal-room-header .nav__link {
       display: none;
     }
@@ -731,49 +506,17 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-top: 6vh;
+        padding-top: 4vh;
         padding-bottom: 12vh;
         perspective: none;
-      }
-      .desk-phone {
-        right: 5vw;
-        top: 4vh;
-        width: 86px;
-        height: 154px;
-      }
-      .sticky-note {
-        left: 10vw;
-        top: 53vh;
-        width: 96px;
-        min-height: 96px;
-      }
-      .desk-pen {
-        right: 3vw;
-        bottom: 5vh;
-        width: 170px;
-      }
-      .desk-pick {
-        right: 28px;
-        bottom: 12px;
-      }
-      .desk-coffee-ring {
-        left: 28px;
-        bottom: 24px;
-      }
-      .desk-crumpled,
-      .desk-pencil,
-      .desk-scrap {
-        display: none;
-      }
-      .desk-laptop {
-        display: none;
       }
       #artwork,
       #notebook {
         position: relative;
-        width: min(100%, 720px);
+        width: min(100%, 740px);
         margin-left: auto;
         margin-right: auto;
+        display: block;
       }
       #artwork {
         order: 1;
@@ -781,17 +524,39 @@
         right: auto;
         margin-top: 0;
         padding-bottom: 0;
+        position: sticky;
+        top: 14px;
+        z-index: 4;
       }
       #notebook {
         order: 2;
         margin-top: 7vh;
+        z-index: 2;
       }
       .signal-artframe {
-        width: min(100%, 620px);
-        transform: rotate(-1deg);
+        width: min(100%, 680px);
+        transform: rotate(0deg);
+        padding: 14px;
+        border-radius: 28px;
+        background: linear-gradient(180deg, #14110d 0%, #0b0907 100%);
+        box-shadow:
+          0 20px 34px rgba(0,0,0,0.38),
+          0 8px 16px rgba(0,0,0,0.24),
+          inset 0 1px 0 rgba(255,255,255,0.06);
+      }
+      .signal-artframe__mat {
+        padding: 12px;
+        border-radius: 18px;
+      }
+      .signal-artframe__image {
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+      }
+      .signal-artframe__caption {
+        font-size: clamp(1.15rem, 5vw, 1.7rem);
       }
       .signal-notebook {
-        width: min(100%, 700px);
+        width: min(100%, 720px);
       }
       .signal-room--empty .signal-desk-scene {
         padding-top: 12vh;
@@ -800,61 +565,12 @@
   </style>
 </head>
 <body>
-  <div class="desk-crumpled desk-crumpled--a" aria-hidden="true">
-    <svg viewBox="0 0 80 80" aria-hidden="true">
-      <polygon points="10,30 25,8 50,4 70,20 75,48 60,70 30,72 8,55" fill="#f1ece0" stroke="#b9a77f" stroke-width="1" stroke-linejoin="round"/>
-      <polygon points="18,32 30,18 46,16 60,28 56,44 46,58 28,58 16,48" fill="#dcd3bc" opacity="0.55"/>
-      <polygon points="32,28 40,22 52,30 48,42 38,44 30,38" fill="#c8bd9a" opacity="0.5"/>
-    </svg>
-  </div>
-  <div class="desk-crumpled desk-crumpled--b" aria-hidden="true">
-    <svg viewBox="0 0 80 80" aria-hidden="true">
-      <polygon points="6,28 22,6 48,8 68,22 74,50 58,72 26,70 10,50" fill="#f3ede1" stroke="#b9a77f" stroke-width="1" stroke-linejoin="round"/>
-      <polygon points="14,30 28,16 46,18 58,30 54,46 42,58 24,56 14,46" fill="#ded4be" opacity="0.6"/>
-    </svg>
-  </div>
-  <div class="desk-pencil" aria-hidden="true">
-    <svg viewBox="0 0 180 20" width="180" height="20">
-      <rect x="6" y="4" width="140" height="12" fill="#d4a02a" stroke="#7a5a10" stroke-width="0.5"/>
-      <rect x="6" y="4" width="140" height="3" fill="#e8b840" opacity="0.8"/>
-      <rect x="146" y="3" width="14" height="14" fill="#3b342b" stroke="#1e1a14" stroke-width="0.5"/>
-      <rect x="160" y="5" width="10" height="10" fill="#d26a4a" stroke="#7a3a20" stroke-width="0.5"/>
-      <polygon points="0,10 6,4 6,16" fill="#efd7a8" stroke="#7a5a10" stroke-width="0.5"/>
-      <polygon points="0,10 6,4 3,10" fill="#2a2218"/>
-    </svg>
-  </div>
-  <div class="desk-scrap" aria-hidden="true">
-    <div class="desk-scrap__line">Live from the Shieldbearer writing desk.</div>
-    <div class="desk-scrap__line desk-scrap__line--small">A new song is taking shape.</div>
-  </div>
-  <div class="desk-laptop" aria-hidden="true">
-    <div class="desk-laptop__screen"></div>
-    <div class="desk-laptop__base"></div>
-  </div>
-  <div class="desk-phone" aria-hidden="true"></div>
-  <div class="sticky-note" aria-hidden="true">
-    <div class="sticky-note__title">Draft note</div>
-    <div class="sticky-note__line">Keep the chorus open.</div>
-  </div>
-  <div class="desk-pen" aria-hidden="true">
-    <div class="desk-pen__barrel"></div>
-    <div class="desk-pen__clip"></div>
-    <div class="desk-pen__tip"></div>
-  </div>
   <div class="wrap">
     <header class="signal-room-header">
       <h1 class="signal-room-heading">Live from the Shieldbearer writing desk</h1>
       <div class="signal-room-eyebrow">Shieldbearer</div>
     </header>
     <main class="signal-desk-scene">
-      <div class="desk-coffee-ring" aria-hidden="true"></div>
-      <div class="desk-pick" aria-hidden="true">
-        <svg viewBox="0 0 30 36" width="30" height="36">
-          <path d="M15 2 C6 2 2 10 2 18 C2 28 10 34 15 34 C20 34 28 28 28 18 C28 10 24 2 15 2Z"
-                fill="#c9a84c" opacity="0.6" stroke="#a07820" stroke-width="0.5"/>
-          <text x="15" y="20" text-anchor="middle" font-size="6" fill="#805010" opacity="0.8">SB</text>
-        </svg>
-      </div>
       <div id="artwork"></div>
       <div id="notebook"></div>
     </main>
@@ -1249,15 +965,7 @@
         });
       });
 
-      const revealables = [
-        ".desk-laptop",
-        ".desk-phone",
-        ".sticky-note",
-        ".desk-pen",
-        ".desk-scrap",
-        ".desk-pick",
-        ".desk-coffee-ring"
-      ];
+      const revealables = [];
 
       revealables.forEach((selector, index) => {
         const element = document.querySelector(selector);
