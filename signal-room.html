@@ -26,17 +26,20 @@
     body {
       min-height: 100vh;
       padding: 0;
-      background-color: #0d0a07;
-      background-image:
-        repeating-linear-gradient(90deg, transparent 0 80px, rgba(255,255,255,0.008) 80px 81px),
-        repeating-linear-gradient(88deg, transparent 0 120px, rgba(0,0,0,0.04) 120px 122px),
-        linear-gradient(180deg, #0d0a07, #100c08, #0a0805);
+      opacity: 0;
+      transition: opacity 1.2s ease;
+      background:
+        radial-gradient(ellipse 80% 40% at 50% -10%, rgba(201, 168, 76, 0.04) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 50% at 50% 85%, rgba(255, 220, 120, 0.06) 0%, transparent 60%),
+        linear-gradient(180deg, #0a0806 0%, #100d09 35%, #13100c 55%, #0d0b08 70%, #080705 100%);
+      overflow-x: hidden;
     }
-    .wrap { max-width: 1120px; margin: 0 auto; padding: 24px 20px 72px; }
+    body.is-loaded { opacity: 1; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 24px 20px 72px; position: relative; z-index: 2; }
     header,
     footer {
-      border: 1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.05);
+      background: rgba(255,255,255,.015);
       border-radius: 18px;
       padding: 14px 18px;
     }
@@ -46,6 +49,19 @@
       justify-content: space-between;
       gap: 16px;
       margin-bottom: 22px;
+    }
+    .signal-room-header {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      text-align: center;
+      pointer-events: none;
+      border: none;
+      background: transparent;
+      padding: 0;
+      margin: 0;
     }
     .nav__brand {
       font-family: var(--mono);
@@ -60,26 +76,62 @@
       font-size: .9rem;
     }
     .signal-desk-scene {
+      position: relative;
       display: grid;
       grid-template-columns: minmax(280px, 1fr) minmax(320px, 1.4fr);
       gap: 18px;
       min-height: 60vh;
+      padding-top: 14vh;
+      padding-bottom: 6vh;
+      isolation: isolate;
+      perspective: 1200px;
+    }
+    .signal-desk-scene::before {
+      content: "";
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 45vh;
+      background:
+        repeating-linear-gradient(91deg, transparent 0px, transparent 60px, rgba(255,255,255,0.007) 60px, rgba(255,255,255,0.007) 61px),
+        repeating-linear-gradient(89deg, transparent 0px, transparent 100px, rgba(0,0,0,0.03) 100px, rgba(0,0,0,0.03) 102px),
+        linear-gradient(180deg, #0f0c09 0%, #141008 100%);
+      z-index: 0;
+      pointer-events: none;
+    }
+    .signal-desk-scene::after {
+      content: "";
+      position: fixed;
+      bottom: 45vh;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, rgba(180, 140, 80, 0.15) 20%, rgba(200, 160, 90, 0.25) 50%, rgba(180, 140, 80, 0.15) 80%, transparent 100%);
+      z-index: 1;
+      pointer-events: none;
     }
     .signal-desk-scene > * {
       animation: signal-fade-in 420ms ease-out both;
+      position: relative;
+      z-index: 2;
     }
     .signal-desk-scene > *:nth-child(2) {
       animation-delay: 70ms;
+    }
+    .signal-desk-scene > *:nth-child(3) {
+      animation-delay: 140ms;
     }
     .signal-desk-scene--single {
       display: flex;
       align-items: center;
       justify-content: center;
+      padding-top: 10vh;
     }
     #artwork,
     #notebook {
-      border: 1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.02);
+      background: transparent;
       border-radius: 20px;
       padding: 22px;
     }
@@ -111,18 +163,16 @@
       padding: 18px 18px 16px;
       border-radius: 20px;
       background: linear-gradient(180deg, #16110c 0%, #0c0906 100%);
-      box-shadow:
-        0 16px 28px rgba(0, 0, 0, .34),
-        inset 0 0 0 1px rgba(255,255,255,.06);
+      filter:
+        drop-shadow(0 20px 40px rgba(0,0,0,0.9))
+        drop-shadow(4px 8px 16px rgba(0,0,0,0.7))
+        drop-shadow(-2px -1px 0 rgba(255,220,120,0.04));
       transform: rotate(-2deg);
       transform-origin: center top;
-      transition: transform 220ms ease, box-shadow 220ms ease;
+      transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
     .signal-artframe:hover {
-      transform: rotate(0deg) translateY(-3px);
-      box-shadow:
-        0 22px 36px rgba(0, 0, 0, .38),
-        inset 0 0 0 1px rgba(255,255,255,.08);
+      transform: rotate(0deg);
     }
     .signal-artframe::before {
       content: "";
@@ -135,6 +185,22 @@
       border-radius: 50%;
       background: radial-gradient(circle at 35% 35%, #d9cab7 0 20%, #5b4630 21% 100%);
       box-shadow: 0 1px 0 rgba(255,255,255,.35), 0 3px 10px rgba(0,0,0,.35);
+    }
+    .signal-artwork-wrap {
+      position: relative;
+      opacity: 0;
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .signal-artwork-wrap::before {
+      content: "";
+      position: absolute;
+      top: -40px;
+      left: -40px;
+      right: -40px;
+      bottom: -40px;
+      background: radial-gradient(ellipse at center, rgba(255, 220, 120, 0.03) 0%, transparent 70%);
+      z-index: -1;
+      pointer-events: none;
     }
     .signal-artframe__mat {
       padding: 18px;
@@ -171,17 +237,34 @@
         repeating-linear-gradient(180deg, rgba(88, 61, 31, .06) 0 1px, transparent 1px 34px),
         linear-gradient(180deg, #f4e9cf 0%, #efe1bf 100%);
       box-shadow:
-        0 20px 45px rgba(0, 0, 0, .26),
+        0 30px 60px rgba(0,0,0,0.8),
+        0 8px 20px rgba(0,0,0,0.6),
+        0 2px 4px rgba(0,0,0,0.4),
+        0 -1px 0 rgba(255, 220, 120, 0.08),
         inset 0 0 0 1px rgba(91, 63, 28, .18);
       color: #3f2a17;
       overflow: hidden;
       transition: transform 220ms ease, box-shadow 220ms ease;
+      animation: notebook-rest 8s ease-in-out infinite;
+      opacity: 0;
+      transition: opacity 0.8s ease, transform 220ms ease, box-shadow 220ms ease;
     }
     .signal-notebook:hover {
       transform: rotate(0deg) translateY(-2px);
       box-shadow:
         0 24px 48px rgba(0, 0, 0, .3),
         inset 0 0 0 1px rgba(91, 63, 28, .22);
+    }
+    .signal-notebook::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 40%;
+      background: linear-gradient(180deg, rgba(255, 240, 200, 0.03) 0%, transparent 100%);
+      pointer-events: none;
+      border-radius: 2px 2px 0 0;
     }
     .signal-notebook__corner-pencil {
       position: absolute;
@@ -278,6 +361,7 @@
       justify-content: center;
       min-height: auto;
       width: 100%;
+      padding-top: 18vh;
     }
     .signal-room--empty #notebook {
       width: min(100%, 680px);
@@ -291,6 +375,83 @@
       color: var(--muted);
       font-size: .88rem;
     }
+    .studio-lamp {
+      position: fixed;
+      top: 0;
+      right: 80px;
+      z-index: 0;
+      pointer-events: none;
+      opacity: .9;
+      opacity: 0;
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .lamp-arm {
+      width: 3px;
+      height: 120px;
+      background: linear-gradient(180deg, #2a2218, #1a150f);
+      transform: rotate(15deg);
+      transform-origin: top center;
+      margin-left: 40px;
+    }
+    .lamp-head {
+      width: 60px;
+      height: 24px;
+      background: linear-gradient(180deg, #2a2218, #1a150f);
+      border-radius: 4px 4px 8px 8px;
+      transform: rotate(15deg);
+      margin-top: -4px;
+      margin-left: 14px;
+    }
+    .lamp-light-cone {
+      position: absolute;
+      top: 110px;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-left: 80px solid transparent;
+      border-right: 80px solid transparent;
+      border-top: 0;
+      border-bottom: 200px solid rgba(255, 220, 100, 0.025);
+      transform: rotate(15deg);
+      transform-origin: top center;
+      filter: blur(20px);
+    }
+    .desk-pick {
+      position: absolute;
+      bottom: 20px;
+      right: 60px;
+      transform: rotate(25deg);
+      opacity: 0.7;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6));
+      z-index: 2;
+    }
+    .desk-coffee-ring {
+      position: absolute;
+      bottom: 40px;
+      left: 80px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 2px solid rgba(120, 80, 40, 0.15);
+      box-shadow:
+        0 0 0 1px rgba(120, 80, 40, 0.08),
+        inset 0 0 8px rgba(120, 80, 40, 0.05);
+      z-index: 2;
+    }
+    .signal-room-header .nav__link {
+      display: none;
+    }
+    .signal-room-heading {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(14px, 3vw, 24px);
+      color: rgba(180, 150, 100, 0.12);
+      letter-spacing: .4em;
+      text-transform: uppercase;
+      margin: 0;
+    }
+    .signal-room-eyebrow {
+      display: none;
+    }
     @keyframes signal-fade-in {
       from {
         opacity: 0;
@@ -301,21 +462,63 @@
         transform: translateY(0);
       }
     }
+    @keyframes notebook-rest {
+      0%, 100% { transform: rotate(0.3deg) translateY(0px); }
+      50% { transform: rotate(0.3deg) translateY(-2px); }
+    }
     @media (max-width: 760px) {
       .wrap { padding-inline: 14px; }
       .signal-desk-scene {
         grid-template-columns: 1fr;
+        padding-top: 10vh;
+        padding-bottom: 4vh;
+        perspective: none;
+      }
+      .signal-desk-scene::before {
+        height: 42vh;
+      }
+      .signal-desk-scene::after {
+        bottom: 42vh;
+      }
+      .studio-lamp {
+        right: 26px;
+        transform: scale(.82);
+        transform-origin: top right;
+      }
+      .desk-pick {
+        right: 28px;
+        bottom: 12px;
+      }
+      .desk-coffee-ring {
+        left: 28px;
+        bottom: 24px;
+      }
+      .signal-room--empty .signal-desk-scene {
+        padding-top: 12vh;
       }
     }
   </style>
 </head>
 <body>
+  <div class="studio-lamp" aria-hidden="true">
+    <div class="lamp-arm"></div>
+    <div class="lamp-head"></div>
+    <div class="lamp-light-cone"></div>
+  </div>
   <div class="wrap">
-    <header>
-      <div class="nav__brand">Shieldbearer</div>
-      <a class="nav__link" href="/index.html">Home</a>
+    <header class="signal-room-header">
+      <h1 class="signal-room-heading">Signal Room</h1>
+      <div class="signal-room-eyebrow">Shieldbearer</div>
     </header>
     <main class="signal-desk-scene">
+      <div class="desk-coffee-ring" aria-hidden="true"></div>
+      <div class="desk-pick" aria-hidden="true">
+        <svg viewBox="0 0 30 36" width="30" height="36">
+          <path d="M15 2 C6 2 2 10 2 18 C2 28 10 34 15 34 C20 34 28 28 28 18 C28 10 24 2 15 2Z"
+                fill="#c9a84c" opacity="0.6" stroke="#a07820" stroke-width="0.5"/>
+          <text x="15" y="20" text-anchor="middle" font-size="6" fill="#805010" opacity="0.8">SB</text>
+        </svg>
+      </div>
       <div id="artwork"></div>
       <div id="notebook"></div>
     </main>
@@ -460,6 +663,8 @@
         artworkNode.className = "";
         artworkNode.innerHTML = "";
       }
+      const wrap = document.createElement("section");
+      wrap.className = "signal-artwork-wrap";
       const frame = document.createElement("section");
       frame.className = "signal-artframe";
 
@@ -478,7 +683,8 @@
       mat.appendChild(img);
       frame.appendChild(mat);
       frame.appendChild(caption);
-      artworkNode.appendChild(frame);
+      wrap.appendChild(frame);
+      artworkNode.appendChild(wrap);
     }
 
     function renderArtworkOnly(song) {
@@ -608,7 +814,79 @@
       }
     }
 
-    loadSongModel();
+    document.addEventListener("DOMContentLoaded", () => {
+      document.body.style.opacity = "0";
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          document.body.classList.add("is-loaded");
+        });
+      });
+
+      const lamp = document.querySelector(".studio-lamp");
+      if (lamp) {
+        setTimeout(() => {
+          lamp.style.opacity = "1";
+        }, 400);
+      }
+
+      const artwork = document.querySelector(".signal-artwork-wrap");
+      if (artwork) {
+        setTimeout(() => {
+          artwork.style.opacity = "1";
+        }, 800);
+      }
+
+      const notebook = document.querySelector(".signal-notebook");
+      if (notebook) {
+        setTimeout(() => {
+          notebook.style.opacity = "1";
+        }, 1200);
+      }
+    });
+
+    if (window.matchMedia("(pointer: fine)").matches) {
+      document.addEventListener("mousemove", (e) => {
+        const cx = window.innerWidth / 2;
+        const cy = window.innerHeight / 2;
+        const dx = (e.clientX - cx) / cx;
+        const dy = (e.clientY - cy) / cy;
+
+        const lamp = document.querySelector(".studio-lamp");
+        if (lamp) {
+          lamp.style.transform = `translate(${dx * 2}px, ${dy * 1}px)`;
+        }
+
+        const artwork = document.querySelector(".signal-artwork-wrap");
+        if (artwork) {
+          artwork.style.transform = `translate(${dx * -5}px, ${dy * -3}px)`;
+        }
+
+        const notebook = document.querySelector(".signal-notebook");
+        if (notebook) {
+          notebook.style.transform = `rotate(0.3deg) translate(${dx * 8}px, ${dy * 5}px)`;
+        }
+
+        const pick = document.querySelector(".desk-pick");
+        if (pick) {
+          pick.style.transform = `rotate(25deg) translate(${dx * 10}px, ${dy * 6}px)`;
+        }
+      });
+    }
+
+    loadSongModel().then(() => {
+      const scene = document.querySelector(".signal-desk-scene");
+      const artwork = document.querySelector(".signal-artwork-wrap");
+      const notebook = document.querySelector(".signal-notebook");
+      if (scene && !document.body.classList.contains("signal-room--empty")) {
+        scene.style.opacity = "1";
+      }
+      if (artwork) {
+        artwork.style.opacity = "1";
+      }
+      if (notebook) {
+        notebook.style.opacity = "1";
+      }
+    });
   </script>
 </body>
 </html>
