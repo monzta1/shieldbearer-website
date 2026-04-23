@@ -463,50 +463,6 @@
       font-size: clamp(1.05rem, 2vw, 1.35rem);
       line-height: 1.35;
     }
-    .desk-plant {
-      position: fixed;
-      top: -4vh;
-      left: 8vw;
-      width: 160px;
-      height: 180px;
-      z-index: 3;
-      pointer-events: none;
-      filter: drop-shadow(6px 14px 18px rgba(0,0,0,0.5));
-      opacity: 0;
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    .desk-plant__leaves {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 75%;
-    }
-    .desk-plant__pot {
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      margin-left: -38px;
-      width: 76px;
-      height: 48px;
-      border-radius: 8px 8px 4px 4px;
-      background: linear-gradient(180deg, #ece5d4 0%, #d8cfba 60%, #bbb19a 100%);
-      box-shadow:
-        inset 0 -8px 10px rgba(60,40,20,0.18),
-        inset 0 3px 0 rgba(255,255,255,0.55),
-        0 2px 0 rgba(90,70,40,0.3);
-    }
-    .desk-plant__pot::before {
-      content: "";
-      position: absolute;
-      top: -6px;
-      left: -4px;
-      right: -4px;
-      height: 10px;
-      border-radius: 6px;
-      background: linear-gradient(180deg, #e3dbc7 0%, #c8beaa 100%);
-      box-shadow: inset 0 -2px 4px rgba(60,40,20,0.25);
-    }
     .desk-crumpled {
       position: fixed;
       width: 82px;
@@ -772,16 +728,12 @@
     @media (max-width: 760px) {
       .wrap { padding-inline: 14px; }
       .signal-desk-scene {
-        grid-template-columns: 1fr;
-        padding-top: 10vh;
-        padding-bottom: 4vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 6vh;
+        padding-bottom: 12vh;
         perspective: none;
-      }
-      .desk-laptop {
-        left: -14vw;
-        top: -1vh;
-        width: 48vw;
-        min-width: 180px;
       }
       .desk-phone {
         right: 5vw;
@@ -808,7 +760,6 @@
         left: 28px;
         bottom: 24px;
       }
-      .desk-plant,
       .desk-crumpled,
       .desk-pencil,
       .desk-scrap {
@@ -817,6 +768,31 @@
       .desk-laptop {
         display: none;
       }
+      #artwork,
+      #notebook {
+        position: relative;
+        width: min(100%, 720px);
+        margin-left: auto;
+        margin-right: auto;
+      }
+      #artwork {
+        order: 1;
+        top: auto;
+        right: auto;
+        margin-top: 0;
+        padding-bottom: 0;
+      }
+      #notebook {
+        order: 2;
+        margin-top: 7vh;
+      }
+      .signal-artframe {
+        width: min(100%, 620px);
+        transform: rotate(-1deg);
+      }
+      .signal-notebook {
+        width: min(100%, 700px);
+      }
       .signal-room--empty .signal-desk-scene {
         padding-top: 12vh;
       }
@@ -824,18 +800,6 @@
   </style>
 </head>
 <body>
-  <div class="desk-plant" aria-hidden="true">
-    <div class="desk-plant__pot"></div>
-    <svg class="desk-plant__leaves" viewBox="0 0 160 120" aria-hidden="true">
-      <g fill="#4c7a28" stroke="#2f4f18" stroke-width="1" stroke-linejoin="round">
-        <path d="M80 100 C70 70 55 45 40 25 C55 45 68 65 78 100Z"/>
-        <path d="M80 100 C72 75 60 50 50 30 C62 55 72 78 80 100Z"/>
-        <path d="M80 100 C80 70 80 40 80 12 C80 42 82 72 82 100Z" fill="#5c8d32"/>
-        <path d="M80 100 C90 72 104 48 118 28 C106 52 94 76 82 100Z"/>
-        <path d="M80 100 C92 76 110 58 128 42 C112 64 96 82 84 100Z" fill="#3e6520"/>
-      </g>
-    </svg>
-  </div>
   <div class="desk-crumpled desk-crumpled--a" aria-hidden="true">
     <svg viewBox="0 0 80 80" aria-hidden="true">
       <polygon points="10,30 25,8 50,4 70,20 75,48 60,70 30,72 8,55" fill="#f1ece0" stroke="#b9a77f" stroke-width="1" stroke-linejoin="round"/>
@@ -1286,7 +1250,6 @@
       });
 
       const revealables = [
-        ".desk-plant",
         ".desk-laptop",
         ".desk-phone",
         ".sticky-note",
