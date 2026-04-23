@@ -654,6 +654,41 @@
       return "";
     }
 
+    function isTestSongEntry(songId, title, source) {
+      const id = String(songId || "").trim().toLowerCase();
+      const name = String(title || "").trim().toLowerCase();
+      const origin = String(source || "").trim().toLowerCase();
+
+      if (!id && !name) {
+        return false;
+      }
+
+      const blockedExactIds = new Set([
+        "test-song",
+        "valid-song-with-artwork",
+        "empty-fields-song",
+        "write-fix-test"
+      ]);
+
+      if (blockedExactIds.has(id)) {
+        return true;
+      }
+
+      if (id.startsWith("test-") || id.endsWith("-test") || id.includes("fixture")) {
+        return true;
+      }
+
+      if (name.includes("test") || name.includes("fixture") || name.includes("sample")) {
+        return true;
+      }
+
+      if (origin === "shield-ingest-cli" && (id.startsWith("valid-") || id.startsWith("empty-"))) {
+        return true;
+      }
+
+      return false;
+    }
+
     function normalizeEventRecord(item) {
       if (!item || typeof item !== "object") {
         return null;
@@ -662,7 +697,9 @@
       const payload = item.payload && typeof item.payload === "object" ? item.payload : null;
       const eventType = normalizeEventType(item.eventType || payload?.eventType);
       const songId = String(item.songId || payload?.songId || payload?.id || "").trim();
-      if (!eventType || !songId) {
+      const title = String(item.title || payload?.title || "").trim();
+      const source = String(item.source || payload?.source || "").trim();
+      if (!eventType || !songId || isTestSongEntry(songId, title, source)) {
         return null;
       }
 
@@ -671,10 +708,10 @@
         id: String(item.id || payload?.id || `${songId}#${eventType}#${timestamp}`).trim(),
         songId,
         eventType,
-        title: String(item.title || payload?.title || "").trim(),
+        title,
         youtubeUrl: String(item.youtubeUrl || payload?.youtubeUrl || payload?.sourceUrl || "").trim(),
         sourceUrl: String(item.sourceUrl || payload?.sourceUrl || payload?.youtubeUrl || "").trim(),
-        source: String(item.source || payload?.source || "").trim(),
+        source,
         contentHash: String(item.contentHash || payload?.contentHash || "").trim(),
         timestamp,
         payload
@@ -694,8 +731,10 @@
       const payload = item.payload && typeof item.payload === "object" ? item.payload : null;
       const eventType = normalizeEventType(item.eventType || payload?.eventType);
       const songId = String(item.songId || payload?.songId || payload?.id || "").trim();
+      const title = String(item.title || payload?.title || "").trim();
+      const source = String(item.source || payload?.source || "").trim();
       const timestamp = String(item.timestamp || payload?.timestamp || payload?.publishedAt || item.createdAt || item.updatedAt || "").trim();
-      if (!eventType || !songId || !timestamp) {
+      if (!eventType || !songId || !timestamp || isTestSongEntry(songId, title, source)) {
         return null;
       }
 
@@ -703,10 +742,10 @@
         id: String(item.id || payload?.id || `${songId}#${eventType}#${timestamp}`).trim(),
         songId,
         eventType,
-        title: String(item.title || payload?.title || "").trim(),
+        title,
         youtubeUrl: String(item.youtubeUrl || payload?.youtubeUrl || payload?.sourceUrl || "").trim(),
         sourceUrl: String(item.sourceUrl || payload?.sourceUrl || payload?.youtubeUrl || "").trim(),
-        source: String(item.source || payload?.source || "").trim(),
+        source,
         contentHash: String(item.contentHash || payload?.contentHash || "").trim(),
         timestamp,
         data: {
