@@ -163,6 +163,17 @@
       color: #3f2a17;
       overflow: hidden;
     }
+    .signal-notebook__corner-pencil {
+      position: absolute;
+      top: 16px;
+      right: 18px;
+      width: 30px;
+      height: 30px;
+      opacity: .42;
+      transform: rotate(-22deg);
+      transform-origin: center center;
+      pointer-events: none;
+    }
     .signal-notebook::before {
       content: "";
       position: absolute;
@@ -365,6 +376,12 @@
       const notebook = document.createElement("section");
       notebook.className = "signal-notebook";
 
+      const pencil = document.createElement("svg");
+      pencil.className = "signal-notebook__corner-pencil";
+      pencil.setAttribute("viewBox", "0 0 24 24");
+      pencil.setAttribute("aria-hidden", "true");
+      pencil.innerHTML = '<path fill="currentColor" d="M3 17.25V21h3.75L17.8 9.95l-3.75-3.75L3 17.25Zm14.71-8.04a1 1 0 0 0 0-1.41l-1.51-1.51a1 1 0 0 0-1.41 0l-1.2 1.2 2.93 2.93 1.19-1.21Z"/>';
+
       const title = document.createElement("h2");
       title.className = "signal-notebook__title";
       title.innerHTML = `
@@ -394,6 +411,7 @@
         notebook.appendChild(fade);
       }
 
+      notebook.appendChild(pencil);
       notebook.appendChild(title);
       notebook.appendChild(paper);
       notebookNode.appendChild(notebook);
