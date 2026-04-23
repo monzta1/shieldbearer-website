@@ -30,45 +30,20 @@
         repeating-linear-gradient(88deg, transparent 0 120px, rgba(0,0,0,0.04) 120px 122px),
         linear-gradient(180deg, #0d0a07, #100c08, #0a0805);
     }
-    .wrap { max-width: 1120px; margin: 0 auto; padding: 40px 20px 72px; }
-    .hero {
-      padding: 42px 28px;
-      border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      border-radius: 24px;
-      box-shadow: 0 24px 60px rgba(0,0,0,.35);
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 24px 20px 72px; }
+    header,
+    footer {
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      border-radius: 18px;
+      padding: 14px 18px;
     }
-    .eyebrow {
-      letter-spacing: .28em;
-      text-transform: uppercase;
-      color: var(--muted);
-      font-size: .74rem;
-      margin: 0 0 14px;
-    }
-    h1 {
-      margin: 0;
-      font-size: clamp(2.4rem, 6vw, 5rem);
-      line-height: .92;
-      letter-spacing: .02em;
-      text-transform: uppercase;
-    }
-    .sub {
-      margin: 18px 0 0;
-      max-width: 780px;
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 1.02rem;
-    }
-    .nav {
+    header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      padding: 14px 18px;
       margin-bottom: 22px;
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 18px;
-      background: rgba(255,255,255,.03);
     }
     .nav__brand {
       font-family: var(--mono);
@@ -82,17 +57,18 @@
       text-decoration: none;
       font-size: .9rem;
     }
-    .footer {
-      margin-top: 24px;
-      color: var(--muted);
-      font-size: .88rem;
+    .signal-desk-scene {
+      display: grid;
+      grid-template-columns: minmax(280px, 1fr) minmax(320px, 1.4fr);
+      gap: 18px;
+      min-height: 60vh;
     }
-    .signal-room-view {
-      margin-top: 22px;
-      padding: 22px;
+    #artwork,
+    #notebook {
       border: 1px solid rgba(255,255,255,.08);
-      border-radius: 20px;
       background: rgba(255,255,255,.03);
+      border-radius: 20px;
+      padding: 22px;
     }
     .signal-room-view__title {
       margin: 0 0 12px;
@@ -127,34 +103,38 @@
       font-size: 1rem;
       line-height: 1.7;
     }
+    footer {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: .88rem;
+    }
+    @media (max-width: 760px) {
+      .wrap { padding-inline: 14px; }
+      .signal-desk-scene {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
-  <main class="wrap">
-    <section class="hero">
-      <div class="nav">
-        <div class="nav__brand">Shieldbearer</div>
-        <a class="nav__link" href="/index.html">Home</a>
-      </div>
-      <p class="eyebrow">Signal Room reset</p>
-      <h1>Minimal shell</h1>
-      <p class="sub">
-        The old Signal Room dashboard has been removed. This page now keeps the
-        site frame and the data fetch hook only.
-      </p>
-      <section class="signal-room-view" id="signalRoomView" aria-live="polite">
-        <div class="signal-room-view__title">Signal Room State</div>
-        <div id="signalRoomContent" class="signal-room-view__empty">Loading site.json...</div>
-      </section>
-      <div class="footer">
-        Powered by the Shieldbearer event pipeline.
-      </div>
-    </section>
-  </main>
+  <div class="wrap">
+    <header>
+      <div class="nav__brand">Shieldbearer</div>
+      <a class="nav__link" href="/index.html">Home</a>
+    </header>
+    <main class="signal-desk-scene">
+      <div id="artwork"></div>
+      <div id="notebook"></div>
+    </main>
+    <footer>
+      Powered by the Shieldbearer event pipeline.
+    </footer>
+  </div>
 
   <script>
     const SITE_JSON_URL = window.SIGNAL_ROOM_SITE_JSON_URL || "./site.json";
-    const signalRoomContent = document.getElementById("signalRoomContent");
+    const artworkNode = document.getElementById("artwork");
+    const notebookNode = document.getElementById("notebook");
 
     function normalizeText(value) {
       return String(value || "").trim();
@@ -185,46 +165,69 @@
     }
 
     function renderEmpty() {
-      if (!signalRoomContent) return;
-      signalRoomContent.className = "signal-room-view__empty";
-      signalRoomContent.textContent = "No song is ready yet.";
+      if (artworkNode) {
+        artworkNode.innerHTML = "";
+      }
+      if (notebookNode) {
+        notebookNode.className = "signal-room-view__empty";
+        notebookNode.textContent = "No song is ready yet.";
+      }
     }
 
     function renderTitleOnly(song) {
-      if (!signalRoomContent) return;
-      signalRoomContent.className = "signal-room-view__empty";
-      signalRoomContent.textContent = song?.title || "Untitled";
+      if (artworkNode) {
+        artworkNode.innerHTML = "";
+      }
+      if (notebookNode) {
+        notebookNode.className = "signal-room-view__empty";
+        notebookNode.textContent = song?.title || "Untitled";
+      }
     }
 
     function renderArtworkOnly(song) {
-      if (!signalRoomContent) return;
-      signalRoomContent.className = "";
-      signalRoomContent.innerHTML = "";
+      if (artworkNode) {
+        artworkNode.className = "";
+        artworkNode.innerHTML = "";
+      }
+      if (notebookNode) {
+        notebookNode.className = "";
+        notebookNode.innerHTML = "";
+      }
       const img = document.createElement("img");
       img.className = "signal-room-view__artwork";
       img.alt = song?.title || "Song artwork";
       img.src = song?.artwork || "";
-      signalRoomContent.appendChild(img);
+      artworkNode.appendChild(img);
     }
 
     function renderLyricsOnly(song) {
-      if (!signalRoomContent) return;
-      signalRoomContent.className = "";
-      signalRoomContent.innerHTML = "";
+      if (artworkNode) {
+        artworkNode.className = "";
+        artworkNode.innerHTML = "";
+      }
+      if (notebookNode) {
+        notebookNode.className = "";
+        notebookNode.innerHTML = "";
+      }
       const title = document.createElement("div");
       title.className = "signal-room-view__title";
       title.textContent = song?.title || "Untitled";
       const lyrics = document.createElement("div");
       lyrics.className = "signal-room-view__lyrics";
       lyrics.textContent = song?.lyrics || song?.teaserLyrics || "";
-      signalRoomContent.appendChild(title);
-      signalRoomContent.appendChild(lyrics);
+      notebookNode.appendChild(title);
+      notebookNode.appendChild(lyrics);
     }
 
     function renderFull(song) {
-      if (!signalRoomContent) return;
-      signalRoomContent.className = "";
-      signalRoomContent.innerHTML = "";
+      if (artworkNode) {
+        artworkNode.className = "";
+        artworkNode.innerHTML = "";
+      }
+      if (notebookNode) {
+        notebookNode.className = "";
+        notebookNode.innerHTML = "";
+      }
       const img = document.createElement("img");
       img.className = "signal-room-view__artwork";
       img.alt = song?.title || "Song artwork";
@@ -238,10 +241,10 @@
       const meaning = document.createElement("p");
       meaning.className = "signal-room-view__meaning";
       meaning.textContent = song?.songMeaning || "";
-      signalRoomContent.appendChild(img);
-      signalRoomContent.appendChild(title);
-      signalRoomContent.appendChild(lyrics);
-      signalRoomContent.appendChild(meaning);
+      artworkNode.appendChild(img);
+      notebookNode.appendChild(title);
+      notebookNode.appendChild(lyrics);
+      notebookNode.appendChild(meaning);
     }
 
     function renderFromModel(data) {
