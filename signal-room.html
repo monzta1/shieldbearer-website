@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shieldbearer Signal Room</title>
-  <meta name="description" content="The Signal Room — a Shieldbearer song being born in real time. Lyrics, chords, artwork, and fragments appear here as the work takes shape.">
+  <title>Shieldbearer Writing Desk</title>
+  <meta name="description" content="Live from the Shieldbearer writing desk. Watch the song take shape in a warm, tactile studio scene.">
   <meta name="theme-color" content="#7a4c27">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
@@ -89,12 +89,10 @@
     }
     .signal-desk-scene {
       position: relative;
-      display: grid;
-      grid-template-columns: minmax(280px, 1fr) minmax(320px, 1.4fr);
-      gap: 18px;
-      min-height: 60vh;
-      padding-top: 14vh;
-      padding-bottom: 6vh;
+      display: block;
+      min-height: 74vh;
+      padding-top: 12vh;
+      padding-bottom: 10vh;
     }
     .signal-desk-scene > * {
       animation: signal-fade-in 420ms ease-out both;
@@ -120,9 +118,25 @@
       border-radius: 20px;
       padding: 22px;
     }
+    #artwork {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: min(360px, 30vw);
+    }
+    #notebook {
+      position: relative;
+      width: min(820px, 72vw);
+      margin: 10vh auto 0;
+    }
     .signal-desk-scene--single #artwork,
     .signal-desk-scene--single #notebook {
+      position: relative;
       width: min(100%, 680px);
+      margin-left: auto;
+      margin-right: auto;
+      top: auto;
+      right: auto;
     }
     .signal-room-view__title {
       margin: 0 0 12px;
@@ -255,6 +269,23 @@
       background: rgba(168, 61, 35, .24);
       pointer-events: none;
     }
+    .signal-notebook__spiral {
+      position: absolute;
+      top: 18px;
+      bottom: 18px;
+      left: 8px;
+      width: 16px;
+      border-radius: 999px;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(94, 75, 46, .92) 0 2px, transparent 2.6px)
+          center 0 / 16px 24px repeat-y,
+        linear-gradient(180deg, rgba(118, 92, 56, .5) 0%, rgba(60, 42, 24, .28) 100%);
+      box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,.06),
+        1px 0 0 rgba(255,255,255,.02);
+      opacity: .85;
+      pointer-events: none;
+    }
     .signal-notebook__title {
       display: flex;
       align-items: center;
@@ -278,6 +309,43 @@
       position: relative;
       padding: 6px 0 2px;
     }
+    .signal-notebook__section {
+      margin: 0 0 18px;
+      position: relative;
+      z-index: 1;
+    }
+    .signal-notebook__section-label {
+      margin: 0 0 8px;
+      font-family: var(--mono);
+      font-size: .68rem;
+      letter-spacing: .26em;
+      text-transform: uppercase;
+      color: rgba(80, 52, 18, .6);
+    }
+    .signal-notebook__status {
+      margin: 0 0 16px;
+      font-family: "Caveat", cursive;
+      font-size: clamp(1.15rem, 2vw, 1.5rem);
+      color: rgba(73, 45, 17, .72);
+    }
+    .signal-notebook__chords {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .signal-notebook__chord {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, #f7efd2 0%, #e3d4a8 100%);
+      border: 1px solid rgba(111, 82, 25, .18);
+      box-shadow: 0 4px 8px rgba(0,0,0,.08);
+      font-family: "Caveat", cursive;
+      font-size: 1.3rem;
+      color: #4b3115;
+    }
+    .signal-notebook__manuscript {
+      padding: 4px 0 0;
+    }
     .signal-notebook__line {
       font-family: "Caveat", cursive;
       font-size: clamp(1.55rem, 2.7vw, 2rem);
@@ -286,9 +354,13 @@
       color: #422714;
       margin: 0 0 4px;
       white-space: pre-wrap;
+      opacity: 0;
+      transform: translateY(8px);
+      animation: lyric-line-reveal 520ms ease-out forwards;
     }
     .signal-notebook__line--blank {
       min-height: 1em;
+      animation: none;
     }
     .signal-notebook__fade {
       position: absolute;
@@ -305,6 +377,36 @@
     }
     .signal-notebook--teaser .signal-notebook__line:last-of-type {
       margin-bottom: 0;
+    }
+    .signal-notebook__notes {
+      position: relative;
+      margin-top: 14px;
+      padding: 14px 14px 12px;
+      border-radius: 12px;
+      background: linear-gradient(180deg, #f2ebb8 0%, #e6d95f 100%);
+      box-shadow:
+        0 10px 18px rgba(0,0,0,0.16),
+        inset 0 0 0 1px rgba(94,70,18,0.16);
+      transform: rotate(-1.5deg);
+      font-family: "Caveat", cursive;
+      color: #5b4316;
+    }
+    .signal-notebook__notes-label {
+      margin: 0 0 6px;
+      font-family: var(--mono);
+      font-size: .62rem;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: rgba(92, 68, 23, .7);
+    }
+    .signal-notebook__notes-text {
+      margin: 0;
+      font-size: clamp(1.15rem, 2vw, 1.45rem);
+      line-height: 1.12;
+      white-space: pre-wrap;
+    }
+    .signal-notebook__notes-text strong {
+      font-weight: 700;
     }
     .signal-room-view__empty {
       color: rgba(243,239,230,.66);
@@ -377,6 +479,8 @@
       z-index: 3;
       pointer-events: none;
       filter: drop-shadow(6px 14px 18px rgba(0,0,0,0.5));
+      opacity: 0;
+      transition: opacity 0.8s ease, transform 0.8s ease;
     }
     .desk-plant__leaves {
       position: absolute;
@@ -417,6 +521,8 @@
       z-index: 3;
       pointer-events: none;
       filter: drop-shadow(4px 10px 14px rgba(0,0,0,0.55));
+      opacity: 0;
+      transition: opacity 0.8s ease, transform 0.8s ease;
     }
     .desk-crumpled--a {
       top: 16vh;
@@ -436,6 +542,8 @@
       z-index: 2;
       pointer-events: none;
       filter: drop-shadow(2px 6px 8px rgba(0,0,0,0.55));
+      opacity: 0;
+      transition: opacity 0.8s ease, transform 0.8s ease;
     }
     .desk-scrap {
       position: fixed;
@@ -454,6 +562,8 @@
       font-family: "Caveat", cursive;
       color: #3f2a17;
       clip-path: polygon(0 6%, 96% 0, 100% 100%, 4% 98%);
+      opacity: 0;
+      transition: opacity 0.8s ease, transform 0.8s ease;
     }
     .desk-scrap__line {
       font-size: 1.15rem;
@@ -473,6 +583,8 @@
       filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6));
       z-index: 2;
       pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.8s ease, transform 0.8s ease;
     }
     .desk-coffee-ring {
       position: fixed;
@@ -487,6 +599,145 @@
         inset 0 0 10px rgba(150, 100, 50, 0.18);
       z-index: 2;
       pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .desk-laptop {
+      position: fixed;
+      top: -2vh;
+      left: -2vw;
+      width: 34vw;
+      max-width: 390px;
+      min-width: 220px;
+      aspect-ratio: 1.25 / 1;
+      z-index: 2;
+      pointer-events: none;
+      filter: drop-shadow(8px 18px 20px rgba(0,0,0,0.52));
+      transform: rotate(-11deg);
+    }
+    .desk-laptop__base {
+      position: absolute;
+      inset: 18% 0 0 0;
+      border-radius: 20px 20px 10px 10px;
+      background: linear-gradient(180deg, #d8d5d0 0%, #aaa49d 22%, #56514d 24%, #1e1c1b 100%);
+      box-shadow:
+        inset 0 2px 0 rgba(255,255,255,0.45),
+        inset 0 -8px 12px rgba(0,0,0,0.42);
+    }
+    .desk-laptop__screen {
+      position: absolute;
+      top: 0;
+      left: 10%;
+      right: 10%;
+      height: 68%;
+      border-radius: 16px 16px 6px 6px;
+      background: linear-gradient(180deg, #16171a 0%, #0d0f12 100%);
+      box-shadow:
+        inset 0 0 0 6px #24272b,
+        inset 0 0 28px rgba(255,255,255,0.02);
+    }
+    .desk-laptop__screen::after {
+      content: "";
+      position: absolute;
+      inset: 9% 5%;
+      border-radius: 10px;
+      background: linear-gradient(160deg, #8e7f6b 0%, #4d402c 26%, #201710 100%);
+      opacity: .28;
+    }
+    .desk-phone {
+      position: fixed;
+      top: 4vh;
+      right: 8vw;
+      width: 108px;
+      height: 190px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, #121212 0%, #050505 100%);
+      z-index: 2;
+      transform: rotate(14deg);
+      box-shadow:
+        0 18px 24px rgba(0,0,0,0.52),
+        inset 0 0 0 2px rgba(255,255,255,0.05);
+      pointer-events: none;
+    }
+    .desk-phone::before {
+      content: "";
+      position: absolute;
+      inset: 12px 10px 16px;
+      border-radius: 14px;
+      background: linear-gradient(180deg, #f7f1e3 0%, #f0ead9 100%);
+    }
+    .desk-phone::after {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      width: 38px;
+      height: 5px;
+      margin-left: -19px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.14);
+    }
+    .sticky-note {
+      position: fixed;
+      left: 20vw;
+      top: 52vh;
+      width: 118px;
+      min-height: 118px;
+      padding: 12px 10px;
+      background: linear-gradient(180deg, #f4f19e 0%, #eadf76 100%);
+      transform: rotate(-7deg);
+      box-shadow:
+        0 12px 18px rgba(0,0,0,0.32),
+        inset 0 0 0 1px rgba(90,70,20,0.12);
+      z-index: 2;
+      pointer-events: none;
+      font-family: "Caveat", cursive;
+      color: #544110;
+    }
+    .sticky-note__title {
+      font-size: 1.15rem;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .sticky-note__line {
+      font-size: 1rem;
+      line-height: 1.05;
+    }
+    .desk-pen {
+      position: fixed;
+      right: 14vw;
+      bottom: 7vh;
+      width: 220px;
+      height: 24px;
+      transform: rotate(22deg);
+      z-index: 2;
+      pointer-events: none;
+      filter: drop-shadow(3px 8px 10px rgba(0,0,0,0.52));
+    }
+    .desk-pen__barrel {
+      position: absolute;
+      inset: 6px 18px 6px 0;
+      border-radius: 999px;
+      background: linear-gradient(180deg, #1e1d1c 0%, #090909 100%);
+    }
+    .desk-pen__tip {
+      position: absolute;
+      right: 0;
+      top: 4px;
+      width: 30px;
+      height: 16px;
+      clip-path: polygon(0 50%, 65% 0, 100% 50%, 65% 100%);
+      background: linear-gradient(180deg, #f0d18b 0%, #b08a3d 100%);
+    }
+    .desk-pen__clip {
+      position: absolute;
+      left: 18px;
+      top: 3px;
+      width: 28px;
+      height: 18px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, #6f6f72 0%, #34353b 100%);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
     }
     .signal-room-header .nav__link {
       display: none;
@@ -519,6 +770,12 @@
       0%, 100% { transform: rotate(0.3deg) translateY(0px); }
       50% { transform: rotate(0.3deg) translateY(-2px); }
     }
+    @keyframes lyric-line-reveal {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
     @media (max-width: 760px) {
       .wrap { padding-inline: 14px; }
       .signal-desk-scene {
@@ -526,6 +783,29 @@
         padding-top: 10vh;
         padding-bottom: 4vh;
         perspective: none;
+      }
+      .desk-laptop {
+        left: -14vw;
+        top: -1vh;
+        width: 48vw;
+        min-width: 180px;
+      }
+      .desk-phone {
+        right: 5vw;
+        top: 4vh;
+        width: 86px;
+        height: 154px;
+      }
+      .sticky-note {
+        left: 10vw;
+        top: 53vh;
+        width: 96px;
+        min-height: 96px;
+      }
+      .desk-pen {
+        right: 3vw;
+        bottom: 5vh;
+        width: 170px;
       }
       .desk-pick {
         right: 28px;
@@ -539,6 +819,9 @@
       .desk-crumpled,
       .desk-pencil,
       .desk-scrap {
+        display: none;
+      }
+      .desk-laptop {
         display: none;
       }
       .signal-room--empty .signal-desk-scene {
@@ -584,12 +867,26 @@
     </svg>
   </div>
   <div class="desk-scrap" aria-hidden="true">
-    <div class="desk-scrap__line">G — D — Em — C</div>
-    <div class="desk-scrap__line desk-scrap__line--small">capo 2 ·  bridge?</div>
+    <div class="desk-scrap__line">Live from the Shieldbearer writing desk.</div>
+    <div class="desk-scrap__line desk-scrap__line--small">A new song is taking shape.</div>
+  </div>
+  <div class="desk-laptop" aria-hidden="true">
+    <div class="desk-laptop__screen"></div>
+    <div class="desk-laptop__base"></div>
+  </div>
+  <div class="desk-phone" aria-hidden="true"></div>
+  <div class="sticky-note" aria-hidden="true">
+    <div class="sticky-note__title">Draft note</div>
+    <div class="sticky-note__line">Keep the chorus open.</div>
+  </div>
+  <div class="desk-pen" aria-hidden="true">
+    <div class="desk-pen__barrel"></div>
+    <div class="desk-pen__clip"></div>
+    <div class="desk-pen__tip"></div>
   </div>
   <div class="wrap">
     <header class="signal-room-header">
-      <h1 class="signal-room-heading">Signal Room</h1>
+      <h1 class="signal-room-heading">Live from the Shieldbearer writing desk</h1>
       <div class="signal-room-eyebrow">Shieldbearer</div>
     </header>
     <main class="signal-desk-scene">
@@ -605,9 +902,9 @@
       <div id="notebook"></div>
     </main>
     <footer class="signal-room-invocation">
-      <p class="signal-room-invocation__title">You are inside the Signal Room.</p>
-      <p class="signal-room-invocation__line">A Shieldbearer song is being born in real time.</p>
-      <p class="signal-room-invocation__line">Lyrics, chords, artwork, and fragments appear here as the work takes shape.</p>
+      <p class="signal-room-invocation__title">Live from the Shieldbearer writing desk.</p>
+      <p class="signal-room-invocation__line">Watch the song take shape one line at a time.</p>
+      <p class="signal-room-invocation__line">Lyrics, chords, artwork, and draft notes appear as the work grows.</p>
     </footer>
   </div>
 
@@ -628,6 +925,8 @@
         teaserLyrics: normalizeText(item?.teaserLyrics || item?.lyricsPreview || item?.teaser || ""),
         artwork: normalizeText(item?.artwork),
         songMeaning: normalizeText(item?.songMeaning || item?.meaning || ""),
+        chords: normalizeText(item?.chords || item?.chordProgression || ""),
+        draftNotes: normalizeText(item?.draftNotes || item?.notes || ""),
         status: normalizeText(item?.status || "coming_soon")
       };
     }
@@ -672,6 +971,22 @@
       return `${normalized}${separator}v=${encodeURIComponent(ARTWORK_CACHE_BUSTER)}`;
     }
 
+    function splitDraftNotes(text) {
+      return String(text || "")
+        .replace(/\r\n?/g, "\n")
+        .split(/\n\s*\n+/)
+        .map((block) => block.trim())
+        .filter(Boolean);
+    }
+
+    function normalizeChordTokens(value) {
+      return String(value || "")
+        .replace(/\r\n?/g, "\n")
+        .split(/[\n,|]/g)
+        .map((part) => part.trim())
+        .filter(Boolean);
+    }
+
     function buildNotebookPreviewLines(song) {
       const fullLyrics = String(song?.lyrics || "").trim();
       const teaserLyrics = String(song?.teaserLyrics || "").trim();
@@ -710,6 +1025,28 @@
       }
 
       return preview;
+    }
+
+    function buildChordTokens(song) {
+      const chords = normalizeChordTokens(song?.chords);
+      if (chords.length > 0) {
+        return chords.slice(0, 8);
+      }
+
+      return [
+        "Chords",
+        "still",
+        "coming",
+        "together"
+      ];
+    }
+
+    function buildDraftNotes(song) {
+      const noteSource = String(song?.draftNotes || song?.songMeaning || "").trim();
+      if (noteSource) {
+        return splitDraftNotes(noteSource).slice(0, 2).join("\n\n");
+      }
+      return "Draft notes are still being written.";
     }
 
     function renderEmpty() {
@@ -793,6 +1130,9 @@
       const notebook = document.createElement("section");
       notebook.className = "signal-notebook";
 
+      const spiral = document.createElement("div");
+      spiral.className = "signal-notebook__spiral";
+
       const pencil = document.createElement("svg");
       pencil.className = "signal-notebook__corner-pencil";
       pencil.setAttribute("viewBox", "0 0 24 24");
@@ -808,15 +1148,44 @@
         <span>${song?.title || "Untitled"}</span>
       `;
 
+      const status = document.createElement("p");
+      status.className = "signal-notebook__status";
+      status.textContent = song?.status === "coming_soon"
+        ? "Live from the Shieldbearer writing desk"
+        : "Live from the Shieldbearer writing desk";
+
+      const chordsSection = document.createElement("section");
+      chordsSection.className = "signal-notebook__section";
+      const chordsLabel = document.createElement("div");
+      chordsLabel.className = "signal-notebook__section-label";
+      chordsLabel.textContent = "Chords";
+      const chordsWrap = document.createElement("div");
+      chordsWrap.className = "signal-notebook__chords";
+      buildChordTokens(song).forEach((chord, index) => {
+        const chip = document.createElement("span");
+        chip.className = "signal-notebook__chord";
+        chip.style.animationDelay = `${index * 60}ms`;
+        chip.textContent = chord;
+        chordsWrap.appendChild(chip);
+      });
+      chordsSection.appendChild(chordsLabel);
+      chordsSection.appendChild(chordsWrap);
+
       const paper = document.createElement("div");
-      paper.className = "signal-notebook__paper";
+      paper.className = "signal-notebook__paper signal-notebook__section";
+      const paperLabel = document.createElement("div");
+      paperLabel.className = "signal-notebook__section-label";
+      paperLabel.textContent = "Lyrics";
+      const manuscript = document.createElement("div");
+      manuscript.className = "signal-notebook__manuscript";
 
       const lines = buildNotebookPreviewLines(song);
-      lines.forEach((line) => {
+      lines.forEach((line, index) => {
         const row = document.createElement("div");
         row.className = line.trim() ? "signal-notebook__line" : "signal-notebook__line signal-notebook__line--blank";
+        row.style.animationDelay = `${index * 90}ms`;
         row.textContent = line;
-        paper.appendChild(row);
+        manuscript.appendChild(row);
       });
 
       if ((song?.lyrics || song?.teaserLyrics || "").trim()) {
@@ -826,9 +1195,27 @@
         notebook.appendChild(fade);
       }
 
+      const notes = document.createElement("section");
+      notes.className = "signal-notebook__notes";
+      const notesLabel = document.createElement("div");
+      notesLabel.className = "signal-notebook__notes-label";
+      notesLabel.textContent = "Draft notes";
+      const notesText = document.createElement("p");
+      notesText.className = "signal-notebook__notes-text";
+      notesText.textContent = buildDraftNotes(song);
+      notes.appendChild(notesLabel);
+      notes.appendChild(notesText);
+
+      paper.appendChild(paperLabel);
+      paper.appendChild(manuscript);
+
       notebook.appendChild(pencil);
+      notebook.appendChild(spiral);
       notebook.appendChild(title);
+      notebook.appendChild(status);
+      notebook.appendChild(chordsSection);
       notebook.appendChild(paper);
+      notebook.appendChild(notes);
       notebookNode.appendChild(notebook);
     }
 
@@ -903,6 +1290,27 @@
         requestAnimationFrame(() => {
           document.body.classList.add("is-loaded");
         });
+      });
+
+      const revealables = [
+        ".desk-plant",
+        ".desk-laptop",
+        ".desk-phone",
+        ".sticky-note",
+        ".desk-pen",
+        ".desk-scrap",
+        ".desk-pick",
+        ".desk-coffee-ring"
+      ];
+
+      revealables.forEach((selector, index) => {
+        const element = document.querySelector(selector);
+        if (!element) {
+          return;
+        }
+        setTimeout(() => {
+          element.style.opacity = "1";
+        }, 200 + (index * 120));
       });
     });
 
