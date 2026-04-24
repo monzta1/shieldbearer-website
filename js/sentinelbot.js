@@ -242,10 +242,49 @@
     messages.scrollTop = messages.scrollHeight;
   }
 
+  function buildSignalRoomContext() {
+    const model = typeof window !== "undefined" ? window.__SIGNAL_ROOM_MODEL__ : null;
+    if (!model || !model.title) return null;
+    const firstLines = String(model.lyrics || model.teaserLyrics || "")
+      .split(/\r?\n/)
+      .filter((line) => line.trim().length)
+      .slice(0, 4)
+      .join(" / ");
+    const meaning = String(model.songMeaning || "").trim();
+    return {
+      title: model.title,
+      firstLines,
+      meaning,
+      artwork: model.artwork || ""
+    };
+  }
+
+  function primeSignalRoomHistory() {
+    const ctx = buildSignalRoomContext();
+    if (!ctx) return;
+    const summaryParts = [`The song currently taking shape in the Signal Room is "${ctx.title}".`];
+    if (ctx.firstLines) summaryParts.push(`Opening lines so far: "${ctx.firstLines}".`);
+    if (ctx.meaning) summaryParts.push(`What it's about: ${ctx.meaning}`);
+    const summary = summaryParts.join(" ");
+    history = [
+      { role: "user", content: `What song is Shieldbearer writing in the Signal Room right now?` },
+      { role: "assistant", content: summary }
+    ];
+    renderMessage(
+      `You are inside the Signal Room. The song on the desk right now is "${ctx.title}". Ask me about the lyrics, the meaning, or anything else about Shieldbearer.`,
+      "sentinelbot-bot"
+    );
+  }
+
   function toggleWindow() {
     isOpen = !isOpen;
     win.style.display = isOpen ? "flex" : "none";
-    if (isOpen) input.focus();
+    if (isOpen) {
+      if (history.length === 0 && messages.childElementCount === 0) {
+        primeSignalRoomHistory();
+      }
+      input.focus();
+    }
     if (!isOpen) {
       history = [];
       messages.innerHTML = "";

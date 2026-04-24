@@ -12,20 +12,18 @@
   <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Open Letter | Shieldbearer</title>
-  <meta name="description" content="Shieldbearer | Christian Metal. Heavy guitars. Unashamed faith. Jesus reigns.">
-  <meta property="og:title" content="Shieldbearer | Christian Metal" />
-  <meta property="og:description" content="Christian metal with Scripture at the center. Christ proclaimed without compromise." />
+  <title>The Creed | Shieldbearer</title>
+  <meta name="description" content="The Creed. What Shieldbearer believes. Scripture, the triune God, the Father, Jesus Christ, salvation. The same ground the church has stood on for two thousand years.">
+  <meta property="og:title" content="The Creed | Shieldbearer" />
+  <meta property="og:description" content="What Shieldbearer believes. The same ground the church has stood on for two thousand years." />
   <meta property="og:image" content="https://shieldbearerusa.com/images/galilean-art.png" />
-  <meta property="og:url" content="https://shieldbearerusa.com/open-letter.html" />
+  <meta property="og:url" content="https://shieldbearerusa.com/creed.html" />
   <meta property="og:type" content="website" />
-  <link rel="canonical" href="https://shieldbearerusa.com/open-letter.html" />
-
+  <link rel="canonical" href="https://shieldbearerusa.com/creed.html" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Shieldbearer | Christian Metal" />
-  <meta name="twitter:description" content="Christian metal with Scripture at the center. Christ proclaimed without compromise." />
+  <meta name="twitter:title" content="The Creed | Shieldbearer" />
+  <meta name="twitter:description" content="What Shieldbearer believes. The same ground the church has stood on for two thousand years." />
   <meta name="twitter:image" content="https://shieldbearerusa.com/images/galilean-art.png" />
-  <!-- Security meta tags -->
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
   <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -43,43 +41,89 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200;300;400;500;600&family=Roboto+Condensed:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <style>
-    .open-letter-wrap { max-width: 900px; margin: 0 auto; padding: 0 var(--pad); }
-    .open-letter-box {
-      background: var(--dark-2);
-      border: 1px solid rgba(168,162,154,.08);
-      border-top: 2px solid var(--red);
-      padding: clamp(1.2rem, 2.2vw, 2rem);
+    .creed-hero {
+      padding: 80px 24px 60px;
+      text-align: center;
+      border-bottom: 1px solid #111;
     }
-    .open-letter-box p {
-      font-size: .95rem;
-      line-height: 1.9;
-      color: rgba(240,235,224,.76);
-      margin-bottom: 1rem;
-    }
-    .open-letter-box strong { color: var(--white); font-weight: 400; }
-    .open-letter-box h2 {
-      font-family: var(--font-display);
-      font-size: clamp(1.4rem, 3.4vw, 2rem);
-      letter-spacing: .06em;
-      color: #fff;
-      margin: 1.2rem 0 .5rem;
-    }
-    .letter-list { list-style: none; margin: .8rem 0 1rem; }
-    .letter-list li {
-      font-size: .92rem;
-      line-height: 1.8;
-      color: rgba(240,235,224,.74);
-      padding: .15rem 0 .15rem 1.2rem;
-      position: relative;
-    }
-    .letter-list li::before { content: '—'; position: absolute; left: 0; color: var(--red); }
-    .open-letter-sign {
-      font-family: var(--font-head);
-      font-size: .75rem;
-      letter-spacing: .2em;
+
+    .creed-eyebrow {
+      font-family: 'Courier New', monospace;
+      font-size: 10px;
+      letter-spacing: .25em;
+      color: #444;
       text-transform: uppercase;
-      color: var(--red-bright);
-      margin-top: 1.8rem;
+      margin-bottom: 8px;
+    }
+
+    .creed-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(48px, 10vw, 100px);
+      color: #e0e0e0;
+      letter-spacing: .1em;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .creed-intro {
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      color: #555;
+      letter-spacing: .06em;
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .creed-body {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 80px 24px 120px;
+    }
+
+    .creed-article {
+      margin-bottom: 56px;
+      padding-bottom: 56px;
+      border-bottom: 1px solid #111;
+    }
+
+    .creed-article:last-of-type {
+      border-bottom: none;
+    }
+
+    .creed-article__heading {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 13px;
+      letter-spacing: .3em;
+      color: #c9a84c;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .creed-article__statement {
+      font-family: Georgia, serif;
+      font-size: 18px;
+      color: #c8c0b0;
+      line-height: 1.8;
+      margin: 0;
+      padding-left: 24px;
+      border-left: 2px solid #222;
+      font-style: normal;
+    }
+
+    .creed-closing {
+      margin-top: 56px;
+      padding-top: 56px;
+      border-top: 1px solid #111;
+      text-align: center;
+    }
+
+    .creed-closing p {
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      color: #555;
+      letter-spacing: .08em;
+      line-height: 1.8;
     }
   </style>
 </head>
@@ -89,7 +133,8 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <div class="mob-menu" id="mobMenu">
+  <!-- ── MOBILE MENU ── -->
+  <div class="mob-menu" id="mobMenu" role="dialog" aria-label="Navigation">
     <button class="mob-close" id="mobClose" aria-label="Close menu">&#x2715;</button>
     <a href="index.html">Home</a>
     <a href="music.html">Music</a>
@@ -115,9 +160,12 @@
     <a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener" style="color:var(--red-bright)">Merch</a>
   </div>
 
-  <nav class="site-nav" id="mainNav">
-    <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Shieldbearer"></a>
-    <ul class="nav-links">
+  <!-- ── NAV ── -->
+  <nav class="site-nav" id="mainNav" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo" aria-label="Shieldbearer home">
+      <img src="images/logo.png" alt="Shieldbearer">
+    </a>
+    <ul class="nav-links" role="list">
       <li><a href="index.html">Home</a></li>
       <li class="nav-dropdown">
         <a href="music.html">Music</a>
@@ -166,102 +214,92 @@
       <li><a href="contact.html">Contact</a></li>
       <li class="nav-merch"><a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener">Merch</a></li>
     </ul>
-    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
-  <div class="page-hero section--dark">
-    <div class="container page-hero-inner">
-      <span class="eyebrow">From Shieldbearer</span>
-      <h1 class="display-title">An Open Letter</h1>
-      <div class="bar"></div>
-      <p>To Christian musicians who believe talent makes them important.</p>
-    </div>
-  </div>
+  <main>
+    <section class="creed-hero">
+      <p class="creed-eyebrow">SHIELDBEARER</p>
+      <h1 class="creed-title">THE CREED</h1>
+      <p class="creed-intro">
+        This is what Shieldbearer believes. Not our words.
+        Not a new position. The same ground the church
+        has stood on for two thousand years.
+      </p>
+    </section>
 
-  <section class="section--darker">
-    <div class="open-letter-wrap">
-      <div class="open-letter-box">
-        <p>
-          There is a growing attitude in the Christian music world. An unspoken belief that musical talent makes you spiritually superior.
-          That skill earns you the right to look down on other believers. That years of training place you above those who create differently.
-          <strong>This is pride. Pride is always the beginning of a fall.</strong>
-        </p>
+    <section class="creed-body">
 
-        <h2>The Parable You Keep Ignoring</h2>
-        <p>
-          Matthew 20:1-16. Jesus tells a story about a man hiring workers throughout the day. Some started early. Some arrived later.
-          Some barely worked an hour. At the end of the day, the master pays them all the same.
-          The early workers are furious. The master answers: you received what you agreed to. I have the right to be generous.
-          Your anger is rooted in envy.
-        </p>
-        <p>
-          People get angry not because injustice happened, but because someone else received a blessing they did not think was deserved.
-          This is exactly how some Christian musicians react when God uses people with less training, fewer credentials, or different tools.
-        </p>
-
-        <h2>Why Some Of You Fear Technology</h2>
-        <p>
-          Some are not afraid of AI itself. They are afraid of competition. Afraid of losing monopoly status.
-          Afraid that the field is now level and anyone can create. <strong>Not to protect the gospel. To protect ego.</strong>
-        </p>
-
-        <h2>God Has Never Been Impressed By Talent</h2>
-        <ul class="letter-list">
-          <li><strong>Moses</strong> said he could not speak well. God used him anyway.</li>
-          <li><strong>David</strong> was ignored by his own family. God chose him anyway.</li>
-          <li><strong>Gideon</strong> said he was weakest in the weakest family. God called him anyway.</li>
-          <li><strong>Amos</strong> was a farmer. God sent him anyway.</li>
-          <li><strong>Peter and the apostles</strong> were ordinary men. God gave them authority anyway.</li>
-          <li><strong>Paul</strong> called himself least worthy. God used him mightily anyway.</li>
-        </ul>
-
-        <div class="scripture-block">
-          <span class="ref">1 Corinthians 3:7</span>
-          <p>Neither the one who plants nor the one who waters is anything, but only God who gives the growth.</p>
-        </div>
-        <div class="scripture-block">
-          <span class="ref">2 Corinthians 12:9</span>
-          <p>My power is made perfect in weakness.</p>
-        </div>
-
-        <p>
-          If your identity depends on being more gifted than the next believer, you are building on sand.
-          If your joy collapses when someone else is blessed, your worship is about you.
-        </p>
-        <p>
-          We are here to glorify Christ, not defend status. We are here to proclaim truth, not protect hierarchy.
-          If God chooses to use unpolished people with different tools, then our response is gratitude, not jealousy.
-        </p>
-
-        <p class="open-letter-sign">Shieldbearer</p>
-        <div class="share-bar">
-          <span class="share-bar__label">Share</span>
-          <a class="share-bar__btn" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fshieldbearerusa.com%2Fopen-letter.html" target="_blank" rel="noopener">Facebook</a>
-          <a class="share-bar__btn" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fshieldbearerusa.com%2Fopen-letter.html&text=An+Open+Letter+from+Shieldbearer" target="_blank" rel="noopener">X</a>
-          <a class="share-bar__btn" href="https://wa.me/?text=An+Open+Letter+from+Shieldbearer%20https%3A%2F%2Fshieldbearerusa.com%2Fopen-letter.html" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-
-        <div class="related-reading-box">
-          <span class="eyebrow">Related Reading</span>
-          <div class="resource-stack">
-            <a href="manifesto.html" class="resource-link">
-              <span class="resource-name">The Manifesto</span>
-              <span class="resource-desc">Truth, clarity, and the freedom to proclaim without gatekeepers.</span>
-            </a>
-            <a href="gatekeeping.html" class="resource-link">
-              <span class="resource-name">On Gatekeeping</span>
-              <span class="resource-desc">Seven biblical passages on pride, control, and who God actually chooses.</span>
-            </a>
-            <a href="for-ai-artists.html" class="resource-link">
-              <span class="resource-name">For AI Artists</span>
-              <span class="resource-desc">The full community resource.</span>
-            </a>
-          </div>
-        </div>
+      <div class="creed-article">
+        <h2 class="creed-article__heading">Scripture</h2>
+        <blockquote class="creed-article__statement">
+          All the Scriptures of the Old and New Testaments
+          are the Word of God, fully inspired and without
+          error in the original manuscripts, and are the
+          infallible rule of faith and practice.
+        </blockquote>
       </div>
-    </div>
-  </section>
 
+      <div class="creed-article">
+        <h2 class="creed-article__heading">God</h2>
+        <blockquote class="creed-article__statement">
+          There is one living and true God, eternally
+          existing in three persons: the Father, the Son,
+          and the Holy Spirit, equal in power and glory.
+          This triune God created all, upholds all,
+          and governs all.
+        </blockquote>
+      </div>
+
+      <div class="creed-article">
+        <h2 class="creed-article__heading">The Father</h2>
+        <blockquote class="creed-article__statement">
+          God the Father is an infinite, personal Spirit,
+          perfect in holiness, wisdom, power, and love.
+          He concerns Himself mercifully in the affairs
+          of men. He hears and answers prayer. He saves
+          from sin and death all who come to Him
+          through Jesus Christ.
+        </blockquote>
+      </div>
+
+      <div class="creed-article">
+        <h2 class="creed-article__heading">Jesus Christ</h2>
+        <blockquote class="creed-article__statement">
+          Jesus Christ is God's only begotten Son,
+          conceived by the Holy Spirit. We believe in
+          His virgin birth, sinless life, miracles, and
+          teachings; His substitutionary atoning death;
+          bodily resurrection; ascension into heaven;
+          perpetual intercession for His people; and
+          personal, visible return to earth.
+        </blockquote>
+      </div>
+
+      <div class="creed-article">
+        <h2 class="creed-article__heading">Salvation</h2>
+        <blockquote class="creed-article__statement">
+          All people are by nature separated from God
+          and responsible for their own sin. Salvation,
+          redemption, and forgiveness are freely offered
+          to all by the grace of our Lord Jesus Christ.
+        </blockquote>
+      </div>
+
+      <div class="creed-closing">
+        <p>
+          This is the ground Shieldbearer stands on.
+          Christ named plainly. Scripture as the authority.
+          No additions. No subtractions.
+        </p>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- ── FOOTER ── -->
   <footer class="site-footer">
     <div class="footer-main">
       <div class="footer-brand">
@@ -281,7 +319,6 @@
           <li><a href="interviews.html">Press</a></li>
           <li><a href="creed.html">The Creed</a></li>
           <li><a href="manifesto.html">Manifesto</a></li>
-          <li><a href="faq.html">FAQ</a></li>
           <li><a href="open-letter.html">Open Letter</a></li>
           <li><a href="for-ai-artists.html">For AI Artists</a></li>
           <li><a href="gatekeeping.html">On Gatekeeping</a></li>
@@ -289,8 +326,10 @@
           <li><a href="ai-and-creativity.html">AI and Creativity</a></li>
           <li><a href="god-uses-tools.html">God Uses Tools</a></li>
           <li><a href="artist-freedom.html">Artist Freedom</a></li>
+          <li><a href="faq.html">FAQ</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="epk.html">Press Kit</a></li>
+          <li><a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener">Merch</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -300,6 +339,8 @@
           <li><a href="https://www.facebook.com/shieldbearerusa" target="_blank" rel="noopener">Facebook</a></li>
           <li><a href="https://www.youtube.com/@ShieldbearerUSA" target="_blank" rel="noopener">YouTube</a></li>
           <li><a href="https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz" target="_blank" rel="noopener">Spotify</a></li>
+          <li><a href="https://wa.me/15712015166" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="https://linktr.ee/shieldbearerusa" target="_blank" rel="noopener">Linktree</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -307,11 +348,11 @@
         <ul>
           <li><a href="music.html#armory">Enter the Armory</a></li>
           <li><a href="videos.html">Watch the Videos</a></li>
-          <li><a href="song-meanings.html">Read the Scrolls</a></li>
-          <li><a href="manifesto.html">Read the Manifesto</a></li>
-          <li><a href="open-letter.html">Read the Open Letter</a></li>
+          <li><a href="song-meanings.html">Read the Lyrics</a></li>
+          <li><a href="interviews.html">Catch the Signal</a></li>
           <li><a href="epk.html">Download Press Kit</a></li>
           <li><a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener">Raise the Banner</a></li>
+          <li><a href="contact.html">Join the Mission</a></li>
           <li><a href="https://buymeacoffee.com/shieldbearer" target="_blank" rel="noopener">Support the Mission</a></li>
         </ul>
       </div>
