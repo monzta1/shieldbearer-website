@@ -153,11 +153,11 @@
       container-type: inline-size;
     }
     #artwork {
-      top: 3%;
-      left: 6%;
-      width: 26%;
-      height: 75%;
-      transform: rotate(-14deg);
+      top: 9%;
+      left: 4%;
+      width: 29%;
+      height: 57%;
+      transform: rotate(-10deg);
       transform-origin: top left;
     }
     #notebook {
@@ -218,6 +218,8 @@
       position: relative;
       opacity: 0;
       transition: opacity 0.8s ease, transform 0.8s ease;
+      overflow: hidden;
+      border-radius: 3%;
     }
     .signal-artwork-wrap::before {
       display: none;
@@ -263,15 +265,19 @@
       display: block;
       margin: 0 0 8% 0;
       font-family: "Caveat", cursive;
-      font-size: 7cqw;
-      line-height: .92;
+      font-size: 5cqw;
+      line-height: 1.1;
       font-weight: 700;
-      letter-spacing: .04em;
+      letter-spacing: 0.01em;
       text-transform: uppercase;
       color: #2f1c0f;
-      text-align: center;
+      text-align: left;
       padding-bottom: 3%;
       border-bottom: 2px solid rgba(47, 28, 15, 0.55);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 75%;
     }
     .signal-notebook__paper {
       position: relative;
@@ -282,20 +288,28 @@
     }
     .signal-notebook__line {
       font-family: "Caveat", cursive;
-      font-size: 4.4cqw;
-      line-height: 1.18;
-      letter-spacing: .012em;
-      color: #422714;
-      margin: 0 0 2%;
+      font-size: 4.6cqw;
+      line-height: 1.3;
+      letter-spacing: 0.015em;
+      color: #3a1e0c;
+      margin: 0 0 2.5%;
       white-space: pre-wrap;
       opacity: 0;
-      transform: translateY(8px);
+      transform: translateY(8px) rotate(-0.3deg);
+      transform-origin: left center;
       animation: lyric-line-reveal 520ms ease-out forwards;
+      font-weight: 600;
     }
     .signal-notebook__line--blank {
       min-height: .9em;
       animation: none;
     }
+    .signal-notebook__line:nth-child(1) { transform: translateY(8px) rotate(-0.3deg); }
+    .signal-notebook__line:nth-child(2) { transform: translateY(8px) rotate(0.4deg); }
+    .signal-notebook__line:nth-child(3) { transform: translateY(8px) rotate(-0.2deg); }
+    .signal-notebook__line:nth-child(4) { transform: translateY(8px) rotate(0.5deg); }
+    .signal-notebook__line:nth-child(5) { transform: translateY(8px) rotate(-0.4deg); }
+    .signal-notebook__line:nth-child(6) { transform: translateY(8px) rotate(0.3deg); }
     .signal-room-view__empty {
       display: flex;
       align-items: center;
