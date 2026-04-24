@@ -1,11 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N7SR64KL');
+  </script>
+  <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shieldbearer Writing Desk</title>
-  <meta name="description" content="Live from the Shieldbearer writing desk. Watch the song take shape in a warm, tactile studio scene.">
-  <meta name="theme-color" content="#7a4c27">
+  <title>Signal Room | Shieldbearer</title>
+  <meta name="description" content="The Signal Room — a Shieldbearer song being born in real time. Lyrics, chords, artwork, and fragments appear here as the work takes shape.">
+  <meta property="og:title" content="Signal Room | Shieldbearer" />
+  <meta property="og:description" content="A Shieldbearer song being born in real time. Watch the writing desk as lyrics and artwork take shape." />
+  <meta property="og:image" content="https://shieldbearerusa.com/images/galilean-art.png" />
+  <meta property="og:url" content="https://shieldbearerusa.com/signal-room.html" />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://shieldbearerusa.com/signal-room.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Signal Room | Shieldbearer" />
+  <meta name="twitter:description" content="A Shieldbearer song being born in real time." />
+  <meta name="twitter:image" content="https://shieldbearerusa.com/images/galilean-art.png" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://tagassistant.google.com https://www.clarity.ms https://open.spotify.com https://www.youtube.com https://app.convertkit.com https://fonts.googleapis.com;
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    font-src 'self' https://fonts.gstatic.com;
+    frame-src https://open.spotify.com https://www.youtube.com https://www.googletagmanager.com;
+    img-src 'self' data: https://img.youtube.com https://shieldbearerusa.com https://www.google-analytics.com https://www.googletagmanager.com https://www.clarity.ms https://c.clarity.ms;
+    connect-src 'self' https://app.convertkit.com https://www.google-analytics.com https://region1.google-analytics.com https://stats.g.doubleclick.net https://www.googletagmanager.com https://www.clarity.ms https://c.clarity.ms https://tagassistant.google.com https://g7a5tqlxaj.execute-api.us-east-1.amazonaws.com;
+  ">
+  <meta name="theme-color" content="#040404">
+  <link rel="icon" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200;300;400;500;600&family=Roboto+Condensed:ital,wght@0,300;0,400;1,300&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
 
@@ -28,100 +63,19 @@
       padding: 0;
       opacity: 0;
       transition: opacity 1.2s ease;
-      color: #3b2615;
-      background-color: #120c08;
-      overflow-x: hidden;
     }
     body.is-loaded { opacity: 1; }
-    .wrap { max-width: 1120px; margin: 0 auto; padding: 24px 20px 72px; position: relative; z-index: 2; }
-    header,
-    footer {
-      border: 1px solid rgba(255,255,255,.05);
-      background: rgba(255,255,255,.015);
-      border-radius: 18px;
-      padding: 14px 18px;
-    }
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 22px;
-    }
-    .signal-room-header {
-      position: fixed;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 3;
-      text-align: center;
-      pointer-events: none;
-      border: none;
-      background: transparent;
-      padding: 0;
-      margin: 0;
-    }
-    .signal-room-back {
-      position: fixed;
-      top: 18px;
-      left: 20px;
-      z-index: 5;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 14px 8px 12px;
-      border-radius: 999px;
-      background: rgba(10, 6, 3, 0.72);
-      color: #f0ebe0;
-      font-family: "Oswald", sans-serif;
-      font-weight: 500;
-      font-size: 0.82rem;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border: 1px solid rgba(231, 76, 60, 0.45);
-      box-shadow: 0 6px 14px rgba(0,0,0,0.45);
-      transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-    }
-    .signal-room-back:hover,
-    .signal-room-back:focus-visible {
-      background: rgba(192, 57, 43, 0.92);
-      border-color: rgba(240, 235, 224, 0.7);
-      transform: translateY(-1px);
-      outline: none;
-    }
-    .signal-room-back__arrow {
-      font-size: 1rem;
-      line-height: 1;
-      color: #e74c3c;
-      transition: color 180ms ease;
-    }
-    .signal-room-back:hover .signal-room-back__arrow,
-    .signal-room-back:focus-visible .signal-room-back__arrow {
-      color: #f0ebe0;
-    }
-    .nav__brand {
-      font-family: var(--mono);
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      color: var(--text);
-      font-size: .78rem;
-    }
-    .nav__link {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: .9rem;
-    }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 32px 20px 72px; position: relative; z-index: 2; }
+    .signal-room-hero .bar { background: #e74c3c; }
     .signal-desk-scene {
       position: relative;
       display: block;
       width: min(100%, 1536px);
       margin: 0 auto;
-      min-height: 100vh;
       padding: 0;
       overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 24px 56px rgba(0, 0, 0, 0.6);
     }
     .signal-desk-scene > * {
       animation: signal-fade-in 420ms ease-out both;
@@ -328,11 +282,6 @@
     .signal-room--empty header {
       display: none;
     }
-    footer {
-      margin-top: 22px;
-      color: var(--muted);
-      font-size: .88rem;
-    }
     .signal-room-invocation {
       margin: 48px auto 24px;
       max-width: 720px;
@@ -358,23 +307,6 @@
       font-size: clamp(1.05rem, 2vw, 1.35rem);
       line-height: 1.35;
     }
-    .signal-room-header .nav__link {
-      display: none;
-    }
-    .signal-room-heading {
-      font-family: "Bebas Neue", sans-serif;
-      font-size: clamp(14px, 3vw, 26px);
-      color: rgba(250, 235, 210, 0.82);
-      letter-spacing: .42em;
-      text-transform: uppercase;
-      margin: 0;
-      text-shadow:
-        0 1px 0 rgba(40,22,10,0.85),
-        0 2px 3px rgba(0,0,0,0.55);
-    }
-    .signal-room-eyebrow {
-      display: none;
-    }
     @keyframes signal-fade-in {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -394,19 +326,7 @@
         background: #040404;
         color: #f0ebe0;
       }
-      .wrap { padding: 96px 18px 40px; }
-      .signal-room-header {
-        position: static;
-        transform: none;
-        margin: 0 0 24px;
-      }
-      .signal-room-heading {
-        font-family: "Bebas Neue", sans-serif;
-        color: #f0ebe0;
-        letter-spacing: .3em;
-        text-shadow: none;
-        font-size: clamp(16px, 5vw, 22px);
-      }
+      .wrap { padding: 24px 18px 40px; }
       .signal-desk-scene {
         display: flex;
         flex-direction: column;
@@ -472,12 +392,6 @@
       .signal-room-invocation__title {
         color: rgba(240, 235, 224, 0.96);
       }
-      .signal-room-back {
-        top: 12px;
-        left: 12px;
-        font-size: 0.72rem;
-        padding: 6px 12px 6px 10px;
-      }
       .signal-room--empty .signal-desk-scene {
         min-height: 60vh;
         justify-content: center;
@@ -501,26 +415,167 @@
   </style>
 </head>
 <body>
-  <a class="signal-room-back" href="./index.html" aria-label="Back to Shieldbearer home">
-    <span class="signal-room-back__arrow" aria-hidden="true">&#8592;</span>
-    <span class="signal-room-back__label">Home</span>
-  </a>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N7SR64KL"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <div class="mob-menu" id="mobMenu">
+    <button class="mob-close" id="mobClose" aria-label="Close menu">&#x2715;</button>
+    <a href="index.html">Home</a>
+    <a href="music.html">Music</a>
+    <a href="videos.html">Signal Fire</a>
+    <a href="song-meanings.html">Lyrics</a>
+    <a href="about.html">About</a>
+    <a href="story.html">The Story</a>
+    <a href="process.html">The Process</a>
+    <a href="interviews.html">Press</a>
+    <a href="epk.html">Press Kit</a>
+    <a href="manifesto.html">Manifesto</a>
+    <a href="open-letter.html">Open Letter</a>
+    <a href="for-ai-artists.html">For AI Artists</a>
+    <a href="gatekeeping.html">On Gatekeeping</a>
+    <a href="no-rulebook.html">No Rulebook</a>
+    <a href="ai-and-creativity.html">AI and Creativity</a>
+    <a href="god-uses-tools.html">God Uses Tools</a>
+    <a href="artist-freedom.html">Artist Freedom</a>
+    <a href="sentinelbot.html">SentinelBot</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener" style="color:var(--red-bright)">Merch</a>
+  </div>
+
+  <nav class="site-nav" id="mainNav">
+    <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Shieldbearer"></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="nav-dropdown">
+        <a href="music.html">Music</a>
+        <div class="nav-dropdown__menu">
+          <a href="music.html">The Armory</a>
+          <a href="videos.html">Signal Fire</a>
+          <a href="song-meanings.html">Lyrics</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="about.html">About</a>
+        <div class="nav-dropdown__menu">
+          <a href="story.html">The Story</a>
+          <a href="process.html">The Process</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="interviews.html">Press</a>
+        <div class="nav-dropdown__menu">
+          <a href="interviews.html">Press Coverage</a>
+          <a href="epk.html">Press Kit</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="manifesto.html">Words</a>
+        <div class="nav-dropdown__menu">
+          <a href="manifesto.html">The Manifesto</a>
+          <a href="open-letter.html">Open Letter</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="for-ai-artists.html">AI and Faith</a>
+        <div class="nav-dropdown__menu">
+          <a href="for-ai-artists.html">For AI Artists</a>
+          <a href="faq.html#faq-ai-legitimate">AI and Faith FAQ</a>
+          <a href="gatekeeping.html">On Gatekeeping</a>
+          <a href="no-rulebook.html">No Rulebook</a>
+          <a href="ai-and-creativity.html">AI and Creativity</a>
+          <a href="god-uses-tools.html">God Uses Tools</a>
+          <a href="artist-freedom.html">Artist Freedom</a>
+          <a href="sentinelbot.html">SentinelBot</a>
+        </div>
+      </li>
+      <li><a href="contact.html">Contact</a></li>
+      <li class="nav-merch"><a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener">Merch</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="page-hero section--dark signal-room-hero">
+    <div class="container page-hero-inner">
+      <span class="eyebrow">Operation: Shieldbearer</span>
+      <h1 class="display-title">Signal Room</h1>
+      <div class="bar"></div>
+      <p>A Shieldbearer song being born in real time. Lyrics, chords, and artwork appear here as the work takes shape.</p>
+    </div>
+  </div>
+
   <div class="wrap">
-    <header class="signal-room-header">
-      <h1 class="signal-room-heading">Live from the Shieldbearer writing desk</h1>
-      <div class="signal-room-eyebrow">Shieldbearer</div>
-    </header>
     <main class="signal-desk-scene">
       <img class="signal-desk-photo" src="./images/signal-room/desk.jpg" alt="" aria-hidden="true">
       <div id="artwork"></div>
       <div id="notebook"></div>
     </main>
-    <footer class="signal-room-invocation">
-      <p class="signal-room-invocation__title">Live from the Shieldbearer writing desk.</p>
-      <p class="signal-room-invocation__line">Watch the song take shape one line at a time.</p>
-      <p class="signal-room-invocation__line">Only the title and lyrics change with each song.</p>
-    </footer>
+    <section class="signal-room-invocation" aria-label="About the Signal Room">
+      <p class="signal-room-invocation__title">You are inside the Signal Room.</p>
+      <p class="signal-room-invocation__line">A Shieldbearer song is being born in real time.</p>
+      <p class="signal-room-invocation__line">Lyrics, chords, artwork, and fragments appear here as the work takes shape.</p>
+    </section>
   </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><img src="images/logo.png" alt="Shieldbearer"></a>
+        <p>Shieldbearer is Christian metal with Scripture at the center. Christ is named plainly in every release and every conversation.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="music.html">Music</a></li>
+          <li><a href="videos.html">Videos</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="story.html">Story</a></li>
+          <li><a href="process.html">Process</a></li>
+          <li><a href="song-meanings.html">Lyrics</a></li>
+          <li><a href="interviews.html">Press</a></li>
+          <li><a href="manifesto.html">Manifesto</a></li>
+          <li><a href="open-letter.html">Open Letter</a></li>
+          <li><a href="sentinelbot.html">SentinelBot</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="epk.html">Press Kit</a></li>
+          <li><a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener">Merch</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/shieldbearerusa/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/shieldbearerusa" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.youtube.com/@ShieldbearerUSA" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz" target="_blank" rel="noopener">Spotify</a></li>
+          <li><a href="https://linktr.ee/shieldbearerusa" target="_blank" rel="noopener">Linktree</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Take Action</h4>
+        <ul>
+          <li><a href="music.html#armory">Enter the Armory</a></li>
+          <li><a href="videos.html">Watch the Videos</a></li>
+          <li><a href="song-meanings.html">Read the Lyrics</a></li>
+          <li><a href="interviews.html">Catch the Signal</a></li>
+          <li><a href="epk.html">Download Press Kit</a></li>
+          <li><a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener">Raise the Banner</a></li>
+          <li><a href="contact.html">Join the Mission</a></li>
+          <li><a href="https://buymeacoffee.com/shieldbearer" target="_blank" rel="noopener">Support the Mission</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Shieldbearer. All rights reserved.</p>
+      <a href="mailto:shieldbearerusa@gmail.com">shieldbearerusa@gmail.com</a>
+    </div>
+  </footer>
 
   <script>
     const SITE_JSON_URL = window.SIGNAL_ROOM_SITE_JSON_URL || "./site.json";
@@ -821,5 +876,8 @@
       }
     });
   </script>
+  <script src="js/analytics.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/sentinelbot.js"></script>
 </body>
 </html>
