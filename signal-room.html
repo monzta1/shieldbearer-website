@@ -76,6 +76,11 @@
       overflow: hidden;
       border-radius: 8px;
       box-shadow: 0 24px 56px rgba(0, 0, 0, 0.6);
+      /* Lock the scene to the desk's native 3:2 ratio so absolutely
+         positioned children (#artwork, #notebook) stay visible even
+         if desk.jpg fails to load. */
+      aspect-ratio: 3 / 2;
+      background: #1a120b;
     }
     .signal-desk-scene > * {
       animation: signal-fade-in 420ms ease-out both;
