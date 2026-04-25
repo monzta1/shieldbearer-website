@@ -26,21 +26,16 @@
     "publishedAt": "2026-04-25T20:44:23.351Z",
     "traceId": "let-my-people-go#2026-04-25T20:44:23.351Z#SONG_UPDATED"
   },
-  "releaseIndex": {},
-  "signal": [
-    {
-      "songId": "let-my-people-go",
+  "releaseIndex": {
+    "let my people go": {
+      "id": "let-my-people-go",
       "title": "Let My People Go",
-      "state": "draft",
-      "traceId": "let-my-people-go#2026-04-25T20:44:23.351Z#SONG_UPDATED",
       "publishedAt": "2026-04-25T20:44:23.351Z",
       "sourceUrl": "https://www.youtube.com/watch?v=TEST_LMPG_VIDEO",
-      "artwork": "https://shieldbearerusa.com/images/signal-room/let-my-people-go.jpg",
-      "lyrics": "Go DOWN, Moses!\nBurn through Egypt’s gates,\nPharaoh’s throne is shaking,\nCause freedom’s on its way!\n\nChains on the innocent,\nCrushed in a starving land,\nIsrael crying out,\nNo strength left to stand.\nOppression on their backs,\nThe fire in their bones,\nGod heard every tear,\nAnd thunder shook the throne!\n\nA whisper turned to a roar,\nA calling carved into stone…\n\nGo down, Moses!\nDeep into the darkness, stand!\nFace that Pharaoh,\nSay the word of Heaven’s command!\nGo down, Moses,\nBreak the yoke and shatter the hold!\nTell that tyrant,\nGOD says let My people GO!\n\nMoses stepped in unafraid,\nStorm in his spirit rose,\nSpoke the Name of Yahweh,\nAnd shook the earth below.\nPharaoh with a hardened heart,\nDefiant in his pride,\nBut judgment like a tidal wave\nWas rolling in the sky!\n\nA whisper turned to a roar,\nA calling carved into stone…\n\nGo down, Moses!\nDeep into the darkness, stand!\nFace that Pharaoh,\nSay the word of Heaven’s command!\nGo down, Moses,\nBreak the yoke and shatter the hold!\nTell that tyrant,\nGOD says let My people GO!\n\nLET… THEM… GO!\n(Tremble, Pharaoh, your kingdom’s falling)\nLET… THEM… GO!\n(The chains you forged are breaking open)\nLET… THEM… GO!\n(Yahweh’s voice is thunder spoken)\nLET MY PEOPLE GO!\n\nGo down, Moses!\nStand where warriors never stand,\nSpeak the freedom\nWritten by the Lord’s own hand!\nGo down, Moses,\nBreak the chains and lift the low!\nTell that tyrant,\nGOD says LET MY PEOPLE GO!",
-      "songMeaning": "A cry that shook a nation. A command that broke chains.\n\nGod saw the suffering. God heard the cries. He sent one man straight into the center of power with a message no king could ignore. Barefoot. Stuttering. Wanted for murder. Walked right into the throne room of the most powerful empire on earth.\n\n“Let My people go.”\n\nThat was not a request. That was Heaven breaking in.\n\nWe wrote this because that story is not old. There are still Pharaohs. Still systems. Still chains. And God is still the One who hears every cry, counts every brick, and decides when it ends.\n\nIf you feel held down, held back, or held captive, pay attention.\n\n📖 Scripture Behind the Song\nExodus 3:7-10 · Exodus 5:1 · Exodus 6:6 · Exodus 12:31\nPsalm 34:17 · John 8:36\n\n🔔 Subscribe. Or don’t. We’re still releasing.\n🌐 https://shieldbearerusa.com\n📤 Share it if it matters to you.\n\n#LetMyPeopleGo #Shieldbearer #ChristianMusic #Moses #Exodus #FaithMusic #HeavyWorship",
-      "updatedAt": "2026-04-25T20:44:23.351Z",
-      "contentHash": "23a9e934fcede2e0839272e8573d94f9c9fec593b4e7a455ff8dca8c294cc6b5"
-    },
+      "traceId": "let-my-people-go#2026-04-25T20:44:23.351Z#SONG_UPDATED"
+    }
+  },
+  "signal": [
     {
       "songId": "test-song",
       "title": "test-song",
@@ -1304,10 +1299,24 @@
     }
   ],
   "comingSoon": [],
-  "released": [],
-  "signalCount": 98,
+  "released": [
+    {
+      "songId": "let-my-people-go",
+      "title": "Let My People Go",
+      "state": "released",
+      "traceId": "let-my-people-go#2026-04-25T20:44:23.351Z#SONG_UPDATED",
+      "publishedAt": "2026-04-25T20:44:23.351Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=TEST_LMPG_VIDEO",
+      "artwork": "https://shieldbearerusa.com/images/signal-room/let-my-people-go.jpg",
+      "lyrics": "Go DOWN, Moses!\nBurn through Egypt’s gates,\nPharaoh’s throne is shaking,\nCause freedom’s on its way!\n\nChains on the innocent,\nCrushed in a starving land,\nIsrael crying out,\nNo strength left to stand.\nOppression on their backs,\nThe fire in their bones,\nGod heard every tear,\nAnd thunder shook the throne!\n\nA whisper turned to a roar,\nA calling carved into stone…\n\nGo down, Moses!\nDeep into the darkness, stand!\nFace that Pharaoh,\nSay the word of Heaven’s command!\nGo down, Moses,\nBreak the yoke and shatter the hold!\nTell that tyrant,\nGOD says let My people GO!\n\nMoses stepped in unafraid,\nStorm in his spirit rose,\nSpoke the Name of Yahweh,\nAnd shook the earth below.\nPharaoh with a hardened heart,\nDefiant in his pride,\nBut judgment like a tidal wave\nWas rolling in the sky!\n\nA whisper turned to a roar,\nA calling carved into stone…\n\nGo down, Moses!\nDeep into the darkness, stand!\nFace that Pharaoh,\nSay the word of Heaven’s command!\nGo down, Moses,\nBreak the yoke and shatter the hold!\nTell that tyrant,\nGOD says let My people GO!\n\nLET… THEM… GO!\n(Tremble, Pharaoh, your kingdom’s falling)\nLET… THEM… GO!\n(The chains you forged are breaking open)\nLET… THEM… GO!\n(Yahweh’s voice is thunder spoken)\nLET MY PEOPLE GO!\n\nGo down, Moses!\nStand where warriors never stand,\nSpeak the freedom\nWritten by the Lord’s own hand!\nGo down, Moses,\nBreak the chains and lift the low!\nTell that tyrant,\nGOD says LET MY PEOPLE GO!",
+      "songMeaning": "A cry that shook a nation. A command that broke chains.\n\nGod saw the suffering. God heard the cries. He sent one man straight into the center of power with a message no king could ignore. Barefoot. Stuttering. Wanted for murder. Walked right into the throne room of the most powerful empire on earth.\n\n“Let My people go.”\n\nThat was not a request. That was Heaven breaking in.\n\nWe wrote this because that story is not old. There are still Pharaohs. Still systems. Still chains. And God is still the One who hears every cry, counts every brick, and decides when it ends.\n\nIf you feel held down, held back, or held captive, pay attention.\n\n📖 Scripture Behind the Song\nExodus 3:7-10 · Exodus 5:1 · Exodus 6:6 · Exodus 12:31\nPsalm 34:17 · John 8:36\n\n🔔 Subscribe. Or don’t. We’re still releasing.\n🌐 https://shieldbearerusa.com\n📤 Share it if it matters to you.\n\n#LetMyPeopleGo #Shieldbearer #ChristianMusic #Moses #Exodus #FaithMusic #HeavyWorship",
+      "updatedAt": "2026-04-25T20:44:23.351Z",
+      "contentHash": "23a9e934fcede2e0839272e8573d94f9c9fec593b4e7a455ff8dca8c294cc6b5"
+    }
+  ],
+  "signalCount": 97,
   "comingSoonCount": 0,
-  "releasedCount": 0,
+  "releasedCount": 1,
   "events": [
     {
       "songId": "let-my-people-go",
