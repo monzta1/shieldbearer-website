@@ -19,10 +19,10 @@
       imgEl.src = pick.image;
       imgEl.alt = pick.title || (cfg.fallback && cfg.fallback.alt) || "Shieldbearer merch";
       titleEl.textContent = pick.title || titleEl.textContent;
-      if (pick.url) {
-        linkEl.href = pick.url;
-        if (artEl) artEl.href = pick.url;
-      }
+      // Image links to the specific product (high-intent "I want that").
+      // The "Wear the Banner" button stays pointed at the shop home so
+      // users can also browse the full catalog (set in the static markup).
+      if (pick.url && artEl) artEl.href = pick.url;
     })
     .catch(function () { /* keep static fallback */ });
 })();
