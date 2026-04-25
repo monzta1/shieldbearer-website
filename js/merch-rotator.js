@@ -1,5 +1,6 @@
 (function () {
-  var cfg = window.MERCH_CONFIG;
+  // Config lives in js/config.js (window.SHIELDBEARER_CONFIG.merch).
+  var cfg = window.SHIELDBEARER_CONFIG && window.SHIELDBEARER_CONFIG.merch;
   if (!cfg || !cfg.rotate) return;
 
   var imgEl = document.querySelector(".featured-merch-art img");

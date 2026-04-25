@@ -1,5 +1,6 @@
 (() => {
-  const API_URL = "https://g7a5tqlxaj.execute-api.us-east-1.amazonaws.com/sentinel";
+  // Config lives in js/config.js (window.SHIELDBEARER_CONFIG.sentinelbot).
+  const API_URL = (window.SHIELDBEARER_CONFIG && window.SHIELDBEARER_CONFIG.sentinelbot && window.SHIELDBEARER_CONFIG.sentinelbot.apiUrl) || "";
 
   let isOpen = false;
   let history = [];

@@ -6,17 +6,8 @@
 (function () {
   'use strict';
 
-  /* -----------------------------------------------------------
-     CONFIG
-     1) GTM: create container ID (GTM-XXXXXXX) and paste below
-     2) GA4 (optional direct fallback): G-XXXXXXXXXX
-     3) Clarity: project ID from clarity.microsoft.com
-     ----------------------------------------------------------- */
-  var cfg = window.SHIELDBEARER_ANALYTICS || {
-    gtmId: 'GTM-N7SR64KL',
-    ga4Id: 'G-QTHJRB1B7G',
-    clarityId: 'w7gal18ekh'
-  };
+  // Config lives in js/config.js (window.SHIELDBEARER_CONFIG.analytics).
+  var cfg = (window.SHIELDBEARER_CONFIG && window.SHIELDBEARER_CONFIG.analytics) || {};
 
   function hasValue(v) {
     return typeof v === 'string' && v.trim() !== '';
