@@ -598,11 +598,17 @@
       }
     }
     @media (max-width: 640px) {
+      #hero {
+        min-height: 0;
+        height: auto;
+        aspect-ratio: 3 / 2;
+      }
       .hero-bg {
         background-size: auto, auto, auto, auto, 100% auto;
         background-position: 0 0, 0 0, 0 0, 0 0, center top;
         background-color: var(--black);
       }
+      .scroll-cue { bottom: 1rem; }
       .hero-rule { margin-bottom: 1.6rem; }
       .hero-tagline { margin-bottom: 1.2rem; }
       .hero-headline { margin-bottom: 1.05rem; }
