@@ -459,11 +459,26 @@
       display: grid;
       place-items: center;
       padding: clamp(1rem, 2vw, 1.4rem);
+      text-decoration: none;
+      color: inherit;
+      transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease;
+    }
+    a.featured-merch-art:hover,
+    a.featured-merch-art:focus-visible {
+      border-color: rgba(231,76,60,.55);
+      box-shadow: 0 14px 38px rgba(231,76,60,.18);
+      transform: translateY(-2px);
+      outline: none;
     }
     .featured-merch-art img {
       width: min(78%, 340px);
       height: auto;
       object-fit: contain;
+      transition: transform .25s ease;
+    }
+    a.featured-merch-art:hover img,
+    a.featured-merch-art:focus-visible img {
+      transform: scale(1.02);
     }
     .featured-merch-copy {
       background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.008));
@@ -932,9 +947,9 @@ The Galilean</p>
 
   <section class="featured-merch-section" aria-labelledby="featured-merch-heading">
     <div class="featured-merch">
-      <div class="featured-merch-art" aria-label="Shieldbearer logo tee visual">
+      <a class="featured-merch-art" href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener" aria-label="Shop featured Shieldbearer merch">
         <img src="images/logo-tee.webp" alt="Shieldbearer logo t-shirt">
-      </div>
+      </a>
       <div class="featured-merch-copy">
         <span class="eyebrow">Featured Merch</span>
         <h2 class="featured-merch-title" id="featured-merch-heading">Shieldbearer Logo Tee</h2>

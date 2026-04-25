@@ -3,6 +3,7 @@
   var cfg = window.SHIELDBEARER_CONFIG && window.SHIELDBEARER_CONFIG.merch;
   if (!cfg || !cfg.rotate) return;
 
+  var artEl = document.querySelector("a.featured-merch-art");
   var imgEl = document.querySelector(".featured-merch-art img");
   var titleEl = document.getElementById("featured-merch-heading");
   var linkEl = document.querySelector(".featured-merch-copy .btn");
@@ -18,7 +19,10 @@
       imgEl.src = pick.image;
       imgEl.alt = pick.title || (cfg.fallback && cfg.fallback.alt) || "Shieldbearer merch";
       titleEl.textContent = pick.title || titleEl.textContent;
-      if (pick.url) linkEl.href = pick.url;
+      if (pick.url) {
+        linkEl.href = pick.url;
+        if (artEl) artEl.href = pick.url;
+      }
     })
     .catch(function () { /* keep static fallback */ });
 })();
