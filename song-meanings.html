@@ -2327,8 +2327,33 @@ Sentinels upon the wall`,
       var staticDossierFallback = document.getElementById('staticDossierFallback');
       if (staticDossierFallback) staticDossierFallback.style.display = 'none';
       window.addEventListener('hashchange', function () { applyHash(); renderAll(); });
+
+      // Hook for external scripts (js/song-meanings-augment.js) to add
+      // dossier entries pulled from site.json's released[] without
+      // touching the curated SONG_DOSSIERS array. Skips duplicates by id.
+      window.appendSongDossiers = function (extras) {
+        if (!Array.isArray(extras) || extras.length === 0) return 0;
+        var existingIds = {};
+        for (var i = 0; i < SONG_DOSSIERS.length; i++) {
+          existingIds[SONG_DOSSIERS[i].id] = true;
+        }
+        var added = 0;
+        for (var j = 0; j < extras.length; j++) {
+          var entry = extras[j];
+          if (!entry || !entry.id || existingIds[entry.id]) continue;
+          SONG_DOSSIERS.push(entry);
+          existingIds[entry.id] = true;
+          added += 1;
+        }
+        if (added > 0) {
+          applyHash();
+          renderAll();
+        }
+        return added;
+      };
     })();
   </script>
+  <script src="js/song-meanings-augment.js" defer></script>
   <script src="js/sentinelbot.js"></script>
 </body>
 </html>
