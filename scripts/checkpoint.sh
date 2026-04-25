@@ -6,6 +6,13 @@ if [ -z "$1" ]; then
   exit 1
 fi
 
+# Refresh the merch rotation pool from Shopify's public sitemap.
+# Non-blocking: if Shopify is unreachable, keep the existing data/merch.json.
+echo "Refreshing merch rotation pool..."
+if ! bash scripts/fetch-merch.sh; then
+  echo "WARN: merch refresh failed; continuing with existing data/merch.json"
+fi
+
 # Run structural tests before checkpointing
 echo "Running pre-commit tests..."
 bash scripts/test.sh
