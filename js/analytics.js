@@ -66,6 +66,12 @@
       t = l.createElement(r);
       t.async = 1;
       t.src = 'https://www.clarity.ms/tag/' + i;
+      // Surface CDN load failures (CSP block, 503, network blocked by
+      // ad-blocker) as a GA4 event so silent breakage shows up in
+      // analytics instead of going unnoticed for weeks.
+      t.onerror = function () {
+        sbTrack('clarity_load_error', { project_id: i, src: t.src });
+      };
       y = l.getElementsByTagName(r)[0];
       y.parentNode.insertBefore(t, y);
     })(window, document, 'clarity', 'script', clarityId);
