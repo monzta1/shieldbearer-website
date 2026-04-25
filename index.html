@@ -558,7 +558,7 @@
 
     @media (max-width: 900px) {
       .hero-bg {
-        background-position: center 18%;
+        background-position: center top;
       }
       .featured-track {
         grid-template-columns: 1fr;
@@ -598,7 +598,10 @@
       }
     }
     @media (max-width: 640px) {
-      .hero-bg { background-position: center 16%; }
+      .hero-bg {
+        background-size: cover;
+        background-position: center top;
+      }
       .hero-rule { margin-bottom: 1.6rem; }
       .hero-tagline { margin-bottom: 1.2rem; }
       .hero-headline { margin-bottom: 1.05rem; }
