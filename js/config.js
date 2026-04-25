@@ -1,49 +1,49 @@
 /* =============================================================
-   SHIELDBEARER — Central Site Configuration
+   SHIELDBEARER. Central Site Configuration.
 
    One source of truth for runtime knobs. Edit a value here, push,
    done. This file MUST load before every other script in js/.
 
    Sections:
-     analytics    — GTM, GA4, Clarity tracking IDs
-     sentinelbot  — Chat widget backend
-     merch        — Homepage featured-merch rotator
+     analytics    : GTM, GA4, Clarity tracking IDs
+     sentinelbot  : Chat widget backend
+     merch        : Homepage featured-merch rotator
    ============================================================= */
 window.SHIELDBEARER_CONFIG = {
 
-  /* ── Analytics ─────────────────────────────────────────────
+  /* Analytics ........................................................
      gtmId     : Google Tag Manager container ID ("GTM-XXXXXXX")
      ga4Id     : Direct GA4 fallback measurement ID ("G-...")
                  Used only if GTM is unavailable.
      clarityId : Microsoft Clarity project ID (heatmaps/sessions)
      Leave any field as "" to disable that integration.
-     ────────────────────────────────────────────────────────── */
+     ............................................................... */
   analytics: {
     gtmId:     "GTM-N7SR64KL",
     ga4Id:     "G-QTHJRB1B7G",
     clarityId: "w7gal18ekh"
   },
 
-  /* ── SentinelBot chat widget ───────────────────────────────
+  /* SentinelBot chat widget .........................................
      apiUrl : Lambda endpoint that powers the chat. Swap to a
               staging URL while testing without affecting prod.
-     ────────────────────────────────────────────────────────── */
+     ............................................................... */
   sentinelbot: {
     apiUrl: "https://g7a5tqlxaj.execute-api.us-east-1.amazonaws.com/sentinel"
   },
 
-  /* ── Featured-merch rotator (homepage only) ────────────────
-     rotate   : true  → pick a random product from `source` on
-                        each page load.
-                false → instant kill switch; always show the
-                        static `fallback` below. Use this if the
-                        rotator misbehaves; no redeploy of
-                        data/merch.json needed.
-     source   : Path to the baked merch JSON. Refreshed by
-                running scripts/fetch-merch.sh before deploy.
-     fallback : Static merch card shown when rotate=false OR
-                when the fetch of `source` fails for any reason.
-     ────────────────────────────────────────────────────────── */
+  /* Featured-merch rotator (homepage only) ..........................
+     rotate   : true  = pick a random product from `source` on each
+                        page load.
+                false = instant kill switch; always show the static
+                        `fallback` below. Use this if the rotator
+                        misbehaves; no redeploy of data/merch.json
+                        needed.
+     source   : Path to the baked merch JSON. Refreshed by running
+                scripts/fetch-merch.sh before deploy.
+     fallback : Static merch card shown when rotate=false OR when
+                the fetch of `source` fails for any reason.
+     ............................................................... */
   merch: {
     rotate: true,
     source: "data/merch.json",
