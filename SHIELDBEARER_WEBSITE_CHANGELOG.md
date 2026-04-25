@@ -7,6 +7,10 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v1.5.16 - April 2026
+- Fixed the homepage hero artwork zoom-crop on mobile so the full Galilean image is visible
+- Switched the small-screen hero-bg image layer from cover to 100% auto with a black fill behind it
+
 ## v1.5.15 - April 2026
 - Added the shared SentinelBot launcher script to the SentinelBot page itself
 - Kept the page content and structure intact while restoring the site-wide assistant behavior
