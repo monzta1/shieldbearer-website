@@ -103,6 +103,53 @@
 
   addSignalRoomNavLink();
 
+  /* ── GOSPEL NAV LINK ── */
+  function addGospelNavLink() {
+    var gospelHref = 'gospel.html';
+    var gospelLabel = 'The Gospel Does Not Need Permission';
+
+    var desktopWords = document.querySelector('li.nav-dropdown > a[href="manifesto.html"]');
+    if (desktopWords) {
+      var desktopDropdown = desktopWords.parentElement.querySelector('.nav-dropdown__menu');
+      if (desktopDropdown && !desktopDropdown.querySelector('a[href="' + gospelHref + '"]')) {
+        var gospelLink = document.createElement('a');
+        gospelLink.href = gospelHref;
+        gospelLink.textContent = gospelLabel;
+        var openLetterLink = desktopDropdown.querySelector('a[href="open-letter.html"]');
+        if (openLetterLink) {
+          openLetterLink.insertAdjacentElement('afterend', gospelLink);
+        } else {
+          desktopDropdown.appendChild(gospelLink);
+        }
+      }
+    }
+
+    var mobileNav = document.getElementById('mobMenu');
+    if (mobileNav && !mobileNav.querySelector('a[href="' + gospelHref + '"]')) {
+      var mobileAnchor = mobileNav.querySelector('a[href="open-letter.html"]');
+      var mobileGospelLink = document.createElement('a');
+      mobileGospelLink.href = gospelHref;
+      mobileGospelLink.textContent = gospelLabel;
+      if (mobileAnchor) {
+        mobileAnchor.insertAdjacentElement('afterend', mobileGospelLink);
+      } else {
+        var mobileWordsLink = mobileNav.querySelector('a[href="manifesto.html"]');
+        if (mobileWordsLink) {
+          mobileWordsLink.insertAdjacentElement('afterend', mobileGospelLink);
+        } else {
+          var mobClose = mobileNav.querySelector('.mob-close');
+          if (mobClose && mobClose.nextSibling) {
+            mobClose.insertAdjacentElement('afterend', mobileGospelLink);
+          } else {
+            mobileNav.appendChild(mobileGospelLink);
+          }
+        }
+      }
+    }
+  }
+
+  addGospelNavLink();
+
   /* ── NAV SCROLL STATE ── */
   var nav = document.querySelector('.site-nav');
   if (nav) {

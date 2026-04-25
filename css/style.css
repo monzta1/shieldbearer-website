@@ -312,6 +312,85 @@ button { cursor: pointer; font-family: inherit; }
   background: rgba(231,76,60,.07);
 }
 
+/* ── GOSPEL PAGE ── */
+.gospel-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 var(--pad);
+}
+.gospel-article {
+  background: var(--dark-2);
+  border: 1px solid rgba(168,162,154,.12);
+  padding: clamp(1.2rem, 2.5vw, 2rem);
+}
+.gospel-anchor {
+  max-width: 760px;
+  margin: 0 auto 2rem;
+  padding: 1.2rem 1.4rem;
+  border-left: 2px solid var(--red);
+  background: rgba(192,57,43,.05);
+}
+.gospel-anchor p {
+  font-size: 1.02rem;
+  line-height: 1.88;
+  color: rgba(240,235,224,.84);
+  margin-bottom: .8rem;
+}
+.gospel-anchor p:last-child { margin-bottom: 0; }
+.gospel-story {
+  max-width: 760px;
+  margin: 0 auto;
+}
+.gospel-story p {
+  font-size: .98rem;
+  line-height: 1.9;
+  color: rgba(240,235,224,.78);
+  margin-bottom: 1rem;
+}
+.gospel-verse {
+  font-family: Georgia, serif;
+  font-size: clamp(20px, 4vw, 32px);
+  color: #c9a84c;
+  text-align: center;
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 40px 24px;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+}
+.gospel-verse p {
+  margin: 0;
+}
+.gospel-verse cite {
+  display: block;
+  margin-top: 1rem;
+  font-family: var(--font-head);
+  font-size: .62rem;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: #c9a84c;
+  font-style: normal;
+}
+.gospel-close {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+.gospel-close p {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: rgba(240,235,224,.82);
+  margin-bottom: .75rem;
+}
+.gospel-close__emphasis {
+  font-family: var(--font-head);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  letter-spacing: .05em;
+  color: #fff;
+  margin: .8rem 0 1.2rem;
+}
+
 /* ── PAGE HERO (inner pages) ── */
 .page-hero {
   padding-top: calc(var(--nav-h) + 6.2rem);
