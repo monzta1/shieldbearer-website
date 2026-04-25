@@ -282,6 +282,13 @@
     .signal-room--empty header {
       display: none;
     }
+    /* Empty-state copy swap: show the "between songs" line, hide the
+       "born in real time" line and the invocation block (the notebook
+       teaser carries the message on its own). */
+    .signal-room-hero__sub--empty { display: none; }
+    .signal-room--empty .signal-room-hero__sub--populated { display: none; }
+    .signal-room--empty .signal-room-hero__sub--empty { display: block; }
+    .signal-room--empty .signal-room-invocation { display: none; }
     .signal-room-invocation {
       margin: 48px auto 24px;
       max-width: 720px;
@@ -505,7 +512,8 @@
       <span class="eyebrow">Operation: Shieldbearer</span>
       <h1 class="display-title">Signal Room</h1>
       <div class="bar"></div>
-      <p>A Shieldbearer song being born in real time. Lyrics, chords, and artwork appear here as the work takes shape.</p>
+      <p class="signal-room-hero__sub signal-room-hero__sub--populated">A Shieldbearer song being born in real time. Lyrics, chords, and artwork appear here as the work takes shape.</p>
+      <p class="signal-room-hero__sub signal-room-hero__sub--empty">The writing desk between songs. Stay in the Signal — the next one will appear here as it's written.</p>
     </div>
   </div>
 
