@@ -95,6 +95,11 @@
     }
     .signal-desk-scene--single {
       min-height: auto;
+      /* Single-tile states (empty, title-only, lyrics-only, artwork-only)
+         let content dictate height. The 3:2 lock and clipping only apply
+         to renderFull where children are absolutely positioned. */
+      aspect-ratio: auto;
+      overflow: visible;
     }
     .signal-desk-photo {
       display: block;
