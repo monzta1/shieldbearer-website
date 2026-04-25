@@ -76,9 +76,7 @@
       content: '';
       position: absolute;
       left: 0; right: 0; bottom: 0;
-      height: clamp(90px, 16vh, 170px);
-      background: linear-gradient(to bottom, rgba(4,4,4,0), rgba(4,4,4,.62) 68%, var(--black) 100%);
-      z-index: 1;
+      height: 0;
       pointer-events: none;
     }
     .hero-bg {
@@ -88,7 +86,8 @@
         radial-gradient(ellipse 74% 58% at 52% 28%, rgba(231,76,60,.16) 0%, transparent 65%),
         radial-gradient(circle at 22% 18%, rgba(124, 255, 234, .2) 0%, transparent 36%),
         radial-gradient(circle at 80% 20%, rgba(100, 136, 255, .22) 0%, transparent 38%),
-        url('images/galilean-art.png') center 22%/cover no-repeat;
+        url('images/galilean-art.png') center/contain no-repeat,
+        var(--black);
       filter: saturate(1.4) contrast(1.12) brightness(1.18);
     }
     .hero-bg::after {
@@ -222,10 +221,7 @@
       color: #fff;
     }
     .scroll-cue {
-      position: absolute; bottom: .55rem; left: 50%;
-      transform: translateX(-50%); z-index: 2;
-      display: flex; flex-direction: column; align-items: center; gap: .5rem;
-      animation: fade-up 2s 1.5s ease forwards; opacity: 0;
+      display: none;
     }
     .scroll-cue span {
       font-family: var(--font-head);
