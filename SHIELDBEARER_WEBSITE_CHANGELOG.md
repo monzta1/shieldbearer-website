@@ -7,6 +7,11 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.3.3 - April 2026
+- Fixed mobile menu order on every page so it mirrors the desktop nav structure (Music group, About + FAQ, Press, Words + Gospel, AI and Faith items, then Contact and Merch)
+- Shortened the mobile label "The Gospel Does Not Need Permission" to "The Gospel" so it no longer wraps to two lines on small screens
+- Added Gospel to the desktop Words dropdown so the link surfaces on both surfaces
+
 ## v2.3.2 - April 2026
 - Fixed the homepage merch rotator showing the static "Clean black tee..." description for every product (hat, hoodie, etc.); the rotator now swaps the description block with the product-specific copy from Shopify, falling back to a generic mission-themed line if the baker did not capture one
 - Extended `scripts/fetch-merch.sh` to scrape each Shopify product page's meta description and store it in `data/merch.json` alongside title, image, and URL
