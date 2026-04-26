@@ -1,0 +1,11 @@
+{
+  "name": "shieldbearer-website",
+  "private": true,
+  "scripts": {
+    "test": "bash scripts/test.sh && c8 node tests/run-tests.js"
+  },
+  "devDependencies": {
+    "c8": "^11.0.0",
+    "jsdom": "^25.0.0"
+  }
+}

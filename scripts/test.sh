@@ -158,5 +158,23 @@ if [ $FAIL -gt 0 ]; then
   echo "Fix failures before deploying."
   exit 1
 fi
-echo "All structural tests passed. Safe to deploy."
+echo "All structural tests passed."
+
+# Browser-side JS regression tests with coverage gate. Skipped if
+# node_modules hasn't been installed (e.g. fresh clone): run
+# `npm install` once, then this stays in the loop forever.
+if [ -d node_modules/jsdom ]; then
+  echo ""
+  echo "Running browser-JS tests with coverage..."
+  npx c8 node tests/run-tests.js
+  if [ $? -ne 0 ]; then
+    echo "Browser-JS tests or coverage gate failed."
+    exit 1
+  fi
+else
+  echo ""
+  echo "(skipping browser-JS tests; run 'npm install' to enable)"
+fi
+
+echo "Safe to deploy."
 exit 0
