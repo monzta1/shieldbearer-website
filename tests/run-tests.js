@@ -360,6 +360,140 @@ async function flushMicrotasks() {
 })();
 
 // ----------------------------------------------------------------------
+// signal-countdown.js
+// ----------------------------------------------------------------------
+
+(async () => {
+  // Helper: build a minimal countdown DOM and a fake localStorage so
+  // each test runs against a clean state.
+  function makeCountdownDom(config) {
+    const html = `<!doctype html><html><body>
+      <div id="signal-countdown">
+        <span id="cd-days">--</span>
+        <span id="cd-hours">--</span>
+        <span id="cd-mins">--</span>
+        <span id="cd-secs">--</span>
+      </div>
+    </body></html>`;
+    const dom = makeDom(html);
+    dom.window.SHIELDBEARER_CONFIG = { signalCountdown: config };
+    // jsdom ships its own localStorage, but reset it for each test.
+    try { dom.window.localStorage.clear(); } catch (e) {}
+    return dom;
+  }
+
+  // Rolling mode: empty storage seeds a target ~7 days out and renders
+  // the countdown immediately.
+  {
+    const dom = makeCountdownDom({
+      enabled: true,
+      resetDays: 7,
+      fixedTarget: null,
+      storageKey: "test-key-1"
+    });
+    runScriptInWindow(dom.window, "js/signal-countdown.js");
+    await flushMicrotasks();
+    const days = parseInt(dom.window.document.getElementById("cd-days").textContent, 10);
+    assert(days >= 6 && days <= 7, "countdown rolling: days near 7 on first render");
+    const stored = dom.window.localStorage.getItem("test-key-1");
+    assert(stored && Number.isFinite(parseInt(stored, 10)), "countdown rolling: storage seeded with numeric target");
+  }
+
+  // Rolling mode: stored target in the past triggers reset to a new
+  // window. Past target should be replaced.
+  {
+    const dom = makeCountdownDom({
+      enabled: true,
+      resetDays: 3,
+      fixedTarget: null,
+      storageKey: "test-key-2"
+    });
+    const longAgo = Date.now() - (10 * 24 * 60 * 60 * 1000);
+    dom.window.localStorage.setItem("test-key-2", String(longAgo));
+    runScriptInWindow(dom.window, "js/signal-countdown.js");
+    await flushMicrotasks();
+    const stored = parseInt(dom.window.localStorage.getItem("test-key-2"), 10);
+    assert(stored > Date.now(), "countdown rolling: expired target replaced with future target");
+  }
+
+  // Fixed-target mode: reads ISO date from config and ignores
+  // localStorage.
+  {
+    const future = new Date(Date.now() + 5 * 24 * 60 * 60 * 1000).toISOString();
+    const dom = makeCountdownDom({
+      enabled: true,
+      resetDays: 7,
+      fixedTarget: future,
+      storageKey: "test-key-3"
+    });
+    runScriptInWindow(dom.window, "js/signal-countdown.js");
+    await flushMicrotasks();
+    const days = parseInt(dom.window.document.getElementById("cd-days").textContent, 10);
+    assert(days >= 4 && days <= 5, "countdown fixed-target: shows ~5 days out");
+    const stored = dom.window.localStorage.getItem("test-key-3");
+    assertEqual(stored, null, "countdown fixed-target: localStorage NOT touched");
+  }
+
+  // Fixed-target mode with invalid date string: falls back to rolling.
+  {
+    const dom = makeCountdownDom({
+      enabled: true,
+      resetDays: 7,
+      fixedTarget: "not-a-date",
+      storageKey: "test-key-4"
+    });
+    runScriptInWindow(dom.window, "js/signal-countdown.js");
+    await flushMicrotasks();
+    const stored = dom.window.localStorage.getItem("test-key-4");
+    assert(stored && parseInt(stored, 10) > Date.now(), "countdown invalid fixed-target: falls back to rolling");
+  }
+
+  // Disabled mode: no DOM mutation.
+  {
+    const dom = makeCountdownDom({
+      enabled: false,
+      resetDays: 7,
+      fixedTarget: null,
+      storageKey: "test-key-5"
+    });
+    runScriptInWindow(dom.window, "js/signal-countdown.js");
+    await flushMicrotasks();
+    assertEqual(dom.window.document.getElementById("cd-days").textContent, "--", "countdown disabled: leaves DOM untouched");
+    assertEqual(dom.window.localStorage.getItem("test-key-5"), null, "countdown disabled: storage untouched");
+  }
+
+  // Fixed-target in the past: clamps to zero across all units.
+  {
+    const past = new Date(Date.now() - 60 * 60 * 1000).toISOString();
+    const dom = makeCountdownDom({
+      enabled: true,
+      resetDays: 7,
+      fixedTarget: past,
+      storageKey: "test-key-past"
+    });
+    runScriptInWindow(dom.window, "js/signal-countdown.js");
+    await flushMicrotasks();
+    assertEqual(dom.window.document.getElementById("cd-days").textContent, "00", "countdown past fixed-target: days clamped to 00");
+    assertEqual(dom.window.document.getElementById("cd-secs").textContent, "00", "countdown past fixed-target: secs clamped to 00");
+  }
+
+  // Container missing: no crash even if the DOM doesn't have the
+  // countdown elements (e.g. running on a page that's not Signal Room).
+  {
+    const dom = makeDom(`<!doctype html><html><body></body></html>`);
+    dom.window.SHIELDBEARER_CONFIG = {
+      signalCountdown: { enabled: true, resetDays: 7, fixedTarget: null, storageKey: "test-key-6" }
+    };
+    let threw = false;
+    try {
+      runScriptInWindow(dom.window, "js/signal-countdown.js");
+      await flushMicrotasks();
+    } catch (e) { threw = true; }
+    assert(!threw, "countdown: silent no-op when #signal-countdown is absent");
+  }
+})();
+
+// ----------------------------------------------------------------------
 // main.js: nav-link injection (the bug that prompted these tests).
 // On a clean URL like /contact, the injected Release Timeline link
 // must be an absolute path (/timeline). Relative would resolve to

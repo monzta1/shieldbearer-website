@@ -7,6 +7,11 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.4.0 - April 2026
+- Added a self-resetting countdown timer to the Signal Room ("Next Signal" clock) that always counts down to a 7-day rolling target stored in localStorage; when it hits zero it silently mints a new 7-day window
+- Knobs live in `js/config.js` under `signalCountdown`: `enabled`, `resetDays`, `fixedTarget` (set an ISO date string to pin the timer to a specific release), `storageKey`
+- New `js/signal-countdown.js` is gated at 100% line coverage with seven jsdom tests (rolling first render, expired target reset, fixed-target mode, invalid date fallback, disabled mode, missing container, past fixed-target clamp)
+
 ## v2.3.4 - April 2026
 - Restored mobile menu items that were missing relative to the desktop nav: The Armory under Music, Press Coverage under Press, AI and Faith FAQ under For AI Artists. Mobile flat list now matches desktop dropdowns 1:1.
 

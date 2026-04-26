@@ -429,6 +429,58 @@
         background: rgba(231, 76, 60, 0.04);
       }
     }
+
+    /* Signal Room countdown. Centered, understated, like a clock on the studio wall. */
+    .signal-countdown {
+      text-align: center;
+      margin: 32px auto 40px;
+      padding: 24px;
+      max-width: 480px;
+      border: 1px solid #1a1a1a;
+      background: rgba(0,0,0,0.4);
+    }
+    .signal-countdown__label {
+      font-family: 'Courier New', monospace;
+      font-size: 10px;
+      letter-spacing: .25em;
+      color: #888;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .signal-countdown__timer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .countdown-unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .countdown-value {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(36px, 8vw, 64px);
+      color: #c9a84c;
+      line-height: 1;
+      letter-spacing: .05em;
+      text-shadow: 0 0 20px rgba(201, 168, 76, 0.3);
+    }
+    .countdown-unit-label {
+      font-family: 'Courier New', monospace;
+      font-size: 9px;
+      color: #666;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+    .countdown-sep {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(36px, 8vw, 64px);
+      color: #2a2a2a;
+      line-height: 1;
+      margin-bottom: 18px;
+    }
   </style>
 </head>
 <body>
@@ -533,6 +585,30 @@
   </div>
 
   <div class="wrap">
+    <div class="signal-countdown" id="signal-countdown" aria-label="Countdown to next signal">
+      <p class="signal-countdown__label">Next Signal</p>
+      <div class="signal-countdown__timer">
+        <div class="countdown-unit">
+          <span class="countdown-value" id="cd-days">00</span>
+          <span class="countdown-unit-label">Days</span>
+        </div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-unit">
+          <span class="countdown-value" id="cd-hours">00</span>
+          <span class="countdown-unit-label">Hrs</span>
+        </div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-unit">
+          <span class="countdown-value" id="cd-mins">00</span>
+          <span class="countdown-unit-label">Min</span>
+        </div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-unit">
+          <span class="countdown-value" id="cd-secs">00</span>
+          <span class="countdown-unit-label">Sec</span>
+        </div>
+      </div>
+    </div>
     <main class="signal-desk-scene">
       <img class="signal-desk-photo" src="./images/signal-room/desk.jpg" alt="" aria-hidden="true">
       <div id="artwork"></div>
@@ -906,5 +982,6 @@
   <script src="/js/analytics.js" defer></script>
   <script src="/js/main.js" defer></script>
   <script src="/js/sentinelbot.js"></script>
+  <script src="/js/signal-countdown.js" defer></script>
 </body>
 </html>

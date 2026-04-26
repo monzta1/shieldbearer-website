@@ -53,6 +53,29 @@ window.SHIELDBEARER_CONFIG = {
       url:   "https://shop.shieldbearerusa.com",
       alt:   "Shieldbearer logo t-shirt"
     }
+  },
+
+  /* Signal Room countdown (signal-room page only) ...................
+     enabled     : true  = render the countdown block.
+                   false = hide it entirely (kill switch, no redeploy).
+     resetDays   : When the rolling timer hits zero (or no value is
+                   stored yet) it auto-sets a new target this many
+                   days into the future. Default 7.
+     fixedTarget : Optional ISO 8601 string. If set, the timer counts
+                   to this exact date for every visitor and ignores
+                   the rolling reset. Set back to null to return to
+                   rolling mode. Examples:
+                     "2026-05-10T20:00:00Z"  (UTC)
+                     "2026-05-10T20:00:00-04:00"  (specific timezone)
+     storageKey  : localStorage key for persisting the rolling target.
+                   Change this if you ever need to invalidate every
+                   visitor's stored target in one shot.
+     ............................................................... */
+  signalCountdown: {
+    enabled: true,
+    resetDays: 7,
+    fixedTarget: null,
+    storageKey: "shieldbearer_signal_target"
   }
 
 };

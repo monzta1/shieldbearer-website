@@ -2,7 +2,8 @@
   "include": [
     "js/featured-release.js",
     "js/song-meanings-augment.js",
-    "js/merch-rotator.js"
+    "js/merch-rotator.js",
+    "js/signal-countdown.js"
   ],
   "exclude": [
     "**/tests/**",
