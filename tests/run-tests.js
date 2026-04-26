@@ -333,6 +333,82 @@ async function flushMicrotasks() {
 })();
 
 // ----------------------------------------------------------------------
+// main.js — nav-link injection (the bug that prompted these tests).
+// On a clean URL like /contact, the injected Release Timeline link
+// must be an absolute path (/timeline). Relative would resolve to
+// /contact/timeline which would 404.
+// ----------------------------------------------------------------------
+
+(async () => {
+  // Minimal page that mirrors what main.js's nav-injection helpers
+  // expect to find: a desktop nav with a music dropdown and a
+  // mobile menu containing a music link.
+  const html = `<!doctype html><html><body>
+    <nav>
+      <ul class="nav-links">
+        <li class="nav-dropdown"><a href="/music">Music</a>
+          <ul><li><a href="/song-meanings">Lyrics</a></li></ul>
+        </li>
+        <li class="nav-dropdown"><a href="/manifesto">Words</a>
+          <ul><li><a href="/open-letter">Open Letter</a></li></ul>
+        </li>
+      </ul>
+    </nav>
+    <div class="mob-menu" id="mobMenu">
+      <a href="/music">Music</a>
+      <a href="/manifesto">Words</a>
+      <a href="/open-letter">Open Letter</a>
+    </div>
+  </body></html>`;
+  // Pretend we're on a subfolder route — this is exactly the case
+  // where a relative href like 'timeline.html' would silently break.
+  const dom = new JSDOM(html, {
+    url: "https://shieldbearerusa.com/contact/",
+    runScripts: "outside-only"
+  });
+  dom.window.window = dom.window;
+  dom.window._sentinelOwnerDom = dom;
+  // sbTrack is a global created by analytics.js; main.js calls it.
+  dom.window.sbTrack = function () {};
+  runScriptInWindow(dom.window, "js/main.js");
+  await flushMicrotasks();
+
+  const doc = dom.window.document;
+  const allInjectedHrefs = Array.from(doc.querySelectorAll(".nav-links a, .mob-menu a"))
+    .map((a) => a.getAttribute("href"))
+    .filter(Boolean);
+
+  // Every href must be absolute (start with /) so it works from any
+  // page in the site, not just root-level pages.
+  const relativeBads = allInjectedHrefs.filter(
+    (h) => h && !h.startsWith("/") && !h.startsWith("http") && !h.startsWith("#") && !h.startsWith("mailto:") && !h.startsWith("tel:")
+  );
+  assertEqual(relativeBads, [], "main.js: no relative-path hrefs in nav after injection");
+
+  const timelineLink = Array.from(doc.querySelectorAll("a")).find(
+    (a) => a.textContent.trim() === "Release Timeline"
+  );
+  assert(timelineLink, "main.js: Release Timeline link injected");
+  if (timelineLink) {
+    assertEqual(timelineLink.getAttribute("href"), "/timeline", "main.js: Release Timeline href is absolute /timeline");
+  }
+
+  const signalRoomLink = Array.from(doc.querySelectorAll("a")).find(
+    (a) => /signal\s+room/i.test(a.textContent)
+  );
+  if (signalRoomLink) {
+    assertEqual(signalRoomLink.getAttribute("href"), "/signal-room", "main.js: Signal Room href is absolute /signal-room");
+  }
+
+  const gospelLink = Array.from(doc.querySelectorAll("a")).find(
+    (a) => /gospel/i.test(a.textContent)
+  );
+  if (gospelLink) {
+    assertEqual(gospelLink.getAttribute("href"), "/gospel", "main.js: Gospel href is absolute /gospel");
+  }
+})();
+
+// ----------------------------------------------------------------------
 setTimeout(() => {
   console.log("\n=========================================");
   console.log(`Website JS tests: ${passed} passed, ${failed} failed`);

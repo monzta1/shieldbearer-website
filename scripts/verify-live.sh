@@ -1,6 +1,9 @@
 #!/bin/bash
 # scripts/verify-live.sh
-# Run after every deploy. Checks live site returns 200 for all pages.
+# Run after every deploy. Hits the live site and asserts every clean
+# URL serves 200, then crawls the rendered HTML for hrefs and follows
+# each to confirm there are no dead links. Catches the class of bug
+# where a JS-injected href is relative and 404s on a subfolder page.
 
 BASE="https://shieldbearerusa.com"
 PASS=0
@@ -9,12 +12,12 @@ FAIL=0
 check_status() {
   local desc="$1"
   local url="$2"
-  local status=$(curl -s -o /dev/null -w "%{http_code}" "$url")
-  if [ "$status" = "200" ]; then
-    echo "✓ 200: $desc"
+  local code=$(curl -sI -o /dev/null -w "%{http_code}" "$url")
+  if [ "$code" = "200" ]; then
+    echo "PASS 200: $desc"
     PASS=$((PASS + 1))
   else
-    echo "✗ $status: $desc"
+    echo "FAIL $code: $desc ($url)"
     FAIL=$((FAIL + 1))
   fi
 }
@@ -25,10 +28,10 @@ check_content() {
   local pattern="$3"
   local count=$(curl -s "$url" | grep -c "$pattern")
   if [ "$count" -gt 0 ]; then
-    echo "✓ $desc"
+    echo "PASS $desc"
     PASS=$((PASS + 1))
   else
-    echo "✗ $desc — not found"
+    echo "FAIL $desc (pattern '$pattern' not found)"
     FAIL=$((FAIL + 1))
   fi
 }
@@ -36,31 +39,77 @@ check_content() {
 echo "Verifying live site: $BASE"
 echo "========================================="
 
-# All pages return 200
-pages=(
-  "" index.html music.html videos.html about.html story.html
-  process.html song-meanings.html interviews.html epk.html
-  manifesto.html open-letter.html gatekeeping.html for-ai-artists.html
-  no-rulebook.html ai-and-creativity.html god-uses-tools.html
-  artist-freedom.html faq.html contact.html 404.html
-  sitemap.xml robots.txt
+# Clean URLs (the canonical paths post-cleanup).
+clean_paths=(
+  "" about ai-and-creativity artist-freedom contact creed epk faq
+  for-ai-artists gatekeeping god-uses-tools gospel interviews manifesto
+  music no-rulebook open-letter process sentinelbot signal-room
+  song-meanings story timeline videos
 )
-for page in "${pages[@]}"; do
-  check_status "$page" "$BASE/$page"
+for path in "${clean_paths[@]}"; do
+  check_status "/$path" "$BASE/$path"
 done
 
-# Spotify embed on homepage
+# Legacy .html paths must still resolve — Google has these indexed.
+legacy_paths=(
+  index.html sentinelbot.html signal-room.html timeline.html
+  faq.html manifesto.html song-meanings.html music.html
+)
+for page in "${legacy_paths[@]}"; do
+  check_status "$page (legacy)" "$BASE/$page"
+done
+
+# Other artifacts that must serve 200.
+check_status "404.html" "$BASE/404.html"
+check_status "sitemap.xml" "$BASE/sitemap.xml"
+check_status "robots.txt" "$BASE/robots.txt"
+check_status "site.json" "$BASE/site.json"
+
+# Embeds and key markers that, if missing, signal a deploy regression.
 check_content "Homepage has Spotify embed" "$BASE/" "spotify"
-
-# YouTube embed on homepage
 check_content "Homepage has YouTube embed" "$BASE/" "youtube.com/embed"
+check_content "song-meanings still hand-curated" "$BASE/song-meanings" "SONG_DOSSIERS"
+check_content "Sitemap has clean URLs" "$BASE/sitemap.xml" ">https://shieldbearerusa.com/sentinelbot<"
 
-# song-meanings JS not broken
-check_content "song-meanings SONG_DOSSIERS present" "$BASE/song-meanings.html" "SONG_DOSSIERS"
-
-# Sitemap has key pages
-check_content "Sitemap has for-ai-artists" "$BASE/sitemap.xml" "for-ai-artists"
-check_content "Sitemap has artist-freedom" "$BASE/sitemap.xml" "artist-freedom"
+# Crawler: visit a representative subset of pages, extract hrefs, and
+# confirm each absolute /path responds with 2xx or 3xx. This catches
+# "relative href on a subfolder page becomes a 404" regressions.
+echo ""
+echo "Crawling internal hrefs..."
+crawl_pages=("" "contact" "manifesto" "song-meanings" "signal-room" "sentinelbot")
+crawled=0
+for crawl in "${crawl_pages[@]}"; do
+  body=$(curl -s "$BASE/$crawl")
+  while IFS= read -r href; do
+    [ -z "$href" ] && continue
+    [[ "$href" == http* ]] && continue
+    [[ "$href" == mailto:* ]] && continue
+    [[ "$href" == tel:* ]] && continue
+    [[ "$href" == "#"* ]] && continue
+    [[ "$href" == javascript:* ]] && continue
+    target="${href%%#*}"
+    [ -z "$target" ] && continue
+    # If a page renders a relative href (no leading /), that's the
+    # bug — flag it and resolve so we still verify reachability.
+    if [[ "$target" != /* ]]; then
+      echo "FAIL relative href on /$crawl: '$href' (will fail when crawled from a subfolder)"
+      FAIL=$((FAIL + 1))
+      target="/$crawl/$target"
+    fi
+    code=$(curl -sI -o /dev/null -w "%{http_code}" "$BASE$target")
+    case "$code" in
+      2*|3*)
+        PASS=$((PASS + 1))
+        crawled=$((crawled + 1))
+        ;;
+      *)
+        echo "FAIL link $code: $target (referenced from /$crawl)"
+        FAIL=$((FAIL + 1))
+        ;;
+    esac
+  done < <(echo "$body" | grep -oE 'href="[^"]+"' | sed -E 's/^href="//;s/"$//')
+done
+echo "(crawled $crawled internal hrefs across ${#crawl_pages[@]} pages)"
 
 echo "========================================="
 echo "Results: $PASS passed, $FAIL failed"

@@ -164,6 +164,22 @@ check "admin logs has passphrase gate element" "$(grep -q 'id="passGate"' admin/
 check "admin logs has passphrase hash constant" "$(grep -q 'EXPECTED_HASH' admin/logs.html && echo true || echo false)"
 check "admin logs body starts locked" "$(grep -q 'body class="pass-locked"' admin/logs.html && echo true || echo false)"
 
+# 19b. No stale .html filename string literals in JS source. Catches
+# the bug where addTimelineNavLink set href = 'timeline.html' which
+# resolved relative to the current page (so on /contact it became
+# /contact/timeline.html, broken). Anything that looks like
+# 'name.html' or "name.html" in JS is suspect after the clean-URL
+# move. Comment lines and bare '.html' fragments (used in active-
+# link path comparisons) are intentionally allowed.
+js_html_literals=$(grep -nE "['\"][a-zA-Z][a-zA-Z0-9_-]*\.html['\"]" js/*.js 2>/dev/null | grep -v "^[^:]*:[0-9]*:[[:space:]]*//" | head -10)
+if [ -z "$js_html_literals" ]; then
+  check "No stale .html filename literals in JS source" "true"
+else
+  check "No stale .html filename literals in JS source" "false"
+  echo "  Found:"
+  echo "$js_html_literals" | sed 's/^/    /'
+fi
+
 # 20. site.json schema. Publisher and signal-room consumer agreed on
 # these field names; any drift here breaks the chain.
 if [ -f site.json ] && command -v node &>/dev/null; then
