@@ -137,7 +137,7 @@ async function flushMicrotasks() {
   assertEqual(doc.querySelector(".featured-track__artwork img").src, "https://shieldbearerusa.com/images/signal-room/let-my-people-go.jpg", "featured-release: artwork swapped");
   assertEqual(doc.getElementById("release-heading").textContent, "Let My People Go", "featured-release: title swapped");
   assertEqual(doc.querySelector(".featured-track__actions .btn--red").href, "https://www.youtube.com/watch?v=lmpg-vid", "featured-release: watch link swapped");
-  assertEqual(doc.querySelector(".featured-track__actions .btn--ghost").href, "https://shieldbearerusa.com/song-meanings.html#let-my-people-go", "featured-release: meaning link slugified");
+  assertEqual(doc.querySelector(".featured-track__actions .btn--ghost").href, "https://shieldbearerusa.com/song-meanings#let-my-people-go", "featured-release: meaning link slugified to clean URL");
   assertEqual(doc.querySelector(".featured-track__player").src, "https://www.youtube.com/embed/lmpg-vid", "featured-release: embed src swapped");
   assertEqual(doc.querySelector(".featured-track__lyrics-title").textContent, "Let My People Go Notes", "featured-release: notes title swapped");
   const notes = doc.querySelectorAll(".featured-track__lyrics-scroll p");

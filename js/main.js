@@ -14,12 +14,12 @@
 
   /* ── TIMELINE NAV LINK ── */
   function addTimelineNavLink() {
-    var timelineHref = 'timeline.html';
+    var timelineHref = '/timeline';
     var timelineLabel = 'Release Timeline';
 
     var desktopNav = document.querySelector('.nav-links');
     if (desktopNav && !desktopNav.querySelector('a[href="' + timelineHref + '"]')) {
-      var musicItem = desktopNav.querySelector('li.nav-dropdown > a[href="music.html"]');
+      var musicItem = desktopNav.querySelector('li.nav-dropdown > a[href="/music"]');
       var desktopItem = document.createElement('li');
       var desktopLink = document.createElement('a');
 
@@ -41,7 +41,7 @@
 
     var mobileNav = document.getElementById('mobMenu');
     if (mobileNav && !mobileNav.querySelector('a[href="' + timelineHref + '"]')) {
-      var mobileMusic = mobileNav.querySelector('a[href="music.html"]');
+      var mobileMusic = mobileNav.querySelector('a[href="/music"]');
       var mobileLink = document.createElement('a');
       mobileLink.href = timelineHref;
       mobileLink.textContent = timelineLabel;
@@ -63,17 +63,17 @@
 
   /* ── SIGNAL ROOM NAV LINK ── */
   function addSignalRoomNavLink() {
-    var signalRoomHref = 'signal-room.html';
+    var signalRoomHref = '/signal-room';
     var signalRoomLabel = 'Signal Room';
 
-    var desktopMusic = document.querySelector('li.nav-dropdown > a[href="music.html"]');
+    var desktopMusic = document.querySelector('li.nav-dropdown > a[href="/music"]');
     if (desktopMusic) {
       var dropdown = desktopMusic.parentElement.querySelector('.nav-dropdown__menu');
       if (dropdown && !dropdown.querySelector('a[href="' + signalRoomHref + '"]')) {
         var signalLink = document.createElement('a');
         signalLink.href = signalRoomHref;
         signalLink.textContent = signalRoomLabel;
-        var lyricLink = dropdown.querySelector('a[href="song-meanings.html"]');
+        var lyricLink = dropdown.querySelector('a[href="/song-meanings"]');
         if (lyricLink) {
           lyricLink.insertAdjacentElement('afterend', signalLink);
         } else {
@@ -84,7 +84,7 @@
 
     var mobileNav = document.getElementById('mobMenu');
     if (mobileNav && !mobileNav.querySelector('a[href="' + signalRoomHref + '"]')) {
-      var mobileMusic = mobileNav.querySelector('a[href="music.html"]');
+      var mobileMusic = mobileNav.querySelector('a[href="/music"]');
       var mobileSignalLink = document.createElement('a');
       mobileSignalLink.href = signalRoomHref;
       mobileSignalLink.textContent = signalRoomLabel;
@@ -105,17 +105,17 @@
 
   /* ── GOSPEL NAV LINK ── */
   function addGospelNavLink() {
-    var gospelHref = 'gospel.html';
+    var gospelHref = '/gospel';
     var gospelLabel = 'The Gospel Does Not Need Permission';
 
-    var desktopWords = document.querySelector('li.nav-dropdown > a[href="manifesto.html"]');
+    var desktopWords = document.querySelector('li.nav-dropdown > a[href="/manifesto"]');
     if (desktopWords) {
       var desktopDropdown = desktopWords.parentElement.querySelector('.nav-dropdown__menu');
       if (desktopDropdown && !desktopDropdown.querySelector('a[href="' + gospelHref + '"]')) {
         var gospelLink = document.createElement('a');
         gospelLink.href = gospelHref;
         gospelLink.textContent = gospelLabel;
-        var openLetterLink = desktopDropdown.querySelector('a[href="open-letter.html"]');
+        var openLetterLink = desktopDropdown.querySelector('a[href="/open-letter"]');
         if (openLetterLink) {
           openLetterLink.insertAdjacentElement('afterend', gospelLink);
         } else {
@@ -126,14 +126,14 @@
 
     var mobileNav = document.getElementById('mobMenu');
     if (mobileNav && !mobileNav.querySelector('a[href="' + gospelHref + '"]')) {
-      var mobileAnchor = mobileNav.querySelector('a[href="open-letter.html"]');
+      var mobileAnchor = mobileNav.querySelector('a[href="/open-letter"]');
       var mobileGospelLink = document.createElement('a');
       mobileGospelLink.href = gospelHref;
       mobileGospelLink.textContent = gospelLabel;
       if (mobileAnchor) {
         mobileAnchor.insertAdjacentElement('afterend', mobileGospelLink);
       } else {
-        var mobileWordsLink = mobileNav.querySelector('a[href="manifesto.html"]');
+        var mobileWordsLink = mobileNav.querySelector('a[href="/manifesto"]');
         if (mobileWordsLink) {
           mobileWordsLink.insertAdjacentElement('afterend', mobileGospelLink);
         } else {
@@ -184,10 +184,17 @@
   }
 
   /* ── ACTIVE NAV LINK ── */
-  var currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  var currentPath = window.location.pathname.replace(/\/$/, '') || '/';
+  // Compare nav hrefs to the current path, normalising trailing slash
+  // and supporting both clean URLs (/sentinelbot) and the legacy
+  // .html form (/sentinelbot.html) so old indexed links still light up.
   document.querySelectorAll('.nav-links a, .mob-menu a').forEach(function (a) {
-    var href = a.getAttribute('href');
-    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+    var href = (a.getAttribute('href') || '').replace(/\/$/, '');
+    if (!href) return;
+    if (href === currentPath || href + '.html' === currentPath || href === currentPath + '.html') {
+      a.classList.add('active');
+    }
+    if ((href === '/' || href === '') && (currentPath === '/' || currentPath === '/index')) {
       a.classList.add('active');
     }
   });

@@ -53,7 +53,7 @@
       lyrics: lyrics,
       actions: {
         youtube: youtubeUrl,
-        armory: "videos.html"
+        armory: "/videos"
       }
     };
   }

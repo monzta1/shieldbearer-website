@@ -47,7 +47,7 @@
         iframe.title = "YouTube player for " + fr.title;
       }
       if (watchLink) watchLink.href = watchUrl;
-      if (meaningLink) meaningLink.href = "song-meanings.html#" + slug;
+      if (meaningLink) meaningLink.href = "/song-meanings#" + slug;
       if (notesTitle) notesTitle.textContent = fr.title + " Notes";
       if (notesPanel) notesPanel.setAttribute("aria-label", fr.title + " notes panel");
 

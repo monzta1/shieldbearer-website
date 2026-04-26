@@ -132,9 +132,9 @@
         });
       }
 
-      if (path.indexOf('epk.html') !== -1) {
+      if (path.indexOf('/epk') !== -1) {
         var epkLink = link.closest('.epk-link-item, .epk-press-card__link, .epk-contact-email');
-        var epkArchive = href.indexOf('interviews.html') !== -1 && link.classList.contains('btn');
+        var epkArchive = href.indexOf('/interviews') !== -1 && link.classList.contains('btn');
         if (epkLink || epkArchive) {
           sbTrack('epk_click', {
             link_text: rawText,
