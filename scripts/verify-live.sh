@@ -107,7 +107,18 @@ for crawl in "${crawl_pages[@]}"; do
         FAIL=$((FAIL + 1))
         ;;
     esac
-  done < <(echo "$body" | grep -oE 'href="[^"]+"' | sed -E 's/^href="//;s/"$//')
+  done < <(
+    echo "$body" \
+      | python3 -c "
+import sys, re
+html = sys.stdin.read()
+# Strip <script>...</script> blocks so JS template-string href= patterns
+# don't surface as real hrefs to crawl.
+html = re.sub(r'<script[^>]*>.*?</script>', '', html, flags=re.DOTALL)
+for m in re.finditer(r'href=\"([^\"]+)\"', html):
+    print(m.group(1))
+"
+  )
 done
 echo "(crawled $crawled internal hrefs across ${#crawl_pages[@]} pages)"
 
