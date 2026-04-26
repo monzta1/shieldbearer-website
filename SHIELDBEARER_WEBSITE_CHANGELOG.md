@@ -7,6 +7,9 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.3.0 - April 2026
+- Added `AGENTS.md` at the repo root with the contributor workflow checklist (tests, changelog, em-dash rule, checkpoint, verify-live) so the same rules are visible to future contributors and not just stored in chat memory
+
 ## v2.2.0 - April 2026
 - Added page-aware opening greetings in SentinelBot for every public route; the Signal Room's rich opener still wins when present, otherwise the chat opens with a path-specific intro pulled from a small map (Manifesto, FAQ, Music, Song Meanings, Timeline, Press Kit, every essay page, etc.)
 - Falls back to a generic Shieldbearer greeting if the path is not in the map
