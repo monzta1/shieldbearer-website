@@ -51,7 +51,7 @@ for page in *.html; do
   check "Has canonical: $page" "$(grep -q 'rel="canonical"' "$page" && echo true || echo false)"
 done
 
-# 6. No internal href points to a missing file
+# 6. No internal href points to a missing file (legacy .html paths)
 for page in *.html; do
   while IFS= read -r href; do
     file="${href%%#*}"
@@ -60,6 +60,32 @@ for page in *.html; do
     [[ "$file" == http* ]] && continue
     check "Link target exists: $file (in $page)" "$([ -f "$file" ] && echo true || echo false)"
   done < <(grep -oP 'href="\K[^"]+\.html[^"]*' "$page" 2>/dev/null)
+done
+
+# 6b. Clean URL targets resolve. After the .html-extension cleanup,
+# internal hrefs use absolute /paths. Each one should map to a
+# folder/index.html on disk so GitHub Pages serves it without the
+# .html suffix. Catches typos and missing folders.
+CLEAN_PAGES="sentinelbot signal-room timeline creed gospel faq about story process manifesto music contact epk song-meanings for-ai-artists gatekeeping open-letter no-rulebook ai-and-creativity god-uses-tools artist-freedom interviews videos"
+for cp in $CLEAN_PAGES; do
+  check "Clean URL folder exists: /$cp" "$([ -f "$cp/index.html" ] && echo true || echo false)"
+  check "Legacy .html still exists: $cp.html" "$([ -f "$cp.html" ] && echo true || echo false)"
+done
+
+# 6c. Every href="/path" in any .html file points to a known clean
+# URL folder OR root. Uses awk to handle quoting cleanly.
+for page in *.html; do
+  awk 'match($0, /href="\/[a-zA-Z0-9_/-]*"/) { print substr($0, RSTART+6, RLENGTH-7) }' "$page" \
+    | sort -u \
+    | while IFS= read -r ref; do
+        # Strip optional fragment
+        target="${ref%%#*}"
+        [ -z "$target" ] && continue
+        [ "$target" = "/" ] && continue
+        path="${target#/}"
+        check "Clean href target resolves: $target (in $page)" \
+          "$( [ -f "$path/index.html" ] || [ -f "$path.html" ] && echo true || echo false )"
+      done
 done
 
 # 7. Forms still point to Formspree

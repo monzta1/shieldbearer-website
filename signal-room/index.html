@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N7SR64KL');
+  </script>
+  <!-- End Google Tag Manager -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signal Room | Shieldbearer</title>
+  <meta name="description" content="The Signal Room. A Shieldbearer song being born in real time. Lyrics, chords, artwork, and fragments appear here as the work takes shape.">
+  <meta property="og:title" content="Signal Room | Shieldbearer" />
+  <meta property="og:description" content="A Shieldbearer song being born in real time. Watch the writing desk as lyrics and artwork take shape." />
+  <meta property="og:image" content="https://shieldbearerusa.com/images/galilean-art.png" />
+  <meta property="og:url" content="https://shieldbearerusa.com/signal-room.html" />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://shieldbearerusa.com/signal-room" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Signal Room | Shieldbearer" />
+  <meta name="twitter:description" content="A Shieldbearer song being born in real time." />
+  <meta name="twitter:image" content="https://shieldbearerusa.com/images/galilean-art.png" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://tagassistant.google.com https://www.clarity.ms https://scripts.clarity.ms https://open.spotify.com https://www.youtube.com https://app.convertkit.com https://fonts.googleapis.com;
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    font-src 'self' https://fonts.gstatic.com;
+    frame-src https://open.spotify.com https://www.youtube.com https://www.googletagmanager.com;
+    img-src 'self' data: https://img.youtube.com https://shieldbearerusa.com https://www.google-analytics.com https://www.googletagmanager.com https://www.clarity.ms https://c.clarity.ms;
+    connect-src 'self' https://app.convertkit.com https://www.google-analytics.com https://region1.google-analytics.com https://stats.g.doubleclick.net https://www.googletagmanager.com https://www.clarity.ms https://c.clarity.ms https://j.clarity.ms https://tagassistant.google.com https://g7a5tqlxaj.execute-api.us-east-1.amazonaws.com;
+  ">
+  <meta name="theme-color" content="#040404">
+  <link rel="icon" href="/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200;300;400;500;600&family=Roboto+Condensed:ital,wght@0,300;0,400;1,300&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
+
+    :root {
+      --bg: #090909;
+      --panel: rgba(255,255,255,.04);
+      --panel-strong: rgba(255,255,255,.08);
+      --line: rgba(231,76,60,.24);
+      --text: #f3efe6;
+      --muted: rgba(243,239,230,.72);
+      --accent: #e74c3c;
+      --accent-soft: rgba(231,76,60,.14);
+      --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      --sans: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; color: var(--text); font-family: var(--sans); }
+    body {
+      min-height: 100vh;
+      padding: 0;
+      opacity: 0;
+      transition: opacity 1.2s ease;
+    }
+    body.is-loaded { opacity: 1; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 32px 20px 72px; position: relative; z-index: 2; }
+    .signal-room-hero .bar { background: #e74c3c; }
+    .signal-desk-scene {
+      position: relative;
+      display: block;
+      width: min(100%, 1536px);
+      margin: 0 auto;
+      padding: 0;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 24px 56px rgba(0, 0, 0, 0.6);
+      /* Lock the scene to the desk's native 3:2 ratio so absolutely
+         positioned children (#artwork, #notebook) stay visible even
+         if desk.jpg fails to load. */
+      aspect-ratio: 3 / 2;
+      background: #1a120b;
+    }
+    .signal-desk-scene > * {
+      animation: signal-fade-in 420ms ease-out both;
+      position: relative;
+      z-index: 2;
+    }
+    .signal-desk-scene > *:nth-child(2) {
+      animation-delay: 70ms;
+    }
+    .signal-desk-scene > *:nth-child(3) {
+      animation-delay: 140ms;
+    }
+    .signal-desk-scene--single {
+      min-height: auto;
+      /* Single-tile states (empty, title-only, lyrics-only, artwork-only)
+         let content dictate height. The 3:2 lock and clipping only apply
+         to renderFull where children are absolutely positioned. */
+      aspect-ratio: auto;
+      overflow: visible;
+    }
+    .signal-desk-photo {
+      display: block;
+      width: 100%;
+      height: auto;
+      user-select: none;
+      pointer-events: none;
+    }
+    #artwork,
+    #notebook {
+      position: absolute;
+      border: 0;
+      background: transparent;
+      padding: 0;
+      container-type: inline-size;
+    }
+    #artwork {
+      top: 12.5%;
+      left: 8%;
+      width: 27%;
+      height: 53%;
+      transform: rotate(-13deg);
+      transform-origin: top left;
+    }
+    #notebook {
+      top: 22%;
+      left: 50%;
+      width: 34%;
+      height: 70%;
+      transform: rotate(-4deg);
+      transform-origin: top left;
+    }
+    .signal-desk-scene--single #artwork,
+    .signal-desk-scene--single #notebook {
+      position: relative;
+      width: min(100%, 680px);
+      margin-left: auto;
+      margin-right: auto;
+      top: auto;
+      right: auto;
+      left: auto;
+      transform: none;
+    }
+    .signal-room-view__title {
+      margin: 0 0 12px;
+      font-size: .82rem;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .signal-room-view__artwork {
+      width: 100%;
+      max-width: 560px;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.08);
+      display: block;
+      margin: 0 0 18px;
+    }
+    .signal-artframe {
+      position: relative;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      transform: rotate(0deg);
+      transform-origin: center center;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .signal-artframe:hover {
+      transform: rotate(0deg);
+    }
+    .signal-artframe::before {
+      display: none;
+    }
+    .signal-artwork-wrap {
+      position: relative;
+      opacity: 0;
+      transition: opacity 0.8s ease, transform 0.8s ease;
+      overflow: hidden;
+      border-radius: 3%;
+    }
+    .signal-artwork-wrap::before {
+      display: none;
+    }
+    .signal-artframe__image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 4%;
+      box-shadow: none;
+      background: #000;
+    }
+    .signal-artframe,
+    .signal-artwork-wrap {
+      width: 100%;
+      height: 100%;
+    }
+    .signal-notebook {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      position: relative;
+      transform: rotate(0deg);
+      transform-origin: center top;
+      border-radius: 0;
+      padding: 8% 12% 8% 0%;
+      background: transparent;
+      box-shadow: none;
+      color: #3f2a17;
+      overflow: hidden;
+      opacity: 0;
+      transition: opacity 0.8s ease, transform 220ms ease;
+    }
+    .signal-notebook:hover {
+      transform: rotate(0deg) translateY(-2px);
+      box-shadow:
+        0 24px 48px rgba(0, 0, 0, .3),
+        inset 0 0 0 1px rgba(91, 63, 28, .22);
+    }
+    .signal-notebook__title {
+      display: block;
+      margin: 0 0 7% 0;
+      font-family: "Caveat", cursive;
+      font-size: 5cqw;
+      line-height: 1.1;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+      color: #2f1c0f;
+      text-align: left;
+      padding-bottom: 3%;
+      border-bottom: 2px solid rgba(47, 28, 15, 0.55);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 100%;
+    }
+    .signal-notebook__paper {
+      position: relative;
+      padding: 0;
+    }
+    .signal-notebook__manuscript {
+      padding: 0;
+    }
+    .signal-notebook__line {
+      font-family: "Caveat", cursive;
+      font-size: 4.2cqw;
+      line-height: 1.35;
+      letter-spacing: 0.015em;
+      color: #3a1e0c;
+      margin: 0 0 3.5%;
+      white-space: pre-wrap;
+      opacity: 0;
+      transform: translateY(8px) rotate(-0.3deg);
+      transform-origin: left center;
+      animation: lyric-line-reveal 520ms ease-out forwards;
+      font-weight: 600;
+    }
+    .signal-notebook__line--blank {
+      min-height: .9em;
+      animation: none;
+    }
+    .signal-notebook__line:nth-child(1) { transform: translateY(8px) rotate(-0.3deg); }
+    .signal-notebook__line:nth-child(2) { transform: translateY(8px) rotate(0.4deg); }
+    .signal-notebook__line:nth-child(3) { transform: translateY(8px) rotate(-0.2deg); }
+    .signal-notebook__line:nth-child(4) { transform: translateY(8px) rotate(0.5deg); }
+    .signal-notebook__line:nth-child(5) { transform: translateY(8px) rotate(-0.4deg); }
+    .signal-notebook__line:nth-child(6) { transform: translateY(8px) rotate(0.3deg); }
+    .signal-room-view__empty {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      margin: 0;
+      padding: 10%;
+      font-family: "Caveat", cursive;
+      font-size: 6cqw;
+      line-height: 1.25;
+      text-align: center;
+      color: #3f2a17;
+      white-space: pre-line;
+      background: transparent;
+    }
+    .signal-room--empty header {
+      display: none;
+    }
+    /* Empty-state copy swap: show the "between songs" line, hide the
+       "born in real time" line and the invocation block (the notebook
+       teaser carries the message on its own). */
+    .signal-room-hero__sub--empty { display: none; }
+    .signal-room--empty .signal-room-hero__sub--populated { display: none; }
+    .signal-room--empty .signal-room-hero__sub--empty { display: block; }
+    .signal-room--empty .signal-room-invocation { display: none; }
+    .signal-room-invocation {
+      margin: 48px auto 24px;
+      max-width: 720px;
+      padding: 0;
+      border: none;
+      background: transparent;
+      border-radius: 0;
+      text-align: center;
+      color: rgba(250, 235, 210, 0.82);
+      font-family: "Caveat", cursive;
+      letter-spacing: .01em;
+      text-shadow: 0 1px 2px rgba(30, 15, 5, 0.55);
+    }
+    .signal-room-invocation__title {
+      margin: 0 0 8px;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      line-height: 1.1;
+      color: rgba(255, 240, 215, 0.92);
+      letter-spacing: .02em;
+    }
+    .signal-room-invocation__line {
+      margin: 2px 0;
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      line-height: 1.35;
+    }
+    @keyframes signal-fade-in {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes notebook-rest {
+      0%, 100% { transform: rotate(0.3deg) translateY(0px); }
+      50% { transform: rotate(0.3deg) translateY(-2px); }
+    }
+    @keyframes lyric-line-reveal {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @media (max-width: 760px) {
+      body {
+        background: #040404;
+        color: #f0ebe0;
+      }
+      .wrap { padding: 24px 18px 40px; }
+      .signal-desk-scene {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 24px;
+        min-height: auto;
+        width: 100%;
+        overflow: visible;
+      }
+      .signal-desk-photo {
+        display: none;
+      }
+      #artwork,
+      #notebook {
+        position: static;
+        width: 100%;
+        height: auto;
+        transform: none;
+        container-type: inline-size;
+      }
+      .signal-artframe,
+      .signal-artwork-wrap {
+        width: 100%;
+        height: auto;
+      }
+      .signal-artframe__image {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+        background: #000;
+      }
+      .signal-notebook {
+        width: 100%;
+        height: auto;
+        padding: 28px 22px;
+        border-radius: 12px;
+        background: linear-gradient(180deg, #f4e8cf 0%, #ede0bc 100%);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.55);
+        transform: none;
+      }
+      .signal-notebook__title {
+        font-size: clamp(1.7rem, 7vw, 2.3rem);
+        padding-bottom: 8px;
+        margin-bottom: 16px;
+        border-bottom: 2px solid rgba(47, 28, 15, 0.4);
+      }
+      .signal-notebook__line {
+        font-size: clamp(1.05rem, 4.5vw, 1.35rem);
+        line-height: 1.25;
+        margin: 0 0 4px;
+      }
+      .signal-room-invocation {
+        margin-top: 32px;
+        color: rgba(240, 235, 224, 0.82);
+      }
+      .signal-room-invocation__title,
+      .signal-room-invocation__line {
+        text-shadow: 0 1px 2px rgba(0,0,0,0.75);
+      }
+      .signal-room-invocation__title {
+        color: rgba(240, 235, 224, 0.96);
+      }
+      .signal-room--empty .signal-desk-scene {
+        min-height: 60vh;
+        justify-content: center;
+      }
+      .signal-room--empty #notebook {
+        max-width: 480px;
+        margin: 0 auto;
+      }
+      .signal-room-view__empty {
+        background: transparent;
+        color: rgba(240, 235, 224, 0.9);
+        font-family: "Caveat", cursive;
+        font-size: clamp(1.3rem, 5vw, 1.6rem);
+        padding: 32px 20px;
+        height: auto;
+        border: 1px solid rgba(231, 76, 60, 0.28);
+        border-radius: 12px;
+        background: rgba(231, 76, 60, 0.04);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N7SR64KL"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <div class="mob-menu" id="mobMenu">
+    <button class="mob-close" id="mobClose" aria-label="Close menu">&#x2715;</button>
+    <a href="/">Home</a>
+    <a href="/music">Music</a>
+    <a href="/videos">Signal Fire</a>
+    <a href="/song-meanings">Lyrics</a>
+    <a href="/about">About</a>
+    <a href="/story">The Story</a>
+    <a href="/process">The Process</a>
+    <a href="/interviews">Press</a>
+    <a href="/epk">Press Kit</a>
+    <a href="/creed">The Creed</a>
+    <a href="/manifesto">Manifesto</a>
+    <a href="/open-letter">Open Letter</a>
+    <a href="/for-ai-artists">For AI Artists</a>
+    <a href="/gatekeeping">On Gatekeeping</a>
+    <a href="/no-rulebook">No Rulebook</a>
+    <a href="/ai-and-creativity">AI and Creativity</a>
+    <a href="/god-uses-tools">God Uses Tools</a>
+    <a href="/artist-freedom">Artist Freedom</a>
+    <a href="/sentinelbot">SentinelBot</a>
+    <a href="/faq">FAQ</a>
+    <a href="/contact">Contact</a>
+    <a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener" style="color:var(--red-bright)">Merch</a>
+  </div>
+
+  <nav class="site-nav" id="mainNav">
+    <a href="/" class="nav-logo"><img src="/images/logo.png" alt="Shieldbearer"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li class="nav-dropdown">
+        <a href="/music">Music</a>
+        <div class="nav-dropdown__menu">
+          <a href="/music">The Armory</a>
+          <a href="/videos">Signal Fire</a>
+          <a href="/song-meanings">Lyrics</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/about">About</a>
+        <div class="nav-dropdown__menu">
+          <a href="/story">The Story</a>
+          <a href="/process">The Process</a>
+          <a href="/faq">FAQ</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/interviews">Press</a>
+        <div class="nav-dropdown__menu">
+          <a href="/interviews">Press Coverage</a>
+          <a href="/epk">Press Kit</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/manifesto">Words</a>
+        <div class="nav-dropdown__menu">
+          <a href="/creed">The Creed</a>
+          <a href="/manifesto">The Manifesto</a>
+          <a href="/open-letter">Open Letter</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/for-ai-artists">AI and Faith</a>
+        <div class="nav-dropdown__menu">
+          <a href="/for-ai-artists">For AI Artists</a>
+          <a href="/faq#faq-ai-legitimate">AI and Faith FAQ</a>
+          <a href="/gatekeeping">On Gatekeeping</a>
+          <a href="/no-rulebook">No Rulebook</a>
+          <a href="/ai-and-creativity">AI and Creativity</a>
+          <a href="/god-uses-tools">God Uses Tools</a>
+          <a href="/artist-freedom">Artist Freedom</a>
+          <a href="/sentinelbot">SentinelBot</a>
+        </div>
+      </li>
+      <li><a href="/contact">Contact</a></li>
+      <li class="nav-merch"><a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener">Merch</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="page-hero section--dark signal-room-hero">
+    <div class="container page-hero-inner">
+      <span class="eyebrow">Operation: Shieldbearer</span>
+      <h1 class="display-title">Signal Room</h1>
+      <div class="bar"></div>
+      <p class="signal-room-hero__sub signal-room-hero__sub--populated">A Shieldbearer song being born in real time. Lyrics, chords, and artwork appear here as the work takes shape.</p>
+      <p class="signal-room-hero__sub signal-room-hero__sub--empty">The writing desk between songs. Stay in the Signal. The next one will appear here as it's written.</p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <main class="signal-desk-scene">
+      <img class="signal-desk-photo" src="./images/signal-room/desk.jpg" alt="" aria-hidden="true">
+      <div id="artwork"></div>
+      <div id="notebook"></div>
+    </main>
+    <section class="signal-room-invocation" aria-label="About the Signal Room">
+      <p class="signal-room-invocation__title">You are inside the Signal Room.</p>
+      <p class="signal-room-invocation__line">A Shieldbearer song is being born in real time.</p>
+      <p class="signal-room-invocation__line">Lyrics, chords, artwork, and fragments appear here as the work takes shape.</p>
+    </section>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="/" class="logo"><img src="/images/logo.png" alt="Shieldbearer"></a>
+        <p>Shieldbearer is Christian metal with Scripture at the center. Christ is named plainly in every release and every conversation.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/music">Music</a></li>
+          <li><a href="/videos">Videos</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/story">Story</a></li>
+          <li><a href="/process">Process</a></li>
+          <li><a href="/song-meanings">Lyrics</a></li>
+          <li><a href="/interviews">Press</a></li>
+          <li><a href="/creed">The Creed</a></li>
+          <li><a href="/manifesto">Manifesto</a></li>
+          <li><a href="/open-letter">Open Letter</a></li>
+          <li><a href="/sentinelbot">SentinelBot</a></li>
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/epk">Press Kit</a></li>
+          <li><a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener">Merch</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/shieldbearerusa/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/shieldbearerusa" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.youtube.com/@ShieldbearerUSA" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz" target="_blank" rel="noopener">Spotify</a></li>
+          <li><a href="https://linktr.ee/shieldbearerusa" target="_blank" rel="noopener">Linktree</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Take Action</h4>
+        <ul>
+          <li><a href="/music#armory">Enter the Armory</a></li>
+          <li><a href="/videos">Watch the Videos</a></li>
+          <li><a href="/song-meanings">Read the Lyrics</a></li>
+          <li><a href="/interviews">Catch the Signal</a></li>
+          <li><a href="/epk">Download Press Kit</a></li>
+          <li><a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener">Raise the Banner</a></li>
+          <li><a href="/contact">Join the Mission</a></li>
+          <li><a href="https://buymeacoffee.com/shieldbearer" target="_blank" rel="noopener">Support the Mission</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Shieldbearer. All rights reserved.</p>
+      <a href="mailto:shieldbearerusa@gmail.com">shieldbearerusa@gmail.com</a>
+    </div>
+  </footer>
+
+  <script>
+    const SITE_JSON_URL = window.SIGNAL_ROOM_SITE_JSON_URL || "./site.json";
+    const artworkNode = document.getElementById("artwork");
+    const notebookNode = document.getElementById("notebook");
+    const ARTWORK_CACHE_BUSTER = Date.now().toString(36);
+
+    function normalizeText(value) {
+      return String(value || "").trim();
+    }
+
+    function normalizeComingSoonEntry(item) {
+      return {
+        title: normalizeText(item?.title),
+        lyrics: normalizeText(item?.lyrics),
+        teaserLyrics: normalizeText(item?.teaserLyrics || item?.lyricsPreview || item?.teaser || ""),
+        artwork: normalizeText(item?.artwork),
+        songMeaning: normalizeText(item?.songMeaning || item?.meaning || ""),
+        chords: normalizeText(item?.chords || item?.chordProgression || ""),
+        draftNotes: normalizeText(item?.draftNotes || item?.notes || ""),
+        status: normalizeText(item?.status || "coming_soon")
+      };
+    }
+
+    function extractNormalizedSongModel(siteJson) {
+      const comingSoon = Array.isArray(siteJson?.comingSoon)
+        ? siteJson.comingSoon
+        : Array.isArray(siteJson?.incoming)
+          ? siteJson.incoming
+          : Array.isArray(siteJson?.signal)
+            ? siteJson.signal
+            : [];
+      const source = comingSoon[0] || {};
+
+      return normalizeComingSoonEntry(source);
+    }
+
+    function splitLyricsIntoStanzas(lyricsText) {
+      return String(lyricsText || "")
+        .replace(/\r\n?/g, "\n")
+        .trim()
+        .split(/\n\s*\n+/)
+        .map((stanza) =>
+          stanza
+            .split("\n")
+            .map((line) => line.trimEnd())
+            .filter((line, index, lines) => line.length || lines.length === 1)
+        )
+        .filter((stanza) => stanza.some((line) => line.trim().length));
+    }
+
+    function isChorusMarker(line) {
+      return /(?:^|\b)(chorus|refrain|hook)(?:\b|:|\s|-)/i.test(String(line || "").trim());
+    }
+
+    function withCacheBust(url) {
+      const normalized = String(url || "").trim();
+      if (!normalized) {
+        return "";
+      }
+      const separator = normalized.includes("?") ? "&" : "?";
+      return `${normalized}${separator}v=${encodeURIComponent(ARTWORK_CACHE_BUSTER)}`;
+    }
+
+    function buildNotebookPreviewLines(song) {
+      const fullLyrics = String(song?.lyrics || "").trim();
+      const teaserLyrics = String(song?.teaserLyrics || "").trim();
+      const source = fullLyrics || teaserLyrics;
+      if (!source) {
+        return [];
+      }
+
+      const stanzas = splitLyricsIntoStanzas(source);
+      if (!stanzas.length) {
+        return source.split(/\r?\n/).map((line) => line.trimEnd());
+      }
+
+      const preview = [];
+      const firstVerse = stanzas[0];
+      preview.push(...firstVerse);
+
+      const chorusIndex = stanzas.findIndex((stanza, index) => {
+        if (index === 0) {
+          return false;
+        }
+        return stanza.some((line) => isChorusMarker(line));
+      });
+
+      if (chorusIndex > 0) {
+        preview.push("");
+        const chorus = stanzas[chorusIndex].filter((line, lineIndex) => {
+          if (lineIndex === 0 && isChorusMarker(line)) {
+            return false;
+          }
+          return true;
+        });
+        preview.push(...chorus);
+      } else if (stanzas.length > 1) {
+        preview.push("");
+      }
+
+      return preview;
+    }
+
+    function renderEmpty() {
+      document.body.classList.add("signal-room--empty");
+      const scene = document.querySelector(".signal-desk-scene");
+      if (scene) {
+        scene.classList.add("signal-desk-scene--single");
+      }
+      if (artworkNode) {
+        artworkNode.innerHTML = "";
+      }
+      if (notebookNode) {
+        notebookNode.className = "signal-room-view__empty";
+        notebookNode.textContent = "Something is coming\nStay in the Signal to hear it first";
+      }
+    }
+
+    function renderTitleOnly(song) {
+      document.body.classList.remove("signal-room--empty");
+      const scene = document.querySelector(".signal-desk-scene");
+      if (scene) {
+        scene.classList.add("signal-desk-scene--single");
+      }
+      if (artworkNode) {
+        artworkNode.innerHTML = "";
+      }
+      if (notebookNode) {
+        notebookNode.className = "signal-room-view__empty";
+        notebookNode.textContent = song?.title || "Untitled";
+      }
+    }
+
+    function renderArtworkFrame(song) {
+      if (artworkNode) {
+        artworkNode.className = "";
+        artworkNode.innerHTML = "";
+      }
+      const wrap = document.createElement("section");
+      wrap.className = "signal-artwork-wrap";
+      const img = document.createElement("img");
+      img.className = "signal-artframe__image";
+      img.alt = song?.title || "Song artwork";
+      img.src = withCacheBust(song?.artwork || "");
+      wrap.appendChild(img);
+      artworkNode.appendChild(wrap);
+    }
+
+    function renderArtworkOnly(song) {
+      document.body.classList.remove("signal-room--empty");
+      const scene = document.querySelector(".signal-desk-scene");
+      if (scene) {
+        scene.classList.add("signal-desk-scene--single");
+      }
+      if (notebookNode) {
+        notebookNode.className = "";
+        notebookNode.innerHTML = "";
+      }
+      renderArtworkFrame(song);
+    }
+
+    function renderNotebook(song) {
+      if (notebookNode) {
+        notebookNode.className = "";
+        notebookNode.innerHTML = "";
+      }
+
+      const notebook = document.createElement("section");
+      notebook.className = "signal-notebook";
+
+      const title = document.createElement("h2");
+      title.className = "signal-notebook__title";
+      title.textContent = song?.title || "Untitled";
+
+      const paper = document.createElement("div");
+      paper.className = "signal-notebook__paper signal-notebook__section";
+      const manuscript = document.createElement("div");
+      manuscript.className = "signal-notebook__manuscript";
+
+      const lines = buildNotebookPreviewLines(song);
+      lines.forEach((line, index) => {
+        const row = document.createElement("div");
+        row.className = line.trim() ? "signal-notebook__line" : "signal-notebook__line signal-notebook__line--blank";
+        row.style.animationDelay = `${index * 90}ms`;
+        row.textContent = line;
+        manuscript.appendChild(row);
+      });
+
+      if ((song?.lyrics || song?.teaserLyrics || "").trim()) {
+        notebook.dataset.hasLyrics = "true";
+      }
+      paper.appendChild(manuscript);
+
+      notebook.appendChild(title);
+      notebook.appendChild(paper);
+      notebookNode.appendChild(notebook);
+    }
+
+    function renderLyricsOnly(song) {
+      document.body.classList.remove("signal-room--empty");
+      const scene = document.querySelector(".signal-desk-scene");
+      if (scene) {
+        scene.classList.add("signal-desk-scene--single");
+      }
+      if (artworkNode) {
+        artworkNode.className = "";
+        artworkNode.innerHTML = "";
+      }
+      renderNotebook(song);
+    }
+
+    function renderFull(song) {
+      document.body.classList.remove("signal-room--empty");
+      const scene = document.querySelector(".signal-desk-scene");
+      if (scene) {
+        scene.classList.remove("signal-desk-scene--single");
+      }
+      renderArtworkFrame(song);
+      renderNotebook(song);
+    }
+
+    function renderFromModel(data) {
+      const song = data?.comingSoon?.[0];
+
+      const hasTitle = !!song?.title;
+      const hasLyrics = !!(song?.lyrics || song?.teaserLyrics);
+      const hasArtwork = !!song?.artwork;
+
+      if (!hasTitle) renderEmpty();
+      else if (hasLyrics && hasArtwork) renderFull(song);
+      else if (hasLyrics) renderLyricsOnly(song);
+      else if (hasArtwork) renderArtworkOnly(song);
+      else renderTitleOnly(song);
+    }
+
+    async function loadSongModel() {
+      try {
+        const res = await fetch(SITE_JSON_URL, { cache: "no-store" });
+        if (!res.ok) {
+          throw new Error("site.json fetch failed with HTTP " + res.status);
+        }
+        const siteJson = await res.json();
+        const model = extractNormalizedSongModel(siteJson);
+        renderFromModel({ comingSoon: [model] });
+        window.__SIGNAL_ROOM_MODEL__ = model;
+        window.__SIGNAL_ROOM_SOURCE__ = SITE_JSON_URL;
+        return model;
+      } catch (error) {
+        const emptyModel = {
+          title: "",
+          lyrics: "",
+          teaserLyrics: "",
+          artwork: "",
+          songMeaning: "",
+          status: ""
+        };
+        window.__SIGNAL_ROOM_MODEL__ = emptyModel;
+        window.__SIGNAL_ROOM_SOURCE__ = SITE_JSON_URL;
+        renderFromModel({ comingSoon: [emptyModel] });
+        console.error(error);
+        return emptyModel;
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          document.body.classList.add("is-loaded");
+        });
+      });
+
+      const revealables = [];
+
+      revealables.forEach((selector, index) => {
+        const element = document.querySelector(selector);
+        if (!element) {
+          return;
+        }
+        setTimeout(() => {
+          element.style.opacity = "1";
+        }, 200 + (index * 120));
+      });
+    });
+
+    loadSongModel().then(() => {
+      const scene = document.querySelector(".signal-desk-scene");
+      const artwork = document.querySelector(".signal-artwork-wrap");
+      const notebook = document.querySelector(".signal-notebook");
+      if (scene && !document.body.classList.contains("signal-room--empty")) {
+        scene.style.opacity = "1";
+      }
+      if (artwork) {
+        artwork.style.opacity = "1";
+      }
+      if (notebook) {
+        notebook.style.opacity = "1";
+      }
+    });
+  </script>
+  <script src="/js/config.js"></script>
+  <script src="/js/analytics.js" defer></script>
+  <script src="/js/main.js" defer></script>
+  <script src="/js/sentinelbot.js"></script>
+</body>
+</html>
