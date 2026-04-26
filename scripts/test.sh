@@ -94,6 +94,64 @@ check "Homepage has Spotify embed" "$(grep -q 'spotify' index.html && echo true 
 # 13. Homepage has at least one YouTube embed
 check "Homepage has YouTube embed" "$(grep -q 'youtube.com/embed' index.html && echo true || echo false)"
 
+# 14. CSP allowlist coverage. Each entry below was a real bug that
+# slipped through: missing the entry caused silent breakage. The
+# tests guarantee they stay in the script-src / img-src / connect-src
+# directives.
+csp_check() {
+  local domain="$1"
+  local directive="$2"
+  local page="$3"
+  if grep -q "Content-Security-Policy" "$page"; then
+    line=$(grep -oE "${directive}[^;]*" "$page" | head -1)
+    if [ -n "$line" ] && echo "$line" | grep -q "$domain"; then
+      check "CSP $directive includes $domain ($page)" "true"
+    else
+      check "CSP $directive includes $domain ($page)" "false"
+    fi
+  fi
+}
+csp_check "https://scripts.clarity.ms" "script-src" "index.html"
+csp_check "https://j.clarity.ms" "connect-src" "index.html"
+csp_check "https://cdn.shopify.com" "img-src" "index.html"
+
+# 15. Featured-release renderer wired on homepage
+check "featured-release.js included in homepage" "$(grep -q 'js/featured-release.js' index.html && echo true || echo false)"
+check "featured-release container exists" "$(grep -q 'id="featured-release"' index.html && echo true || echo false)"
+
+# 16. Song-meanings augmenter wired
+check "song-meanings-augment.js included" "$(grep -q 'js/song-meanings-augment.js' song-meanings.html && echo true || echo false)"
+check "appendSongDossiers hook exists" "$(grep -q 'window.appendSongDossiers' song-meanings.html && echo true || echo false)"
+
+# 17. Merch rotator wired on homepage
+check "merch-rotator.js included on homepage" "$(grep -q 'js/merch-rotator.js' index.html && echo true || echo false)"
+
+# 18. Central config loads on every page that uses analytics
+for page in *.html; do
+  grep -q 'src="js/analytics.js"' "$page" || continue
+  check "config.js loads on: $page" "$(grep -q 'src="js/config.js"' "$page" && echo true || echo false)"
+done
+
+# 19. Admin logs passphrase gate. If any of these fail, admin logs
+# could be exposed without authentication.
+check "admin logs has passphrase gate element" "$(grep -q 'id="passGate"' admin/logs.html && echo true || echo false)"
+check "admin logs has passphrase hash constant" "$(grep -q 'EXPECTED_HASH' admin/logs.html && echo true || echo false)"
+check "admin logs body starts locked" "$(grep -q 'body class="pass-locked"' admin/logs.html && echo true || echo false)"
+
+# 20. site.json schema. Publisher and signal-room consumer agreed on
+# these field names; any drift here breaks the chain.
+if [ -f site.json ] && command -v node &>/dev/null; then
+  node -e "
+const d = JSON.parse(require('fs').readFileSync('site.json','utf8'));
+const required = ['homepage','comingSoon','release'];
+const missing = required.filter(k => !(k in d));
+if (missing.length) process.exit(1);
+if (!('banner' in (d.homepage||{}))) process.exit(1);
+if (!('featuredRelease' in (d.homepage||{}))) process.exit(1);
+" 2>/dev/null
+  check "site.json has expected top-level shape" "$([ $? -eq 0 ] && echo true || echo false)"
+fi
+
 echo "========================================="
 echo "Results: $PASS passed, $FAIL failed"
 if [ $FAIL -gt 0 ]; then
