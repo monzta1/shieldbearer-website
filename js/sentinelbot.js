@@ -262,7 +262,7 @@
 
   function primeSignalRoomHistory() {
     const ctx = buildSignalRoomContext();
-    if (!ctx) return;
+    if (!ctx) return false;
     const summaryParts = [`The song currently taking shape in the Signal Room is "${ctx.title}".`];
     if (ctx.firstLines) summaryParts.push(`Opening lines so far: "${ctx.firstLines}".`);
     if (ctx.meaning) summaryParts.push(`What it's about: ${ctx.meaning}`);
@@ -275,6 +275,51 @@
       `You are inside the Signal Room. The song on the desk right now is "${ctx.title}". Ask me about the lyrics, the meaning, or anything else about Shieldbearer.`,
       "sentinelbot-bot"
     );
+    return true;
+  }
+
+  // Map of page paths to the greeting SentinelBot opens with. Both
+  // clean URLs (/manifesto) and the legacy .html (/manifesto.html)
+  // routes hit the same key. If a page isn't here, we fall through
+  // to a generic greeting.
+  const PAGE_GREETINGS = {
+    "/": "You're on Shieldbearer's home base. Ask about the music, the latest release, the Signal Room, or anything else about the mission.",
+    "/about": "You're on the About page. Ask about Moncy, the band's story, or what Shieldbearer stands for.",
+    "/story": "You're reading the Shieldbearer story. Ask about the long road behind the music or the path that led here.",
+    "/process": "You're on the Process page. Ask how Shieldbearer writes, records, and ships music.",
+    "/music": "You're in the Armory. Ask about any track, album, or where to listen.",
+    "/videos": "You're on the Signal Fire video page. Ask about any video, single, or release context.",
+    "/song-meanings": "You're in the lyrics dossier. Ask about any track's meaning, scripture, or theme.",
+    "/timeline": "You're in the Release Archive. Ask about any milestone, release, or year-one moment.",
+    "/sentinelbot": "You're on my dossier. Ask what I am, who built me, or how I work.",
+    "/manifesto": "You're reading the Shieldbearer Manifesto. Ask what we stand for or why we built it this way.",
+    "/creed": "You're reading the Shieldbearer Creed. Ask what we stand on or why.",
+    "/gospel": "You're reading the Gospel statement. Ask what Shieldbearer means by the Good News.",
+    "/open-letter": "You're reading the Open Letter. Ask what it answers or who it's addressed to.",
+    "/faq": "FAQ page. Ask anything about Shieldbearer, the music, or the mission.",
+    "/contact": "Contact page. Booking, collaboration, press, listener mail. Ask what's on your mind.",
+    "/epk": "Press Kit. Ask about media coverage, embeddable content, or downloads.",
+    "/interviews": "Press archive. Ask about an interview or coverage feature.",
+    "/for-ai-artists": "For AI Artists. Ask why Shieldbearer welcomes AI tools or what the line is between use and gimmick.",
+    "/ai-and-creativity": "AI and Creativity essay. Ask why AI doesn't replace the artist and what it does instead.",
+    "/god-uses-tools": "God Uses Tools essay. Ask why instruments don't compromise the message.",
+    "/no-rulebook": "No Rulebook essay. Ask about the freedom Shieldbearer claims for AI in worship.",
+    "/artist-freedom": "Artist Freedom essay. Ask about creative liberty under conviction.",
+    "/gatekeeping": "On Gatekeeping essay. Ask why permission isn't required to make music for Christ.",
+  };
+
+  function primePageGreeting() {
+    const raw = (window.location && window.location.pathname || "/").replace(/\/$/, "") || "/";
+    // Normalise legacy .html routes back to clean keys.
+    const key = raw === "" ? "/" : raw.replace(/\.html$/, "");
+    const greeting = PAGE_GREETINGS[key] ||
+      "Ask about Shieldbearer, the music, the mission, or any of the writings on this site.";
+    renderMessage(greeting, "sentinelbot-bot");
+  }
+
+  function primeOpeningHistory() {
+    // Signal Room gets its rich greeting first; otherwise pick by path.
+    if (!primeSignalRoomHistory()) primePageGreeting();
   }
 
   function toggleWindow() {
@@ -282,7 +327,7 @@
     win.style.display = isOpen ? "flex" : "none";
     if (isOpen) {
       if (history.length === 0 && messages.childElementCount === 0) {
-        primeSignalRoomHistory();
+        primeOpeningHistory();
       }
       input.focus();
     }

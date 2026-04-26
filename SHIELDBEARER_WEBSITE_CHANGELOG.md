@@ -7,6 +7,10 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.2.0 - April 2026
+- Added page-aware opening greetings in SentinelBot for every public route; the Signal Room's rich opener still wins when present, otherwise the chat opens with a path-specific intro pulled from a small map (Manifesto, FAQ, Music, Song Meanings, Timeline, Press Kit, every essay page, etc.)
+- Falls back to a generic Shieldbearer greeting if the path is not in the map
+
 ## v2.1.1 - April 2026
 - Added a static guard in the test suite that fails on any `name.html` string literal in JS source so the relative-href bug class cannot return silently
 - Added a live link crawler to `scripts/verify-live.sh` that follows every internal href across six representative pages and asserts each returns 2xx or 3xx
