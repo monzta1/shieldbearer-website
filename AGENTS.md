@@ -1,4 +1,4 @@
-# Shieldbearer Website — Contributor Workflow
+# Shieldbearer Website. Contributor Workflow.
 
 This file lives in the repo so anyone working on it (human or AI
 collaborator) follows the same flow. If you're an AI, treat this as
@@ -55,7 +55,7 @@ suggestion.
 
 ## Source of truth pointers
 
-- Site config: `js/config.js` — analytics IDs, SentinelBot endpoint,
+- Site config: `js/config.js`. Analytics IDs, SentinelBot endpoint,
   merch rotator settings.
 - Live data feed: `site.json` (written by shield-cli locally, by
   the publisher Lambda from DynamoDB after a release).
