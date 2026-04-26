@@ -7,6 +7,9 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.3.1 - April 2026
+- Added `TODO.md` at the repo root with an honest backlog of future enhancements grouped by visible/infrastructure/content/testing, and an explicit list of things deliberately NOT on the roadmap
+
 ## v2.3.0 - April 2026
 - Added `AGENTS.md` at the repo root with the contributor workflow checklist (tests, changelog, em-dash rule, checkpoint, verify-live) so the same rules are visible to future contributors and not just stored in chat memory
 
