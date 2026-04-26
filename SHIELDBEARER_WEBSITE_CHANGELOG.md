@@ -7,6 +7,49 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.1.1 - April 2026
+- Added a static guard in the test suite that fails on any `name.html` string literal in JS source so the relative-href bug class cannot return silently
+- Added a live link crawler to `scripts/verify-live.sh` that follows every internal href across six representative pages and asserts each returns 2xx or 3xx
+
+## v2.1.0 - April 2026
+- Added jsdom regression tests for the homepage featured-release renderer, song-meanings augmenter, and merch rotator
+- Added a c8 coverage gate at 90% lines and statements; current coverage is 100% on the three tested client-side files
+- Added a jsdom test for `js/main.js` that loads it on a subfolder route and asserts injected nav hrefs are absolute
+
+## v2.0.2 - April 2026
+- Rewrote root `.html` files to use absolute asset paths so legacy URLs and clean URLs both load styles, fonts, and images correctly
+- Updated `js/main.js` selectors and href targets to match the new clean URLs after the .html cleanup
+
+## v2.0.1 - April 2026
+- Fixed the broken Release Timeline link on subfolder pages (was `/contact/timeline.html`, now `/timeline`) by switching JS-injected nav hrefs to absolute paths
+- Updated `js/featured-release.js` and `js/song-meanings-augment.js` to emit clean URLs instead of `.html` paths
+
+## v2.0.0 - April 2026
+- Removed the `.html` extension from every public URL across 23 pages while keeping the original `.html` files in place so existing Google Search and Metal Archives links still resolve
+- Restructured pages into folder/index.html on disk so GitHub Pages serves clean paths like `/sentinelbot` natively
+- Updated every internal href, canonical tag, and sitemap entry to use the clean absolute path
+
+## v1.7.0 - April 2026
+- Wired the homepage featured-release card to render from `homepage.featuredRelease` in `site.json` with the static markup as a graceful fallback
+- Wired the song-meanings page to append a dossier per item in `released[]` from `site.json` so new releases auto-add a meaning entry without code changes
+
+## v1.6.3 - April 2026
+- Added a passphrase gate to `admin/logs.html` so the SentinelBot conversation logs are not visible to anyone who guesses the URL
+- Stored only a SHA-256 hash of the passphrase in source so plaintext is not exposed to source viewers
+
+## v1.6.2 - April 2026
+- Fixed Microsoft Clarity tracking that was silently blocked by the site CSP; added `https://scripts.clarity.ms` to script-src and `https://j.clarity.ms` to connect-src on every page
+- Added a `clarity_load_error` GA4 event that fires if the Clarity loader ever fails to load, so future silent breakage shows up in analytics
+
+## v1.6.1 - April 2026
+- Consolidated runtime configuration into a single `js/config.js` shared by every page that previously had per-script settings
+- Added a tracking-id audit so a missing analytics or sentinelbot config surfaces immediately at deploy time
+
+## v1.6.0 - April 2026
+- Added a featured-merch rotator that pulls products from the public Shopify storefront sitemap and bakes them into `data/merch.json` for fast same-origin delivery
+- Made the homepage merch image and the Wear the Banner button link to different targets: image to the specific product, button to the shop home
+- Added a config flag for instant rollback to a static merch image without redeploying the JSON
+
 ## v1.5.16 - April 2026
 - Fixed the homepage hero artwork zoom-crop on mobile so the full Galilean image is visible
 - Switched the small-screen hero-bg image layer from cover to 100% auto with a black fill behind it
