@@ -268,6 +268,7 @@ async function flushMicrotasks() {
     </a>
     <div class="featured-merch-copy">
       <h2 id="featured-merch-heading">Static Tee</h2>
+      <p>Clean black tee with the Shieldbearer mark front and center.</p>
       <a class="btn" href="https://shop">Wear the Banner</a>
     </div>
   </body></html>`;
@@ -284,8 +285,8 @@ async function flushMicrotasks() {
   installFetchShim(dom.window, {
     "data/merch.json": {
       products: [
-        { title: "Snapback Hat", url: "https://shop/snapback", image: "https://cdn.shopify.com/snap.jpg" },
-        { title: "Other", url: "https://shop/other", image: "https://cdn.shopify.com/other.jpg" }
+        { title: "Snapback Hat", url: "https://shop/snapback", image: "https://cdn.shopify.com/snap.jpg", description: "Low-profile snapback. Made for the watch." },
+        { title: "Other", url: "https://shop/other", image: "https://cdn.shopify.com/other.jpg", description: "Other description." }
       ]
     }
   });
@@ -296,8 +297,34 @@ async function flushMicrotasks() {
   assertEqual(doc.querySelector(".featured-merch-art img").src, "https://cdn.shopify.com/snap.jpg", "merch: image src swapped");
   assertEqual(doc.querySelector(".featured-merch-art img").alt, "Snapback Hat", "merch: alt set to title");
   assertEqual(doc.getElementById("featured-merch-heading").textContent, "Snapback Hat", "merch: heading swapped");
+  assertEqual(doc.querySelector(".featured-merch-copy p").textContent, "Low-profile snapback. Made for the watch.", "merch: description swapped from JSON");
   assertEqual(doc.querySelector("a.featured-merch-art").href, "https://shop/snapback", "merch: art link swapped to product url");
   assertEqual(doc.querySelector(".featured-merch-copy .btn").href, "https://shop/", "merch: button stays at shop home (split-link behavior)");
+})();
+
+// merch-rotator: missing description falls back to generic line
+(async () => {
+  const html = `<!doctype html><html><body>
+    <a class="featured-merch-art" href="https://shop"><img src="static.jpg" alt="static"></a>
+    <div class="featured-merch-copy">
+      <h2 id="featured-merch-heading">Static</h2>
+      <p>Clean black tee with the Shieldbearer mark front and center.</p>
+      <a class="btn" href="https://shop"></a>
+    </div>
+  </body></html>`;
+  const dom = makeDom(html);
+  dom.window.Math.random = () => 0;
+  dom.window.SHIELDBEARER_CONFIG = { merch: { rotate: true, source: "data/merch.json" } };
+  installFetchShim(dom.window, {
+    "data/merch.json": {
+      products: [{ title: "No Desc Product", url: "https://shop/x", image: "https://cdn.shopify.com/x.jpg" }]
+    }
+  });
+  runScriptInWindow(dom.window, "js/merch-rotator.js");
+  await flushMicrotasks();
+  const desc = dom.window.document.querySelector(".featured-merch-copy p").textContent;
+  assert(/conviction/i.test(desc), "merch: missing description falls back to generic line about conviction/mission");
+  assert(!/Clean black tee/.test(desc), "merch: missing description does NOT keep the tee-specific static copy");
 })();
 
 // merch-rotator: rotate=false short-circuits
@@ -333,7 +360,7 @@ async function flushMicrotasks() {
 })();
 
 // ----------------------------------------------------------------------
-// main.js — nav-link injection (the bug that prompted these tests).
+// main.js: nav-link injection (the bug that prompted these tests).
 // On a clean URL like /contact, the injected Release Timeline link
 // must be an absolute path (/timeline). Relative would resolve to
 // /contact/timeline which would 404.
@@ -360,7 +387,7 @@ async function flushMicrotasks() {
       <a href="/open-letter">Open Letter</a>
     </div>
   </body></html>`;
-  // Pretend we're on a subfolder route — this is exactly the case
+  // Pretend we're on a subfolder route. This is exactly the case
   // where a relative href like 'timeline.html' would silently break.
   const dom = new JSDOM(html, {
     url: "https://shieldbearerusa.com/contact/",

@@ -6,6 +6,7 @@
   var artEl = document.querySelector("a.featured-merch-art");
   var imgEl = document.querySelector(".featured-merch-art img");
   var titleEl = document.getElementById("featured-merch-heading");
+  var descEl = document.querySelector(".featured-merch-copy p");
   var linkEl = document.querySelector(".featured-merch-copy .btn");
   if (!imgEl || !titleEl || !linkEl) return;
 
@@ -19,6 +20,13 @@
       imgEl.src = pick.image;
       imgEl.alt = pick.title || (cfg.fallback && cfg.fallback.alt) || "Shieldbearer merch";
       titleEl.textContent = pick.title || titleEl.textContent;
+      // Swap the description so the static "Clean black tee..." copy
+      // doesn't run on every product. Falls back to a generic line if
+      // the baker didn't capture a description for this product.
+      if (descEl) {
+        descEl.textContent = pick.description ||
+          "Apparel and gear built around conviction. Wear the mission and carry it into your city.";
+      }
       // Image links to the specific product (high-intent "I want that").
       // The "Wear the Banner" button stays pointed at the shop home so
       // users can also browse the full catalog (set in the static markup).
