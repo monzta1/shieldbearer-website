@@ -72,6 +72,26 @@
     .sentinelbot-section {
       margin-top: 1rem;
     }
+    .sentinelbot-try {
+      margin: 1.6rem 0 .4rem;
+      padding: 1.1rem 1.2rem;
+      background: rgba(231,76,60,.06);
+      border: 1px solid rgba(231,76,60,.32);
+      display: flex;
+      flex-wrap: wrap;
+      gap: .9rem 1.4rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .sentinelbot-try p {
+      margin: 0;
+      font-size: .92rem;
+      line-height: 1.6;
+      color: rgba(240,235,224,.86);
+    }
+    .sentinelbot-try .btn {
+      flex: 0 0 auto;
+    }
     .letter-list { list-style: none; margin: .8rem 0 1rem; }
     .letter-list li {
       font-size: .92rem;
@@ -200,40 +220,18 @@
 
           <div class="sentinelbot-section">
             <h2>Mission Brief</h2>
-            <p>I make music and walk away.</p>
-            <p>Meanwhile, a detection system has already activated itself and recognized a new release. It has tracked the target across every platform simultaneously. It deploys assets.</p>
-            <p>The website updates itself.</p>
-            <p><strong>READ</strong> that again.</p>
-            <p>The website...updates...itself.</p>
-            <p>New banner, new artwork, new lyrics dossier.</p>
-            <p>Time elapsed: under 60 minutes. Humans involved: zero.</p>
-            <p>Meanwhile, SentinelBot has already learned everything there is to know about the song. It is already running on 96 videos worth of Shieldbearer intelligence. Every track ever published. Every theological position ever stated. Every gear decision ever documented. All of it loaded, indexed, and ready to deploy at the next question.</p>
-            <p>Ask about the music. Ready.<br>
-            Ask about the gear. Ready.<br>
-            Ask a hard question about God at 3am. Ready. And it will hand you to a human if you need one.</p>
-            <p>I make music and walk away.</p>
-            <p>The system handles everything else.</p>
+            <p>I make music and walk away. The system handles everything else.</p>
+            <p>A detection layer recognizes new releases, tracks them across every platform, and updates this site — new banner, new artwork, new lyrics dossier — in under an hour, with zero humans in the loop.</p>
+            <p>SentinelBot itself runs on every track, every theological position, and every gear decision Shieldbearer has ever published. Ask about the music. Ask about the gear. Ask a hard question about God at 3am. It answers, and it hands you to a human when you need one.</p>
           </div>
 
-          <h2>Designation</h2>
-          <p><strong>Designation:</strong> SentinelBot<br>
-          <strong>Unit Classification:</strong> Watchman-class Guardian Intelligence<br>
-          <strong>Series:</strong> SB-1, Mark I<br>
-          <strong>Version:</strong> 1.4.0<br>
-          <strong>Manufacturer:</strong> Shieldbearer Command<br>
-          <strong>Deployed:</strong> April 2026<br>
-          <strong>Station:</strong> shieldbearerusa.com — all posts, all hours<br>
-          <strong>Power Source:</strong> The mission. That has never failed.</p>
-
-          <div class="sentinelbot-section">
-            <h2>Deployment Notes</h2>
-            <p>SentinelBot was built during the AI and faith debate of 2025-2026. While Christian metal forums were arguing about whether AI belonged in the church, Shieldbearer was building a watchman unit and putting it on the wall.</p>
-            <p>Not an argument. Evidence.</p>
-            <p>It does not sleep.<br>
-            It does not drift.<br>
-            It does not apologize for existing.</p>
-            <p>The watchman is on the wall.</p>
+          <div class="sentinelbot-try">
+            <p>Don't read about the watchman. Talk to it.</p>
+            <a href="#" class="btn btn--red" id="sentinelbot-open-cta">Ask the Watchman</a>
           </div>
+
+          <p><strong>Designation:</strong> SentinelBot &middot; Watchman-class Guardian Intelligence &middot; SB-1, Mark I &middot; v1.4.0 &middot; Deployed April 2026 &middot; Station: shieldbearerusa.com</p>
+          <p>Built during the AI and faith debate of 2025-2026. Not an argument. Evidence. The watchman is on the wall.</p>
 
           <p class="open-letter-sign">Shieldbearer</p>
         </div>
@@ -245,5 +243,22 @@
   <script src="/js/analytics.js" defer></script>
   <script src="/js/main.js" defer></script>
   <script src="/js/sentinelbot.js"></script>
+  <script>
+    (function () {
+      var cta = document.getElementById('sentinelbot-open-cta');
+      if (!cta) return;
+      cta.addEventListener('click', function (e) {
+        e.preventDefault();
+        var launcher = document.getElementById('sentinelbot-launcher');
+        var win = document.getElementById('sentinelbot-window');
+        if (!launcher) return;
+        if (!win || win.style.display !== 'flex') {
+          launcher.click();
+        }
+        var input = document.getElementById('sentinelbot-input');
+        if (input) input.focus();
+      });
+    })();
+  </script>
 </body>
 </html>
