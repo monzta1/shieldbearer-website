@@ -7,6 +7,9 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.4.1 - April 2026
+- Added an Israel article to the Creed, sitting between Salvation and the closing block. States Shieldbearer's covenant theology: the Abrahamic covenant is everlasting, Israel has not been replaced by the Church, and we pray for the peace of Jerusalem. Applied identically to both `creed.html` and `creed/index.html` so the legacy and clean-URL paths stay in sync.
+
 ## v2.4.0 - April 2026
 - Added a self-resetting countdown timer to the Signal Room ("Next Signal" clock) that always counts down to a 7-day rolling target stored in localStorage; when it hits zero it silently mints a new 7-day window
 - Knobs live in `js/config.js` under `signalCountdown`: `enabled`, `resetDays`, `fixedTarget` (set an ISO date string to pin the timer to a specific release), `storageKey`
