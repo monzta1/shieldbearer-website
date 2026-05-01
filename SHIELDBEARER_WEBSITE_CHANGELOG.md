@@ -7,6 +7,9 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.4.2 - April 2026
+- Added new FAQ entry `faq-ai-copyright` answering the copyright and ownership question, placed as the lead entry in the AI and Faith section (immediately before `faq-ai-legitimate`). Identical insertion in `faq.html` and `faq/index.html` for legacy and clean-URL parity. Markup matches the surrounding AI and Faith entries (no kicker, deliberate per section convention).
+
 ## v2.4.1 - April 2026
 - Added an Israel article to the Creed, sitting between Salvation and the closing block. States Shieldbearer's covenant theology: the Abrahamic covenant is everlasting, Israel has not been replaced by the Church, and we pray for the peace of Jerusalem. Applied identically to both `creed.html` and `creed/index.html` so the legacy and clean-URL paths stay in sync.
 
