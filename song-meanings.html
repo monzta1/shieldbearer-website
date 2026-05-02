@@ -2031,15 +2031,20 @@ Sentinels upon the wall`,
         });
       }
       function groupedByGenre(songs) {
+        // Group by genre globally (not just consecutive entries) so that
+        // dossiers appended after the static SONG_DOSSIERS list (e.g.
+        // by song-meanings-augment.js from site.json released[]) merge
+        // into the existing genre block instead of creating a duplicate
+        // section. Genre order follows first-occurrence order.
         var groups = [];
-        var current = null;
+        var byGenre = Object.create(null);
         for (var i = 0; i < songs.length; i++) {
           var genre = songs[i].genre || 'Archive';
-          if (!current || current.genre !== genre) {
-            current = { genre: genre, songs: [] };
-            groups.push(current);
+          if (!byGenre[genre]) {
+            byGenre[genre] = { genre: genre, songs: [] };
+            groups.push(byGenre[genre]);
           }
-          current.songs.push(songs[i]);
+          byGenre[genre].songs.push(songs[i]);
         }
         return groups;
       }
@@ -2346,7 +2351,18 @@ Sentinels upon the wall`,
         for (var j = 0; j < extras.length; j++) {
           var entry = extras[j];
           if (!entry || !entry.id || existingIds[entry.id]) continue;
-          SONG_DOSSIERS.push(entry);
+          // Insert at the start of the entry's genre block so a fresh
+          // release appears at the top of its section. If the genre is
+          // not present yet, append to the end (defines a new group).
+          var genre = entry.genre || 'Archive';
+          var insertIdx = SONG_DOSSIERS.length;
+          for (var k = 0; k < SONG_DOSSIERS.length; k++) {
+            if ((SONG_DOSSIERS[k].genre || 'Archive') === genre) {
+              insertIdx = k;
+              break;
+            }
+          }
+          SONG_DOSSIERS.splice(insertIdx, 0, entry);
           existingIds[entry.id] = true;
           added += 1;
         }
