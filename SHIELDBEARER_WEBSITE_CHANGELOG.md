@@ -7,6 +7,9 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.4.4 - May 2026
+- `song-meanings-augment.js` now reads `reference` and `scripture` from each `released[]` entry on `site.json` and passes them to the dossier. Previously these were hard-coded to empty, so a release promoted from `site.json` always showed without a scripture even when the song record carried one. Defaults remain safe (empty) when the fields are missing.
+
 ## v2.4.3 - May 2026
 - Fixed song-meanings genre grouping. `groupedByGenre` previously grouped only consecutive entries, so dossiers appended after the static SONG_DOSSIERS list (e.g. by `song-meanings-augment.js` from `site.json released[]`) created a duplicate genre section instead of merging into the existing block. Now groups by genre globally, preserving first-occurrence order.
 - Fixed `appendSongDossiers` insertion order. Auto-augmented entries (new releases promoted from `site.json`) now insert at the start of their genre block so a fresh release appears at the top of its section, instead of appended to the end. New genres still append as a new group at the end.

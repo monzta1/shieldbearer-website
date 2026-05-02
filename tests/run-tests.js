@@ -198,7 +198,9 @@ async function flushMicrotasks() {
           artwork: "https://x/lmpg.jpg",
           sourceUrl: "https://www.youtube.com/watch?v=lmpg-vid",
           songMeaning: "Para one.\n\nPara two.",
-          lyrics: "Go DOWN, Moses!"
+          lyrics: "Go DOWN, Moses!",
+          reference: "Exodus 5:1 | Exodus 7:16",
+          scripture: { ref: "Exodus 5:1", quote: "Let my people go..." }
         },
         // Empty entry: skipped
         { title: "" },
@@ -219,6 +221,9 @@ async function flushMicrotasks() {
   assertEqual(appendedExtras[0].thesis, "Para one.", "augmenter: thesis = first paragraph of meaning");
   assertEqual(appendedExtras[0].artwork, "https://x/lmpg.jpg", "augmenter: artwork carried");
   assertEqual(appendedExtras[0].actions.youtube, "https://www.youtube.com/watch?v=lmpg-vid", "augmenter: youtube action set");
+  assertEqual(appendedExtras[0].reference, "Exodus 5:1 | Exodus 7:16", "augmenter: reference carried from site.json");
+  assertEqual(appendedExtras[0].scripture.ref, "Exodus 5:1", "augmenter: scripture.ref carried");
+  assertEqual(appendedExtras[0].scripture.quote, "Let my people go...", "augmenter: scripture.quote carried");
 })();
 
 // song-meanings-augment: bails out gracefully when hook is absent

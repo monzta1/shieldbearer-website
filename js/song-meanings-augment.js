@@ -38,18 +38,25 @@
     var videoId = rel.videoId || rel.songId || "";
     var artwork = rel.artwork || (videoId ? "https://img.youtube.com/vi/" + encodeURIComponent(videoId) + "/hqdefault.jpg" : "");
     var youtubeUrl = rel.sourceUrl || (videoId ? "https://www.youtube.com/watch?v=" + encodeURIComponent(videoId) : "");
+    // Scripture is curated and arrives via site.json (publisher
+    // passes through whatever the song record carries). Default to
+    // empty values when absent so the renderer doesn't crash.
+    var reference = String(rel.reference || "").trim();
+    var scripture = (rel.scripture && typeof rel.scripture === "object")
+      ? { ref: String(rel.scripture.ref || ""), quote: String(rel.scripture.quote || "") }
+      : { ref: "", quote: "" };
 
     return {
       id: id,
       number: "—",
       title: rel.title,
       genre: "Metal",
-      reference: "",
+      reference: reference,
       thesis: thesis,
       tags: [],
       artwork: artwork,
       meaning: meaning.length ? meaning : [thesis].filter(Boolean),
-      scripture: { ref: "", quote: "" },
+      scripture: scripture,
       lyrics: lyrics,
       actions: {
         youtube: youtubeUrl,
