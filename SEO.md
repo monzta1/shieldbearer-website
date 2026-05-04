@@ -210,15 +210,90 @@ bearer") for 4 consecutive weeks would it be worth reconsidering
 this. As of the change date the site ranks reliably for both
 brand queries.
 
+## Parity between URL forms
+
+**Decision (2026-05-04):** Legacy `.html` files and their
+clean-URL `/index.html` mirrors must stay byte-identical, with
+one documented exception (`sentinelbot.html` carries additional
+CSS in the legacy file only). When editing one, propagate to
+the other before committing.
+
+**Why:** The site serves both URL forms. Each rendered page is
+a separate HTTP response and a separate canonical signal to
+Google. Drift between them produces inconsistent SERP previews,
+breaks the canonical chain, and silently rolls back content
+updates on whichever URL form was missed. Three parity drifts
+were caught during this SEO branch (commit 3 to 4 transition);
+the verification pass on 2026-05-04 caught a fourth on
+`contact.html`. The discipline is required, the build step is
+the long-term fix.
+
+**How to apply:** After editing `<page>.html`, run
+`cp <page>.html <page>/index.html`. Verify with
+`diff -q <page>.html <page>/index.html`. The em-dash guard does
+not catch this drift because both files have the same content
+post-cp; run the diff manually as part of every commit that
+touches a page.
+
+**Review trigger:** Monthly check (1st of each month). Run:
+
+```bash
+for f in *.html; do
+  base="${f%.html}"
+  if [ -f "$base/index.html" ] && ! diff -q "$f" "$base/index.html" >/dev/null 2>&1; then
+    echo "DIFFERS: $f"
+  fi
+done
+```
+
+Expected output: `DIFFERS: sentinelbot.html` (the documented
+exception). Any other DIFFERS line is a bug; fix immediately by
+re-syncing.
+
+## Build step for URL form parity (tech debt)
+
+**Status:** Open. Tracked here so it doesn't disappear into the
+backlog.
+
+**Problem:** Maintaining `<page>.html` and `<page>/index.html`
+as byte-identical files by hand-`cp` is fragile. Four parity
+drifts were caught on this SEO branch alone, before push, and
+each one required the verification pass to surface. In a
+larger contributor team or in a hurried hotfix, the
+verification pass might not happen at all.
+
+**Proposed shape:** A small build step that runs as part of
+`./scripts/test.sh` (or pre-commit) and either:
+
+- Fails the build if `<page>.html` and `<page>/index.html` have
+  diverged, OR
+- Auto-generates `<page>/index.html` from `<page>.html`
+  (canonical-form preference) and stages the result.
+
+The second option is preferred because it removes the manual
+discipline entirely. Treat the legacy `.html` files as the
+source of truth and have the build emit the clean-URL folder
+mirrors as derived artifacts. A `dist/` build directory would
+be cleaner long-term but breaks GitHub Pages' current "serve
+the repo root" model without a Pages-from-Actions reconfigure.
+
+**Cost estimate:** Half a day. Bash or Node script, ~30 lines.
+Plus the test gate update.
+
+**When:** Pull this off the shelf the next time URL parity
+breaks something user-visible, or the next time the site
+migrates off GitHub Pages (whichever comes first). Don't wait
+for the second occurrence; one was already enough.
+
 ## Master review schedule
 
 | Date | Action |
 | ---- | ------ |
 | 2026-05-18 | Quick check: homepage impressions stable after trailing-slash canonical change |
-| 2026-06-01 | Sitemap status crawl, monthly cadence |
+| 2026-06-01 | Sitemap status crawl + URL-form parity diff check, monthly cadence |
 | 2026-06-15 | Duplicate-content check on `/<page>` vs `/<page>.html` (escalation trigger for meta-refresh deferral) |
 | 2026-06-29 | Brand keyword query check ("shield bearer" two-word form) |
-| 2026-07-01 | Sitemap status crawl, monthly cadence |
+| 2026-07-01 | Sitemap status crawl + URL-form parity diff check, monthly cadence |
 
 If any review trigger fires earlier than its scheduled date,
 revisit the relevant section above and update with the new
