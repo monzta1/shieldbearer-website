@@ -231,6 +231,161 @@ else
   check "No em dashes in source files" "true"
 fi
 
+# 22. Nav surface duplicate-link guard. Real bug caught: gospel.html
+#     had two adjacent <a href="/gospel">The Gospel</a> entries in the
+#     Words dropdown. The bug class is same-href-AND-same-label
+#     duplicates within a single dropdown or the mobile menu (different
+#     labels with the same href is intentional, e.g. "Music" and
+#     "The Armory" both pointing at /music).
+NAV_DUP_HITS=$(python3 -c "
+import re, glob, sys
+fails = []
+for f in sorted(glob.glob('*.html')):
+    html = open(f).read()
+    # Each .nav-dropdown__menu is a separate scope
+    for m in re.finditer(r'<div class=\"nav-dropdown__menu\">(.*?)</div>', html, re.DOTALL):
+        pairs = re.findall(r'<a href=\"([^\"]+)\"[^>]*>([^<]+)</a>', m.group(1))
+        seen = {}
+        for href, label in pairs:
+            key = (href, label.strip())
+            seen[key] = seen.get(key, 0) + 1
+        for (h, l), c in seen.items():
+            if c > 1:
+                fails.append(f'{f} dropdown: \"{l}\" -> {h} appears {c}x')
+    # Mobile menu is one flat scope per page
+    mob = re.search(r'<div class=\"mob-menu\".*?</div>', html, re.DOTALL)
+    if mob:
+        pairs = re.findall(r'<a href=\"([^\"]+)\"[^>]*>([^<]+)</a>', mob.group(0))
+        seen = {}
+        for href, label in pairs:
+            key = (href, label.strip())
+            seen[key] = seen.get(key, 0) + 1
+        for (h, l), c in seen.items():
+            if c > 1:
+                fails.append(f'{f} mobile menu: \"{l}\" -> {h} appears {c}x')
+print('\n'.join(fails))
+" 2>/dev/null)
+if [ -n "$NAV_DUP_HITS" ]; then
+  check "No same-href-same-label duplicates in nav surfaces" "false"
+  echo "$NAV_DUP_HITS" | sed 's/^/    /'
+else
+  check "No same-href-same-label duplicates in nav surfaces" "true"
+fi
+
+# 23. og:url matches canonical. Real bug caught: 11 pages had
+#     og:url ending in .html while canonical was the clean URL.
+#     Split-brain canonical signal between Google and social shares.
+OG_CANON_HITS=""
+for f in *.html; do
+  if [ "$f" = "404.html" ]; then continue; fi
+  canonical=$(grep -oE 'rel="canonical" href="[^"]*"' "$f" | head -1 | sed 's/.*href="\([^"]*\)".*/\1/')
+  ogurl=$(grep -oE 'og:url" content="[^"]*"' "$f" | head -1 | sed 's/.*content="\([^"]*\)".*/\1/')
+  if [ -n "$canonical" ] && [ -n "$ogurl" ] && [ "$canonical" != "$ogurl" ]; then
+    OG_CANON_HITS="$OG_CANON_HITS$f: og:url=$ogurl != canonical=$canonical
+"
+  fi
+done
+if [ -n "$OG_CANON_HITS" ]; then
+  check "og:url matches canonical on every page" "false"
+  echo "$OG_CANON_HITS" | sed 's/^/    /'
+else
+  check "og:url matches canonical on every page" "true"
+fi
+
+# 24. Legacy .html and clean-URL /index.html mirror parity.
+#     Real bug caught (multiple times): commit 3 link insertions and
+#     commit 4 metadata changes drifted between forms because cp was
+#     skipped. sentinelbot.html is the documented exception (legacy
+#     file carries additional .sentinelbot-try CSS not present in the
+#     clean URL).
+PARITY_HITS=""
+for f in *.html; do
+  base="${f%.html}"
+  if [ -f "$base/index.html" ] && [ "$base" != "sentinelbot" ]; then
+    if ! diff -q "$f" "$base/index.html" > /dev/null 2>&1; then
+      PARITY_HITS="$PARITY_HITS$f drifted from $base/index.html
+"
+    fi
+  fi
+done
+if [ -n "$PARITY_HITS" ]; then
+  check "Legacy .html and clean-URL /index.html mirrors are byte-identical" "false"
+  echo "$PARITY_HITS" | sed 's/^/    /'
+  echo "    (run: cp <page>.html <page>/index.html to sync)"
+else
+  check "Legacy .html and clean-URL /index.html mirrors are byte-identical (sentinelbot exception)" "true"
+fi
+
+# 25. Duplicate IDs within a single page. HTML spec violation that
+#     breaks getElementById, accessibility tooling, and CSS targeting.
+DUP_ID_HITS=$(python3 -c "
+import re, glob
+fails = []
+for f in sorted(glob.glob('*.html')):
+    html = open(f).read()
+    ids = re.findall(r' id=\"([^\"]+)\"', html)
+    seen = {}
+    for i in ids:
+        seen[i] = seen.get(i, 0) + 1
+    dups = [(i, c) for i, c in seen.items() if c > 1]
+    if dups:
+        fails.append(f'{f}: ' + ', '.join(f'#{i} appears {c}x' for i, c in dups))
+print('\n'.join(fails))
+" 2>/dev/null)
+if [ -n "$DUP_ID_HITS" ]; then
+  check "No duplicate IDs within any page" "false"
+  echo "$DUP_ID_HITS" | sed 's/^/    /'
+else
+  check "No duplicate IDs within any page" "true"
+fi
+
+# 26. Title uniqueness across all pages. Two pages with identical
+#     <title> compete with each other in the SERP and signal weak
+#     differentiation to Google. 404.html is excluded.
+DUP_TITLE_HITS=$(python3 -c "
+import re, glob
+titles = {}
+for f in sorted(glob.glob('*.html')):
+    if f == '404.html': continue
+    h = open(f).read()
+    m = re.search(r'<title>([^<]+)</title>', h)
+    if m:
+        titles.setdefault(m.group(1).strip(), []).append(f)
+fails = [f'\"{t}\" used by: {fs}' for t, fs in titles.items() if len(fs) > 1]
+print('\n'.join(fails))
+" 2>/dev/null)
+if [ -n "$DUP_TITLE_HITS" ]; then
+  check "All page titles are unique" "false"
+  echo "$DUP_TITLE_HITS" | sed 's/^/    /'
+else
+  check "All page titles are unique" "true"
+fi
+
+# 27. External target=_blank links must have rel="noopener" (or
+#     "noreferrer"). Without it, the new window's window.opener can
+#     read the parent's location and push navigation, a tabnabbing
+#     vector. Internal shieldbearerusa.com links are exempt because
+#     same-origin tabs do not gain extra access.
+NOOPENER_HITS=$(python3 -c "
+import re, glob
+fails = []
+for f in sorted(glob.glob('*.html')):
+    html = open(f).read()
+    for m in re.finditer(r'<a[^>]*target=\"_blank\"[^>]*>', html):
+        tag = m.group(0)
+        href_m = re.search(r'href=\"(https?://[^\"]+)\"', tag)
+        if href_m and 'shieldbearerusa.com' not in href_m.group(1):
+            if 'noopener' not in tag and 'noreferrer' not in tag:
+                fails.append(f'{f}: external _blank missing noopener: {href_m.group(1)[:80]}')
+print('\n'.join(fails))
+" 2>/dev/null)
+if [ -n "$NOOPENER_HITS" ]; then
+  check "External target=_blank links carry rel=noopener" "false"
+  echo "$NOOPENER_HITS" | sed 's/^/    /'
+else
+  check "External target=_blank links carry rel=noopener" "true"
+fi
+
 echo "========================================="
 echo "Results: $PASS passed, $FAIL failed"
 if [ $FAIL -gt 0 ]; then
