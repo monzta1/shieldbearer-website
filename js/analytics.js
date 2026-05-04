@@ -1,5 +1,5 @@
 /* =============================================================
-   SHIELDBEARER — Analytics Bootstrap
+   SHIELDBEARER: Analytics Bootstrap
    Supports: GTM, GA4 fallback, Microsoft Clarity, custom events
    ============================================================= */
 

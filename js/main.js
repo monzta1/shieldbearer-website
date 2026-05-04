@@ -1,5 +1,5 @@
 /* =============================================================
-   SHIELDBEARER — Main JS
+   SHIELDBEARER: Main JS
    Handles: nav scroll, mobile menu, active link, meaning cards
    ============================================================= */
 

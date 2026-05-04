@@ -80,7 +80,7 @@
       padding: .15rem 0 .15rem 1.2rem;
       position: relative;
     }
-    .letter-list li::before { content: '—'; position: absolute; left: 0; color: var(--red); }
+    .letter-list li::before { content: '—'; /* em-dash-allow: CSS pseudo-content typographic separator */ position: absolute; left: 0; color: var(--red); }
     .open-letter-sign {
       font-family: var(--font-head);
       font-size: .75rem;
@@ -222,7 +222,7 @@
           <strong>Version:</strong> 1.4.0<br>
           <strong>Manufacturer:</strong> Shieldbearer Command<br>
           <strong>Deployed:</strong> April 2026<br>
-          <strong>Station:</strong> shieldbearerusa.com — all posts, all hours<br>
+          <strong>Station:</strong> shieldbearerusa.com: all posts, all hours<br>
           <strong>Power Source:</strong> The mission. That has never failed.</p>
 
           <div class="sentinelbot-section">

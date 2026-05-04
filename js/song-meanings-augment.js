@@ -48,7 +48,7 @@
 
     return {
       id: id,
-      number: "—",
+      number: "—", // em-dash-allow: typographic placeholder for auto-augmented dossiers without a curated number
       title: rel.title,
       genre: "Metal",
       reference: reference,

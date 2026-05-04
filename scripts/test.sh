@@ -194,6 +194,43 @@ if (!('featuredRelease' in (d.homepage||{}))) process.exit(1);
   check "site.json has expected top-level shape" "$([ $? -eq 0 ] && echo true || echo false)"
 fi
 
+# 21. Em-dash guard. Hard project rule: no em dashes in prose,
+#     identifiers, or comments. Catches three forms:
+#       - literal — (U+2014)
+#       - &mdash; HTML entity
+#       - — escape (JS / JSON source)
+#     Per-line whitelist sigil "em-dash-allow" lets us mark
+#     legitimate uses (CSS pseudo-content separators, intentional
+#     regex strips, typographic placeholders) without disabling the
+#     check globally. Auto-generated data files (site.json, merch.json)
+#     are excluded because they carry external strings we do not
+#     control. Convention ported from the radio repo's check, extended
+#     to scan all four file formats.
+DASH=$(printf '\xe2\x80\x94')
+EM_DASH_HITS=$(
+  grep -rn -E "${DASH}|&mdash;|\\\\u2014" \
+    --include='*.html' \
+    --include='*.css' \
+    --include='*.js' \
+    --include='*.md' \
+    --include='*.txt' \
+    --exclude-dir=node_modules \
+    --exclude-dir=dist \
+    --exclude-dir=.git \
+    --exclude-dir=coverage \
+    --exclude=site.json \
+    --exclude=merch.json \
+    . 2>/dev/null \
+  | grep -v "em-dash-allow" \
+  || true
+)
+if [ -n "$EM_DASH_HITS" ]; then
+  check "No em dashes in source files" "false"
+  echo "$EM_DASH_HITS" | sed 's/^/    /'
+else
+  check "No em dashes in source files" "true"
+fi
+
 echo "========================================="
 echo "Results: $PASS passed, $FAIL failed"
 if [ $FAIL -gt 0 ]; then

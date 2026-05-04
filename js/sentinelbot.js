@@ -149,7 +149,7 @@
       .replace(/_(.*?)_/g, "$1")
       .replace(/`(.*?)`/g, "$1")
       .replace(/#{1,6}\s/g, "")
-      .replace(/—/g, " ");
+      .replace(/—/g, " "); // em-dash-allow: regex strips em-dashes from bot output
   }
 
   function formatBotMessage(text) {

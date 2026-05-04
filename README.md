@@ -1,4 +1,4 @@
-# Shieldbearer — Official Website
+# Shieldbearer: Official Website
 
 Bold Christian metal. Christ proclaimed. Scripture spoken. No ambiguity.
 
@@ -8,20 +8,20 @@ Bold Christian metal. Christ proclaimed. Scripture spoken. No ambiguity.
 
 ```
 shieldbearer/
-├── index.html          — Home page
-├── music.html          — Music / Discography
-├── about.html          — About Moncy Abraham / Shieldbearer
-├── song-meanings.html  — Theology and intent behind each track
-├── interviews.html     — Press, interviews, and open letter
-├── contact.html        — Enquiries form and direct contact
+├── index.html          (Home page)
+├── music.html          (Music / Discography)
+├── about.html          (About Moncy Abraham / Shieldbearer)
+├── song-meanings.html  (Theology and intent behind each track)
+├── interviews.html     (Press, interviews, and open letter)
+├── contact.html        (Enquiries form and direct contact)
 │
 ├── css/
-│   └── style.css       — Full design system (one file, well organised)
+│   └── style.css       (Full design system) (one file, well organised)
 │
 ├── js/
-│   └── main.js             — Nav, mobile menu, form, accordion
+│   └── main.js             (Nav, mobile menu, form, accordion)
 │
-├── images/             — All images go here
+├── images/             (All images go here)
 │   ├── logo.png            ← Your Shieldbearer logo (white/transparent PNG)
 │   ├── favicon.ico         ← Browser favicon
 │   ├── og-image.jpg        ← Social share preview image (1200x630)
@@ -29,7 +29,7 @@ shieldbearer/
 │   ├── moncy-photo.jpg     ← Artist photo for About page
 │   └── release-art.jpg     ← Generic release art for home page
 │
-├── audio/              — Audio files go here (MP3/WAV)
+├── audio/              (Audio files go here, MP3/WAV)
 │   └── (add audio files here for future player)
 │
 └── README.md
@@ -64,13 +64,13 @@ To update the site later, edit the files and push/upload the changes to GitHub.
 
 ## How to Connect Your GoDaddy Domain (shieldbearerusa.com)
 
-### Step 1 — GitHub Pages custom domain
+### Step 1: GitHub Pages custom domain
 1. In your GitHub repo, go to Settings > Pages
 2. Under "Custom domain", type: `shieldbearerusa.com`
 3. Click Save
 4. GitHub will create a `CNAME` file in your repo automatically
 
-### Step 2 — GoDaddy DNS settings
+### Step 2: GoDaddy DNS settings
 1. Log in to GoDaddy and go to your domain's DNS settings
 2. Delete any existing A records pointing to GoDaddy's servers
 3. Add these four A records (GitHub's IPs):
@@ -135,7 +135,7 @@ To update the site later, edit the files and push/upload the changes to GitHub.
 6. Change `action="#"` to `action="https://formspree.io/f/YOUR_FORM_ID"`
 7. Add `method="POST"` to the form tag
 8. Open `js/main.js` and follow the instructions in the FORMSPREE INTEGRATION comment block
-9. Test by submitting the form — you will receive an email at shieldbearerusa@gmail.com
+9. Test by submitting the form. You will receive an email at shieldbearerusa@gmail.com
 
 Until Formspree is connected, the form opens the user's mail app as a fallback.
 

@@ -1,6 +1,6 @@
 /* =============================================================
-   SHIELDBEARER — Main Stylesheet
-   Theme: Black / Red / Off-white — Cinematic Christian Metal
+   SHIELDBEARER: Main Stylesheet
+   Theme: Black / Red / Off-white. Cinematic Christian Metal
    Author: Shieldbearer | shieldbearerusa.com
    ============================================================= */
 
@@ -25,12 +25,12 @@
   --pad:   3rem;
 
   /* ── SPACING SCALE ── */
-  --sp-xs:      0.5rem;   /*  8px — tight gaps, icon spacing */
-  --sp-sm:      1rem;     /* 16px — inline spacing, small gaps */
-  --sp-md:      1.5rem;   /* 24px — component internal padding */
-  --sp-lg:      2rem;     /* 32px — between components */
-  --sp-xl:      3rem;     /* 48px — generous layout breathing room */
-  --sp-section: 5rem;     /* 80px — vertical section padding */
+  --sp-xs:      0.5rem;   /*  8px: tight gaps, icon spacing */
+  --sp-sm:      1rem;     /* 16px: inline spacing, small gaps */
+  --sp-md:      1.5rem;   /* 24px: component internal padding */
+  --sp-lg:      2rem;     /* 32px: between components */
+  --sp-xl:      3rem;     /* 48px: generous layout breathing room */
+  --sp-section: 5rem;     /* 80px: vertical section padding */
 }
 
 /* ── RESET ── */
