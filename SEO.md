@@ -5,9 +5,17 @@ behind them. The point is to keep future work from re-litigating
 choices that were already made deliberately, and to give a clear
 trigger list for when each decision should actually be revisited.
 
-If you change anything documented here, update the relevant
-section, add a dated entry, and link the commit. Out-of-date
-decision logs are worse than no decision log.
+## How to use this document
+
+This is a living decision log, not a one-time write-up. The
+review triggers in each section are not optional; they are the
+reason the doc exists. If a decision needs to change, do not
+edit the original entry. Append a new dated entry below it
+recording what changed, when, and why. Keep the prior reasoning
+intact so the audit trail stays readable in 18 months when
+nobody remembers the original context. Out-of-date decision
+logs are worse than no decision log; date-stamped revisions are
+how you keep this honest.
 
 ## Canonical URL form
 
