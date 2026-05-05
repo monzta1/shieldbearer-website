@@ -7,6 +7,38 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.6.1 - May 2026
+- Adopted `AGENT_HANDOFF.md`, `AGENT_STATE.md`, and `MEMORY.md` per the operator instructions audit. `AGENT_HANDOFF.md` carries system knowledge and standing rules; `AGENT_STATE.md` carries current branch, next task, active watch windows, and deferred items; `MEMORY.md` is the entry-point index. AGENTS.md (pre-push checklist) and SEO.md (decision log) remain as-is. No code change.
+
+## v2.6.0 - May 2026
+- Added six structural checks to `scripts/test.sh` (tests 22 to 27): no same-href-same-label duplicates in nav surfaces, og:url matches canonical on every page, legacy `.html` and clean-URL `/index.html` mirrors byte-identical (sentinelbot exception), no duplicate IDs within any page, all page titles unique, external `target=_blank` links carry `rel=noopener`. Test count rose from 192 to 198.
+- Fixed og:url canonical drift on 11 pages (22 files including `/index.html` mirrors): ai-and-creativity, creed, epk, for-ai-artists, god-uses-tools, gospel, process, sentinelbot, signal-room, story, videos. Each had og:url ending in `.html` while canonical was the clean URL. Aligned og:url to the canonical clean URL form. Caught by test 23, the new check.
+
+## v2.5.3 - May 2026
+- Removed duplicate `<a href="/gospel">The Gospel</a>` entry from the Words dropdown on `gospel.html` and `gospel/index.html`. Two adjacent identical anchors had been hand-edited in; the desktop nav was rendering "The Gospel" twice in a row when hovering Words. Audit confirmed no other page had the duplicate.
+
+## v2.5.2 - May 2026
+- Replaced the gatekeeping pillar article with the operator-authored version. Cleaner theological framing distinguishing biblical gatekeeping (service under God's authority) from modern gatekeeping (adding standards beyond what God has established). Ten H2 sections plus four H3 case studies (Pharisees, Disciples, Judaizers, Early Church Debate). Hero h1, meta description, OG tags, share bar, and related-reading box preserved from the prior revision; KJV scripture quotations from v2.5.0 retained for copyright cleanliness.
+
+## v2.5.1 - May 2026
+- Contact page factual corrections. Booking section rewritten to reflect the actual offering: Shieldbearer is a studio project (not a touring band); Moncy is the only musician (on guitar); vocals on most releases are AI; the only Shieldbearer-branded live option is Moncy playing guitar over recorded tracks for a feature slot. KGroup Band is named as the sister project for live praise and worship.
+- Added a "Singer collaborations" section explicitly inviting real vocalists. States that songs featuring real vocalists are already in production and will release in the near future. Form dropdown adds a dedicated "Singer collaboration" option so vocalist outreach routes distinctly.
+- Title and meta description updated to "Booking, Press, Singer Collabs, AI & Faith" to reflect the new section.
+
+## v2.5.0 - May 2026
+- Comprehensive SEO improvement pass. Implemented across the `seo-fixes-2026-05` branch and merged to `sentinelbot-stable` via fast-forward.
+- **Homepage brand SEO.** New title `Shieldbearer (Shield Bearer) | Christian Metal from Scripture` carrying both name variants for search disambiguation. Meta description, OG tags, and Twitter Card all aligned. JSON-LD `MusicGroup` retained (subclass of Organization, richer schema for an artist) with `alternateName: "Shield Bearer"`, expanded `description` mentioning both forms, plus `logo` and `image` fields. Hero h1 untouched ("Jesus Reigns at Full Volume" stays as the artistic brand statement). Hero subline rewritten to introduce both "Shieldbearer" and "Shield Bearer" naturally in visible body copy.
+- **Decision log.** New `SEO.md` documents canonical URL form decision (Path A: clean URLs canonical, no redirects between forms; meta-refresh deferred 4 to 6 weeks), trailing-slash root canonical change, og:url normalization, desktop vs mobile ranking gap framing (mobile-first indexing plus audience composition; monitor only), brand keyword strategy, hero h1 override, and a master review schedule with calendar-anchored re-check dates (2026-05-18, 2026-06-01, 2026-06-15, 2026-06-29, 2026-07-01).
+- **Contact page rewrite.** Body content expanded with five audience-specific sections (Booking, Press and media, Fan mail, Ministry partnerships, AI and faith conversation). 383 words of substantive copy explaining what kinds of inquiries fit each audience and the response timeline. Form dropdown updated to match the new sections.
+- **Gatekeeping pillar rewrite.** Title aligned with search intent ("Gatekeepers in the Bible: Meaning, Role, and Symbolism"). Restructured under four H2s: Who Were the Gatekeepers in the Bible / What Scripture Says About Gatekeepers / The Symbolic Meaning of Gatekeepers / Modern-Day Gatekeeping in Christian Art and Music. Existing seven case studies (Pharisees through Early Church Debate) preserved as H3 sub-points. KJV scripture fragments quoted with attribution; outbound BibleGateway links re-versioned to KJV (public-domain copyright safety).
+- **Internal linking.** Three contextual prose links added to `/gatekeeping` from `manifesto.html` ("gatekeepers in the Bible"), `about.html` ("what gatekeeping means scripturally"), and `story.html` ("the biblical role of gatekeepers"). Varied descriptive anchor text per SEO best practice.
+- **Per-page SEO tightening.** 10 pages updated with proper meta descriptions and (where missing or generic) titles: about, artist-freedom, contact, faq, gatekeeping, manifesto, music, no-rulebook, open-letter, song-meanings, timeline, plus the homepage. 11 pages intentionally left untouched (already in spec range): ai-and-creativity, creed, epk, for-ai-artists, god-uses-tools, gospel, process, sentinelbot, signal-room, story, videos.
+- **Manifesto OG completion.** `manifesto.html` was missing OG and Twitter Card tags entirely; full block added.
+- **Em-dash guard.** New test step 21 in `scripts/test.sh` catches U+2014, `&mdash;`, and `—` across .html / .css / .js / .md / .txt files. Per-line whitelist sigil `em-dash-allow` for legitimate uses (CSS pseudo-content separators and intentional regex strips). Repo-wide sweep applied with per-occurrence judgment.
+- **Hero subline copy refinement.** Parens to commas for natural prose flow on the homepage.
+- **Verification artifacts committed.** `VERIFICATION.md` documents the Lighthouse SEO score (100/100 on homepage and `/gatekeeping`), sitemap row-by-row table (23/23 URLs return 200, all self-canonical, all titles unique), JSON-LD validation (12/12 structural checks pass), file-by-file change log, and reproduction commands. `seo-report-home.json` and `seo-report-gatekeeping.json` are the raw Lighthouse JSON outputs.
+- **Test count.** Rose from 191 to 192 with the em-dash guard.
+
 ## v2.4.4 - May 2026
 - `song-meanings-augment.js` now reads `reference` and `scripture` from each `released[]` entry on `site.json` and passes them to the dossier. Previously these were hard-coded to empty, so a release promoted from `site.json` always showed without a scripture even when the song record carried one. Defaults remain safe (empty) when the fields are missing.
 
