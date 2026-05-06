@@ -9,8 +9,8 @@ worse than no state.
 | Field | Value |
 | ----- | ----- |
 | Active branch | `sentinelbot-stable` (production) |
-| Latest commit | `c5d41b2` (test gate expansion + og:url canonical alignment) |
-| Test gate | 198 / 198 structural + 53 / 53 jsdom + 100% line coverage |
+| Latest commit | v2.7.0 Watch Posts section (live appearances on homepage) |
+| Test gate | 201 / 201 structural + 70 / 70 jsdom + 100% line coverage |
 | Last live verification | 2026-05-05, all passes |
 | Execution mode | Conservative (ask before major actions) |
 | Operator | Moncy Abraham |

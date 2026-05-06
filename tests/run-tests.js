@@ -575,6 +575,191 @@ async function flushMicrotasks() {
 })();
 
 // ----------------------------------------------------------------------
+// watch-posts.js
+// ----------------------------------------------------------------------
+
+// The Date used by the renderer is the browser's clock at run time.
+// Tests use clearly-future and clearly-past dates so the
+// upcoming/recent partition is unambiguous regardless of when
+// the test runs.
+
+(async () => {
+  const html = `<!doctype html><html><body>
+    <section id="watch-posts" class="watch-posts">
+      <div class="watch-posts__inner">
+        <h2>Watch Posts</h2>
+        <h3 class="watch-posts__upcoming-heading">Upcoming</h3>
+        <div class="watch-posts__upcoming-list"></div>
+        <h3 class="watch-posts__recent-heading">Recent</h3>
+        <div class="watch-posts__recent-list"></div>
+      </div>
+    </section>
+  </body></html>`;
+  const dom = makeDom(html);
+  installFetchShim(dom.window, {
+    "gigs.json": [
+      // Far-future entries (Upcoming, must sort ascending)
+      { date: "2099-12-31", venue: "Far Future Venue B", city: "City B", billing: "Solo set", note: "" },
+      { date: "2099-06-15", venue: "Far Future Venue A", city: "City A", billing: "", note: "" },
+      // Far-past entries (Recent, must sort descending, capped at 3)
+      { date: "2000-04-01", venue: "Old Venue 1", city: "City 1", billing: "Bill 1", note: "Note 1" },
+      { date: "2000-03-15", venue: "Old Venue 2", city: "City 2", billing: "", note: "" },
+      { date: "2000-02-01", venue: "Old Venue 3", city: "City 3", billing: "Bill 3", note: "" },
+      { date: "2000-01-01", venue: "Old Venue 4 (should be cut)", city: "City 4", billing: "", note: "" }
+    ]
+  });
+  runScriptInWindow(dom.window, "js/watch-posts.js");
+  await flushMicrotasks();
+
+  const doc = dom.window.document;
+  const upcomingEntries = doc.querySelectorAll(".watch-posts__upcoming-list .watch-post");
+  const recentEntries = doc.querySelectorAll(".watch-posts__recent-list .watch-post");
+
+  assertEqual(upcomingEntries.length, 2, "watch-posts: 2 upcoming entries rendered");
+  assertEqual(recentEntries.length, 3, "watch-posts: recent capped at 3 (4th cut)");
+
+  // Upcoming sorted ascending: June first, December second
+  assert(
+    upcomingEntries[0].textContent.includes("Far Future Venue A"),
+    "watch-posts: upcoming sorted ascending (earliest date first)"
+  );
+  assert(
+    upcomingEntries[1].textContent.includes("Far Future Venue B"),
+    "watch-posts: upcoming second slot is later date"
+  );
+
+  // Recent sorted descending: April 1 first, March 15 second, Feb 1 third
+  assert(
+    recentEntries[0].textContent.includes("Old Venue 1"),
+    "watch-posts: recent sorted descending (most recent first)"
+  );
+  assert(
+    recentEntries[2].textContent.includes("Old Venue 3"),
+    "watch-posts: recent third slot is oldest of the kept three"
+  );
+
+  // Date format: MONTH DD, YYYY (uppercase, zero-padded day)
+  assert(
+    upcomingEntries[0].textContent.includes("JUNE 15, 2099"),
+    "watch-posts: date formatted as 'JUNE 15, 2099'"
+  );
+
+  // Billing line rendered when present, skipped when empty
+  assert(
+    upcomingEntries[0].querySelector(".watch-post__billing") === null,
+    "watch-posts: billing line skipped when empty"
+  );
+  assert(
+    upcomingEntries[1].querySelector(".watch-post__billing").textContent === "Solo set",
+    "watch-posts: billing line rendered when present"
+  );
+
+  // Note line rendered when present, skipped when empty
+  assert(
+    recentEntries[0].querySelector(".watch-post__note").textContent === "Note 1",
+    "watch-posts: note line rendered when present"
+  );
+  assert(
+    recentEntries[1].querySelector(".watch-post__note") === null,
+    "watch-posts: note line skipped when empty"
+  );
+
+  // Venue + city joined with ', '
+  assert(
+    upcomingEntries[0].querySelector(".watch-post__venue").textContent === "Far Future Venue A, City A",
+    "watch-posts: venue and city joined with comma"
+  );
+})();
+
+// watch-posts: hides the upcoming subheading when no upcoming entries
+(async () => {
+  const html = `<!doctype html><html><body>
+    <section id="watch-posts">
+      <h3 class="watch-posts__upcoming-heading">Upcoming</h3>
+      <div class="watch-posts__upcoming-list"></div>
+      <h3 class="watch-posts__recent-heading">Recent</h3>
+      <div class="watch-posts__recent-list"></div>
+    </section>
+  </body></html>`;
+  const dom = makeDom(html);
+  installFetchShim(dom.window, {
+    "gigs.json": [
+      { date: "2000-01-01", venue: "Old", city: "X", billing: "", note: "" }
+    ]
+  });
+  runScriptInWindow(dom.window, "js/watch-posts.js");
+  await flushMicrotasks();
+
+  const doc = dom.window.document;
+  assertEqual(
+    doc.querySelector(".watch-posts__upcoming-heading").style.display,
+    "none",
+    "watch-posts: upcoming heading hidden when no upcoming entries"
+  );
+  assert(
+    doc.querySelector(".watch-posts__recent-heading").style.display !== "none",
+    "watch-posts: recent heading visible when recent entries exist"
+  );
+})();
+
+// watch-posts: hides the whole section when both buckets empty
+(async () => {
+  const html = `<!doctype html><html><body>
+    <section id="watch-posts">
+      <h3 class="watch-posts__upcoming-heading">Upcoming</h3>
+      <div class="watch-posts__upcoming-list"></div>
+      <h3 class="watch-posts__recent-heading">Recent</h3>
+      <div class="watch-posts__recent-list"></div>
+    </section>
+  </body></html>`;
+  const dom = makeDom(html);
+  installFetchShim(dom.window, { "gigs.json": [] });
+  runScriptInWindow(dom.window, "js/watch-posts.js");
+  await flushMicrotasks();
+
+  assertEqual(
+    dom.window.document.getElementById("watch-posts").style.display,
+    "none",
+    "watch-posts: whole section hidden when both buckets empty"
+  );
+})();
+
+// watch-posts: hides the whole section on fetch failure
+(async () => {
+  const html = `<!doctype html><html><body>
+    <section id="watch-posts">
+      <h3 class="watch-posts__upcoming-heading">Upcoming</h3>
+      <div class="watch-posts__upcoming-list"></div>
+      <h3 class="watch-posts__recent-heading">Recent</h3>
+      <div class="watch-posts__recent-list"></div>
+    </section>
+  </body></html>`;
+  const dom = makeDom(html);
+  installFetchShim(dom.window, { "gigs.json": new Error("simulated fetch failure") });
+  runScriptInWindow(dom.window, "js/watch-posts.js");
+  await flushMicrotasks();
+
+  assertEqual(
+    dom.window.document.getElementById("watch-posts").style.display,
+    "none",
+    "watch-posts: whole section hidden when fetch fails"
+  );
+})();
+
+// watch-posts: bails out cleanly when section element is absent
+(async () => {
+  const html = `<!doctype html><html><body></body></html>`;
+  const dom = makeDom(html);
+  installFetchShim(dom.window, { "gigs.json": [{ date: "2099-01-01", venue: "X", city: "Y", billing: "", note: "" }] });
+  let threw = false;
+  try {
+    runScriptInWindow(dom.window, "js/watch-posts.js");
+    await flushMicrotasks();
+  } catch (e) { threw = true; }
+  assert(!threw, "watch-posts: silent no-op when #watch-posts is absent");
+})();
+
+// ----------------------------------------------------------------------
 setTimeout(() => {
   console.log("\n=========================================");
   console.log(`Website JS tests: ${passed} passed, ${failed} failed`);

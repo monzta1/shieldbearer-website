@@ -532,6 +532,67 @@
       color: rgba(240,235,224,.8);
     }
 
+    /* Watch Posts (live appearances) */
+    .watch-posts {
+      padding: clamp(3rem, 6vw, 4.5rem) 0;
+    }
+    .watch-posts__inner {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 var(--pad);
+    }
+    .watch-posts__title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      letter-spacing: .07em;
+      color: #fff;
+      margin: .4rem 0 .8rem;
+      line-height: 1;
+    }
+    .watch-posts__upcoming-heading,
+    .watch-posts__recent-heading {
+      font-family: var(--font-head);
+      font-size: .72rem;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--red-bright);
+      margin: 2.2rem 0 1rem;
+      padding-bottom: .35rem;
+      border-bottom: 1px solid rgba(168,162,154,.12);
+    }
+    .watch-posts__recent-heading { margin-top: 2.6rem; }
+    .watch-post {
+      padding: .9rem 0;
+      border-bottom: 1px solid rgba(168,162,154,.07);
+    }
+    .watch-post:last-child { border-bottom: none; }
+    .watch-post__date {
+      font-family: var(--font-head);
+      font-size: .7rem;
+      letter-spacing: .22em;
+      color: var(--red-bright);
+      margin: 0 0 .25rem;
+    }
+    .watch-post__venue {
+      font-size: 1.05rem;
+      line-height: 1.5;
+      color: rgba(240,235,224,.92);
+      margin: 0 0 .15rem;
+    }
+    .watch-post__billing {
+      font-size: .92rem;
+      line-height: 1.5;
+      color: rgba(240,235,224,.62);
+      margin: 0 0 .15rem;
+    }
+    .watch-post__note {
+      font-size: .88rem;
+      line-height: 1.55;
+      color: rgba(240,235,224,.55);
+      font-style: italic;
+      margin: .15rem 0 0;
+    }
+
     /* Merch CTA strip */
     .merch-strip {
       background: var(--red);
@@ -950,6 +1011,23 @@ The Galilean</p>
     </div>
   </section>
 
+  <!-- ══════════════════════════════════════
+       WATCH POSTS (live appearances)
+       Populated by js/watch-posts.js from /data/gigs.json.
+       Hidden entirely if both Upcoming and Recent are empty.
+  ══════════════════════════════════════ -->
+  <section id="watch-posts" class="watch-posts section--dark" aria-labelledby="watch-posts-heading">
+    <div class="watch-posts__inner">
+      <span class="eyebrow">Live</span>
+      <h2 class="watch-posts__title" id="watch-posts-heading">Watch Posts</h2>
+      <div class="bar"></div>
+      <h3 class="watch-posts__upcoming-heading">Upcoming</h3>
+      <div class="watch-posts__upcoming-list"></div>
+      <h3 class="watch-posts__recent-heading">Recent</h3>
+      <div class="watch-posts__recent-list"></div>
+    </div>
+  </section>
+
   <section class="featured-merch-section" aria-labelledby="featured-merch-heading">
     <div class="featured-merch">
       <a class="featured-merch-art" href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener" aria-label="Shop featured Shieldbearer merch">
@@ -1144,5 +1222,6 @@ The Galilean</p>
   <script src="/js/sentinelbot.js"></script>
   <script src="/js/merch-rotator.js" defer></script>
   <script src="/js/featured-release.js" defer></script>
+  <script src="/js/watch-posts.js" defer></script>
 </body>
 </html>

@@ -152,6 +152,11 @@ check "appendSongDossiers hook exists" "$(grep -q 'window.appendSongDossiers' so
 # 17. Merch rotator wired on homepage
 check "merch-rotator.js included on homepage" "$(grep -q 'js/merch-rotator.js' index.html && echo true || echo false)"
 
+# 17b. Watch Posts (live appearances) wired on homepage and data file present
+check "watch-posts.js included on homepage" "$(grep -q 'js/watch-posts.js' index.html && echo true || echo false)"
+check "watch-posts section exists on homepage" "$(grep -q 'id="watch-posts"' index.html && echo true || echo false)"
+check "data/gigs.json exists and is valid JSON" "$([ -f data/gigs.json ] && python3 -c 'import json,sys; json.load(open(sys.argv[1]))' data/gigs.json 2>/dev/null && echo true || echo false)"
+
 # 18. Central config loads on every page that uses analytics
 for page in *.html; do
   grep -q 'src="js/analytics.js"' "$page" || continue
