@@ -323,7 +323,7 @@
     table {
       width: 100%;
       border-collapse: collapse;
-      min-width: 1100px;
+      min-width: 1500px;
     }
 
     th,
@@ -361,8 +361,8 @@
     }
 
     .col-timestamp { width: 180px; }
-    .col-ip { width: 130px; }
-    .col-location { width: 130px; }
+    .col-ip { width: 140px; }
+    .col-location { width: 170px; }
     .col-page { width: 140px; }
     .col-source { width: 140px; }
     .col-status { width: 120px; }
@@ -372,17 +372,18 @@
       min-width: 280px;
     }
 
-    /* Location cells across all three tables (raw, cache-table,
-       insight-table). The general td rule uses word-break: break-word
-       which broke short "City, ST" strings character-by-character in
-       the cache and insight tables because the column had no width
-       hint. Force a sensible min-width and prevent character-wrap. */
-    .col-location,
+    /* IP and location need nowrap or the general td rule
+       (word-break: break-word) chops them character-by-character
+       when the table is squeezed. !important is intentional: the
+       th/td selector has the same specificity and is declared
+       earlier in the cascade. Also covers .loc on the cache and
+       insight tables which use a different class name. */
+    .col-ip, .col-location,
     .cache-table th.loc, .cache-table td.loc,
     .insight-table th.loc, .insight-table td.loc {
-      min-width: 120px;
-      white-space: nowrap;
-      word-break: normal;
+      white-space: nowrap !important;
+      word-break: normal !important;
+      overflow-wrap: normal !important;
     }
 
     .answer-wrap {

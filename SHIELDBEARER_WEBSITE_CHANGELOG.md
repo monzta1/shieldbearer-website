@@ -7,6 +7,11 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.7.3 - May 2026
+- Stronger fix for the location column wrapping. The v2.7.2 attempt used a `.col-location` selector with the same specificity as the `th, td` rule that declares `word-break: break-word`, and lost the cascade because the general rule was declared later. Bumped to `!important` on `white-space: nowrap`, `word-break: normal`, and `overflow-wrap: normal` for the IP and location cells. The IP column was hitting the same bug (e.g. "108.28.97.217" wrapped to two lines).
+- Bumped the table `min-width` from 1100px to 1500px so the 9 columns get their hint widths instead of being squeezed below them. The table-shell already has `overflow-x: auto`, so wider min-width just means horizontal scroll on narrow viewports rather than column-cramming.
+- Widened `.col-location` from 130px to 170px and `.col-ip` from 130px to 140px to comfortably fit the longest expected values without overflow.
+
 ## v2.7.2 - May 2026
 - Fixed the `location` column on `admin/logs.html` rendering one letter per line in the cache-candidates and rare-unanswered tables. The general `td` rule uses `word-break: break-word`, which broke even short city strings character-by-character when the column had no width hint. Added a `.col-location` rule plus a `.loc` class on the location th/td cells in the two insight tables, with `min-width: 120px` and `white-space: nowrap` so short labels stay on one line.
 - Switched the displayed format from "City, Country" to "City, RegionCode" (e.g. "Dallas, TX", "Ancaster, ON") to match the compact form now written by `sentinelbot-lambda` v1.9.1. Region codes are shorter and more informative than country names for the US/CA/AU traffic the site sees in practice.

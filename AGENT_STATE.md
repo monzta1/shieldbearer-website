@@ -9,7 +9,7 @@ worse than no state.
 | Field | Value |
 | ----- | ----- |
 | Active branch | `sentinelbot-stable` (production) |
-| Latest commit | v2.7.2 location column CSS fix + format switch to City, RegionCode (sentinelbot-lambda v1.9.1) |
+| Latest commit | v2.7.3 stronger location column CSS fix (!important + wider table min-width) |
 | Test gate | 201 / 201 structural + 70 / 70 jsdom + 100% line coverage |
 | Last live verification | 2026-04-26, all passes |
 | Execution mode | Conservative (ask before major actions) |
