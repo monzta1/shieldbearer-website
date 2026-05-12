@@ -571,6 +571,7 @@
                 <th>ask count</th>
                 <th>latest timestamp</th>
                 <th>IP</th>
+                <th>location</th>
                 <th>latest answer</th>
                 <th>source</th>
                 <th>page</th>
@@ -590,6 +591,7 @@
               <tr>
                 <th>timestamp</th>
                 <th>IP</th>
+                <th>location</th>
                 <th>page</th>
                 <th>question</th>
                 <th>short answer snippet</th>
@@ -612,6 +614,7 @@
           <tr>
             <th class="col-timestamp">timestamp</th>
             <th class="col-ip">IP</th>
+            <th class="col-location">location</th>
             <th class="col-page">page</th>
             <th class="col-question">question</th>
             <th class="col-answer">answer</th>
@@ -904,6 +907,7 @@
               <td>${formatCell(entry.count)}</td>
               <td>${formatTimestampET(entry.latest?.timestamp)}</td>
               <td>${formatCell(entry.latest?.sourceIp || "-")}</td>
+              <td>${formatCell(entry.latest?.location || "-")}</td>
               <td>${shortSnippet(entry.latest?.answer)}</td>
               <td>${formatCell(entry.latest?.source)}</td>
               <td>${formatCell(entry.latest?.page)}</td>
@@ -912,7 +916,7 @@
               </td>
             </tr>
           `).join("")
-        : '<tr><td colspan="8" class="muted">No cache candidates yet.</td></tr>';
+        : '<tr><td colspan="9" class="muted">No cache candidates yet.</td></tr>';
 
       const rare = items
         .filter((item) => isRareUnanswered(item, counts))
@@ -924,20 +928,21 @@
             <tr>
               <td>${formatTimestampET(item.timestamp)}</td>
               <td>${formatCell(item.sourceIp || "-")}</td>
+              <td>${formatCell(item.location || "-")}</td>
               <td>${formatCell(item.page)}</td>
               <td>${formatCell(item.question)}</td>
               <td>${shortSnippet(item.answer)}</td>
               <td>${formatCell(item.source)}</td>
             </tr>
           `).join("")
-        : '<tr><td colspan="6" class="muted">No rare unanswered questions found.</td></tr>';
+        : '<tr><td colspan="7" class="muted">No rare unanswered questions found.</td></tr>';
     }
 
     function renderRows(items) {
       if (!items.length) {
         els.rows.innerHTML = `
           <tr>
-            <td colspan="8" class="muted">No logs found.</td>
+            <td colspan="9" class="muted">No logs found.</td>
           </tr>
         `;
         return;
@@ -947,6 +952,7 @@
         <tr class="${isWeakAnswer(item.answer) ? 'weak-row' : ''} ${isSlowResponse(item) ? 'slow-row' : ''}">
           <td>${formatTimestampET(item.timestamp)}</td>
           <td>${formatCell(item.sourceIp || "-")}</td>
+          <td>${formatCell(item.location || "-")}</td>
           <td>${formatCell(item.page)}</td>
           <td>${formatCell(item.question)}</td>
           <td>${renderAnswerCell(item)}</td>

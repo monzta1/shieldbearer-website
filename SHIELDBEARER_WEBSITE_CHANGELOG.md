@@ -7,6 +7,11 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.7.1 - May 2026
+- Added a `location` column to all three tables on `admin/logs.html` (cache candidates, rare unanswered questions, raw log). Shows the approximate "City, Country" resolved from the chat row's sourceIp; renders "-" when the lookup failed, the IP was private, or the row predates the lookup feature.
+- Frontend only displays the field; the chat Lambda writes it. See `sentinelbot-lambda` v1.9.0 for the write-time and backfill implementation. The sentinelbot-logs read Lambda returns the whole row so the new column requires no API change.
+- Updated empty-table colspans (8 to 9 for cache and raw tables; 6 to 7 for repeats) to keep the empty-state messaging aligned across all columns.
+
 ## v2.7.0 - May 2026
 - Added Watch Posts section to the homepage between the Signal Fire video block and the merch banner. Renders upcoming and recent live appearances from a single data file at `data/gigs.json`.
 - Sort logic: entries with date >= today render under "Upcoming" (ascending). Entries with date < today render under "Recent" (descending), capped at 3.

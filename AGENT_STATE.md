@@ -9,7 +9,7 @@ worse than no state.
 | Field | Value |
 | ----- | ----- |
 | Active branch | `sentinelbot-stable` (production) |
-| Latest commit | v2.7.0 Watch Posts section (live appearances on homepage) |
+| Latest commit | v2.7.1 location column on admin logs + sentinelbot-lambda v1.9.0 IP geolocation |
 | Test gate | 201 / 201 structural + 70 / 70 jsdom + 100% line coverage |
 | Last live verification | 2026-05-05, all passes |
 | Execution mode | Conservative (ask before major actions) |
