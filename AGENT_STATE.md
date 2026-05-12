@@ -4,14 +4,14 @@ Live working state. Update this file with every change so the
 next agent (or future-you) lands oriented. Out-of-date state is
 worse than no state.
 
-## Current state (last updated 2026-05-05)
+## Current state (last updated 2026-04-26)
 
 | Field | Value |
 | ----- | ----- |
 | Active branch | `sentinelbot-stable` (production) |
-| Latest commit | v2.7.1 location column on admin logs + sentinelbot-lambda v1.9.0 IP geolocation |
+| Latest commit | v2.7.2 location column CSS fix + format switch to City, RegionCode (sentinelbot-lambda v1.9.1) |
 | Test gate | 201 / 201 structural + 70 / 70 jsdom + 100% line coverage |
-| Last live verification | 2026-05-05, all passes |
+| Last live verification | 2026-04-26, all passes |
 | Execution mode | Conservative (ask before major actions) |
 | Operator | Moncy Abraham |
 

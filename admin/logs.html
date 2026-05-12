@@ -362,6 +362,7 @@
 
     .col-timestamp { width: 180px; }
     .col-ip { width: 130px; }
+    .col-location { width: 130px; }
     .col-page { width: 140px; }
     .col-source { width: 140px; }
     .col-status { width: 120px; }
@@ -369,6 +370,19 @@
     .col-question,
     .col-answer {
       min-width: 280px;
+    }
+
+    /* Location cells across all three tables (raw, cache-table,
+       insight-table). The general td rule uses word-break: break-word
+       which broke short "City, ST" strings character-by-character in
+       the cache and insight tables because the column had no width
+       hint. Force a sensible min-width and prevent character-wrap. */
+    .col-location,
+    .cache-table th.loc, .cache-table td.loc,
+    .insight-table th.loc, .insight-table td.loc {
+      min-width: 120px;
+      white-space: nowrap;
+      word-break: normal;
     }
 
     .answer-wrap {
@@ -571,7 +585,7 @@
                 <th>ask count</th>
                 <th>latest timestamp</th>
                 <th>IP</th>
-                <th>location</th>
+                <th class="loc">location</th>
                 <th>latest answer</th>
                 <th>source</th>
                 <th>page</th>
@@ -591,7 +605,7 @@
               <tr>
                 <th>timestamp</th>
                 <th>IP</th>
-                <th>location</th>
+                <th class="loc">location</th>
                 <th>page</th>
                 <th>question</th>
                 <th>short answer snippet</th>
@@ -907,7 +921,7 @@
               <td>${formatCell(entry.count)}</td>
               <td>${formatTimestampET(entry.latest?.timestamp)}</td>
               <td>${formatCell(entry.latest?.sourceIp || "-")}</td>
-              <td>${formatCell(entry.latest?.location || "-")}</td>
+              <td class="loc">${formatCell(entry.latest?.location || "-")}</td>
               <td>${shortSnippet(entry.latest?.answer)}</td>
               <td>${formatCell(entry.latest?.source)}</td>
               <td>${formatCell(entry.latest?.page)}</td>
@@ -928,7 +942,7 @@
             <tr>
               <td>${formatTimestampET(item.timestamp)}</td>
               <td>${formatCell(item.sourceIp || "-")}</td>
-              <td>${formatCell(item.location || "-")}</td>
+              <td class="loc">${formatCell(item.location || "-")}</td>
               <td>${formatCell(item.page)}</td>
               <td>${formatCell(item.question)}</td>
               <td>${shortSnippet(item.answer)}</td>
@@ -952,7 +966,7 @@
         <tr class="${isWeakAnswer(item.answer) ? 'weak-row' : ''} ${isSlowResponse(item) ? 'slow-row' : ''}">
           <td>${formatTimestampET(item.timestamp)}</td>
           <td>${formatCell(item.sourceIp || "-")}</td>
-          <td>${formatCell(item.location || "-")}</td>
+          <td class="col-location">${formatCell(item.location || "-")}</td>
           <td>${formatCell(item.page)}</td>
           <td>${formatCell(item.question)}</td>
           <td>${renderAnswerCell(item)}</td>

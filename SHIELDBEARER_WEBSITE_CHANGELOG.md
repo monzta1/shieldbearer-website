@@ -7,8 +7,13 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.7.2 - May 2026
+- Fixed the `location` column on `admin/logs.html` rendering one letter per line in the cache-candidates and rare-unanswered tables. The general `td` rule uses `word-break: break-word`, which broke even short city strings character-by-character when the column had no width hint. Added a `.col-location` rule plus a `.loc` class on the location th/td cells in the two insight tables, with `min-width: 120px` and `white-space: nowrap` so short labels stay on one line.
+- Switched the displayed format from "City, Country" to "City, RegionCode" (e.g. "Dallas, TX", "Ancaster, ON") to match the compact form now written by `sentinelbot-lambda` v1.9.1. Region codes are shorter and more informative than country names for the US/CA/AU traffic the site sees in practice.
+- Frontend change only; backend format change is in `sentinelbot-lambda` v1.9.1 and applied to all 333 historical rows via the backfill script's new `--force` flag.
+
 ## v2.7.1 - May 2026
-- Added a `location` column to all three tables on `admin/logs.html` (cache candidates, rare unanswered questions, raw log). Shows the approximate "City, Country" resolved from the chat row's sourceIp; renders "-" when the lookup failed, the IP was private, or the row predates the lookup feature.
+- Added a `location` column to all three tables on `admin/logs.html` (cache candidates, rare unanswered questions, raw log). Shows the approximate location resolved from the chat row's sourceIp; renders "-" when the lookup failed, the IP was private, or the row predates the lookup feature.
 - Frontend only displays the field; the chat Lambda writes it. See `sentinelbot-lambda` v1.9.0 for the write-time and backfill implementation. The sentinelbot-logs read Lambda returns the whole row so the new column requires no API change.
 - Updated empty-table colspans (8 to 9 for cache and raw tables; 6 to 7 for repeats) to keep the empty-state messaging aligned across all columns.
 
