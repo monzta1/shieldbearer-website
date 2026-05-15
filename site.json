@@ -1,37 +1,44 @@
 {
-  "generatedAt": "2026-05-02T13:00:08.851Z",
+  "generatedAt": "2026-05-15T10:00:29.573Z",
   "source": "sentinelbot-event-consumer",
   "homepage": {
     "banner": {
-      "title": "Let My People Go",
-      "image": "https://shieldbearerusa.com/images/signal-room/let-my-people-go.jpg",
-      "sourceUrl": "https://www.youtube.com/watch?v=0lUJcLKIt0o",
-      "activeReleaseId": "let-my-people-go"
+      "title": "AI band doing AI things 🎸",
+      "image": "https://img.youtube.com/vi/cdNeg691X2E/hqdefault.jpg",
+      "sourceUrl": "https://www.youtube.com/watch?v=cdNeg691X2E",
+      "activeReleaseId": "cdNeg691X2E"
     },
     "featuredRelease": {
-      "songId": "let-my-people-go",
-      "title": "Let My People Go",
-      "videoId": "0lUJcLKIt0o",
-      "sourceUrl": "https://www.youtube.com/watch?v=0lUJcLKIt0o",
-      "artwork": "https://shieldbearerusa.com/images/signal-room/let-my-people-go.jpg",
-      "lyrics": "Go DOWN, Moses!\nBurn through Egypt’s gates,\nPharaoh’s throne is shaking,\nCause freedom’s on its way!\n\nChains on the innocent,\nCrushed in a starving land,\nIsrael crying out,\nNo strength left to stand.\nOppression on their backs,\nThe fire in their bones,\nGod heard every tear,\nAnd thunder shook the throne!\n\nA whisper turned to a roar,\nA calling carved into stone…\n\nGo down, Moses!\nDeep into the darkness, stand!\nFace that Pharaoh,\nSay the word of Heaven’s command!\nGo down, Moses,\nBreak the yoke and shatter the hold!\nTell that tyrant,\nGOD says let My people GO!\n\nMoses stepped in unafraid,\nStorm in his spirit rose,\nSpoke the Name of Yahweh,\nAnd shook the earth below.\nPharaoh with a hardened heart,\nDefiant in his pride,\nBut judgment like a tidal wave\nWas rolling in the sky!\n\nA whisper turned to a roar,\nA calling carved into stone…\n\nGo down, Moses!\nDeep into the darkness, stand!\nFace that Pharaoh,\nSay the word of Heaven’s command!\nGo down, Moses,\nBreak the yoke and shatter the hold!\nTell that tyrant,\nGOD says let My people GO!\n\nLET… THEM… GO!\n(Tremble, Pharaoh, your kingdom’s falling)\nLET… THEM… GO!\n(The chains you forged are breaking open)\nLET… THEM… GO!\n(Yahweh’s voice is thunder spoken)\nLET MY PEOPLE GO!\n\nGo down, Moses!\nStand where warriors never stand,\nSpeak the freedom\nWritten by the Lord’s own hand!\nGo down, Moses,\nBreak the chains and lift the low!\nTell that tyrant,\nGOD says LET MY PEOPLE GO!",
-      "songMeaning": "A cry that shook a nation. A command that broke chains.\n\nGod saw the suffering. God heard the cries. He sent one man straight into the center of power with a message no king could ignore. Barefoot. Stuttering. Wanted for murder. Walked right into the throne room of the most powerful empire on earth.\n\n“Let My people go.”\n\nThat was not a request. That was Heaven breaking in.\n\nWe wrote this because that story is not old. There are still Pharaohs. Still systems. Still chains. And God is still the One who hears every cry, counts every brick, and decides when it ends.\n\nIf you feel held down, held back, or held captive, pay attention.\n\n📖 Scripture Behind the Song\nExodus 3:7-10 · Exodus 5:1 · Exodus 6:6 · Exodus 12:31\nPsalm 34:17 · John 8:36\n\n🔔 Subscribe. Or don’t. We’re still releasing.\n🌐 https://shieldbearerusa.com\n📤 Share it if it matters to you.\n\n#LetMyPeopleGo #Shieldbearer #ChristianMusic #Moses #Exodus #FaithMusic #HeavyWorship",
-      "reference": "Exodus 5:1 | Exodus 7:16 | Exodus 8:1 | Exodus 9:1",
+      "songId": "cdNeg691X2E",
+      "title": "AI band doing AI things 🎸",
+      "videoId": "cdNeg691X2E",
+      "sourceUrl": "https://www.youtube.com/watch?v=cdNeg691X2E",
+      "artwork": "https://img.youtube.com/vi/cdNeg691X2E/hqdefault.jpg",
+      "lyrics": "",
+      "songMeaning": "",
+      "reference": "",
       "scripture": {
-        "ref": "Exodus 5:1",
-        "quote": "Thus says the Lord, the God of Israel, 'Let my people go, that they may hold a feast to me in the wilderness.'"
+        "ref": "",
+        "quote": ""
       },
-      "publishedAt": "2026-05-02T12:40:33Z"
+      "publishedAt": "2026-05-10T23:54:09Z"
     },
-    "lastUpdatedAt": "2026-05-02T13:00:08.851Z"
+    "lastUpdatedAt": "2026-05-15T10:00:29.573Z"
   },
   "release": {
-    "id": "let-my-people-go",
-    "source": "release-detector-youtube",
-    "publishedAt": "2026-05-02T12:40:33Z",
-    "traceId": "youtube:0lUJcLKIt0o"
+    "id": "cdNeg691X2E",
+    "source": "youtube",
+    "publishedAt": "2026-05-10T23:54:09Z",
+    "traceId": "youtube:cdNeg691X2E"
   },
   "releaseIndex": {
+    "ai band doing ai things": {
+      "id": "cdNeg691X2E",
+      "title": "AI band doing AI things 🎸",
+      "publishedAt": "2026-05-10T23:54:09Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=cdNeg691X2E",
+      "traceId": "youtube:cdNeg691X2E"
+    },
     "let my people go": {
       "id": "let-my-people-go",
       "title": "Let My People Go",
@@ -1895,6 +1902,25 @@
   "comingSoon": [],
   "released": [
     {
+      "songId": "cdNeg691X2E",
+      "videoId": "cdNeg691X2E",
+      "title": "AI band doing AI things 🎸",
+      "state": "released",
+      "traceId": "youtube:cdNeg691X2E",
+      "publishedAt": "2026-05-10T23:54:09Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=cdNeg691X2E",
+      "artwork": "",
+      "lyrics": "",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-05-15T10:00:29.573Z",
+      "contentHash": ""
+    },
+    {
       "songId": "let-my-people-go",
       "videoId": "0lUJcLKIt0o",
       "title": "Let My People Go",
@@ -1935,8 +1961,26 @@
   ],
   "signalCount": 97,
   "comingSoonCount": 0,
-  "releasedCount": 2,
+  "releasedCount": 3,
   "events": [
+    {
+      "id": "cdNeg691X2E",
+      "songId": "cdNeg691X2E",
+      "eventType": "new_content_detected",
+      "stateAfter": "released",
+      "timestamp": "2026-05-15T10:00:29.573Z",
+      "title": "AI band doing AI things 🎸",
+      "publishedAt": "2026-05-10T23:54:09Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=cdNeg691X2E",
+      "source": "youtube",
+      "albumId": "",
+      "albumTitle": "",
+      "albumUrl": "",
+      "videoType": "",
+      "isShort": false,
+      "contentFormat": "full",
+      "excludeFromTimeline": false
+    },
     {
       "id": "0lUJcLKIt0o",
       "songId": "0lUJcLKIt0o",
