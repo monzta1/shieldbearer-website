@@ -63,14 +63,14 @@
     {
       id: "m5", category: "Production", type: "yesno", yesScores: true,
       q: "Do you record to a click and quantize or edit the timing afterward?",
-      reveal: "Quantization detects where your note landed and moves it to where a grid says it belongs. The algorithm is playing the part with you.",
-      why: "Timing correction runs onset detection, then snaps each onset to a model of correct time. Onset detection is a classification problem solved with the same math as everything else on this list."
+      reveal: "Quantization is algorithmic decision making. It finds where your note landed and moves it to where a grid says it belongs. Modern transient detection on tools like Trigger 2 adds trained models on top. Either way the algorithm is playing the part with you.",
+      why: "Classic quantization in Pro Tools, Logic, and Cubase is signal processing. It finds onsets with peak and envelope analysis, then snaps them to a grid. The newest transient tools like Slate Trigger 2 layer trained models over that step. The machine is making the timing call for you in both cases."
     },
     {
       id: "m6", category: "Production", type: "yesno", yesScores: true,
       q: "Sample libraries. Kontakt, Omnisphere, or an orchestral suite on your last release?",
-      reveal: "Modern sample instruments use round robins, articulation logic, and probability engines so the part reads as human. You are conducting a statistical model of a player.",
-      why: "These instruments select samples and articulations from probability tables and human-behavior modeling. The realism is a trained approximation of how a real performer varies."
+      reveal: "Modern sample instruments use round robins, articulation logic, and behavior modeling so the part reads as human. You are conducting a programmed model of a player.",
+      why: "Libraries like Kontakt, Spitfire, and Orchestral Tools script their realism with round robins and articulation rules. It is a built model of how a player behaves, standing in for the player. The instrument is making the performance choices for you."
     },
     {
       id: "m7", category: "Guitar", type: "yesno", yesScores: true,
@@ -128,7 +128,7 @@
         { label: "Probably edited and tightened", ai: true },
         { label: "Never thought about it", ai: true }
       ],
-      reveal: "Those drums were triggered, sample reinforced, and quantized. Transient detection and sample triggering are machine learning. The pocket was assisted."
+      reveal: "Those drums were triggered, sample reinforced, and quantized. Modern drum replacement like Slate Trigger 2 uses trained models to do it. The pocket was assisted."
     },
     {
       id: "l5", category: "Mastering", type: "yesno", yesScores: true,
@@ -168,12 +168,12 @@
   var CATEGORIES = [
     { min: 0, max: 2, name: "The Purist (or recently arrived from 1962)",
       desc: "Either you track to tape in a cabin with no internet, or you have not looked closely at how a single record you love was made. Both are rare. One is honest." },
-    { min: 3, max: 5, name: "The Casual (you have been told the lies and believed them)",
+    { min: 3, max: 5, name: "The Casual (you have been told the story and believed it)",
       desc: "You took the purity story at face value. No shame in it. The people who sold it to you were using every tool on this list while they said it." },
-    { min: 6, max: 8, name: "The Suspect (you have used the tools and probably also yelled about them online)",
+    { min: 6, max: 8, name: "The Suspect (you have used the tools and probably argued about them online)",
       desc: "You know your way around a session. The math says you have leaned on machine learning more than once. The honest move is to own it and extend the same grace to everyone else." },
     { min: 9, max: 10, name: "Congratulations, you're an AI band",
-      desc: "By the gatekeepers' own standard, you are the thing they warn about. You always were. So was every record they praised. The standard was never the tools. It was whether you could see them." }
+      desc: "Welcome to the club. Most of your favorite records are already in it. By the gatekeepers' own standard, you are the thing they warn about. You always were. So was every record they praised. The standard was never the tools. It was whether you could see them." }
   ];
 
   function categoryFor(score) {
@@ -351,6 +351,8 @@
     html += '<div class="result-actions">';
     html += '<button class="btn btn--red" id="dlCard">Download your share card</button>';
     html += '<button class="btn btn--ghost" id="swapPath">Take the ' + other + ' quiz</button>';
+    html += '<a href="/manifesto" class="btn btn--ghost">Read the Manifesto</a>';
+    html += '<a href="https://open.spotify.com/artist/1qxEc4mWmJQY0YjP11L0fG" target="_blank" rel="noopener" class="btn btn--ghost">Listen on Spotify</a>';
     html += '</div>';
 
     html += '<div class="result-share">';
@@ -363,10 +365,7 @@
 
     html += '<div class="result-punch">';
     html += '<p>The line was never drawn at AI. It was drawn at AI you can see.</p>';
-    html += '<div class="result-punch__links">';
-    html += '<a href="/manifesto" class="btn btn--red">Read the Manifesto</a>';
-    html += '<a href="https://open.spotify.com/artist/1qxEc4mWmJQY0YjP11L0fG" target="_blank" rel="noopener" class="btn btn--ghost">Listen on Spotify</a>';
-    html += '</div></div>';
+    html += '</div>';
 
     el("resultCard").innerHTML = html;
 

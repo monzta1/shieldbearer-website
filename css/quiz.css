@@ -265,8 +265,7 @@
 }
 
 .result-actions,
-.result-share__btns,
-.result-punch__links {
+.result-share__btns {
   display: flex;
   flex-wrap: wrap;
   gap: .8rem;
