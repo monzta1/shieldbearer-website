@@ -32,6 +32,18 @@ window.SHIELDBEARER_CONFIG = {
     apiUrl: "https://g7a5tqlxaj.execute-api.us-east-1.amazonaws.com/sentinel"
   },
 
+  /* Are You An AI Band quiz .........................................
+     apiUrl : API Gateway endpoint for the quiz logging Lambda.
+              Leave "" until the logging Lambda is deployed. When
+              empty the quiz still runs end to end and the share
+              card still generates; only the anonymous submission
+              POST is skipped. Set this to the Invoke URL printed
+              by ai-band-quiz-logger/deploy.sh, then push.
+     ............................................................... */
+  quiz: {
+    apiUrl: ""
+  },
+
   /* Featured-merch rotator (homepage only) ..........................
      rotate   : true  = pick a random product from `source` on each
                         page load.

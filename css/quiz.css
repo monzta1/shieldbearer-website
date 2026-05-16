@@ -1,0 +1,313 @@
+/* =============================================================
+   ARE YOU AN AI BAND. Quiz styles.
+   Reuses the global tokens from style.css (--red, fonts, spacing).
+   Black with red accents, same heading families as the rest of
+   the site. Mobile first.
+   ============================================================= */
+
+.quiz-wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 var(--pad);
+}
+
+.quiz-card {
+  background: var(--dark);
+  border: 1px solid rgba(168, 162, 154, .08);
+  border-top: 2px solid var(--red);
+  padding: clamp(1.3rem, 3.4vw, 2.6rem);
+}
+
+/* ---- Landing ------------------------------------------------------- */
+.quiz-lede {
+  font-family: var(--font-body);
+  font-size: 1.02rem;
+  line-height: 1.85;
+  color: rgba(240, 235, 224, .78);
+  margin-bottom: 1.6rem;
+}
+
+.quiz-paths {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.8rem 0 1.4rem;
+}
+
+@media (max-width: 620px) {
+  .quiz-paths { grid-template-columns: 1fr; }
+}
+
+.quiz-path {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: var(--black);
+  border: 1px solid rgba(192, 57, 43, .35);
+  color: var(--white);
+  padding: 1.4rem 1.4rem 1.5rem;
+  transition: border-color .15s ease, transform .15s ease;
+}
+
+.quiz-path:hover {
+  border-color: var(--red-bright);
+  transform: translateY(-2px);
+}
+
+.quiz-path__k {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  letter-spacing: .04em;
+  color: var(--red-bright);
+  margin-bottom: .35rem;
+}
+
+.quiz-path__d {
+  font-family: var(--font-body);
+  font-size: .92rem;
+  line-height: 1.6;
+  color: rgba(240, 235, 224, .68);
+}
+
+.quiz-privacy {
+  font-family: var(--font-body);
+  font-size: .82rem;
+  line-height: 1.6;
+  color: var(--off-white);
+  border-left: 2px solid var(--red);
+  padding: .5rem 0 .5rem .9rem;
+  margin-top: 1.2rem;
+}
+
+/* ---- Progress ------------------------------------------------------ */
+.quiz-progress {
+  font-family: var(--font-head);
+  font-size: .76rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--off-white);
+  margin-bottom: .6rem;
+}
+
+.quiz-bar {
+  height: 4px;
+  background: rgba(168, 162, 154, .14);
+  margin-bottom: 1.6rem;
+}
+
+.quiz-bar span {
+  display: block;
+  height: 100%;
+  background: var(--red);
+  transition: width .3s ease;
+}
+
+/* ---- Question ------------------------------------------------------ */
+.quiz-q {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4.4vw, 2.3rem);
+  line-height: 1.2;
+  letter-spacing: .02em;
+  color: #fff;
+  margin-bottom: 1.4rem;
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+}
+
+.quiz-opt {
+  width: 100%;
+  text-align: left;
+  background: var(--black);
+  border: 1px solid rgba(168, 162, 154, .16);
+  color: var(--white);
+  font-family: var(--font-head);
+  font-size: 1rem;
+  letter-spacing: .02em;
+  padding: 1rem 1.1rem;
+  transition: border-color .12s ease, background .12s ease;
+}
+
+.quiz-opt:hover:not(:disabled) {
+  border-color: var(--red-bright);
+}
+
+.quiz-opt:disabled { opacity: .5; cursor: default; }
+
+.quiz-opt.is-picked {
+  border-color: var(--red-bright);
+  background: rgba(192, 57, 43, .16);
+  opacity: 1;
+}
+
+/* ---- Why is this AI expander --------------------------------------- */
+.quiz-why {
+  margin-top: 1rem;
+  border: 1px solid rgba(168, 162, 154, .14);
+  background: var(--black);
+}
+
+.quiz-why summary {
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-head);
+  font-size: .82rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--red-bright);
+  padding: .8rem 1rem;
+}
+
+.quiz-why summary::-webkit-details-marker { display: none; }
+.quiz-why[open] summary { border-bottom: 1px solid rgba(168, 162, 154, .14); }
+
+.quiz-why p {
+  font-family: var(--font-body);
+  font-size: .92rem;
+  line-height: 1.8;
+  color: rgba(240, 235, 224, .74);
+  padding: .9rem 1rem 1rem;
+  margin: 0;
+}
+
+/* ---- Reveal -------------------------------------------------------- */
+.quiz-reveal {
+  margin-top: 1.4rem;
+  border-left: 3px solid var(--red);
+  background: rgba(192, 57, 43, .07);
+  padding: 1.1rem 1.2rem 1.3rem;
+}
+
+.quiz-reveal p {
+  font-family: var(--font-body);
+  font-size: .98rem;
+  line-height: 1.8;
+  color: rgba(240, 235, 224, .86);
+  margin: 0 0 1.1rem;
+}
+
+/* ---- Result -------------------------------------------------------- */
+.result-score {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 14vw, 7rem);
+  line-height: 1;
+  color: var(--red-bright);
+  text-align: center;
+  margin-bottom: .4rem;
+}
+
+.result-score span {
+  font-size: .3em;
+  color: var(--off-white);
+  letter-spacing: .1em;
+  margin-left: .4rem;
+}
+
+.result-cat {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 5vw, 2.6rem);
+  line-height: 1.15;
+  color: #fff;
+  text-align: center;
+  margin-bottom: .9rem;
+}
+
+.result-desc {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.85;
+  color: rgba(240, 235, 224, .8);
+  text-align: center;
+  max-width: 60ch;
+  margin: 0 auto 2rem;
+}
+
+.result-sub {
+  font-family: var(--font-head);
+  font-size: .82rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--off-white);
+  border-bottom: 1px solid rgba(168, 162, 154, .14);
+  padding-bottom: .5rem;
+  margin-bottom: .6rem;
+}
+
+.result-breakdown {
+  list-style: none;
+  margin: 0 0 2rem;
+  padding: 0;
+}
+
+.result-breakdown li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .6rem 0;
+  border-bottom: 1px solid rgba(168, 162, 154, .08);
+}
+
+.bd-cat {
+  font-family: var(--font-head);
+  font-size: .95rem;
+  letter-spacing: .04em;
+  color: var(--white);
+}
+
+.bd-val {
+  font-family: var(--font-head);
+  font-size: .9rem;
+  color: var(--red-bright);
+}
+
+.result-actions,
+.result-share__btns,
+.result-punch__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .8rem;
+  justify-content: center;
+}
+
+.result-actions { margin-bottom: 2rem; }
+
+.result-share {
+  border: 1px solid rgba(168, 162, 154, .12);
+  background: var(--black);
+  padding: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.result-share__copy {
+  font-family: var(--font-body);
+  font-size: .92rem;
+  line-height: 1.7;
+  color: rgba(240, 235, 224, .76);
+  text-align: center;
+  margin: 0 0 1rem;
+}
+
+.result-punch {
+  text-align: center;
+  border-top: 2px solid var(--red);
+  padding-top: 1.8rem;
+}
+
+.result-punch p {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 4vw, 2rem);
+  line-height: 1.25;
+  letter-spacing: .02em;
+  color: #fff;
+  margin: 0 0 1.4rem;
+}
+
+/* ---- Shared button sizing in this feature -------------------------- */
+.quiz-card .btn,
+.result-card .btn {
+  font-size: .85rem;
+}

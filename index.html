@@ -532,6 +532,46 @@
       color: rgba(240,235,224,.8);
     }
 
+    /* Are You An AI Band callout */
+    .quiz-callout {
+      background:
+        radial-gradient(circle at 88% 12%, rgba(192,57,43,.12), transparent 45%),
+        var(--black);
+      border-top: 2px solid var(--red);
+      border-bottom: 1px solid rgba(168,162,154,.08);
+      padding: clamp(3.4rem, 6vw, 4.8rem) 0;
+    }
+    .quiz-callout__inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 var(--pad);
+      text-align: center;
+    }
+    .quiz-callout__eyebrow {
+      font-family: var(--font-head);
+      font-size: .68rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--red-bright);
+      display: block;
+      margin-bottom: .7rem;
+    }
+    .quiz-callout__title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5.4vw, 3.4rem);
+      letter-spacing: .05em;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: .9rem;
+    }
+    .quiz-callout__copy {
+      max-width: 680px;
+      margin: 0 auto 1.6rem;
+      font-size: 1rem;
+      line-height: 1.85;
+      color: rgba(240,235,224,.8);
+    }
+
     /* Watch Posts (live appearances) */
     .watch-posts {
       padding: clamp(3rem, 6vw, 4.5rem) 0;
@@ -734,6 +774,7 @@
     <a href="/god-uses-tools">God Uses Tools</a>
     <a href="/artist-freedom">Artist Freedom</a>
     <a href="/sentinelbot">SentinelBot</a>
+    <a href="/are-you-an-ai-band">Are You An AI Band?</a>
     <a href="/contact">Contact</a>
     <a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener" style="color:var(--red-bright)">Merch</a>
   </div>
@@ -788,6 +829,7 @@
           <a href="/god-uses-tools">God Uses Tools</a>
           <a href="/artist-freedom">Artist Freedom</a>
           <a href="/sentinelbot">SentinelBot</a>
+          <a href="/are-you-an-ai-band">Are You An AI Band?</a>
         </div>
       </li>
       <li><a href="/contact">Contact</a></li>
@@ -1042,6 +1084,19 @@ The Galilean</p>
         </p>
         <a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener" class="btn btn--red">Wear the Banner</a>
       </div>
+    </div>
+  </section>
+
+  <section class="quiz-callout" aria-labelledby="quiz-callout-heading">
+    <div class="quiz-callout__inner">
+      <span class="quiz-callout__eyebrow">The Dare</span>
+      <h2 class="quiz-callout__title" id="quiz-callout-heading">Are You An AI Band?</h2>
+      <p class="quiz-callout__copy">
+        Ten honest questions about how you make music or how you listen to it.
+        The gatekeepers drew a line. This quiz shows you which side of it you
+        were already standing on. Take the musician path or the listener path.
+      </p>
+      <a href="/are-you-an-ai-band" class="btn btn--red">Take the Quiz</a>
     </div>
   </section>
 

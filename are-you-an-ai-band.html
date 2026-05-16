@@ -12,19 +12,19 @@
   <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Gospel Does Not Need Permission | Shieldbearer</title>
-  <meta name="description" content="The Gospel Does Not Need Permission: Shieldbearer's case against gatekeeping, centered on Christ, Bonhoeffer, and Acts 5:39.">
-  <meta property="og:title" content="The Gospel Does Not Need Permission | Shieldbearer" />
-  <meta property="og:description" content="A theological case against gatekeeping. Christ is proclaimed, and the gospel needs no permission." />
+  <title>Are You An AI Band? | Shieldbearer</title>
+  <meta name="description" content="A 10-question quiz that proves AI has been in modern music for decades. Take the musician path or the listener path and find out where you actually stand.">
+  <meta property="og:title" content="Are You An AI Band? | Shieldbearer" />
+  <meta property="og:description" content="A 10-question quiz that proves AI has been in modern music for decades. Find out where you actually stand." />
   <meta property="og:image" content="https://shieldbearerusa.com/images/galilean-art.png" />
-  <meta property="og:url" content="https://shieldbearerusa.com/gospel" />
+  <meta property="og:url" content="https://shieldbearerusa.com/are-you-an-ai-band" />
   <meta property="og:type" content="website" />
-  <link rel="canonical" href="https://shieldbearerusa.com/gospel" />
-
+  <link rel="canonical" href="https://shieldbearerusa.com/are-you-an-ai-band" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="The Gospel Does Not Need Permission | Shieldbearer" />
-  <meta name="twitter:description" content="A theological case against gatekeeping. Christ is proclaimed, and the gospel needs no permission." />
+  <meta name="twitter:title" content="Are You An AI Band? | Shieldbearer" />
+  <meta name="twitter:description" content="A 10-question quiz that proves AI has been in modern music for decades. Find out where you actually stand." />
   <meta name="twitter:image" content="https://shieldbearerusa.com/images/galilean-art.png" />
+  <!-- Security meta tags -->
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
   <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -35,12 +35,13 @@
     font-src 'self' https://fonts.gstatic.com;
     frame-src https://open.spotify.com https://www.youtube.com https://www.googletagmanager.com;
     img-src 'self' data: https://img.youtube.com https://shieldbearerusa.com https://www.google-analytics.com https://www.googletagmanager.com https://www.clarity.ms https://c.clarity.ms;
-    connect-src 'self' https://app.convertkit.com https://www.google-analytics.com https://region1.google-analytics.com https://stats.g.doubleclick.net https://www.googletagmanager.com https://www.clarity.ms https://c.clarity.ms https://j.clarity.ms https://tagassistant.google.com https://g7a5tqlxaj.execute-api.us-east-1.amazonaws.com;
+    connect-src 'self' https://app.convertkit.com https://www.google-analytics.com https://region1.google-analytics.com https://stats.g.doubleclick.net https://www.googletagmanager.com https://www.clarity.ms https://c.clarity.ms https://j.clarity.ms https://tagassistant.google.com https://g7a5tqlxaj.execute-api.us-east-1.amazonaws.com https://*.execute-api.us-east-1.amazonaws.com https://*.lambda-url.us-east-1.on.aws;
   ">
   <link rel="icon" href="/images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200;300;400;500;600&family=Roboto+Condensed:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/quiz.css">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -79,9 +80,9 @@
     <a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener" style="color:var(--red-bright)">Merch</a>
   </div>
 
-  <nav class="site-nav" id="mainNav" aria-label="Main navigation">
-    <a href="/" class="nav-logo" aria-label="Shieldbearer home"><img src="/images/logo.png" alt="Shieldbearer"></a>
-    <ul class="nav-links" role="list">
+  <nav class="site-nav" id="mainNav">
+    <a href="/" class="nav-logo"><img src="/images/logo.png" alt="Shieldbearer"></a>
+    <ul class="nav-links">
       <li><a href="/">Home</a></li>
       <li class="nav-dropdown">
         <a href="/music">Music</a>
@@ -126,65 +127,70 @@
           <a href="/god-uses-tools">God Uses Tools</a>
           <a href="/artist-freedom">Artist Freedom</a>
           <a href="/sentinelbot">SentinelBot</a>
-          <a href="/are-you-an-ai-band">Are You An AI Band?</a>
+          <a href="/are-you-an-ai-band" class="active">Are You An AI Band?</a>
         </div>
       </li>
       <li><a href="/contact">Contact</a></li>
       <li class="nav-merch"><a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener">Merch</a></li>
     </ul>
-    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </nav>
 
   <div class="page-hero section--dark">
     <div class="container page-hero-inner">
-      <span class="eyebrow">Theological Case</span>
-      <h1 class="display-title">The Gospel Does Not Need Permission</h1>
+      <span class="eyebrow">From Shieldbearer</span>
+      <h1 class="display-title">Are You An AI Band?</h1>
       <div class="bar"></div>
-      <p>Is Christ being proclaimed? Everything else is secondary.</p>
+      <p>The title is a dare. Answer honestly about how you make music or how you listen to it, and find out where you land by the same standard the gatekeepers use.</p>
     </div>
   </div>
 
-  <section class="section--darker">
-    <div class="gospel-wrap">
-      <article class="gospel-article">
-        <div class="gospel-anchor">
-          <p>There is one question that matters above every other question in this debate.</p>
-          <p>Is Christ being proclaimed?</p>
-          <p>Everything else is secondary.</p>
-        </div>
+  <main class="section--dark" style="padding-bottom: var(--sp-section);">
+    <div class="quiz-wrap">
 
-        <div class="gospel-story">
-          <p>Let it flood.</p>
-          <p>If AI music glorifies Christ and proclaims the gospel, let it flood every platform, every algorithm, every corner of the internet.</p>
-          <p>We had a song banned from a Christian metal group last year.</p>
-          <p>The song honors Dietrich Bonhoeffer. One of the greatest Christian martyrs of the 20th century. A man executed by the Nazis for his faith. The song is Scripture-centered. Christ is named plainly.</p>
-          <p>Banned. Because of how it was made.</p>
-          <p>The same week the admin shared a Cyndi Lauper cover.</p>
-          <p>We asked what was Christian about Time After Time.</p>
-          <p>The answer was the band is Christian.</p>
-          <p>We became the AI guys defending AI.</p>
-          <p>But that was never what we were doing.</p>
-          <p>There is only one question that matters.</p>
-          <p>Is Christ being proclaimed?</p>
-          <p>If the answer is yes, you are not protecting music by stopping it.</p>
-          <p>You are stopping the gospel from reaching people it was meant to reach.</p>
+      <!-- LANDING -->
+      <section id="screen-landing" class="quiz-card" aria-label="Choose your path">
+        <p class="quiz-lede">
+          Ten questions. Scored zero to ten. There are two paths because the
+          tools reach you whether you build the music or only love it. Pick the
+          one that fits, then be honest. Honesty is the entire mechanic here.
+        </p>
+        <h2 class="quiz-q">Do you make music, or do you listen?</h2>
+        <div class="quiz-paths">
+          <button class="quiz-path" id="pathMusician">
+            <span class="quiz-path__k">I make music</span>
+            <span class="quiz-path__d">Production questions. Trigger, Melodyne, captures, Ozone, quantization. Insider talk, with a couple of deep cuts for the engineers.</span>
+          </button>
+          <button class="quiz-path" id="pathListener">
+            <span class="quiz-path__d">No gear required. Questions about what you have heard, sung, and felt, and what was quietly running underneath it.</span>
+            <span class="quiz-path__k">I listen</span>
+          </button>
         </div>
+        <p class="quiz-privacy">
+          Results are saved anonymously so we can publish aggregate findings.
+          No personal info collected unless you choose to share it. You can
+          add an email below only if you want to hear when the findings post.
+        </p>
+        <p class="quiz-privacy" style="border:none;padding-left:0;">
+          <label for="quizEmail" style="display:block;margin-bottom:.4rem;">Email (optional)</label>
+          <input id="quizEmail" type="email" autocomplete="email"
+                 placeholder="you@example.com"
+                 style="width:100%;max-width:340px;background:var(--black);border:1px solid rgba(168,162,154,.2);color:var(--white);font-family:var(--font-body);padding:.7rem .8rem;">
+        </p>
+      </section>
 
-        <blockquote class="gospel-verse">
-          <p>If it is of God you will not be able to overthrow them. You might even be found opposing God.</p>
-          <cite>Acts 5:39</cite>
-        </blockquote>
+      <!-- QUIZ -->
+      <section id="screen-quiz" class="quiz-card" aria-label="Quiz" hidden>
+        <div id="quizCard"></div>
+      </section>
 
-        <div class="gospel-close">
-          <p>The method is not the gospel.</p>
-          <p>The tradition is not the gospel.</p>
-          <p>The instrument is not the gospel.</p>
-          <p class="gospel-close__emphasis">Jesus is.</p>
-          <p>And the gospel does not need permission to reach the people it was meant to reach.</p>
-        </div>
-      </article>
+      <!-- RESULT -->
+      <section id="screen-result" class="quiz-card result-card" aria-label="Your result" hidden>
+        <div id="resultCard"></div>
+      </section>
+
     </div>
-  </section>
+  </main>
 
   <footer class="site-footer">
     <div class="footer-main">
@@ -206,52 +212,44 @@
           <li><a href="/creed">The Creed</a></li>
           <li><a href="/manifesto">Manifesto</a></li>
           <li><a href="/open-letter">Open Letter</a></li>
-          <li><a href="/gospel">The Gospel</a></li>
           <li><a href="/for-ai-artists">For AI Artists</a></li>
           <li><a href="/gatekeeping">On Gatekeeping</a></li>
           <li><a href="/no-rulebook">No Rulebook</a></li>
           <li><a href="/ai-and-creativity">AI and Creativity</a></li>
           <li><a href="/god-uses-tools">God Uses Tools</a></li>
           <li><a href="/artist-freedom">Artist Freedom</a></li>
+          <li><a href="/are-you-an-ai-band">Are You An AI Band?</a></li>
           <li><a href="/faq">FAQ</a></li>
           <li><a href="/contact">Contact</a></li>
           <li><a href="/epk">Press Kit</a></li>
-          <li><a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener">Merch</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Follow</h4>
-        <ul>
-          <li><a href="https://www.instagram.com/shieldbearerusa/" target="_blank" rel="noopener">Instagram</a></li>
-          <li><a href="https://www.facebook.com/shieldbearerusa" target="_blank" rel="noopener">Facebook</a></li>
-          <li><a href="https://www.youtube.com/@ShieldbearerUSA" target="_blank" rel="noopener">YouTube</a></li>
-          <li><a href="https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz" target="_blank" rel="noopener">Spotify</a></li>
-          <li><a href="https://linktr.ee/shieldbearerusa" target="_blank" rel="noopener">Linktree</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Take Action</h4>
         <ul>
-          <li><a href="/music#armory">Enter the Armory</a></li>
-          <li><a href="/videos">Watch the Videos</a></li>
-          <li><a href="/song-meanings">Read the Scrolls</a></li>
-          <li><a href="/interviews">Catch the Signal</a></li>
           <li><a href="/manifesto">Read the Manifesto</a></li>
-          <li><a href="/epk">Download Press Kit</a></li>
-          <li><a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener">Raise the Banner</a></li>
+          <li><a href="/contact">Join the Mission</a></li>
           <li><a href="https://buymeacoffee.com/shieldbearer" target="_blank" rel="noopener">Support the Mission</a></li>
+          <li><a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener">Raise the Banner</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Listen</h4>
+        <ul>
+          <li><a href="https://open.spotify.com/artist/1qxEc4mWmJQY0YjP11L0fG" target="_blank" rel="noopener">Spotify</a></li>
+          <li><a href="https://music.apple.com/us/artist/shieldbearer/1813082782" target="_blank" rel="noopener">Apple Music</a></li>
+          <li><a href="https://www.youtube.com/@ShieldbearerOfficial" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="https://music.amazon.com/artists/B0F4ZHPGTR/shieldbearer" target="_blank" rel="noopener">Amazon Music</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 Shieldbearer. All rights reserved.</p>
-      <a href="mailto:shieldbearerusa@gmail.com">shieldbearerusa@gmail.com</a>
-    </div>
+    <div class="footer-bottom">© <span id="year"></span> Shieldbearer. Christ named plainly. Scripture quoted directly.</div>
   </footer>
-
+  <script src="/js/site-config.js"></script>
   <script src="/js/config.js"></script>
   <script src="/js/analytics.js"></script>
   <script src="/js/main.js"></script>
   <script src="/js/sentinelbot.js"></script>
+  <script src="/js/quiz.js"></script>
 </body>
 </html>
