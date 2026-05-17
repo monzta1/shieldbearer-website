@@ -66,16 +66,19 @@
       options: [
         { label: "Logic Pro 11, Pro Tools 2024+, Cubase 13+, Ableton 12, or FL Studio 21 (current versions)", ai: true },
         { label: "Reaper, or an older version of any of the above", ai: false },
-        { label: "Fully analog. Tape, hardware mixer, no DAW at any stage.", ai: false }
+        { label: "Fully analog. Tape, hardware mixer, no DAW at any stage.", ai: false },
+        { label: "Suno, Udio, or another generative AI platform.", ai: true }
       ],
       reveal: "Modern DAW versions ship with ML features running by default.",
       optionReveals: [
         "Modern DAW versions ship with ML features running by default. Logic 11's Drummer is ML. Pro Tools 2024 has ML stem separation. Ableton 12's drum sampler uses ML. FL Studio's mastering uses ML. If you updated your DAW in the last two years, AI is running whether you opted in or not. The developer opted you in before you installed it.",
         "Respect. Older DAWs and minimalist tools like Reaper genuinely do not ship with ML by default. You are in a smaller club than you think.",
-        "A genuine analog purist exists in 2026 and we salute you. You are not the audience this quiz was built for. You are welcome here anyway."
+        "A genuine analog purist exists in 2026 and we salute you. You are not the audience this quiz was built for. You are welcome here anyway.",
+        "Honest answer. Generative AI tools build the performance from a prompt instead of capturing one you played. That is a different relationship with the tools than a producer running Kemper or Melodyne. The conversation is the same. The scene argues about both. You are in it."
       ],
       optionWhy: [
         "Logic Pro 11's Drummer feature uses a machine learning model trained on real drummers to generate fills and variations. Pro Tools 2024+ ships with ML stem separation that uses trained neural networks to isolate vocals, drums, and bass from a mix. Ableton 12's Drum Sampler uses ML to assign samples to drum pads based on transient classification. FL Studio's mastering plugin uses ML for spectral analysis and dynamic balancing. Cubase 13's vocal alignment uses trained models for timing correction. None of these require the user to enable AI features. They ship enabled by default.",
+        null,
         null,
         null
       ]
