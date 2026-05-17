@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ARE YOU AN AI BAND // SUBMISSIONS</title>
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 'unsafe-inline';
+    style-src 'self' 'unsafe-inline';
+    connect-src 'self' https://g7a5tqlxaj.execute-api.us-east-1.amazonaws.com https://*.execute-api.us-east-1.amazonaws.com https://*.lambda-url.us-east-1.on.aws;
+    img-src 'self' data:;
+    font-src 'self';
+  " />
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #000000;
+      --panel: #0a0606;
+      --panel-2: #160a0a;
+      --line: #e74c3c;
+      --line-soft: rgba(231, 76, 60, 0.22);
+      --text: #f0c9c4;
+      --text-strong: #ffe9e5;
+      --muted: #c98a82;
+      --ok: #1cff57;
+      --font: "Courier New", Courier, monospace;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top, rgba(231, 76, 60, 0.10), transparent 38%),
+        linear-gradient(180deg, #000 0%, #050202 100%);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 14px;
+    }
+    h1, h2 { color: var(--text-strong); letter-spacing: .14em; font-weight: 700; }
+    a { color: var(--line); }
+
+    /* Passphrase gate */
+    #passGate {
+      position: fixed; inset: 0; z-index: 50;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      background: #000; text-align: center; padding: 24px;
+    }
+    #passGate h1 { font-size: 16px; margin-bottom: 18px; }
+    #passGate input {
+      background: #0a0606; border: 1px solid var(--line-soft); color: var(--text);
+      font: inherit; padding: 10px 14px; min-width: 260px; outline: none;
+    }
+    #passGate input:focus { border-color: var(--line); }
+    #passGate button {
+      margin-top: 12px; background: var(--line); border: 0; color: #000;
+      padding: 10px 22px; cursor: pointer; font: inherit; letter-spacing: .12em;
+    }
+    #passGate .err { color: var(--line); margin-top: 12px; font-size: 13px; min-height: 1em; }
+    .pass-locked > .wrap { display: none; }
+
+    .wrap { max-width: 1280px; margin: 0 auto; padding: 28px 20px 60px; }
+    .header { border-bottom: 1px solid var(--line-soft); padding-bottom: 14px; margin-bottom: 20px; }
+    .header h1 { font-size: 20px; margin: 0; }
+    .header p { color: var(--muted); margin: 8px 0 0; font-size: 12px; letter-spacing: .08em; }
+
+    .toolbar {
+      display: flex; gap: 12px; flex-wrap: wrap; align-items: center;
+      margin-bottom: 20px;
+    }
+    .toolbar input {
+      flex: 1; min-width: 220px; background: var(--panel); border: 1px solid var(--line-soft);
+      color: var(--text); font: inherit; padding: 9px 12px; outline: none;
+    }
+    .toolbar input:focus { border-color: var(--line); }
+    .toolbar button {
+      background: transparent; border: 1px solid var(--line); color: var(--line);
+      font: inherit; padding: 9px 18px; cursor: pointer; letter-spacing: .1em;
+    }
+    .toolbar button:hover { background: var(--line); color: #000; }
+
+    .summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 22px; }
+    .card {
+      background: var(--panel); border: 1px solid var(--line-soft); padding: 14px 16px;
+    }
+    .card .label { color: var(--muted); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
+    .card .value { color: var(--text-strong); font-size: 26px; margin-top: 6px; }
+    .card .sub { color: var(--muted); font-size: 11px; margin-top: 4px; }
+
+    .breakdown { margin-bottom: 22px; }
+    .breakdown h2 { font-size: 13px; letter-spacing: .16em; margin: 0 0 10px; }
+    .bars { display: grid; gap: 6px; }
+    .bar-row { display: grid; grid-template-columns: 220px 1fr 56px; gap: 10px; align-items: center; font-size: 12px; }
+    .bar-track { background: var(--panel-2); height: 14px; position: relative; }
+    .bar-fill { background: var(--line); height: 100%; }
+    .bar-row .n { text-align: right; color: var(--muted); }
+
+    table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    th, td {
+      text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line-soft);
+      vertical-align: top; word-break: break-word;
+    }
+    th { color: var(--muted); text-transform: uppercase; letter-spacing: .1em; font-size: 11px; position: sticky; top: 0; background: #0a0606; }
+    tr:hover td { background: rgba(231, 76, 60, 0.05); }
+    .nowrap { white-space: nowrap; }
+    .score { color: var(--text-strong); font-size: 14px; }
+    .yes { color: var(--ok); }
+    .no { color: var(--muted); }
+    .state-msg { padding: 30px 0; color: var(--muted); }
+    .notice {
+      border: 1px solid var(--line-soft); background: var(--panel); padding: 16px;
+      margin-bottom: 22px; color: var(--muted); font-size: 12px; line-height: 1.7;
+    }
+    .notice b { color: var(--text-strong); }
+  </style>
+</head>
+<body class="pass-locked">
+  <div id="passGate">
+    <h1>RESTRICTED // ARE YOU AN AI BAND SUBMISSIONS</h1>
+    <input id="passInput" type="password" autocomplete="off" placeholder="Passphrase" autofocus />
+    <button id="passSubmit" type="button">Enter</button>
+    <div id="passErr" class="err"></div>
+  </div>
+  <script>
+    (function () {
+      // Same passphrase hash as the SentinelBot logs admin, so one
+      // passphrase unlocks both internal tools.
+      var EXPECTED_HASH = "64354c5c7192a65cc78df77adbf77b4df37d6c60868cc83085f48f4f97e5848f";
+      var SESSION_KEY = "sb-quiz-admin-unlocked";
+
+      async function sha256Hex(str) {
+        var enc = new TextEncoder().encode(str);
+        var buf = await crypto.subtle.digest("SHA-256", enc);
+        return Array.from(new Uint8Array(buf))
+          .map(function (b) { return b.toString(16).padStart(2, "0"); }).join("");
+      }
+      function unlock() {
+        document.body.classList.remove("pass-locked");
+        var g = document.getElementById("passGate");
+        if (g) g.remove();
+        if (window.__quizBoot) window.__quizBoot();
+      }
+      try {
+        if (sessionStorage.getItem(SESSION_KEY) === "1") { unlock(); return; }
+      } catch (e) {}
+      var input = document.getElementById("passInput");
+      var btn = document.getElementById("passSubmit");
+      var err = document.getElementById("passErr");
+      async function check() {
+        err.textContent = "";
+        var typed = input.value;
+        if (!typed) { err.textContent = "Empty."; return; }
+        var hash = await sha256Hex(typed);
+        if (hash === EXPECTED_HASH) {
+          try { sessionStorage.setItem(SESSION_KEY, "1"); } catch (e) {}
+          unlock();
+        } else {
+          err.textContent = "Wrong passphrase.";
+          input.value = ""; input.focus();
+        }
+      }
+      btn.addEventListener("click", check);
+      input.addEventListener("keydown", function (e) { if (e.key === "Enter") check(); });
+    })();
+  </script>
+
+  <div class="wrap">
+    <div class="header">
+      <h1>ARE YOU AN AI BAND // SUBMISSIONS</h1>
+      <p>Source IP, resolved location, and score per submission. Internal tool. Unlinked.</p>
+    </div>
+
+    <div id="notConfigured" class="notice" hidden>
+      <b>Endpoint not set.</b> The quiz logger is not wired up yet.
+      Deploy it with <b>ai-band-quiz-logger/deploy.sh</b>, then set the
+      <b>QUIZ_API</b> constant near the top of this file to the printed
+      Invoke URL and push. Until then there is nothing to read because
+      nothing is being recorded.
+    </div>
+
+    <div class="toolbar">
+      <input id="filter" type="text" placeholder="Filter by IP, location, category, path..." />
+      <button id="refreshBtn" type="button">Refresh</button>
+    </div>
+
+    <div class="summary" aria-live="polite">
+      <div class="card"><span class="label">Total</span><div id="cTotal" class="value">0</div></div>
+      <div class="card"><span class="label">Musician</span><div id="cMus" class="value">0</div></div>
+      <div class="card"><span class="label">Listener</span><div id="cLis" class="value">0</div></div>
+      <div class="card"><span class="label">Avg score</span><div id="cAvg" class="value">0</div></div>
+      <div class="card"><span class="label">Shared</span><div id="cShare" class="value">0</div><div id="cShareR" class="sub">0%</div></div>
+    </div>
+
+    <div class="breakdown">
+      <h2>BY CATEGORY</h2>
+      <div id="catBars" class="bars"></div>
+    </div>
+
+    <div class="breakdown">
+      <h2>TOP LOCATIONS</h2>
+      <div id="locBars" class="bars"></div>
+    </div>
+
+    <div id="tableState" class="state-msg">Locked.</div>
+    <table id="subTable" hidden>
+      <thead>
+        <tr>
+          <th class="nowrap">Timestamp (UTC)</th>
+          <th class="nowrap">IP</th>
+          <th>Location</th>
+          <th>Score</th>
+          <th>Path</th>
+          <th>Category</th>
+          <th>Shared</th>
+          <th>Browser</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody id="subBody"></tbody>
+    </table>
+  </div>
+
+  <script>
+    (function () {
+      // Set this to the Invoke URL printed by ai-band-quiz-logger/deploy.sh.
+      // Leave empty until the logger is deployed.
+      var QUIZ_API = "";
+      var ADMIN_KEY = "shieldbearer-admin-2026";
+
+      var raw = [];
+
+      function esc(s) {
+        return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+          return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+        });
+      }
+      function shortUA(ua) {
+        ua = String(ua || "");
+        var m = ua.match(/(Firefox|Edg|OPR|Chrome|Safari)\/[\d.]+/);
+        var os = ua.match(/\(([^)]+)\)/);
+        var b = m ? m[0].replace("Edg", "Edge").replace("OPR", "Opera") : "unknown";
+        return b + (os ? " // " + os[1].split(";")[0] : "");
+      }
+      function setText(id, v) { var n = document.getElementById(id); if (n) n.textContent = v; }
+
+      function renderBars(containerId, pairs, total) {
+        var box = document.getElementById(containerId);
+        if (!box) return;
+        box.innerHTML = "";
+        pairs.forEach(function (p) {
+          var pct = total ? Math.round((p[1] / total) * 100) : 0;
+          var row = document.createElement("div");
+          row.className = "bar-row";
+          row.innerHTML =
+            '<span>' + esc(p[0]) + '</span>' +
+            '<span class="bar-track"><span class="bar-fill" style="width:' + pct + '%"></span></span>' +
+            '<span class="n">' + p[1] + '</span>';
+          box.appendChild(row);
+        });
+        if (!pairs.length) box.innerHTML = '<div class="state-msg">None yet.</div>';
+      }
+
+      function aggregate(items) {
+        var mus = 0, lis = 0, shared = 0, scoreSum = 0;
+        var cats = {}, locs = {};
+        items.forEach(function (it) {
+          if (it.path === "musician") mus++;
+          if (it.path === "listener") lis++;
+          if (it.shared === true) shared++;
+          scoreSum += Number(it.score) || 0;
+          var c = it.category || "unknown";
+          cats[c] = (cats[c] || 0) + 1;
+          var l = it.location || "unknown";
+          locs[l] = (locs[l] || 0) + 1;
+        });
+        setText("cTotal", items.length);
+        setText("cMus", mus);
+        setText("cLis", lis);
+        setText("cAvg", items.length ? (scoreSum / items.length).toFixed(1) : "0");
+        setText("cShare", shared);
+        setText("cShareR", items.length ? Math.round((shared / items.length) * 100) + "%" : "0%");
+        var catPairs = Object.keys(cats).map(function (k) { return [k, cats[k]]; })
+          .sort(function (a, b) { return b[1] - a[1]; });
+        renderBars("catBars", catPairs, items.length);
+        var locPairs = Object.keys(locs).map(function (k) { return [k, locs[k]]; })
+          .sort(function (a, b) { return b[1] - a[1]; }).slice(0, 12);
+        renderBars("locBars", locPairs, items.length);
+      }
+
+      function renderTable(items) {
+        var body = document.getElementById("subBody");
+        body.innerHTML = "";
+        items.forEach(function (it) {
+          var tr = document.createElement("tr");
+          tr.innerHTML =
+            '<td class="nowrap">' + esc((it.timestamp || "").replace("T", " ").replace(/\.\d+Z$/, "Z")) + '</td>' +
+            '<td class="nowrap">' + esc(it.ip || "-") + '</td>' +
+            '<td>' + esc(it.location || "-") + '</td>' +
+            '<td class="score">' + esc(it.score) + ' / 10</td>' +
+            '<td>' + esc(it.path || "-") + '</td>' +
+            '<td>' + esc(it.category || "-") + '</td>' +
+            '<td class="' + (it.shared ? "yes" : "no") + '">' + (it.shared ? "yes" : "no") + '</td>' +
+            '<td>' + esc(shortUA(it.user_agent)) + '</td>' +
+            '<td>' + esc(it.email || "-") + '</td>';
+          body.appendChild(tr);
+        });
+        document.getElementById("subTable").hidden = items.length === 0;
+        document.getElementById("tableState").textContent =
+          items.length ? "" : "No submissions match.";
+        document.getElementById("tableState").hidden = items.length > 0;
+      }
+
+      function applyFilter() {
+        var q = (document.getElementById("filter").value || "").toLowerCase().trim();
+        if (!q) { renderTable(raw); return; }
+        renderTable(raw.filter(function (it) {
+          return [it.ip, it.location, it.category, it.path, it.email]
+            .map(function (x) { return String(x || "").toLowerCase(); })
+            .join(" ").indexOf(q) !== -1;
+        }));
+      }
+
+      async function load() {
+        var state = document.getElementById("tableState");
+        if (!QUIZ_API) {
+          document.getElementById("notConfigured").hidden = false;
+          state.textContent = "Endpoint not set.";
+          return;
+        }
+        state.textContent = "Loading...";
+        document.getElementById("subTable").hidden = true;
+        try {
+          var res = await fetch(QUIZ_API, {
+            method: "GET",
+            headers: { "x-admin-key": ADMIN_KEY }
+          });
+          if (res.status === 401) { state.textContent = "Unauthorized. Check ADMIN_KEY."; return; }
+          if (!res.ok) { state.textContent = "Error " + res.status + "."; return; }
+          var data = await res.json();
+          raw = Array.isArray(data.items) ? data.items : [];
+          aggregate(raw);
+          applyFilter();
+        } catch (e) {
+          state.textContent = "Network error. " + (e && e.message ? e.message : "");
+        }
+      }
+
+      window.__quizBoot = function () {
+        document.getElementById("refreshBtn").addEventListener("click", load);
+        document.getElementById("filter").addEventListener("input", applyFilter);
+        load();
+      };
+      // If the gate was already satisfied this tab, boot now.
+      if (!document.body.classList.contains("pass-locked")) window.__quizBoot();
+    })();
+  </script>
+</body>
+</html>
