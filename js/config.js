@@ -41,7 +41,7 @@ window.SHIELDBEARER_CONFIG = {
               by ai-band-quiz-logger/deploy.sh, then push.
      ............................................................... */
   quiz: {
-    apiUrl: ""
+    apiUrl: "https://g7a5tqlxaj.execute-api.us-east-1.amazonaws.com/quiz"
   },
 
   /* Featured-merch rotator (homepage only) ..........................
