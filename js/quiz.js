@@ -61,10 +61,24 @@
       why: "Ozone's Master Assistant runs a trained model that classifies your audio and selects targets. Gullfoss is a real-time decision engine fed by a learned reference. Both are AI making mix calls for you."
     },
     {
-      id: "m5", category: "Production", type: "yesno", yesScores: true,
-      q: "Do you record to a click and quantize or edit the timing afterward?",
-      reveal: "Quantization is algorithmic decision making. It finds where your note landed and moves it to where a grid says it belongs. Modern transient detection on tools like Trigger 2 adds trained models on top. Either way the algorithm is playing the part with you.",
-      why: "Classic quantization in Pro Tools, Logic, and Cubase is signal processing. It finds onsets with peak and envelope analysis, then snaps them to a grid. The newest transient tools like Slate Trigger 2 layer trained models over that step. The machine is making the timing call for you in both cases."
+      id: "m5", category: "Production", type: "choice",
+      q: "Which is closest to how you record?",
+      options: [
+        { label: "Logic Pro 11, Pro Tools 2024+, Cubase 13+, Ableton 12, or FL Studio 21 (current versions)", ai: true },
+        { label: "Reaper, or an older version of any of the above", ai: false },
+        { label: "Fully analog. Tape, hardware mixer, no DAW at any stage.", ai: false }
+      ],
+      reveal: "Modern DAW versions ship with ML features running by default.",
+      optionReveals: [
+        "Modern DAW versions ship with ML features running by default. Logic 11's Drummer is ML. Pro Tools 2024 has ML stem separation. Ableton 12's drum sampler uses ML. FL Studio's mastering uses ML. If you updated your DAW in the last two years, AI is running whether you opted in or not. The developer opted you in before you installed it.",
+        "Respect. Older DAWs and minimalist tools like Reaper genuinely do not ship with ML by default. You are in a smaller club than you think.",
+        "A genuine analog purist exists in 2026 and we salute you. You are not the audience this quiz was built for. You are welcome here anyway."
+      ],
+      optionWhy: [
+        "Logic Pro 11's Drummer feature uses a machine learning model trained on real drummers to generate fills and variations. Pro Tools 2024+ ships with ML stem separation that uses trained neural networks to isolate vocals, drums, and bass from a mix. Ableton 12's Drum Sampler uses ML to assign samples to drum pads based on transient classification. FL Studio's mastering plugin uses ML for spectral analysis and dynamic balancing. Cubase 13's vocal alignment uses trained models for timing correction. None of these require the user to enable AI features. They ship enabled by default.",
+        null,
+        null
+      ]
     },
     {
       id: "m6", category: "Production", type: "yesno", yesScores: true,
@@ -239,6 +253,7 @@
 
     html += '<div class="quiz-reveal" id="quizReveal" hidden>' +
             '<p id="quizRevealText"></p>' +
+            '<div id="quizRevealWhy"></div>' +
             '<button class="btn btn--red" id="quizNext">' +
             (state.index + 1 === total ? "See my result" : "Next question") +
             '</button></div>';
@@ -271,12 +286,13 @@
 
     var earned = 0;
     var answerLabel = "";
+    var idx = -1;
     if (item.type === "yesno") {
       var saidYes = (val === "yes");
       answerLabel = saidYes ? "Yes" : "No";
       earned = (saidYes === item.yesScores) ? 1 : 0;
     } else {
-      var idx = parseInt(val.substring(1), 10);
+      idx = parseInt(val.substring(1), 10);
       var opt = item.options[idx];
       answerLabel = opt.label;
       earned = opt.ai ? 1 : 0;
@@ -286,7 +302,29 @@
     state.answers.push({ question_id: item.id, answer: answerLabel });
 
     var reveal = el("quizReveal");
-    el("quizRevealText").textContent = item.reveal;
+    var revealText = item.reveal;
+    if (idx >= 0 && Array.isArray(item.optionReveals) && item.optionReveals[idx]) {
+      revealText = item.optionReveals[idx];
+    }
+    el("quizRevealText").textContent = revealText;
+
+    // Conditional "Why is this AI?" expander. Used by questions with
+    // per-option justifications (musician path only). Questions with a
+    // global item.why render their expander before answering instead.
+    var whyBox = el("quizRevealWhy");
+    whyBox.innerHTML = "";
+    if (state.path === "musician" && idx >= 0 &&
+        Array.isArray(item.optionWhy) && item.optionWhy[idx]) {
+      var d = document.createElement("details");
+      d.className = "quiz-why";
+      var s = document.createElement("summary");
+      s.textContent = "Why is this AI? Click to expand";
+      var p = document.createElement("p");
+      p.textContent = item.optionWhy[idx];
+      d.appendChild(s);
+      d.appendChild(p);
+      whyBox.appendChild(d);
+    }
     reveal.hidden = false;
 
     var next = el("quizNext");
