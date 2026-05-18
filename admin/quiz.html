@@ -95,10 +95,13 @@
     .bar-fill { background: var(--line); height: 100%; }
     .bar-row .n { text-align: right; color: var(--muted); }
 
-    table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    /* Horizontal scroll so a wide data table stays readable on a
+       phone instead of crushing nine columns to one char per line. */
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    table { width: 100%; border-collapse: collapse; font-size: 12px; min-width: 780px; }
     th, td {
       text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line-soft);
-      vertical-align: top; word-break: break-word;
+      vertical-align: top; word-break: normal; overflow-wrap: anywhere;
     }
     th { color: var(--muted); text-transform: uppercase; letter-spacing: .1em; font-size: 11px; position: sticky; top: 0; background: #0a0606; }
     tr:hover td { background: rgba(231, 76, 60, 0.05); }
@@ -112,6 +115,17 @@
       margin-bottom: 22px; color: var(--muted); font-size: 12px; line-height: 1.7;
     }
     .notice b { color: var(--text-strong); }
+
+    @media (max-width: 700px) {
+      .wrap { padding: 20px 14px 48px; }
+      .summary { grid-template-columns: repeat(2, 1fr); }
+      .bar-row { grid-template-columns: 130px 1fr 40px; gap: 8px; }
+      th, td { padding: 7px 9px; }
+      .table-scroll {
+        margin: 0 -14px;
+        padding: 0 14px;
+      }
+    }
   </style>
 </head>
 <body class="pass-locked">
@@ -202,6 +216,7 @@
     </div>
 
     <div id="tableState" class="state-msg">Locked.</div>
+    <div class="table-scroll">
     <table id="subTable" hidden>
       <thead>
         <tr>
@@ -218,6 +233,7 @@
       </thead>
       <tbody id="subBody"></tbody>
     </table>
+    </div>
   </div>
 
   <script>
