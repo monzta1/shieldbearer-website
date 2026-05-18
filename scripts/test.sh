@@ -89,7 +89,7 @@ for page in *.html; do
 done
 
 # 7. Forms still point to Formspree
-check "Contact form has Formspree action" "$(grep -q 'formspree.io' contact.html && echo true || echo false)"
+check "Contact form has Formspree action" "$(grep -q 'formspree.io' contact/index.html && echo true || echo false)"
 
 # 8. GTM present on homepage
 check "GTM tag on homepage" "$(grep -q 'GTM-' index.html && echo true || echo false)"
@@ -105,7 +105,7 @@ check "Sitemap has urlset" "$(grep -q 'urlset' sitemap.xml && echo true || echo 
 if command -v node &>/dev/null; then
   result=$(node -e "
 const fs = require('fs');
-const html = fs.readFileSync('song-meanings.html', 'utf8');
+const html = fs.readFileSync('song-meanings/index.html', 'utf8');
 const match = html.match(/var SONG_DOSSIERS\s*=\s*(\[[\s\S]*?\])\s*;/);
 if (!match) { process.stdout.write('true'); process.exit(); }
 try { eval('var x = ' + match[1]); process.stdout.write('true'); }
@@ -146,8 +146,8 @@ check "featured-release.js included in homepage" "$(grep -q 'js/featured-release
 check "featured-release container exists" "$(grep -q 'id="featured-release"' index.html && echo true || echo false)"
 
 # 16. Song-meanings augmenter wired
-check "song-meanings-augment.js included" "$(grep -q 'js/song-meanings-augment.js' song-meanings.html && echo true || echo false)"
-check "appendSongDossiers hook exists" "$(grep -q 'window.appendSongDossiers' song-meanings.html && echo true || echo false)"
+check "song-meanings-augment.js included" "$(grep -q 'js/song-meanings-augment.js' song-meanings/index.html && echo true || echo false)"
+check "appendSongDossiers hook exists" "$(grep -q 'window.appendSongDossiers' song-meanings/index.html && echo true || echo false)"
 
 # 17. Merch rotator wired on homepage
 check "merch-rotator.js included on homepage" "$(grep -q 'js/merch-rotator.js' index.html && echo true || echo false)"
@@ -303,9 +303,16 @@ fi
 #     skipped. sentinelbot.html is the documented exception (legacy
 #     file carries additional .sentinelbot-try CSS not present in the
 #     clean URL).
+# Legacy .html files in this set are intentional 301 redirect stubs
+# (Priority 0.2 of the site overhaul). They point at the clean URL
+# via canonical + meta refresh + JS replace. They are NOT mirrors of
+# their clean-URL page, so they are excluded from the parity loop and
+# checked separately for redirect integrity below.
+REDIRECT_STUBS=" music timeline faq song-meanings creed about contact interviews process videos manifesto sentinelbot "
 PARITY_HITS=""
 for f in *.html; do
   base="${f%.html}"
+  case "$REDIRECT_STUBS" in *" $base "*) continue;; esac
   if [ -f "$base/index.html" ] && [ "$base" != "sentinelbot" ]; then
     if ! diff -q "$f" "$base/index.html" > /dev/null 2>&1; then
       PARITY_HITS="$PARITY_HITS$f drifted from $base/index.html
@@ -313,6 +320,30 @@ for f in *.html; do
     fi
   fi
 done
+
+# 24b. Redirect stub integrity: each legacy .html in REDIRECT_STUBS
+#      must carry the clean-URL canonical, a meta refresh, and the JS
+#      replace, and the clean-URL page it points at must exist.
+STUB_HITS=""
+for base in $REDIRECT_STUBS; do
+  f="$base.html"
+  [ -f "$f" ] || { STUB_HITS="$STUB_HITS$f missing
+"; continue; }
+  grep -q "rel=\"canonical\" href=\"https://shieldbearerusa.com/$base\"" "$f" || STUB_HITS="$STUB_HITS$f missing canonical
+"
+  grep -q "http-equiv=\"refresh\" content=\"0; url=/$base\"" "$f" || STUB_HITS="$STUB_HITS$f missing meta refresh
+"
+  grep -q "location.replace('/$base')" "$f" || STUB_HITS="$STUB_HITS$f missing js replace
+"
+  [ -f "$base/index.html" ] || STUB_HITS="$STUB_HITS$base/index.html (redirect target) missing
+"
+done
+if [ -n "$STUB_HITS" ]; then
+  check "Legacy .html redirect stubs are intact and point at a live clean URL" "false"
+  echo "$STUB_HITS" | sed 's/^/    /'
+else
+  check "Legacy .html redirect stubs are intact and point at a live clean URL" "true"
+fi
 if [ -n "$PARITY_HITS" ]; then
   check "Legacy .html and clean-URL /index.html mirrors are byte-identical" "false"
   echo "$PARITY_HITS" | sed 's/^/    /'
