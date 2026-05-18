@@ -176,3 +176,23 @@ delegation. To make the round trip legible:
 This closes the loop on the GA4 side. The repo side needs
 nothing further.
 
+## When event counts look low
+
+All custom events route through `window.sbTrack`, including
+`sentinelbot_open` and `sentinelbot_question`. The widget guards
+that call: if `window.sbTrack` is absent the chat still works,
+the event just no-ops silently. That resilience has a blind
+spot. If GTM or `js/analytics.js` is blocked or stripped by a
+privacy extension, an ad-blocker, or browser tracking-prevention,
+`sbTrack` no-ops with no error, so real widget usage produces no
+event.
+
+So if SentinelBot event counts look low against observed widget
+usage once the GA4 Key Events are marked, check whether
+`window.sbTrack` is being blocked or stripped by
+tracking-prevention before assuming the wiring is wrong. The same
+caution applies to every custom event, but SentinelBot is the
+one most likely to show the gap because its usage is easy to
+observe directly. The wiring being correct and the count being
+low are not contradictory when a tracker is blocked client side.
+
