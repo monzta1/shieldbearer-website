@@ -80,6 +80,54 @@
   margin-top: 1.2rem;
 }
 
+/* The Four Tiers reference block on the landing screen */
+.quiz-tiers {
+  margin-top: 1.8rem;
+  border-top: 1px solid rgba(168, 162, 154, .12);
+  padding-top: 1.4rem;
+}
+.quiz-tiers__h {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 3.4vw, 1.9rem);
+  letter-spacing: .04em;
+  color: #fff;
+  margin: 0 0 1rem;
+}
+.quiz-tiers__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: .9rem;
+}
+.quiz-tiers__list li {
+  border-left: 2px solid var(--red);
+  padding: .25rem 0 .35rem .9rem;
+}
+.quiz-tiers__range {
+  display: inline-block;
+  font-family: var(--font-head);
+  font-size: .72rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--red-bright);
+  margin-right: .55rem;
+}
+.quiz-tiers__name {
+  font-family: var(--font-head);
+  font-size: .95rem;
+  letter-spacing: .02em;
+  color: var(--white);
+}
+.quiz-tiers__desc {
+  display: block;
+  margin-top: .3rem;
+  font-family: var(--font-body);
+  font-size: .9rem;
+  line-height: 1.65;
+  color: rgba(240, 235, 224, .72);
+}
+
 /* ---- Progress ------------------------------------------------------ */
 .quiz-progress {
   font-family: var(--font-head);

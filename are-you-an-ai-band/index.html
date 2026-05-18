@@ -41,7 +41,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200;300;400;500;600&family=Roboto+Condensed:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/quiz.css">
+  <link rel="stylesheet" href="/css/quiz.css?v=2.12.0">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -166,6 +166,29 @@
             <span class="quiz-path__k">I listen</span>
           </button>
         </div>
+
+        <div class="quiz-tiers">
+          <h2 class="quiz-tiers__h">The Four Tiers</h2>
+          <ul class="quiz-tiers__list">
+            <li>
+              <span class="quiz-tiers__range">0-2</span><span class="quiz-tiers__name">The Purist (or recently arrived from 1962)</span>
+              <span class="quiz-tiers__desc">A small and shrinking minority. Most modern records use the tools you avoid. A real position the quiz respects.</span>
+            </li>
+            <li>
+              <span class="quiz-tiers__range">3-5</span><span class="quiz-tiers__name">The Casual (you have been told the story and believed it)</span>
+              <span class="quiz-tiers__desc">The tools have touched some of your music or your listening. The story about AI in music is mostly about visibility, not presence.</span>
+            </li>
+            <li>
+              <span class="quiz-tiers__range">6-8</span><span class="quiz-tiers__name">The Suspect (you have used the tools and probably argued about them online)</span>
+              <span class="quiz-tiers__desc">Welcome to the conversation. Your setup is already inside the category gatekeepers warn about. Most working producers and most attentive listeners are in this group.</span>
+            </li>
+            <li>
+              <span class="quiz-tiers__range">9-10</span><span class="quiz-tiers__name">Congratulations, you're an AI band</span>
+              <span class="quiz-tiers__desc">Welcome to the club. Most of your favorite records are already in it. The standard was never the tools. It was whether you could see them.</span>
+            </li>
+          </ul>
+        </div>
+
         <p class="quiz-privacy" style="border:none;padding-left:0;">
           <label for="quizEmail" style="display:block;margin-bottom:.4rem;">Email (optional)</label>
           <input id="quizEmail" type="email" autocomplete="email"
@@ -245,6 +268,6 @@
   <script src="/js/analytics.js"></script>
   <script src="/js/main.js"></script>
   <script src="/js/sentinelbot.js"></script>
-  <script src="/js/quiz.js"></script>
+  <script src="/js/quiz.js?v=2.12.0"></script>
 </body>
 </html>
