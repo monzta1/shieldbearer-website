@@ -84,12 +84,18 @@
     }
     .hero-bg {
       position: absolute; inset: 0;
+      /* Breakpoint-swapped LCP image. Mobile pulls the 820px JPEG
+         (~104K, was a 2.7MB PNG). Desktop override below. The
+         original galilean-art.png is kept untouched for og:image
+         (44 pages reference it). WebP/AVIF upgrade path is in
+         tools/encode-hero-images.sh. */
+      --hero-img: url('images/galilean-art-768.jpg');
       background:
         linear-gradient(180deg, rgba(4,4,4,.02) 0%, rgba(4,4,4,.16) 62%, rgba(4,4,4,.34) 100%),
         radial-gradient(ellipse 74% 58% at 52% 28%, rgba(231,76,60,.16) 0%, transparent 65%),
         radial-gradient(circle at 22% 18%, rgba(124, 255, 234, .2) 0%, transparent 36%),
         radial-gradient(circle at 80% 20%, rgba(100, 136, 255, .22) 0%, transparent 38%),
-        url('images/galilean-art.png') center/contain no-repeat,
+        var(--hero-img) center/contain no-repeat,
         var(--black);
       filter: saturate(1.4) contrast(1.12) brightness(1.18);
     }
@@ -114,14 +120,21 @@
       background: linear-gradient(to bottom, transparent, rgba(192,57,43,.06), transparent);
     }
     .hero-content-section {
+      --hcs-img: url('images/over-the-skies-768.jpg');
       background:
-        url('images/over-the-skies-of-hell-art.jpg') center top / cover no-repeat,
+        var(--hcs-img) center top / cover no-repeat,
         var(--black);
       position: relative;
       z-index: 2;
       overflow: hidden;
       margin-top: 0;
       padding: clamp(4.4rem, 9vw, 8rem) 0 clamp(5.2rem, 8vw, 7.6rem);
+    }
+    /* Desktop serves the larger variants. Mobile keeps the light
+       ones. True breakpoint weight, not just DPR negotiation. */
+    @media (min-width: 1024px) {
+      .hero-bg { --hero-img: url('images/galilean-art-1536.jpg'); }
+      .hero-content-section { --hcs-img: url('images/over-the-skies-1536.jpg'); }
     }
     .hero-content-section::before {
       content: '';
