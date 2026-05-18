@@ -33,8 +33,8 @@
     {
       id: "m1", category: "Drums", type: "yesno", yesScores: true,
       q: "When you track drums, does Slate Trigger, Superior Drummer, GetGood, or EZdrummer touch them at any stage?",
-      reveal: "Trigger fires samples by detecting transients with a trained model. Superior Drummer and EZdrummer are sample libraries driven by velocity and behavior modeling. Machine learning is deciding what your kit sounds like.",
-      why: "Transient detection is a classifier. It learns what a hit looks like in the waveform and triggers a sample on a confidence threshold. That is pattern recognition, the core mechanic of machine learning."
+      reveal: "Trigger fires samples by detecting transients with onset analysis. Superior Drummer and EZdrummer are sample libraries driven by velocity layers and round robins. Modern transient detection on tools like Trigger 2 adds trained models on top. The kit you hear is algorithmic and automated regardless. The line between modeled performance and machine learning is thinner than the marketing makes it sound.",
+      why: "Slate Trigger uses onset detection and threshold-based classification. Superior Drummer and EZdrummer use sample libraries with scripted articulation logic. Modern versions of Trigger and similar tools incorporate trained models for transient classification. Whether you call this AI depends on how strict your definition is. By any honest reading, it is algorithmic performance shaping."
     },
     {
       id: "m2", category: "Vocals", type: "yesno", yesScores: true,
@@ -62,7 +62,7 @@
     },
     {
       id: "m5", category: "Production", type: "choice",
-      q: "Which is closest to how you record?",
+      q: "Which is closest to how you produce music?",
       options: [
         { label: "Logic Pro 11, Pro Tools 2024+, Cubase 13+, Ableton 12, or FL Studio 21 (current versions)", ai: true },
         { label: "Reaper, or an older version of any of the above", ai: false },
@@ -76,18 +76,13 @@
         "A genuine analog purist exists in 2026 and we salute you. You are not the audience this quiz was built for. You are welcome here anyway.",
         "Honest answer. Generative AI tools build the performance from a prompt instead of capturing one you played. That is a different relationship with the tools than a producer running Kemper or Melodyne. The conversation is the same. The scene argues about both. You are in it."
       ],
-      optionWhy: [
-        "Logic Pro 11's Drummer feature uses a machine learning model trained on real drummers to generate fills and variations. Pro Tools 2024+ ships with ML stem separation that uses trained neural networks to isolate vocals, drums, and bass from a mix. Ableton 12's Drum Sampler uses ML to assign samples to drum pads based on transient classification. FL Studio's mastering plugin uses ML for spectral analysis and dynamic balancing. Cubase 13's vocal alignment uses trained models for timing correction. None of these require the user to enable AI features. They ship enabled by default.",
-        null,
-        null,
-        null
-      ]
+      why: "Modern DAWs ship with ML features running by default. Logic 11's Drummer and Session Players use trained models. Pro Tools 2024+ uses ML for stem separation. Ableton 12's Drum Sampler uses ML classification. FL Studio's mastering uses trained models. Cubase 13's vocal alignment uses learned models. Reaper and older DAW versions genuinely do not ship with ML by default. Fully analog production avoids ML entirely. Suno and Udio are generative AI platforms that produce the performance itself from a prompt. These are four different relationships with AI. The first and fourth are explicit. The second and third are not."
     },
     {
       id: "m6", category: "Production", type: "yesno", yesScores: true,
       q: "Sample libraries. Kontakt, Omnisphere, or an orchestral suite on your last release?",
-      reveal: "Modern sample instruments use round robins, articulation logic, and behavior modeling so the part reads as human. You are conducting a programmed model of a player.",
-      why: "Libraries like Kontakt, Spitfire, and Orchestral Tools script their realism with round robins and articulation rules. It is a built model of how a player behaves, standing in for the player. The instrument is making the performance choices for you."
+      reveal: "Modern sample instruments use round robins, articulation switching, and scripted realism so the part reads as human. The player you hear was modeled by an engineer, not learned by an algorithm. The sound is automated either way.",
+      why: "Kontakt scripts, Spitfire libraries, and Orchestral Tools instruments use programmed round robins and rule-based articulation. This is automation, not machine learning. Including it in the AI conversation is fair because the listener cannot tell the difference between programmed realism and learned realism. The credibility of the final part comes from the same place either way."
     },
     {
       id: "m7", category: "Guitar", type: "yesno", yesScores: true,
@@ -125,17 +120,20 @@
     {
       id: "l1", category: "Discovery", type: "yesno", yesScores: true,
       q: "Has Spotify, YouTube, or your feed ever introduced you to a song you ended up loving?",
-      reveal: "That introduction was a recommendation model. An algorithm learned your taste and made the call. AI has been building your worship playlist for years."
+      reveal: "That introduction was a recommendation model. An algorithm learned your taste and made the call. AI has been building your worship playlist for years.",
+      why: "Spotify and YouTube use machine learning to predict which songs you will like. The system learns from billions of listening sessions. That prediction engine is AI by any technical definition."
     },
     {
       id: "l2", category: "Vocals", type: "yesno", yesScores: true,
       q: "Have you ever been moved to tears by a worship song with flawless, soaring vocals?",
-      reveal: "Flawless modern vocals are almost always shaped with Melodyne or Auto-Tune. The performance that broke you open was touched by pitch software."
+      reveal: "Flawless modern vocals are almost always shaped with Melodyne or Auto-Tune. The performance that broke you open was touched by pitch software.",
+      why: "Melodyne and Auto-Tune analyze the singer's voice and rebuild each note to be in tune. This is not subtle correction. It is reconstruction. The final performance is partly software."
     },
     {
       id: "l3", category: "Worship", type: "yesno", yesScores: true,
       q: "Have you sung Holy Forever, Gratitude, or anything off a major worship record in the last year?",
-      reveal: "Those records were tracked to a click, edited on a grid, tuned, sampled, and AI-assisted in mastering. You have been worshipping with these tools the whole time."
+      reveal: "Those records were tracked to a click, edited on a grid, tuned, sampled, and AI-assisted in mastering. You have been worshipping with these tools the whole time.",
+      why: "Every major modern worship record uses tracked clicks, edited drums, tuned vocals, sampled instruments, and AI-assisted mastering. This is not a secret in the industry. It is standard practice."
     },
     {
       id: "l4", category: "Drums", type: "choice",
@@ -145,37 +143,52 @@
         { label: "Probably edited and tightened", ai: true },
         { label: "Never thought about it", ai: true }
       ],
-      reveal: "Those drums were triggered, sample reinforced, and quantized. Modern drum replacement like Slate Trigger 2 uses trained models to do it. The pocket was assisted."
+      reveal: "Those drums were triggered, sample reinforced, and quantized. Modern drum replacement like Slate Trigger 2 uses trained models to do it. The pocket was assisted.",
+      why: "The drums on big worship records are detected hit by hit and reinforced or replaced with samples, then nudged onto a grid. Software decided where each hit lands and how it sounds. The tightness you hear was assisted."
     },
     {
       id: "l5", category: "Mastering", type: "yesno", yesScores: true,
       q: "Do your favorite albums sound loud, clear, and polished on cheap earbuds and a car stereo alike?",
-      reveal: "That consistency comes from AI-assisted mastering like Ozone and smart limiters. A trained model balanced what you are hearing."
+      reveal: "That consistency comes from AI-assisted mastering like Ozone and smart limiters. A trained model balanced what you are hearing.",
+      why: "Mastering tools like Ozone listen to the whole mix and shape it toward a target using trained models. That is why a song holds up on cheap earbuds and a car stereo alike. A model balanced it for you."
     },
     {
       id: "l6", category: "Guitar", type: "yesno", yesScores: true,
       q: "Have you ever heard a massive guitar tone and assumed it was a wall of real amps?",
-      reveal: "Most modern big tones are Kemper, Quad Cortex, or Neural DSP. Those are neural networks trained on real amps. The wall of sound was a model."
+      reveal: "Most modern big tones are Kemper, Quad Cortex, or Neural DSP. Those are neural networks trained on real amps. The wall of sound was a model.",
+      why: "Most big modern guitar tones come from digital amp models like Kemper and Neural DSP. These are built by training software on the sound of a real amplifier until it can recreate it. The wall of sound is often a model of one amp."
     },
     {
-      id: "l7", category: "Discovery", type: "yesno", yesScores: true,
-      q: "Has autoplay ever kept you in a worship set for an hour without you choosing a single next song?",
-      reveal: "Autoplay is a recommendation engine running continuously. AI built that hour of worship for you in real time."
+      id: "l7", category: "Discovery", type: "choice",
+      q: "Do you mostly discover new music through algorithmic recommendations (Spotify, YouTube, social feeds), or through other means (friends, radio, live shows, physical media)?",
+      options: [
+        { label: "Algorithmic recommendations", ai: true },
+        { label: "Friends, radio, live shows, physical media", ai: false }
+      ],
+      reveal: "Discovery is where AI touches almost every listener.",
+      optionReveals: [
+        "You let an AI model choose what you hear next. The model learned from your listening behavior. It works very well, which is why most people do this.",
+        "You are in a smaller club than you think. Most modern listeners let algorithms drive at least some of their discovery. Your method is rarer than it used to be."
+      ],
+      why: "Recommendation systems on Spotify, YouTube, and social feeds are machine learning models trained on the listening behavior of millions of people. When you follow what they surface, an AI chose it. When you find music through people and places instead, no model was in the loop."
     },
     {
       id: "l8", category: "Vocals", type: "yesno", yesScores: true,
       q: "Have you ever replayed a live worship video because it sounded better than the room could have?",
-      reveal: "Live worship releases are commonly tuned and sweetened after the fact. The version you replay was touched by the same tools."
+      reveal: "Live worship releases are commonly tuned and sweetened after the fact. The version you replay was touched by the same tools.",
+      why: "Live worship audio is usually tuned and sweetened before it is released. The recording you replay is cleaner and more in tune than the room actually was. Software did that after the fact."
     },
     {
       id: "l9", category: "Worship", type: "yesno", yesScores: true,
       q: "Do you believe a song can carry the gospel even if software touched the recording?",
-      reveal: "Most people say yes here, and that answer is the whole point. The message was never in the tool. It was in the truth being declared."
+      reveal: "Most people say yes here, and that answer is the whole point. The message was never in the tool. It was in the truth being declared.",
+      why: "This question is the point of the whole quiz. The truth a song carries does not live in the recording chain. It lives in the words and the heart behind them. The tool was never the gospel."
     },
     {
       id: "l10", category: "Worship", type: "yesno", yesScores: false,
       q: "Knowing all this, would you still tell an artist their AI-assisted song does not count as real worship?",
-      reveal: "Say no and you already stand with the manifesto. Say yes and the same tools were inside every song that ever moved you. The line was never the tools."
+      reveal: "Say no and you already stand with the manifesto. Say yes and the same tools were inside every song that ever moved you. The line was never the tools.",
+      why: "Every song that ever moved you used some of these tools. Telling an artist their AI-assisted song cannot be worship draws a line that was never really there. The standard is whether Christ is named plainly, not which software touched the file."
     }
   ];
 
@@ -184,11 +197,11 @@
   /* ---- Scoring categories -------------------------------------------- */
   var CATEGORIES = [
     { min: 0, max: 2, name: "The Purist (or recently arrived from 1962)",
-      desc: "Either you track to tape in a cabin with no internet, or you have not looked closely at how a single record you love was made. Both are rare. One is honest." },
+      desc: "You are in a small and shrinking minority. Most modern records use the tools you avoid. That is a real position, and one this quiz respects." },
     { min: 3, max: 5, name: "The Casual (you have been told the story and believed it)",
-      desc: "You took the purity story at face value. No shame in it. The people who sold it to you were using every tool on this list while they said it." },
+      desc: "The tools have touched some of your music or your listening. The story you have been told about AI in music is mostly about visibility, not presence." },
     { min: 6, max: 8, name: "The Suspect (you have used the tools and probably argued about them online)",
-      desc: "You know your way around a session. The math says you have leaned on machine learning more than once. The honest move is to own it and extend the same grace to everyone else." },
+      desc: "Welcome to the conversation. By the gatekeepers' own standard, your setup is already inside the category they warn about. Most working producers and most attentive listeners are in this same group." },
     { min: 9, max: 10, name: "Congratulations, you're an AI band",
       desc: "Welcome to the club. Most of your favorite records are already in it. By the gatekeepers' own standard, you are the thing they warn about. You always were. So was every record they praised. The standard was never the tools. It was whether you could see them." }
   ];
@@ -235,7 +248,7 @@
     html += '<div class="quiz-progress">' + pathLabel + ' &middot; Question ' +
             (state.index + 1) + ' of ' + total + '</div>';
     html += '<div class="quiz-bar"><span style="width:' +
-            (((state.index) / total) * 100) + '%"></span></div>';
+            (((state.index + 1) / total) * 100) + '%"></span></div>';
     html += '<h2 class="quiz-q">' + escapeHtml(item.q) + '</h2>';
     html += '<div class="quiz-options" id="quizOptions">';
 
@@ -249,7 +262,7 @@
     }
     html += '</div>';
 
-    if (state.path === "musician" && item.why) {
+    if (item.why) {
       html += '<details class="quiz-why"><summary>Why is this AI? Click to expand</summary>' +
               '<p>' + escapeHtml(item.why) + '</p></details>';
     }
