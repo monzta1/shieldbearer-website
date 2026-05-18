@@ -2,6 +2,17 @@
   // Config lives in js/config.js (window.SHIELDBEARER_CONFIG.sentinelbot).
   const API_URL = (window.SHIELDBEARER_CONFIG && window.SHIELDBEARER_CONFIG.sentinelbot && window.SHIELDBEARER_CONFIG.sentinelbot.apiUrl) || "";
 
+  // Do not render the floating widget on the SentinelBot page
+  // itself. No point offering a shortcut to the page you are on.
+  const sbPath = (window.location && window.location.pathname || "/").replace(/\/+$/, "") || "/";
+  if (sbPath === "/sentinelbot" || sbPath === "/sentinelbot.html") return;
+
+  // Route widget events through the same dataLayer pipeline as the
+  // rest of analytics.js: window.sbTrack pushes to GTM, GTM to GA4.
+  function track(ev, params) {
+    if (typeof window.sbTrack === "function") window.sbTrack(ev, params || {});
+  }
+
   let isOpen = false;
   let history = [];
 
@@ -326,6 +337,7 @@
     isOpen = !isOpen;
     win.style.display = isOpen ? "flex" : "none";
     if (isOpen) {
+      track("sentinelbot_open", { from_path: window.location.pathname });
       if (history.length === 0 && messages.childElementCount === 0) {
         primeOpeningHistory();
       }
@@ -341,6 +353,7 @@
     const question = input.value.trim();
     if (!question) return;
 
+    track("sentinelbot_question", { from_path: window.location.pathname });
     renderMessage(question, "sentinelbot-user");
     input.value = "";
     input.disabled = true;
