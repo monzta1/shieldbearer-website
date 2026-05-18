@@ -1469,3 +1469,45 @@ section { padding: var(--sp-section) 0; position: relative; }
     padding: .95rem 1rem 1.05rem;
   }
 }
+
+/* Next-step footer block (informational pages). Subordinate,
+   on-brand, text links. Signal Room link is state-gated via
+   js/signal-room-callout.js and ships hidden. */
+.next-step {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: clamp(2.2rem, 5vw, 3.4rem) var(--pad);
+  border-top: 1px solid rgba(168, 162, 154, .12);
+  text-align: center;
+}
+.next-step__h {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 3vw, 1.9rem);
+  letter-spacing: .04em;
+  color: #fff;
+  margin: 0 0 .6rem;
+}
+.next-step__p {
+  font-size: .95rem;
+  line-height: 1.8;
+  color: rgba(240, 235, 224, .66);
+  max-width: 60ch;
+  margin: 0 auto 1.3rem;
+}
+.next-step__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .7rem 1.4rem;
+  justify-content: center;
+}
+.next-step__links a {
+  font-family: var(--font-head);
+  font-size: .82rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--red-bright);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(231, 76, 60, .4);
+  padding-bottom: 2px;
+}
+.next-step__links a:hover { color: #fff; border-color: #fff; }
