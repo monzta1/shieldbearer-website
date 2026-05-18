@@ -2,62 +2,70 @@
 
 The site moved from `/page.html` to clean `/page` around Apr 22-25,
 2026. Old URLs still draw search and backlink traffic. This is how
-that traffic gets sent to the new pages.
+that traffic gets sent to the new pages, and why the obvious
+approach does not work here.
 
-## What is live now (in-repo, no external infra)
+## Why in-repo redirect stubs do NOT work on this site
 
-Every legacy path in the redirect set is a stub HTML file at the
-repo root. Each stub carries:
+The first attempt replaced each `page.html` with a small redirect
+stub (canonical + meta refresh + JS replace). It was shipped in
+v2.13.0 and reverted in the next commit because it broke the live
+site.
 
-- `<link rel="canonical">` to the clean URL, so Google consolidates
-  ranking signals onto the new page.
-- `<meta name="robots" content="noindex, follow">`, so the stub
-  drops out of the index and the crawler follows to the clean URL.
-- `<meta http-equiv="refresh">` and `location.replace()`, so a
-  visitor lands on the clean URL with no visible stop.
+Reason: on this GitHub Pages setup, a request for the bare clean
+URL `/music` is served by the static file `music.html`. The
+directory file `music/index.html` only answers `/music/` with a
+trailing slash. The whole site, every canonical tag, and Google's
+index all use the no-slash form `/music`. That is the parity test's
+entire purpose: `page.html` and `page/index.html` must stay
+byte-identical because GitHub Pages can serve either one.
 
-The real page content for each one lives at `page/index.html`,
-which GitHub Pages serves for the clean URL. The stub never touches
-that.
+A static file cannot return different content based on whether the
+request was `/music` or `/music.html`. They resolve to the same
+file. So a stub at `music.html` makes the real clean URL `/music`
+serve the stub. Confirmed live: `/music`, `/song-meanings`,
+`/timeline`, `/faq` all returned the stub body until the revert.
 
-Stubbed paths: music, timeline, faq, song-meanings, creed, about,
-contact, interviews, process, videos, manifesto, sentinelbot.
+Do not reintroduce in-repo stubs. The redirect has to happen at the
+edge, where the actual requested path is visible.
 
-This is a soft redirect. It consolidates SEO and moves the visitor,
-but it is not a true HTTP 301. For a true 301, deploy the Worker.
-
-## True 301 (deploy when ready)
+## The only correct mechanism: Cloudflare Worker (true 301)
 
 `tools/cloudflare-redirect-worker.js` issues a real 301 at the
-Cloudflare edge. Deploy steps, assuming Cloudflare is in front of
-shieldbearerusa.com:
+Cloudflare edge and only acts on the explicit `.html` paths, so the
+clean URLs are untouched. Deploy steps, assuming Cloudflare is in
+front of shieldbearerusa.com:
 
 1. Cloudflare dashboard -> Workers and Pages -> Create Worker.
 2. Paste the contents of `tools/cloudflare-redirect-worker.js`.
    Deploy it.
 3. Workers Routes -> add route `shieldbearerusa.com/*` -> the
-   worker. (A `/*` route is fine; the worker only acts on the
-   mapped paths and passes everything else through with `fetch`.)
+   worker. The worker only rewrites the mapped `.html` paths and
+   passes everything else through with `fetch`, so clean URLs and
+   the directory indexes are unaffected.
 4. Verify with curl:
 
    ```
-   curl -I https://shieldbearerusa.com/music.html
+   curl -sI https://shieldbearerusa.com/music.html
    # expect: HTTP/2 301, location: https://shieldbearerusa.com/music
+
+   curl -sI https://shieldbearerusa.com/music
+   # expect: HTTP/2 200, the real page (NOT a redirect, NOT a stub)
    ```
 
-5. Once the 301 is confirmed for every mapped path, the in-repo
-   stubs can be deleted from the repo. The Worker covers them. Do
-   the curl check first.
+   Both checks matter. The second one is the check that the stub
+   approach failed.
 
 The Worker map also handles `/index.html -> /` and
-`/press.html -> /interviews`, which the in-repo stubs cannot
-(index.html is the homepage; press.html does not exist as a file).
+`/press.html -> /interviews`, which an in-repo file never could.
 
-## Verifying the soft redirect today
+## Until the Worker is deployed
 
-```
-curl -s https://shieldbearerusa.com/music.html | grep -E 'canonical|refresh|replace'
-```
-
-Should show the canonical to `/music`, the meta refresh, and the
-JS replace.
+The legacy `.html` files stay as byte-identical mirrors of their
+clean URL (the original, working state). Old `.html` links keep
+serving the full page rather than redirecting. That is not ideal
+for SEO consolidation, but it is correct and not broken. The
+canonical tags already on every page point search engines at the
+clean URL, so ranking signal still consolidates. The Worker is the
+upgrade from "works" to "true 301," and it is the only safe way to
+get there on this hosting.
