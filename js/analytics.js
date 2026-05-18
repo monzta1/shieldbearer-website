@@ -140,6 +140,13 @@
         sbTrack('merch_click', { from_path: path, link_url: href, label: label });
         return;
       }
+      if (declared === 'signal_room') {
+        sbTrack('signal_room_click', {
+          state: (link.getAttribute && link.getAttribute('data-state')) || 'empty',
+          from_path: path
+        });
+        return;
+      }
     }, { passive: true });
   }
 

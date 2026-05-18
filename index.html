@@ -572,6 +572,90 @@
       color: rgba(240,235,224,.8);
     }
 
+    /* Signal Room home block. Deliberately subordinate to the
+       New Release block above it: muted, smaller, ghost CTA.
+       New Release is conversion, this is brand and retention. */
+    .sr-home {
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.015), rgba(255,255,255,0)),
+        var(--black);
+      border-top: 1px solid rgba(168,162,154,.1);
+      padding: clamp(2.4rem, 4.5vw, 3.4rem) 0;
+    }
+    .sr-home__inner {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 0 var(--pad);
+      display: grid;
+      grid-template-columns: minmax(0, 200px) minmax(0, 1fr);
+      gap: clamp(1.2rem, 3vw, 2.2rem);
+      align-items: center;
+    }
+    .sr-home__art {
+      margin: 0;
+      border: 1px solid rgba(168,162,154,.14);
+      overflow: hidden;
+    }
+    .sr-home__art img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(.85) brightness(.82);
+    }
+    .sr-home__eyebrow {
+      font-family: var(--font-head);
+      font-size: .62rem;
+      letter-spacing: .26em;
+      text-transform: uppercase;
+      color: var(--off-white);
+      display: block;
+      margin-bottom: .55rem;
+    }
+    .sr-home__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 3.4vw, 2rem);
+      letter-spacing: .04em;
+      color: rgba(240,235,224,.92);
+      line-height: 1.05;
+      margin-bottom: .7rem;
+    }
+    .sr-home__copy {
+      font-size: .94rem;
+      line-height: 1.8;
+      color: rgba(240,235,224,.66);
+      margin-bottom: 1.1rem;
+      max-width: 60ch;
+    }
+    .sr-home__countdown {
+      display: flex;
+      gap: 1.1rem;
+      margin-bottom: 1.1rem;
+      font-family: var(--font-head);
+      font-size: .72rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--off-white);
+    }
+    .sr-home__countdown b {
+      color: var(--red-bright);
+      font-size: 1rem;
+    }
+    .sr-home__cta {
+      font-size: .82rem;
+    }
+    .sr-home__sub {
+      margin-top: .8rem;
+      font-size: .82rem;
+      color: var(--off-white);
+    }
+    .sr-home__sub a { color: var(--off-white); text-decoration: underline; }
+    .sr-home__sub a:hover { color: var(--red-bright); }
+    @media (max-width: 640px) {
+      .sr-home__inner { grid-template-columns: 1fr; }
+      .sr-home__art { max-width: 320px; }
+    }
+
     /* Watch Posts (live appearances) */
     .watch-posts {
       padding: clamp(3rem, 6vw, 4.5rem) 0;
@@ -916,6 +1000,30 @@
     </div>
   </section>
 
+  <!-- ══════════════════════════════════════
+       SIGNAL ROOM (state-aware, subordinate to New Release)
+  ══════════════════════════════════════ -->
+  <section class="sr-home" aria-labelledby="sr-home-title" data-signal-room>
+    <div class="sr-home__inner">
+      <figure class="sr-home__art">
+        <img src="/images/signal-room/desk.jpg" alt="The Signal Room writing desk" loading="lazy" width="560" height="380" data-sr-art>
+      </figure>
+      <div class="sr-home__body">
+        <span class="sr-home__eyebrow" data-sr-eyebrow>Signal Room</span>
+        <h2 class="sr-home__title" id="sr-home-title" data-sr-title>The Writing Desk Between Songs</h2>
+        <p class="sr-home__copy" data-sr-copy>The next Shieldbearer song is being prayed over, written, and shaped right now. When the first lyric lands, the first chord is tracked, or the first piece of art is drawn, it appears in the Signal Room. Stay in the Signal. The next one will appear here as it's written.</p>
+        <div class="sr-home__countdown" data-sr-countdown hidden aria-hidden="true">
+          <span><b data-sr-d>00</b> days</span>
+          <span><b data-sr-h>00</b> hrs</span>
+          <span><b data-sr-m>00</b> min</span>
+          <span><b data-sr-s>00</b> sec</span>
+        </div>
+        <a href="/signal-room" class="btn btn--ghost sr-home__cta" data-track="signal_room" data-state="empty" data-sr-cta>Step Into the Signal Room</a>
+        <p class="sr-home__sub"><a href="#signal-band">Or join the Signal to be notified when the next song begins.</a></p>
+      </div>
+    </div>
+  </section>
+
   <section class="section--dark" aria-labelledby="galilean-heading">
     <div class="container">
       <article class="featured-track">
@@ -1161,7 +1269,7 @@ The Galilean</p>
     </div>
   </section>
 
-  <section class="signal-band" aria-label="Join the Signal">
+  <section class="signal-band" id="signal-band" aria-label="Join the Signal">
     <div class="signal-wrap">
       <div>
         <h2 class="signal-title">Join the Signal</h2>
@@ -1278,5 +1386,6 @@ The Galilean</p>
   <script src="/js/merch-rotator.js" defer></script>
   <script src="/js/featured-release.js" defer></script>
   <script src="/js/watch-posts.js" defer></script>
+  <script src="/js/signal-room-home.js" defer></script>
 </body>
 </html>
