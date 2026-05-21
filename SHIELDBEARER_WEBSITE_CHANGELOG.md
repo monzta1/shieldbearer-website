@@ -7,6 +7,10 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.12.2 - May 2026
+- Visitor beacon endpoint flipped from Lambda Function URL to API Gateway. The Function URL gateway on this AWS account returns 403 to anonymous traffic even with the textbook resource policy in place (account-level public-access block or similar; quiz-logger Function URL has the same symptom, which is why the quiz uses API Gateway too). Stood up a `/visit` route on the existing `sentinelbot-api` (id `g7a5tqlxaj`) pointing at the visitor-logger Lambda. `js/config.js` and `admin/visitors.html` now use `https://g7a5tqlxaj.execute-api.us-east-1.amazonaws.com/visit`. The Function URL still exists on the Lambda for direct testing; it just isn't on the hot path.
+- CORS config on the API Gateway already covered shieldbearerusa.com + `content-type` + `x-admin-key`, so no CORS sweep was needed. The previous v2.12.1 wildcard for `*.lambda-url.us-east-1.on.aws` is left in `connect-src` -- harmless, covers any future Function URL if the account-level block ever gets resolved.
+
 ## v2.12.1 - May 2026
 - Wired up the v2.12.0 visitor beacon to the deployed Lambda. `js/config.js` now points `visitor.apiUrl` at the live Function URL. `admin/visitors.html` now points `VISITOR_API` at the same URL. Beacon will fire on every pageview starting next hard refresh.
 - Sitewide CSP sweep across 48 pages (24 legacy `.html` + 24 `/index.html` mirrors): added `https://*.lambda-url.us-east-1.on.aws` to `connect-src` so the beacon is not blocked. The wildcard covers any future Lambda Function URL the operator stands up in us-east-1 without needing another sweep.

@@ -53,7 +53,7 @@ window.SHIELDBEARER_CONFIG = {
               sentinelbot-visitor-logger/deploy.sh, then push.
      ............................................................... */
   visitor: {
-    apiUrl: "https://e22aox3mcuorb4yaalmd7hp7yu0irwyc.lambda-url.us-east-1.on.aws/"
+    apiUrl: "https://g7a5tqlxaj.execute-api.us-east-1.amazonaws.com/visit"
   },
 
   /* Featured-merch rotator (homepage only) ..........................
