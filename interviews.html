@@ -105,6 +105,86 @@
       display: inline-block;
     }
     .expand-btn:hover { background: var(--red); color: #fff; border-color: var(--red); }
+
+    /* ── UPCOMING-RELEASE PRESS CARD ── */
+    .press-card--upcoming {
+      grid-column: 1 / -1;
+      background:
+        radial-gradient(circle at 8% 50%, rgba(231,76,60,.10), transparent 55%),
+        rgba(192,57,43,.07);
+      border-color: rgba(231,76,60,.45);
+      box-shadow: 0 0 0 1px rgba(231,76,60,.18), 0 22px 44px rgba(0,0,0,.5);
+      padding-top: 2.6rem;
+    }
+    .press-card--upcoming:hover {
+      border-color: rgba(231,76,60,.85);
+      box-shadow: 0 0 0 1px rgba(231,76,60,.45), 0 28px 56px rgba(231,76,60,.18);
+    }
+    .upcoming-badge {
+      position: absolute;
+      top: 0; left: 0;
+      background: var(--red);
+      color: #fff;
+      font-family: var(--font-head);
+      font-size: .58rem;
+      letter-spacing: .35em;
+      text-transform: uppercase;
+      padding: .35rem .8rem;
+    }
+    .upcoming-head {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: .6rem;
+    }
+    .upcoming-play {
+      flex: 0 0 56px;
+      width: 56px;
+      height: 56px;
+      filter: drop-shadow(0 4px 14px rgba(231,76,60,.4));
+      transition: transform .2s;
+    }
+    .press-card--upcoming:hover .upcoming-play { transform: scale(1.08); }
+    .upcoming-head .headline {
+      margin: 0;
+      padding-right: 0;
+    }
+    .upcoming-countdown {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: .75rem;
+      margin: 1rem 0 1.1rem;
+      max-width: 480px;
+    }
+    .upcoming-countdown__cell {
+      background: rgba(0,0,0,.45);
+      border: 1px solid rgba(231,76,60,.22);
+      padding: .55rem .35rem .4rem;
+      text-align: center;
+      font-family: var(--font-head);
+    }
+    .upcoming-countdown__n {
+      display: block;
+      font-size: 1.55rem;
+      letter-spacing: .04em;
+      color: #fff;
+      line-height: 1.15;
+    }
+    .upcoming-countdown__l {
+      display: block;
+      font-size: .5rem;
+      letter-spacing: .3em;
+      color: var(--red-bright);
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+    .upcoming-countdown--live .upcoming-countdown__n { color: var(--red-bright); }
+    @media (max-width: 600px) {
+      .press-card--upcoming { padding-top: 2.8rem; }
+      .upcoming-head { flex-direction: column; align-items: flex-start; gap: .8rem; }
+      .upcoming-countdown { gap: .5rem; max-width: 100%; }
+      .upcoming-countdown__n { font-size: 1.3rem; }
+    }
   </style>
 </head>
 <body>
@@ -219,11 +299,26 @@
         <!-- All Music Matters N'At: Bryan Gribbin podcast (premieres 2026-05-29) -->
         <a href="https://www.youtube.com/watch?v=Mv8Igt43u70"
            target="_blank" rel="noopener"
-           class="press-card press-card--featured">
+           class="press-card press-card--featured press-card--upcoming"
+           data-premiere="2026-05-29T16:30:00Z"
+           aria-label="Upcoming podcast premiere: Moncy Abraham of Shieldbearer on All Music Matters N'At with Bryan Gribbin">
+          <span class="upcoming-badge">Upcoming Premiere</span>
           <span class="outlet">All Music Matters N&rsquo;At &middot; Bryan Gribbin</span>
-          <p class="headline">Moncy Abraham of Shieldbearer</p>
+          <div class="upcoming-head">
+            <svg class="upcoming-play" viewBox="0 0 90 64" aria-hidden="true" focusable="false">
+              <rect x="0" y="0" width="90" height="64" rx="14" ry="14" fill="#e74c3c"/>
+              <polygon points="36,18 36,46 60,32" fill="#fff"/>
+            </svg>
+            <p class="headline">Moncy Abraham of Shieldbearer</p>
+          </div>
           <p class="excerpt">A long-form podcast feature on Bryan Gribbin&rsquo;s All Music Matters N&rsquo;At. Premieres Friday May 29, 2026 at 12:30 PM ET on YouTube. The full conversation lands when the show goes live.</p>
-          <div class="tags"><span class="tag">Podcast</span><span class="tag">Premieres May 29</span></div>
+          <div class="upcoming-countdown" id="upcoming-countdown" aria-live="polite" aria-atomic="true">
+            <div class="upcoming-countdown__cell"><span class="upcoming-countdown__n" id="upc-days">--</span><span class="upcoming-countdown__l">Days</span></div>
+            <div class="upcoming-countdown__cell"><span class="upcoming-countdown__n" id="upc-hours">--</span><span class="upcoming-countdown__l">Hours</span></div>
+            <div class="upcoming-countdown__cell"><span class="upcoming-countdown__n" id="upc-mins">--</span><span class="upcoming-countdown__l">Mins</span></div>
+            <div class="upcoming-countdown__cell"><span class="upcoming-countdown__n" id="upc-secs">--</span><span class="upcoming-countdown__l">Secs</span></div>
+          </div>
+          <div class="tags"><span class="tag">Podcast</span><span class="tag">YouTube</span><span class="tag">Premieres May 29</span></div>
         </a>
 
         <!-- Eternal Flames: Galilean feature -->
@@ -406,5 +501,52 @@
   <script src="/js/main.js"></script>
   <script src="/js/sentinelbot.js"></script>
   <script src="/js/signal-room-callout.js" defer></script>
+
+  <script>
+    /* =============================================================
+       Upcoming-premiere countdown.
+
+       Reads data-premiere off .press-card--upcoming. Updates the
+       four cells every second until the target passes, then flips
+       to a "Live now" message and stops the interval. No deps.
+       ============================================================= */
+    (function () {
+      var card = document.querySelector(".press-card--upcoming");
+      if (!card) return;
+      var target = Date.parse(card.getAttribute("data-premiere") || "");
+      if (!Number.isFinite(target)) return;
+
+      var DAY = 24 * 60 * 60 * 1000;
+      var HOUR = 60 * 60 * 1000;
+      var MIN = 60 * 1000;
+
+      var box = document.getElementById("upcoming-countdown");
+      var d = document.getElementById("upc-days");
+      var h = document.getElementById("upc-hours");
+      var m = document.getElementById("upc-mins");
+      var s = document.getElementById("upc-secs");
+      if (!box || !d || !h || !m || !s) return;
+
+      function pad(n) { return String(n).padStart(2, "0"); }
+
+      function render() {
+        var diff = target - Date.now();
+        if (diff <= 0) {
+          d.textContent = "00"; h.textContent = "00"; m.textContent = "00"; s.textContent = "LIVE";
+          box.classList.add("upcoming-countdown--live");
+          return false;
+        }
+        d.textContent = pad(Math.floor(diff / DAY));
+        h.textContent = pad(Math.floor((diff % DAY) / HOUR));
+        m.textContent = pad(Math.floor((diff % HOUR) / MIN));
+        s.textContent = pad(Math.floor((diff % MIN) / 1000));
+        return true;
+      }
+
+      if (render()) {
+        var id = setInterval(function () { if (!render()) clearInterval(id); }, 1000);
+      }
+    })();
+  </script>
 </body>
 </html>

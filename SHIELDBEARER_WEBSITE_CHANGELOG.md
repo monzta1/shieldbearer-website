@@ -7,6 +7,10 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.12.5 - May 2026
+- Promoted the Bryan Gribbin podcast feature on `/interviews` to a full-width upcoming-release card. New `press-card--upcoming` modifier carries a red-tinted background, glowing border, "Upcoming Premiere" badge in the top-left, an inline YouTube play-button SVG next to the headline so the medium is unmistakable, and a live four-cell countdown (days, hours, mins, secs) that ticks every second to the premiere timestamp 2026-05-29T16:30:00Z. At zero, the seconds cell flips to `LIVE` and the interval clears. CSS scoped to the page-level `<style>` block; JS scoped to a small IIFE at the bottom; no shared infrastructure touched.
+- Parity preserved: legacy `interviews.html` mirror matches `interviews/index.html`.
+
 ## v2.12.4 - May 2026
 - Added a new featured press card at the top of `/interviews` for Bryan Gribbin&rsquo;s **All Music Matters N&rsquo;At** podcast feature with Moncy. Premieres Friday May 29, 2026 at 12:30 PM ET on YouTube. Card carries a `Premieres May 29` tag so the timing is obvious before the video goes live. Excerpt stays factual about the premiere only, no invented content from the conversation since the show has not aired.
 - Parity preserved: legacy `interviews.html` mirror matches `interviews/index.html`.
