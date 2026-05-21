@@ -7,6 +7,12 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.10.0 - May 2026
+- New `/gigs` page. Targets the DMV (DC, Maryland, Virginia) and the wider Mid-Atlantic, with case-by-case travel beyond. Lists the formats that fit (worship gatherings, church venues, college and seminary chapel events, house shows, regional metal nights, outdoor festivals) without inventing specific venue names. Page links out to /creed, /manifesto, and /epk so a booker can read the theological floor before reaching out.
+- Inquiry form is mailto-based. No backend, no third-party form service, no AWS cost. Form opens the visitor's email client with name + venue + city + date + format + notes prefilled in the body and a contextual subject line. Falls back to a direct `mailto:shieldbearerusa@gmail.com` link if the email client does not open. Submission fires a `gigs_inquiry_submit` event via window.sbTrack so we can read inquiry volume in GA4.
+- Cross-site nav menus on the other 26 pages are not updated in this commit; that is a separate sweep. /gigs is discoverable by direct URL today and from internal prose links on adjacent pages can be added in the next pass.
+- New `/metrics` page also shipped this week (scaffold + Lambda + page). The /gigs `gigs_inquiry_submit` event will be one of the funnel events surfaced there once GA4 starts collecting it.
+
 ## v2.9.0 - May 2026
 - Added a "Why we wrote this" footer block to every song dossier on `/song-meanings`. The block lives between the action links and the prev/next nav, and carries two anchor links: `/creed` (what we believe) and `/manifesto` (why we sing it loud). Applies uniformly to all 11 curated dossiers and to any future auto-augmented dossier rendered from site.json, since the block ships inside `renderDossierBody`.
 - The framing is intentionally neutral. We do not claim Song X maps to creed and Song Y maps to manifesto. The block tells the reader that the doctrine and the mission are both written down, then points at both pages. Per-song mapping is a separate editorial pass if/when we want it.

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N7SR64KL');
+  </script>
+  <!-- End Google Tag Manager -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gigs | Shieldbearer Live in DMV and the Mid-Atlantic</title>
+  <meta name="description" content="Shieldbearer is solo Christian metal available for live dates in the DMV and Mid-Atlantic region. Solo electric set with backing tracks. Church venues, college and seminary chapel events, small house shows, regional metal festivals. Reach out below to book.">
+  <meta property="og:title" content="Gigs | Shieldbearer Live in DMV and the Mid-Atlantic" />
+  <meta property="og:description" content="Shieldbearer is solo Christian metal available for live dates in the DMV and Mid-Atlantic region. Reach out below to book." />
+  <meta property="og:image" content="https://shieldbearerusa.com/images/galilean-art.png" />
+  <meta property="og:url" content="https://shieldbearerusa.com/gigs" />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://shieldbearerusa.com/gigs" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Gigs | Shieldbearer Live in DMV and the Mid-Atlantic" />
+  <meta name="twitter:description" content="Shieldbearer is available for live dates in the DMV and Mid-Atlantic." />
+  <meta name="twitter:image" content="https://shieldbearerusa.com/images/galilean-art.png" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://tagassistant.google.com https://www.clarity.ms https://scripts.clarity.ms https://open.spotify.com https://www.youtube.com https://app.convertkit.com https://fonts.googleapis.com;
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    font-src 'self' https://fonts.gstatic.com;
+    frame-src https://open.spotify.com https://www.youtube.com https://www.googletagmanager.com;
+    img-src 'self' data: https://img.youtube.com https://shieldbearerusa.com https://www.google-analytics.com https://www.googletagmanager.com https://www.clarity.ms https://c.clarity.ms;
+    connect-src 'self' https://app.convertkit.com https://www.google-analytics.com https://region1.google-analytics.com https://stats.g.doubleclick.net https://www.googletagmanager.com https://www.clarity.ms https://c.clarity.ms https://j.clarity.ms https://tagassistant.google.com https://g7a5tqlxaj.execute-api.us-east-1.amazonaws.com;
+  ">
+  <link rel="icon" href="/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200;300;400;500;600&family=Roboto+Condensed:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .gigs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+      max-width: 1100px;
+    }
+    @media (max-width: 900px) {
+      .gigs-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+    .gigs-region p,
+    .gigs-format p {
+      font-size: .92rem;
+      line-height: 1.95;
+      color: rgba(168,162,154,.7);
+      margin-bottom: 1.2rem;
+    }
+    .gigs-region strong,
+    .gigs-format strong { color: var(--white); font-weight: 400; }
+    .gigs-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.2rem 0;
+    }
+    .gigs-list li {
+      font-size: .9rem;
+      line-height: 1.85;
+      color: rgba(168,162,154,.7);
+      padding: .5rem 0 .5rem 1.4rem;
+      border-bottom: 1px solid rgba(168,162,154,.05);
+      position: relative;
+    }
+    .gigs-list li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: .9em;
+      transform: translateY(-50%);
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: var(--red);
+    }
+    .gigs-list li strong { color: var(--white); font-weight: 400; }
+    .gigs-form {
+      max-width: 720px;
+      margin-top: 1.5rem;
+    }
+    .gigs-form label {
+      display: block;
+      font-family: var(--font-head);
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-size: .72rem;
+      color: rgba(168,162,154,.7);
+      margin-bottom: .3rem;
+      margin-top: 1.2rem;
+    }
+    .gigs-form input,
+    .gigs-form select,
+    .gigs-form textarea {
+      width: 100%;
+      background: rgba(8,8,15,.65);
+      border: 1px solid rgba(168,162,154,.15);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: .95rem;
+      padding: .7rem .9rem;
+      box-sizing: border-box;
+      transition: border-color .2s;
+    }
+    .gigs-form input:focus,
+    .gigs-form select:focus,
+    .gigs-form textarea:focus {
+      border-color: var(--red-bright);
+      outline: none;
+    }
+    .gigs-form textarea { min-height: 8rem; resize: vertical; }
+    .gigs-form__row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    @media (max-width: 600px) {
+      .gigs-form__row { grid-template-columns: 1fr; gap: 0; }
+    }
+    .gigs-form__submit {
+      margin-top: 2rem;
+      display: inline-block;
+      background: var(--red);
+      color: var(--white);
+      border: none;
+      padding: .85rem 1.6rem;
+      font-family: var(--font-head);
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-size: .82rem;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .gigs-form__submit:hover { background: var(--red-bright); }
+    .gigs-form__hint {
+      font-size: .78rem;
+      color: rgba(168,162,154,.5);
+      margin-top: 1rem;
+      line-height: 1.7;
+    }
+    .gigs-form__direct {
+      font-size: .85rem;
+      color: rgba(168,162,154,.6);
+      margin-top: 1.5rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid rgba(168,162,154,.08);
+    }
+    .gigs-form__direct a { color: var(--red-bright); }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N7SR64KL"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <div class="mob-menu" id="mobMenu" role="dialog" aria-label="Navigation">
+    <button class="mob-close" id="mobClose" aria-label="Close menu">&#x2715;</button>
+    <a href="/">Home</a>
+    <a href="/music">Music</a>
+    <a href="/music">The Armory</a>
+    <a href="/videos">Signal Fire</a>
+    <a href="/song-meanings">Lyrics</a>
+    <a href="/signal-room">Signal Room</a>    <a href="/about">About</a>
+    <a href="/story">The Story</a>
+    <a href="/process">The Process</a>
+    <a href="/faq">FAQ</a>
+    <a href="/interviews">Press</a>
+    <a href="/interviews">Press Coverage</a>
+    <a href="/epk">Press Kit</a>
+    <a href="/creed">The Creed</a>
+    <a href="/manifesto">The Manifesto</a>
+    <a href="/open-letter">Open Letter</a>
+    <a href="/gospel">The Gospel</a>
+    <a href="/for-ai-artists">For AI Artists</a>
+    <a href="/faq#faq-ai-legitimate">AI and Faith FAQ</a>
+    <a href="/gatekeeping">On Gatekeeping</a>
+    <a href="/no-rulebook">No Rulebook</a>
+    <a href="/ai-and-creativity">AI and Creativity</a>
+    <a href="/god-uses-tools">God Uses Tools</a>
+    <a href="/artist-freedom">Artist Freedom</a>
+    <a href="/sentinelbot">SentinelBot</a>
+    <a href="/are-you-an-ai-band">Are You An AI Band?</a>
+    <a href="/contact">Contact</a>
+    <a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener" style="color:var(--red-bright)">Merch</a>
+  </div>
+
+  <nav class="site-nav" id="mainNav">
+    <a href="/" class="nav-logo"><img src="/images/logo.png" alt="Shieldbearer"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li class="nav-dropdown">
+        <a href="/music">Music</a>
+        <div class="nav-dropdown__menu">
+          <a href="/music">The Armory</a>
+          <a href="/videos">Signal Fire</a>
+          <a href="/song-meanings">Lyrics</a>
+          <a href="/signal-room">Signal Room</a>        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/about">About</a>
+        <div class="nav-dropdown__menu">
+          <a href="/story">The Story</a>
+          <a href="/process">The Process</a>
+          <a href="/faq">FAQ</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/interviews">Press</a>
+        <div class="nav-dropdown__menu">
+          <a href="/interviews">Press Coverage</a>
+          <a href="/epk">Press Kit</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/manifesto">Words</a>
+        <div class="nav-dropdown__menu">
+          <a href="/creed">The Creed</a>
+          <a href="/manifesto">The Manifesto</a>
+          <a href="/open-letter">Open Letter</a>
+          <a href="/gospel">The Gospel</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/for-ai-artists">AI and Faith</a>
+        <div class="nav-dropdown__menu">
+          <a href="/for-ai-artists">For AI Artists</a>
+          <a href="/faq#faq-ai-legitimate">AI and Faith FAQ</a>
+          <a href="/gatekeeping">On Gatekeeping</a>
+          <a href="/no-rulebook">No Rulebook</a>
+          <a href="/ai-and-creativity">AI and Creativity</a>
+          <a href="/god-uses-tools">God Uses Tools</a>
+          <a href="/artist-freedom">Artist Freedom</a>
+          <a href="/sentinelbot">SentinelBot</a>
+          <a href="/are-you-an-ai-band">Are You An AI Band?</a>
+        </div>
+      </li>
+      <li><a href="/contact">Contact</a></li>
+      <li class="nav-merch"><a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener">Merch</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="page-hero section--dark">
+    <div class="container page-hero-inner">
+      <span class="eyebrow">Live Dates</span>
+      <h1 class="display-title">Gigs</h1>
+      <div class="bar"></div>
+      <p>Shieldbearer plays small, intentional live dates. DMV and Mid-Atlantic preferred. Solo electric set with backing tracks. Worship gatherings, church venues, college and seminary chapel events, small house shows, regional metal nights. Reach out below.</p>
+    </div>
+  </div>
+
+  <section class="section--darker">
+    <div class="container">
+      <div class="gigs-grid">
+
+        <div class="gigs-region">
+          <span class="eyebrow">Where</span>
+          <h2 class="section-title" style="margin-bottom:.6rem;">DMV and Mid-Atlantic</h2>
+          <div class="bar"></div>
+          <p>
+            Home base is in the <strong>DMV (DC, Maryland, Virginia)</strong>. Available
+            across the wider Mid-Atlantic on the right kind of date.
+            Travel inside the corridor is straightforward; further out is on a case-by-case basis
+            with appropriate notice.
+          </p>
+          <ul class="gigs-list">
+            <li><strong>Greater DC:</strong> Maryland, Virginia, DC proper</li>
+            <li><strong>Mid-Atlantic:</strong> Pennsylvania, Delaware, New Jersey, North Carolina</li>
+            <li><strong>Beyond the corridor:</strong> case by case, with travel covered</li>
+          </ul>
+          <p>
+            Read the <a href="/manifesto" style="color:var(--red-bright);">Manifesto</a> for
+            why Shieldbearer plays live the way it does. Read the
+            <a href="/creed" style="color:var(--red-bright);">Creed</a> for what gets said
+            on stage. Both are settled before any inquiry comes in.
+          </p>
+        </div>
+
+        <div class="gigs-format">
+          <span class="eyebrow">Format</span>
+          <h2 class="section-title" style="margin-bottom:.6rem;">What we bring</h2>
+          <div class="bar"></div>
+          <p>
+            Solo set. <strong>Real electric guitar</strong>, vocals, backing tracks for the
+            full band parts (real bass, real drums, real synths in the tracks). Roughly
+            <strong>30 to 60 minutes</strong> standard, longer for festival slots.
+            Lyrics name Christ plainly. Theology is settled in advance and is not
+            negotiable on stage.
+          </p>
+          <p><strong>Settings that fit:</strong></p>
+          <ul class="gigs-list">
+            <li><strong>Worship gatherings</strong> -- mid-week services, youth nights, conferences</li>
+            <li><strong>Church venues</strong> -- sanctuary or fellowship hall sets, evening events</li>
+            <li><strong>Seminary and college chapel events</strong> -- chapel slots, campus ministry nights</li>
+            <li><strong>House shows</strong> -- small, intimate, real conversation after</li>
+            <li><strong>Regional metal nights</strong> -- supporting slots welcomed, headlining considered</li>
+            <li><strong>Outdoor festivals</strong> -- Christian metal / heavy worship lineups</li>
+          </ul>
+          <p><strong>Technical:</strong> bring own guitar, pedalboard, in-ear monitors, and backing-track playback rig. Venue provides PA, vocal mic, monitor wedge or aux send. Stage plot and tech rider available on request.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section--dark">
+    <div class="container" style="max-width: 720px;">
+      <span class="eyebrow">Inquiry</span>
+      <h2 class="section-title" style="margin-bottom:.6rem;">Book a Date</h2>
+      <div class="bar"></div>
+      <p class="section-body" style="margin-bottom:.5rem;">
+        Fill out the form below. It opens your email client with the details
+        pre-filled and addressed to <strong>shieldbearerusa@gmail.com</strong>. Faster than a generic
+        contact form, and the conversation stays in email where it belongs.
+      </p>
+
+      <form class="gigs-form" id="gigs-form" novalidate>
+        <div class="gigs-form__row">
+          <div>
+            <label for="g-name">Your name</label>
+            <input type="text" id="g-name" name="name" autocomplete="name" required>
+          </div>
+          <div>
+            <label for="g-org">Venue or org</label>
+            <input type="text" id="g-org" name="org" autocomplete="organization" required>
+          </div>
+        </div>
+
+        <div class="gigs-form__row">
+          <div>
+            <label for="g-city">City + state</label>
+            <input type="text" id="g-city" name="city" autocomplete="address-level2" placeholder="e.g. Alexandria, VA" required>
+          </div>
+          <div>
+            <label for="g-date">Target date</label>
+            <input type="text" id="g-date" name="date" placeholder="e.g. 2026-08-15 or a window">
+          </div>
+        </div>
+
+        <label for="g-format">Format</label>
+        <select id="g-format" name="format">
+          <option value="Worship gathering">Worship gathering</option>
+          <option value="Church venue">Church venue</option>
+          <option value="College or seminary chapel">College or seminary chapel</option>
+          <option value="House show">House show</option>
+          <option value="Regional metal night">Regional metal night</option>
+          <option value="Outdoor festival">Outdoor festival</option>
+          <option value="Other">Other (describe below)</option>
+        </select>
+
+        <label for="g-notes">Notes</label>
+        <textarea id="g-notes" name="notes" placeholder="Set length, lineup if any, audience size, expected setting, budget if it matters. Anything theological we should know going in."></textarea>
+
+        <button type="submit" class="gigs-form__submit">Send inquiry</button>
+
+        <p class="gigs-form__hint">
+          This form opens your default email client. If it does not open, copy the prefilled message that appears, or write directly to the address below.
+        </p>
+
+        <div class="gigs-form__direct">
+          Prefer to skip the form? Email <a href="mailto:shieldbearerusa@gmail.com?subject=Gigs%20Inquiry">shieldbearerusa@gmail.com</a> directly.
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="next-step" aria-label="Where to go next">
+    <h3 class="next-step__h">Curious before you reach out?</h3>
+    <p class="next-step__p">The doctrine is in the Creed. The mission is in the Manifesto. The press kit covers logistics, photos, and bio.</p>
+    <div class="next-step__links">
+      <a href="/creed">Read the Creed</a>
+      <a href="/manifesto">Read the Manifesto</a>
+      <a href="/epk">Press kit</a>
+    </div>
+  </footer>
+
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="/" class="logo"><img src="/images/logo.png" alt="Shieldbearer"></a>
+        <p>Shieldbearer is Christian metal with Scripture at the center. Christ is named plainly in every release and every conversation.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/music">Music</a></li>
+          <li><a href="/videos">Videos</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/story">Story</a></li>
+          <li><a href="/process">Process</a></li>
+          <li><a href="/song-meanings">Lyrics</a></li>
+          <li><a href="/interviews">Press</a></li>
+          <li><a href="/creed">The Creed</a></li>
+          <li><a href="/manifesto">Manifesto</a></li>
+          <li><a href="/open-letter">Open Letter</a></li>
+          <li><a href="/for-ai-artists">For AI Artists</a></li>
+          <li><a href="/gatekeeping">On Gatekeeping</a></li>
+          <li><a href="/no-rulebook">No Rulebook</a></li>
+          <li><a href="/ai-and-creativity">AI and Creativity</a></li>
+          <li><a href="/god-uses-tools">God Uses Tools</a></li>
+          <li><a href="/artist-freedom">Artist Freedom</a></li>
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/epk">Press Kit</a></li>
+          <li><a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener">Merch</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/shieldbearerusa/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/shieldbearerusa" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.youtube.com/@ShieldbearerUSA" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz" target="_blank" rel="noopener">Spotify</a></li>
+          <li><a href="https://linktr.ee/shieldbearerusa" target="_blank" rel="noopener">Linktree</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Take Action</h4>
+        <ul>
+          <li><a href="/music#armory">Enter the Armory</a></li>
+          <li><a href="/videos">Watch the Videos</a></li>
+          <li><a href="/song-meanings">Read the Lyrics</a></li>
+          <li><a href="/interviews">Catch the Signal</a></li>
+          <li><a href="/epk">Download Press Kit</a></li>
+          <li><a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener">Raise the Banner</a></li>
+          <li><a href="/contact">Join the Mission</a></li>
+          <li><a href="https://buymeacoffee.com/shieldbearer" target="_blank" rel="noopener">Support the Mission</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Shieldbearer. All rights reserved.</p>
+      <a href="mailto:shieldbearerusa@gmail.com">shieldbearerusa@gmail.com</a>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var form = document.getElementById("gigs-form");
+      if (!form) return;
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        var name = (document.getElementById("g-name").value || "").trim();
+        var org = (document.getElementById("g-org").value || "").trim();
+        var city = (document.getElementById("g-city").value || "").trim();
+        var date = (document.getElementById("g-date").value || "").trim();
+        var format = (document.getElementById("g-format").value || "").trim();
+        var notes = (document.getElementById("g-notes").value || "").trim();
+
+        if (!name || !org || !city) {
+          alert("Name, venue/org, and city are required. The rest is optional but helps us reply faster.");
+          return;
+        }
+
+        var subject = "Gigs Inquiry: " + format + " in " + city;
+        var bodyLines = [
+          "Hi Moncy,",
+          "",
+          "I would like to book Shieldbearer for a live date.",
+          "",
+          "Name: " + name,
+          "Venue or org: " + org,
+          "City + state: " + city,
+          "Target date: " + (date || "(open)"),
+          "Format: " + format,
+          "",
+          "Notes:",
+          notes || "(none)",
+          "",
+          "Thanks,",
+          name
+        ];
+        var body = bodyLines.join("\n");
+        var href = "mailto:shieldbearerusa@gmail.com" +
+          "?subject=" + encodeURIComponent(subject) +
+          "&body=" + encodeURIComponent(body);
+
+        if (window.sbTrack) {
+          try { window.sbTrack("gigs_inquiry_submit", { format: format, city: city }); } catch (e) {}
+        }
+        window.location.href = href;
+      });
+    })();
+  </script>
+
+  <script src="/js/config.js"></script>
+  <script src="/js/analytics.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/sentinelbot.js"></script>
+</body>
+</html>
