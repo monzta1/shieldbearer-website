@@ -55,6 +55,7 @@
       color: #b9ffcb;
       background: rgba(0,0,0,0.55);
       border: 1px solid rgba(0,255,65,0.35);
+      border-radius: 8px;
       padding: 6px 10px;
       font-family: Courier New, monospace;
       font-size: 12px;
@@ -110,6 +111,8 @@
       background: #000;
       color: #00ff41;
       border: 1px solid #00ff41;
+      border-radius: 12px;
+      overflow: hidden;
       box-shadow: 0 0 18px rgba(0,255,65,0.35);
       z-index: 9999;
       display: none;

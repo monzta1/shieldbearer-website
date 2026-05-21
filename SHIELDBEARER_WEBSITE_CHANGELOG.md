@@ -7,6 +7,9 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.10.1 - May 2026
+- Rounded the SentinelBot chat window (`#sentinelbot-window`) and the ambient thought line (`#sentinelbot-status`) so the widget no longer reads as a stack of sharp rectangles. Chat window gets `border-radius: 12px` + `overflow: hidden` (so the header bar tucks under the rounded corners cleanly); thought bubble gets `border-radius: 8px`. Launcher pill left as-is intentionally so it still reads as a button rather than a chiclet.
+
 ## v2.10.0 - May 2026
 - New `/gigs` page. Targets the DMV (DC, Maryland, Virginia) and the wider Mid-Atlantic, with case-by-case travel beyond. Lists the formats that fit (worship gatherings, church venues, college and seminary chapel events, house shows, regional metal nights, outdoor festivals) without inventing specific venue names. Page links out to /creed, /manifesto, and /epk so a booker can read the theological floor before reaching out.
 - Inquiry form is mailto-based. No backend, no third-party form service, no AWS cost. Form opens the visitor's email client with name + venue + city + date + format + notes prefilled in the body and a contextual subject line. Falls back to a direct `mailto:shieldbearerusa@gmail.com` link if the email client does not open. Submission fires a `gigs_inquiry_submit` event via window.sbTrack so we can read inquiry volume in GA4.
