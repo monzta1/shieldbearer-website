@@ -7,6 +7,10 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.12.1 - May 2026
+- Wired up the v2.12.0 visitor beacon to the deployed Lambda. `js/config.js` now points `visitor.apiUrl` at the live Function URL. `admin/visitors.html` now points `VISITOR_API` at the same URL. Beacon will fire on every pageview starting next hard refresh.
+- Sitewide CSP sweep across 48 pages (24 legacy `.html` + 24 `/index.html` mirrors): added `https://*.lambda-url.us-east-1.on.aws` to `connect-src` so the beacon is not blocked. The wildcard covers any future Lambda Function URL the operator stands up in us-east-1 without needing another sweep.
+
 ## v2.12.0 - May 2026
 - New `/admin/visitors` page: first-party visitor log with per-session detail (IP, location, full page sequence, referrer, user-agent). Same passphrase gate as `/admin/quiz`, `/admin/logs`, `/admin/metrics`. Built because GA4 aggregates were not what the operator wanted; "who visited what pages" is.
 - New visitor beacon piggybacks on `js/sentinelbot.js` (which loads on every page). On page load it generates or reuses a sessionStorage session ID, then POSTs `{session_id, path, referrer, user_agent}` to the visitor-logger Lambda via `navigator.sendBeacon` (with a `fetch` fallback). Server captures IP from the request context (browsers cannot send their own), resolves location via ipinfo.io, writes one DynamoDB row. Fire and forget; no retry, no queue.
