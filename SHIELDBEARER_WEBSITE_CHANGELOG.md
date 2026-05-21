@@ -8,7 +8,7 @@ Versioning note:
 - Always add the newest entry at the top of the file
 
 ## v2.10.1 - May 2026
-- Rounded the SentinelBot chat window (`#sentinelbot-window`) and the ambient thought line (`#sentinelbot-status`) so the widget no longer reads as a stack of sharp rectangles. Chat window gets `border-radius: 12px` + `overflow: hidden` (so the header bar tucks under the rounded corners cleanly); thought bubble gets `border-radius: 8px`. Launcher pill left as-is intentionally so it still reads as a button rather than a chiclet.
+- Rounded every SentinelBot surface so the widget no longer reads as a stack of sharp rectangles. Chat window (`#sentinelbot-window`) gets `border-radius: 12px` + `overflow: hidden` so the header bar tucks under the rounded corners cleanly. Thought bubble (`#sentinelbot-status`) gets 8px. Launcher pill (`#sentinelbot-launcher`) gets `border-radius: 999px` plus a small horizontal-padding bump for a true pill shape that matches the rounded family.
 
 ## v2.10.0 - May 2026
 - New `/gigs` page. Targets the DMV (DC, Maryland, Virginia) and the wider Mid-Atlantic, with case-by-case travel beyond. Lists the formats that fit (worship gatherings, church venues, college and seminary chapel events, house shows, regional metal nights, outdoor festivals) without inventing specific venue names. Page links out to /creed, /manifesto, and /epk so a booker can read the theological floor before reaching out.
