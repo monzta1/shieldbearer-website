@@ -970,6 +970,13 @@
   ══════════════════════════════════════ -->
   <section class="section--dark" id="release" aria-labelledby="release-heading">
     <div class="container">
+      <!-- featured-track:stamp:begin
+           Static fallback for no-JS, crawlers, first paint, and any
+           site.json load failure. The sentinelbot-site-publisher
+           rewrites everything between these two markers whenever it
+           writes site.json, so this block stays in sync with the
+           latest released song. Do not hand-edit between markers;
+           publisher will overwrite. -->
       <article class="featured-track" id="featured-release">
         <div class="featured-track__media">
           <div class="featured-track__panel featured-track__media-panel">
@@ -1009,6 +1016,7 @@
           </div>
         </aside>
       </article>
+      <!-- featured-track:stamp:end -->
 
     </div>
   </section>
