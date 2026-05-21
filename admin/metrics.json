@@ -1,0 +1,45 @@
+{
+  "generatedAt": "2026-05-21T18:03:32.653Z",
+  "period": {
+    "label": "May 2026 so far",
+    "start": "2026-05-01",
+    "end": "2026-05-31"
+  },
+  "headline": {
+    "sessions": 114,
+    "deltaPct": -70.8,
+    "comparison": "vs April 2026"
+  },
+  "channels": [
+    {
+      "name": "Organic Social",
+      "sessions": 59,
+      "share": 51.8
+    },
+    {
+      "name": "Direct",
+      "sessions": 33,
+      "share": 28.9
+    },
+    {
+      "name": "Organic Search",
+      "sessions": 20,
+      "share": 17.5
+    }
+  ],
+  "events": [
+    {
+      "name": "scroll_depth",
+      "count": 181,
+      "engagedShare": null
+    },
+    {
+      "name": "merch_click",
+      "count": 3,
+      "engagedShare": null
+    }
+  ],
+  "shipped": [],
+  "source": "ga4-data-api",
+  "note": "Numbers are aggregates only. Refreshed daily at 04:00 ET."
+}
