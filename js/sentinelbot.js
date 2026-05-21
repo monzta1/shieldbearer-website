@@ -2,11 +2,6 @@
   // Config lives in js/config.js (window.SHIELDBEARER_CONFIG.sentinelbot).
   const API_URL = (window.SHIELDBEARER_CONFIG && window.SHIELDBEARER_CONFIG.sentinelbot && window.SHIELDBEARER_CONFIG.sentinelbot.apiUrl) || "";
 
-  // Do not render the floating widget on the SentinelBot page
-  // itself. No point offering a shortcut to the page you are on.
-  const sbPath = (window.location && window.location.pathname || "/").replace(/\/+$/, "") || "/";
-  if (sbPath === "/sentinelbot" || sbPath === "/sentinelbot.html") return;
-
   // Route widget events through the same dataLayer pipeline as the
   // rest of analytics.js: window.sbTrack pushes to GTM, GTM to GA4.
   function track(ev, params) {
@@ -380,7 +375,8 @@
     "/no-rulebook":    ["No Rulebook essay open."],
     "/artist-freedom": ["Artist Freedom essay open."],
     "/gatekeeping":    ["On Gatekeeping essay open."],
-    "/are-you-an-ai-band": ["AI Band quiz running."]
+    "/are-you-an-ai-band": ["AI Band quiz running."],
+    "/sentinelbot":    ["You are on my dossier. Talk to me below."]
   };
 
   function currentPageKey() {

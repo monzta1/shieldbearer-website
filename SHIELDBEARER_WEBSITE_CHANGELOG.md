@@ -7,6 +7,11 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.8.3 - May 2026
+- Fixed two related defects on the /sentinelbot dossier page. The floating launcher pill was missing on this page, and the inline "Ask the Watchman" CTA button at the bottom of the page did nothing on click. Both bugs shared a single root cause: `js/sentinelbot.js` carried an early-return on `/sentinelbot` / `/sentinelbot.html` paths that suppressed the entire widget. The inline CTA depends on programmatically clicking `#sentinelbot-launcher`, which never existed in the DOM, so clicking the button hit a null and silently no-opped.
+- Removed the path skip. The widget now renders everywhere, including its own dossier page. The PAGE_GREETINGS map already had a /sentinelbot entry ("You are on my dossier. Ask what I am..."), so the bot opens with the right framing. Added a matching ambient page-aware line: "You are on my dossier. Talk to me below."
+- Smoke-tested the fix in jsdom against the live `sentinelbot.html`: launcher present, window present, CTA click opens the window. Verified.
+
 ## v2.8.2 - May 2026
 - Ambient layer pushed further. The status line now draws from four new sources on top of what v2.8.1 added.
 - Lyric callouts. The sampler now picks a random line from any released song's `lyrics` in site.json (filtered to short standalone-readable lines, no bracketed section markers, no embedded double quotes that would clash with attribution). Every lyric line is rendered with explicit song attribution: `From "Let My People Go": Tell that tyrant, GOD says LET MY PEOPLE GO!`. Live data exposes 104 distinct attributed lyric lines today. This is the new heaviest-weighted real-signal slot because it drives the most fresh-feeling variety.
