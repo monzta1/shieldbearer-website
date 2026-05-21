@@ -7,6 +7,13 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.12.4 - May 2026
+- Added a new featured press card at the top of `/interviews` for Bryan Gribbin&rsquo;s **All Music Matters N&rsquo;At** podcast feature with Moncy. Premieres Friday May 29, 2026 at 12:30 PM ET on YouTube. Card carries a `Premieres May 29` tag so the timing is obvious before the video goes live. Excerpt stays factual about the premiere only, no invented content from the conversation since the show has not aired.
+- Parity preserved: legacy `interviews.html` mirror matches `interviews/index.html`.
+
+## v2.12.3 - May 2026
+- Fixed `/admin/visitors` empty-page bug for returning operators. The passphrase gate had a race: if `sessionStorage` already carried the unlock flag, the first script ran `unlock()` immediately, which called `window.__visitorsBoot()` before the second script that defines it had parsed. The `if` check skipped silently, page rendered with no data. Added the same fallback `admin/quiz.html` uses: after defining `__visitorsBoot`, check if the body is already unlocked and call the boot fn now.
+
 ## v2.12.2 - May 2026
 - Visitor beacon endpoint flipped from Lambda Function URL to API Gateway. The Function URL gateway on this AWS account returns 403 to anonymous traffic even with the textbook resource policy in place (account-level public-access block or similar; quiz-logger Function URL has the same symptom, which is why the quiz uses API Gateway too). Stood up a `/visit` route on the existing `sentinelbot-api` (id `g7a5tqlxaj`) pointing at the visitor-logger Lambda. `js/config.js` and `admin/visitors.html` now use `https://g7a5tqlxaj.execute-api.us-east-1.amazonaws.com/visit`. The Function URL still exists on the Lambda for direct testing; it just isn't on the hot path.
 - CORS config on the API Gateway already covered shieldbearerusa.com + `content-type` + `x-admin-key`, so no CORS sweep was needed. The previous v2.12.1 wildcard for `*.lambda-url.us-east-1.on.aws` is left in `connect-src` -- harmless, covers any future Function URL if the account-level block ever gets resolved.
