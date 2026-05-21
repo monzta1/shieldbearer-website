@@ -413,6 +413,11 @@
       refreshBtn.addEventListener("click", loadData);
       loadData();
     };
+    // If the passphrase gate auto-unlocked before this script parsed
+    // (returning visitor with stored session), __visitorsBoot was
+    // undefined at unlock() time and the first call was a no-op.
+    // Pick it up here. Mirrors admin/quiz.html's fallback.
+    if (!document.body.classList.contains("pass-locked")) window.__visitorsBoot();
   </script>
 </body>
 </html>
