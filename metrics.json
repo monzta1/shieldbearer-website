@@ -1,22 +1,58 @@
 {
-  "generatedAt": "2026-05-21T08:00:00Z",
+  "generatedAt": "2026-05-21T17:55:39.593Z",
   "period": {
     "label": "May 2026 so far",
     "start": "2026-05-01",
-    "end": "2026-05-21"
+    "end": "2026-05-31"
   },
   "headline": {
-    "sessions": 0,
-    "deltaPct": null,
-    "comparison": "real numbers ship with metrics-publisher Lambda"
+    "sessions": 114,
+    "deltaPct": -70.8,
+    "comparison": "vs April 2026"
   },
-  "channels": [],
-  "events": [],
-  "shipped": [
-    { "date": "2026-05-21", "label": "Publisher-stamp deployed: index.html static fallback locks to site.json" },
-    { "date": "2026-05-21", "label": "shield-cli + detector songMeaning sanitizer: hashtag/emoji/URL noise stripped at ingest" },
-    { "date": "2026-05-21", "label": "v2.9.0 dossier cross-links: every song-meaning links to creed and manifesto" }
+  "channels": [
+    {
+      "name": "Organic Social",
+      "sessions": 59,
+      "share": 51.8
+    },
+    {
+      "name": "Direct",
+      "sessions": 33,
+      "share": 28.9
+    },
+    {
+      "name": "Organic Search",
+      "sessions": 20,
+      "share": 17.5
+    }
   ],
-  "source": "scaffold",
-  "note": "Numbers are a scaffold. The metrics-publisher Lambda lands next, then this file gets overwritten daily from GA4."
+  "events": [
+    {
+      "name": "scroll_depth",
+      "count": 181,
+      "engagedShare": null
+    },
+    {
+      "name": "merch_click",
+      "count": 3,
+      "engagedShare": null
+    }
+  ],
+  "shipped": [
+    {
+      "date": "2026-05-21",
+      "label": "Publisher-stamp deployed: index.html static fallback locks to site.json"
+    },
+    {
+      "date": "2026-05-21",
+      "label": "shield-cli + detector songMeaning sanitizer: hashtag/emoji/URL noise stripped at ingest"
+    },
+    {
+      "date": "2026-05-21",
+      "label": "v2.9.0 dossier cross-links: every song-meaning links to creed and manifesto"
+    }
+  ],
+  "source": "ga4-data-api",
+  "note": "Numbers are aggregates only. Refreshed daily at 04:00 ET."
 }
