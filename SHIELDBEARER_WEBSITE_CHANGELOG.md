@@ -7,6 +7,14 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.8.0 - May 2026
+- Added an ambient "living presence" layer to the SentinelBot launcher widget so the bot reads as a Watchman that is awake and on watch instead of an idle prompt box. Three layers: (1) a slow CSS pulse on a small online-dot inside the launcher pill, (2) a short status line that floats left of the pill on desktop and stacks above it on mobile, (3) rotation logic that cycles real signals, motto lines, and curiosity hooks.
+- Real signals come from `/site.json` (already CDN-cached for the rest of the site, no new Lambda or DynamoDB calls). Signals surfaced: time since last site sync, count of tracks under watch, latest release title, "scanning the channel for new uploads" (the YouTube release detector is a real scheduled lambda), and a quiet-watch line that appears only when the latest release is more than seven days old. Quiz submission count is intentionally omitted for v1 to keep AWS cost flat; the curiosity hook "Ask me whether your favorite band is an AI band" still routes visitors to the quiz.
+- Mottos used: "The watch is kept.", "Standing post.", "The signal fire is lit.", "Watchman on the wall.", "Eyes on the horizon." These are clearly stylistic, italicized and tinted differently from real-signal lines so a reader can tell them apart. Curiosity hooks invite the visitor to engage and are phrased honestly because the bot can actually answer them.
+- Rotation interleaves real signals and flavor at roughly 2:1; refreshes every 6s; pauses while the chat window is open. Snapshot refresh runs every 5 minutes (well under the once-per-minute upper bound in the brief).
+- `prefers-reduced-motion` disables the pulse animation and transition fades, leaving a static green online dot. Below 360px viewports the status text hides entirely so the tap target keeps priority. Below 560px the line stacks above the launcher and wraps instead of truncating.
+- No framework, no new dependencies. Pure CSS keyframe for the pulse so battery and CPU stay flat. Total change is in `js/sentinelbot.js`.
+
 ## v2.7.3 - May 2026
 - Stronger fix for the location column wrapping. The v2.7.2 attempt used a `.col-location` selector with the same specificity as the `th, td` rule that declares `word-break: break-word`, and lost the cascade because the general rule was declared later. Bumped to `!important` on `white-space: nowrap`, `word-break: normal`, and `overflow-wrap: normal` for the IP and location cells. The IP column was hitting the same bug (e.g. "108.28.97.217" wrapped to two lines).
 - Bumped the table `min-width` from 1100px to 1500px so the 9 columns get their hint widths instead of being squeezed below them. The table-shell already has `overflow-x: auto`, so wider min-width just means horizontal scroll on narrow viewports rather than column-cramming.

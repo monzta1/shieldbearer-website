@@ -18,11 +18,18 @@
 
   const style = document.createElement("style");
   style.textContent = `
-    #sentinelbot-launcher {
+    #sentinelbot-presence {
       position: fixed;
       bottom: 20px;
       right: 20px;
       z-index: 9999;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      pointer-events: none;
+    }
+    #sentinelbot-launcher {
+      position: static;
       background: #000;
       color: #00ff41;
       border: 1px solid #00ff41;
@@ -30,6 +37,68 @@
       font-family: Courier New, monospace;
       cursor: pointer;
       box-shadow: 0 0 12px rgba(0,255,65,0.35);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      pointer-events: auto;
+    }
+    .sentinelbot-online-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #00ff41;
+      box-shadow: 0 0 6px rgba(0,255,65,0.85);
+      animation: sentinelbot-pulse 2.4s ease-in-out infinite;
+    }
+    @keyframes sentinelbot-pulse {
+      0%, 100% { opacity: 1; box-shadow: 0 0 6px rgba(0,255,65,0.85); }
+      50%      { opacity: 0.45; box-shadow: 0 0 12px rgba(0,255,65,0.45); }
+    }
+    #sentinelbot-status {
+      max-width: 280px;
+      color: #b9ffcb;
+      background: rgba(0,0,0,0.55);
+      border: 1px solid rgba(0,255,65,0.35);
+      padding: 6px 10px;
+      font-family: Courier New, monospace;
+      font-size: 12px;
+      line-height: 1.3;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      opacity: 0;
+      transform: translateY(2px);
+      transition: opacity .45s ease, transform .45s ease;
+      pointer-events: none;
+      user-select: none;
+    }
+    #sentinelbot-status.is-visible {
+      opacity: 0.9;
+      transform: translateY(0);
+    }
+    #sentinelbot-status.is-motto {
+      font-style: italic;
+      color: #7fcf99;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .sentinelbot-online-dot { animation: none; }
+      #sentinelbot-status { transition: none; }
+    }
+    @media (max-width: 560px) {
+      #sentinelbot-presence {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 6px;
+      }
+      #sentinelbot-status {
+        max-width: calc(100vw - 40px);
+        white-space: normal;
+        font-size: 11px;
+      }
+    }
+    @media (max-width: 360px) {
+      #sentinelbot-status { display: none; }
     }
     #sentinelbot-window {
       position: fixed;
@@ -117,9 +186,21 @@
   `;
   document.head.appendChild(style);
 
+  const presence = document.createElement("div");
+  presence.id = "sentinelbot-presence";
+
+  const statusLine = document.createElement("div");
+  statusLine.id = "sentinelbot-status";
+  statusLine.setAttribute("role", "status");
+  statusLine.setAttribute("aria-live", "polite");
+
   const launcher = document.createElement("button");
   launcher.id = "sentinelbot-launcher";
-  launcher.textContent = "SENTINELBOT _";
+  launcher.setAttribute("aria-label", "Open SentinelBot");
+  launcher.innerHTML = '<span class="sentinelbot-online-dot" aria-hidden="true"></span><span>SENTINELBOT _</span>';
+
+  presence.appendChild(statusLine);
+  presence.appendChild(launcher);
 
   const win = document.createElement("div");
   win.id = "sentinelbot-window";
@@ -135,13 +216,174 @@
     </div>
   `;
 
-  document.body.appendChild(launcher);
+  document.body.appendChild(presence);
   document.body.appendChild(win);
 
   const closeBtn = win.querySelector("#sentinelbot-close");
   const messages = win.querySelector("#sentinelbot-messages");
   const input = win.querySelector("#sentinelbot-input");
   const sendBtn = win.querySelector("#sentinelbot-send");
+
+  /* ---------- Ambient presence layer ----------
+     Rotates a single short status line near the launcher. Real signals
+     come from /site.json (already CDN-cached for the rest of the site,
+     so no extra Lambda/DynamoDB cost). Mottos and curiosity hooks are
+     interleaved at lower frequency. */
+
+  const SITE_JSON_URL = "/site.json";
+  const SITE_REFRESH_MS = 5 * 60 * 1000;
+  const ROTATE_MS = 6000;
+
+  const MOTTOS = [
+    "The watch is kept.",
+    "Standing post.",
+    "The signal fire is lit.",
+    "Watchman on the wall.",
+    "Eyes on the horizon."
+  ];
+
+  const CURIOSITY_HOOKS = [
+    "Ask me whether your favorite band is an AI band.",
+    "Ask me what tools went into this record.",
+    "Ask me why they call us an AI band.",
+    "Ask me what Shieldbearer is actually about."
+  ];
+
+  let siteSnapshot = null;
+  let rotationTimer = null;
+  let deck = [];
+  let deckIndex = 0;
+
+  function relativeTimeFrom(iso) {
+    if (!iso) return "";
+    const then = Date.parse(iso);
+    if (!Number.isFinite(then)) return "";
+    const diffMs = Date.now() - then;
+    if (diffMs < 60_000) return "Site synced just now";
+    const mins = Math.floor(diffMs / 60_000);
+    if (mins < 60) return `Site synced ${mins} minute${mins === 1 ? "" : "s"} ago`;
+    const hrs = Math.floor(mins / 60);
+    if (hrs < 24) return `Site synced ${hrs} hour${hrs === 1 ? "" : "s"} ago`;
+    const days = Math.floor(hrs / 24);
+    return `Site synced ${days} day${days === 1 ? "" : "s"} ago`;
+  }
+
+  function buildRealSignals(snap) {
+    const out = [];
+    if (!snap) return out;
+
+    const synced = relativeTimeFrom(snap.generatedAt);
+    if (synced) out.push(synced);
+
+    const trackCount = Number(snap.signalCount);
+    if (Number.isFinite(trackCount) && trackCount > 0) {
+      out.push(`Watching ${trackCount} track${trackCount === 1 ? "" : "s"}.`);
+    }
+
+    const latest =
+      snap.homepage &&
+      snap.homepage.featuredRelease &&
+      String(snap.homepage.featuredRelease.title || "").trim();
+    if (latest) out.push(`Latest release on watch: ${latest}.`);
+
+    // The YouTube release detector is a real scheduled lambda. Stating
+    // that the channel is being scanned is factual, not flavor.
+    out.push("Scanning the channel for new uploads.");
+
+    // Quiet-watch line, surfaces only if the latest published release
+    // is more than a week old. Still a real signal: it reports what
+    // the watch actually saw.
+    const publishedAt =
+      snap.homepage &&
+      snap.homepage.featuredRelease &&
+      Date.parse(snap.homepage.featuredRelease.publishedAt || "");
+    if (Number.isFinite(publishedAt) && (Date.now() - publishedAt) > 7 * 24 * 60 * 60 * 1000) {
+      out.push("On watch. No new releases since last check.");
+    }
+
+    return out;
+  }
+
+  // Build a weighted rotation deck. Roughly 6 real signals, 3 mottos,
+  // 2 curiosity hooks per cycle. Shuffled, but real signals get spread
+  // out so two mottos never sit back-to-back.
+  function shuffleInPlace(arr) {
+    for (let i = arr.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const tmp = arr[i]; arr[i] = arr[j]; arr[j] = tmp;
+    }
+    return arr;
+  }
+
+  function buildDeck() {
+    const real = buildRealSignals(siteSnapshot);
+    const mottos = shuffleInPlace(MOTTOS.slice()).slice(0, 3);
+    const hooks = shuffleInPlace(CURIOSITY_HOOKS.slice()).slice(0, 2);
+
+    // If site.json failed, the deck is still useful: mottos + hooks.
+    if (real.length === 0) {
+      return shuffleInPlace(mottos.concat(hooks).map((t) => ({
+        text: t,
+        kind: mottos.includes(t) ? "motto" : "hook"
+      })));
+    }
+
+    const realItems = shuffleInPlace(real.slice()).map((t) => ({ text: t, kind: "real" }));
+    const flavorItems = shuffleInPlace(
+      mottos.map((t) => ({ text: t, kind: "motto" }))
+        .concat(hooks.map((t) => ({ text: t, kind: "hook" })))
+    );
+
+    // Interleave: take 2 real, then 1 flavor, repeat. Drains both.
+    const out = [];
+    while (realItems.length || flavorItems.length) {
+      if (realItems.length) out.push(realItems.shift());
+      if (realItems.length) out.push(realItems.shift());
+      if (flavorItems.length) out.push(flavorItems.shift());
+    }
+    return out;
+  }
+
+  function setStatusText(item) {
+    if (!item) return;
+    statusLine.textContent = item.text;
+    statusLine.classList.toggle("is-motto", item.kind === "motto");
+    statusLine.classList.add("is-visible");
+  }
+
+  function tickRotation() {
+    if (isOpen) return; // pause rotation while the chat window is open
+    if (!deck.length || deckIndex >= deck.length) {
+      deck = buildDeck();
+      deckIndex = 0;
+    }
+    if (!deck.length) return;
+    setStatusText(deck[deckIndex]);
+    deckIndex += 1;
+  }
+
+  async function refreshSiteSnapshot() {
+    try {
+      const res = await fetch(SITE_JSON_URL, { cache: "no-cache" });
+      if (!res.ok) return;
+      siteSnapshot = await res.json();
+      // Rebuild on next tick so freshly synced values surface promptly.
+      deck = [];
+      deckIndex = 0;
+    } catch (err) {
+      // Network or parse failure. Ambient layer stays alive on mottos
+      // and curiosity hooks. No console noise, no retry storm.
+    }
+  }
+
+  function startAmbient() {
+    if (rotationTimer) return;
+    tickRotation();
+    rotationTimer = setInterval(tickRotation, ROTATE_MS);
+  }
+
+  refreshSiteSnapshot().finally(startAmbient);
+  setInterval(refreshSiteSnapshot, SITE_REFRESH_MS);
 
   function escapeHtml(text) {
     return String(text)
@@ -338,6 +580,7 @@
     win.style.display = isOpen ? "flex" : "none";
     if (isOpen) {
       track("sentinelbot_open", { from_path: window.location.pathname });
+      statusLine.classList.remove("is-visible");
       if (history.length === 0 && messages.childElementCount === 0) {
         primeOpeningHistory();
       }
@@ -346,6 +589,7 @@
     if (!isOpen) {
       history = [];
       messages.innerHTML = "";
+      tickRotation();
     }
   }
 
