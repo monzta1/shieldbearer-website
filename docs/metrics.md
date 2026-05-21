@@ -1,13 +1,12 @@
-# /metrics
+# /admin/metrics
 
-A public-facing summary of how the site is doing. Live at `shieldbearerusa.com/metrics`.
+An operator-only summary of how the site is doing. Live at `shieldbearerusa.com/admin/metrics` behind the same passphrase gate as `/admin/quiz` and `/admin/logs`.
 
-## Why public
+## Visibility decision
 
-Two reasons.
+The original design pitched this page as public ("receipts" and "discipline forcing function"). Once real numbers came online and the May curve showed a 70% month-over-month drop, the call was made to keep the page private until the curve climbs back. The page lives under `/admin/` behind the SHA-256 passphrase gate; the underlying `admin/metrics.json` is technically reachable by direct URL but is unlinked, marked `noindex`, and not discoverable from the public site.
 
-1. **Receipts.** The site claims real engagement with real visitors, real plays, real outbound clicks. Saying it in a header is cheap. Showing the number this calendar month, refreshed weekly, is not. The /metrics page is the receipt.
-2. **Discipline forcing function.** A public number is an accountability surface for the next experiment. Last month's number is right there. You either ship something that moves it or you do not.
+If you later decide to flip back to fully public, the change is small: move the page to `/metrics`, move the JSON to `/metrics.json`, drop the passphrase gate, update the Lambda's `METRICS_JSON_PATH` env var. The Lambda itself does not care which path it writes to.
 
 ## What the page shows
 
@@ -68,7 +67,7 @@ GA4 has data-processing latency (up to 24-48 hours for finalized data). A real-t
 
 ## Operator runbook
 
-To force a refresh: `aws lambda invoke --function-name shieldbearer-metrics-publisher --payload '{}' --cli-binary-format raw-in-base64-out --region us-east-1 /tmp/metrics-out.json`.
+To force a refresh: `aws lambda invoke --function-name sentinelbot-metrics-publisher --payload '{}' --cli-binary-format raw-in-base64-out --region us-east-1 /tmp/metrics-out.json`.
 
 To rotate the GA4 service account: replace the secret value at `shieldbearer/ga4-service-account` in Secrets Manager. No code change required.
 

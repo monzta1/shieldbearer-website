@@ -7,6 +7,11 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.11.0 - May 2026
+- Moved `/metrics` under `/admin/metrics` behind the existing operator passphrase gate (same SHA-256 hash as `/admin/quiz` and `/admin/logs`, one passphrase unlocks all three). Original v2.10.0 design pitched the page as public; once real GA4 data started flowing and the May 2026 curve showed a -70.8% drop vs April, the call was made to keep the receipts private until the curve climbs back. Public design rationale still lives in `docs/metrics.md` for the day we want to flip it back.
+- The page is now fully self-contained: passphrase gate + inline renderer + inline CSS, no shared `js/metrics-renderer.js` (deleted), no public `/metrics` or `/metrics.json` paths. `noindex,nofollow` meta tag and unlinked from public nav so search engines do not surface it.
+- metrics-publisher Lambda env updated to `METRICS_JSON_PATH=admin/metrics.json` so the daily 04:00 ET cron writes to the new path. First live invocation under the new path landed at commit `2b45f70`.
+
 ## v2.10.1 - May 2026
 - Rounded every SentinelBot surface so the widget no longer reads as a stack of sharp rectangles. Chat window (`#sentinelbot-window`) gets `border-radius: 12px` + `overflow: hidden` so the header bar tucks under the rounded corners cleanly. Thought bubble (`#sentinelbot-status`) and launcher (`#sentinelbot-launcher`) both get 8px. Launcher stays rectangular with softened corners rather than going full pill, so it still reads as a button and matches the family.
 
