@@ -28,8 +28,8 @@
       background: #000;
       color: #00ff41;
       border: 1px solid #00ff41;
-      border-radius: 999px;
-      padding: 10px 16px;
+      border-radius: 8px;
+      padding: 10px 14px;
       font-family: Courier New, monospace;
       cursor: pointer;
       box-shadow: 0 0 12px rgba(0,255,65,0.35);
