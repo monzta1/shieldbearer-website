@@ -1,0 +1,22 @@
+{
+  "generatedAt": "2026-05-21T08:00:00Z",
+  "period": {
+    "label": "May 2026 so far",
+    "start": "2026-05-01",
+    "end": "2026-05-21"
+  },
+  "headline": {
+    "sessions": 0,
+    "deltaPct": null,
+    "comparison": "real numbers ship with metrics-publisher Lambda"
+  },
+  "channels": [],
+  "events": [],
+  "shipped": [
+    { "date": "2026-05-21", "label": "Publisher-stamp deployed: index.html static fallback locks to site.json" },
+    { "date": "2026-05-21", "label": "shield-cli + detector songMeaning sanitizer: hashtag/emoji/URL noise stripped at ingest" },
+    { "date": "2026-05-21", "label": "v2.9.0 dossier cross-links: every song-meaning links to creed and manifesto" }
+  ],
+  "source": "scaffold",
+  "note": "Numbers are a scaffold. The metrics-publisher Lambda lands next, then this file gets overwritten daily from GA4."
+}
