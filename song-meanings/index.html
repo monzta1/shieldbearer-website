@@ -2221,6 +2221,10 @@ Sentinels upon the wall`,
               '<div class="song-dossier__lyrics-text">' + lyricsText + '</div>' +
             '</section>' +
             '<div class="song-dossier__actions">' + actionLinks.join('') + '</div>' +
+            '<section class="song-dossier__block song-dossier__related" aria-label="Related reading">' +
+              '<h3 class="song-dossier__block-title">Why we wrote this</h3>' +
+              '<p>Every song sits inside a doctrine and a mission. <a href="/creed">Read the creed</a> for what we believe. <a href="/manifesto">Read the manifesto</a> for why we sing it loud.</p>' +
+            '</section>' +
             '<div class="song-dossier__footer-nav">' +
               (prevSong ? '<a href="#' + escapeHtml(prevSong.id) + '">← Prev: ' + escapeHtml(prevSong.title) + '</a>' : '<span>← Start of Archive</span>') +
               (nextSong ? '<a href="#' + escapeHtml(nextSong.id) + '">Next: ' + escapeHtml(nextSong.title) + ' →</a>' : '<span>End of Archive →</span>') +

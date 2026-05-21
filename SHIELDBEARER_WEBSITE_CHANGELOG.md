@@ -7,6 +7,12 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.9.0 - May 2026
+- Added a "Why we wrote this" footer block to every song dossier on `/song-meanings`. The block lives between the action links and the prev/next nav, and carries two anchor links: `/creed` (what we believe) and `/manifesto` (why we sing it loud). Applies uniformly to all 11 curated dossiers and to any future auto-augmented dossier rendered from site.json, since the block ships inside `renderDossierBody`.
+- The framing is intentionally neutral. We do not claim Song X maps to creed and Song Y maps to manifesto. The block tells the reader that the doctrine and the mission are both written down, then points at both pages. Per-song mapping is a separate editorial pass if/when we want it.
+- Pairs with the earlier internal-linking pass that added prose links to /creed and /manifesto across the home, music, signal-room, and other pages. This change pushes the same two anchors into every song dossier, which is the single page on the site where a visitor is already reading about meaning. Combined surface area on those two doctrine pages should be measurable in next month's GA4 review.
+- Parity preserved: legacy `song-meanings.html` mirror updated to match `song-meanings/index.html` byte-for-byte.
+
 ## v2.8.3 - May 2026
 - Fixed two related defects on the /sentinelbot dossier page. The floating launcher pill was missing on this page, and the inline "Ask the Watchman" CTA button at the bottom of the page did nothing on click. Both bugs shared a single root cause: `js/sentinelbot.js` carried an early-return on `/sentinelbot` / `/sentinelbot.html` paths that suppressed the entire widget. The inline CTA depends on programmatically clicking `#sentinelbot-launcher`, which never existed in the DOM, so clicking the button hit a null and silently no-opped.
 - Removed the path skip. The widget now renders everywhere, including its own dossier page. The PAGE_GREETINGS map already had a /sentinelbot entry ("You are on my dossier. Ask what I am..."), so the bot opens with the right framing. Added a matching ambient page-aware line: "You are on my dossier. Talk to me below."
