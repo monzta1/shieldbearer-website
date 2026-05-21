@@ -81,6 +81,10 @@
       font-style: italic;
       color: #7fcf99;
     }
+    #sentinelbot-status.is-hook {
+      color: #e6ffe9;
+      border-color: rgba(0,255,65,0.55);
+    }
     @media (prefers-reduced-motion: reduce) {
       .sentinelbot-online-dot { animation: none; }
       #sentinelbot-status { transition: none; }
@@ -225,141 +229,261 @@
   const sendBtn = win.querySelector("#sentinelbot-send");
 
   /* ---------- Ambient presence layer ----------
-     Rotates a single short status line near the launcher. Real signals
-     come from /site.json (already CDN-cached for the rest of the site,
-     so no extra Lambda/DynamoDB cost). Mottos and curiosity hooks are
-     interleaved at lower frequency. */
+     Each tick samples ONE line from a weighted pool: mostly real signals
+     pulled from /site.json (already CDN-cached for the rest of the site,
+     zero new Lambda/DynamoDB cost), mixed with watchman mottos and
+     curiosity hooks. No fixed deck, no repeating loop. Every sample
+     avoids the previous line so the rotation feels alive instead of
+     looped. Honest-rule: real signals come from real data; mottos are
+     clearly stylistic flavor and visually distinct. No invented
+     introspection, no fake "thinking" presented as real activity. */
 
   const SITE_JSON_URL = "/site.json";
   const SITE_REFRESH_MS = 5 * 60 * 1000;
-  const ROTATE_MS = 6000;
+  const ROTATE_MS = 5500;
+
+  // Category weights. Real signals dominate so the layer reads as
+  // grounded; hooks get bumped because their job is to pull the visitor
+  // into the chat; mottos round out the texture.
+  const CATEGORY_WEIGHTS = { real: 60, hook: 25, motto: 15 };
 
   const MOTTOS = [
     "The watch is kept.",
     "Standing post.",
     "The signal fire is lit.",
     "Watchman on the wall.",
-    "Eyes on the horizon."
+    "Eyes on the horizon.",
+    "Sentinels at every gate.",
+    "No watchman sleeps tonight.",
+    "The wall is manned.",
+    "The horn is ready.",
+    "Lamp trimmed. Oil full.",
+    "Watching the road from the tower.",
+    "Bow strung. Eyes open."
   ];
 
   const CURIOSITY_HOOKS = [
     "Ask me whether your favorite band is an AI band.",
     "Ask me what tools went into this record.",
     "Ask me why they call us an AI band.",
-    "Ask me what Shieldbearer is actually about."
+    "Ask me what Shieldbearer is actually about.",
+    "Ask me about the latest release.",
+    "Ask me what we are working on right now.",
+    "Ask me what the Signal Room is.",
+    "Ask me which Shieldbearer song hits hardest.",
+    "Ask me whether faith and AI can coexist.",
+    "Ask me how this all started.",
+    "Ask me what scripture is behind the latest song.",
+    "Ask me what record I am watching for next.",
+    "Ask me who Moncy built me for.",
+    "Ask me what a Shieldbearer is."
   ];
 
   let siteSnapshot = null;
   let rotationTimer = null;
-  let deck = [];
-  let deckIndex = 0;
+  let lastText = "";
 
-  function relativeTimeFrom(iso) {
+  function pickRandom(arr) {
+    if (!arr || !arr.length) return null;
+    return arr[Math.floor(Math.random() * arr.length)];
+  }
+
+  function pickRandomAvoiding(arr, avoidText) {
+    if (!arr || !arr.length) return null;
+    if (arr.length === 1) return arr[0];
+    let pick = pickRandom(arr);
+    let guard = 0;
+    while (pick === avoidText && guard < 4) {
+      pick = pickRandom(arr);
+      guard += 1;
+    }
+    return pick;
+  }
+
+  function pickWeightedCategory(weights) {
+    const total = Object.values(weights).reduce((a, b) => a + b, 0);
+    let n = Math.random() * total;
+    for (const k of Object.keys(weights)) {
+      n -= weights[k];
+      if (n <= 0) return k;
+    }
+    return Object.keys(weights)[0];
+  }
+
+  function syncedLine(iso) {
     if (!iso) return "";
     const then = Date.parse(iso);
     if (!Number.isFinite(then)) return "";
     const diffMs = Date.now() - then;
-    if (diffMs < 60_000) return "Site synced just now";
+    if (diffMs < 60_000) return "Site synced just now.";
     const mins = Math.floor(diffMs / 60_000);
-    if (mins < 60) return `Site synced ${mins} minute${mins === 1 ? "" : "s"} ago`;
+    if (mins < 60) return `Site synced ${mins} minute${mins === 1 ? "" : "s"} ago.`;
     const hrs = Math.floor(mins / 60);
-    if (hrs < 24) return `Site synced ${hrs} hour${hrs === 1 ? "" : "s"} ago`;
+    if (hrs < 24) return `Site synced ${hrs} hour${hrs === 1 ? "" : "s"} ago.`;
     const days = Math.floor(hrs / 24);
-    return `Site synced ${days} day${days === 1 ? "" : "s"} ago`;
+    return `Site synced ${days} day${days === 1 ? "" : "s"} ago.`;
   }
 
-  function buildRealSignals(snap) {
-    const out = [];
-    if (!snap) return out;
+  function shortAgo(iso) {
+    const then = Date.parse(iso || "");
+    if (!Number.isFinite(then)) return "";
+    const diffMs = Date.now() - then;
+    if (diffMs < 60_000) return "moments ago";
+    const mins = Math.floor(diffMs / 60_000);
+    if (mins < 60) return `${mins} min ago`;
+    const hrs = Math.floor(mins / 60);
+    if (hrs < 24) return `${hrs} hr ago`;
+    const days = Math.floor(hrs / 24);
+    return `${days} day${days === 1 ? "" : "s"} ago`;
+  }
 
-    const synced = relativeTimeFrom(snap.generatedAt);
-    if (synced) out.push(synced);
+  function timeOfDayLine() {
+    const h = new Date().getHours();
+    const d = new Date().getDay();
+    const candidates = [];
+    if (h < 5) candidates.push("Late watch. The wall stays manned.");
+    if (h >= 5 && h < 7) candidates.push("Pre-dawn watch.");
+    if (h >= 7 && h < 12) candidates.push("Morning watch.");
+    if (h >= 12 && h < 17) candidates.push("Daylight watch.");
+    if (h >= 17 && h < 21) candidates.push("Evening watch.");
+    if (h >= 21) candidates.push("Night watch.");
+    if (d === 0) candidates.push("Sunday watch.");
+    if (d === 6) candidates.push("Sabbath watch.");
+    return pickRandom(candidates) || "";
+  }
 
-    const trackCount = Number(snap.signalCount);
-    if (Number.isFinite(trackCount) && trackCount > 0) {
-      out.push(`Watching ${trackCount} track${trackCount === 1 ? "" : "s"}.`);
+  // Pulls one real signal at random from whatever the snapshot supports.
+  // Each call may return a different line, so the visitor sees fresh
+  // facts on every tick instead of a fixed loop.
+  function sampleRealSignal(snap) {
+    if (!snap) return null;
+
+    const slots = [];
+
+    // Watched tracks. The signal[] array is the bot's actual watch list.
+    // Surfacing a random title makes the bot feel like it is looking at
+    // specific things, not reciting a summary.
+    const signalArr = Array.isArray(snap.signal) ? snap.signal : [];
+    const namedSignals = signalArr
+      .map((s) => s && String(s.title || "").trim())
+      .filter((t) => t && t.length && t.length < 60 && !/^test/i.test(t) && !/simulated/i.test(t));
+    if (namedSignals.length) {
+      slots.push({ w: 22, build: () => `Watching: ${pickRandom(namedSignals)}.` });
     }
 
+    // Released catalogue. Pick a random released title and call it out.
+    const releasedArr = Array.isArray(snap.released) ? snap.released : [];
+    const namedReleased = releasedArr
+      .map((r) => r && String(r.title || "").trim())
+      .filter((t) => t && t.length && t.length < 60 && !/simulated/i.test(t));
+    if (namedReleased.length) {
+      slots.push({ w: 10, build: () => `On the shelf: ${pickRandom(namedReleased)}.` });
+    }
+
+    // Recent event from the event log. The publisher writes events[]
+    // with stateAfter and publishedAt fields. Honest to surface as a
+    // log line because that is literally what it is.
+    const eventsArr = Array.isArray(snap.events) ? snap.events : [];
+    const recentEvent = eventsArr.find((e) => e && e.eventType && e.publishedAt);
+    if (recentEvent) {
+      const ago = shortAgo(recentEvent.publishedAt);
+      const evType = String(recentEvent.eventType).replace(/_/g, " ").toLowerCase();
+      slots.push({ w: 12, build: () => `Last log entry: ${evType}, ${ago}.` });
+    }
+
+    // Coming-soon callout if anything is in the pipeline.
+    const comingArr = Array.isArray(snap.comingSoon) ? snap.comingSoon : [];
+    const namedComing = comingArr
+      .map((c) => c && String(c.title || "").trim())
+      .filter((t) => t && t.length && t.length < 60);
+    if (namedComing.length) {
+      slots.push({ w: 14, build: () => `Coming up on the watch: ${pickRandom(namedComing)}.` });
+    }
+
+    // Latest release on watch. Featured release title.
     const latest =
       snap.homepage &&
       snap.homepage.featuredRelease &&
       String(snap.homepage.featuredRelease.title || "").trim();
-    if (latest) out.push(`Latest release on watch: ${latest}.`);
+    if (latest) {
+      slots.push({ w: 8, build: () => `Latest release on watch: ${latest}.` });
+    }
 
-    // The YouTube release detector is a real scheduled lambda. Stating
-    // that the channel is being scanned is factual, not flavor.
-    out.push("Scanning the channel for new uploads.");
+    // Track count.
+    const trackCount = Number(snap.signalCount);
+    if (Number.isFinite(trackCount) && trackCount > 0) {
+      slots.push({
+        w: 6,
+        build: () => `Watching ${trackCount} track${trackCount === 1 ? "" : "s"}.`
+      });
+    }
 
-    // Quiet-watch line, surfaces only if the latest published release
-    // is more than a week old. Still a real signal: it reports what
-    // the watch actually saw.
+    // Synced time.
+    const synced = syncedLine(snap.generatedAt);
+    if (synced) slots.push({ w: 5, build: () => synced });
+
+    // YouTube detector status. The release-detector lambda is a real
+    // scheduled job. Stating that the channel is being scanned is
+    // factual, not flavor.
+    slots.push({ w: 5, build: () => "Scanning the channel for new uploads." });
+
+    // Time-of-day awareness. Honest: derived from the visitor's clock.
+    const tod = timeOfDayLine();
+    if (tod) slots.push({ w: 6, build: () => tod });
+
+    // Quiet-watch line, only if the latest release is older than a week.
     const publishedAt =
       snap.homepage &&
       snap.homepage.featuredRelease &&
       Date.parse(snap.homepage.featuredRelease.publishedAt || "");
     if (Number.isFinite(publishedAt) && (Date.now() - publishedAt) > 7 * 24 * 60 * 60 * 1000) {
-      out.push("On watch. No new releases since last check.");
+      slots.push({ w: 4, build: () => "On watch. No new releases since last check." });
     }
 
-    return out;
+    if (!slots.length) return null;
+
+    // Weighted pick across the slot menu.
+    const total = slots.reduce((a, s) => a + s.w, 0);
+    let n = Math.random() * total;
+    for (const s of slots) {
+      n -= s.w;
+      if (n <= 0) return s.build();
+    }
+    return slots[slots.length - 1].build();
   }
 
-  // Build a weighted rotation deck. Roughly 6 real signals, 3 mottos,
-  // 2 curiosity hooks per cycle. Shuffled, but real signals get spread
-  // out so two mottos never sit back-to-back.
-  function shuffleInPlace(arr) {
-    for (let i = arr.length - 1; i > 0; i -= 1) {
-      const j = Math.floor(Math.random() * (i + 1));
-      const tmp = arr[i]; arr[i] = arr[j]; arr[j] = tmp;
-    }
-    return arr;
-  }
+  function sampleNext() {
+    const cat = pickWeightedCategory(CATEGORY_WEIGHTS);
 
-  function buildDeck() {
-    const real = buildRealSignals(siteSnapshot);
-    const mottos = shuffleInPlace(MOTTOS.slice()).slice(0, 3);
-    const hooks = shuffleInPlace(CURIOSITY_HOOKS.slice()).slice(0, 2);
-
-    // If site.json failed, the deck is still useful: mottos + hooks.
-    if (real.length === 0) {
-      return shuffleInPlace(mottos.concat(hooks).map((t) => ({
-        text: t,
-        kind: mottos.includes(t) ? "motto" : "hook"
-      })));
+    if (cat === "real") {
+      const real = sampleRealSignal(siteSnapshot);
+      if (real && real !== lastText) return { text: real, kind: "real" };
+      // No real signal available (site.json failed or just got an exact
+      // duplicate). Fall through to a hook so the visitor still gets
+      // something fresh.
+      return { text: pickRandomAvoiding(CURIOSITY_HOOKS, lastText), kind: "hook" };
     }
 
-    const realItems = shuffleInPlace(real.slice()).map((t) => ({ text: t, kind: "real" }));
-    const flavorItems = shuffleInPlace(
-      mottos.map((t) => ({ text: t, kind: "motto" }))
-        .concat(hooks.map((t) => ({ text: t, kind: "hook" })))
-    );
-
-    // Interleave: take 2 real, then 1 flavor, repeat. Drains both.
-    const out = [];
-    while (realItems.length || flavorItems.length) {
-      if (realItems.length) out.push(realItems.shift());
-      if (realItems.length) out.push(realItems.shift());
-      if (flavorItems.length) out.push(flavorItems.shift());
+    if (cat === "hook") {
+      return { text: pickRandomAvoiding(CURIOSITY_HOOKS, lastText), kind: "hook" };
     }
-    return out;
+
+    return { text: pickRandomAvoiding(MOTTOS, lastText), kind: "motto" };
   }
 
   function setStatusText(item) {
-    if (!item) return;
+    if (!item || !item.text) return;
     statusLine.textContent = item.text;
     statusLine.classList.toggle("is-motto", item.kind === "motto");
+    statusLine.classList.toggle("is-hook", item.kind === "hook");
     statusLine.classList.add("is-visible");
+    lastText = item.text;
   }
 
   function tickRotation() {
     if (isOpen) return; // pause rotation while the chat window is open
-    if (!deck.length || deckIndex >= deck.length) {
-      deck = buildDeck();
-      deckIndex = 0;
-    }
-    if (!deck.length) return;
-    setStatusText(deck[deckIndex]);
-    deckIndex += 1;
+    const item = sampleNext();
+    if (item && item.text) setStatusText(item);
   }
 
   async function refreshSiteSnapshot() {
@@ -367,9 +491,6 @@
       const res = await fetch(SITE_JSON_URL, { cache: "no-cache" });
       if (!res.ok) return;
       siteSnapshot = await res.json();
-      // Rebuild on next tick so freshly synced values surface promptly.
-      deck = [];
-      deckIndex = 0;
     } catch (err) {
       // Network or parse failure. Ambient layer stays alive on mottos
       // and curiosity hooks. No console noise, no retry storm.
