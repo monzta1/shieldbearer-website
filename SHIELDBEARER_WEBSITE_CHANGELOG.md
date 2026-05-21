@@ -7,6 +7,12 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.12.0 - May 2026
+- New `/admin/visitors` page: first-party visitor log with per-session detail (IP, location, full page sequence, referrer, user-agent). Same passphrase gate as `/admin/quiz`, `/admin/logs`, `/admin/metrics`. Built because GA4 aggregates were not what the operator wanted; "who visited what pages" is.
+- New visitor beacon piggybacks on `js/sentinelbot.js` (which loads on every page). On page load it generates or reuses a sessionStorage session ID, then POSTs `{session_id, path, referrer, user_agent}` to the visitor-logger Lambda via `navigator.sendBeacon` (with a `fetch` fallback). Server captures IP from the request context (browsers cannot send their own), resolves location via ipinfo.io, writes one DynamoDB row. Fire and forget; no retry, no queue.
+- Privacy posture: per the discussion logged in `feedback_a_method` and the choice made when this was scoped, no banner. Site already collected IPs via GA4 (anonymized) and `/admin/quiz`. The `/admin/visitors` page is operator-only and noindex.
+- Beacon is dormant until `SHIELDBEARER_CONFIG.visitor.apiUrl` is set. The Lambda code is shipped in `sentinelbot-lambda/sentinelbot-visitor-logger/` with its own `deploy.sh`; running it stands up the DynamoDB table + IAM role + Function URL with CORS, then prints the URL to paste into `js/config.js`.
+
 ## v2.11.0 - May 2026
 - Moved `/metrics` under `/admin/metrics` behind the existing operator passphrase gate (same SHA-256 hash as `/admin/quiz` and `/admin/logs`, one passphrase unlocks all three). Original v2.10.0 design pitched the page as public; once real GA4 data started flowing and the May 2026 curve showed a -70.8% drop vs April, the call was made to keep the receipts private until the curve climbs back. Public design rationale still lives in `docs/metrics.md` for the day we want to flip it back.
 - The page is now fully self-contained: passphrase gate + inline renderer + inline CSS, no shared `js/metrics-renderer.js` (deleted), no public `/metrics` or `/metrics.json` paths. `noindex,nofollow` meta tag and unlinked from public nav so search engines do not surface it.

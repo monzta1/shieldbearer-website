@@ -1,4 +1,72 @@
 (() => {
+  // ============================================================
+  // Visitor beacon. Piggybacks on this script (which loads on
+  // every page) to fire one pageview POST per page load to the
+  // visitor-logger Lambda. The server captures IP, resolves
+  // location, writes a row. Session ID is generated once per
+  // browser session and stored in sessionStorage so all
+  // pageviews from the same browser session group together in
+  // /admin/visitors. Fire and forget; no retry, no queue.
+  //
+  // Disable by setting SHIELDBEARER_CONFIG.visitor.apiUrl to "".
+  // ============================================================
+  (function visitorBeacon() {
+    var visitorCfg = (window.SHIELDBEARER_CONFIG && window.SHIELDBEARER_CONFIG.visitor) || {};
+    var visitorApi = String(visitorCfg.apiUrl || "");
+    if (!visitorApi) return;
+
+    var SESSION_KEY = "sb-visit-session";
+    function newId() {
+      try {
+        if (window.crypto && typeof window.crypto.randomUUID === "function") {
+          return window.crypto.randomUUID();
+        }
+      } catch (e) {}
+      return "s-" + Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 10);
+    }
+    var sessionId;
+    try {
+      sessionId = window.sessionStorage.getItem(SESSION_KEY);
+      if (!sessionId) {
+        sessionId = newId();
+        window.sessionStorage.setItem(SESSION_KEY, sessionId);
+      }
+    } catch (e) {
+      // sessionStorage blocked or unavailable. Generate a transient
+      // ID anyway so the beacon still fires; group-by-session in
+      // /admin/visitors will just see this pageview as standalone.
+      sessionId = newId();
+    }
+
+    var payload = JSON.stringify({
+      session_id: sessionId,
+      path: window.location.pathname + window.location.search,
+      referrer: document.referrer || "",
+      user_agent: navigator.userAgent || ""
+    });
+
+    try {
+      if (navigator.sendBeacon) {
+        var blob = new Blob([payload], { type: "application/json" });
+        navigator.sendBeacon(visitorApi, blob);
+        return;
+      }
+    } catch (e) {}
+
+    // Fallback for browsers without sendBeacon. keepalive lets the
+    // request survive a quick navigation away from the page.
+    try {
+      fetch(visitorApi, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: payload,
+        keepalive: true,
+        credentials: "omit",
+        mode: "cors"
+      }).catch(function () {});
+    } catch (e) {}
+  })();
+
   // Config lives in js/config.js (window.SHIELDBEARER_CONFIG.sentinelbot).
   const API_URL = (window.SHIELDBEARER_CONFIG && window.SHIELDBEARER_CONFIG.sentinelbot && window.SHIELDBEARER_CONFIG.sentinelbot.apiUrl) || "";
 

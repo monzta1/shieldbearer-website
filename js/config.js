@@ -44,6 +44,18 @@ window.SHIELDBEARER_CONFIG = {
     apiUrl: "https://g7a5tqlxaj.execute-api.us-east-1.amazonaws.com/quiz"
   },
 
+  /* Visitor pageview beacon ..........................................
+     apiUrl : Lambda Function URL for the visitor-logger.
+              Leave "" until the logger Lambda is deployed. When
+              empty the beacon is skipped entirely; no client-side
+              cost, no failed network calls in console. Set this to
+              the Invoke URL printed by
+              sentinelbot-visitor-logger/deploy.sh, then push.
+     ............................................................... */
+  visitor: {
+    apiUrl: ""
+  },
+
   /* Featured-merch rotator (homepage only) ..........................
      rotate   : true  = pick a random product from `source` on each
                         page load.
