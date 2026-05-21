@@ -56,7 +56,7 @@
       50%      { opacity: 0.45; box-shadow: 0 0 12px rgba(0,255,65,0.45); }
     }
     #sentinelbot-status {
-      max-width: 280px;
+      max-width: 360px;
       color: #b9ffcb;
       background: rgba(0,0,0,0.55);
       border: 1px solid rgba(0,255,65,0.35);
@@ -352,6 +352,98 @@
     return pickRandom(candidates) || "";
   }
 
+  // Page-aware framing. The bot really does see what path the visitor
+  // is on (it's in the URL), so framing the line as "with you" /
+  // "together" is honest: SentinelBot is loaded on the same page. No
+  // surveillance-flavored language; this is presence, not tracking.
+  const PAGE_LINES = {
+    "/":               ["Home base. The view from the wall."],
+    "/about":          ["About page open. Reading the dossier with you."],
+    "/story":          ["Walking the Shieldbearer story together."],
+    "/process":        ["Looking at how this gets made."],
+    "/music":          ["Inside the armory with you."],
+    "/videos":         ["Signal Fire video page open."],
+    "/song-meanings":  ["Lyrics dossier open. Reading together."],
+    "/timeline":       ["Walking the release archive with you."],
+    "/signal-room":    ["Inside the Signal Room together."],
+    "/manifesto":      ["Manifesto open. Standing on it."],
+    "/creed":          ["Creed open. Standing on it."],
+    "/gospel":         ["Gospel page open."],
+    "/open-letter":    ["Reading the open letter with you."],
+    "/faq":            ["FAQ page open. Ask anything."],
+    "/contact":        ["Contact page open."],
+    "/epk":            ["Press kit open."],
+    "/interviews":     ["Press archive open."],
+    "/for-ai-artists": ["For AI Artists page open."],
+    "/ai-and-creativity": ["AI and Creativity essay open."],
+    "/god-uses-tools": ["God Uses Tools essay open."],
+    "/no-rulebook":    ["No Rulebook essay open."],
+    "/artist-freedom": ["Artist Freedom essay open."],
+    "/gatekeeping":    ["On Gatekeeping essay open."],
+    "/are-you-an-ai-band": ["AI Band quiz running."]
+  };
+
+  function currentPageKey() {
+    const raw = (window.location && window.location.pathname || "/").replace(/\/$/, "") || "/";
+    return raw === "" ? "/" : raw.replace(/\.html$/, "");
+  }
+
+  // Pulls real lyric lines from any song in the snapshot that has them.
+  // Filters for short, standalone-readable lines. Attribution to the
+  // source song is always included so a visitor cannot mistake a lyric
+  // for the bot's own statement.
+  function collectLyrics(snap) {
+    if (!snap) return [];
+    const sources = [];
+    const fr = snap.homepage && snap.homepage.featuredRelease;
+    if (fr && fr.lyrics) sources.push({ title: String(fr.title || "").trim(), lyrics: fr.lyrics });
+    const releasedArr = Array.isArray(snap.released) ? snap.released : [];
+    for (const r of releasedArr) {
+      if (r && r.lyrics) sources.push({ title: String(r.title || "").trim(), lyrics: r.lyrics });
+    }
+    const out = [];
+    for (const s of sources) {
+      if (!s.title) continue;
+      const lines = String(s.lyrics).split(/\r?\n/);
+      for (const raw of lines) {
+        const line = raw.trim();
+        if (line.length < 8 || line.length > 55) continue;
+        if (line.includes('"')) continue;          // would clash with attribution quotes
+        if (/^[\[(]/.test(line)) continue;          // section markers like [Chorus]
+        if (/^[\W_]+$/.test(line)) continue;        // pure punctuation
+        out.push({ title: s.title, line });
+      }
+    }
+    return out;
+  }
+
+  // Scripture refs the publisher recorded for each song. Sources:
+  // featuredRelease.scripture.ref (single canonical), featuredRelease
+  // .reference (pipe-separated list), and the same fields on released
+  // entries.
+  function collectScripture(snap) {
+    if (!snap) return [];
+    const out = [];
+    const sources = [];
+    const fr = snap.homepage && snap.homepage.featuredRelease;
+    if (fr) sources.push(fr);
+    const releasedArr = Array.isArray(snap.released) ? snap.released : [];
+    for (const r of releasedArr) sources.push(r);
+    for (const s of sources) {
+      const title = String((s && s.title) || "").trim();
+      if (!title) continue;
+      if (s.scripture && s.scripture.ref) {
+        out.push({ ref: String(s.scripture.ref).trim(), title });
+      }
+      if (s.reference) {
+        String(s.reference).split("|").map((x) => x.trim()).filter(Boolean).forEach((ref) => {
+          out.push({ ref, title });
+        });
+      }
+    }
+    return out;
+  }
+
   // Pulls one real signal at random from whatever the snapshot supports.
   // Each call may return a different line, so the visitor sees fresh
   // facts on every tick instead of a fixed loop.
@@ -388,7 +480,60 @@
     if (recentEvent) {
       const ago = shortAgo(recentEvent.publishedAt);
       const evType = String(recentEvent.eventType).replace(/_/g, " ").toLowerCase();
-      slots.push({ w: 12, build: () => `Last log entry: ${evType}, ${ago}.` });
+      slots.push({ w: 10, build: () => `Last log entry: ${evType}, ${ago}.` });
+    }
+
+    // Random older event from the log. Picks any event with an
+    // eventType (not just the freshest) so the rotation surfaces a
+    // wider trail of what actually happened on the pipeline.
+    const typedEvents = eventsArr.filter((e) => e && e.eventType);
+    if (typedEvents.length > 1) {
+      slots.push({ w: 8, build: () => {
+        const ev = pickRandom(typedEvents);
+        const evType = String(ev.eventType).replace(/_/g, " ").toLowerCase();
+        const ago = shortAgo(ev.publishedAt);
+        const where = ev.stateAfter ? ` -> ${String(ev.stateAfter).toLowerCase()}` : "";
+        return ago
+          ? `event: ${evType}${where}, ${ago}.`
+          : `event: ${evType}${where}.`;
+      }});
+    }
+
+    // Trace IDs from the event stream. Short, log-shaped strings like
+    // `youtube:0lUJcLKIt0o`. Filter to tidy ones so the line reads as
+    // a real log fragment, not noise.
+    const niceTraces = eventsArr
+      .map((e) => e && e.traceId && String(e.traceId))
+      .filter((t) => t && t.length >= 6 && t.length < 36 && !/#/.test(t));
+    if (niceTraces.length) {
+      slots.push({ w: 5, build: () => `trace: ${pickRandom(niceTraces)}` });
+    }
+
+    // Lyric callouts. Always attributed to the source song so a
+    // visitor cannot mistake a quote for the bot's own utterance.
+    const lyricLines = collectLyrics(snap);
+    if (lyricLines.length) {
+      slots.push({ w: 24, build: () => {
+        const pick = pickRandom(lyricLines);
+        return `From "${pick.title}": ${pick.line}`;
+      }});
+    }
+
+    // Scripture references the publisher recorded for each release.
+    const scriptureRefs = collectScripture(snap);
+    if (scriptureRefs.length) {
+      slots.push({ w: 10, build: () => {
+        const pick = pickRandom(scriptureRefs);
+        return `Scripture on file: ${pick.ref}, from "${pick.title}".`;
+      }});
+    }
+
+    // Page-aware line. Frames presence ("with you" / "together") so it
+    // reads as the bot being on the same page, not surveilling the
+    // visitor. Honest: the URL really is what it is.
+    const pageLines = PAGE_LINES[currentPageKey()];
+    if (pageLines && pageLines.length) {
+      slots.push({ w: 8, build: () => pickRandom(pageLines) });
     }
 
     // Coming-soon callout if anything is in the pipeline.

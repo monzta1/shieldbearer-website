@@ -7,6 +7,15 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.8.2 - May 2026
+- Ambient layer pushed further. The status line now draws from four new sources on top of what v2.8.1 added.
+- Lyric callouts. The sampler now picks a random line from any released song's `lyrics` in site.json (filtered to short standalone-readable lines, no bracketed section markers, no embedded double quotes that would clash with attribution). Every lyric line is rendered with explicit song attribution: `From "Let My People Go": Tell that tyrant, GOD says LET MY PEOPLE GO!`. Live data exposes 104 distinct attributed lyric lines today. This is the new heaviest-weighted real-signal slot because it drives the most fresh-feeling variety.
+- Scripture refs. Pulled from `featuredRelease.scripture.ref` and `featuredRelease.reference` (pipe-separated) plus the same fields on released entries. Format: `Scripture on file: Exodus 5:1, from "Let My People Go".` Slot lies dormant while the publisher pipeline writes empty `scripture` fields, will activate the moment a release gets a populated ref.
+- Page-aware framing. New `PAGE_LINES` map keyed by clean URL (`/`, `/music`, `/signal-room`, `/manifesto`, etc.) renders one observation about where the visitor is, framed as shared presence ("with you" / "together") rather than surveillance. The bot really is loaded on the same page; this is honest.
+- Richer log lines. New "random older event" slot picks any typed event from `events[]` (not just the latest one) and formats it as `event: song released -> released, 3 hr ago.` Lives alongside the existing "Last log entry" line. New trace slot for tidy-shaped traceIds; lies dormant on the current data shape but will surface short ones like `youtube:0lUJcLKIt0o` when the event stream carries them.
+- Desktop max-width bumped from 280px to 360px so longer lyric quotes fit without immediate ellipsis. Mobile layout unchanged.
+- Honest rule still holds. Every lyric line is attributed to the source song so a visitor cannot mistake it for the bot's own utterance. Scripture refs come from real publisher data. Log lines come from the real event stream. Page-aware lines are framed as shared presence, not tracking.
+
 ## v2.8.1 - May 2026
 - Rebuilt the ambient status-line rotation in `js/sentinelbot.js` so the SentinelBot launcher feels like it is actively looking at things instead of cycling a short fixed deck. The old build sampled a closed deck of ~10 items and looped; the new one picks fresh on every tick from a much larger pool, never repeats the previous line back-to-back, and refreshes the random selection on every cycle.
 - Real-signal sampler now pulls from `site.json`'s `signal[]` (random watched track title), `released[]` (random released catalogue title), `events[]` (most recent state-change event with relative time), `comingSoon[]` (next upcoming title if any), plus the existing synced-time, track count, latest-release, channel-scan, and quiet-watch lines. Each line is weighted; the random watched-track callout is the heaviest because it surfaces the most variety.
