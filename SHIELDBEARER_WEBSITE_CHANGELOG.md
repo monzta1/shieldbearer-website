@@ -7,6 +7,13 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.15.1 - May 2026
+- Reliability pass on the SentinelBot ambient layer. Three root causes addressed:
+- (1) **Beacon isolation.** The visitor beacon IIFE at the top of `js/sentinelbot.js` was not wrapped in a try/catch. If `navigator.sendBeacon` or the JSON serialization threw synchronously on a particular page (CSP edge case, certain browser states), the error propagated up and killed the rest of the script -- the ambient layer never started on that page. Now hard-isolated: the whole beacon block is inside a try/catch so nothing it does can break the rest.
+- (2) **Bullet-proof rotation chain.** `tickRotation` now wraps the sample + render in a try/catch with a guaranteed `scheduleNextTick` in `finally`. Any failure inside `sampleNext` or `setStatusText` logs a console warning and reschedules the chain. The inner typing `step` function also catches its own errors. A separate watchdog (`setInterval` every 8s) force-restarts the chain if `lastTickAt` is older than ~25s.
+- (3) **Page Visibility recovery.** When the tab returns to the foreground after being hidden long enough for timers to be throttled, a `visibilitychange` handler kicks a fresh tick so the visitor sees activity immediately instead of waiting for the throttled setTimeout to unwind.
+- New behavior: thoughts fade away. After typing finishes the cursor blinks for 2.2s, then the line fades to opacity 0 over 450ms (CSS transition), then ~350ms of blank gap, then the next thought types in. ROTATE_MS stays as the floor for short lines.
+
 ## v2.15.0 - May 2026
 - SentinelBot ambient layer gains a fourth voice: Scripture. New `verse` category with 25 operator-curated encouraging verses, used exactly as provided (no LLM paraphrase of Scripture, ever). Rendered as `<reference>. <text>` so the reference is the first thing visible and the line reads as Scripture rather than the bot's own voice. Rotation weight 12% so verses surface every roughly seven or eight ticks, frequent enough to feel intentional and rare enough to feel weighty.
 - New `.is-verse` styling: warm amber (`#f7d488`) on a dark amber background so verses stand visually apart from the green ops/hook/motto family. Cursor follows the verse color while a verse is on the wall.

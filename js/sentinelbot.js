@@ -10,62 +10,64 @@
   //
   // Disable by setting SHIELDBEARER_CONFIG.visitor.apiUrl to "".
   // ============================================================
-  (function visitorBeacon() {
-    var visitorCfg = (window.SHIELDBEARER_CONFIG && window.SHIELDBEARER_CONFIG.visitor) || {};
-    var visitorApi = String(visitorCfg.apiUrl || "");
-    if (!visitorApi) return;
+  // HARD ISOLATION: wrap the whole beacon in try/catch so nothing it
+  // does can ever propagate up and break the ambient layer below.
+  // This script must keep the bot alive on every page no matter what.
+  try {
+    (function visitorBeacon() {
+      var visitorCfg = (window.SHIELDBEARER_CONFIG && window.SHIELDBEARER_CONFIG.visitor) || {};
+      var visitorApi = String(visitorCfg.apiUrl || "");
+      if (!visitorApi) return;
 
-    var SESSION_KEY = "sb-visit-session";
-    function newId() {
+      var SESSION_KEY = "sb-visit-session";
+      function newId() {
+        try {
+          if (window.crypto && typeof window.crypto.randomUUID === "function") {
+            return window.crypto.randomUUID();
+          }
+        } catch (e) {}
+        return "s-" + Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 10);
+      }
+      var sessionId;
       try {
-        if (window.crypto && typeof window.crypto.randomUUID === "function") {
-          return window.crypto.randomUUID();
+        sessionId = window.sessionStorage.getItem(SESSION_KEY);
+        if (!sessionId) {
+          sessionId = newId();
+          window.sessionStorage.setItem(SESSION_KEY, sessionId);
+        }
+      } catch (e) {
+        sessionId = newId();
+      }
+
+      var payload = JSON.stringify({
+        session_id: sessionId,
+        path: window.location.pathname + window.location.search,
+        referrer: document.referrer || "",
+        user_agent: navigator.userAgent || ""
+      });
+
+      try {
+        if (navigator.sendBeacon) {
+          var blob = new Blob([payload], { type: "application/json" });
+          navigator.sendBeacon(visitorApi, blob);
+          return;
         }
       } catch (e) {}
-      return "s-" + Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 10);
-    }
-    var sessionId;
-    try {
-      sessionId = window.sessionStorage.getItem(SESSION_KEY);
-      if (!sessionId) {
-        sessionId = newId();
-        window.sessionStorage.setItem(SESSION_KEY, sessionId);
-      }
-    } catch (e) {
-      // sessionStorage blocked or unavailable. Generate a transient
-      // ID anyway so the beacon still fires; group-by-session in
-      // /admin/visitors will just see this pageview as standalone.
-      sessionId = newId();
-    }
 
-    var payload = JSON.stringify({
-      session_id: sessionId,
-      path: window.location.pathname + window.location.search,
-      referrer: document.referrer || "",
-      user_agent: navigator.userAgent || ""
-    });
-
-    try {
-      if (navigator.sendBeacon) {
-        var blob = new Blob([payload], { type: "application/json" });
-        navigator.sendBeacon(visitorApi, blob);
-        return;
-      }
-    } catch (e) {}
-
-    // Fallback for browsers without sendBeacon. keepalive lets the
-    // request survive a quick navigation away from the page.
-    try {
-      fetch(visitorApi, {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: payload,
-        keepalive: true,
-        credentials: "omit",
-        mode: "cors"
-      }).catch(function () {});
-    } catch (e) {}
-  })();
+      try {
+        fetch(visitorApi, {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: payload,
+          keepalive: true,
+          credentials: "omit",
+          mode: "cors"
+        }).catch(function () {});
+      } catch (e) {}
+    })();
+  } catch (e) {
+    // Beacon is best-effort. Ambient layer continues regardless.
+  }
 
   // Config lives in js/config.js (window.SHIELDBEARER_CONFIG.sentinelbot).
   const API_URL = (window.SHIELDBEARER_CONFIG && window.SHIELDBEARER_CONFIG.sentinelbot && window.SHIELDBEARER_CONFIG.sentinelbot.apiUrl) || "";
@@ -886,18 +888,16 @@
 
   function setStatusText(item) {
     if (!item || !item.text) return;
+    // Cancel any prior typing/fade so we never bleed two lines.
+    if (typingTimer) { clearTimeout(typingTimer); typingTimer = null; }
+    if (fadeTimer) { clearTimeout(fadeTimer); fadeTimer = null; }
+
     statusLine.classList.toggle("is-motto", item.kind === "motto");
     statusLine.classList.toggle("is-hook", item.kind === "hook");
     statusLine.classList.toggle("is-ops", item.kind === "ops");
     statusLine.classList.toggle("is-verse", item.kind === "verse");
     statusLine.classList.add("is-visible");
     lastText = item.text;
-
-    // Cancel any prior typing run so we never bleed two lines together.
-    if (typingTimer) {
-      clearTimeout(typingTimer);
-      typingTimer = null;
-    }
 
     // Rebuild the inner DOM: a typed span that grows char by char, and
     // a cursor block that blinks via CSS. Cursor is aria-hidden because
@@ -919,53 +919,109 @@
     var fullText = String(item.text);
     var idx = 0;
     var step = function () {
-      if (idx >= fullText.length) {
+      try {
+        if (idx >= fullText.length) {
+          typingTimer = null;
+          return;
+        }
+        typed.textContent = fullText.slice(0, idx + 1);
+        idx += 1;
+        // Jitter (45-75ms) for Matrix-style pacing.
+        var delay = 45 + Math.floor(Math.random() * 30);
+        typingTimer = setTimeout(step, delay);
+      } catch (err) {
+        // Typing died for some reason. Clear the timer; the rotation
+        // watchdog or next tick will catch it. Never let this throw
+        // back up to the setTimeout callback site.
         typingTimer = null;
-        return;
       }
-      typed.textContent = fullText.slice(0, idx + 1);
-      idx += 1;
-      // Jitter (45-75ms) for Matrix-style pacing. Slow enough that
-      // each char registers, fast enough that lines under ~85 chars
-      // finish typing within the ROTATE_MS window before the next
-      // tick replaces them.
-      var delay = 45 + Math.floor(Math.random() * 30);
-      typingTimer = setTimeout(step, delay);
     };
     step();
   }
 
   // Self-rescheduling rotation. Each tick decides when the next tick
   // fires based on how long the line takes to type. Short lines keep
-  // the standard ROTATE_MS cadence; long lines (notably the longer
-  // verses, up to ~130 chars) get extended so they finish typing and
-  // sit briefly with a blinking cursor before the next line replaces
-  // them. ROTATE_MS is the floor, not a hard cadence.
+  // the standard ROTATE_MS cadence; longer verses extend the cycle
+  // so they finish typing, dwell with a blinking cursor, fade away,
+  // and then the next line types in. ROTATE_MS is the floor.
+  //
+  // Bullet-proofing: every code path that runs inside tickRotation
+  // is wrapped in try/catch with a guaranteed scheduleNextTick in
+  // finally. A separate watchdog setInterval restarts the chain if
+  // it ever goes dark for too long. The thought CANNOT get stuck.
   const AVG_TYPE_MS_PER_CHAR = 60;
-  const CURSOR_DWELL_MS = 1500;
+  const CURSOR_DWELL_MS = 2200;   // blink time after typing finishes
+  const FADE_OUT_MS = 450;        // CSS opacity transition duration (matches #sentinelbot-status transition)
+  const GAP_BEFORE_NEXT_MS = 350; // brief blank gap before next thought
+  let fadeTimer = null;
+  let lastTickAt = Date.now();
 
   function scheduleNextTick(textLength) {
     const typingMs = Math.max(0, Number(textLength) || 0) * AVG_TYPE_MS_PER_CHAR;
-    const delay = Math.max(ROTATE_MS, typingMs + CURSOR_DWELL_MS);
+    const cycleMs = typingMs + CURSOR_DWELL_MS + FADE_OUT_MS + GAP_BEFORE_NEXT_MS;
+    const delay = Math.max(ROTATE_MS, cycleMs);
     if (rotationTimer) clearTimeout(rotationTimer);
     rotationTimer = setTimeout(tickRotation, delay);
   }
 
+  function scheduleFadeOut(textLength) {
+    if (fadeTimer) clearTimeout(fadeTimer);
+    const typingMs = Math.max(0, Number(textLength) || 0) * AVG_TYPE_MS_PER_CHAR;
+    fadeTimer = setTimeout(function () {
+      try { statusLine.classList.remove("is-visible"); } catch (e) {}
+      fadeTimer = null;
+    }, typingMs + CURSOR_DWELL_MS);
+  }
+
   function tickRotation() {
     rotationTimer = null;
-    if (isOpen) {
-      // Pause: re-arm at standard cadence; sample no new line.
-      scheduleNextTick(0);
-      return;
-    }
-    const item = sampleNext();
-    if (item && item.text) {
-      setStatusText(item);
-      scheduleNextTick(item.text.length);
-    } else {
-      scheduleNextTick(0);
+    lastTickAt = Date.now();
+    let nextLen = 0;
+    try {
+      if (isOpen) {
+        // Pause: re-arm at standard cadence; sample no new line.
+        return;
+      }
+      const item = sampleNext();
+      if (item && item.text) {
+        setStatusText(item);
+        scheduleFadeOut(item.text.length);
+        nextLen = item.text.length;
+      }
+    } catch (err) {
+      // Any failure inside sample/render -- log to console, do not
+      // throw. The finally block reschedules the chain so the bot
+      // never gets stuck on a frozen thought.
+      try { console.warn("sentinelbot.tickRotation recovered:", err && err.message); } catch (e) {}
+    } finally {
+      scheduleNextTick(nextLen);
     }
   }
+
+  // Watchdog. If for any reason the chain dies (background tab
+  // throttling, an unhandled exception elsewhere on the page that
+  // somehow knocks out our setTimeout, etc.), this restarts it.
+  // Runs every 8s; only fires tickRotation if no tick has happened
+  // in ~25s (about 4x normal cadence).
+  setInterval(function rotationWatchdog() {
+    try {
+      if (Date.now() - lastTickAt > 25000) {
+        tickRotation();
+      }
+    } catch (e) {}
+  }, 8000);
+
+  // Visibility recovery. When the tab returns to the foreground after
+  // being hidden long enough that timers were throttled, kick a fresh
+  // tick so the visitor sees activity right away instead of waiting
+  // for the throttled setTimeout to finish unwinding.
+  try {
+    document.addEventListener("visibilitychange", function () {
+      if (document.visibilityState === "visible" && (Date.now() - lastTickAt > 8000)) {
+        try { tickRotation(); } catch (e) {}
+      }
+    });
+  } catch (e) {}
 
   async function refreshSiteSnapshot() {
     try {
