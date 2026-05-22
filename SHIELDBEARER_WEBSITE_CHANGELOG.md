@@ -7,6 +7,15 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.15.0 - May 2026
+- SentinelBot ambient layer gains a fourth voice: Scripture. New `verse` category with 25 operator-curated encouraging verses, used exactly as provided (no LLM paraphrase of Scripture, ever). Rendered as `<reference>. <text>` so the reference is the first thing visible and the line reads as Scripture rather than the bot's own voice. Rotation weight 12% so verses surface every roughly seven or eight ticks, frequent enough to feel intentional and rare enough to feel weighty.
+- New `.is-verse` styling: warm amber (`#f7d488`) on a dark amber background so verses stand visually apart from the green ops/hook/motto family. Cursor follows the verse color while a verse is on the wall.
+- Rotation timer is now self-rescheduling rather than a fixed `setInterval`. Each tick computes the next delay as `max(ROTATE_MS, typing_time + 1500ms)` so long verses (up to ~130 chars) finish typing and dwell with a blinking cursor before the next line replaces them. Short ops/motto lines keep the standard 5.5s cadence.
+- To add or rotate verses, edit the `ENCOURAGING_VERSES` array in `js/sentinelbot.js`.
+
+## v2.14.3 - May 2026
+- Slowed the SentinelBot status-line typewriter from 16-30ms per character to 45-75ms per character. Each character now registers visually; a ~60-char line takes ~3.6s to type, leaving ~1.9s of blinking cursor before the next tick. Matrix-scene pacing rather than instant-typewriter.
+
 ## v2.14.2 - May 2026
 - SentinelBot status line now types its ambient thoughts character by character with a blinking block cursor at the end -- Matrix "follow the white rabbit" feel. Typing speed jitters between 16-30ms per character so it reads typed rather than metronomic. Cursor stays blinking after the line finishes until the next tick arrives, at which point any in-flight typing is cancelled and the new line starts cleanly. `prefers-reduced-motion: reduce` skips the animation and shows the full line immediately with a still cursor.
 

@@ -156,6 +156,16 @@
       background: rgba(0,40,12,0.65);
       letter-spacing: .04em;
     }
+    /* Scripture surfaced as verse-on-the-wall. Warm amber so it reads
+       distinct from the green ops/hook/motto tones and visually marks
+       itself as Scripture, not as the bot's voice. */
+    #sentinelbot-status.is-verse {
+      color: #f7d488;
+      border-color: rgba(247,212,136,0.55);
+      background: rgba(36,22,6,0.7);
+      letter-spacing: .02em;
+    }
+    #sentinelbot-status.is-verse .sb-cursor { color: #f7d488; }
     /* Typewriter + blinking cursor. The line gets cleared each tick
        and re-typed char by char into .sb-typed; .sb-cursor sits at
        the end blinking until the next tick replaces the whole thing. */
@@ -337,8 +347,9 @@
 
   // Category weights. Real signals dominate so the layer reads as
   // grounded; ops lines layer in mission-control flavor; hooks pull
-  // the visitor into chat; mottos round out the texture.
-  const CATEGORY_WEIGHTS = { real: 55, ops: 20, hook: 15, motto: 10 };
+  // the visitor into chat; verses surface Scripture on the wall;
+  // mottos round out the texture.
+  const CATEGORY_WEIGHTS = { real: 50, ops: 18, hook: 13, verse: 12, motto: 7 };
 
   const MOTTOS = [
     "The watch is kept.",
@@ -404,6 +415,59 @@
     "Schema check passed on last artifact.",
     "Webhook hand-shake confirmed."
   ];
+
+  // Encouraging Scripture. Surfaced as a labeled "verse on the wall"
+  // so the visitor reads it as Scripture, not as the bot's own voice.
+  // Format at render: `<reference>. <text>` so the reference is the
+  // first thing seen. Text is the exact wording the operator provided;
+  // no LLM paraphrasing of Scripture, ever. To add or edit, update
+  // this array directly.
+  const ENCOURAGING_VERSES = [
+    { ref: "Philippians 4:13", text: "I can do all things through Christ who strengthens me." },
+    { ref: "Jeremiah 29:11", text: "For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you." },
+    { ref: "Isaiah 41:10", text: "Fear not, for I am with you; do not be dismayed, for I am your God." },
+    { ref: "Joshua 1:9", text: "Be strong and courageous. Do not be afraid; the Lord your God will be with you wherever you go." },
+    { ref: "Proverbs 3:5-6", text: "Trust in the Lord with all your heart and lean not on your own understanding." },
+    { ref: "Romans 8:28", text: "And we know that in all things God works for the good of those who love him." },
+    { ref: "Psalm 23:1", text: "The Lord is my shepherd; I shall not want." },
+    { ref: "Psalm 46:1", text: "God is our refuge and strength, an ever-present help in trouble." },
+    { ref: "Matthew 11:28", text: "Come to me, all you who are weary and burdened, and I will give you rest." },
+    { ref: "John 3:16", text: "For God so loved the world that he gave his one and only Son." },
+    { ref: "2 Corinthians 5:7", text: "For we walk by faith, not by sight." },
+    { ref: "Isaiah 40:31", text: "But those who hope in the Lord will renew their strength. They will soar on wings like eagles." },
+    { ref: "Psalm 118:24", text: "This is the day the Lord has made; we will rejoice and be glad in it." },
+    { ref: "Philippians 4:6", text: "Do not be anxious about anything, but in every situation, by prayer and petition, present your requests to God." },
+    { ref: "1 Corinthians 16:13", text: "Be on your guard; stand firm in the faith; be courageous; be strong." },
+    { ref: "Psalm 27:1", text: "The Lord is my light and my salvation; whom shall I fear?" },
+    { ref: "Deuteronomy 31:6", text: "Be strong and courageous. Do not be afraid, for the Lord your God goes with you." },
+    { ref: "Matthew 6:33", text: "But seek first his kingdom and his righteousness, and all these things will be given to you as well." },
+    { ref: "Psalm 34:18", text: "The Lord is close to the brokenhearted and saves those who are crushed in spirit." },
+    { ref: "Romans 12:2", text: "Do not conform to the pattern of this world, but be transformed by the renewing of your mind." },
+    { ref: "Hebrews 11:1", text: "Now faith is confidence in what we hope for and assurance about what we do not see." },
+    { ref: "2 Timothy 1:7", text: "For God has not given us a spirit of fear, but of power and of love and of a sound mind." },
+    { ref: "Psalm 119:105", text: "Your word is a lamp for my feet, a light on my path." },
+    { ref: "Galatians 2:20", text: "I have been crucified with Christ and I no longer live, but Christ lives in me." },
+    { ref: "Isaiah 26:3", text: "You will keep in perfect peace those whose minds are steadfast, because they trust in you." }
+  ];
+
+  function formatVerse(v) {
+    if (!v || !v.ref || !v.text) return "";
+    return v.ref + ". " + v.text;
+  }
+
+  let lastVerseRef = "";
+  function pickVerse() {
+    if (!ENCOURAGING_VERSES.length) return null;
+    if (ENCOURAGING_VERSES.length === 1) return ENCOURAGING_VERSES[0];
+    let pick = ENCOURAGING_VERSES[Math.floor(Math.random() * ENCOURAGING_VERSES.length)];
+    let guard = 0;
+    while (pick.ref === lastVerseRef && guard < 4) {
+      pick = ENCOURAGING_VERSES[Math.floor(Math.random() * ENCOURAGING_VERSES.length)];
+      guard += 1;
+    }
+    lastVerseRef = pick.ref;
+    return pick;
+  }
 
   const CURIOSITY_HOOKS = [
     "Ask me whether your favorite band is an AI band.",
@@ -804,6 +868,12 @@
       return { text: pickRandomAvoiding(OPS_LINES, lastText), kind: "ops" };
     }
 
+    if (cat === "verse") {
+      const v = pickVerse();
+      if (v) return { text: formatVerse(v), kind: "verse" };
+      // Fall through to motto if verses are unavailable.
+    }
+
     return { text: pickRandomAvoiding(MOTTOS, lastText), kind: "motto" };
   }
 
@@ -819,6 +889,7 @@
     statusLine.classList.toggle("is-motto", item.kind === "motto");
     statusLine.classList.toggle("is-hook", item.kind === "hook");
     statusLine.classList.toggle("is-ops", item.kind === "ops");
+    statusLine.classList.toggle("is-verse", item.kind === "verse");
     statusLine.classList.add("is-visible");
     lastText = item.text;
 
@@ -864,10 +935,36 @@
     step();
   }
 
+  // Self-rescheduling rotation. Each tick decides when the next tick
+  // fires based on how long the line takes to type. Short lines keep
+  // the standard ROTATE_MS cadence; long lines (notably the longer
+  // verses, up to ~130 chars) get extended so they finish typing and
+  // sit briefly with a blinking cursor before the next line replaces
+  // them. ROTATE_MS is the floor, not a hard cadence.
+  const AVG_TYPE_MS_PER_CHAR = 60;
+  const CURSOR_DWELL_MS = 1500;
+
+  function scheduleNextTick(textLength) {
+    const typingMs = Math.max(0, Number(textLength) || 0) * AVG_TYPE_MS_PER_CHAR;
+    const delay = Math.max(ROTATE_MS, typingMs + CURSOR_DWELL_MS);
+    if (rotationTimer) clearTimeout(rotationTimer);
+    rotationTimer = setTimeout(tickRotation, delay);
+  }
+
   function tickRotation() {
-    if (isOpen) return; // pause rotation while the chat window is open
+    rotationTimer = null;
+    if (isOpen) {
+      // Pause: re-arm at standard cadence; sample no new line.
+      scheduleNextTick(0);
+      return;
+    }
     const item = sampleNext();
-    if (item && item.text) setStatusText(item);
+    if (item && item.text) {
+      setStatusText(item);
+      scheduleNextTick(item.text.length);
+    } else {
+      scheduleNextTick(0);
+    }
   }
 
   async function refreshSiteSnapshot() {
@@ -884,7 +981,6 @@
   function startAmbient() {
     if (rotationTimer) return;
     tickRotation();
-    rotationTimer = setInterval(tickRotation, ROTATE_MS);
   }
 
   refreshSiteSnapshot().finally(startAmbient);
