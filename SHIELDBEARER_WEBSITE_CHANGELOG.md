@@ -7,6 +7,10 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.20.3 - May 2026
+- Real fix for the chapter-range refs (the v2.20.2 regex was correct, but never got a chance to run on them). The TreeWalker's cheap pre-check was rejecting text nodes that did not contain `digit-colon-digit`, which excluded `Numbers 23-24` and `Acts 15` before the regex evaluated. Relaxed the pre-check to "contains any digit." The regex remains anchored to book names so false matches are still impossible; only the gate before the regex was wrong.
+- Verified against the live failing case on `/god-uses-tools`: `A pagan diviner whom God forced to bless His people. Numbers 23-24.` now links.
+
 ## v2.20.2 - May 2026
 - Scripture-link regex extended to cover more reference forms that were leaking through. The previous pattern required `Book Chapter:Verse` with an explicit colon. Caught literal verse refs but missed three common variants that appear in the prose:
   - **Chapter-only** ("Acts 15", "Galatians 1") -- whole-chapter references

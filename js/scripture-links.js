@@ -115,8 +115,12 @@
           if (shouldSkipElement(p)) return NodeFilter.FILTER_REJECT;
           p = p.parentNode;
         }
-        // Cheap pre-check: does the text contain a colon AND a digit?
-        if (!/\d:\d/.test(node.nodeValue)) return NodeFilter.FILTER_REJECT;
+        // Cheap pre-check: text must contain at least one digit. Used
+        // to also require digit-colon-digit, but that excluded
+        // chapter-range and chapter-only refs like "Numbers 23-24"
+        // and "Acts 15" that the regex DOES match. The regex itself
+        // is anchored to book names so false matches stay impossible.
+        if (!/\d/.test(node.nodeValue)) return NodeFilter.FILTER_REJECT;
         return NodeFilter.FILTER_ACCEPT;
       }
     });
