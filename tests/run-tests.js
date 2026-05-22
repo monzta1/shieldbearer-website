@@ -760,8 +760,247 @@ async function flushMicrotasks() {
 })();
 
 // ----------------------------------------------------------------------
+// scripture-links.js
+// ----------------------------------------------------------------------
+
+function makeScriptureDom(innerHtml, scriptureCfg) {
+  // Helper specific to scripture-links tests. Wraps a body region in
+  // a `data-scripture-links` container so the script's activation
+  // selector picks it up. Optional `scriptureCfg` object is assigned
+  // to window.SHIELDBEARER_CONFIG.scripture so tests can verify the
+  // version override (jsdom runs in outside-only mode, so head
+  // <script> blocks don't execute and we must set globals directly).
+  var html = `<!doctype html><html><head></head>` +
+    `<body><div id="root" data-scripture-links>${innerHtml}</div></body></html>`;
+  var dom = makeDom(html);
+  if (scriptureCfg) {
+    dom.window.SHIELDBEARER_CONFIG = { scripture: scriptureCfg };
+  }
+  return dom;
+}
+
+// Basic verse link: "Joshua 1:9" becomes an anchor.
+(async () => {
+  const dom = makeScriptureDom('<p>See Joshua 1:9 for the charge.</p>');
+  runScriptInWindow(dom.window, "js/scripture-links.js");
+  await flushMicrotasks();
+  const a = dom.window.document.querySelector("a.scripture-link");
+  assert(a !== null, "scripture-links: basic Joshua 1:9 becomes an anchor");
+  if (a) {
+    assertEqual(a.textContent, "Joshua 1:9", "scripture-links: anchor text matches ref verbatim");
+    assert(a.href.includes("Joshua%201%3A9"), "scripture-links: href URL-encodes the ref via encodeURIComponent");
+    assert(a.href.includes("version=ESV"), "scripture-links: default version is ESV");
+    assertEqual(a.target, "_blank", "scripture-links: target=_blank");
+    assertEqual(a.rel, "noopener", "scripture-links: rel=noopener");
+  }
+})();
+
+// Verse range within a chapter: "Psalm 23:1-3" stays one link.
+(async () => {
+  const dom = makeScriptureDom('<p>Psalm 23:1-3 is the opening.</p>');
+  runScriptInWindow(dom.window, "js/scripture-links.js");
+  await flushMicrotasks();
+  const links = dom.window.document.querySelectorAll("a.scripture-link");
+  assertEqual(links.length, 1, "scripture-links: verse range produces one link");
+  if (links[0]) assertEqual(links[0].textContent, "Psalm 23:1-3", "scripture-links: verse range text preserved");
+})();
+
+// Multi-word book name: "1 Corinthians 13:4" matches before "Corinthians".
+(async () => {
+  const dom = makeScriptureDom('<p>1 Corinthians 13:4 is love is patient.</p>');
+  runScriptInWindow(dom.window, "js/scripture-links.js");
+  await flushMicrotasks();
+  const a = dom.window.document.querySelector("a.scripture-link");
+  assert(a !== null, "scripture-links: 1 Corinthians multi-word book matches");
+  if (a) assertEqual(a.textContent, "1 Corinthians 13:4", "scripture-links: multi-word book text includes the leading digit");
+})();
+
+// Chapter-only: "Acts 15" links to the whole chapter.
+(async () => {
+  const dom = makeScriptureDom('<p>Read Acts 15 for the council.</p>');
+  runScriptInWindow(dom.window, "js/scripture-links.js");
+  await flushMicrotasks();
+  const a = dom.window.document.querySelector("a.scripture-link");
+  assert(a !== null, "scripture-links: chapter-only Acts 15 links");
+  if (a) assertEqual(a.textContent, "Acts 15", "scripture-links: chapter-only text preserved");
+})();
+
+// Chapter range: "Numbers 23-24" links (regression for v2.20.3 pre-check fix).
+(async () => {
+  const dom = makeScriptureDom('<p>A pagan diviner whom God forced to bless. Numbers 23-24.</p>');
+  runScriptInWindow(dom.window, "js/scripture-links.js");
+  await flushMicrotasks();
+  const a = dom.window.document.querySelector("a.scripture-link");
+  assert(a !== null, "scripture-links: chapter range Numbers 23-24 links");
+  if (a) assertEqual(a.textContent, "Numbers 23-24", "scripture-links: chapter range text preserved");
+})();
+
+// Cross-chapter verse range: "Numbers 23:1-24:5".
+(async () => {
+  const dom = makeScriptureDom('<p>Numbers 23:1-24:5 covers the oracle.</p>');
+  runScriptInWindow(dom.window, "js/scripture-links.js");
+  await flushMicrotasks();
+  const a = dom.window.document.querySelector("a.scripture-link");
+  assert(a !== null, "scripture-links: cross-chapter verse range links");
+  if (a) assertEqual(a.textContent, "Numbers 23:1-24:5", "scripture-links: cross-chapter text preserved");
+})();
+
+// Verse letter suffix: "Romans 5:12a".
+(async () => {
+  const dom = makeScriptureDom('<p>Romans 5:12a is the first clause.</p>');
+  runScriptInWindow(dom.window, "js/scripture-links.js");
+  await flushMicrotasks();
+  const a = dom.window.document.querySelector("a.scripture-link");
+  assert(a !== null, "scripture-links: verse-letter suffix links");
+  if (a) assertEqual(a.textContent, "Romans 5:12a", "scripture-links: verse-letter suffix preserved");
+})();
+
+// Case-sensitivity false-positive defense: lowercase common noun.
+(async () => {
+  const dom = makeScriptureDom('<p>the numbers 23 and 24 were posted.</p>');
+  runScriptInWindow(dom.window, "js/scripture-links.js");
+  await flushMicrotasks();
+  const links = dom.window.document.querySelectorAll("a.scripture-link");
+  assertEqual(links.length, 0, "scripture-links: lowercase 'numbers' does not false-match");
+})();
+
+// Multiple refs in one paragraph: each becomes its own anchor.
+(async () => {
+  const dom = makeScriptureDom('<p>See John 3:16, Romans 5:8, and 1 John 4:9 together.</p>');
+  runScriptInWindow(dom.window, "js/scripture-links.js");
+  await flushMicrotasks();
+  const links = dom.window.document.querySelectorAll("a.scripture-link");
+  assertEqual(links.length, 3, "scripture-links: three refs in one paragraph yield three anchors");
+})();
+
+// Skip text inside an existing <a>: the linker leaves manual anchors alone.
+(async () => {
+  const dom = makeScriptureDom('<p>See <a href="/other">John 3:16</a> already linked.</p>');
+  runScriptInWindow(dom.window, "js/scripture-links.js");
+  await flushMicrotasks();
+  // The existing anchor must NOT be wrapped in another scripture-link.
+  const insideAnchor = dom.window.document.querySelector('a[href="/other"] a.scripture-link');
+  assert(insideAnchor === null, "scripture-links: does not nest inside existing anchor");
+})();
+
+// Skip text inside <code>.
+(async () => {
+  const dom = makeScriptureDom('<p>Inline <code>John 3:16</code> in code.</p>');
+  runScriptInWindow(dom.window, "js/scripture-links.js");
+  await flushMicrotasks();
+  const links = dom.window.document.querySelectorAll("a.scripture-link");
+  assertEqual(links.length, 0, "scripture-links: <code> contents not linked");
+})();
+
+// Skip elements with .no-scripture-link.
+(async () => {
+  const dom = makeScriptureDom('<p class="no-scripture-link">Quiet zone: John 3:16 should NOT link.</p>');
+  runScriptInWindow(dom.window, "js/scripture-links.js");
+  await flushMicrotasks();
+  const links = dom.window.document.querySelectorAll("a.scripture-link");
+  assertEqual(links.length, 0, "scripture-links: .no-scripture-link skipped");
+})();
+
+// Existing biblegateway anchor (e.g. /gatekeeping KJV link) gets the
+// .scripture-link class added without rewriting its href.
+(async () => {
+  const dom = makeScriptureDom(
+    '<p>(<a href="https://www.biblegateway.com/passage/?search=John+14%3A6&amp;version=KJV">John 14:6, KJV</a>)</p>'
+  );
+  runScriptInWindow(dom.window, "js/scripture-links.js");
+  await flushMicrotasks();
+  const a = dom.window.document.querySelector('a[href*="biblegateway.com"]');
+  assert(a !== null, "scripture-links: existing biblegateway anchor still present");
+  if (a) {
+    assert(a.classList.contains("scripture-link"), "scripture-links: existing biblegateway anchor gets .scripture-link class");
+    assert(a.href.includes("version=KJV"), "scripture-links: existing biblegateway href is NOT rewritten (KJV preserved)");
+    assertEqual(a.target, "_blank", "scripture-links: existing anchor gets target=_blank if missing");
+    assertEqual(a.rel, "noopener", "scripture-links: existing anchor gets rel=noopener if missing");
+  }
+})();
+
+// Re-running the styler on an already-classed anchor must not double up.
+(async () => {
+  const dom = makeScriptureDom(
+    '<p><a class="scripture-link" href="https://www.biblegateway.com/passage/?search=John+3%3A16&amp;version=ESV">John 3:16</a></p>'
+  );
+  runScriptInWindow(dom.window, "js/scripture-links.js");
+  await flushMicrotasks();
+  const a = dom.window.document.querySelector('a.scripture-link');
+  if (a) {
+    // The class list should still contain scripture-link exactly once.
+    const count = Array.prototype.filter.call(a.classList, function (c) { return c === "scripture-link"; }).length;
+    assertEqual(count, 1, "scripture-links: existing .scripture-link class not duplicated");
+  }
+})();
+
+// Version override via SHIELDBEARER_CONFIG.scripture.version.
+(async () => {
+  const dom = makeScriptureDom(
+    '<p>John 3:16 is the verse.</p>',
+    { version: "NIV" }
+  );
+  runScriptInWindow(dom.window, "js/scripture-links.js");
+  await flushMicrotasks();
+  const a = dom.window.document.querySelector("a.scripture-link");
+  assert(a !== null, "scripture-links: version override -- anchor still produced");
+  if (a) {
+    assert(a.href.includes("version=NIV"), "scripture-links: version override pushes NIV into href");
+    assertEqual(a.getAttribute("data-version"), "NIV", "scripture-links: data-version attr reflects override");
+  }
+})();
+
+// No activation root means no work: a page with neither data-scripture-links
+// nor .scripture-linked does nothing.
+(async () => {
+  const html = `<!doctype html><html><body><p>John 3:16 is the verse.</p></body></html>`;
+  const dom = makeDom(html);
+  runScriptInWindow(dom.window, "js/scripture-links.js");
+  await flushMicrotasks();
+  const links = dom.window.document.querySelectorAll("a.scripture-link");
+  assertEqual(links.length, 0, "scripture-links: no activation root, no links");
+})();
+
+// Number-only without a book name: no false match.
+(async () => {
+  const dom = makeScriptureDom('<p>Final score: 5:12 -- a real nail-biter.</p>');
+  runScriptInWindow(dom.window, "js/scripture-links.js");
+  await flushMicrotasks();
+  const links = dom.window.document.querySelectorAll("a.scripture-link");
+  assertEqual(links.length, 0, "scripture-links: '5:12' without book name does not match");
+})();
+
+// MutationObserver picks up content added after initial DOMContentLoaded.
+// Important for /song-meanings dossiers and any JS-rendered card.
+(async () => {
+  const dom = makeScriptureDom('<p>seed</p>');
+  runScriptInWindow(dom.window, "js/scripture-links.js");
+  await flushMicrotasks();
+  // Inject a new paragraph with a scripture ref.
+  const newP = dom.window.document.createElement("p");
+  newP.textContent = "Inserted after load: Hebrews 11:1 is faith.";
+  dom.window.document.getElementById("root").appendChild(newP);
+  // Wait past the 200ms debounce.
+  await new Promise((r) => setTimeout(r, 300));
+  await flushMicrotasks();
+  const links = dom.window.document.querySelectorAll("a.scripture-link");
+  assert(links.length >= 1, "scripture-links: MutationObserver re-scans after DOM insert");
+  const found = Array.prototype.some.call(links, function (a) { return a.textContent === "Hebrews 11:1"; });
+  assert(found, "scripture-links: dynamically inserted ref gets linked");
+})();
+
+// Comma-separated list: "John 14:26, Ephesians 1:13-14" -- each gets linked.
+(async () => {
+  const dom = makeScriptureDom('<p>Compare John 14:26, Ephesians 1:13-14, and Romans 8:9.</p>');
+  runScriptInWindow(dom.window, "js/scripture-links.js");
+  await flushMicrotasks();
+  const links = dom.window.document.querySelectorAll("a.scripture-link");
+  assertEqual(links.length, 3, "scripture-links: three comma-separated refs each linked");
+})();
+
+// ----------------------------------------------------------------------
 setTimeout(() => {
   console.log("\n=========================================");
   console.log(`Website JS tests: ${passed} passed, ${failed} failed`);
   process.exit(failed > 0 ? 1 : 0);
-}, 200);
+}, 600);
