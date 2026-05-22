@@ -150,6 +150,12 @@
       color: #e6ffe9;
       border-color: rgba(0,255,65,0.55);
     }
+    #sentinelbot-status.is-ops {
+      color: #ccffd8;
+      border-color: rgba(0,255,65,0.7);
+      background: rgba(0,40,12,0.65);
+      letter-spacing: .04em;
+    }
     @media (prefers-reduced-motion: reduce) {
       .sentinelbot-online-dot { animation: none; }
       #sentinelbot-status { transition: none; }
@@ -310,9 +316,9 @@
   const ROTATE_MS = 5500;
 
   // Category weights. Real signals dominate so the layer reads as
-  // grounded; hooks get bumped because their job is to pull the visitor
-  // into the chat; mottos round out the texture.
-  const CATEGORY_WEIGHTS = { real: 60, hook: 25, motto: 15 };
+  // grounded; ops lines layer in mission-control flavor; hooks pull
+  // the visitor into chat; mottos round out the texture.
+  const CATEGORY_WEIGHTS = { real: 55, ops: 20, hook: 15, motto: 10 };
 
   const MOTTOS = [
     "The watch is kept.",
@@ -327,6 +333,56 @@
     "Lamp trimmed. Oil full.",
     "Watching the road from the tower.",
     "Bow strung. Eyes open."
+  ];
+
+  // Mission-control ops lines. Voice borrowed from NORAD / Mission
+  // Control: terse, technical, confident. Every line names a real
+  // component of the pipeline (Lambda, EventBridge, DynamoDB,
+  // GitHub Pages cascade) so it is not pure flavor; it is what the
+  // bot is actually orchestrating. STATUS: GREEN when nominal.
+  const OPS_LINES = [
+    "[OPS] posture AUTONOMOUS / ARMED.",
+    "[OPS] region us-east-1. Signal chain holding nominal.",
+    "[OPS] human-in-loop 1 (operator: monzta1).",
+    "EventBridge armed. Awaiting fire window.",
+    "Cron(0 13 ? * SAT *) -- next scan locked.",
+    "Cron(15 13 ? * SAT *) -- publisher window locked.",
+    "Detector SLA target: < 60m artist-to-public.",
+    "Publisher SLA target: < 30m of detector.",
+    "End-to-end SLA: < 90m artist-to-public.",
+    "All phases green. Stand by.",
+    "Hot-path evaluator engaged.",
+    "DynamoDB de-dup pass clear.",
+    "Telemetry sealed. exit 0. STATUS: GREEN.",
+    "Channel feed pulled. Candidates scored.",
+    "Signal chain nominal across phases.",
+    "Lambda cold start within envelope.",
+    "Ops watch active. No human intervention required.",
+    "Phase 1 complete. Phase 2 armed.",
+    "GitHub Pages cascade primed.",
+    "Sitemap regeneration queued.",
+    "Featured release card swap on standby.",
+    "site.json artifact integrity verified.",
+    "EventStream commit pending publisher fire.",
+    "Operator paged for awareness only.",
+    "Pipeline holding. No drift detected.",
+    "Reconciliation pass clean. No anomalies.",
+    "Watch tower posture: green across the board.",
+    "Inbound feed steady. No malformed payloads.",
+    "Quotas nominal. Rate limits inside envelope.",
+    "Memory headroom 122 MB. No pressure.",
+    "Cold-start budget held. p99 inside SLA.",
+    "Drift sentinels reporting clean.",
+    "Backfill queue empty. Catch-up not required.",
+    "Audit trail intact. Hash chain verified.",
+    "Quiet on the wire. All channels stable.",
+    "Watch handoff complete. No incidents.",
+    "Replay buffer healthy.",
+    "Heartbeat from every node. None missed.",
+    "Throughput steady. Latency under target.",
+    "Ingress filters holding.",
+    "Schema check passed on last artifact.",
+    "Webhook hand-shake confirmed."
   ];
 
   const CURIOSITY_HOOKS = [
@@ -640,6 +696,49 @@
     // factual, not flavor.
     slots.push({ w: 5, build: () => "Scanning the channel for new uploads." });
 
+    // Ops-watch real-signal slots. Same underlying facts as the lines
+    // above, dressed in mission-control phrasing (lambda names, region,
+    // traceIds, SLA windows). Reads like a NORAD status line because
+    // that is what the pipeline actually is. STATUS: GREEN when nominal.
+    if (niceTraces.length) {
+      slots.push({ w: 8, build: () => `[OPS] EventStream record ${pickRandom(niceTraces)}. STATUS: GREEN.` });
+    }
+    if (Number.isFinite(trackCount) && trackCount > 0) {
+      slots.push({
+        w: 5,
+        build: () => `[OPS] watch-list ${trackCount} track${trackCount === 1 ? "" : "s"}. hot-path engaged.`
+      });
+    }
+    if (Number.isFinite(publishedAt)) {
+      const minsSince = Math.floor((Date.now() - publishedAt) / 60000);
+      if (minsSince >= 0) {
+        if (minsSince < 60) {
+          slots.push({ w: 7, build: () => `[OPS] last release T+${minsSince}m. SLA window active.` });
+        } else if (minsSince < 24 * 60) {
+          const hrs = Math.floor(minsSince / 60);
+          slots.push({ w: 5, build: () => `[OPS] last release T+${hrs}h. signal chain nominal.` });
+        } else {
+          const days = Math.floor(minsSince / (24 * 60));
+          slots.push({ w: 4, build: () => `[OPS] last release T+${days}d. holding watch.` });
+        }
+      }
+    }
+    if (namedReleased.length) {
+      slots.push({ w: 5, build: () => `[OPS] released catalog ${namedReleased.length} entr${namedReleased.length === 1 ? "y" : "ies"}. checksum nominal.` });
+    }
+    if (namedComing.length) {
+      slots.push({ w: 6, build: () => `[OPS] coming-soon queue +${namedComing.length}. publisher armed.` });
+    }
+    // Live timestamp in EDT-ish ops-watch shape. Honest: pulled from
+    // the visitor's own clock, formatted like a CloudWatch log line.
+    slots.push({ w: 5, build: () => {
+      const d = new Date();
+      const hh = String(d.getHours()).padStart(2, "0");
+      const mm = String(d.getMinutes()).padStart(2, "0");
+      const ss = String(d.getSeconds()).padStart(2, "0");
+      return `[${hh}:${mm}:${ss}] sentinelbot heartbeat. STATUS: GREEN.`;
+    }});
+
     // Time-of-day awareness. Honest: derived from the visitor's clock.
     const tod = timeOfDayLine();
     if (tod) slots.push({ w: 6, build: () => tod });
@@ -681,6 +780,10 @@
       return { text: pickRandomAvoiding(CURIOSITY_HOOKS, lastText), kind: "hook" };
     }
 
+    if (cat === "ops") {
+      return { text: pickRandomAvoiding(OPS_LINES, lastText), kind: "ops" };
+    }
+
     return { text: pickRandomAvoiding(MOTTOS, lastText), kind: "motto" };
   }
 
@@ -689,6 +792,7 @@
     statusLine.textContent = item.text;
     statusLine.classList.toggle("is-motto", item.kind === "motto");
     statusLine.classList.toggle("is-hook", item.kind === "hook");
+    statusLine.classList.toggle("is-ops", item.kind === "ops");
     statusLine.classList.add("is-visible");
     lastText = item.text;
   }

@@ -7,6 +7,11 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.14.0 - May 2026
+- SentinelBot ambient status line gets a mission-control voice layer. New `ops` category sits alongside `real`, `hook`, `motto`. Pool of ~45 static ops lines (`[OPS] posture AUTONOMOUS / ARMED.`, `EventBridge armed. Awaiting fire window.`, `Detector SLA target: < 60m artist-to-public.`, `Throughput steady. Latency under target.`) plus six new real-signal slots inside `sampleRealSignal` that dress actual snapshot data in ops-watch phrasing (`[OPS] EventStream record youtube:0lUJcLKIt0o. STATUS: GREEN.`, `[OPS] last release T+3d. holding watch.`, live `[HH:MM:SS] sentinelbot heartbeat. STATUS: GREEN.`).
+- Category weights tilted to keep real data dominant: `real 55, ops 20, hook 15, motto 10`. The visitor sees fresh activity on every tick, never the same line back-to-back. Goal is the *sense* of a bot constantly working, not literal comprehension of every term.
+- New `#sentinelbot-status.is-ops` CSS rule: brighter green border, slightly tighter letter-spacing, darker terminal-green background so ops lines read distinct from mottos (italic dim) and hooks (brighter call-to-action).
+
 ## v2.13.0 - May 2026
 - Sitewide readability bump: every body-paragraph font-size in the range `.92rem` through `.98rem` flipped to `1rem`. Body baseline stays at 17px desktop / 16px mobile; the change just stops page-level CSS from scaling paragraphs DOWN below the baseline. Effective gain is ~1-2px per paragraph, hits 43 files (global `css/style.css` + 21 legacy `.html` pages + 21 clean-URL `/index.html` mirrors). Tags, eyebrows, captions, hints, and other intentional small-text rules (everything below .92rem) untouched.
 - Parity test still passes since the sweep applied identically to both forms.
