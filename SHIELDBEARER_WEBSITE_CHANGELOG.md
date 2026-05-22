@@ -7,6 +7,11 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.21.0 - May 2026
+- SEO pass on the two gaps surfaced by the audit. Sitemap now lists all 26 indexable pages (added `/are-you-an-ai-band`, `/gigs`, `/signal-room`; refreshed every `lastmod` to 2026-05-22). JSON-LD coverage expanded from 3 pages to 11.
+- New JSON-LD blocks: `Person` on `/about`, `Article` on `/manifesto`, `/creed`, `/gospel`, `/open-letter`, `MusicGroup` with full track list on `/song-meanings`, `CollectionPage` + `ItemList` of press items on `/interviews`, `MusicGroup` with `areaServed` (DMV + Mid-Atlantic states) and `ContactPoint` for booking on `/gigs`. All inserted right after each page's canonical link; parity mirrors synced; every block validated with JSON.parse.
+- Tests still green (115 / 115, 100% line coverage); em-dash sweep clean; no other files touched.
+
 ## v2.20.5 - May 2026
 - Fixed the homepage Signal Room countdown. It was gated on `site.json` `comingSoon[0]` being populated; with `comingSoon` currently empty, `activate()` returned early and the countdown stayed `hidden`, so the four cells were invisible. The `/signal-room` page does not gate its countdown that way, so the two pages disagreed.
 - Pulled the countdown out of the state-aware `activate()` flow into an unconditional IIFE at the top of `js/signal-room-home.js`. Same target math, same `localStorage` key as `js/signal-countdown.js`, so the two clocks show the same time. Removed `hidden aria-hidden="true"` from the homepage markup so non-JS visitors also see the four "00" cells.
