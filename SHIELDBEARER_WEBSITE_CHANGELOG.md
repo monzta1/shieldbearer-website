@@ -7,6 +7,11 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.17.0 - May 2026
+- `/admin/visitors` v2: duration per page + total dwell per session. Client-side beacon now uses a three-event protocol -- `open` on page load, `heartbeat` every 30 seconds while the tab is visible, and `close` on `visibilitychange:hidden` / `pagehide`. The client generates `ts_open` once and passes it on every beacon so the server can match them. Lambda PutItems the open row and UpdateItems on heartbeat/close to keep `ts_last_seen` fresh and recompute `duration_ms` each time.
+- Admin UI gains a duration column on each page row and a `dwell <total>` chip in the session header. Pages closed cleanly show their duration as-is; pages whose `close` beacon never landed (browser killed, tab crash) show duration with a `*` suffix and a tooltip explaining the heartbeat is the last signal. v1 rows without `duration_ms` show `--` and contribute 0 to the total instead of skewing it.
+- Lambda now supports the three event types with full back-compat: a beacon with no `event` field still produces an open row exactly like v1. The browser fallback path (no `sendBeacon`) still works via `fetch keepalive`.
+
 ## v2.16.0 - May 2026
 - Cross-site nav sweep: `/gigs` now appears in three places on every page (mob menu, desktop "Press" dropdown, footer Navigate column). 52 files touched. Done programmatically with a small Node script so all 26 page pairs stay in lockstep. Discoverability was the missing piece from the v2.10.0 launch.
 

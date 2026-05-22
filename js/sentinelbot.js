@@ -13,6 +13,13 @@
   // HARD ISOLATION: wrap the whole beacon in try/catch so nothing it
   // does can ever propagate up and break the ambient layer below.
   // This script must keep the bot alive on every page no matter what.
+  //
+  // v2 protocol: client controls ts_open and sends three event types
+  // so the admin UI can show duration per page.
+  //   open      : fired once on page load
+  //   heartbeat : fired every 30s while the tab is visible
+  //   close     : fired on visibilitychange:hidden / pagehide
+  // Lambda PutItems on open, UpdateItems on heartbeat/close.
   try {
     (function visitorBeacon() {
       var visitorCfg = (window.SHIELDBEARER_CONFIG && window.SHIELDBEARER_CONFIG.visitor) || {};
@@ -39,30 +46,66 @@
         sessionId = newId();
       }
 
-      var payload = JSON.stringify({
-        session_id: sessionId,
-        path: window.location.pathname + window.location.search,
-        referrer: document.referrer || "",
-        user_agent: navigator.userAgent || ""
-      });
+      var tsOpen = new Date().toISOString();
+      var pagePath = window.location.pathname + window.location.search;
+      var closed = false;
 
+      function fireBeacon(eventType, extras) {
+        try {
+          var body = {
+            session_id: sessionId,
+            path: pagePath,
+            ts_open: tsOpen,
+            event: eventType
+          };
+          if (eventType === "open") {
+            body.referrer = document.referrer || "";
+            body.user_agent = navigator.userAgent || "";
+          }
+          if (extras) for (var k in extras) body[k] = extras[k];
+          var payload = JSON.stringify(body);
+
+          if (navigator.sendBeacon) {
+            var blob = new Blob([payload], { type: "application/json" });
+            if (navigator.sendBeacon(visitorApi, blob)) return;
+          }
+          fetch(visitorApi, {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: payload,
+            keepalive: true,
+            credentials: "omit",
+            mode: "cors"
+          }).catch(function () {});
+        } catch (e) {}
+      }
+
+      // Fire the open beacon. Best-effort.
+      fireBeacon("open");
+
+      // Heartbeats every 30s while the tab is visible. Tracks how
+      // long a real human stayed on the page even without a clean
+      // close beacon (some browsers swallow pagehide).
       try {
-        if (navigator.sendBeacon) {
-          var blob = new Blob([payload], { type: "application/json" });
-          navigator.sendBeacon(visitorApi, blob);
-          return;
-        }
+        setInterval(function () {
+          if (closed) return;
+          if (document.visibilityState === "visible") fireBeacon("heartbeat");
+        }, 30000);
       } catch (e) {}
 
+      // Close beacon. visibilitychange:hidden fires reliably across
+      // browsers (more so than pagehide/unload). Either way we set
+      // closed=true so heartbeats stop firing.
+      function fireClose() {
+        if (closed) return;
+        closed = true;
+        fireBeacon("close");
+      }
       try {
-        fetch(visitorApi, {
-          method: "POST",
-          headers: { "content-type": "application/json" },
-          body: payload,
-          keepalive: true,
-          credentials: "omit",
-          mode: "cors"
-        }).catch(function () {});
+        document.addEventListener("visibilitychange", function () {
+          if (document.visibilityState === "hidden") fireClose();
+        });
+        window.addEventListener("pagehide", fireClose);
       } catch (e) {}
     })();
   } catch (e) {
