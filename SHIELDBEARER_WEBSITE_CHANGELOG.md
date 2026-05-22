@@ -7,6 +7,12 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.20.5 - May 2026
+- Fixed the homepage Signal Room countdown. It was gated on `site.json` `comingSoon[0]` being populated; with `comingSoon` currently empty, `activate()` returned early and the countdown stayed `hidden`, so the four cells were invisible. The `/signal-room` page does not gate its countdown that way, so the two pages disagreed.
+- Pulled the countdown out of the state-aware `activate()` flow into an unconditional IIFE at the top of `js/signal-room-home.js`. Same target math, same `localStorage` key as `js/signal-countdown.js`, so the two clocks show the same time. Removed `hidden aria-hidden="true"` from the homepage markup so non-JS visitors also see the four "00" cells.
+- State-aware activate() still upgrades the eyebrow, title, copy, art, and CTA when `comingSoon` has an entry. That part of the design unchanged.
+- Added two regression tests in `tests/run-tests.js`: one asserts the countdown ticks when `comingSoon` is empty, the other asserts the comingSoon-populated path still activates the rest of the block AND keeps the countdown ticking.
+
 ## v2.20.4 - May 2026
 - SentinelBot ambient layer slowed for actual reading. After typing finishes, the cursor now sits and blinks for **6 seconds** (was 2.2s) before the fade kicks in, and the blank gap between thoughts is **0.7s** (was 0.35s). Effective cycle times: short motto ~8s, typical ops/real line ~11s, long verse ~15s. Roughly half-speed compared to v2.15.x. Average reading speed is ~25 chars/sec, so a 60-char line now has a full 6 seconds of post-type read time on top of the 3.6 seconds of typing.
 

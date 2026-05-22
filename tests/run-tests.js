@@ -999,6 +999,96 @@ function makeScriptureDom(innerHtml, scriptureCfg) {
 })();
 
 // ----------------------------------------------------------------------
+// signal-room-home.js
+// ----------------------------------------------------------------------
+
+// Homepage Signal Room countdown ticks even when comingSoon is empty.
+// Regression test for the bug where the countdown stayed hidden
+// because activate() returned early on empty comingSoon, never
+// reaching the startCountdown call.
+(async () => {
+  const html = `<!doctype html><html><body>
+    <section data-signal-room>
+      <span data-sr-eyebrow>Signal Room</span>
+      <h2 data-sr-title>Static Title</h2>
+      <p data-sr-copy>Static copy</p>
+      <img data-sr-art src="static.jpg" alt="static">
+      <a data-sr-cta href="/signal-room">CTA</a>
+      <div data-sr-countdown>
+        <span><b data-sr-d>00</b> d</span>
+        <span><b data-sr-h>00</b> h</span>
+        <span><b data-sr-m>00</b> m</span>
+        <span><b data-sr-s>00</b> s</span>
+      </div>
+    </section>
+  </body></html>`;
+  const dom = makeDom(html);
+  // Fixed target 3 days 4 hours 2 minutes out. The 2-minute buffer
+  // absorbs sub-second drift between setting the target and the
+  // script's first tick so the assertion is stable.
+  const targetMs = Date.now() + (3 * 24 + 4) * 60 * 60 * 1000 + 2 * 60 * 1000;
+  dom.window.SHIELDBEARER_CONFIG = {
+    signalCountdown: {
+      enabled: true,
+      fixedTarget: new Date(targetMs).toISOString()
+    }
+  };
+  // comingSoon empty -> activate() should NOT fire; but countdown
+  // must still tick.
+  installFetchShim(dom.window, { "site.json": { comingSoon: [] } });
+  runScriptInWindow(dom.window, "js/signal-room-home.js");
+  await flushMicrotasks();
+
+  const cd = dom.window.document.querySelector("[data-sr-countdown]");
+  assert(cd !== null, "signal-room-home: countdown element present");
+  if (cd) {
+    assertEqual(cd.hidden, false, "signal-room-home: countdown unhidden even when comingSoon empty");
+    const d = dom.window.document.querySelector("[data-sr-d]").textContent;
+    const h = dom.window.document.querySelector("[data-sr-h]").textContent;
+    assertEqual(d, "03", "signal-room-home: days cell ticks to fixed target");
+    assertEqual(h, "04", "signal-room-home: hours cell ticks to fixed target");
+  }
+})();
+
+// When comingSoon has an entry, the full block activates AND the
+// countdown still runs (was already wired before; covered here so
+// the unconditional refactor did not break it).
+(async () => {
+  const html = `<!doctype html><html><body>
+    <section data-signal-room>
+      <span data-sr-eyebrow>Signal Room</span>
+      <h2 data-sr-title>Static Title</h2>
+      <p data-sr-copy>Static copy</p>
+      <img data-sr-art src="static.jpg" alt="static">
+      <a data-sr-cta href="/signal-room">CTA</a>
+      <div data-sr-countdown>
+        <span><b data-sr-d>00</b> d</span>
+        <span><b data-sr-h>00</b> h</span>
+        <span><b data-sr-m>00</b> m</span>
+        <span><b data-sr-s>00</b> s</span>
+      </div>
+    </section>
+  </body></html>`;
+  const dom = makeDom(html);
+  // 1 day 2 hours plus a 2-minute buffer for the same drift reason.
+  const targetMs = Date.now() + (1 * 24 + 2) * 60 * 60 * 1000 + 2 * 60 * 1000;
+  dom.window.SHIELDBEARER_CONFIG = {
+    signalCountdown: { enabled: true, fixedTarget: new Date(targetMs).toISOString() }
+  };
+  installFetchShim(dom.window, {
+    "site.json": { comingSoon: [{ title: "Next Song", stage: "writing", artwork: "next.jpg" }] }
+  });
+  runScriptInWindow(dom.window, "js/signal-room-home.js");
+  await flushMicrotasks();
+
+  const doc = dom.window.document;
+  assertEqual(doc.querySelector("[data-sr-title]").textContent, "Next Song", "signal-room-home: comingSoon swaps title");
+  assertEqual(doc.querySelector("[data-sr-eyebrow]").textContent, "Signal Room · Live", "signal-room-home: comingSoon promotes eyebrow to Live");
+  assertEqual(doc.querySelector("[data-sr-cta]").getAttribute("data-state"), "active", "signal-room-home: cta state attr flipped to active");
+  assertEqual(doc.querySelector("[data-sr-d]").textContent, "01", "signal-room-home: countdown still ticks when comingSoon populated");
+})();
+
+// ----------------------------------------------------------------------
 setTimeout(() => {
   console.log("\n=========================================");
   console.log(`Website JS tests: ${passed} passed, ${failed} failed`);

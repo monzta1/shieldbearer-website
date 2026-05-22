@@ -21,6 +21,19 @@
 
   function q(sel) { return block.querySelector(sel); }
 
+  // Countdown is unconditional. Same target math + storage key as
+  // js/signal-countdown.js so the homepage clock matches the
+  // /signal-room clock exactly, regardless of whether a song is
+  // currently in progress. State-aware activate() below still
+  // upgrades the rest of the block when comingSoon is populated.
+  (function () {
+    var cd = q("[data-sr-countdown]");
+    if (!cd) return;
+    cd.hidden = false;
+    cd.setAttribute("aria-hidden", "false");
+    startCountdown(cd);
+  })();
+
   var SITE_JSON = "/site.json";
 
   fetch(SITE_JSON, { cache: "no-store" })
@@ -39,7 +52,6 @@
     var copy = q("[data-sr-copy]");
     var art = q("[data-sr-art]");
     var cta = q("[data-sr-cta]");
-    var cd = q("[data-sr-countdown]");
 
     if (eyebrow) eyebrow.textContent = "Signal Room · Live";
     if (title) title.textContent = s.title;
@@ -58,12 +70,6 @@
     if (cta) {
       cta.textContent = "Watch It Take Shape";
       cta.setAttribute("data-state", "active");
-    }
-
-    if (cd) {
-      cd.hidden = false;
-      cd.setAttribute("aria-hidden", "false");
-      startCountdown(cd);
     }
   }
 
