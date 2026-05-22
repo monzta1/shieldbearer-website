@@ -146,28 +146,9 @@
       font-size: 10px;
     }
 
-    /* Scripture link styling. Subtle by default; emphasized on hover.
-       Lives in css/style.css candidate -- inline here for the POC so
-       the sweep is reversible without touching shared CSS. */
-    a.scripture-link {
-      color: inherit;
-      text-decoration: none;
-      border-bottom: 1px dotted rgba(201, 168, 76, .45);
-      padding-bottom: 1px;
-      transition: color .15s, border-color .15s;
-    }
-    a.scripture-link:hover {
-      color: #f0c97e;
-      border-bottom-color: #f0c97e;
-      border-bottom-style: solid;
-    }
-    a.scripture-link:focus-visible {
-      outline: 2px solid #c9a84c;
-      outline-offset: 2px;
-    }
   </style>
 </head>
-<body>
+<body data-scripture-links>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N7SR64KL"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>

@@ -156,19 +156,55 @@
     parent.replaceChild(frag, textNode);
   }
 
+  function rootSelector() {
+    return "[data-scripture-links], .scripture-linked";
+  }
+
+  // Debounced re-scan triggered by DOM mutations. Pages like
+  // /song-meanings, the homepage featured-track card, and the
+  // /admin tools all render content async after DOMContentLoaded,
+  // so we need to catch refs that arrive later.
+  var rescanTimer = null;
+  function scheduleRescan() {
+    if (rescanTimer) return;
+    rescanTimer = setTimeout(function () {
+      rescanTimer = null;
+      run();
+    }, 200);
+  }
+
+  function attachObservers() {
+    if (typeof MutationObserver !== "function") return;
+    var roots = document.querySelectorAll(rootSelector());
+    for (var i = 0; i < roots.length; i++) {
+      var obs = new MutationObserver(function (mutations) {
+        // Only care about added DOM. Attribute/character changes don't
+        // typically inject scripture refs.
+        for (var j = 0; j < mutations.length; j++) {
+          if (mutations[j].addedNodes && mutations[j].addedNodes.length) {
+            scheduleRescan();
+            return;
+          }
+        }
+      });
+      obs.observe(roots[i], { childList: true, subtree: true });
+    }
+  }
+
   function run() {
-    // Activation by attribute or class. Multiple roots allowed.
-    var roots = document.querySelectorAll(
-      "[data-scripture-links], .scripture-linked"
-    );
+    var roots = document.querySelectorAll(rootSelector());
     for (var i = 0; i < roots.length; i++) {
       walkAndLink(roots[i]);
     }
   }
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", run);
+    document.addEventListener("DOMContentLoaded", function () {
+      run();
+      attachObservers();
+    });
   } else {
     run();
+    attachObservers();
   }
 })();

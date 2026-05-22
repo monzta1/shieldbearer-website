@@ -1511,3 +1511,37 @@ section { padding: var(--sp-section) 0; position: relative; }
   padding-bottom: 2px;
 }
 .next-step__links a:hover { color: #fff; border-color: #fff; }
+
+/* ── SCRIPTURE LINKS ── */
+/* Every Book Chapter:Verse reference auto-linked to BibleGateway
+   ESV via js/scripture-links.js. Style is deliberately unmissable:
+   gold-amber color baseline, solid underline, external-link arrow
+   after the text. Tells the reader "this is a link, it goes
+   outside, click to read the verse." Works on light + dark
+   sections because the gold reads on both. */
+a.scripture-link {
+  color: #c9a84c;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(201, 168, 76, .6);
+  padding-bottom: 1px;
+  font-weight: 500;
+  transition: color .15s, border-color .15s, background-color .15s;
+}
+a.scripture-link::after {
+  content: " \2197"; /* unicode north-east arrow */
+  font-size: .78em;
+  margin-left: 1px;
+  opacity: .55;
+  letter-spacing: 0;
+  position: relative;
+  top: -1px;
+}
+a.scripture-link:hover {
+  color: #f0c97e;
+  border-bottom-color: #f0c97e;
+}
+a.scripture-link:hover::after { opacity: .9; }
+a.scripture-link:focus-visible {
+  outline: 2px solid #c9a84c;
+  outline-offset: 2px;
+}
