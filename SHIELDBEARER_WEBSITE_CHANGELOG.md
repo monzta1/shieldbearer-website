@@ -7,6 +7,9 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.16.0 - May 2026
+- Cross-site nav sweep: `/gigs` now appears in three places on every page (mob menu, desktop "Press" dropdown, footer Navigate column). 52 files touched. Done programmatically with a small Node script so all 26 page pairs stay in lockstep. Discoverability was the missing piece from the v2.10.0 launch.
+
 ## v2.15.1 - May 2026
 - Reliability pass on the SentinelBot ambient layer. Three root causes addressed:
 - (1) **Beacon isolation.** The visitor beacon IIFE at the top of `js/sentinelbot.js` was not wrapped in a try/catch. If `navigator.sendBeacon` or the JSON serialization threw synchronously on a particular page (CSP edge case, certain browser states), the error propagated up and killed the rest of the script -- the ambient layer never started on that page. Now hard-isolated: the whole beacon block is inside a try/catch so nothing it does can break the rest.
