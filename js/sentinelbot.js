@@ -854,8 +854,11 @@
       }
       typed.textContent = fullText.slice(0, idx + 1);
       idx += 1;
-      // Slight jitter (16-30ms) so it reads typed, not metronomic.
-      var delay = 16 + Math.floor(Math.random() * 14);
+      // Jitter (45-75ms) for Matrix-style pacing. Slow enough that
+      // each char registers, fast enough that lines under ~85 chars
+      // finish typing within the ROTATE_MS window before the next
+      // tick replaces them.
+      var delay = 45 + Math.floor(Math.random() * 30);
       typingTimer = setTimeout(step, delay);
     };
     step();
