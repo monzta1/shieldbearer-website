@@ -7,6 +7,9 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.20.1 - May 2026
+- `js/scripture-links.js` now also restyles **existing** anchors that link to biblegateway.com (e.g. the manually-curated KJV citations on `/gatekeeping`). Adds the `.scripture-link` class so the gold + arrow + underline visual treatment applies uniformly. Does NOT rewrite the `href`, so `/gatekeeping`'s intentional KJV translation choice (public-domain quotations) stays intact. Adds `target="_blank"` and `rel="noopener"` if missing.
+
 ## v2.20.0 - May 2026
 - Sitewide scripture-link sweep. Every page now carries `<body data-scripture-links>` and loads `js/scripture-links.js`. Every `Book Chapter:Verse` reference anywhere on the site (creed proof-texts, manifesto, gatekeeping KJV citations, gospel, open-letter, the dossier blocks on /song-meanings, the featured-track scripture references on the homepage) is now an external link to BibleGateway in the ESV translation.
 - Visual bump from "subtle" (v2.19.0) to "unmissable" per goal directive: gold (`#c9a84c`) text by default, solid 1px underline, external-link arrow (`↗`) after every link, hover state brightens to a warmer gold with a stronger underline. Lives in global `css/style.css` so every page picks it up.

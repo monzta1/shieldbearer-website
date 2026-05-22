@@ -191,10 +191,29 @@
     }
   }
 
+  // Second pass: existing <a> tags that already link to BibleGateway
+  // (e.g. the manually-curated KJV citations on /gatekeeping) need
+  // the .scripture-link class so the gold unmissable styling applies
+  // to them too. We do NOT rewrite their hrefs -- the page's
+  // intentional translation choice is preserved -- we only restyle.
+  function styleExistingBibleAnchors(root) {
+    if (!root) return;
+    var anchors = root.querySelectorAll("a[href*='biblegateway.com']");
+    for (var i = 0; i < anchors.length; i++) {
+      var a = anchors[i];
+      if (a.classList.contains("scripture-link")) continue;
+      a.classList.add("scripture-link");
+      // Make sure these open in a new tab too.
+      if (!a.target) a.target = "_blank";
+      if (!a.rel) a.rel = "noopener";
+    }
+  }
+
   function run() {
     var roots = document.querySelectorAll(rootSelector());
     for (var i = 0; i < roots.length; i++) {
       walkAndLink(roots[i]);
+      styleExistingBibleAnchors(roots[i]);
     }
   }
 
