@@ -1,26 +1,39 @@
 # Agent State
 
-Live working state. Update this file with every change so the
-next agent (or future-you) lands oriented. Out-of-date state is
-worse than no state.
+Live working state. Update this file with every meaningful change so the next agent (or future-you) lands oriented. Out-of-date state is worse than no state.
 
-## Current state (last updated 2026-04-26)
+## Current state (last updated 2026-05-22)
 
 | Field | Value |
 | ----- | ----- |
 | Active branch | `sentinelbot-stable` (production) |
-| Latest commit | v2.7.3 stronger location column CSS fix (!important + wider table min-width) |
-| Test gate | 201 / 201 structural + 70 / 70 jsdom + 100% line coverage |
-| Last live verification | 2026-04-26, all passes |
-| Execution mode | Conservative (ask before major actions) |
+| Latest commit | v2.17.0 -- `/admin/visitors` v2 with open/heartbeat/close beacon protocol + per-page duration + total session dwell |
+| Test gate | structural + 70/70 jsdom + 100% line coverage |
+| Last live verification | 2026-05-22, all passes |
+| Execution mode | Operator-led, agent executes (A-method for stepwise tasks) |
 | Operator | Moncy Abraham |
+
+## What just shipped (recent run)
+
+This session moved the project from v2.7.3 -> v2.17.0. Major adds in order:
+
+- v2.8.x -- SentinelBot widget renders on its own dossier page; ambient layer rebuilt for variety
+- v2.9.0 -- song-dossier footer links every track to /creed + /manifesto
+- v2.10.0 -- new /gigs page with mailto inquiry form
+- v2.10.1 -- rounded corners on SentinelBot widget surfaces
+- v2.11.0 -- /metrics moved under /admin/metrics with passphrase gate
+- v2.12.x -- visitor tracker (Lambda + DynamoDB + beacon + /admin/visitors); routed through API Gateway after Function URL 403 discovery
+- v2.13.0 -- readability sweep (paragraph font-sizes .92-.98rem -> 1rem across 43 files)
+- v2.14.x -- SentinelBot ops-watch voice, typewriter cursor, /admin landing index
+- v2.15.x -- Scripture verses in ambient rotation, reliability hardening (beacon isolation, watchdog, fade-out)
+- v2.16.0 -- /gigs in nav across all 52 page files
+- v2.17.0 -- visitor logger v2 with duration tracking
+
+Also shipped on the Lambda side: `sentinelbot-metrics-publisher` (new), `sentinelbot-visitor-logger` (new), `sentinelbot-site-publisher` stamp feature for index.html, songMeaning sanitizer in shield-cli + release-detector.
 
 ## Next task
 
-**No pending task.** The SEO project is fully shipped to
-production. The most recent work added six structural tests to
-`scripts/test.sh` and fixed 22 files for og:url canonical
-alignment. The operator can pick what to work on next.
+**No active task.** Operator picks what to work on next.
 
 When a new task starts, replace this section with:
 
@@ -29,57 +42,35 @@ When a new task starts, replace this section with:
 - Definition of Done (verifiable)
 - Output Format (what the response must look like)
 
-Confirm the task with the operator before acting if any of the
-above are unclear.
+Confirm with the operator before acting if any of the above are unclear.
 
 ## Active watch windows
 
-These are calendar triggers from `SEO.md`. Nothing has fired
-yet; check Search Console on each date.
-
 | Date | What to check | Action if it fires |
 | ---- | ------------- | ------------------ |
-| 2026-05-18 | Homepage impressions stable after trailing-slash canonical change | If sharp drop with no other cause, revert root canonical to no-trailing-slash form |
-| 2026-06-01 | Sitemap status crawl + URL-form parity diff (monthly) | Fix any DIFFERS line that is not `sentinelbot.html` |
-| 2026-06-15 | Duplicate-content check on `/<page>` vs `/<page>.html` | If both forms still indexed as duplicates, add `<meta http-equiv="refresh">` on legacy `.html` pages per the documented escalation path |
-| 2026-06-29 | Brand keyword query check ("shield bearer" two-word) | If the homepage no longer ranks top for that query, revisit how prominently the two-word form appears in title and visible body |
-| 2026-07-01 | Sitemap status crawl + URL-form parity diff (monthly) | Same as 2026-06-01 |
+| 2026-06-15 | Duplicate-content check on `/<page>` vs `/<page>.html` | If both forms still indexed as duplicates, add `<meta http-equiv="refresh">` on legacy `.html` pages per `SEO.md` |
+| 2026-06-21 | `/admin/visitors` review: did the sitewide typewriter (v2.14.2) hurt time-on-page on /manifesto, /song-meanings, /story, /gigs vs the pre-v2.14.2 baseline? | If yes, scope the typewriter to showcase pages only (see option 2 in v2.14.2 design notes) |
+| 2026-06-29 | Brand keyword query check ("shield bearer" two-word) | If homepage no longer ranks top, revisit visible-body usage of the two-word form |
+| 2026-07-01 | First independent monthly review per `docs/monthly-review.md` (covering June) | Write `docs/monthly-reviews/2026-06.md`, one commit |
 
 ## Open follow-ups
 
-These are deferred, not forgotten. Pick them up when the
-triggering condition appears or when a maintenance window opens.
+Deferred but not forgotten. Pick up when the trigger appears or in a maintenance window.
 
-1. **Build step for URL form parity.** Documented in `SEO.md`
-   under "Build step for URL form parity (tech debt)". Half-day
-   estimate. Pull off the shelf when URL parity breaks something
-   user-visible or when the site migrates off GitHub Pages.
-2. **Meta-refresh on legacy `.html` URLs.** Deferred 4 to 6
-   weeks per the canonical decision in `SEO.md`. Trigger date
-   2026-06-15.
-3. **og:title vs `<title>` policy.** Two pages currently differ
-   intentionally (`artist-freedom.html` and `story.html`).
-   Should this be allowed long-term? No test enforces match
-   currently; that is by design but worth a future decision.
-4. **JSON-LD presence and validity per page.** Only the homepage
-   has rich JSON-LD today; the timeline has an ItemList. No
-   automated test enforces JSON-LD presence on pages that should
-   have it. Consider adding test step 28 if rich-result eligibility
-   becomes a goal across more pages.
+1. **Build step for URL form parity.** Documented in `SEO.md`. Half-day estimate. Pull off the shelf when URL parity breaks something visible or when the site migrates off GitHub Pages.
+2. **Meta-refresh on legacy `.html` URLs.** Deferred per `SEO.md`. Trigger 2026-06-15.
+3. **`og:title` vs `<title>` policy.** Two pages currently differ intentionally (`artist-freedom.html`, `story.html`). Decide long-term policy.
+4. **JSON-LD presence per page.** Only homepage + timeline have rich JSON-LD. Consider adding test step 28 if rich-result eligibility becomes a goal across more pages.
+5. **GA4 Key Events marking** -- operator-side, in GA4 console. Mark the visible-engagement events (`outbound_click`, `watch_now`, `sentinelbot_open`, `gigs_inquiry_submit`) as Key Events so they show in the Acquisition reports.
+6. **Cloudflare Worker for legacy `.html` 301 redirects.** `tools/cloudflare-redirect-worker.js` exists in the repo but is not deployed. Defer until URL-form duplicate content is confirmed via Search Console.
+7. **Detector-side songMeaning cleaner already shipped** -- if a future ingest needs to add fields beyond songMeaning, the sanitizer pattern is in `sentinelbot-release-detector-youtube/index.js`.
 
-## Recent decisions worth remembering
+## Where to start as a new agent
 
-- Path A canonical (clean URLs canonical, no redirects between
-  forms). Documented in `SEO.md`.
-- Brand variant strategy: "Shieldbearer" (one word) is primary
-  in headings and social profiles; "Shield Bearer" (two words)
-  appears in title, meta, JSON-LD `alternateName`, and visible
-  body for search disambiguation.
-- Hero h1 stays "Jesus Reigns at Full Volume" (artistic asset
-  trumps generic SEO advice about brand-in-h1).
-- KJV scripture quotations on `/gatekeeping` (public domain;
-  copyright clean).
-- AGENT_HANDOFF.md and AGENT_STATE.md and MEMORY.md adopted
-  alongside the existing AGENTS.md, SEO.md, VERIFICATION.md.
-  AGENTS.md remains the contributor checklist; AGENT_HANDOFF
-  is the deeper system knowledge file.
+1. Read `MEMORY.md` (this file's index entry).
+2. Read `AGENT_HANDOFF.md` for system knowledge.
+3. Read `SYSTEM_MAP.md` for the live topology snapshot.
+4. Read `KNOWN_QUIRKS.md` before debugging anything weird.
+5. Read `AGENTS.md` for the pre-push checklist (the gate that fails commits).
+6. Read this file (`AGENT_STATE.md`) for what's pending.
+7. Run `./scripts/test.sh` to confirm a clean tree.

@@ -10,14 +10,18 @@ and convention an agent needs. Read the linked docs, then go to
 
 1. Read `AGENT_HANDOFF.md` fully. It explains what the project
    is, the conventions, and the standing rules.
-2. Read `AGENT_STATE.md`. Confirm the current branch, the next
-   task, and any active watch windows or follow-ups.
-3. Read `AGENTS.md`. The pre-push checklist is what blocks
+2. Read `SYSTEM_MAP.md`. Single-page snapshot of the whole stack
+   (5 Lambdas, 5 DynamoDB tables, API Gateway routes, admin tools).
+3. Read `AGENT_STATE.md`. Current branch, latest version, what
+   just shipped, active watch windows, follow-ups.
+4. Read `KNOWN_QUIRKS.md` before debugging anything that feels
+   strange. Most of the dragons are documented there.
+5. Read `AGENTS.md`. The pre-push checklist is what blocks
    deployment if skipped.
-4. If the task touches SEO, links, redirects, or the canonical
-   chain, read `SEO.md` for prior decisions and review triggers.
-5. Run `./scripts/test.sh` to confirm the tree is in a known-
-   good state before making changes.
+6. If the task touches SEO/links/redirects/canonical, read
+   `SEO.md`.
+7. Run `./scripts/test.sh` to confirm the tree is clean before
+   making changes.
 
 ## File index
 
@@ -25,17 +29,23 @@ and convention an agent needs. Read the linked docs, then go to
 | ---- | ------- |
 | `MEMORY.md` | This file. Index. |
 | `AGENT_HANDOFF.md` | System knowledge, conventions, standing rules. |
-| `AGENT_STATE.md` | Current branch, next task, active watch windows, deferred items. |
+| `SYSTEM_MAP.md` | Live topology snapshot: Lambdas, tables, routes, admin tools, data artifacts, common commands. |
+| `KNOWN_QUIRKS.md` | Institutional gotchas (Function URL 403, GA4 SA form rejection, macOS U+202F filenames, etc.). |
+| `AGENT_STATE.md` | Current branch, latest version, what shipped, active watch windows, deferred items. |
 | `AGENTS.md` | Pre-push checklist and contributor workflow. |
 | `SEO.md` | SEO architecture decision log with calendar review triggers. |
 | `SHIELDBEARER_WEBSITE_CHANGELOG.md` | Semver release log. Every change adds an entry. |
 | `VERIFICATION.md` | Last full verification pass artifact (Lighthouse + sitemap + JSON-LD). |
 | `README.md` | Project overview for a fresh visitor. |
+| `docs/monthly-review.md` | Five-question runbook for the monthly GA4 review (cadence starts July 2026). |
+| `docs/metrics.md` | Design spec for `/admin/metrics` page + metrics-publisher Lambda. |
+| `docs/analytics.md` | GTM + GA4 + Clarity setup notes. |
+| `docs/outreach.md` | Lost-referrer hunt + re-engagement tables. |
+| `docs/hero-diagnosis.md` | Hero LCP investigation + fix notes. |
+| `docs/redirects.md` | Why in-repo redirect stubs do not work on GitHub Pages. |
 | `scripts/test.sh` | Structural test gate (27 checks plus jsdom plus coverage). Run it. |
 | `scripts/checkpoint.sh` | Tag-and-push helper. |
 | `scripts/verify-live.sh` | Post-deploy live URL verifier. |
-| `seo-report-home.json` | Lighthouse SEO JSON, homepage. Snapshot from 2026-05-04 verification. |
-| `seo-report-gatekeeping.json` | Lighthouse SEO JSON, gatekeeping. Same snapshot. |
 
 ## Standing rules at a glance
 

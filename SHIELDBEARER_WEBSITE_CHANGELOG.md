@@ -7,6 +7,14 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.18.0 - May 2026
+- Handoff infrastructure pass so a new agent (human or AI) can land oriented in minutes instead of grepping the codebase to reconstruct what we have. Three new top-level docs:
+- `SYSTEM_MAP.md` -- single-page topology snapshot: 5 Lambdas with triggers and tables, 5 DynamoDB tables with keys, API Gateway routes, admin tools with URLs and sessionStorage keys, EventBridge crons, Secrets Manager entries, data artifacts in this repo, client-side script order, common deployment commands.
+- `KNOWN_QUIRKS.md` -- institutional gotchas this session generated and that would otherwise re-cost time to rediscover: Function URLs return 403 anonymously on this AWS account (use API Gateway), GA4 web form rejects service accounts on personal-Gmail GCP projects (use OAuth API workaround at v1alpha not v1beta), macOS Spotlight uses U+202F (narrow no-break space) in filenames, the shared Lambda execution role pattern, the in-flight foreign work in the Lambda repo means scoped staging is mandatory, plus the SentinelBot beacon-isolation lesson from v2.15.1.
+- `AGENT_STATE.md` refreshed from months-stale (claimed v2.7.3, no pending task) to current: v2.17.0 + an itemized list of what shipped this session + active watch windows tied to real dates (2026-06-15, 2026-06-21, 2026-06-29, 2026-07-01).
+- `MEMORY.md` updated to point at the three new files in the fresh-session quick start.
+- Mirror in the Lambda repo: new `sentinelbot-lambda/SYSTEM_MAP.md`. Auto-memory at `~/.claude/projects/.../memory/` gets a new reference file pointing future-me at all of this so the next conversation does not re-grep.
+
 ## v2.17.0 - May 2026
 - `/admin/visitors` v2: duration per page + total dwell per session. Client-side beacon now uses a three-event protocol -- `open` on page load, `heartbeat` every 30 seconds while the tab is visible, and `close` on `visibilitychange:hidden` / `pagehide`. The client generates `ts_open` once and passes it on every beacon so the server can match them. Lambda PutItems the open row and UpdateItems on heartbeat/close to keep `ts_last_seen` fresh and recompute `duration_ms` each time.
 - Admin UI gains a duration column on each page row and a `dwell <total>` chip in the session header. Pages closed cleanly show their duration as-is; pages whose `close` beacon never landed (browser killed, tab crash) show duration with a `*` suffix and a tooltip explaining the heartbeat is the last signal. v1 rows without `duration_ms` show `--` and contribute 0 to the total instead of skewing it.
