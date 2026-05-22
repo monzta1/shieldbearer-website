@@ -7,6 +7,9 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.20.4 - May 2026
+- SentinelBot ambient layer slowed for actual reading. After typing finishes, the cursor now sits and blinks for **6 seconds** (was 2.2s) before the fade kicks in, and the blank gap between thoughts is **0.7s** (was 0.35s). Effective cycle times: short motto ~8s, typical ops/real line ~11s, long verse ~15s. Roughly half-speed compared to v2.15.x. Average reading speed is ~25 chars/sec, so a 60-char line now has a full 6 seconds of post-type read time on top of the 3.6 seconds of typing.
+
 ## v2.20.3 - May 2026
 - Real fix for the chapter-range refs (the v2.20.2 regex was correct, but never got a chance to run on them). The TreeWalker's cheap pre-check was rejecting text nodes that did not contain `digit-colon-digit`, which excluded `Numbers 23-24` and `Acts 15` before the regex evaluated. Relaxed the pre-check to "contains any digit." The regex remains anchored to book names so false matches are still impossible; only the gate before the regex was wrong.
 - Verified against the live failing case on `/god-uses-tools`: `A pagan diviner whom God forced to bless His people. Numbers 23-24.` now links.

@@ -993,9 +993,9 @@
   // finally. A separate watchdog setInterval restarts the chain if
   // it ever goes dark for too long. The thought CANNOT get stuck.
   const AVG_TYPE_MS_PER_CHAR = 60;
-  const CURSOR_DWELL_MS = 2200;   // blink time after typing finishes
+  const CURSOR_DWELL_MS = 6000;   // blink + read time after typing finishes
   const FADE_OUT_MS = 450;        // CSS opacity transition duration (matches #sentinelbot-status transition)
-  const GAP_BEFORE_NEXT_MS = 350; // brief blank gap before next thought
+  const GAP_BEFORE_NEXT_MS = 700; // blank gap before next thought starts typing
   let fadeTimer = null;
   let lastTickAt = Date.now();
 
