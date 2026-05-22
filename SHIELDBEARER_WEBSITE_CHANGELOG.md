@@ -7,6 +7,11 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.19.0 - May 2026
+- New scripture-link infrastructure: `js/scripture-links.js` scans any element marked with `data-scripture-links` (or class `scripture-linked`) and converts every `Book Chapter:Verse` reference into an anchor that opens the verse on BibleGateway in the ESV translation in a new tab. Anchored to the 66-book protestant canon so it cannot false-match unrelated `Word 1:1` patterns. Handles multi-word books (`1 Corinthians`, `2 Timothy`), verse ranges (`Psalm 23:1-3`), and single-letter suffixes (`Romans 5:12a`). Existing anchors, `<code>` / `<pre>` blocks, and any element marked `.no-scripture-link` are skipped. Translation override via `window.SHIELDBEARER_CONFIG.scripture.version`.
+- `/creed` POC: added a scripture-references line under each of the seven articles using the standard proof-texts from historic confessions (2 Timothy 3:16 + 2 Peter 1:20-21 + Isaiah 40:8 under Scripture, Deuteronomy 6:4 + Matthew 28:19 + 2 Corinthians 13:14 under God, etc.). 22 references total, all rendered as subtle dotted-underline links that brighten on hover and route to BibleGateway ESV. Adjust which verses cite each article by editing the `<p class="creed-article__refs">` lines in `creed/index.html` and the legacy mirror.
+- Same pattern can ship sitewide -- `data-scripture-links` on any container plus the script tag will linkify references on `/manifesto`, `/gatekeeping`, `/song-meanings`, and anywhere else. Not done yet; awaiting operator review of the /creed feel.
+
 ## v2.18.0 - May 2026
 - Handoff infrastructure pass so a new agent (human or AI) can land oriented in minutes instead of grepping the codebase to reconstruct what we have. Three new top-level docs:
 - `SYSTEM_MAP.md` -- single-page topology snapshot: 5 Lambdas with triggers and tables, 5 DynamoDB tables with keys, API Gateway routes, admin tools with URLs and sessionStorage keys, EventBridge crons, Secrets Manager entries, data artifacts in this repo, client-side script order, common deployment commands.
