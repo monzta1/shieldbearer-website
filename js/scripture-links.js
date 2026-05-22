@@ -65,11 +65,24 @@
     .map(function (b) { return b.replace(/ /g, "\\s+"); })
     .join("|");
 
-  // Match: <book><space(s)><chapter>:<verse>[-<endVerse>][verse-letter]
-  // Examples: "Psalm 23:1", "Psalm 119:105", "1 Corinthians 13:4-7"
+  // Match: <book><space(s)><chapter>[:<verse>][-<chapter-or-verse>[:<verse>]][verse-letter]
+  // Examples:
+  //   "Psalm 23:1"             chapter + verse
+  //   "Psalm 119:105"          chapter + verse
+  //   "1 Corinthians 13:4-7"   verse range within chapter
+  //   "Numbers 23-24"          chapter range, no verses
+  //   "Acts 15"                whole chapter
+  //   "Romans 5:12a"           verse with letter suffix
+  //   "Numbers 23:1-24:5"      cross-chapter verse range
   // Capture group 1 = full reference; we keep it as a single block.
   var refRegex = new RegExp(
-    "(" + "(?:" + bookPattern + ")" + "\\s+\\d{1,3}:\\d{1,3}(?:-\\d{1,3})?[a-z]?" + ")",
+    "(" +
+      "(?:" + bookPattern + ")" +
+      "\\s+\\d{1,3}" +                          // chapter (required)
+      "(?::\\d{1,3})?" +                        // optional :verse
+      "(?:-\\d{1,3}(?::\\d{1,3})?)?" +          // optional -endChapter[:endVerse] OR -endVerse
+      "[a-z]?" +                                // optional verse-letter
+    ")",
     "g"
   );
 

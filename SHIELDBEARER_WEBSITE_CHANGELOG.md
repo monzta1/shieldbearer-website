@@ -7,6 +7,14 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.20.2 - May 2026
+- Scripture-link regex extended to cover more reference forms that were leaking through. The previous pattern required `Book Chapter:Verse` with an explicit colon. Caught literal verse refs but missed three common variants that appear in the prose:
+  - **Chapter-only** ("Acts 15", "Galatians 1") -- whole-chapter references
+  - **Chapter ranges** ("Numbers 23-24") -- multi-chapter spans
+  - **Cross-chapter verse ranges** ("Numbers 23:1-24:5") -- spans that cross a chapter boundary
+- Case-sensitivity preserved so lowercase common nouns like "the numbers 23 and 24" do NOT false-match.
+- Caught by a real example on the site: "A pagan diviner whom God forced to bless His people. Numbers 23-24." was reading as plain text.
+
 ## v2.20.1 - May 2026
 - `js/scripture-links.js` now also restyles **existing** anchors that link to biblegateway.com (e.g. the manually-curated KJV citations on `/gatekeeping`). Adds the `.scripture-link` class so the gold + arrow + underline visual treatment applies uniformly. Does NOT rewrite the `href`, so `/gatekeeping`'s intentional KJV translation choice (public-domain quotations) stays intact. Adds `target="_blank"` and `rel="noopener"` if missing.
 
