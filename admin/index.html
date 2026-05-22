@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADMIN // SHIELDBEARER</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 'unsafe-inline';
+    style-src 'self' 'unsafe-inline';
+    connect-src 'self';
+    img-src 'self' data:;
+    font-src 'self';
+  " />
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #000000;
+      --panel: #0a0606;
+      --panel-2: #160a0a;
+      --line: #e74c3c;
+      --line-soft: rgba(231, 76, 60, 0.22);
+      --text: #f0c9c4;
+      --text-strong: #ffe9e5;
+      --muted: #c98a82;
+      --ok: #1cff57;
+      --font: "Courier New", Courier, monospace;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top, rgba(231, 76, 60, 0.10), transparent 38%),
+        linear-gradient(180deg, #000 0%, #050202 100%);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 14px;
+    }
+    h1, h2, h3 { color: var(--text-strong); letter-spacing: .14em; font-weight: 700; }
+    a { color: var(--line); }
+
+    /* Passphrase gate */
+    #passGate {
+      position: fixed; inset: 0; z-index: 50;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      background: #000; text-align: center; padding: 24px;
+    }
+    #passGate h1 { font-size: 16px; margin-bottom: 18px; }
+    #passGate input {
+      background: #0a0606; border: 1px solid var(--line-soft); color: var(--text);
+      font: inherit; padding: 10px 14px; min-width: 260px; outline: none;
+    }
+    #passGate input:focus { border-color: var(--line); }
+    #passGate button {
+      margin-top: 12px; background: var(--line); border: 0; color: #000;
+      padding: 10px 22px; cursor: pointer; font: inherit; letter-spacing: .12em;
+    }
+    #passGate .err { color: var(--line); margin-top: 12px; font-size: 13px; min-height: 1em; }
+    .pass-locked > .wrap { display: none; }
+
+    .wrap { max-width: 960px; margin: 0 auto; padding: 32px 20px 60px; }
+    .header { border-bottom: 1px solid var(--line-soft); padding-bottom: 16px; margin-bottom: 28px; }
+    .header h1 { font-size: 22px; margin: 0; }
+    .header p { color: var(--muted); margin: 10px 0 0; font-size: 13px; letter-spacing: .06em; line-height: 1.7; }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 14px;
+    }
+    .tool-card {
+      display: block;
+      background: var(--panel);
+      border: 1px solid var(--line-soft);
+      padding: 18px 20px 20px;
+      color: var(--text);
+      text-decoration: none;
+      transition: border-color .15s, transform .15s, box-shadow .15s;
+      position: relative;
+    }
+    .tool-card:hover {
+      border-color: var(--line);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(231, 76, 60, 0.12);
+    }
+    .tool-card__label {
+      font-family: var(--font);
+      font-size: 10px;
+      letter-spacing: .3em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .tool-card__title {
+      font-size: 16px;
+      color: var(--text-strong);
+      letter-spacing: .08em;
+      margin: 0 0 8px;
+      font-weight: 700;
+    }
+    .tool-card__desc {
+      font-size: 12.5px;
+      color: rgba(201, 138, 130, .9);
+      line-height: 1.7;
+      margin: 0 0 12px;
+    }
+    .tool-card__path {
+      font-size: 11px;
+      color: var(--line);
+      letter-spacing: .08em;
+    }
+    .tool-card__path::after { content: " \2192"; }
+
+    .signout {
+      display: inline-block;
+      margin-top: 28px;
+      background: transparent;
+      border: 1px solid var(--line-soft);
+      color: var(--muted);
+      font: inherit;
+      padding: 8px 16px;
+      cursor: pointer;
+      letter-spacing: .12em;
+      font-size: 11px;
+      text-transform: uppercase;
+    }
+    .signout:hover { color: var(--line); border-color: var(--line); }
+
+    .footer-note {
+      margin-top: 36px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line-soft);
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: .04em;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 700px) {
+      .wrap { padding: 22px 14px 48px; }
+    }
+  </style>
+</head>
+<body class="pass-locked">
+  <div id="passGate">
+    <h1>RESTRICTED // ADMIN</h1>
+    <input id="passInput" type="password" autocomplete="off" placeholder="Passphrase" autofocus />
+    <button id="passSubmit" type="button">Enter</button>
+    <div id="passErr" class="err"></div>
+  </div>
+
+  <div class="wrap">
+    <div class="header">
+      <h1>ADMIN</h1>
+      <p>Operator console. Every tool below is gated by the same passphrase that just unlocked this page. Pick a tool. The session persists until you sign out or close the tab.</p>
+    </div>
+
+    <div class="tools-grid">
+
+      <a class="tool-card" href="/admin/visitors">
+        <div class="tool-card__label">First-Party Tracking</div>
+        <h2 class="tool-card__title">Visitors</h2>
+        <p class="tool-card__desc">Per-session IP, location, page sequence, referrer, user-agent. Updates live as new beacons arrive.</p>
+        <span class="tool-card__path">/admin/visitors</span>
+      </a>
+
+      <a class="tool-card" href="/admin/metrics">
+        <div class="tool-card__label">GA4 Aggregates</div>
+        <h2 class="tool-card__title">Metrics</h2>
+        <p class="tool-card__desc">Calendar-month sessions, top channels, top events, shipped log. Refreshed daily at 04:00 ET from GA4.</p>
+        <span class="tool-card__path">/admin/metrics</span>
+      </a>
+
+      <a class="tool-card" href="/admin/quiz">
+        <div class="tool-card__label">Form Submissions</div>
+        <h2 class="tool-card__title">Quiz</h2>
+        <p class="tool-card__desc">Are You An AI Band submissions. IP, location, score, category, answers, share status.</p>
+        <span class="tool-card__path">/admin/quiz</span>
+      </a>
+
+      <a class="tool-card" href="/admin/logs">
+        <div class="tool-card__label">Chat Conversations</div>
+        <h2 class="tool-card__title">Logs</h2>
+        <p class="tool-card__desc">SentinelBot chat sessions. Question, answer, model, traceId, IP, location.</p>
+        <span class="tool-card__path">/admin/logs</span>
+      </a>
+
+    </div>
+
+    <button class="signout" id="signOut" type="button">Sign out of all admin tools</button>
+
+    <div class="footer-note">
+      Every tool above hides behind the same SHA-256 passphrase gate. Sessions are isolated per tab. Closing the browser ends the session everywhere. There is no remote-revoke; if the passphrase ever leaks, change it in source and push.
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      // Same passphrase hash as the other /admin tools. One passphrase
+      // unlocks every internal page.
+      var EXPECTED_HASH = "64354c5c7192a65cc78df77adbf77b4df37d6c60868cc83085f48f4f97e5848f";
+      // Per-page session key so unlocking the index does not implicitly
+      // unlock the child tools. Each tool has its own sessionStorage
+      // key and gate. This is intentional: the gate code lives inside
+      // each page so even a direct deep link still prompts.
+      var SESSION_KEY = "sb-admin-index-unlocked";
+
+      async function sha256Hex(str) {
+        var enc = new TextEncoder().encode(str);
+        var buf = await crypto.subtle.digest("SHA-256", enc);
+        return Array.from(new Uint8Array(buf))
+          .map(function (b) { return b.toString(16).padStart(2, "0"); }).join("");
+      }
+      function unlock() {
+        document.body.classList.remove("pass-locked");
+        var g = document.getElementById("passGate");
+        if (g) g.remove();
+      }
+      try {
+        if (sessionStorage.getItem(SESSION_KEY) === "1") { unlock(); return; }
+      } catch (e) {}
+      var input = document.getElementById("passInput");
+      var btn = document.getElementById("passSubmit");
+      var err = document.getElementById("passErr");
+      async function check() {
+        err.textContent = "";
+        var typed = input.value;
+        if (!typed) { err.textContent = "Empty."; return; }
+        var hash = await sha256Hex(typed);
+        if (hash === EXPECTED_HASH) {
+          try { sessionStorage.setItem(SESSION_KEY, "1"); } catch (e) {}
+          unlock();
+        } else {
+          err.textContent = "Wrong passphrase.";
+          input.value = ""; input.focus();
+        }
+      }
+      btn.addEventListener("click", check);
+      input.addEventListener("keydown", function (e) { if (e.key === "Enter") check(); });
+    })();
+
+    // Sign-out clears every known admin sessionStorage key, then
+    // reloads so the gate re-renders. Keeps the operator from having
+    // to close the tab to drop sessions.
+    document.addEventListener("DOMContentLoaded", function () {
+      var btn = document.getElementById("signOut");
+      if (!btn) return;
+      btn.addEventListener("click", function () {
+        var keys = [
+          "sb-admin-index-unlocked",
+          "sb-visitors-admin-unlocked",
+          "sb-metrics-admin-unlocked",
+          "sb-quiz-admin-unlocked",
+          "sb-admin-unlocked" // /admin/logs uses this key (legacy name)
+        ];
+        for (var i = 0; i < keys.length; i++) {
+          try { sessionStorage.removeItem(keys[i]); } catch (e) {}
+        }
+        window.location.reload();
+      });
+    });
+  </script>
+</body>
+</html>

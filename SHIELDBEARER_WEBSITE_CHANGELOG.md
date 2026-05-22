@@ -7,6 +7,11 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.14.1 - May 2026
+- Added `/admin/index.html` -- a single landing page that lists every admin tool with a one-line description and a deep-link. Same SHA-256 passphrase gate the other admin pages use. Visiting `/admin` or `/admin/` lands here, lock screen first, then a four-card grid (Visitors, Metrics, Quiz, Logs). Includes a "Sign out of all admin tools" button that clears every known admin sessionStorage key in one go.
+- Each tool still has its own gate inside its own page, so opening the index does not implicitly unlock the children. The index just makes the inventory of operator tools obvious instead of relying on the operator remembering the URLs.
+- `noindex,nofollow` meta set so search engines do not surface the page even though it is technically reachable by URL.
+
 ## v2.14.0 - May 2026
 - SentinelBot ambient status line gets a mission-control voice layer. New `ops` category sits alongside `real`, `hook`, `motto`. Pool of ~45 static ops lines (`[OPS] posture AUTONOMOUS / ARMED.`, `EventBridge armed. Awaiting fire window.`, `Detector SLA target: < 60m artist-to-public.`, `Throughput steady. Latency under target.`) plus six new real-signal slots inside `sampleRealSignal` that dress actual snapshot data in ops-watch phrasing (`[OPS] EventStream record youtube:0lUJcLKIt0o. STATUS: GREEN.`, `[OPS] last release T+3d. holding watch.`, live `[HH:MM:SS] sentinelbot heartbeat. STATUS: GREEN.`).
 - Category weights tilted to keep real data dominant: `real 55, ops 20, hook 15, motto 10`. The visitor sees fresh activity on every tick, never the same line back-to-back. Goal is the *sense* of a bot constantly working, not literal comprehension of every term.
