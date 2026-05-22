@@ -7,6 +7,10 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.21.1 - May 2026
+- Extended Article JSON-LD to the remaining eight essay pages: `/gatekeeping`, `/for-ai-artists`, `/no-rulebook`, `/ai-and-creativity`, `/god-uses-tools`, `/artist-freedom`, `/story`, `/process`. Same shape as the v2.21.0 batch (headline + description + url + image + author + publisher). Total JSON-LD coverage now 19 of 27 pages. The eight pages without structured data are `/404`, `/contact`, `/epk`, `/faq` (already has FAQPage), `/music`, `/sentinelbot`, `/signal-room`, `/videos`, `/are-you-an-ai-band`, `/index` (already has MusicGroup), `/timeline` (already has ItemList).
+- Wrote an idempotent Node sweep at `/tmp/article-jsonld-sweep.js` so re-running cannot duplicate or corrupt existing blocks. All 16 files (8 clean-URL + 8 legacy mirror) JSON.parse-validated.
+
 ## v2.21.0 - May 2026
 - SEO pass on the two gaps surfaced by the audit. Sitemap now lists all 26 indexable pages (added `/are-you-an-ai-band`, `/gigs`, `/signal-room`; refreshed every `lastmod` to 2026-05-22). JSON-LD coverage expanded from 3 pages to 11.
 - New JSON-LD blocks: `Person` on `/about`, `Article` on `/manifesto`, `/creed`, `/gospel`, `/open-letter`, `MusicGroup` with full track list on `/song-meanings`, `CollectionPage` + `ItemList` of press items on `/interviews`, `MusicGroup` with `areaServed` (DMV + Mid-Atlantic states) and `ContactPoint` for booking on `/gigs`. All inserted right after each page's canonical link; parity mirrors synced; every block validated with JSON.parse.
