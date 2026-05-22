@@ -7,6 +7,9 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.14.2 - May 2026
+- SentinelBot status line now types its ambient thoughts character by character with a blinking block cursor at the end -- Matrix "follow the white rabbit" feel. Typing speed jitters between 16-30ms per character so it reads typed rather than metronomic. Cursor stays blinking after the line finishes until the next tick arrives, at which point any in-flight typing is cancelled and the new line starts cleanly. `prefers-reduced-motion: reduce` skips the animation and shows the full line immediately with a still cursor.
+
 ## v2.14.1 - May 2026
 - Added `/admin/index.html` -- a single landing page that lists every admin tool with a one-line description and a deep-link. Same SHA-256 passphrase gate the other admin pages use. Visiting `/admin` or `/admin/` lands here, lock screen first, then a four-card grid (Visitors, Metrics, Quiz, Logs). Includes a "Sign out of all admin tools" button that clears every known admin sessionStorage key in one go.
 - Each tool still has its own gate inside its own page, so opening the index does not implicitly unlock the children. The index just makes the inventory of operator tools obvious instead of relying on the operator remembering the URLs.

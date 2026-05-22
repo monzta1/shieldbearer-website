@@ -156,6 +156,26 @@
       background: rgba(0,40,12,0.65);
       letter-spacing: .04em;
     }
+    /* Typewriter + blinking cursor. The line gets cleared each tick
+       and re-typed char by char into .sb-typed; .sb-cursor sits at
+       the end blinking until the next tick replaces the whole thing. */
+    #sentinelbot-status .sb-typed { white-space: pre-wrap; }
+    #sentinelbot-status .sb-cursor {
+      display: inline-block;
+      width: 0.6em;
+      margin-left: 2px;
+      color: #00ff41;
+      animation: sentinelbot-cursor-blink 1s steps(2, end) infinite;
+      vertical-align: baseline;
+    }
+    #sentinelbot-status .sb-cursor::before { content: "█"; }
+    @keyframes sentinelbot-cursor-blink {
+      0%, 49%   { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #sentinelbot-status .sb-cursor { animation: none; opacity: .8; }
+    }
     @media (prefers-reduced-motion: reduce) {
       .sentinelbot-online-dot { animation: none; }
       #sentinelbot-status { transition: none; }
@@ -787,14 +807,58 @@
     return { text: pickRandomAvoiding(MOTTOS, lastText), kind: "motto" };
   }
 
+  // Typewriter renderer. Clears the line, then re-types the new text
+  // char by char into a span; a blinking cursor block sits at the end
+  // the whole time. Any in-flight typing is cancelled when a new tick
+  // arrives so the new line starts cleanly. Honest to ambient feel:
+  // each tick visibly "writes" a new observation. Matrix-style.
+  let typingTimer = null;
+
   function setStatusText(item) {
     if (!item || !item.text) return;
-    statusLine.textContent = item.text;
     statusLine.classList.toggle("is-motto", item.kind === "motto");
     statusLine.classList.toggle("is-hook", item.kind === "hook");
     statusLine.classList.toggle("is-ops", item.kind === "ops");
     statusLine.classList.add("is-visible");
     lastText = item.text;
+
+    // Cancel any prior typing run so we never bleed two lines together.
+    if (typingTimer) {
+      clearTimeout(typingTimer);
+      typingTimer = null;
+    }
+
+    // Rebuild the inner DOM: a typed span that grows char by char, and
+    // a cursor block that blinks via CSS. Cursor is aria-hidden because
+    // screen readers should hear the line, not the cursor.
+    statusLine.innerHTML = '<span class="sb-typed"></span><span class="sb-cursor" aria-hidden="true"></span>';
+    var typed = statusLine.querySelector(".sb-typed");
+    if (!typed) return;
+
+    // Respect prefers-reduced-motion: skip the animation entirely.
+    var reduce = false;
+    try {
+      reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    } catch (e) {}
+    if (reduce) {
+      typed.textContent = item.text;
+      return;
+    }
+
+    var fullText = String(item.text);
+    var idx = 0;
+    var step = function () {
+      if (idx >= fullText.length) {
+        typingTimer = null;
+        return;
+      }
+      typed.textContent = fullText.slice(0, idx + 1);
+      idx += 1;
+      // Slight jitter (16-30ms) so it reads typed, not metronomic.
+      var delay = 16 + Math.floor(Math.random() * 14);
+      typingTimer = setTimeout(step, delay);
+    };
+    step();
   }
 
   function tickRotation() {
