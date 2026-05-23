@@ -1,46 +1,46 @@
 {
-  "generatedAt": "2026-05-22T08:00:15.854Z",
+  "generatedAt": "2026-05-23T08:00:18.636Z",
   "period": {
     "label": "May 2026 so far",
     "start": "2026-05-01",
     "end": "2026-05-31"
   },
   "headline": {
-    "sessions": 118,
-    "deltaPct": -69.8,
+    "sessions": 134,
+    "deltaPct": -65.7,
     "comparison": "vs April 2026"
   },
   "channels": [
     {
       "name": "Organic Social",
-      "sessions": 61,
-      "share": 50
+      "sessions": 70,
+      "share": 48.3
     },
     {
       "name": "Direct",
-      "sessions": 33,
-      "share": 27
+      "sessions": 36,
+      "share": 24.8
     },
     {
       "name": "Organic Search",
-      "sessions": 22,
-      "share": 18
+      "sessions": 28,
+      "share": 19.3
     }
   ],
   "events": [
     {
       "name": "scroll_depth",
-      "count": 230,
+      "count": 399,
       "engagedShare": null
     },
     {
       "name": "merch_click",
-      "count": 3,
+      "count": 4,
       "engagedShare": null
     },
     {
       "name": "listen_click",
-      "count": 1,
+      "count": 2,
       "engagedShare": null
     }
   ],
