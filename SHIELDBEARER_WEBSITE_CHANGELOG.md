@@ -7,6 +7,10 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.21.3 - May 2026
+- Hid `/gigs` from public surfaces. Removed every nav link to it (mob menu + desktop Press dropdown + footer Navigate column) across all 52 page files. Removed the entry from `sitemap.xml`. Added `<meta name="robots" content="noindex,nofollow">` to `/gigs/index.html` and `/gigs.html`. The page itself stays accessible by direct URL so any existing inbound link or the operator's bookmark still works; search engines just stop surfacing it.
+- The JSON-LD MusicGroup + areaServed + ContactPoint blocks on the gigs page stay in place. They are inert until the page comes back into the nav since search engines will not crawl a noindex page.
+
 ## v2.21.2 - May 2026
 - Added the missing Eternal Flames UK piece to `/interviews`: "Interview Part I: Cosmic Christ, Faith Without Defense, and the Weight of Metal" (published 2026-02-18). Placed between the GALILEAN feature card and the Part II card so the press archive now shows the full series in order. Excerpt drawn from the article's own framing (cosmic scale of creation, intimacy of faith, metal as honest language for sacred themes); no invented content.
 - JSON-LD ItemList on `/interviews` also updated with the new Part I entry plus its `datePublished` so structured data and visible cards stay in sync. Parity mirror synced; JSON validated.
