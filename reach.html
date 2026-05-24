@@ -221,8 +221,17 @@
       padding: 10px 0;
       border-bottom: 1px solid rgba(231,76,60,.06);
     }
-    .reach-list--songs li { grid-template-columns: 1fr auto; }
+    .reach-list--songs li { grid-template-columns: 44px 1fr auto; }
     .reach-list__flag { font-size: 22px; line-height: 1; }
+    .reach-list__art {
+      width: 44px;
+      height: 44px;
+      display: block;
+      border: 1px solid rgba(231,76,60,.2);
+      background: rgba(231,76,60,.05);
+      overflow: hidden;
+    }
+    .reach-list__art img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .reach-list__name { color: var(--text); font-size: .96rem; }
     .reach-list__streams { font-family: var(--font-head); letter-spacing: .04em; color: #fff; font-size: 1rem; white-space: nowrap; }
     .reach-list__bar { grid-column: 1 / -1; height: 3px; background: rgba(231,76,60,.08); position: relative; margin-top: 2px; }

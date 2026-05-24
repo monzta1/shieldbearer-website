@@ -12,6 +12,34 @@
   var SRC = "/reach.json";
   var SPOTIFY_SRC = "/spotify_songs.json";
 
+  // Song title -> cover artwork. Sourced from /images and from
+  // song-meanings.html. YouTube thumbnails are used where local
+  // art does not exist yet. Keys are lowercased; lookup is
+  // case-insensitive. Unknown titles fall back to the site logo.
+  var SONG_ART = {
+    "silent as night": "https://img.youtube.com/vi/Y7a0R2FGDeo/hqdefault.jpg",
+    "quake": "/images/quake-art.png",
+    "1000 suns": "https://img.youtube.com/vi/DsGhOgXLGXI/hqdefault.jpg",
+    "unaliving the giant": "/images/unaliving-the-giant-art.jpg",
+    "sentinels": "https://img.youtube.com/vi/0jPL3Mg88ZQ/hqdefault.jpg",
+    "the architect": "/images/the-architect-art.png",
+    "ruach": "/images/ruach-art.png",
+    "tidings of comfort and joy": "/images/tidings-of-comfort-and-joy-art.png",
+    "galilean": "/images/galilean-art.png",
+    "the man": "/images/the-man-art.png",
+    "over the skies of hell": "/images/over-the-skies-of-hell-art.jpg",
+    "celestial shield": "/images/celestial-shield-art.jpg",
+    "lanterns": "/images/lanterns-art.jpg",
+    "a wretch like me": "/images/wretch-like-me-art.png",
+    "wretch like me": "/images/wretch-like-me-art.png",
+    "let my people go": "/images/signal-room/let-my-people-go.jpg"
+  };
+  function artForTitle(title) {
+    if (!title) return "/images/logo.png";
+    var key = String(title).trim().toLowerCase();
+    return SONG_ART[key] || "/images/logo.png";
+  }
+
   // Continent grouping for the "Reached Nations" list -- could be used
   // for grouping headers later. Not used currently.
   var CONTINENT_BY_CODE = {
@@ -164,11 +192,13 @@
     var songs = (spotify && Array.isArray(spotify.songs)) ? spotify.songs : [];
     if (!songs.length) {
       section.setAttribute("hidden", "");
+      section.style.display = "none";
       list.innerHTML = "";
       if (intro) intro.textContent = "";
       return;
     }
     section.removeAttribute("hidden");
+    section.style.display = "";
     var total = Number(spotify.total_spotify_streams || 0);
     if (intro) {
       intro.innerHTML =
@@ -179,8 +209,11 @@
     var max = songs.reduce(function (m, s) { return Math.max(m, Number(s.streams) || 0); }, 1);
     list.innerHTML = songs.map(function (s) {
       var pct = Math.max(2, Math.round(((Number(s.streams) || 0) / max) * 100));
+      var title = escapeHtml(s.title || "?");
+      var art = artForTitle(s.title);
       return '<li>' +
-        '<span class="reach-list__name">' + escapeHtml(s.title || "?") + '</span>' +
+        '<span class="reach-list__art"><img src="' + art + '" alt="" onerror="this.src=\'/images/logo.png\'" loading="lazy" /></span>' +
+        '<span class="reach-list__name">' + title + '</span>' +
         '<span class="reach-list__streams">' + fmt(s.streams) + '</span>' +
         '<span class="reach-list__bar"><span style="width:' + pct + '%"></span></span>' +
       '</li>';
@@ -370,8 +403,10 @@
 
   // Spotify section loads independently. A missing file (404) just
   // means no Spotify data has been uploaded yet; the section stays
-  // hidden. No error surfacing required.
-  fetch(SPOTIFY_SRC, { cache: "no-store" })
+  // hidden. No error surfacing required. The cache-bust query is
+  // belt-and-suspenders against mobile Safari aggressively caching
+  // a 404 from before the file existed.
+  fetch(SPOTIFY_SRC + "?cb=" + Date.now(), { cache: "no-store" })
     .then(function (r) { return r.ok ? r.json() : null; })
     .then(renderTopTransmissions)
     .catch(function () { /* silent: hidden by default */ });
