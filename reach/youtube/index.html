@@ -336,6 +336,16 @@
 
     /* Growth curve */
     .reach-curve { width: 100%; height: 220px; display: block; }
+    .reach-curve-empty {
+      font-family: "Courier New", monospace;
+      font-size: 12px;
+      color: rgba(168,162,154,.55);
+      letter-spacing: .04em;
+      line-height: 1.6;
+      padding: 8px 0;
+    }
+    /* Traffic-source list mirrors the geo list but drops the flag column */
+    .reach-list--traffic li { grid-template-columns: 1fr auto; }
 
     /* Milestones */
     .reach-milestones { display: flex; gap: 10px; flex-wrap: wrap; }
@@ -588,8 +598,27 @@
           <ul class="reach-list reach-list--geo" id="ytCountries30"></ul>
         </div>
 
+        <div class="reach-section" id="ytGrowthCurveSection" hidden>
+          <h2>Growth Curve<span class="reach-source-tag">Last 90 days</span></h2>
+          <p class="reach-section__lead">Real daily views from YouTube Analytics across the trailing 90 days. Every dot on the line is a day. The curve replaces the previous synthesized chart with the actual feed.</p>
+          <svg class="reach-curve" id="ytGrowthCurve" viewBox="0 0 800 220" preserveAspectRatio="none" aria-label="Daily YouTube views over the trailing 90 days"></svg>
+          <p class="reach-curve-empty" id="ytGrowthCurveEmpty" hidden>Growth curve will appear once YouTube Analytics has published two or more distinct daily readings.</p>
+        </div>
+
+        <div class="reach-section" id="ytSurgeSection" hidden>
+          <h2>Surging Now<span class="reach-source-tag">Last 30 days</span></h2>
+          <p class="reach-section__lead">Top Shieldbearer videos by view count over the last thirty days. This is the recent signal, not the lifetime leaderboard. Click through to watch on YouTube.</p>
+          <ul class="reach-list reach-list--videos" id="ytTopVideos30d"></ul>
+        </div>
+
+        <div class="reach-section" id="ytDiscoverySection" hidden>
+          <h2>Discovery Channels<span class="reach-source-tag">Last 30 days</span></h2>
+          <p class="reach-section__lead">Where the viewers came from. Sorted by view count. Each path tells a different story about how the signal is reaching people.</p>
+          <ul class="reach-list reach-list--traffic" id="ytTrafficSources"></ul>
+        </div>
+
         <div class="reach-section" id="ytTopVideosSection" hidden>
-          <h2>Most-Seen Transmissions<span class="reach-source-tag">YouTube</span></h2>
+          <h2>Most-Seen Transmissions<span class="reach-source-tag">Lifetime</span></h2>
           <p class="reach-section__lead">Top Shieldbearer videos by lifetime view count. Click through to watch on YouTube.</p>
           <ul class="reach-list reach-list--videos" id="ytTopVideos"></ul>
         </div>

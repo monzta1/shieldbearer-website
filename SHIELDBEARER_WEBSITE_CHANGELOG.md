@@ -7,6 +7,15 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.24.2 - May 2026
+- `/reach/youtube` gained three new sections, all backed by additional YouTube Analytics API calls in the publisher Lambda:
+  - **Growth Curve.** Real daily views from the trailing 90 days, drawn as an area+line SVG chart mirroring the streams page's chart. Replaces what would have been a synthesized curve with the actual feed. Hides with a quiet empty-state line if YouTube Analytics has not yet published two distinct daily readings.
+  - **Surging Now.** Top 5 videos by views over the last 30 days. Different from the lifetime Most-Seen Transmissions list (which is dominated by older releases). With current data the surge leader is "Let My People Go" (49 views/30d), the latest release. Same `.reach-list--videos` styling as the lifetime list, click-through to YouTube.
+  - **Discovery Channels.** Traffic-source breakdown for the last 30 days: where viewers came from. Sorted desc by views. With current data: playlists (144), related video (126), no referrer (60), YouTube search (58), subscribers (48), channel page (37), external URL (32), and 4 minor categories. Machine codes like `YT_SEARCH` are mapped to human labels (e.g. "YouTube search", "Suggested next", "Home feed") in the publisher Lambda so the frontend doesn't have to know the YouTube enum.
+- Publisher Lambda: three new fetchers (`fetchDailyViews`, `fetchTopVideosForWindow`, `fetchTrafficSources`) plus a `TRAFFIC_SOURCE_LABELS` table covering the 18 most-common YouTube source codes. All run in parallel with the existing channel/watch/geo fetches; total Lambda runtime grew by ~600ms. Quota cost: 3 extra Analytics API calls per publish (so 12/day on the 6-hour cron), well under quota.
+- Tests: 55/55 passing (up from 34). 21 new tests cover `labelForTrafficSource` (known codes + unknown fallback + case normalization), `TRAFFIC_SOURCE_LABELS` table sanity, and `buildYouTubeArtifact` carrying the three new fields (with defaults to `[]` when missing).
+- Sources still never blend: YouTube views are never summed with DistroKid streams or Spotify song counts. Streams growth curve (`/reach/streams`) and YouTube growth curve (`/reach/youtube`) live on separate pages with separate data sources.
+
 ## v2.24.1 - May 2026
 - `/reach/youtube` expanded. Previous version was a deliberately minimal hero + top videos. Per follow-up direction (and confirmation that we do have YouTube Analytics access), the subpage now also surfaces:
   - **Where viewers watched from, last 48 hours.** Country list with flags and view counts. Empty-state line when YouTube Analytics has not yet aggregated the most-recent window (normal two-day reporting lag).

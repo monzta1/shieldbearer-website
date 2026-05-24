@@ -317,6 +317,11 @@
     }
     renderTopVideos(topVids);
 
+    // ---- v2.24.2 additions: real growth curve + 30d surge + traffic sources
+    renderYouTubeGrowthCurve(yt.daily_views || []);
+    renderYouTubeSurge(yt.top_videos_30d || []);
+    renderYouTubeTrafficSources(yt.traffic_sources_30d || []);
+
     // YouTube subpage methodology footer.
     var ytMeta = $("ytMeta");
     if (ytMeta) {
@@ -364,6 +369,111 @@
         '<span class="reach-list__name"><a href="' + url + '" target="_blank" rel="noopener">' + escapeHtml(v.title || "Untitled") + '</a></span>' +
         '<span class="reach-list__streams">' + fmt(v.views) + '</span>' +
         '<span class="reach-list__bar"><span style="width:' + Math.max(2, Math.round((v.views / videos[0].views) * 100)) + '%"></span></span>' +
+      '</li>';
+    }).join("");
+  }
+
+  // YouTube growth curve. Draws the daily_views series as an
+  // area+line chart in the SVG element with id="ytGrowthCurve",
+  // mirroring renderCurve's approach on the streams page so the
+  // two charts feel like the same instrument. Hides the chart
+  // and shows the empty-state line if there are fewer than two
+  // distinct daily values.
+  function renderYouTubeGrowthCurve(dailyViews) {
+    var svg = $("ytGrowthCurve");
+    var emptyEl = $("ytGrowthCurveEmpty");
+    var section = $("ytGrowthCurveSection");
+    if (!svg && !section) return;
+    var points = (dailyViews || []).map(function (p) {
+      var t = Date.parse(p.date);
+      return Number.isFinite(t) ? [t, Number(p.views) || 0] : null;
+    }).filter(Boolean);
+    var distinct = new Set(points.map(function (p) { return p[1]; }));
+    if (points.length < 2 || distinct.size < 2) {
+      if (svg) svg.style.display = "none";
+      if (emptyEl) emptyEl.removeAttribute("hidden");
+      if (section) section.removeAttribute("hidden");
+      return;
+    }
+    if (section) section.removeAttribute("hidden");
+    if (emptyEl) emptyEl.setAttribute("hidden", "");
+    if (svg) svg.style.display = "";
+
+    points.sort(function (a, b) { return a[0] - b[0]; });
+    var minX = points[0][0], maxX = points[points.length - 1][0];
+    var maxY = points.reduce(function (m, p) { return Math.max(m, p[1]); }, 1);
+    var w = 800, h = 220, padL = 12, padR = 12, padT = 18, padB = 18;
+    function sx(x) {
+      if (maxX === minX) return padL;
+      return padL + ((x - minX) / (maxX - minX)) * (w - padL - padR);
+    }
+    function sy(y) {
+      return h - padB - (y / maxY) * (h - padT - padB);
+    }
+    var path = "M " + sx(points[0][0]) + " " + sy(points[0][1]);
+    for (var i = 1; i < points.length; i++) path += " L " + sx(points[i][0]) + " " + sy(points[i][1]);
+    var areaPath = path + " L " + sx(points[points.length - 1][0]) + " " + (h - padB) + " L " + sx(points[0][0]) + " " + (h - padB) + " Z";
+    if (svg) {
+      svg.innerHTML = ''
+        + '<defs>'
+        + '<linearGradient id="ytGrowthGrad" x1="0" y1="0" x2="0" y2="1">'
+        + '<stop offset="0%" stop-color="#e74c3c" stop-opacity="0.55" />'
+        + '<stop offset="100%" stop-color="#e74c3c" stop-opacity="0.0" />'
+        + '</linearGradient>'
+        + '</defs>'
+        + '<path d="' + areaPath + '" fill="url(#ytGrowthGrad)" />'
+        + '<path d="' + path + '" fill="none" stroke="#e74c3c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" />';
+    }
+  }
+
+  // Surging now: top videos by views over the trailing 30 days.
+  // Different list from the lifetime top videos (which is dominated
+  // by older releases). Reuses .reach-list--videos styling.
+  function renderYouTubeSurge(videos) {
+    var ul = $("ytTopVideos30d");
+    var section = $("ytSurgeSection");
+    if (!ul && !section) return;
+    if (!videos.length) {
+      if (section) section.setAttribute("hidden", "");
+      if (ul) ul.innerHTML = "";
+      return;
+    }
+    if (section) section.removeAttribute("hidden");
+    var max = videos[0].views || 1;
+    ul.innerHTML = videos.map(function (v) {
+      var pct = Math.max(2, Math.round(((Number(v.views) || 0) / max) * 100));
+      var thumb = v.thumbnail || "/images/logo.png";
+      var url = v.url || ("https://www.youtube.com/watch?v=" + encodeURIComponent(v.videoId || ""));
+      return '<li>' +
+        '<span class="reach-list__art"><img src="' + thumb + '" alt="" onerror="this.src=\'/images/logo.png\'" loading="lazy" /></span>' +
+        '<span class="reach-list__name"><a href="' + url + '" target="_blank" rel="noopener">' + escapeHtml(v.title || "Untitled") + '</a></span>' +
+        '<span class="reach-list__streams">' + fmt(v.views) + '</span>' +
+        '<span class="reach-list__bar"><span style="width:' + pct + '%"></span></span>' +
+      '</li>';
+    }).join("");
+  }
+
+  // Discovery channels: where viewers came from. The API returns
+  // a machine code per row (YT_SEARCH, SUGGESTED_VIDEO, etc.) and
+  // the publisher Lambda already pre-attaches a human label, so
+  // the frontend just renders label + views + bar.
+  function renderYouTubeTrafficSources(sources) {
+    var ul = $("ytTrafficSources");
+    var section = $("ytDiscoverySection");
+    if (!ul && !section) return;
+    if (!sources.length) {
+      if (section) section.setAttribute("hidden", "");
+      if (ul) ul.innerHTML = "";
+      return;
+    }
+    if (section) section.removeAttribute("hidden");
+    var max = sources[0].views || 1;
+    ul.innerHTML = sources.map(function (s) {
+      var pct = Math.max(2, Math.round(((Number(s.views) || 0) / max) * 100));
+      return '<li>' +
+        '<span class="reach-list__name">' + escapeHtml(s.label || s.source || "?") + '</span>' +
+        '<span class="reach-list__streams">' + fmt(s.views) + '</span>' +
+        '<span class="reach-list__bar"><span style="width:' + pct + '%"></span></span>' +
       '</li>';
     }).join("");
   }
