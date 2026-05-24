@@ -134,6 +134,9 @@
     .result__row { display: flex; justify-content: space-between; padding: 4px 0; font-size: 13px; }
     .result__row b { color: var(--text-strong); font-weight: 400; }
     .result__row span { color: var(--gold); font-family: var(--font); letter-spacing: .04em; }
+    .result__block { padding: 10px 0; border-bottom: 1px dashed var(--line-soft); margin-bottom: 8px; }
+    .result__block:last-child { border-bottom: 0; }
+    .result__block > h3 { font-size: 12px; letter-spacing: .22em; color: var(--gold); margin: 0 0 8px; text-transform: uppercase; }
     .result__countries { margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--line-soft); }
     .result__country { display: flex; justify-content: space-between; padding: 3px 0; font-size: 12px; color: var(--text); }
     .result__perimage { margin-top: 14px; padding-top: 10px; border-top: 1px dashed var(--line-soft); }
@@ -309,52 +312,111 @@
       }
     });
 
+    function row(label, v) {
+      if (v == null) return "";
+      return '<div class="result__row"><b>' + label + '</b><span>' + fmt(v) + '</span></div>';
+    }
+
     function renderResult(data) {
-      var p = data.parsed || {};
       var imgCount = Number(data.image_count || 1);
-      var imgNote = imgCount > 1 ? " Merged from " + imgCount + " screenshots." : "";
-      if (data.published) {
-        setStatus("Published." + imgNote + " reach.json commit: " + (data.commit_sha || "queued") + ".", "ok");
-      } else {
-        setStatus(
-          "Parse rejected by sanity check: " + (data.review_flag || "unknown") + ". " +
-          (data.review_detail || "") + "." + imgNote + " Last good number stays live; nothing was published.",
-          "warn"
-        );
-      }
-      var rows = [];
-      function row(label, v) {
-        if (v == null) return "";
-        return '<div class="result__row"><b>' + label + '</b><span>' + fmt(v) + '</span></div>';
-      }
-      rows.push(row("total streams", p.total_streams));
-      rows.push(row("last 90 days", p.last_90));
-      rows.push(row("last 30 days", p.last_30));
-      rows.push(row("last 7 days", p.last_7));
-      var html = rows.join("");
-      if (Array.isArray(p.per_country) && p.per_country.length) {
-        html += '<div class="result__countries"><h3>countries read</h3>';
-        for (var i = 0; i < p.per_country.length; i++) {
-          var c = p.per_country[i];
-          html += '<div class="result__country"><span>' + (c.flag || "") + " " + escapeHtml(c.country || "?") + '</span><span>' + fmt(c.streams) + '</span></div>';
+      var html = "";
+      var statusLines = [];
+      var statusKind = "ok";
+
+      // ---- Reach (DistroKid) block ----
+      if (data.reach) {
+        var r = data.reach;
+        var rp = r.parsed || {};
+        if (r.published) {
+          statusLines.push("Reach published. reach.json commit: " + (r.commit_sha || "queued") + ".");
+        } else {
+          statusKind = "warn";
+          statusLines.push(
+            "Reach parse rejected: " + (r.review_flag || "unknown") + ". " +
+            (r.review_detail || "") + ". Last good number stays live."
+          );
         }
-        html += '</div>';
-      }
-      if (Array.isArray(data.per_image) && data.per_image.length > 1) {
-        html += '<div class="result__perimage"><h3>per-image breakdown</h3>';
-        for (var j = 0; j < data.per_image.length; j++) {
-          var pi = data.per_image[j] || {};
-          html += '<div class="result__imageblock"><b>image ' + (j + 1) + '</b>';
-          html += row("total streams", pi.total_streams);
-          html += row("last 90 days", pi.last_90);
-          html += row("last 30 days", pi.last_30);
-          html += row("last 7 days", pi.last_7);
-          var cc = Array.isArray(pi.per_country) ? pi.per_country.length : 0;
-          html += row("countries detected", cc);
+        html += '<div class="result__block"><h3>distrokid reach</h3>';
+        html += row("total streams", rp.total_streams);
+        html += row("last 90 days", rp.last_90);
+        html += row("last 30 days", rp.last_30);
+        html += row("last 7 days", rp.last_7);
+        if (Array.isArray(rp.per_country) && rp.per_country.length) {
+          html += '<div class="result__countries"><h3>countries read</h3>';
+          for (var i = 0; i < rp.per_country.length; i++) {
+            var c = rp.per_country[i];
+            html += '<div class="result__country"><span>' + (c.flag || "") + " " + escapeHtml(c.country || "?") + '</span><span>' + fmt(c.streams) + '</span></div>';
+          }
           html += '</div>';
         }
         html += '</div>';
       }
+
+      // ---- Spotify songs block ----
+      if (data.spotify) {
+        var sp = data.spotify;
+        var spp = sp.parsed || {};
+        if (sp.published) {
+          statusLines.push("Spotify songs published. spotify_songs.json commit: " + (sp.commit_sha || "queued") + ".");
+        } else {
+          statusKind = "warn";
+          statusLines.push(
+            "Spotify parse rejected: " + (sp.review_flag || "unknown") + ". " +
+            (sp.review_detail || "") + ". Last good record stays live."
+          );
+        }
+        html += '<div class="result__block"><h3>spotify songs</h3>';
+        if (Array.isArray(spp.songs) && spp.songs.length) {
+          html += row("tracks read", spp.songs.length);
+          html += '<div class="result__countries"><h3>tracks</h3>';
+          for (var j = 0; j < spp.songs.length; j++) {
+            var s = spp.songs[j];
+            html += '<div class="result__country"><span>' + escapeHtml(s.title || "?") + '</span><span>' + fmt(s.streams) + '</span></div>';
+          }
+          html += '</div>';
+        }
+        html += '</div>';
+      }
+
+      // ---- Per-image breakdown (debug) ----
+      if (Array.isArray(data.per_image) && data.per_image.length > 1) {
+        html += '<div class="result__perimage"><h3>per-image breakdown</h3>';
+        for (var k = 0; k < data.per_image.length; k++) {
+          var env = data.per_image[k] || {};
+          var d = env.data || {};
+          html += '<div class="result__imageblock"><b>image ' + (k + 1) + ' &middot; ' + (env.type || "unknown") + '</b>';
+          if (env.type === "distrokid_totals") {
+            html += row("total streams", d.total_streams);
+            html += row("last 90 days", d.last_90);
+            html += row("last 30 days", d.last_30);
+            html += row("last 7 days", d.last_7);
+          } else if (env.type === "distrokid_countries") {
+            html += row("countries detected", Array.isArray(d.per_country) ? d.per_country.length : 0);
+          } else if (env.type === "spotify_songs") {
+            html += row("songs detected", Array.isArray(d.songs) ? d.songs.length : 0);
+            if (Array.isArray(d.songs) && d.songs.length) {
+              html += row("top track", d.songs[0].title);
+              html += row("top streams", d.songs[0].streams);
+            }
+          }
+          html += '</div>';
+        }
+        html += '</div>';
+      }
+
+      if (Number(data.unknown_count) > 0) {
+        statusLines.push(data.unknown_count + " image" + (data.unknown_count === 1 ? "" : "s") + " did not match any known screen type.");
+        if (statusKind !== "err") statusKind = "warn";
+      }
+
+      if (!data.reach && !data.spotify) {
+        statusKind = "err";
+        statusLines = ["No recognized screens. " + (data.detail || data.error || "")];
+      }
+
+      var imgNote = imgCount > 1 ? " (" + imgCount + " screenshots uploaded)" : "";
+      setStatus(statusLines.join(" ") + imgNote, statusKind);
+
       resultBody.innerHTML = html;
       resultEl.style.display = "block";
     }

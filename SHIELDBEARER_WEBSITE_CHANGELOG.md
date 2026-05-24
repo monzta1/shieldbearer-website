@@ -7,6 +7,16 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.23.0 - May 2026
+- Stats parser supports a third screenshot type: **Spotify for Artists per-song view**. The admin upload at `/admin/stats` now detects which of three screen types each uploaded image is (DistroKid totals, DistroKid by-country, Spotify songs) and routes each to its own pipeline. The three types are never merged.
+- DistroKid totals and DistroKid by-country still feed the existing `/reach.json` exactly as before, no behavior change for the reach numbers.
+- Spotify songs feed a separate store: a new `/spotify_songs.json` artifact committed by the Lambda, plus DynamoDB records tagged `record_kind = "spotify_songs"`. Same `shieldbearer_stats_history` table, discriminator field keeps the kinds independent.
+- Spotify sanity check: each known song's new stream count must be >= its last published count. If any song dropped, the whole upload is rejected and the last good record stays live. First-appearance songs (new releases) are always accepted.
+- New `/reach` section: **Top Transmissions** (Spotify for Artists), styled like Reached Nations. Renders the per-song leaderboard with stream counts and bars. Section is `hidden` by default and only un-hides when `/spotify_songs.json` exists with at least one song. Intro line is explicit: "These numbers are independent from the DistroKid reach totals above."
+- `/admin/stats` result panel now renders per-type result blocks (DistroKid reach block + Spotify songs block + per-image type-aware breakdown). When a user uploads mixed screens, each type's status (published / rejected / commit sha) is surfaced separately.
+- Vision prompt updated to return a tagged envelope `{ type, data }`. Falls back to flat-shape inference if the model forgets to wrap (resilience).
+- 34 new unit tests covering: normalizeEnvelope (tagged + flat inference), normalizeSpotifyData (invalid-row rejection), mergeSpotifyParses (max for duplicate titles, sorted desc union), sanityCheckSpotify (no-prior, empty, dropped song, equal, increase, new-song-appears), buildSpotifyArtifact (shape + sort + totals). Existing reach test suite unchanged. Total: 92/92 passing.
+
 ## v2.22.9 - May 2026
 - `/reach` got a three-cell insights row below the stat grid. All values derived from the existing JSON (no new backend data):
   - **Pace this week.** Compares the last-7-day daily rate against the prior-83-day baseline (last_90 minus last_7, divided by 83). With current data: +135%, 175/day vs 75/day before. Shows whether the signal is accelerating, decelerating, or holding.

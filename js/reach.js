@@ -10,6 +10,7 @@
    ============================================================= */
 (function () {
   var SRC = "/reach.json";
+  var SPOTIFY_SRC = "/spotify_songs.json";
 
   // Continent grouping for the "Reached Nations" list -- could be used
   // for grouping headers later. Not used currently.
@@ -150,6 +151,40 @@
         pEl.textContent = "~" + Math.round(hours) + " hours";
       }
     }
+  }
+
+  // Top Transmissions section. Pulls /spotify_songs.json (separate
+  // store, separate source). DistroKid and Spotify numbers never mix.
+  // If the file is missing or empty, the section stays hidden.
+  function renderTopTransmissions(spotify) {
+    var section = $("topTransmissionsSection");
+    var list = $("topTransmissionsList");
+    var intro = $("topTransmissionsIntro");
+    if (!section || !list) return;
+    var songs = (spotify && Array.isArray(spotify.songs)) ? spotify.songs : [];
+    if (!songs.length) {
+      section.setAttribute("hidden", "");
+      list.innerHTML = "";
+      if (intro) intro.textContent = "";
+      return;
+    }
+    section.removeAttribute("hidden");
+    var total = Number(spotify.total_spotify_streams || 0);
+    if (intro) {
+      intro.innerHTML =
+        "Per-song stream counts pulled from Spotify for Artists. " +
+        "<b>" + songs.length + "</b> tracks logged, <b>" + fmt(total) + "</b> total plays on Spotify. " +
+        "These numbers are independent from the DistroKid reach totals above.";
+    }
+    var max = songs.reduce(function (m, s) { return Math.max(m, Number(s.streams) || 0); }, 1);
+    list.innerHTML = songs.map(function (s) {
+      var pct = Math.max(2, Math.round(((Number(s.streams) || 0) / max) * 100));
+      return '<li>' +
+        '<span class="reach-list__name">' + escapeHtml(s.title || "?") + '</span>' +
+        '<span class="reach-list__streams">' + fmt(s.streams) + '</span>' +
+        '<span class="reach-list__bar"><span style="width:' + pct + '%"></span></span>' +
+      '</li>';
+    }).join("");
   }
 
   function renderListIntro(data) {
@@ -332,4 +367,12 @@
       var c = $("reachCount");
       if (c) c.textContent = "--";
     });
+
+  // Spotify section loads independently. A missing file (404) just
+  // means no Spotify data has been uploaded yet; the section stays
+  // hidden. No error surfacing required.
+  fetch(SPOTIFY_SRC, { cache: "no-store" })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(renderTopTransmissions)
+    .catch(function () { /* silent: hidden by default */ });
 })();

@@ -221,11 +221,24 @@
       padding: 10px 0;
       border-bottom: 1px solid rgba(231,76,60,.06);
     }
+    .reach-list--songs li { grid-template-columns: 1fr auto; }
     .reach-list__flag { font-size: 22px; line-height: 1; }
     .reach-list__name { color: var(--text); font-size: .96rem; }
     .reach-list__streams { font-family: var(--font-head); letter-spacing: .04em; color: #fff; font-size: 1rem; white-space: nowrap; }
     .reach-list__bar { grid-column: 1 / -1; height: 3px; background: rgba(231,76,60,.08); position: relative; margin-top: 2px; }
     .reach-list__bar > span { display: block; height: 100%; background: linear-gradient(90deg, rgba(231,76,60,.45), rgba(231,76,60,.85)); }
+    .reach-source-tag {
+      display: inline-block;
+      font-family: var(--font-head);
+      font-size: .56rem;
+      letter-spacing: .22em;
+      color: var(--red-bright);
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border: 1px solid rgba(231,76,60,.45);
+      margin-left: 10px;
+      vertical-align: middle;
+    }
 
     /* Growth curve */
     .reach-curve { width: 100%; height: 220px; display: block; }
@@ -456,6 +469,12 @@
           <h2>Reached Nations</h2>
           <p class="reach-section__lead" id="reachListIntro"></p>
           <ul class="reach-list" id="reachList"></ul>
+        </div>
+
+        <div class="reach-section" id="topTransmissionsSection" hidden>
+          <h2>Top Transmissions<span class="reach-source-tag">Spotify for Artists</span></h2>
+          <p class="reach-section__lead" id="topTransmissionsIntro"></p>
+          <ul class="reach-list reach-list--songs" id="topTransmissionsList"></ul>
         </div>
 
         <div class="reach-section">
