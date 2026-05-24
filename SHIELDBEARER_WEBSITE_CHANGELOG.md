@@ -7,6 +7,9 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.25.2 - May 2026
+- Sitewide: inline prose anchors no longer blend into surrounding text. The site's global default for anchors was `text-decoration: none; color: inherit`, which meant any `<a>` inside a paragraph or list item without its own class rendered as plain text. Added a global rule that paints any anchor inside a `<main>` `<p>` or `<li>` in the red accent color with a clear underline (red, hover goes off-white). Scripture links (`.scripture-link`), CTA buttons (`.btn`), and the two existing CTA-style inline-link wrappers (`.hiw__inline-link`, `.reach-overview__howlink`) are explicitly excluded so their bespoke styling stays intact. Audit found six affected anchors across `/creed`, `/how-it-works`, and `/reach`; all now visibly clickable in prose. No HTML changes -- CSS-only fix.
+
 ## v2.25.1 - May 2026
 - `/how-it-works` gained two new chapters, inserted before the closing "Why it is built this way" section, in the same voice as the rest of the page:
   - **There is a room before the release.** Describes the Signal Room as a real visitable pre-release zone. Frames the room as the visible end of the shield ingest pipeline. Folds in song dossiers (one paragraph) so they are not a separate chapter.

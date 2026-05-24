@@ -46,6 +46,31 @@ body {
   line-height: 1.7;
 }
 a { text-decoration: none; color: inherit; }
+
+/* Inline prose anchors: any <a> inside a <p> or <li> within <main> gets a
+   visible red underline so the link does not blend into surrounding text.
+   Excludes anchors that already have their own treatment:
+     .scripture-link  -- BibleGateway refs (gold dotted underline)
+     .btn             -- CTA buttons
+     .footer-sublink  -- (footer is outside <main> anyway, defensive only)
+     .nav-* / .mob-*  -- nav anchors (not inside <p>, defensive only)
+     .reach-overview__panel and similar wrappers that are <a> wrapping a
+     block of content (not nested inside <p>, so they don't match).
+   Pages with bespoke inline-link wrappers like .hiw__inline-link a keep
+   their existing styling via higher class specificity. */
+main p:not(.hiw__inline-link):not(.reach-overview__howlink) a:not(.scripture-link):not(.btn),
+main li a:not(.scripture-link):not(.btn) {
+  color: var(--red-bright);
+  text-decoration: underline;
+  text-decoration-color: rgba(231,76,60,.55);
+  text-underline-offset: 2px;
+  transition: color .15s, text-decoration-color .15s;
+}
+main p:not(.hiw__inline-link):not(.reach-overview__howlink) a:not(.scripture-link):not(.btn):hover,
+main li a:not(.scripture-link):not(.btn):hover {
+  color: var(--off-white);
+  text-decoration-color: var(--off-white);
+}
 img { display: block; max-width: 100%; }
 ul { list-style: none; }
 button { cursor: pointer; font-family: inherit; }
