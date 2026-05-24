@@ -206,7 +206,7 @@ Versioning note:
 - Sort logic: entries with date >= today render under "Upcoming" (ascending). Entries with date < today render under "Recent" (descending), capped at 3.
 - Format per entry: uppercase month + zero-padded day + year, then "Venue, City" on its own line, then optional billing line, then optional note line. Each optional line is skipped when the source field is empty.
 - Hide-empty rules: the Upcoming subheading hides when no upcoming entries; same for Recent; the whole section hides when both buckets are empty or when the fetch fails. No half-rendered stubs.
-- New file: `js/watch-posts.js` (vanilla, fetch + render, no framework). New file: `data/gigs.json` (seeded with two KGroup Band appearances: 2026-05-09 Flory UMC and 2026-03-22 Dulles Town Center Mall).
+- New file: `js/watch-posts.js` (vanilla, fetch + render, no framework). New file: `data/gigs.json` (seeded with two KGroup Band appearances: 2026-05-09 Floris UMC and 2026-03-22 Dulles Town Center Mall).
 - Three new structural tests in `scripts/test.sh` (watch-posts.js wired on homepage, section element present, gigs.json valid JSON).
 - 17 new jsdom regression assertions covering sort order, recent cap, date formatting, optional-line rendering, hide-empty paths for both subheadings and the whole section, and graceful no-op when the section element is absent.
 - Style matches existing site theme (black background, red accents, courier eyebrow, display-font heading). Plain stacked entries, no card components or heavy framing. Mobile spacing inherits from the section padding tokens already in use elsewhere on the homepage.
