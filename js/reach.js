@@ -61,8 +61,7 @@
     var sync = shortTs(data && data.generated_at) || "pending";
     el.innerHTML =
       "Watchman&rsquo;s report. Signal confirmed in <b>" + nations + "</b> nations. " +
-      "Last manual sync: " + sync + ". " +
-      "Counts are pulled from DistroKid stream reports and uploaded by the operator after each refresh.";
+      "DistroKid stream data, last refreshed " + sync + ".";
   }
 
   function animateCounter(targetN) {
@@ -247,9 +246,9 @@
     var el = $("reachMeta");
     if (!el) return;
     el.textContent =
-      "How the signal is counted. Numbers refresh manually when the operator uploads the latest DistroKid stream report. " +
-      "All values are estimates per DistroKid's own disclosure. " +
-      "We don't automate it, we don't inflate it, and we don't count what we can't see.";
+      "How the signal is counted. The numbers come from DistroKid stream reports. " +
+      "Values are estimates per DistroKid's own disclosure. " +
+      "We don't inflate them, and we don't count what we can't see.";
   }
 
   function escapeHtml(s) {
