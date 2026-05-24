@@ -7,6 +7,11 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.22.2 - May 2026
+- Fixed: `/reach` link was missing from the mobile menu and the desktop Music dropdown on every page. Only the footer "Navigate" column carried it. Added `<a href="/reach">Reach</a>` to both the mob menu (between Signal Room and About) and the desktop Music dropdown across all 48 affected pages. Parity preserved between `<page>.html` and `<page>/index.html`.
+- `/admin/stats` now shows a per-image breakdown when more than one screenshot is uploaded, so the operator can see exactly what each image contributed (total + time-window numbers + country count). If the merge produces incomplete data, the per-image rows surface which screenshot was the problem.
+- Parser Lambda logs per-image parse summaries to CloudWatch on every multi-image upload: `{stage: "per-image-parse", per_image: [{idx, total_streams, last_90, ..., country_count}, ...]}` plus the merged summary. Lets us debug merge issues from logs without re-uploading.
+
 ## v2.22.1 - May 2026
 - `/admin/stats` now accepts multiple screenshots in one upload. The two DistroKid screens (totals + countries) describe the same moment, so the pipeline parses each image and merges the parses into ONE stats record with a single timestamp before sanity check and publish.
 - Frontend: `<input type=file multiple>`, preview thumbnails of every selected file (up to 4 per upload), submit posts an `images: [...]` array. Result banner notes the merge ("Merged from N screenshots").
