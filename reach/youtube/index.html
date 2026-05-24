@@ -527,6 +527,14 @@
                 <span class="reach-stat__label">Videos published</span>
                 <b id="ytVideoCount">--</b>
               </div>
+              <div class="reach-stat">
+                <span class="reach-stat__label">Watch hours, last 30 days</span>
+                <b id="ytWatchHours30">--</b>
+              </div>
+              <div class="reach-stat">
+                <span class="reach-stat__label">Avg view, last 30 days</span>
+                <b id="ytAvgViewSec30">--</b>
+              </div>
             </div>
           </div>
           <p class="reach-hero__frame">
@@ -548,6 +556,36 @@
               <p class="reach-yt-channel__handle" id="youtubeChannelHandle">--</p>
             </div>
           </a>
+        </div>
+
+        <div class="reach-section">
+          <h2>Recent Signal<span class="reach-source-tag">YouTube</span></h2>
+          <p class="reach-section__lead">Views and watch time pulled from YouTube Analytics. Numbers lag the live channel by roughly forty-eight hours, which is normal for the analytics feed.</p>
+          <div class="reach-yt-recent">
+            <div class="reach-yt-recent__cell">
+              <span class="reach-stat__label">Views, last 7 days</span>
+              <b id="ytLast7Views">--</b>
+              <span class="reach-yt-recent__sub" id="ytLast7Minutes">-- watch minutes</span>
+            </div>
+            <div class="reach-yt-recent__cell">
+              <span class="reach-stat__label">Views, last 30 days</span>
+              <b id="ytLast30Views">--</b>
+              <span class="reach-yt-recent__sub" id="ytLast30Minutes">-- watch minutes</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="reach-section">
+          <h2>Where viewers watched from<span class="reach-source-tag">Last 48 hours</span></h2>
+          <p class="reach-section__lead">Country breakdown for the last forty-eight hours. YouTube Analytics has a built-in two-day reporting lag, so the very last day or two of data can be sparse or empty until the analytics feed catches up.</p>
+          <ul class="reach-list reach-list--geo" id="ytCountries48"></ul>
+          <p class="reach-yt-empty" id="ytCountries48Empty" hidden>YouTube Analytics has not published the last forty-eight hours of country-level data yet. Counts will appear once the feed catches up.</p>
+        </div>
+
+        <div class="reach-section">
+          <h2>Where viewers watched from<span class="reach-source-tag">Last 30 days</span></h2>
+          <p class="reach-section__lead">Country breakdown across the trailing thirty days. Sorted by total views.</p>
+          <ul class="reach-list reach-list--geo" id="ytCountries30"></ul>
         </div>
 
         <div class="reach-section" id="ytTopVideosSection" hidden>

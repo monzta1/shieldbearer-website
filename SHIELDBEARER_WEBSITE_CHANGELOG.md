@@ -7,6 +7,15 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.24.1 - May 2026
+- `/reach/youtube` expanded. Previous version was a deliberately minimal hero + top videos. Per follow-up direction (and confirmation that we do have YouTube Analytics access), the subpage now also surfaces:
+  - **Where viewers watched from, last 48 hours.** Country list with flags and view counts. Empty-state line when YouTube Analytics has not yet aggregated the most-recent window (normal two-day reporting lag).
+  - **Where viewers watched from, last 30 days.** Country list, sorted by views.
+  - **Recent Signal section.** Views and watch minutes for the last 7 days and last 30 days, in a two-cell grid.
+  - **Watch hours, last 30 days** added as a hero secondary stat (auto-formats to minutes / hours / days depending on magnitude).
+  - **Average view duration, last 30 days** added as a hero secondary stat (auto-formats to "Xm YYs" or "Xs").
+- All new content is rendered by the existing `renderYouTube` function via DOM-element guards. No data source change. No JS path sums YouTube views with DistroKid streams or Spotify song counts; sources remain strictly independent.
+
 ## v2.24.0 - May 2026
 - **Reach restructure.** Reach is now a top-level nav item with a dropdown for two source-specific sub-pages. The two sources are kept strictly separate. Stream totals and YouTube view totals are never summed into a single blended number anywhere on the site.
   - `/reach` (overview): two side-by-side panels. Streaming (DistroKid) on the left, YouTube on the right. Each panel shows its own headline number with its own unit. A unifying non-numeric line below reads "Two different signals, measured by two different sources. Both go out without a gatekeeper's permission." No sum.
