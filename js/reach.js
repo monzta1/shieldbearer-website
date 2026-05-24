@@ -44,7 +44,10 @@
     if (!iso) return "";
     var d = new Date(iso);
     if (isNaN(d.getTime())) return "";
-    return d.toUTCString().replace("GMT", "UTC");
+    var raw = d.toUTCString().replace("GMT", "UTC");
+    // raw is "Sun, 24 May 2026 17:39:42 UTC"
+    // emit "Sun, 24 May 2026 · 17:39 UTC"  (middle dot, no seconds)
+    return raw.replace(/^(.*?)\s(\d{2}:\d{2}):\d{2}\s(.*)$/, "$1 · $2 $3");
   }
   function prefersReducedMotion() {
     try { return window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches; }
@@ -56,7 +59,10 @@
     if (!el) return;
     var nations = (data && data.countries && data.countries.length) || 0;
     var sync = shortTs(data && data.generated_at) || "pending";
-    el.innerHTML = "Watchman&rsquo;s report. Signal confirmed in <b>" + nations + "</b> territories. Last sync: " + sync + ".";
+    el.innerHTML =
+      "Watchman&rsquo;s report. Signal confirmed in <b>" + nations + "</b> nations. " +
+      "Last manual sync: " + sync + ". " +
+      "Counts are pulled from DistroKid stream reports and uploaded by the operator after each refresh.";
   }
 
   function animateCounter(targetN) {
@@ -92,6 +98,17 @@
     if ($("reachLast30")) $("reachLast30").textContent = data.last_30 ? fmt(data.last_30) : "--";
     if ($("reachLast7"))  $("reachLast7").textContent  = data.last_7  ? fmt(data.last_7)  : "--";
     animateCounter(Number(data.total_streams || 0));
+  }
+
+  function renderListIntro(data) {
+    var el = $("reachListIntro");
+    if (!el) return;
+    var n = (data.countries || []).length;
+    if (!n) { el.textContent = ""; return; }
+    el.innerHTML =
+      "<b>" + n + "</b> flags. <b>" + n + "</b> signals that made it through. " +
+      "The leaderboard below is ranked by total confirmed transmissions; " +
+      "new territories are marked when they first appear.";
   }
 
   function renderList(data) {
@@ -229,8 +246,10 @@
   function renderMeta(data) {
     var el = $("reachMeta");
     if (!el) return;
-    var when = shortTs(data.generated_at) || "pending";
-    el.textContent = "Numbers refresh when the operator uploads a new DistroKid screenshot. Last refresh: " + when + ". Streams data via DistroKid; all values are estimates per their note.";
+    el.textContent =
+      "How the signal is counted. Numbers refresh manually when the operator uploads the latest DistroKid stream report. " +
+      "All values are estimates per DistroKid's own disclosure. " +
+      "We don't automate it, we don't inflate it, and we don't count what we can't see.";
   }
 
   function escapeHtml(s) {
@@ -241,6 +260,7 @@
     setStatus(data);
     renderCelebration(data);
     renderHero(data);
+    renderListIntro(data);
     renderList(data);
     renderCurve(data);
     renderMilestones(data);

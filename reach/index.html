@@ -157,8 +157,18 @@
       letter-spacing: .26em;
       color: rgba(168,162,154,.55);
       text-transform: uppercase;
-      margin: 0 0 1rem;
+      margin: 0 0 .5rem;
     }
+    .reach-section__lead {
+      font-family: Georgia, serif;
+      font-size: .98rem;
+      line-height: 1.7;
+      color: rgba(240,235,224,.78);
+      margin: 0 0 1.2rem;
+      max-width: 720px;
+    }
+    .reach-section__lead b { color: #fff; font-weight: 400; }
+    .reach-section__lead:empty { display: none; }
 
 
     /* Country list */
@@ -354,29 +364,29 @@
           <div class="reach-hero__grid">
             <div class="reach-hero__main">
               <p class="reach-hero__counter"><b id="reachCount">0</b></p>
-              <p class="reach-hero__sublabel">Times the gospel was preached</p>
+              <p class="reach-hero__sublabel">Confirmed transmissions of the Gospel. One for every verified stream of a Shieldbearer track.</p>
             </div>
             <div class="reach-hero__stats">
               <div class="reach-stat">
-                <span class="reach-stat__label">Last 90 days</span>
+                <span class="reach-stat__label">Quarter&rsquo;s reach</span>
                 <b id="reachLast90">--</b>
               </div>
               <div class="reach-stat">
-                <span class="reach-stat__label">Last 30 days</span>
+                <span class="reach-stat__label">This month&rsquo;s signal</span>
                 <b id="reachLast30">--</b>
               </div>
               <div class="reach-stat">
-                <span class="reach-stat__label">Last 7 days</span>
+                <span class="reach-stat__label">This week&rsquo;s transmissions</span>
                 <b id="reachLast7">--</b>
               </div>
               <div class="reach-stat">
-                <span class="reach-stat__label">Nations</span>
+                <span class="reach-stat__label">Territories reached</span>
                 <b id="reachNations">--</b>
               </div>
             </div>
           </div>
           <p class="reach-hero__frame">
-            Every count is one more time Christ was named without a gatekeeper&rsquo;s permission.
+            Every count is one more time the name of Christ crossed a border, a feed, or a pair of headphones. Unsanctioned. Unfiltered. Unstoppable.
           </p>
         </div>
       </div>
@@ -387,11 +397,13 @@
 
         <div class="reach-section">
           <h2>Reached Nations</h2>
+          <p class="reach-section__lead" id="reachListIntro"></p>
           <ul class="reach-list" id="reachList"></ul>
         </div>
 
         <div class="reach-section">
           <h2>Growth Curve</h2>
+          <p class="reach-section__lead">Milestones mark the ground already taken. The next marker is the next objective.</p>
           <svg class="reach-curve" id="reachCurve" viewBox="0 0 800 220" preserveAspectRatio="none" aria-label="Total streams over time"></svg>
         </div>
 
@@ -408,12 +420,12 @@
   </main>
 
   <footer class="next-step" aria-label="Where to go next">
-    <h3 class="next-step__h">The signal does not need permission.</h3>
-    <p class="next-step__p">The doctrine and the mission behind every count are written down.</p>
+    <h3 class="next-step__h">The signal continues.</h3>
+    <p class="next-step__p">Every play extends the reach. Every share opens a new territory.</p>
     <div class="next-step__links">
-      <a href="/music">Hear the music</a>
-      <a href="/creed">Read the Creed</a>
-      <a href="/manifesto">Read the Manifesto</a>
+      <a href="/signal-room">Hear the latest transmission</a>
+      <a href="/music">Share a track</a>
+      <a href="/contact">Stand with Shieldbearer</a>
     </div>
   </footer>
 
