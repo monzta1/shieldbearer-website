@@ -7,6 +7,10 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.22.6 - May 2026
+- Scrapped the world map on `/reach`. The hand-traced polygon silhouettes did not read as a real map; replacing with a public-domain SVG was out of scope for this iteration. Removed: World Map section, CONTINENTS polygon data, LAT_LNG_BY_CODE, renderMap, projection helpers, and ~150 lines of map CSS. The "Reached Nations" list with flags and bars continues to carry the territorial view.
+- Growth curve now always shows a rising line. When real history is too thin (one or two readings of the same total), synthesize four implied points from the time-window stats: `total - last_90` ninety days ago, `total - last_30` thirty days ago, `total - last_7` seven days ago, and `total` now. Anchored at 0 a hundred and eighty days back so the curve rises from zero to the current total. As real history accumulates, the synthesized points are dropped and the curve becomes the actual recorded data.
+
 ## v2.22.5 - May 2026
 - `/reach` hero redesign. The previous layout stacked counter / frame paragraph / time-window strip in a single center column, leaving a lot of empty horizontal space on desktop and reading as low density. New layout puts the big counter on the left with a tight "Times the gospel was preached" sublabel, and a 2x2 stat grid on the right showing Last 90, Last 30, Last 7, and Nations side by side in bordered cells. Frame paragraph drops below in narrower max-width. On mobile (max-width 680px) the grid collapses to a single column. Hero padding reduced from 2.0rem to 1.4rem top.
 

@@ -160,32 +160,6 @@
       margin: 0 0 1rem;
     }
 
-    /* World map. Equirectangular projection. Continent silhouettes
-       dim, country markers glow red and carry the flag emoji. */
-    .reach-map {
-      background: linear-gradient(180deg, rgba(8,4,4,.9), rgba(2,1,1,.95));
-      border: 1px solid rgba(231,76,60,.18);
-      padding: 12px;
-      position: relative;
-    }
-    .reach-map__svg { display: block; width: 100%; height: auto; }
-    .reach-map__ocean { fill: rgba(231,76,60,0.025); }
-    .reach-map__land path { fill: rgba(231,76,60,0.08); stroke: rgba(231,76,60,0.3); stroke-width: .6; }
-    .reach-map__pin { cursor: default; }
-    .reach-map__pin-halo { fill: rgba(231,76,60,0.18); }
-    .reach-map__pin-dot { fill: rgba(231,76,60,0.95); stroke: rgba(255,210,205,0.75); stroke-width: .5; }
-    .reach-map__pin-flag { font-size: 11px; pointer-events: none; }
-    .reach-map__pin:hover .reach-map__pin-halo,
-    .reach-map__pin:focus .reach-map__pin-halo { fill: rgba(231,76,60,0.4); }
-    .reach-map__legend {
-      font-family: "Courier New", monospace;
-      font-size: 11px;
-      letter-spacing: .12em;
-      color: rgba(168,162,154,.55);
-      text-transform: uppercase;
-      margin-top: 10px;
-    }
-    .reach-map__legend b { color: rgba(231,76,60,.9); font-weight: 400; }
 
     /* Country list */
     .reach-list { list-style: none; padding: 0; margin: 0; border-top: 1px solid rgba(231,76,60,.1); }
@@ -205,15 +179,6 @@
 
     /* Growth curve */
     .reach-curve { width: 100%; height: 220px; display: block; }
-    .reach-curve-empty {
-      display: none;
-      font-family: "Courier New", monospace;
-      font-size: 13px;
-      color: rgba(168,162,154,.55);
-      letter-spacing: .04em;
-      padding: 1.2rem 0;
-      line-height: 1.7;
-    }
 
     /* Milestones */
     .reach-milestones { display: flex; gap: 10px; flex-wrap: wrap; }
@@ -421,12 +386,6 @@
       <div class="reach-wrap">
 
         <div class="reach-section">
-          <h2>World Map</h2>
-          <div class="reach-map" id="reachMap" aria-label="World map of reached nations"></div>
-          <p class="reach-map__legend">Lit markers <b>&#x25CF;</b> mark every nation the signal has reached. Marker size scales with stream count.</p>
-        </div>
-
-        <div class="reach-section">
           <h2>Reached Nations</h2>
           <ul class="reach-list" id="reachList"></ul>
         </div>
@@ -434,7 +393,6 @@
         <div class="reach-section">
           <h2>Growth Curve</h2>
           <svg class="reach-curve" id="reachCurve" viewBox="0 0 800 220" preserveAspectRatio="none" aria-label="Total streams over time"></svg>
-          <div class="reach-curve-empty" id="reachCurveEmpty">The growth curve appears after a few stat refreshes. Right now there is only one published reading on record.</div>
         </div>
 
         <div class="reach-section">
