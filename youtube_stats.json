@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-24T22:28:19.918Z",
+  "generated_at": "2026-05-24T22:32:25.102Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -617,7 +617,7 @@
     },
     {
       "source": "EXT_URL",
-      "label": "ext url",
+      "label": "External URL",
       "views": 32
     },
     {
