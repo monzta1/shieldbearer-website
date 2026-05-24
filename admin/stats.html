@@ -90,7 +90,10 @@
       margin: 12px 0 0;
       line-height: 1.6;
     }
-    .preview { max-width: 100%; max-height: 320px; margin-top: 14px; border: 1px solid var(--line-soft); display: none; }
+    .previews { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 14px; }
+    .previews:empty { display: none; }
+    .previews img { max-width: 46%; max-height: 240px; border: 1px solid var(--line-soft); }
+    @media (max-width: 420px) { .previews img { max-width: 100%; } }
 
     .submit-row { text-align: center; margin: 16px 0; }
     .submit-row button {
@@ -153,10 +156,10 @@
     </div>
 
     <div id="uploadArea" class="upload-area">
-      <input id="fileInput" type="file" accept="image/*" />
-      <label for="fileInput">Choose Screenshot</label>
-      <p>Phone screenshots work. Camera roll, photos, screenshots, any image.</p>
-      <img id="preview" class="preview" alt="" />
+      <input id="fileInput" type="file" accept="image/*" multiple />
+      <label for="fileInput">Choose Screenshots</label>
+      <p>Select one or more screenshots from your gallery. Upload the totals screen and the country screen together; they get merged into one record.</p>
+      <div id="previews" class="previews"></div>
     </div>
 
     <div class="submit-row">
@@ -217,15 +220,15 @@
     var API = "https://g7a5tqlxaj.execute-api.us-east-1.amazonaws.com/stats";
     var ADMIN_KEY = "shieldbearer-stats-2026";
 
+    var MAX_IMAGES = 4;
     var fileInput = document.getElementById("fileInput");
-    var preview = document.getElementById("preview");
+    var previewsEl = document.getElementById("previews");
     var submitBtn = document.getElementById("submitBtn");
     var statusEl = document.getElementById("status");
     var resultEl = document.getElementById("result");
     var resultBody = document.getElementById("resultBody");
 
-    var pendingBase64 = null;
-    var pendingMime = "image/jpeg";
+    var pendingImages = [];
 
     function setStatus(msg, kind) {
       statusEl.textContent = msg;
@@ -237,33 +240,56 @@
       return Number(n).toLocaleString();
     }
 
-    fileInput.addEventListener("change", function () {
-      var f = fileInput.files && fileInput.files[0];
-      if (!f) return;
-      pendingMime = f.type || "image/jpeg";
-      var reader = new FileReader();
-      reader.onload = function () {
-        // result is data:image/...;base64,XXXX
-        var idx = String(reader.result).indexOf(",");
-        pendingBase64 = idx >= 0 ? String(reader.result).slice(idx + 1) : "";
-        preview.src = reader.result;
-        preview.style.display = "block";
-        submitBtn.disabled = !pendingBase64;
-        statusEl.style.display = "none";
-        resultEl.style.display = "none";
-      };
-      reader.readAsDataURL(f);
+    function readFileAsDataUrl(file) {
+      return new Promise(function (resolve, reject) {
+        var reader = new FileReader();
+        reader.onload = function () { resolve(String(reader.result)); };
+        reader.onerror = function () { reject(reader.error || new Error("read failed")); };
+        reader.readAsDataURL(file);
+      });
+    }
+
+    fileInput.addEventListener("change", async function () {
+      var files = Array.prototype.slice.call(fileInput.files || []);
+      if (!files.length) return;
+      if (files.length > MAX_IMAGES) {
+        setStatus("Max " + MAX_IMAGES + " screenshots per upload. Got " + files.length + ".", "err");
+        return;
+      }
+      pendingImages = [];
+      previewsEl.innerHTML = "";
+      statusEl.style.display = "none";
+      resultEl.style.display = "none";
+      submitBtn.disabled = true;
+      try {
+        for (var i = 0; i < files.length; i++) {
+          var f = files[i];
+          var dataUrl = await readFileAsDataUrl(f);
+          var idx = dataUrl.indexOf(",");
+          var b64 = idx >= 0 ? dataUrl.slice(idx + 1) : "";
+          if (!b64) continue;
+          pendingImages.push({ image_base64: b64, mime_type: f.type || "image/jpeg" });
+          var img = document.createElement("img");
+          img.src = dataUrl;
+          img.alt = "";
+          previewsEl.appendChild(img);
+        }
+        submitBtn.disabled = !pendingImages.length;
+      } catch (err) {
+        setStatus("Could not read file: " + (err && err.message ? err.message : "unknown"), "err");
+      }
     });
 
     submitBtn.addEventListener("click", async function () {
-      if (!pendingBase64) return;
+      if (!pendingImages.length) return;
       submitBtn.disabled = true;
-      setStatus("Parsing the screenshot. Standby.", "ok");
+      var n = pendingImages.length;
+      setStatus("Parsing " + n + " screenshot" + (n === 1 ? "" : "s") + ". Standby.", "ok");
       try {
         var res = await fetch(API, {
           method: "POST",
           headers: { "content-type": "application/json", "x-admin-key": ADMIN_KEY },
-          body: JSON.stringify({ image_base64: pendingBase64, mime_type: pendingMime })
+          body: JSON.stringify({ images: pendingImages })
         });
         var data = await res.json();
         if (!res.ok) {
@@ -281,12 +307,14 @@
 
     function renderResult(data) {
       var p = data.parsed || {};
+      var imgCount = Number(data.image_count || 1);
+      var imgNote = imgCount > 1 ? " Merged from " + imgCount + " screenshots." : "";
       if (data.published) {
-        setStatus("Published. The signal grew. reach.json commit: " + (data.commit_sha || "queued") + ".", "ok");
+        setStatus("Published." + imgNote + " reach.json commit: " + (data.commit_sha || "queued") + ".", "ok");
       } else {
         setStatus(
           "Parse rejected by sanity check: " + (data.review_flag || "unknown") + ". " +
-          (data.review_detail || "") + ". Last good number stays live; nothing was published.",
+          (data.review_detail || "") + "." + imgNote + " Last good number stays live; nothing was published.",
           "warn"
         );
       }

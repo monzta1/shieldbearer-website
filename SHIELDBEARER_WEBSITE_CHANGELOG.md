@@ -7,6 +7,12 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.22.1 - May 2026
+- `/admin/stats` now accepts multiple screenshots in one upload. The two DistroKid screens (totals + countries) describe the same moment, so the pipeline parses each image and merges the parses into ONE stats record with a single timestamp before sanity check and publish.
+- Frontend: `<input type=file multiple>`, preview thumbnails of every selected file (up to 4 per upload), submit posts an `images: [...]` array. Result banner notes the merge ("Merged from N screenshots").
+- Backend: parser Lambda accepts the new `images` array (legacy single `image_base64` still works). Parses run in parallel, then `mergeParses()` takes MAX across totals fields and the longest non-empty country list. The merged parse goes through the existing sanity check and reach.json commit unchanged.
+- 14 new unit tests covering: empty/single/multi parse, order independence, max-wins on totals, longest-list-wins on countries, and country-only parse leaving totals absent for fallback. 58/58 parser tests pass.
+
 ## v2.22.0 - May 2026
 - New SentinelBot stats dashboard. Three connected pieces:
 - **Admin upload page** at `/admin/stats`. Mobile-first, passphrase-gated, accepts a DistroKid stats screenshot from the phone, posts it to the parser Lambda, shows the parsed numbers back. Zero-touch publish on a clean parse; a sanity-rejected parse keeps the last good record live and surfaces a clear flag. Linked from the `/admin` index card grid.
