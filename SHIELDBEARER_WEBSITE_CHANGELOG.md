@@ -7,6 +7,13 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.25.1 - May 2026
+- `/how-it-works` gained two new chapters, inserted before the closing "Why it is built this way" section, in the same voice as the rest of the page:
+  - **There is a room before the release.** Describes the Signal Room as a real visitable pre-release zone. Frames the room as the visible end of the shield ingest pipeline. Folds in song dossiers (one paragraph) so they are not a separate chapter.
+  - **The thesis is on the record.** Names the Creed, the Manifesto, the Open Letter, and the Gospel page directly. Gestures at the AI-and-faith page set without listing every URL. Mentions scripture-linking in one sentence inside the chapter. Closes with a single inline link to the Are You An AI Band quiz.
+- No new ops/infrastructure content was added to the public page (visitor logger, cost guardrails, scheduled publishers, admin tools all stay off the capstone, per the brief).
+- Per brief: this completes the capstone page. No further chapters to add.
+
 ## v2.25.0 - May 2026
 - New page: **/how-it-works** (legacy mirror at /how-it-works.html). The capstone page that explains how the site itself operates as a mission tool. Framed around what the machinery is for, not the machinery for its own sake. Sections: How This Signal Goes Out (intro), One Command (shield ingest), The Site Watches For New Releases On Its Own, The Reach Report, SentinelBot, Why It Is Built This Way, and a Signal Continues CTA block linking to Music / Reach Report / Creed.
 - Accuracy posture matches the brief exactly:
