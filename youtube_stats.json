@@ -1,0 +1,98 @@
+{
+  "generated_at": "2026-05-24T21:33:59.637Z",
+  "source": "YouTube",
+  "channel": {
+    "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
+    "title": "Shieldbearer",
+    "handle": "@shieldbearerusa",
+    "url": "https://www.youtube.com/channel/UCgL4mzUUcYtqxx-0IdjoqIw",
+    "published_at": "2025-04-14T03:40:06.969878Z",
+    "thumbnail": "https://yt3.ggpht.com/IpsLcp29bRpbou_LxaA2FazbHG9QfOHy_bcBiI8vkg_EBDaje4f78m2f1t4vsaB_gk5wqLLz=s800-c-k-c0x00ffffff-no-rj",
+    "views_lifetime": 239841,
+    "subscribers": 12300,
+    "subscribers_hidden": false,
+    "video_count": 96
+  },
+  "windows": {
+    "last_48h": {
+      "start": "2026-05-22",
+      "end": "2026-05-24"
+    },
+    "last_7": {
+      "start": "2026-05-17",
+      "end": "2026-05-24"
+    },
+    "last_30": {
+      "start": "2026-04-24",
+      "end": "2026-05-24"
+    }
+  },
+  "watch_time": {
+    "last_7": {
+      "views": 50,
+      "watchMinutes": 65,
+      "avgViewDurationSec": 85
+    },
+    "last_30": {
+      "views": 514,
+      "watchMinutes": 1118,
+      "avgViewDurationSec": 132
+    }
+  },
+  "last_48h_countries": [],
+  "last_30d_countries": [
+    {
+      "code": "US",
+      "name": "United States",
+      "flag": "🇺🇸",
+      "views": 138
+    }
+  ],
+  "top_videos": [
+    {
+      "videoId": "6u_a5zdTLWQ",
+      "title": "Shieldbearer – Come and Restore [Christian Worship | Lanterns Album | Official Audio]",
+      "thumbnail": "https://i.ytimg.com/vi/6u_a5zdTLWQ/mqdefault.jpg",
+      "views": 96120,
+      "likes": 37,
+      "publishedAt": "2025-05-04T03:07:07Z",
+      "url": "https://www.youtube.com/watch?v=6u_a5zdTLWQ"
+    },
+    {
+      "videoId": "9NQkaZbntUs",
+      "title": "Shieldbearer – Pahalgam (A Prayer for India) [Official Audio]",
+      "thumbnail": "https://i.ytimg.com/vi/9NQkaZbntUs/mqdefault.jpg",
+      "views": 62394,
+      "likes": 320,
+      "publishedAt": "2025-04-26T15:28:11Z",
+      "url": "https://www.youtube.com/watch?v=9NQkaZbntUs"
+    },
+    {
+      "videoId": "vBGEIMXs6h0",
+      "title": "Celestial Shield (Lyric Video) – Shieldbearer | Christian Metal | Israel, Prophecy & Warfare",
+      "thumbnail": "https://i.ytimg.com/vi/vBGEIMXs6h0/mqdefault.jpg",
+      "views": 12006,
+      "likes": 541,
+      "publishedAt": "2025-07-15T02:04:57Z",
+      "url": "https://www.youtube.com/watch?v=vBGEIMXs6h0"
+    },
+    {
+      "videoId": "9FHgbbVBT1A",
+      "title": "Ruler of the Storm – Shieldbearer (Official Lyric Video | Christian Metal Anthem)",
+      "thumbnail": "https://i.ytimg.com/vi/9FHgbbVBT1A/mqdefault.jpg",
+      "views": 9829,
+      "likes": 736,
+      "publishedAt": "2025-05-16T10:00:06Z",
+      "url": "https://www.youtube.com/watch?v=9FHgbbVBT1A"
+    },
+    {
+      "videoId": "8khugdipSJM",
+      "title": "Shieldbearer – Tidings of Comfort and Joy (God Rest Ye Merry Gentlemen) [Metal Christmas Anthem]",
+      "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
+      "views": 8168,
+      "likes": 23,
+      "publishedAt": "2025-10-24T00:24:36Z",
+      "url": "https://www.youtube.com/watch?v=8khugdipSJM"
+    }
+  ]
+}
