@@ -7,6 +7,16 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.22.9 - May 2026
+- `/reach` got a three-cell insights row below the stat grid. All values derived from the existing JSON (no new backend data):
+  - **Pace this week.** Compares the last-7-day daily rate against the prior-83-day baseline (last_90 minus last_7, divided by 83). With current data: +135%, 175/day vs 75/day before. Shows whether the signal is accelerating, decelerating, or holding.
+  - **Continental coverage.** Counts how many of the six populated continents have at least one reached country, using the existing `CONTINENT_BY_CODE` table. With current data: 4 of 6.
+  - **Continuous transmission.** Total streams x roughly four minutes per track, expressed as days of continuous playback. With current data: ~27 days. Translates the abstract count into something visceral.
+- The insights row sits between the stats 2x2 grid and the closing frame paragraph. Three-column on desktop, single column under 680px.
+
+## v2.22.8 - May 2026
+- `/reach` copy tweak: dropped the "manually uploaded by the operator" framing from both the top status line and the methodology note. Status now reads "DistroKid stream data, last refreshed [timestamp]." Meta note reads "The numbers come from DistroKid stream reports. Values are estimates per DistroKid's own disclosure. We don't inflate them, and we don't count what we can't see."
+
 ## v2.22.7 - May 2026
 - `/reach` copy rewrite. New status line owns the manual-sync process up front instead of hiding it. Hero sublabel now reads "Confirmed transmissions of the Gospel. One for every verified stream of a Shieldbearer track" so the headline number is tied to a concrete unit. Stat labels switched from generic time windows to mission language: Quarter's reach, This month's signal, This week's transmissions, Territories reached. Subline replaced the "without a gatekeeper's permission" framing with "crossed a border, a feed, or a pair of headphones. Unsanctioned. Unfiltered. Unstoppable." Reached Nations and Growth Curve sections got narrative lead-ins. Closing CTA block updated: headline "The signal continues", links to Hear the latest transmission (/signal-room), Share a track (/music), Stand with Shieldbearer (/contact). Footer methodology note now reads "We don't automate it, we don't inflate it, and we don't count what we can't see." Sync timestamp reformatted from "Sun, 24 May 2026 17:39:42 UTC" to "Sun, 24 May 2026 · 17:39 UTC" (middle dot, no seconds).
 

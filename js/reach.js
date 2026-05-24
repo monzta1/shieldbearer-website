@@ -99,6 +99,59 @@
     animateCounter(Number(data.total_streams || 0));
   }
 
+  // Three derived insights below the hero stat grid:
+  //   1. Pace this week vs the prior-83-day baseline (last_90 - last_7
+  //      divided by 83). Shows whether the signal is accelerating.
+  //   2. Continental coverage: how many of the six populated continents
+  //      have been reached (Antarctica excluded since nobody lives there).
+  //   3. Continuous transmission: total streams x ~4 min per track,
+  //      expressed as days. Translates the abstract count into something
+  //      visceral.
+  function renderInsights(data) {
+    var vEl = $("reachVelocity");
+    var vNote = $("reachVelocityNote");
+    if (vEl && vNote) {
+      var l7 = Number(data.last_7 || 0);
+      var l90 = Number(data.last_90 || 0);
+      var priorStreams = l90 - l7;
+      if (l7 > 0 && priorStreams > 0) {
+        var perDay7 = l7 / 7;
+        var perDayPrior = priorStreams / 83;
+        var pct = Math.round((perDay7 / perDayPrior - 1) * 100);
+        var sign = pct >= 0 ? "+" : "";
+        vEl.textContent = sign + pct + "%";
+        vNote.textContent = Math.round(perDay7) + "/day vs " + Math.round(perDayPrior) + "/day before";
+      } else {
+        vEl.textContent = "--";
+        vNote.textContent = "Insufficient signal";
+      }
+    }
+
+    var cEl = $("reachContinents");
+    if (cEl) {
+      var seen = {};
+      (data.countries || []).forEach(function (c) {
+        var cont = CONTINENT_BY_CODE[c.code];
+        if (cont) seen[cont] = true;
+      });
+      cEl.textContent = Object.keys(seen).length + " of 6";
+    }
+
+    var pEl = $("reachPlayback");
+    if (pEl) {
+      var total = Number(data.total_streams || 0);
+      var TRACK_MINUTES = 4;
+      var minutes = total * TRACK_MINUTES;
+      var days = minutes / 60 / 24;
+      if (days >= 1) {
+        pEl.textContent = "~" + Math.round(days) + " days";
+      } else {
+        var hours = minutes / 60;
+        pEl.textContent = "~" + Math.round(hours) + " hours";
+      }
+    }
+  }
+
   function renderListIntro(data) {
     var el = $("reachListIntro");
     if (!el) return;
@@ -259,6 +312,7 @@
     setStatus(data);
     renderCelebration(data);
     renderHero(data);
+    renderInsights(data);
     renderListIntro(data);
     renderList(data);
     renderCurve(data);
