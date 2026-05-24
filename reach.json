@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-05-24T12:00:00Z",
+  "total_streams": 9724,
+  "last_90": 7411,
+  "last_30": 5968,
+  "last_7": 1227,
+  "nations": 17,
+  "countries": [
+    { "country": "United States", "code": "US", "flag": "🇺🇸", "streams": 3164 },
+    { "country": "Germany", "code": "DE", "flag": "🇩🇪", "streams": 589 },
+    { "country": "France", "code": "FR", "flag": "🇫🇷", "streams": 580 },
+    { "country": "United Kingdom", "code": "GB", "flag": "🇬🇧", "streams": 227 },
+    { "country": "The Netherlands", "code": "NL", "flag": "🇳🇱", "streams": 218 },
+    { "country": "Belgium", "code": "BE", "flag": "🇧🇪", "streams": 183 },
+    { "country": "Sweden", "code": "SE", "flag": "🇸🇪", "streams": 182 },
+    { "country": "Canada", "code": "CA", "flag": "🇨🇦", "streams": 177 },
+    { "country": "Switzerland", "code": "CH", "flag": "🇨🇭", "streams": 175 },
+    { "country": "Spain", "code": "ES", "flag": "🇪🇸", "streams": 162 },
+    { "country": "Brazil", "code": "BR", "flag": "🇧🇷", "streams": 129 },
+    { "country": "Italy", "code": "IT", "flag": "🇮🇹", "streams": 82 },
+    { "country": "Singapore", "code": "SG", "flag": "🇸🇬", "streams": 80 },
+    { "country": "Mexico", "code": "MX", "flag": "🇲🇽", "streams": 31 },
+    { "country": "Austria", "code": "AT", "flag": "🇦🇹", "streams": 28 },
+    { "country": "India", "code": "IN", "flag": "🇮🇳", "streams": 24 },
+    { "country": "United Arab Emirates", "code": "AE", "flag": "🇦🇪", "streams": 17 }
+  ],
+  "history": [
+    { "t": "2026-05-24T12:00:00Z", "total": 9724 }
+  ],
+  "last_published_at": "2026-05-24T12:00:00Z"
+}

@@ -7,6 +7,16 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.22.0 - May 2026
+- New SentinelBot stats dashboard. Three connected pieces:
+- **Admin upload page** at `/admin/stats`. Mobile-first, passphrase-gated, accepts a DistroKid stats screenshot from the phone, posts it to the parser Lambda, shows the parsed numbers back. Zero-touch publish on a clean parse; a sanity-rejected parse keeps the last good record live and surfaces a clear flag. Linked from the `/admin` index card grid.
+- **Public reach dashboard** at `/reach`. Watchman-framed report (not vanity streams): hero counter, continental sector map with flag rows lit per continent, ranked country list with flag + count + bar, growth curve SVG, milestone badges (1K/5K/10K/25K/50K/100K with earned/current/locked states). 10K celebration banner auto-triggers when `total_streams >= 10000`. Fetches a static `/reach.json` directly from the repo so the page renders with zero DynamoDB hits per pageview.
+- **Parser pipeline.** New Lambda `sentinelbot-stats-parser` on nodejs24.x, behind API Gateway routes `POST /stats` and `GET /stats` on the existing `sentinelbot-api`. Calls Claude vision with a tight prompt locked to the two DistroKid layouts (Totals and Streams by Country). Strict JSON contract, comma-stripped integers, canonical country names mapped to ISO codes and flag emoji. Sanity check rejects lower totals and implausible jumps (configurable ceiling, default 2500/update). On clean parse writes to new DynamoDB table `shieldbearer_stats_history` and commits `/reach.json` to the website repo via GitHub API, same pattern as the site-publisher and metrics-publisher Lambdas.
+- 44 pure-function unit tests for the parser (comma stripping, country canonicalization including The Netherlands, UAE, UK, US, sanity check branches, merge logic, artifact shape). Smoke-tested live: unauth GET returns 401, no-image POST returns 400, admin GET returns the empty record list as `200 {ok:true,...}`.
+- Seeded `/reach.json` with the operator's most recent screenshot numbers (9,724 total streams across 17 visible countries, US leading at 3,164). The public page is live on first deploy; operator's first upload via `/admin/stats` will refresh it.
+- `/reach` added to nav across all 52 page files (mob menu + desktop Music dropdown + footer Navigate column) and to `sitemap.xml`. JSON-LD Article block on the page.
+- Voice rules respected: declarative, watchman-themed, no em dashes anywhere, faith-grounded copy throughout (hero frame, celebration banner, status line).
+
 ## v2.21.4 - May 2026
 - `/admin/` passphrase unlock now propagates to every child admin tool (`/admin/visitors`, `/admin/metrics`, `/admin/quiz`, `/admin/logs`) so the operator enters the passphrase once per browser session instead of four times. Implementation sets the four child `sessionStorage` keys on `unlock()`, both on fresh authentication and on the stored-session restore path. Direct deep links to a child page from a fresh session still prompt -- the inline gate on each child page is unchanged, so the security floor holds. Sign-out continues to clear all five keys in one shot.
 

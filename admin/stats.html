@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STATS // SHIELDBEARER ADMIN</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 'unsafe-inline';
+    style-src 'self' 'unsafe-inline';
+    connect-src 'self' https://g7a5tqlxaj.execute-api.us-east-1.amazonaws.com https://*.execute-api.us-east-1.amazonaws.com;
+    img-src 'self' data: blob:;
+    font-src 'self';
+  " />
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #000;
+      --panel: #0a0606;
+      --panel-2: #160a0a;
+      --line: #e74c3c;
+      --line-soft: rgba(231, 76, 60, 0.22);
+      --text: #f0c9c4;
+      --text-strong: #ffe9e5;
+      --muted: #c98a82;
+      --ok: #1cff57;
+      --gold: #c9a84c;
+      --font: "Courier New", Courier, monospace;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh;
+      background:
+        radial-gradient(circle at top, rgba(231, 76, 60, 0.10), transparent 38%),
+        linear-gradient(180deg, #000 0%, #050202 100%);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 14px;
+    }
+    h1, h2, h3 { color: var(--text-strong); letter-spacing: .14em; font-weight: 700; }
+
+    #passGate {
+      position: fixed; inset: 0; z-index: 50;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      background: #000; text-align: center; padding: 24px;
+    }
+    #passGate h1 { font-size: 16px; margin-bottom: 18px; }
+    #passGate input {
+      background: #0a0606; border: 1px solid var(--line-soft); color: var(--text);
+      font: inherit; padding: 10px 14px; min-width: 260px; outline: none;
+    }
+    #passGate input:focus { border-color: var(--line); }
+    #passGate button {
+      margin-top: 12px; background: var(--line); border: 0; color: #000;
+      padding: 10px 22px; cursor: pointer; font: inherit; letter-spacing: .12em;
+    }
+    #passGate .err { color: var(--line); margin-top: 12px; font-size: 13px; min-height: 1em; }
+    .pass-locked > .wrap { display: none; }
+
+    .wrap { max-width: 640px; margin: 0 auto; padding: 28px 18px 60px; }
+    .header { border-bottom: 1px solid var(--line-soft); padding-bottom: 14px; margin-bottom: 22px; }
+    .header h1 { font-size: 20px; margin: 0; }
+    .header p { color: var(--muted); margin: 8px 0 0; font-size: 12px; letter-spacing: .08em; line-height: 1.7; }
+
+    .upload-area {
+      border: 2px dashed var(--line-soft);
+      background: var(--panel);
+      padding: 28px 18px;
+      text-align: center;
+      margin-bottom: 18px;
+      transition: border-color .15s;
+    }
+    .upload-area.drag { border-color: var(--line); }
+    .upload-area input[type=file] { display: none; }
+    .upload-area label {
+      display: inline-block;
+      background: var(--line);
+      color: #000;
+      padding: 12px 22px;
+      font-family: var(--font);
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-size: 12px;
+    }
+    .upload-area p {
+      color: var(--muted);
+      font-size: 12px;
+      margin: 12px 0 0;
+      line-height: 1.6;
+    }
+    .preview { max-width: 100%; max-height: 320px; margin-top: 14px; border: 1px solid var(--line-soft); display: none; }
+
+    .submit-row { text-align: center; margin: 16px 0; }
+    .submit-row button {
+      background: transparent;
+      border: 1px solid var(--line);
+      color: var(--line);
+      font: inherit;
+      padding: 12px 24px;
+      cursor: pointer;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+    .submit-row button:hover:not(:disabled) { background: var(--line); color: #000; }
+    .submit-row button:disabled { opacity: .35; cursor: wait; }
+
+    .status {
+      padding: 14px 16px;
+      background: var(--panel);
+      border: 1px solid var(--line-soft);
+      margin-bottom: 14px;
+      font-size: 13px;
+      line-height: 1.7;
+      display: none;
+    }
+    .status.is-ok { border-color: rgba(28,255,87,.4); }
+    .status.is-warn { border-color: var(--gold); background: rgba(36,22,6,.65); }
+    .status.is-err { border-color: var(--line); }
+
+    .result {
+      background: var(--panel);
+      border: 1px solid var(--line-soft);
+      padding: 14px 16px;
+      margin-bottom: 14px;
+      display: none;
+    }
+    .result h3 { font-size: 12px; letter-spacing: .22em; color: var(--muted); margin: 0 0 8px; text-transform: uppercase; }
+    .result__row { display: flex; justify-content: space-between; padding: 4px 0; font-size: 13px; }
+    .result__row b { color: var(--text-strong); font-weight: 400; }
+    .result__row span { color: var(--gold); font-family: var(--font); letter-spacing: .04em; }
+    .result__countries { margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--line-soft); }
+    .result__country { display: flex; justify-content: space-between; padding: 3px 0; font-size: 12px; color: var(--text); }
+
+    .footer { font-size: 11px; color: var(--muted); margin-top: 22px; line-height: 1.7; }
+    .footer a { color: var(--line); }
+  </style>
+</head>
+<body class="pass-locked">
+  <div id="passGate">
+    <h1>RESTRICTED // STATS</h1>
+    <input id="passInput" type="password" autocomplete="off" placeholder="Passphrase" autofocus />
+    <button id="passSubmit" type="button">Enter</button>
+    <div id="passErr" class="err"></div>
+  </div>
+
+  <div class="wrap">
+    <div class="header">
+      <h1>STATS UPLOAD</h1>
+      <p>Drop a DistroKid stats screenshot. The parser reads the numbers, runs a sanity check, and publishes automatically if the parse looks clean. Publish is zero-touch on a normal upload.</p>
+    </div>
+
+    <div id="uploadArea" class="upload-area">
+      <input id="fileInput" type="file" accept="image/*" capture="environment" />
+      <label for="fileInput">Choose Screenshot</label>
+      <p>Phone screenshots work. Camera roll, photos, screenshots, any image.</p>
+      <img id="preview" class="preview" alt="" />
+    </div>
+
+    <div class="submit-row">
+      <button id="submitBtn" type="button" disabled>Parse + Publish</button>
+    </div>
+
+    <div id="status" class="status"></div>
+    <div id="result" class="result">
+      <h3>Parsed</h3>
+      <div id="resultBody"></div>
+    </div>
+
+    <div class="footer">
+      <a href="/admin/">&larr; Back to admin</a>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var EXPECTED_HASH = "64354c5c7192a65cc78df77adbf77b4df37d6c60868cc83085f48f4f97e5848f";
+      var SESSION_KEY = "sb-stats-admin-unlocked";
+      async function sha256Hex(str) {
+        var enc = new TextEncoder().encode(str);
+        var buf = await crypto.subtle.digest("SHA-256", enc);
+        return Array.from(new Uint8Array(buf))
+          .map(function (b) { return b.toString(16).padStart(2, "0"); }).join("");
+      }
+      function unlock() {
+        document.body.classList.remove("pass-locked");
+        var g = document.getElementById("passGate");
+        if (g) g.remove();
+      }
+      try {
+        if (sessionStorage.getItem(SESSION_KEY) === "1") { unlock(); return; }
+      } catch (e) {}
+      var input = document.getElementById("passInput");
+      var btn = document.getElementById("passSubmit");
+      var err = document.getElementById("passErr");
+      async function check() {
+        err.textContent = "";
+        var typed = input.value;
+        if (!typed) { err.textContent = "Empty."; return; }
+        var hash = await sha256Hex(typed);
+        if (hash === EXPECTED_HASH) {
+          try { sessionStorage.setItem(SESSION_KEY, "1"); } catch (e) {}
+          unlock();
+        } else {
+          err.textContent = "Wrong passphrase.";
+          input.value = ""; input.focus();
+        }
+      }
+      btn.addEventListener("click", check);
+      input.addEventListener("keydown", function (e) { if (e.key === "Enter") check(); });
+    })();
+  </script>
+
+  <script>
+    var API = "https://g7a5tqlxaj.execute-api.us-east-1.amazonaws.com/stats";
+    var ADMIN_KEY = "shieldbearer-stats-2026";
+
+    var fileInput = document.getElementById("fileInput");
+    var preview = document.getElementById("preview");
+    var submitBtn = document.getElementById("submitBtn");
+    var statusEl = document.getElementById("status");
+    var resultEl = document.getElementById("result");
+    var resultBody = document.getElementById("resultBody");
+
+    var pendingBase64 = null;
+    var pendingMime = "image/jpeg";
+
+    function setStatus(msg, kind) {
+      statusEl.textContent = msg;
+      statusEl.className = "status " + (kind ? "is-" + kind : "");
+      statusEl.style.display = "block";
+    }
+    function fmt(n) {
+      if (n == null) return "--";
+      return Number(n).toLocaleString();
+    }
+
+    fileInput.addEventListener("change", function () {
+      var f = fileInput.files && fileInput.files[0];
+      if (!f) return;
+      pendingMime = f.type || "image/jpeg";
+      var reader = new FileReader();
+      reader.onload = function () {
+        // result is data:image/...;base64,XXXX
+        var idx = String(reader.result).indexOf(",");
+        pendingBase64 = idx >= 0 ? String(reader.result).slice(idx + 1) : "";
+        preview.src = reader.result;
+        preview.style.display = "block";
+        submitBtn.disabled = !pendingBase64;
+        statusEl.style.display = "none";
+        resultEl.style.display = "none";
+      };
+      reader.readAsDataURL(f);
+    });
+
+    submitBtn.addEventListener("click", async function () {
+      if (!pendingBase64) return;
+      submitBtn.disabled = true;
+      setStatus("Parsing the screenshot. Standby.", "ok");
+      try {
+        var res = await fetch(API, {
+          method: "POST",
+          headers: { "content-type": "application/json", "x-admin-key": ADMIN_KEY },
+          body: JSON.stringify({ image_base64: pendingBase64, mime_type: pendingMime })
+        });
+        var data = await res.json();
+        if (!res.ok) {
+          setStatus("HTTP " + res.status + ". " + (data && (data.detail || data.error) || "parse failed"), "err");
+          submitBtn.disabled = false;
+          return;
+        }
+        renderResult(data);
+        submitBtn.disabled = false;
+      } catch (e) {
+        setStatus("Fetch failed: " + (e && e.message ? e.message : "unknown"), "err");
+        submitBtn.disabled = false;
+      }
+    });
+
+    function renderResult(data) {
+      var p = data.parsed || {};
+      if (data.published) {
+        setStatus("Published. The signal grew. reach.json commit: " + (data.commit_sha || "queued") + ".", "ok");
+      } else {
+        setStatus(
+          "Parse rejected by sanity check: " + (data.review_flag || "unknown") + ". " +
+          (data.review_detail || "") + ". Last good number stays live; nothing was published.",
+          "warn"
+        );
+      }
+      var rows = [];
+      function row(label, v) {
+        if (v == null) return "";
+        return '<div class="result__row"><b>' + label + '</b><span>' + fmt(v) + '</span></div>';
+      }
+      rows.push(row("total streams", p.total_streams));
+      rows.push(row("last 90 days", p.last_90));
+      rows.push(row("last 30 days", p.last_30));
+      rows.push(row("last 7 days", p.last_7));
+      var html = rows.join("");
+      if (Array.isArray(p.per_country) && p.per_country.length) {
+        html += '<div class="result__countries"><h3>countries read</h3>';
+        for (var i = 0; i < p.per_country.length; i++) {
+          var c = p.per_country[i];
+          html += '<div class="result__country"><span>' + (c.flag || "") + " " + escapeHtml(c.country || "?") + '</span><span>' + fmt(c.streams) + '</span></div>';
+        }
+        html += '</div>';
+      }
+      resultBody.innerHTML = html;
+      resultEl.style.display = "block";
+    }
+    function escapeHtml(s) {
+      return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    }
+  </script>
+</body>
+</html>

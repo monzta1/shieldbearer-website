@@ -187,6 +187,13 @@
         <span class="tool-card__path">/admin/logs</span>
       </a>
 
+      <a class="tool-card" href="/admin/stats">
+        <div class="tool-card__label">Reach Numbers</div>
+        <h2 class="tool-card__title">Stats</h2>
+        <p class="tool-card__desc">Upload a DistroKid stats screenshot. Parser reads the numbers, sanity-checks, and publishes to /reach. Zero-touch when sane.</p>
+        <span class="tool-card__path">/admin/stats</span>
+      </a>
+
     </div>
 
     <button class="signout" id="signOut" type="button">Sign out of all admin tools</button>
@@ -212,6 +219,7 @@
         "sb-visitors-admin-unlocked",
         "sb-metrics-admin-unlocked",
         "sb-quiz-admin-unlocked",
+        "sb-stats-admin-unlocked",
         "sb-admin-unlocked"        // /admin/logs uses this legacy name
       ];
 
@@ -267,6 +275,7 @@
           "sb-visitors-admin-unlocked",
           "sb-metrics-admin-unlocked",
           "sb-quiz-admin-unlocked",
+          "sb-stats-admin-unlocked",
           "sb-admin-unlocked" // /admin/logs uses this key (legacy name)
         ];
         for (var i = 0; i < keys.length; i++) {
