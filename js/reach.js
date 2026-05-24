@@ -11,6 +11,7 @@
 (function () {
   var SRC = "/reach.json";
   var SPOTIFY_SRC = "/spotify_songs.json";
+  var YOUTUBE_SRC = "/youtube_stats.json";
 
   // Song title -> cover artwork. Sourced from /images and from
   // song-meanings.html. YouTube thumbnails are used where local
@@ -179,6 +180,98 @@
         pEl.textContent = "~" + Math.round(hours) + " hours";
       }
     }
+  }
+
+  // YouTube section. Pulls /youtube_stats.json (separate store, separate
+  // source). YouTube numbers never blend with DistroKid reach totals or
+  // Spotify song counts. If the file is missing the section stays hidden.
+  function renderYouTube(yt) {
+    var section = $("youtubeSection");
+    if (!section) return;
+    if (!yt || !yt.channel || typeof yt.channel.views_lifetime !== "number") {
+      section.setAttribute("hidden", "");
+      section.style.display = "none";
+      return;
+    }
+    section.removeAttribute("hidden");
+    section.style.display = "";
+
+    var ch = yt.channel || {};
+    var watch = yt.watch_time || { last_7: {}, last_30: {} };
+    var c48 = yt.last_48h_countries || [];
+    var c30 = yt.last_30d_countries || [];
+    var topVids = yt.top_videos || [];
+
+    var intro = $("youtubeIntro");
+    if (intro) {
+      intro.innerHTML =
+        "Independent measurement of the Shieldbearer YouTube channel. " +
+        "<b>" + fmt(ch.views_lifetime) + "</b> lifetime views across " +
+        "<b>" + fmt(ch.video_count) + "</b> uploads. " +
+        "YouTube numbers are a separate source from the DistroKid totals above.";
+    }
+
+    var link = $("youtubeChannelLink");
+    if (link && ch.url) link.setAttribute("href", ch.url);
+    var t = $("youtubeChannelTitle"); if (t) t.textContent = ch.title || "Shieldbearer";
+    var h = $("youtubeChannelHandle"); if (h) h.textContent = ch.handle || "";
+
+    var v = $("ytViewsLifetime"); if (v) v.textContent = fmt(ch.views_lifetime);
+    var s = $("ytSubscribers");
+    if (s) s.textContent = ch.subscribers_hidden ? "Private" : fmt(ch.subscribers);
+    var vc = $("ytVideoCount"); if (vc) vc.textContent = fmt(ch.video_count);
+
+    var l7 = watch.last_7 || {};
+    var l30 = watch.last_30 || {};
+    if ($("ytLast7Views")) $("ytLast7Views").textContent = fmt(l7.views);
+    if ($("ytLast7Minutes")) $("ytLast7Minutes").textContent = fmt(l7.watchMinutes) + " watch minutes";
+    if ($("ytLast30Views")) $("ytLast30Views").textContent = fmt(l30.views);
+    if ($("ytLast30Minutes")) $("ytLast30Minutes").textContent = fmt(l30.watchMinutes) + " watch minutes";
+
+    renderCountryList("ytCountries48", c48, "ytCountries48Empty");
+    renderCountryList("ytCountries30", c30, null);
+    renderTopVideos(topVids);
+  }
+
+  function renderCountryList(listId, countries, emptyId) {
+    var ul = $(listId);
+    var emptyEl = emptyId ? $(emptyId) : null;
+    if (!ul) return;
+    if (!countries.length) {
+      ul.innerHTML = "";
+      if (emptyEl) emptyEl.removeAttribute("hidden");
+      return;
+    }
+    if (emptyEl) emptyEl.setAttribute("hidden", "");
+    var max = countries.reduce(function (m, c) { return Math.max(m, Number(c.views) || 0); }, 1);
+    ul.innerHTML = countries.map(function (c) {
+      var pct = Math.max(2, Math.round(((Number(c.views) || 0) / max) * 100));
+      return '<li>' +
+        '<span class="reach-list__flag">' + (c.flag || "") + '</span>' +
+        '<span class="reach-list__name">' + escapeHtml(c.name || c.code || "?") + '</span>' +
+        '<span class="reach-list__streams">' + fmt(c.views) + '</span>' +
+        '<span class="reach-list__bar"><span style="width:' + pct + '%"></span></span>' +
+      '</li>';
+    }).join("");
+  }
+
+  function renderTopVideos(videos) {
+    var ul = $("ytTopVideos");
+    if (!ul) return;
+    if (!videos.length) {
+      ul.innerHTML = "";
+      return;
+    }
+    ul.innerHTML = videos.map(function (v) {
+      var thumb = v.thumbnail || "/images/logo.png";
+      var url = v.url || ("https://www.youtube.com/watch?v=" + encodeURIComponent(v.videoId || ""));
+      return '<li>' +
+        '<span class="reach-list__art"><img src="' + thumb + '" alt="" onerror="this.src=\'/images/logo.png\'" loading="lazy" /></span>' +
+        '<span class="reach-list__name"><a href="' + url + '" target="_blank" rel="noopener">' + escapeHtml(v.title || "Untitled") + '</a></span>' +
+        '<span class="reach-list__streams">' + fmt(v.views) + '</span>' +
+        '<span class="reach-list__bar"><span style="width:' + Math.max(2, Math.round((v.views / videos[0].views) * 100)) + '%"></span></span>' +
+      '</li>';
+    }).join("");
   }
 
   // Top Transmissions section. Pulls /spotify_songs.json (separate
@@ -409,5 +502,11 @@
   fetch(SPOTIFY_SRC + "?cb=" + Date.now(), { cache: "no-store" })
     .then(function (r) { return r.ok ? r.json() : null; })
     .then(renderTopTransmissions)
+    .catch(function () { /* silent: hidden by default */ });
+
+  // YouTube section loads independently. Same hidden-by-default pattern.
+  fetch(YOUTUBE_SRC + "?cb=" + Date.now(), { cache: "no-store" })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(renderYouTube)
     .catch(function () { /* silent: hidden by default */ });
 })();

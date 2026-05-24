@@ -54,7 +54,7 @@
     style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
     font-src 'self' https://fonts.gstatic.com;
     frame-src https://open.spotify.com https://www.youtube.com https://www.googletagmanager.com;
-    img-src 'self' data: https://img.youtube.com https://shieldbearerusa.com https://www.google-analytics.com https://www.googletagmanager.com https://www.clarity.ms https://c.clarity.ms;
+    img-src 'self' data: https://img.youtube.com https://i.ytimg.com https://yt3.ggpht.com https://shieldbearerusa.com https://www.google-analytics.com https://www.googletagmanager.com https://www.clarity.ms https://c.clarity.ms;
     connect-src 'self' https://app.convertkit.com https://www.google-analytics.com https://region1.google-analytics.com https://stats.g.doubleclick.net https://www.googletagmanager.com https://www.clarity.ms https://c.clarity.ms https://j.clarity.ms https://tagassistant.google.com https://g7a5tqlxaj.execute-api.us-east-1.amazonaws.com https://*.lambda-url.us-east-1.on.aws;
   ">
   <link rel="icon" href="/images/favicon.png">
@@ -236,6 +236,91 @@
     .reach-list__streams { font-family: var(--font-head); letter-spacing: .04em; color: #fff; font-size: 1rem; white-space: nowrap; }
     .reach-list__bar { grid-column: 1 / -1; height: 3px; background: rgba(231,76,60,.08); position: relative; margin-top: 2px; }
     .reach-list__bar > span { display: block; height: 100%; background: linear-gradient(90deg, rgba(231,76,60,.45), rgba(231,76,60,.85)); }
+    /* YouTube section */
+    .reach-yt-channel {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .reach-yt-channel__link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text);
+      padding: 6px 10px;
+      border: 1px solid rgba(231,76,60,.22);
+      background: rgba(231,76,60,.04);
+    }
+    .reach-yt-channel__link:hover { background: rgba(231,76,60,.08); }
+    .reach-yt-channel__copy { line-height: 1.2; }
+    .reach-yt-channel__title { font-family: var(--font-head); font-size: .92rem; color: #fff; margin: 0; }
+    .reach-yt-channel__handle { font-family: "Courier New", monospace; font-size: 11px; color: rgba(168,162,154,.7); margin: 2px 0 0; letter-spacing: .04em; }
+    .reach-yt-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      flex: 1;
+      min-width: 280px;
+    }
+    .reach-yt-recent {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin: 14px 0 18px;
+    }
+    .reach-yt-recent__cell {
+      background: rgba(231,76,60,.04);
+      border: 1px solid rgba(231,76,60,.22);
+      padding: 12px 14px;
+    }
+    .reach-yt-recent__cell b {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: #fff;
+      letter-spacing: .03em;
+      font-weight: 400;
+      margin-top: 4px;
+    }
+    .reach-yt-recent__sub {
+      display: block;
+      font-family: "Courier New", monospace;
+      font-size: 11px;
+      color: rgba(168,162,154,.62);
+      margin-top: 4px;
+      letter-spacing: .04em;
+    }
+    .reach-yt-geo { margin: 16px 0; }
+    .reach-yt-geo h3,
+    .reach-yt-videos h3 {
+      font-family: var(--font-head);
+      font-size: .68rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: rgba(168,162,154,.65);
+      margin: 0 0 8px;
+    }
+    .reach-yt-empty {
+      font-family: "Courier New", monospace;
+      font-size: 12px;
+      color: rgba(168,162,154,.55);
+      letter-spacing: .04em;
+      line-height: 1.6;
+      padding: 8px 0;
+    }
+    .reach-list--geo li { grid-template-columns: auto 1fr auto; }
+    .reach-list--videos li { grid-template-columns: 84px 1fr auto; }
+    .reach-list--videos .reach-list__art { width: 84px; height: 48px; }
+    .reach-list--videos a { color: var(--text); text-decoration: none; }
+    .reach-list--videos a:hover { color: var(--red-bright); }
+    @media (max-width: 680px) {
+      .reach-yt-stats { grid-template-columns: 1fr 1fr; }
+      .reach-yt-recent { grid-template-columns: 1fr; }
+    }
+
     .reach-source-tag {
       display: inline-block;
       font-family: var(--font-head);
@@ -484,6 +569,63 @@
           <h2>Top Transmissions<span class="reach-source-tag">Spotify for Artists</span></h2>
           <p class="reach-section__lead" id="topTransmissionsIntro"></p>
           <ul class="reach-list reach-list--songs" id="topTransmissionsList"></ul>
+        </div>
+
+        <div class="reach-section" id="youtubeSection" hidden>
+          <h2>Broadcast Reach<span class="reach-source-tag">YouTube</span></h2>
+          <p class="reach-section__lead" id="youtubeIntro"></p>
+
+          <div class="reach-yt-channel" id="youtubeChannelBlock">
+            <a class="reach-yt-channel__link" id="youtubeChannelLink" href="#" target="_blank" rel="noopener">
+              <div class="reach-yt-channel__copy">
+                <p class="reach-yt-channel__title" id="youtubeChannelTitle">--</p>
+                <p class="reach-yt-channel__handle" id="youtubeChannelHandle">--</p>
+              </div>
+            </a>
+            <div class="reach-yt-stats">
+              <div class="reach-stat">
+                <span class="reach-stat__label">Lifetime views</span>
+                <b id="ytViewsLifetime">--</b>
+              </div>
+              <div class="reach-stat">
+                <span class="reach-stat__label">Subscribers</span>
+                <b id="ytSubscribers">--</b>
+              </div>
+              <div class="reach-stat">
+                <span class="reach-stat__label">Videos published</span>
+                <b id="ytVideoCount">--</b>
+              </div>
+            </div>
+          </div>
+
+          <div class="reach-yt-recent">
+            <div class="reach-yt-recent__cell">
+              <span class="reach-stat__label">Last 7 days</span>
+              <b id="ytLast7Views">--</b>
+              <span class="reach-yt-recent__sub" id="ytLast7Minutes">-- watch minutes</span>
+            </div>
+            <div class="reach-yt-recent__cell">
+              <span class="reach-stat__label">Last 30 days</span>
+              <b id="ytLast30Views">--</b>
+              <span class="reach-yt-recent__sub" id="ytLast30Minutes">-- watch minutes</span>
+            </div>
+          </div>
+
+          <div class="reach-yt-geo">
+            <h3>Where the signal landed (last 48 hours)</h3>
+            <ul class="reach-list reach-list--geo" id="ytCountries48"></ul>
+            <p class="reach-yt-empty" id="ytCountries48Empty" hidden>YouTube Analytics has a roughly 48-hour reporting lag. Last 48 hour breakdown will appear once the data is in.</p>
+          </div>
+
+          <div class="reach-yt-geo">
+            <h3>Where the signal landed (last 30 days)</h3>
+            <ul class="reach-list reach-list--geo" id="ytCountries30"></ul>
+          </div>
+
+          <div class="reach-yt-videos">
+            <h3>Top videos</h3>
+            <ul class="reach-list reach-list--videos" id="ytTopVideos"></ul>
+          </div>
         </div>
 
         <div class="reach-section">

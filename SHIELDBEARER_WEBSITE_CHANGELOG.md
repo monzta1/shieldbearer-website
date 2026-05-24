@@ -7,6 +7,15 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.23.1 - May 2026
+- New `/reach` section: **Broadcast Reach (YouTube)**. Independent source from DistroKid and Spotify. Shows lifetime views, subscriber count, video count, last 7 / last 30 day views and watch minutes, geographic viewer breakdown for the last 48 hours and the last 30 days, and a top-5 video leaderboard with click-through to YouTube. First publish shows 239,841 lifetime views, 12,300 subscribers, 96 videos.
+- Backend: new Lambda `sentinelbot-youtube-stats-publisher` on nodejs24.x. Reads an OAuth refresh token from `shieldbearer/youtube-analytics` (Secrets Manager), exchanges it for an access token, pulls YouTube Data API v3 for channel statistics and top videos, then YouTube Analytics API v2 for time-windowed and geographic metrics. Commits `/youtube_stats.json` to the website repo via the same GitHub API path as `reach.json` and `spotify_songs.json`.
+- EventBridge cron: `sentinelbot-youtube-stats-cron` fires `rate(6 hours)`. YouTube Analytics has a ~48h reporting lag so faster cadence buys nothing.
+- IAM: added inline policy `AllowReadYouTubeOAuthSecret` on the shared handler role, scoped to the new secret ARN.
+- CSP on `/reach` extended to allow `i.ytimg.com` (video thumbnails) and `yt3.ggpht.com` (channel thumbnail).
+- 34 unit tests for the publisher: `daysAgo`, `buildDateWindows`, `decorateCountry` (known + unknown + empty), `firstRowMetric`, `buildYouTubeArtifact`, `buildCanonicalArtifact`, `hashContent`.
+- YouTube and DistroKid/Spotify numbers are independently sourced and clearly labeled; they never aggregate into a shared total.
+
 ## v2.23.0 - May 2026
 - Stats parser supports a third screenshot type: **Spotify for Artists per-song view**. The admin upload at `/admin/stats` now detects which of three screen types each uploaded image is (DistroKid totals, DistroKid by-country, Spotify songs) and routes each to its own pipeline. The three types are never merged.
 - DistroKid totals and DistroKid by-country still feed the existing `/reach.json` exactly as before, no behavior change for the reach numbers.
