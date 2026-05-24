@@ -11,32 +11,78 @@
 (function () {
   var SRC = "/reach.json";
 
-  // Country code -> continent. Used to bin the country list into
-  // continental sectors for the watchman-style map without
-  // requiring a real cartographic SVG. Extend as new codes appear.
-  var CONTINENT_BY_CODE = {
+  // Country code -> approximate centroid [lat, lng] in decimal degrees.
+  // Used to plot every reached country as a glowing marker on the world
+  // map below. Centroids do not need to be precise to the city; "in the
+  // right place on the map" is enough.
+  var LAT_LNG_BY_CODE = {
+    US: [39.8, -98.6], CA: [56.1, -106.3], MX: [23.6, -102.5],
+    BR: [-14.2, -51.9], AR: [-38.4, -63.6], CL: [-35.7, -71.5], CO: [4.6, -74.3],
+    GB: [54.0, -2.0], DE: [51.2, 10.4], FR: [46.6, 2.2], NL: [52.1, 5.3], BE: [50.5, 4.5],
+    SE: [60.1, 18.6], CH: [46.8, 8.2], ES: [40.5, -3.7], IT: [42.5, 12.6], AT: [47.5, 14.6],
+    PL: [51.9, 19.1], NO: [60.5, 8.5], DK: [56.3, 9.5], FI: [61.9, 25.7], IE: [53.4, -8.0],
+    PT: [39.4, -8.2], GR: [39.1, 21.8], CZ: [49.8, 15.5], HU: [47.2, 19.5], RO: [45.9, 24.9],
+    RU: [61.5, 105.3], UA: [48.4, 31.2], TR: [38.9, 35.2], IL: [31.0, 34.8],
+    IN: [20.6, 78.9], SG: [1.4, 103.8], AE: [23.4, 53.8], JP: [36.2, 138.3], KR: [35.9, 127.8],
+    CN: [35.9, 104.2], HK: [22.3, 114.2], TW: [23.7, 121.0],
+    PH: [12.9, 121.8], ID: [-0.8, 113.9], MY: [4.2, 101.9], TH: [15.9, 100.9], VN: [14.1, 108.3],
+    SA: [23.9, 45.1],
+    ZA: [-30.6, 22.9], EG: [26.8, 30.8], NG: [9.1, 8.7], KE: [-0.0, 37.9],
+    AU: [-25.3, 133.8], NZ: [-40.9, 174.9]
+  };
+
+  // World map viewBox in equirectangular projection space:
+  //   x = (lng + 180) / 360 * 1000
+  //   y = (90 - lat) / 180 * 500
+  // Continent silhouettes are intentionally rough -- the goal is "yes,
+  // that is a world map" not cartographic accuracy. Each continent is
+  // a polygon of [lng, lat] pairs that the projector converts.
+  var WORLD_W = 1000;
+  var WORLD_H = 500;
+  var CONTINENTS = [
     // North America
-    US: "North America", CA: "North America", MX: "North America",
+    [[-168,66],[-155,71],[-95,73],[-58,60],[-55,48],[-66,45],[-80,25],[-97,16],[-106,23],[-118,32],[-125,40],[-130,55]],
+    // Greenland
+    [[-55,83],[-20,82],[-22,70],[-50,60],[-55,72]],
     // South America
+    [[-80,12],[-60,12],[-50,5],[-35,-5],[-35,-23],[-55,-35],[-65,-55],[-72,-53],[-75,-35],[-82,-10]],
+    // Europe + western Russia
+    [[-10,58],[5,58],[10,71],[30,70],[55,68],[60,55],[40,45],[28,40],[15,36],[-9,36],[-10,48]],
+    // Africa
+    [[-17,35],[10,36],[33,32],[42,15],[51,12],[40,-2],[40,-25],[20,-35],[10,-22],[-17,15]],
+    // Asia
+    [[40,55],[80,75],[140,75],[170,65],[160,55],[140,35],[122,32],[122,22],[105,8],[95,5],[85,7],[70,15],[55,15],[44,30],[40,40]],
+    // Indian subcontinent extension
+    [[68,33],[88,32],[92,22],[80,8],[73,15]],
+    // Southeast Asia + Indonesia
+    [[95,5],[140,0],[140,-9],[100,-9],[95,-2]],
+    // Australia
+    [[113,-12],[143,-10],[153,-25],[150,-38],[130,-33],[115,-35],[113,-22]],
+    // Japan
+    [[131,33],[141,35],[145,43],[140,45],[132,34]],
+    // UK + Ireland
+    [[-10,52],[-2,58],[2,58],[1,50],[-5,50]],
+    // Antarctica
+    [[-180,-65],[180,-65],[180,-90],[-180,-90]]
+  ];
+
+  // Legacy: continent grouping for the "Reached Nations" list grouping
+  // headers when we ever want them. Not used by the map renderer.
+  var CONTINENT_BY_CODE = {
+    US: "North America", CA: "North America", MX: "North America",
     BR: "South America", AR: "South America", CL: "South America", CO: "South America",
-    // Europe
     GB: "Europe", DE: "Europe", FR: "Europe", NL: "Europe", BE: "Europe",
     SE: "Europe", CH: "Europe", ES: "Europe", IT: "Europe", AT: "Europe",
     PL: "Europe", NO: "Europe", DK: "Europe", FI: "Europe", IE: "Europe",
     PT: "Europe", GR: "Europe", CZ: "Europe", HU: "Europe", RO: "Europe",
     RU: "Europe", UA: "Europe",
-    // Asia
     IN: "Asia", SG: "Asia", AE: "Asia", JP: "Asia", KR: "Asia",
     TR: "Asia", IL: "Asia", CN: "Asia", HK: "Asia", TW: "Asia",
     PH: "Asia", ID: "Asia", MY: "Asia", TH: "Asia", VN: "Asia",
     SA: "Asia",
-    // Africa
     ZA: "Africa", EG: "Africa", NG: "Africa", KE: "Africa",
-    // Oceania
     AU: "Oceania", NZ: "Oceania"
   };
-
-  var CONTINENT_ORDER = ["North America", "South America", "Europe", "Africa", "Asia", "Oceania"];
 
   var MILESTONES = [
     { value: 1000, label: "1K" },
@@ -103,38 +149,57 @@
     animateCounter(Number(data.total_streams || 0));
   }
 
+  function projX(lng) { return (Number(lng) + 180) / 360 * WORLD_W; }
+  function projY(lat) { return (90 - Number(lat)) / 180 * WORLD_H; }
+
   function renderMap(data) {
     var root = $("reachMap");
     if (!root) return;
-    var byCont = {};
-    for (var i = 0; i < CONTINENT_ORDER.length; i++) byCont[CONTINENT_ORDER[i]] = [];
-    var unknown = [];
-    (data.countries || []).forEach(function (c) {
-      var cont = CONTINENT_BY_CODE[c.code] || null;
-      if (cont) byCont[cont].push(c);
-      else unknown.push(c);
-    });
-    if (unknown.length) byCont["Other"] = unknown;
-    var order = CONTINENT_ORDER.concat(unknown.length ? ["Other"] : []);
-    root.innerHTML = order.map(function (cont) {
-      var rows = byCont[cont] || [];
-      var lit = rows.length > 0;
-      var flagsHtml = rows
-        .slice()
-        .sort(function (a, b) { return (Number(b.streams) || 0) - (Number(a.streams) || 0); })
-        .map(function (c) {
-          var flag = c.flag || "";
-          var name = (c.country || "?") + " (" + fmt(c.streams) + ")";
-          return '<span class="reach-flag" title="' + escapeAttr(name) + '" aria-label="' + escapeAttr(name) + '">' + flag + '</span>';
-        }).join("");
-      if (!flagsHtml) {
-        flagsHtml = '<span class="reach-flag reach-flag--dim" aria-hidden="true">&middot;</span>';
-      }
-      return '<div class="reach-continent ' + (lit ? "reach-continent--lit" : "") + '">' +
-        '<div class="reach-continent__name">' + cont + '</div>' +
-        '<div class="reach-flag-row">' + flagsHtml + '</div>' +
-      '</div>';
+    var countries = (data.countries || []).slice();
+    var maxStreams = countries.reduce(function (m, c) {
+      return Math.max(m, Number(c.streams) || 0);
+    }, 1);
+
+    // Continent silhouettes as one combined path so the renderer is cheap.
+    var continentPaths = CONTINENTS.map(function (poly) {
+      var d = poly.map(function (pt, i) {
+        var x = projX(pt[0]).toFixed(1);
+        var y = projY(pt[1]).toFixed(1);
+        return (i === 0 ? "M " : "L ") + x + " " + y;
+      }).join(" ") + " Z";
+      return '<path d="' + d + '" />';
     }).join("");
+
+    // Country markers. Radius scales with sqrt(streams / max) so a
+    // 100-stream country is still visible next to a 3000-stream one.
+    var markers = countries.map(function (c) {
+      var ll = LAT_LNG_BY_CODE[c.code];
+      if (!ll) return ""; // unmapped country -- silent fallthrough
+      var x = projX(ll[1]);
+      var y = projY(ll[0]);
+      var rel = (Number(c.streams) || 0) / maxStreams;
+      var r = 3.4 + Math.sqrt(Math.max(0, Math.min(1, rel))) * 9.6;
+      var label = (c.country || "?") + " (" + fmt(c.streams) + ")";
+      return '<g class="reach-map__pin" tabindex="0" aria-label="' + escapeAttr(label) + '">' +
+        '<title>' + escapeHtml(label) + '</title>' +
+        '<circle class="reach-map__pin-halo" cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="' + (r + 4).toFixed(1) + '" />' +
+        '<circle class="reach-map__pin-dot"  cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="' + r.toFixed(1) + '" />' +
+        '<text class="reach-map__pin-flag" x="' + x.toFixed(1) + '" y="' + (y + 4.5).toFixed(1) + '" text-anchor="middle">' + (c.flag || "") + '</text>' +
+      '</g>';
+    }).join("");
+
+    root.innerHTML =
+      '<svg class="reach-map__svg" viewBox="0 0 ' + WORLD_W + ' ' + WORLD_H + '" preserveAspectRatio="xMidYMid meet" aria-label="World map showing reached nations">' +
+        '<defs>' +
+          '<radialGradient id="reachMapGlow" cx="0.5" cy="0.5" r="0.5">' +
+            '<stop offset="0%" stop-color="rgba(231,76,60,0.55)" />' +
+            '<stop offset="100%" stop-color="rgba(231,76,60,0)" />' +
+          '</radialGradient>' +
+        '</defs>' +
+        '<rect class="reach-map__ocean" x="0" y="0" width="' + WORLD_W + '" height="' + WORLD_H + '" />' +
+        '<g class="reach-map__land">' + continentPaths + '</g>' +
+        '<g class="reach-map__pins">' + markers + '</g>' +
+      '</svg>';
   }
 
   function renderList(data) {
@@ -159,22 +224,26 @@
 
   function renderCurve(data) {
     var svg = $("reachCurve");
+    var emptyEl = $("reachCurveEmpty");
     if (!svg) return;
     var series = (data.history || []).slice();
-    // Always anchor the curve at 0 and at the current total so the
-    // chart reads even from a single record.
     var points = [];
     series.forEach(function (p) {
       var t = Date.parse(p.t);
       if (Number.isFinite(t)) points.push([t, Number(p.total) || 0]);
     });
-    if (points.length === 0) {
-      // No history yet; draw a flat line at zero to current.
-      var now = Date.now();
-      points = [[now - 24 * 3600 * 1000, 0], [now, Number(data.total_streams || 0)]];
-    } else if (points.length === 1) {
-      points.unshift([points[0][0] - 24 * 3600 * 1000, 0]);
+    // Degenerate cases: no points, one point, or all-equal totals.
+    // A flat line at the current total reads as a bug to anyone who
+    // expects a real growth curve. Show a quiet empty state instead.
+    var distinctTotals = new Set(points.map(function (p) { return p[1]; }));
+    var degenerate = points.length < 2 || distinctTotals.size < 2;
+    if (degenerate) {
+      svg.style.display = "none";
+      if (emptyEl) emptyEl.style.display = "block";
+      return;
     }
+    svg.style.display = "";
+    if (emptyEl) emptyEl.style.display = "none";
     points.sort(function (a, b) { return a[0] - b[0]; });
     var minX = points[0][0], maxX = points[points.length - 1][0];
     var minY = 0, maxY = Math.max.apply(null, points.map(function (p) { return p[1]; }).concat([1]));

@@ -7,6 +7,11 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.22.3 - May 2026
+- `/reach` now renders a real world map. Equirectangular projection SVG with continent silhouettes and country markers placed at each reached country's lat/long. Marker size scales with stream count, flag emoji sits inside each marker, halo grows on hover. Replaces the old "Continental Sectors" grid that was not actually a map.
+- Growth curve hides itself when the history is degenerate (fewer than two distinct totals) and shows a quiet "The growth curve appears after a few stat refreshes" line instead. Fixes the flat-line appearance when only one published reading exists.
+- Hero copy: dropped "Streams reframed as gospel proclamation" line. Reads now: "The gospel has been preached X times across Y nations. Every count is one more time Christ was named without a gatekeeper's permission." Meta description, OG description, and JSON-LD description updated to match.
+
 ## v2.22.2 - May 2026
 - Fixed: `/reach` link was missing from the mobile menu and the desktop Music dropdown on every page. Only the footer "Navigate" column carried it. Added `<a href="/reach">Reach</a>` to both the mob menu (between Signal Room and About) and the desktop Music dropdown across all 48 affected pages. Parity preserved between `<page>.html` and `<page>/index.html`.
 - `/admin/stats` now shows a per-image breakdown when more than one screenshot is uploaded, so the operator can see exactly what each image contributed (total + time-window numbers + country count). If the merge produces incomplete data, the per-image rows surface which screenshot was the problem.
