@@ -201,11 +201,19 @@
       // Same passphrase hash as the other /admin tools. One passphrase
       // unlocks every internal page.
       var EXPECTED_HASH = "64354c5c7192a65cc78df77adbf77b4df37d6c60868cc83085f48f4f97e5848f";
-      // Per-page session key so unlocking the index does not implicitly
-      // unlock the child tools. Each tool has its own sessionStorage
-      // key and gate. This is intentional: the gate code lives inside
-      // each page so even a direct deep link still prompts.
+      // Unlocking the index also unlocks every child admin tool for
+      // the rest of the browser session. Each tool still has its own
+      // sessionStorage key and inline gate, so a direct deep link from
+      // a fresh session (without going through /admin first) still
+      // prompts. That preserves the floor while making the operator
+      // path frictionless.
       var SESSION_KEY = "sb-admin-index-unlocked";
+      var CHILD_KEYS = [
+        "sb-visitors-admin-unlocked",
+        "sb-metrics-admin-unlocked",
+        "sb-quiz-admin-unlocked",
+        "sb-admin-unlocked"        // /admin/logs uses this legacy name
+      ];
 
       async function sha256Hex(str) {
         var enc = new TextEncoder().encode(str);
@@ -213,10 +221,16 @@
         return Array.from(new Uint8Array(buf))
           .map(function (b) { return b.toString(16).padStart(2, "0"); }).join("");
       }
+      function propagateUnlock() {
+        for (var i = 0; i < CHILD_KEYS.length; i++) {
+          try { sessionStorage.setItem(CHILD_KEYS[i], "1"); } catch (e) {}
+        }
+      }
       function unlock() {
         document.body.classList.remove("pass-locked");
         var g = document.getElementById("passGate");
         if (g) g.remove();
+        propagateUnlock();
       }
       try {
         if (sessionStorage.getItem(SESSION_KEY) === "1") { unlock(); return; }

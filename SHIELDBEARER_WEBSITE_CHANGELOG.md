@@ -7,6 +7,9 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.21.4 - May 2026
+- `/admin/` passphrase unlock now propagates to every child admin tool (`/admin/visitors`, `/admin/metrics`, `/admin/quiz`, `/admin/logs`) so the operator enters the passphrase once per browser session instead of four times. Implementation sets the four child `sessionStorage` keys on `unlock()`, both on fresh authentication and on the stored-session restore path. Direct deep links to a child page from a fresh session still prompt -- the inline gate on each child page is unchanged, so the security floor holds. Sign-out continues to clear all five keys in one shot.
+
 ## v2.21.3 - May 2026
 - Hid `/gigs` from public surfaces. Removed every nav link to it (mob menu + desktop Press dropdown + footer Navigate column) across all 52 page files. Removed the entry from `sitemap.xml`. Added `<meta name="robots" content="noindex,nofollow">` to `/gigs/index.html` and `/gigs.html`. The page itself stays accessible by direct URL so any existing inbound link or the operator's bookmark still works; search engines just stop surfacing it.
 - The JSON-LD MusicGroup + areaServed + ContactPoint blocks on the gigs page stay in place. They are inert until the page comes back into the nav since search engines will not crawl a noindex page.
