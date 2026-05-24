@@ -94,13 +94,10 @@
       "DistroKid stream data, last refreshed " + sync + ".";
   }
 
-  function animateCounter(targetN) {
-    var el = $("reachCount");
-    var inline = $("reachTotalInline");
+  function animateValueTo(el, targetN) {
     if (!el) return;
     if (prefersReducedMotion()) {
       el.textContent = fmt(targetN);
-      if (inline) inline.textContent = fmt(targetN);
       return;
     }
     var startN = 0;
@@ -111,10 +108,34 @@
       var eased = 1 - Math.pow(1 - p, 3);
       var cur = Math.floor(startN + (targetN - startN) * eased);
       el.textContent = fmt(cur);
+      if (p < 1) requestAnimationFrame(step);
+      else el.textContent = fmt(targetN);
+    }
+    requestAnimationFrame(step);
+  }
+
+  function animateCounter(targetN) {
+    // Streams page hero (#reachCount + legacy inline mirror).
+    var el = $("reachCount");
+    var inline = $("reachTotalInline");
+    if (!el && !inline) return;
+    if (prefersReducedMotion()) {
+      if (el) el.textContent = fmt(targetN);
+      if (inline) inline.textContent = fmt(targetN);
+      return;
+    }
+    var startN = 0;
+    var dur = 1400;
+    var t0 = performance.now();
+    function step(now) {
+      var p = Math.min(1, (now - t0) / dur);
+      var eased = 1 - Math.pow(1 - p, 3);
+      var cur = Math.floor(startN + (targetN - startN) * eased);
+      if (el) el.textContent = fmt(cur);
       if (inline) inline.textContent = fmt(cur);
       if (p < 1) requestAnimationFrame(step);
       else {
-        el.textContent = fmt(targetN);
+        if (el) el.textContent = fmt(targetN);
         if (inline) inline.textContent = fmt(targetN);
       }
     }
@@ -184,23 +205,34 @@
 
   // YouTube section. Pulls /youtube_stats.json (separate store, separate
   // source). YouTube numbers never blend with DistroKid reach totals or
-  // Spotify song counts. If the file is missing the section stays hidden.
+  // Spotify song counts. The same renderer is used on the /reach/youtube
+  // subpage (dedicated YouTube report) and on any combined page that
+  // hosts an embeddable #youtubeSection block. DOM guards keep elements
+  // that do not exist on a given page from being touched.
   function renderYouTube(yt) {
+    var hostsAny = $("ytViewsLifetime") || $("youtubeSection") || $("ytStatus");
+    if (!hostsAny) return;
+    if (!yt || !yt.channel || typeof yt.channel.views_lifetime !== "number") return;
+
     var section = $("youtubeSection");
-    if (!section) return;
-    if (!yt || !yt.channel || typeof yt.channel.views_lifetime !== "number") {
-      section.setAttribute("hidden", "");
-      section.style.display = "none";
-      return;
+    if (section) {
+      section.removeAttribute("hidden");
+      section.style.display = "";
     }
-    section.removeAttribute("hidden");
-    section.style.display = "";
 
     var ch = yt.channel || {};
     var watch = yt.watch_time || { last_7: {}, last_30: {} };
     var c48 = yt.last_48h_countries || [];
     var c30 = yt.last_30d_countries || [];
     var topVids = yt.top_videos || [];
+
+    // Watchman status line for the YouTube subpage hero.
+    var ytStatus = $("ytStatus");
+    if (ytStatus) {
+      ytStatus.innerHTML =
+        "Watchman&rsquo;s report. YouTube channel signal confirmed. " +
+        "View data, last refreshed " + (shortTs(yt.generated_at) || "pending") + ".";
+    }
 
     var intro = $("youtubeIntro");
     if (intro) {
@@ -211,12 +243,30 @@
         "YouTube numbers are a separate source from the DistroKid totals above.";
     }
 
+    var chLead = $("ytChannelLead");
+    if (chLead) {
+      chLead.innerHTML =
+        "<b>" + fmt(ch.views_lifetime) + "</b> lifetime views, " +
+        "<b>" + (ch.subscribers_hidden ? "private" : fmt(ch.subscribers)) + "</b> subscribers, " +
+        "<b>" + fmt(ch.video_count) + "</b> videos published. Numbers come straight from YouTube&rsquo;s API.";
+    }
+
     var link = $("youtubeChannelLink");
     if (link && ch.url) link.setAttribute("href", ch.url);
     var t = $("youtubeChannelTitle"); if (t) t.textContent = ch.title || "Shieldbearer";
     var h = $("youtubeChannelHandle"); if (h) h.textContent = ch.handle || "";
 
-    var v = $("ytViewsLifetime"); if (v) v.textContent = fmt(ch.views_lifetime);
+    var v = $("ytViewsLifetime");
+    if (v) {
+      // On the YouTube subpage #ytViewsLifetime is the giant hero
+      // counter, so animate it. On the combined page it is just a
+      // small stat cell; either way textContent ends at the same place.
+      if (v.closest && v.closest(".reach-hero")) {
+        animateValueTo(v, Number(ch.views_lifetime || 0));
+      } else {
+        v.textContent = fmt(ch.views_lifetime);
+      }
+    }
     var s = $("ytSubscribers");
     if (s) s.textContent = ch.subscribers_hidden ? "Private" : fmt(ch.subscribers);
     var vc = $("ytVideoCount"); if (vc) vc.textContent = fmt(ch.video_count);
@@ -230,7 +280,24 @@
 
     renderCountryList("ytCountries48", c48, "ytCountries48Empty");
     renderCountryList("ytCountries30", c30, null);
+
+    // Top videos section: only un-hide if we have videos AND the page
+    // has the dedicated YouTube-subpage section wrapper.
+    var topVideosSection = $("ytTopVideosSection");
+    if (topVideosSection) {
+      if (topVids.length) topVideosSection.removeAttribute("hidden");
+      else topVideosSection.setAttribute("hidden", "");
+    }
     renderTopVideos(topVids);
+
+    // YouTube subpage methodology footer.
+    var ytMeta = $("ytMeta");
+    if (ytMeta) {
+      ytMeta.textContent =
+        "How the YouTube signal is counted. The numbers come from the YouTube Data API. " +
+        "Views include all formats (Shorts and long-form). A view is counted by YouTube's own rules. " +
+        "We don't inflate them, and we don't pad them.";
+    }
   }
 
   function renderCountryList(listId, countries, emptyId) {
@@ -272,6 +339,36 @@
         '<span class="reach-list__bar"><span style="width:' + Math.max(2, Math.round((v.views / videos[0].views) * 100)) + '%"></span></span>' +
       '</li>';
     }).join("");
+  }
+
+  // Overview page (/reach): two source panels side-by-side. Each
+  // panel shows its own number with its own unit. We never sum
+  // streams and YouTube views into a shared total.
+  function renderOverview(reach, yt) {
+    var sEl = $("overviewStreams");
+    var vEl = $("overviewViews");
+    if (!sEl && !vEl) return; // not on the overview page
+
+    if (sEl) {
+      var streams = Number((reach && reach.total_streams) || 0);
+      animateValueTo(sEl, streams);
+    }
+    var nEl = $("overviewNations");
+    if (nEl) {
+      var nations = (reach && reach.countries && reach.countries.length) || 0;
+      nEl.textContent = nations || "--";
+    }
+
+    if (vEl) {
+      var views = Number((yt && yt.channel && yt.channel.views_lifetime) || 0);
+      animateValueTo(vEl, views);
+    }
+    var subEl = $("overviewSubs");
+    if (subEl) {
+      var subs = yt && yt.channel ? yt.channel.subscribers : null;
+      var hidden = yt && yt.channel && yt.channel.subscribers_hidden;
+      subEl.textContent = hidden ? "private" : (subs != null ? fmt(subs) : "--");
+    }
   }
 
   // Top Transmissions section. Pulls /spotify_songs.json (separate
@@ -481,32 +578,44 @@
     renderMeta(data);
   }
 
-  fetch(SRC, { cache: "no-store" })
+  // Reach (streams) data. Used on /reach/streams (full report) and
+  // on /reach (overview panel). On the overview page, paint() is a
+  // no-op for missing DOM; the overview-specific population happens
+  // once both fetches resolve below.
+  var reachPromise = fetch(SRC, { cache: "no-store" })
     .then(function (r) {
       if (!r.ok) throw new Error("HTTP " + r.status);
       return r.json();
     })
-    .then(paint)
+    .then(function (data) { paint(data); return data; })
     .catch(function () {
       var s = $("reachStatus");
       if (s) s.innerHTML = "Watchman&rsquo;s report. Signal acquisition pending.";
       var c = $("reachCount");
       if (c) c.textContent = "--";
+      return null;
     });
 
-  // Spotify section loads independently. A missing file (404) just
-  // means no Spotify data has been uploaded yet; the section stays
-  // hidden. No error surfacing required. The cache-bust query is
-  // belt-and-suspenders against mobile Safari aggressively caching
-  // a 404 from before the file existed.
+  // Spotify data. Only renders into #topTransmissionsSection where it
+  // exists (currently /reach/streams). Missing file leaves the section
+  // hidden everywhere.
   fetch(SPOTIFY_SRC + "?cb=" + Date.now(), { cache: "no-store" })
     .then(function (r) { return r.ok ? r.json() : null; })
     .then(renderTopTransmissions)
-    .catch(function () { /* silent: hidden by default */ });
+    .catch(function () { /* silent */ });
 
-  // YouTube section loads independently. Same hidden-by-default pattern.
-  fetch(YOUTUBE_SRC + "?cb=" + Date.now(), { cache: "no-store" })
+  // YouTube data. Used on /reach/youtube (full report) and on /reach
+  // (overview panel).
+  var ytPromise = fetch(YOUTUBE_SRC + "?cb=" + Date.now(), { cache: "no-store" })
     .then(function (r) { return r.ok ? r.json() : null; })
-    .then(renderYouTube)
-    .catch(function () { /* silent: hidden by default */ });
+    .then(function (data) { renderYouTube(data); return data; })
+    .catch(function () { return null; });
+
+  // Overview page populates BOTH counters from BOTH data sources but
+  // keeps them strictly separate. The streams counter shows streams,
+  // the YouTube counter shows views, and no element on this page sums
+  // them together.
+  Promise.all([reachPromise, ytPromise]).then(function (results) {
+    renderOverview(results[0], results[1]);
+  });
 })();

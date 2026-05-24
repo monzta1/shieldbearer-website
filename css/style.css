@@ -263,6 +263,13 @@ button { cursor: pointer; font-family: inherit; }
   transition: color .2s;
 }
 .mob-menu a:hover { color: var(--red-bright); }
+.mob-menu a.mob-menu__sub {
+  font-size: 1.2rem;
+  padding-left: 1.6rem;
+  color: rgba(255,255,255,.72);
+  letter-spacing: .12em;
+}
+.mob-menu a.mob-menu__sub:hover { color: var(--red-bright); }
 .mob-close {
   position: absolute;
   top: 1.4rem; right: 2.5rem;
@@ -793,6 +800,13 @@ section { padding: var(--sp-section) 0; position: relative; }
   transition: color .2s;
 }
 .footer-col a:hover { color: var(--off-white); }
+.footer-col a.footer-sublink {
+  font-size: .66rem;
+  letter-spacing: .12em;
+  padding-left: 1rem;
+  color: rgba(168,162,154,.32);
+}
+.footer-col a.footer-sublink:hover { color: var(--off-white); }
 .footer-bottom {
   border-top: 1px solid rgba(168,162,154,.05);
   padding: 1.4rem var(--pad);
