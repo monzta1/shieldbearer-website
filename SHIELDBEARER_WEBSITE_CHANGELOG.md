@@ -7,6 +7,19 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.25.0 - May 2026
+- New page: **/how-it-works** (legacy mirror at /how-it-works.html). The capstone page that explains how the site itself operates as a mission tool. Framed around what the machinery is for, not the machinery for its own sake. Sections: How This Signal Goes Out (intro), One Command (shield ingest), The Site Watches For New Releases On Its Own, The Reach Report, SentinelBot, Why It Is Built This Way, and a Signal Continues CTA block linking to Music / Reach Report / Creed.
+- Accuracy posture matches the brief exactly:
+  - shield ingest is described as a command Moncy runs from a terminal when he finalizes a piece; the site is not described as watching his creative process.
+  - No unverifiable superlatives. Uses "almost no independent artist site does this" instead of "no other artist has this".
+  - YouTube views are described as views, not "transmissions of the gospel". Streams and views are never blended on this page, consistent with the /reach hard rule.
+  - SentinelBot is described as answering from structured song data and reporting site status, not as autonomous or sentient.
+- Nav: added "How It Works" to the About dropdown on desktop (after The Process, before FAQ), to the mobile hamburger menu in the same position, and to the footer Navigate column. Migration ran across 58 in-scope pages.
+- Sitemap entry added.
+- /reach overview page gained a small "How this signal goes out -->" link below the unifying separator line.
+- Homepage hero gained a subtle "How this signal goes out -->" link below the Listen Now / Read the Lyrics CTAs.
+- Voice: declarative, watchman-themed, no em dashes, no "not X but Y" constructions.
+
 ## v2.24.2 - May 2026
 - `/reach/youtube` gained three new sections, all backed by additional YouTube Analytics API calls in the publisher Lambda:
   - **Growth Curve.** Real daily views from the trailing 90 days, drawn as an area+line SVG chart mirroring the streams page's chart. Replaces what would have been a synthesized curve with the actual feed. Hides with a quiet empty-state line if YouTube Analytics has not yet published two distinct daily readings.

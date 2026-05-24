@@ -12,22 +12,22 @@
   <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YouTube Report | Shieldbearer Reach</title>
-  <meta name="description" content="Total YouTube views, subscriber count, video count, and top videos for the Shieldbearer channel. Counted by YouTube's own rules.">
-  <meta property="og:title" content="YouTube Report | Shieldbearer Reach" />
-  <meta property="og:description" content="Total YouTube views, subscriber count, video count, and top videos." />
+  <title>How This Signal Goes Out | Shieldbearer</title>
+  <meta name="description" content="How the Shieldbearer site works. What is automated, what is human, and why it is built this way. One artist, the tools available, no permission asked.">
+  <meta property="og:title" content="How This Signal Goes Out | Shieldbearer" />
+  <meta property="og:description" content="How the Shieldbearer site works. What is automated, what is human, and why it is built this way." />
   <meta property="og:image" content="https://shieldbearerusa.com/images/galilean-art.png" />
-  <meta property="og:url" content="https://shieldbearerusa.com/reach/youtube" />
+  <meta property="og:url" content="https://shieldbearerusa.com/how-it-works" />
   <meta property="og:type" content="website" />
-  <link rel="canonical" href="https://shieldbearerusa.com/reach/youtube" />
+  <link rel="canonical" href="https://shieldbearerusa.com/how-it-works" />
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Article",
-      "headline": "YouTube Report: The Watchman's Report",
-      "description": "Total YouTube views, subscriber count, video count, and top videos for the Shieldbearer channel.",
-      "url": "https://shieldbearerusa.com/reach/youtube",
-      "mainEntityOfPage": "https://shieldbearerusa.com/reach/youtube",
+      "headline": "How This Signal Goes Out",
+      "description": "How the Shieldbearer site works. What is automated, what is human, and why it is built this way.",
+      "url": "https://shieldbearerusa.com/how-it-works",
+      "mainEntityOfPage": "https://shieldbearerusa.com/how-it-works",
       "image": "https://shieldbearerusa.com/images/galilean-art.png",
       "author": {
         "@type": "Person",
@@ -42,8 +42,8 @@
     }
   </script>
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="YouTube Report | Shieldbearer Reach" />
-  <meta name="twitter:description" content="Total YouTube views, subscriber count, video count, and top videos." />
+  <meta name="twitter:title" content="How This Signal Goes Out | Shieldbearer" />
+  <meta name="twitter:description" content="How the Shieldbearer site works. What is automated, what is human, and why it is built this way." />
   <meta name="twitter:image" content="https://shieldbearerusa.com/images/galilean-art.png" />
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
@@ -210,6 +210,172 @@
     .reach-section__lead b { color: #fff; font-weight: 400; }
     .reach-section__lead:empty { display: none; }
 
+    /* Overview page: two source panels side by side, never blended. */
+    /* How It Works page */
+    .hiw__h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5.4vw, 3.4rem);
+      letter-spacing: .03em;
+      color: #fff;
+      line-height: 1.08;
+      margin: .4rem 0 1rem;
+      text-align: center;
+    }
+    .hiw__lede {
+      font-family: Georgia, serif;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: rgba(240,235,224,.82);
+      max-width: 760px;
+      margin: 0 auto 1rem;
+      text-align: center;
+    }
+    .hiw__chapter {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 1.6rem 0;
+      border-bottom: 1px solid rgba(231,76,60,.1);
+    }
+    .hiw__chapter:last-child { border-bottom: 0; }
+    .hiw__h2 {
+      font-family: var(--font-head);
+      font-size: .9rem;
+      letter-spacing: .22em;
+      color: var(--red-bright);
+      text-transform: uppercase;
+      margin: 0 0 1rem;
+    }
+    .hiw__chapter p {
+      font-family: Georgia, serif;
+      font-size: 1.02rem;
+      line-height: 1.8;
+      color: rgba(240,235,224,.86);
+      margin: 0 0 1rem;
+    }
+    .hiw__chapter p:last-child { margin-bottom: 0; }
+    .hiw__code {
+      font-family: "Courier New", Courier, monospace;
+      font-size: .92rem;
+      background: rgba(231,76,60,.08);
+      border: 1px solid rgba(231,76,60,.32);
+      padding: 2px 6px;
+      color: var(--red-bright);
+      letter-spacing: .04em;
+    }
+    .hiw__inline-link {
+      margin-top: 1rem;
+    }
+    .hiw__inline-link a {
+      font-family: var(--font-head);
+      font-size: .76rem;
+      letter-spacing: .2em;
+      color: var(--red-bright);
+      text-transform: uppercase;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(231,76,60,.45);
+      padding-bottom: 2px;
+    }
+    .hiw__inline-link a:hover { color: #fff; border-bottom-color: #fff; }
+
+    .reach-overview__h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3rem);
+      letter-spacing: .03em;
+      color: #fff;
+      margin: .4rem 0 .8rem;
+      text-align: center;
+    }
+    .reach-overview__sub {
+      font-family: Georgia, serif;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: rgba(240,235,224,.78);
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .reach-overview__rule {
+      font-family: "Courier New", monospace;
+      font-size: 12px;
+      letter-spacing: .14em;
+      color: rgba(168,162,154,.55);
+      text-transform: uppercase;
+      text-align: center;
+      margin: 0 0 1.6rem;
+    }
+    .reach-overview__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .reach-overview__panel {
+      display: block;
+      background: rgba(231,76,60,.04);
+      border: 1px solid rgba(231,76,60,.32);
+      padding: 1.8rem 1.6rem;
+      text-decoration: none;
+      color: var(--text);
+      transition: background .15s, border-color .15s;
+    }
+    .reach-overview__panel:hover {
+      background: rgba(231,76,60,.08);
+      border-color: rgba(231,76,60,.65);
+    }
+    .reach-overview__panel-tag {
+      font-family: var(--font-head);
+      font-size: .62rem;
+      letter-spacing: .28em;
+      color: var(--red-bright);
+      text-transform: uppercase;
+      margin: 0 0 .6rem;
+    }
+    .reach-overview__panel-counter {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 6vw, 3.6rem);
+      letter-spacing: .04em;
+      color: #fff;
+      line-height: 1;
+      margin: 0;
+    }
+    .reach-overview__panel-counter b { color: #fff; font-weight: 700; }
+    .reach-overview__panel-unit {
+      font-family: var(--font-head);
+      font-size: .68rem;
+      letter-spacing: .25em;
+      color: rgba(240,235,224,.55);
+      text-transform: uppercase;
+      margin: .3rem 0 1rem;
+    }
+    .reach-overview__panel-frame {
+      font-family: Georgia, serif;
+      font-size: .95rem;
+      line-height: 1.65;
+      color: rgba(240,235,224,.78);
+      margin: 0 0 1rem;
+    }
+    .reach-overview__panel-frame b { color: #fff; font-weight: 400; }
+    .reach-overview__panel-cta {
+      font-family: var(--font-head);
+      font-size: .72rem;
+      letter-spacing: .2em;
+      color: var(--red-bright);
+      text-transform: uppercase;
+      margin: 0;
+    }
+    .reach-overview__separator {
+      font-family: Georgia, serif;
+      font-size: .92rem;
+      line-height: 1.65;
+      color: rgba(168,162,154,.62);
+      max-width: 720px;
+      margin: 1.8rem auto 0;
+      text-align: center;
+      font-style: italic;
+    }
+    @media (max-width: 680px) {
+      .reach-overview__grid { grid-template-columns: 1fr; }
+    }
+
 
     /* Country list */
     .reach-list { list-style: none; padding: 0; margin: 0; border-top: 1px solid rgba(231,76,60,.1); }
@@ -336,16 +502,6 @@
 
     /* Growth curve */
     .reach-curve { width: 100%; height: 220px; display: block; }
-    .reach-curve-empty {
-      font-family: "Courier New", monospace;
-      font-size: 12px;
-      color: rgba(168,162,154,.55);
-      letter-spacing: .04em;
-      line-height: 1.6;
-      padding: 8px 0;
-    }
-    /* Traffic-source list mirrors the geo list but drops the flag column */
-    .reach-list--traffic li { grid-template-columns: 1fr auto; }
 
     /* Milestones */
     .reach-milestones { display: flex; gap: 10px; flex-wrap: wrap; }
@@ -521,36 +677,14 @@
   <main>
     <div class="page-hero section--dark">
       <div class="reach-wrap">
-        <div class="reach-status" id="ytStatus">Watchman&rsquo;s report. Loading YouTube signal.</div>
-
         <div class="reach-hero">
-          <p class="reach-hero__eyebrow">The Reach Report &middot; YouTube</p>
-          <div class="reach-hero__grid">
-            <div class="reach-hero__main">
-              <p class="reach-hero__counter"><b id="ytViewsLifetime">0</b></p>
-              <p class="reach-hero__sublabel">Confirmed views. Every one is a Shieldbearer video that someone pressed play on, or that played in their feed. Counted by YouTube&rsquo;s own rules.</p>
-            </div>
-            <div class="reach-hero__stats">
-              <div class="reach-stat">
-                <span class="reach-stat__label">Subscribers</span>
-                <b id="ytSubscribers">--</b>
-              </div>
-              <div class="reach-stat">
-                <span class="reach-stat__label">Videos published</span>
-                <b id="ytVideoCount">--</b>
-              </div>
-              <div class="reach-stat">
-                <span class="reach-stat__label">Watch hours, last 30 days</span>
-                <b id="ytWatchHours30">--</b>
-              </div>
-              <div class="reach-stat">
-                <span class="reach-stat__label">Avg view, last 30 days</span>
-                <b id="ytAvgViewSec30">--</b>
-              </div>
-            </div>
-          </div>
-          <p class="reach-hero__frame">
-            We don&rsquo;t inflate them. We don&rsquo;t pad them. A YouTube view is not the same thing as a stream, and we keep the two separate everywhere.
+          <p class="reach-hero__eyebrow">How This Signal Goes Out</p>
+          <h1 class="hiw__h1">Most artists have a website.<br/>This is something else.</h1>
+          <p class="hiw__lede">
+            Not because the technology is impressive, though some of it is. Because of what it is for.
+          </p>
+          <p class="hiw__lede">
+            Shieldbearer has no label, no manager, no marketing budget, and no one&rsquo;s permission. It has one person, a wall of guitars, a set of tools, and a mission: get the name of Christ as far as it will go, as fast as it will go, without asking anyone. This page explains how the site serves that, and exactly what is automated and what is not. We tell you plainly, because hiding how the work is done is the one thing we will not do.
           </p>
         </div>
       </div>
@@ -559,73 +693,35 @@
     <section class="section--darker">
       <div class="reach-wrap">
 
-        <div class="reach-section" id="ytChannelSection">
-          <h2>The Channel<span class="reach-source-tag">YouTube</span></h2>
-          <p class="reach-section__lead" id="ytChannelLead"></p>
-          <a class="reach-yt-channel__link" id="youtubeChannelLink" href="#" target="_blank" rel="noopener">
-            <div class="reach-yt-channel__copy">
-              <p class="reach-yt-channel__title" id="youtubeChannelTitle">--</p>
-              <p class="reach-yt-channel__handle" id="youtubeChannelHandle">--</p>
-            </div>
-          </a>
-        </div>
+        <article class="hiw__chapter">
+          <h2 class="hiw__h2">One command, and the signal moves</h2>
+          <p>When a song is finished, when the artwork is final, when the lyrics are set, there is no content management system, no web editor, no waiting on anyone. There is one command run from a terminal: <code class="hiw__code">shield ingest</code>. That is the whole of it.</p>
+          <p>From there the pipeline takes over. It validates the files, parses the song data, and deploys to the live site within minutes. As each piece of a release is finalized and ingested, it surfaces on the site. So in the days before a release, a visitor who keeps checking back watches it take shape, artwork first, then lyrics, then the release itself, each appearing as it is finished. The human decides when a thing is ready. The machine does everything after.</p>
+        </article>
 
-        <div class="reach-section">
-          <h2>Recent Signal<span class="reach-source-tag">YouTube</span></h2>
-          <p class="reach-section__lead">Views and watch time pulled from YouTube Analytics. Numbers lag the live channel by roughly forty-eight hours, which is normal for the analytics feed.</p>
-          <div class="reach-yt-recent">
-            <div class="reach-yt-recent__cell">
-              <span class="reach-stat__label">Views, last 7 days</span>
-              <b id="ytLast7Views">--</b>
-              <span class="reach-yt-recent__sub" id="ytLast7Minutes">-- watch minutes</span>
-            </div>
-            <div class="reach-yt-recent__cell">
-              <span class="reach-stat__label">Views, last 30 days</span>
-              <b id="ytLast30Views">--</b>
-              <span class="reach-yt-recent__sub" id="ytLast30Minutes">-- watch minutes</span>
-            </div>
-          </div>
-        </div>
+        <article class="hiw__chapter">
+          <h2 class="hiw__h2">The site watches for new releases on its own</h2>
+          <p>When a new Shieldbearer video goes live on YouTube, the site notices. A detection system watches the channel, recognizes a genuine release, and updates the site to match. Banner, artwork, lyrics, usually within the hour. No one logs in to do it. The site keeps its own watch and updates itself when the signal changes. This is the part almost no independent artist site does, and it runs without a hand on it.</p>
+        </article>
 
-        <div class="reach-section">
-          <h2>Where viewers watched from<span class="reach-source-tag">Last 48 hours</span></h2>
-          <p class="reach-section__lead">Country breakdown for the last forty-eight hours. YouTube Analytics has a built-in two-day reporting lag, so the very last day or two of data can be sparse or empty until the analytics feed catches up.</p>
-          <ul class="reach-list reach-list--geo" id="ytCountries48"></ul>
-          <p class="reach-yt-empty" id="ytCountries48Empty" hidden>YouTube Analytics has not published the last forty-eight hours of country-level data yet. Counts will appear once the feed catches up.</p>
-        </div>
+        <article class="hiw__chapter">
+          <h2 class="hiw__h2">The Reach Report</h2>
+          <p>Most artists, if they show numbers at all, show a follower count. The reach report is different. It takes the real streaming and viewing data and reframes it as what it actually is to this mission: a count of how far the name of Christ has traveled.</p>
+          <p>It pulls from more than one source and keeps each one honest and separate. Streaming data, with a leaderboard of the nations the signal has reached. Per-song data, showing which tracks are carrying the weight. YouTube data, with lifetime and recent views, geography, and a real growth curve. The numbers are never blended into one inflated figure, because a stream and a view are different things, and we will not pretend otherwise. Everything comes straight from the platforms. We do not inflate it, and we do not count what we cannot see.</p>
+          <p>You won&rsquo;t find this on a typical artist site. Not the framing, and not the honesty about where every number comes from.</p>
+          <p class="hiw__inline-link"><a href="/reach">See the Reach Report &rarr;</a></p>
+        </article>
 
-        <div class="reach-section">
-          <h2>Where viewers watched from<span class="reach-source-tag">Last 30 days</span></h2>
-          <p class="reach-section__lead">Country breakdown across the trailing thirty days. Sorted by total views.</p>
-          <ul class="reach-list reach-list--geo" id="ytCountries30"></ul>
-        </div>
+        <article class="hiw__chapter">
+          <h2 class="hiw__h2">SentinelBot</h2>
+          <p>There is a watchman on the site. SentinelBot answers questions about the music from the actual song data, and reports the state of the signal. It is not a gimmick bolted on. It is the same idea as the rest of the site: the work keeps watch, keeps current, and keeps speaking even when no one is at the keyboard.</p>
+        </article>
 
-        <div class="reach-section" id="ytGrowthCurveSection" hidden>
-          <h2>Growth Curve<span class="reach-source-tag">Last 90 days</span></h2>
-          <p class="reach-section__lead">Real daily views from YouTube Analytics across the trailing 90 days. Every dot on the line is a day. The curve replaces the previous synthesized chart with the actual feed.</p>
-          <svg class="reach-curve" id="ytGrowthCurve" viewBox="0 0 800 220" preserveAspectRatio="none" aria-label="Daily YouTube views over the trailing 90 days"></svg>
-          <p class="reach-curve-empty" id="ytGrowthCurveEmpty" hidden>Growth curve will appear once YouTube Analytics has published two or more distinct daily readings.</p>
-        </div>
-
-        <div class="reach-section" id="ytSurgeSection" hidden>
-          <h2>Surging Now<span class="reach-source-tag">Last 30 days</span></h2>
-          <p class="reach-section__lead">Top Shieldbearer videos by view count over the last thirty days. This is the recent signal, not the lifetime leaderboard. Click through to watch on YouTube.</p>
-          <ul class="reach-list reach-list--videos" id="ytTopVideos30d"></ul>
-        </div>
-
-        <div class="reach-section" id="ytDiscoverySection" hidden>
-          <h2>Discovery Channels<span class="reach-source-tag">Last 30 days</span></h2>
-          <p class="reach-section__lead">Where the viewers came from. Sorted by view count. Each path tells a different story about how the signal is reaching people.</p>
-          <ul class="reach-list reach-list--traffic" id="ytTrafficSources"></ul>
-        </div>
-
-        <div class="reach-section" id="ytTopVideosSection" hidden>
-          <h2>Most-Seen Transmissions<span class="reach-source-tag">Lifetime</span></h2>
-          <p class="reach-section__lead">Top Shieldbearer videos by lifetime view count. Click through to watch on YouTube.</p>
-          <ul class="reach-list reach-list--videos" id="ytTopVideos"></ul>
-        </div>
-
-        <div class="reach-meta" id="ytMeta"></div>
+        <article class="hiw__chapter">
+          <h2 class="hiw__h2">Why it is built this way</h2>
+          <p>Every piece of this exists for one reason. A single person, using the tools available, can do what used to take a label and a staff. The site updates itself so the music goes out the moment it is ready. The reach report tells the truth about how far it has gone. The watchman keeps speaking around the clock.</p>
+          <p>The gatekeepers said music made this way does not count. They said to hide the tools or stay quiet. This site is the answer. Here is exactly how it works. Here is what is automated and what is human. Here is the gospel going out without anyone&rsquo;s permission. Judge it for yourself.</p>
+        </article>
 
       </div>
     </section>
@@ -634,11 +730,10 @@
 
   <footer class="next-step" aria-label="Where to go next">
     <h3 class="next-step__h">The signal continues.</h3>
-    <p class="next-step__p">Every play extends the reach. Every share opens a new territory.</p>
     <div class="next-step__links">
-      <a href="/signal-room">Hear the latest transmission</a>
-      <a href="/music">Share a track</a>
-      <a href="/contact">Stand with Shieldbearer</a>
+      <a href="/music">Hear the music</a>
+      <a href="/reach">See the Reach Report</a>
+      <a href="/creed">Read the Creed</a>
     </div>
   </footer>
 
@@ -712,7 +807,6 @@
   <script src="/js/analytics.js"></script>
   <script src="/js/main.js"></script>
   <script src="/js/sentinelbot.js"></script>
-  <script src="/js/reach.js" defer></script>
   <script src="/js/scripture-links.js" defer></script>
 </body>
 </html>
