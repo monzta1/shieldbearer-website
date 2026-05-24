@@ -7,6 +7,9 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.22.4 - May 2026
+- `/reach` world map: rewrote the continent polygon data with full coastline tracing. Each continent now uses ~30 to 50 anchor points along its actual coastline instead of the 6 to 12 of v2.22.3. North America, South America, Africa, Eurasia, Australia, Japan, UK, Ireland, Italy, Indonesia, Greenland, Iceland, Madagascar, Sri Lanka, Philippines, Taiwan, Tasmania, New Zealand, and Antarctica are all silhouetted. Previous version's Eurasia polygon had self-intersecting U-turns around the Arabian peninsula and the Malay peninsula; the new traversal is single-pass clockwise and renders cleanly.
+
 ## v2.22.3 - May 2026
 - `/reach` now renders a real world map. Equirectangular projection SVG with continent silhouettes and country markers placed at each reached country's lat/long. Marker size scales with stream count, flag emoji sits inside each marker, halo grows on hover. Replaces the old "Continental Sectors" grid that was not actually a map.
 - Growth curve hides itself when the history is degenerate (fewer than two distinct totals) and shows a quiet "The growth curve appears after a few stat refreshes" line instead. Fixes the flat-line appearance when only one published reading exists.
