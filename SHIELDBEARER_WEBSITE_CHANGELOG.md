@@ -7,6 +7,9 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.22.5 - May 2026
+- `/reach` hero redesign. The previous layout stacked counter / frame paragraph / time-window strip in a single center column, leaving a lot of empty horizontal space on desktop and reading as low density. New layout puts the big counter on the left with a tight "Times the gospel was preached" sublabel, and a 2x2 stat grid on the right showing Last 90, Last 30, Last 7, and Nations side by side in bordered cells. Frame paragraph drops below in narrower max-width. On mobile (max-width 680px) the grid collapses to a single column. Hero padding reduced from 2.0rem to 1.4rem top.
+
 ## v2.22.4 - May 2026
 - `/reach` world map: rewrote the continent polygon data with full coastline tracing. Each continent now uses ~30 to 50 anchor points along its actual coastline instead of the 6 to 12 of v2.22.3. North America, South America, Africa, Eurasia, Australia, Japan, UK, Ireland, Italy, Indonesia, Greenland, Iceland, Madagascar, Sri Lanka, Philippines, Taiwan, Tasmania, New Zealand, and Antarctica are all silhouetted. Previous version's Eurasia polygon had self-intersecting U-turns around the Arabian peninsula and the Malay peninsula; the new traversal is single-pass clockwise and renders cleanly.
 

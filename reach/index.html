@@ -75,42 +75,80 @@
       display: inline-block;
     }
     .reach-status b { color: #00ff41; font-weight: 700; }
-    .reach-hero { text-align: center; padding: 2rem 0 2.4rem; border-bottom: 1px solid rgba(231,76,60,.12); }
+    .reach-hero { padding: 1.4rem 0 1.6rem; border-bottom: 1px solid rgba(231,76,60,.12); }
     .reach-hero__eyebrow {
       font-family: var(--font-head);
       font-size: .68rem;
       letter-spacing: .35em;
       color: var(--red-bright);
       text-transform: uppercase;
-      margin-bottom: 8px;
+      margin: 0 0 1rem;
+      text-align: center;
     }
+    .reach-hero__grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: clamp(1.2rem, 4vw, 2.4rem);
+      align-items: center;
+    }
+    .reach-hero__main { text-align: center; }
     .reach-hero__counter {
       font-family: var(--font-display);
-      font-size: clamp(3.2rem, 11vw, 6.2rem);
+      font-size: clamp(3rem, 9vw, 5.4rem);
       letter-spacing: .04em;
-      line-height: 1;
+      line-height: .95;
       color: #fff;
       margin: 0;
     }
     .reach-hero__counter b { color: var(--red-bright); font-weight: 700; }
+    .reach-hero__sublabel {
+      font-family: var(--font-head);
+      font-size: .68rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: rgba(240,235,224,.6);
+      margin: .6rem 0 0;
+    }
+    .reach-hero__stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .reach-stat {
+      background: rgba(231,76,60,.04);
+      border: 1px solid rgba(231,76,60,.2);
+      padding: 12px 14px;
+    }
+    .reach-stat__label {
+      display: block;
+      font-family: var(--font-head);
+      font-size: .58rem;
+      letter-spacing: .25em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .reach-stat b {
+      display: block;
+      font-family: var(--font-display);
+      font-size: clamp(1.3rem, 3vw, 1.7rem);
+      letter-spacing: .03em;
+      color: #fff;
+      font-weight: 400;
+    }
     .reach-hero__frame {
       font-family: Georgia, serif;
-      font-size: 1.05rem;
-      line-height: 1.8;
-      color: rgba(240,235,224,.78);
+      font-size: .98rem;
+      line-height: 1.7;
+      color: rgba(240,235,224,.7);
       max-width: 640px;
-      margin: 14px auto 0;
+      margin: 1.2rem auto 0;
+      text-align: center;
     }
     .reach-hero__frame b { color: #fff; font-weight: 400; }
-    .reach-hero__windows {
-      display: flex;
-      justify-content: center;
-      gap: clamp(1rem, 4vw, 2.6rem);
-      margin-top: 1.4rem;
-      flex-wrap: wrap;
+    @media (max-width: 680px) {
+      .reach-hero__grid { grid-template-columns: 1fr; gap: 1.2rem; }
     }
-    .reach-window { font-family: var(--font-head); font-size: .68rem; letter-spacing: .2em; color: var(--muted); text-transform: uppercase; }
-    .reach-window b { display: block; color: rgba(240,235,224,.85); font-size: 1.05rem; letter-spacing: .04em; margin-top: 2px; }
 
     .reach-section { padding: 2.4rem 0; border-bottom: 1px solid rgba(231,76,60,.08); }
     .reach-section h2 {
@@ -348,15 +386,33 @@
 
         <div class="reach-hero">
           <p class="reach-hero__eyebrow">The Reach Report</p>
-          <p class="reach-hero__counter"><b id="reachCount">0</b></p>
-          <p class="reach-hero__frame">
-            The gospel has been preached <b id="reachTotalInline">0</b> times across <b id="reachNations">0</b> nations. Every count is one more time Christ was named without a gatekeeper&rsquo;s permission.
-          </p>
-          <div class="reach-hero__windows">
-            <div class="reach-window">Last 90 days <b id="reachLast90">--</b></div>
-            <div class="reach-window">Last 30 days <b id="reachLast30">--</b></div>
-            <div class="reach-window">Last 7 days <b id="reachLast7">--</b></div>
+          <div class="reach-hero__grid">
+            <div class="reach-hero__main">
+              <p class="reach-hero__counter"><b id="reachCount">0</b></p>
+              <p class="reach-hero__sublabel">Times the gospel was preached</p>
+            </div>
+            <div class="reach-hero__stats">
+              <div class="reach-stat">
+                <span class="reach-stat__label">Last 90 days</span>
+                <b id="reachLast90">--</b>
+              </div>
+              <div class="reach-stat">
+                <span class="reach-stat__label">Last 30 days</span>
+                <b id="reachLast30">--</b>
+              </div>
+              <div class="reach-stat">
+                <span class="reach-stat__label">Last 7 days</span>
+                <b id="reachLast7">--</b>
+              </div>
+              <div class="reach-stat">
+                <span class="reach-stat__label">Nations</span>
+                <b id="reachNations">--</b>
+              </div>
+            </div>
           </div>
+          <p class="reach-hero__frame">
+            Every count is one more time Christ was named without a gatekeeper&rsquo;s permission.
+          </p>
         </div>
       </div>
     </div>
