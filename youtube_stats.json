@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-24T22:32:25.102Z",
+  "generated_at": "2026-05-25T03:35:07.039Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,27 +15,27 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-05-22",
-      "end": "2026-05-24"
+      "start": "2026-05-23",
+      "end": "2026-05-25"
     },
     "last_7": {
-      "start": "2026-05-17",
-      "end": "2026-05-24"
+      "start": "2026-05-18",
+      "end": "2026-05-25"
     },
     "last_30": {
-      "start": "2026-04-24",
-      "end": "2026-05-24"
+      "start": "2026-04-25",
+      "end": "2026-05-25"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 50,
-      "watchMinutes": 65,
-      "avgViewDurationSec": 85
+      "views": 40,
+      "watchMinutes": 47,
+      "avgViewDurationSec": 72
     },
     "last_30": {
-      "views": 514,
-      "watchMinutes": 1118,
+      "views": 503,
+      "watchMinutes": 1092,
       "avgViewDurationSec": 132
     }
   },
@@ -126,7 +126,7 @@
       "thumbnail": "https://i.ytimg.com/vi/AIiCw1a5hnM/mqdefault.jpg",
       "publishedAt": "2025-10-10T02:30:01Z",
       "url": "https://www.youtube.com/watch?v=AIiCw1a5hnM",
-      "views": 39
+      "views": 37
     },
     {
       "videoId": "vBGEIMXs6h0",
@@ -134,15 +134,10 @@
       "thumbnail": "https://i.ytimg.com/vi/vBGEIMXs6h0/mqdefault.jpg",
       "publishedAt": "2025-07-15T02:04:57Z",
       "url": "https://www.youtube.com/watch?v=vBGEIMXs6h0",
-      "views": 29
+      "views": 27
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-02-23",
-      "views": 13,
-      "minutes": 38
-    },
     {
       "date": "2026-02-24",
       "views": 15,
@@ -588,12 +583,12 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 144
+      "views": 141
     },
     {
       "source": "RELATED_VIDEO",
       "label": "Related video",
-      "views": 126
+      "views": 123
     },
     {
       "source": "NO_LINK_OTHER",
@@ -608,7 +603,7 @@
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 48
+      "views": 45
     },
     {
       "source": "YT_CHANNEL",
@@ -618,7 +613,7 @@
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 32
+      "views": 30
     },
     {
       "source": "YT_OTHER_PAGE",
