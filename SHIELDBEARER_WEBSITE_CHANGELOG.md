@@ -7,6 +7,9 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.25.3 - May 2026
+- Fix: 8 pages still had `/reach` in their desktop Music dropdown. The v2.24.0 migration regex required Signal Room and Reach on adjacent lines with `</div>` trailing the Reach anchor; on these 8 files the markup had each anchor on its own line with `</div>` indented separately, so the regex didn't match. Affected pages: `how-it-works`, `reach`, `sentinelbot`, `timeline` (both `.html` and `/index.html` mirrors of each). Corrective migration cleaned all 8. Strict Python regex sweep now reports zero `/reach` references inside any page's Music dropdown.
+
 ## v2.25.2 - May 2026
 - Sitewide: inline prose anchors no longer blend into surrounding text. The site's global default for anchors was `text-decoration: none; color: inherit`, which meant any `<a>` inside a paragraph or list item without its own class rendered as plain text. Added a global rule that paints any anchor inside a `<main>` `<p>` or `<li>` in the red accent color with a clear underline (red, hover goes off-white). Scripture links (`.scripture-link`), CTA buttons (`.btn`), and the two existing CTA-style inline-link wrappers (`.hiw__inline-link`, `.reach-overview__howlink`) are explicitly excluded so their bespoke styling stays intact. Audit found six affected anchors across `/creed`, `/how-it-works`, and `/reach`; all now visibly clickable in prose. No HTML changes -- CSS-only fix.
 
