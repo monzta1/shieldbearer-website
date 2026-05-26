@@ -113,7 +113,19 @@
       letter-spacing: .1em;
       text-transform: uppercase;
       color: rgba(240,235,224,.85);
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
+    /* Contact cell: render the email as lowercase monospace so it
+       reads correctly and does not need to be uppercased + spaced. */
+    .epk-fact__value--mono {
+      font-family: "Courier New", Courier, monospace;
+      font-size: .78rem;
+      letter-spacing: .02em;
+      text-transform: none;
+    }
+    .epk-fact__value--mono a { color: inherit; }
+    .epk-fact__value--mono a:hover { color: var(--red-bright); }
 
     /* ── KEY ART GRID ── */
     .epk-art-grid {
@@ -437,7 +449,7 @@
         </div>
         <div class="epk-fact">
           <span class="epk-fact__label">Contact</span>
-          <span class="epk-fact__value">shieldbearerusa@gmail.com</span>
+          <span class="epk-fact__value epk-fact__value--mono"><a href="mailto:shieldbearerusa@gmail.com">shieldbearerusa@gmail.com</a></span>
         </div>
       </div>
 
