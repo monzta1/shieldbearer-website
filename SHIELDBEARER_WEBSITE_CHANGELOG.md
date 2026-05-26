@@ -7,6 +7,11 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.26.2 - May 2026
+- `/song-meanings`: lyrics block removed from the rendered dossier UI. The data still lives in `site.json` and DynamoDB (so chord generator and any future utility can consume it) but the public dossier card no longer displays the full lyrics. The Scripture quote, meaning paragraphs, and action links to Spotify/YouTube stay.
+- Fix: `js/song-meanings-augment.js` was fetching `./site.json` relative to the page URL, which works on `/song-meanings.html` but resolves to `/song-meanings/site.json` (404) on the directory-index clean URL `/song-meanings/`. Switched the default source to absolute `/site.json` so the augment runs in both URL forms. This was the reason Worth It All and the other 30 newly-backfilled songs were not appearing on `/song-meanings` even though the data was in `site.json`.
+- Also released today on the Lambda repo: tighter `extractLyricsFromDescription` heuristic (longest-contiguous-block, drops emoji-prefix promo lines) plus a `scripts/backfill-lyrics-from-descriptions.js` one-off that scanned `shieldbearer-songs` and added lyrics to 31 historical records by re-running the extractor against fresh YouTube descriptions. Site-publisher's `released[]` grew from 2 to 48 entries.
+
 ## v2.26.1 - May 2026
 - **Auto-update bulletproof.** Reviewed the existing pipeline and confirmed the `/song-meanings` dossier list already auto-augments from `site.json released[]` via `js/song-meanings-augment.js`. The reason Let My People Go was missing was a stale DynamoDB record (no `reference` or `scripture` fields, written before the operator started using `#Reference`). Fixed by:
   1. Backfilling the `shieldbearer-songs` DynamoDB record for `let-my-people-go` with the four Exodus refs and the Exodus 5:1 quote.

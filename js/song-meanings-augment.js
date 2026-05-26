@@ -16,7 +16,11 @@
 (function () {
   if (typeof window.appendSongDossiers !== "function") return;
 
-  var source = (window.SHIELDBEARER_CONFIG && window.SHIELDBEARER_CONFIG.featuredRelease && window.SHIELDBEARER_CONFIG.featuredRelease.source) || "./site.json";
+  // Absolute path so the fetch works regardless of the request URL.
+  // The page is reachable as /song-meanings (directory index), /song-meanings/,
+  // and /song-meanings.html; a relative "./site.json" resolves differently
+  // for each of those and silently 404s on the directory form.
+  var source = (window.SHIELDBEARER_CONFIG && window.SHIELDBEARER_CONFIG.featuredRelease && window.SHIELDBEARER_CONFIG.featuredRelease.source) || "/site.json";
 
   function slugify(text) {
     return String(text || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
