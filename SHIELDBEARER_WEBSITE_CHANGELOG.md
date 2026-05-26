@@ -7,6 +7,11 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.26.0 - May 2026
+- `/song-meanings`: full dossier for **Let My People Go** added (entry was missing because the original ingest didn't include scripture refs). Sits at the top of the dossier list as track 12. Four Exodus references (Exodus 3:7-10, 5:1, 7:5, 14:21-22), primary scripture is Exodus 5:1, tags Exodus / Deliverance / Freedom. Matching no-JS fallback section, MusicRecording added to the page's JSON-LD list. Once the scripture-link infrastructure (v2.19.0) sees these refs, they auto-linkify to BibleGateway ESV.
+- `/site.json`: backfilled the `featuredRelease.reference` and `featuredRelease.scripture` fields for Let My People Go so any downstream consumer that reads site.json picks up the refs.
+- **Deeper fix: shield-cli warns when #Reference is missing.** The ingest pipeline already supports `#Reference`, `#ScriptureRef`, and `#ScriptureQuote` sections in the source `.txt` file, but a missing #Reference used to ingest silently. Now if a song has lyrics but no `#Reference`, shield-cli prints a loud bordered banner to stderr telling the operator to add a section and re-ingest. The format is shown right in the warning so it can be pasted into the template. The empty-template skip path and the no-scripture explicit test stay quiet. 4 shield-cli test fixtures updated to include `#Reference` so they represent the proper template going forward.
+
 ## v2.25.3 - May 2026
 - Fix: 8 pages still had `/reach` in their desktop Music dropdown. The v2.24.0 migration regex required Signal Room and Reach on adjacent lines with `</div>` trailing the Reach anchor; on these 8 files the markup had each anchor on its own line with `</div>` indented separately, so the regex didn't match. Affected pages: `how-it-works`, `reach`, `sentinelbot`, `timeline` (both `.html` and `/index.html` mirrors of each). Corrective migration cleaned all 8. Strict Python regex sweep now reports zero `/reach` references inside any page's Music dropdown.
 
