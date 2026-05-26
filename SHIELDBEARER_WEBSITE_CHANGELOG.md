@@ -7,6 +7,14 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.27.0 - May 2026 (Tone pass batch 1 of 3: Scripture preservation)
+- `/gatekeeping`: three new Scripture-rich sections added between "The Difference" and "The Fulfillment." Purely additive; no existing content touched.
+  - **Unexpected Vessels**: Moses, David, Gideon, Amos, Peter and the apostles, Paul. Closes with 1 Corinthians 3:7, 2 Corinthians 12:9, and the workers-in-the-vineyard parable (Matthew 20:1-16).
+  - **Jesus Defended the Untrained**: Matthew 21:15-16, the children singing in the temple courts. Jesus quoted Psalm 8:2 back at the chief priests.
+  - **Freedom in the Spirit**: 2 Corinthians 3:17, Colossians 3:17, 1 Thessalonians 5:19, and the parable of the talents (Matthew 25:14-30).
+- Why this matters: this is the first of three batches in the tone pass. Before any combat-heavy page gets disabled, the Scripture content from those pages has to live on a page that stays public. This batch moves every verse and Biblical reference from `open-letter`, `for-ai-artists`, and `artist-freedom` onto Gatekeeping so the Word stays preserved and visible.
+- Page grew from ~1300 words to ~1840 words. Eight Scripture-quote blocks (up from two). Voice matches the existing exegesis style: declarative, no rebuttal framing, no em dashes.
+
 ## v2.26.6 - May 2026
 - `/song-meanings`: dropped the "Why we wrote this" block from every dossier. It was the same boilerplate (creed/manifesto links) repeated under every song and added no per-song value. The footer nav and action links stay.
 
