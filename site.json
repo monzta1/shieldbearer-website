@@ -38,34 +38,6 @@
       "publishedAt": "2026-05-21T12:08:22.217Z",
       "sourceUrl": "",
       "traceId": "let-my-people-go#2026-05-21T12:08:22.217Z#SONG_UPDATED"
-    },
-    "emmaus shieldbearer official metal anthem": {
-      "id": "0ljswHO8D2I",
-      "title": "Emmaus – Shieldbearer (Official Metal Anthem",
-      "publishedAt": "2025-08-28T12:36:21Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=0ljswHO8D2I",
-      "traceId": "0ljswHO8D2I"
-    },
-    "machine outro to celestial shield": {
-      "id": "3CPuHgWr-L0",
-      "title": "!Machine – Outro to Celestial Shield",
-      "publishedAt": "2025-07-25T16:00:06Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=3CPuHgWr-L0",
-      "traceId": "3CPuHgWr-L0"
-    },
-    "celestial shield lyric video shieldbearer": {
-      "id": "vBGEIMXs6h0",
-      "title": "Celestial Shield (Lyric Video) – Shieldbearer",
-      "publishedAt": "2025-07-15T02:04:57Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=vBGEIMXs6h0",
-      "traceId": "vBGEIMXs6h0"
-    },
-    "still be my vision a modern worship hymn inspired by be thou my vision": {
-      "id": "C4tXr2RSxPI",
-      "title": "Still Be My Vision (A Modern Worship Hymn Inspired by “Be Thou My Vision”)",
-      "publishedAt": "2025-07-02T10:00:06Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=C4tXr2RSxPI",
-      "traceId": "C4tXr2RSxPI"
     }
   },
   "signal": [
@@ -678,6 +650,25 @@
       "contentHash": ""
     },
     {
+      "songId": "0ljswHO8D2I",
+      "videoId": "",
+      "title": "Emmaus – Shieldbearer (Official Metal Anthem",
+      "state": "draft",
+      "traceId": "0ljswHO8D2I",
+      "publishedAt": "2025-08-28T12:36:21Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=0ljswHO8D2I",
+      "artwork": "",
+      "lyrics": "The shield we trust is not machine. The shield we trust is Elohim.\nLyrics\nWe walked the road with broken hope…\nThe cross still fresh behind the smoke…\nA Stranger came with wounded feet…\nHe spoke and fire filled the street!\nIt feels like fire when Jesus speaks!\nHearts ignite and iron breaks!\nGraves unseal and tyrants quake!\nLight explodes where shadows creep…\nCall His name and hell grows weak…\nIt feels like fire when Jesus speaks!\nHe lit the scrolls with living breath…\nEach word unwrapped the sting of death…\nThe story burned from Eve to Lamb…\nWe did not know, yet there He stands!\nIt feels like fire when Jesus speaks!\nHearts ignite and iron breaks!\nGraves unseal and tyrants quake!\nLight explodes where shadows creep…\nCall His name and hell grows weak…\nIt feels like fire when Jesus speaks!\nHe vanished, but the flame remained…\nA holy burn that sings His name…\nOur steps turned back, our voices wild…\nWe saw the Lord and walked in fire!\nIt feels like fire when Jesus speaks!\nHearts ignite and iron breaks!\nGraves unseal and tyrants freak!\nLight explodes where shadows creep…\nCall His name and hell grows weak…\nIt feels like fire when Jesus speaks!\nIt feels like fire when Jesus speaks!\nIt feels like fire when Jesus speaks!\nWere not our hearts burning within…\nWhen He spoke to us on the road?",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:55.609Z",
+      "contentHash": ""
+    },
+    {
       "songId": "DFfIX-mlS-k",
       "videoId": "",
       "title": "He Found His Voice",
@@ -773,6 +764,25 @@
       "contentHash": ""
     },
     {
+      "songId": "3CPuHgWr-L0",
+      "videoId": "",
+      "title": "!Machine – Outro to Celestial Shield",
+      "state": "draft",
+      "traceId": "3CPuHgWr-L0",
+      "publishedAt": "2025-07-25T16:00:06Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=3CPuHgWr-L0",
+      "artwork": "",
+      "lyrics": "!Machine means “Not Machine” in code.\nSome trust in horses.\nSome in machines.\nSame thing.\nWe trust in the name of the Lord our God.\nHis name is ELOHIM.",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:55.849Z",
+      "contentHash": ""
+    },
+    {
       "songId": "po3ezgDfrDY",
       "videoId": "",
       "title": "Celestial Shield - Shieldbearer 🛡️",
@@ -830,6 +840,25 @@
       "contentHash": ""
     },
     {
+      "songId": "vBGEIMXs6h0",
+      "videoId": "",
+      "title": "Celestial Shield (Lyric Video) – Shieldbearer",
+      "state": "draft",
+      "traceId": "vBGEIMXs6h0",
+      "publishedAt": "2025-07-15T02:04:57Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=vBGEIMXs6h0",
+      "artwork": "",
+      "lyrics": "It’s not just about land.\nIt’s not just politics.\nIt’s spiritual.\n“They hated Me without cause.” – John 15:25\n“The mind governed by the flesh is hostile to God.” – Romans 8:7\nIsrael is hated because it proves the Bible is true.\nJesus is hated because He breaks every false lie.\nFor years, entire generations were taught:\n“Israel is illegitimate.”\n“Jesus was just a prophet.”\n“The Bible is corrupted.”\n“The Jews control the world.”\n“Christians are the enemy.”\nThis is not education — it’s indoctrination.\nIt’s brainwashing designed to keep you from the one truth that sets you free.",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:55.995Z",
+      "contentHash": ""
+    },
+    {
       "songId": "mUVrsebALVw",
       "videoId": "",
       "title": "Still Be My Vision - (Shieldbearer Short 2)",
@@ -865,6 +894,25 @@
         "quote": ""
       },
       "updatedAt": "2026-04-19T02:19:56.069Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "C4tXr2RSxPI",
+      "videoId": "",
+      "title": "Still Be My Vision (A Modern Worship Hymn Inspired by “Be Thou My Vision”)",
+      "state": "draft",
+      "traceId": "C4tXr2RSxPI",
+      "publishedAt": "2025-07-02T10:00:06Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=C4tXr2RSxPI",
+      "artwork": "",
+      "lyrics": "[Verse 1]\nBe my true vision, O Light of my soul\nStill be my compass, wherever I go\nYou are my wisdom, You are my word\nI ever with You, my Savior and Lord\n[Verse 2]\nBe my protection, my sword and my shield\nGuard every heartbeat, on battlefield\nYou are my glory, my treasure divine\nI seek no riches — just that You’re mine\n[Chorus]\nYou are my fire, my truth, my light\nStay near in shadow, stand tall in the fight\nAll of my days, in You I’ll abide —\nMy Shepherd, my Savior, my King, my Guide\n[Verse 3]\nBe my compassion, my mercy and grace",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:56.109Z",
       "contentHash": ""
     },
     {
@@ -1876,87 +1924,11 @@
       },
       "updatedAt": "2026-05-21T12:08:22.217Z",
       "contentHash": "952d5bfc05ad8d15ae1980f11364acca86f3f4907a284d6243ce62404e40a868"
-    },
-    {
-      "songId": "0ljswHO8D2I",
-      "videoId": "0ljswHO8D2I",
-      "title": "Emmaus – Shieldbearer (Official Metal Anthem",
-      "state": "released",
-      "traceId": "0ljswHO8D2I",
-      "publishedAt": "2025-08-28T12:36:21Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=0ljswHO8D2I",
-      "artwork": "",
-      "lyrics": "The shield we trust is not machine. The shield we trust is Elohim.\nLyrics\nWe walked the road with broken hope…\nThe cross still fresh behind the smoke…\nA Stranger came with wounded feet…\nHe spoke and fire filled the street!\nIt feels like fire when Jesus speaks!\nHearts ignite and iron breaks!\nGraves unseal and tyrants quake!\nLight explodes where shadows creep…\nCall His name and hell grows weak…\nIt feels like fire when Jesus speaks!\nHe lit the scrolls with living breath…\nEach word unwrapped the sting of death…\nThe story burned from Eve to Lamb…\nWe did not know, yet there He stands!\nIt feels like fire when Jesus speaks!\nHearts ignite and iron breaks!\nGraves unseal and tyrants quake!\nLight explodes where shadows creep…\nCall His name and hell grows weak…\nIt feels like fire when Jesus speaks!\nHe vanished, but the flame remained…\nA holy burn that sings His name…\nOur steps turned back, our voices wild…\nWe saw the Lord and walked in fire!\nIt feels like fire when Jesus speaks!\nHearts ignite and iron breaks!\nGraves unseal and tyrants freak!\nLight explodes where shadows creep…\nCall His name and hell grows weak…\nIt feels like fire when Jesus speaks!\nIt feels like fire when Jesus speaks!\nIt feels like fire when Jesus speaks!\nWere not our hearts burning within…\nWhen He spoke to us on the road?",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:55.609Z",
-      "contentHash": ""
-    },
-    {
-      "songId": "3CPuHgWr-L0",
-      "videoId": "3CPuHgWr-L0",
-      "title": "!Machine – Outro to Celestial Shield",
-      "state": "released",
-      "traceId": "3CPuHgWr-L0",
-      "publishedAt": "2025-07-25T16:00:06Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=3CPuHgWr-L0",
-      "artwork": "",
-      "lyrics": "!Machine means “Not Machine” in code.\nSome trust in horses.\nSome in machines.\nSame thing.\nWe trust in the name of the Lord our God.\nHis name is ELOHIM.",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:55.849Z",
-      "contentHash": ""
-    },
-    {
-      "songId": "vBGEIMXs6h0",
-      "videoId": "vBGEIMXs6h0",
-      "title": "Celestial Shield (Lyric Video) – Shieldbearer",
-      "state": "released",
-      "traceId": "vBGEIMXs6h0",
-      "publishedAt": "2025-07-15T02:04:57Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=vBGEIMXs6h0",
-      "artwork": "",
-      "lyrics": "It’s not just about land.\nIt’s not just politics.\nIt’s spiritual.\n“They hated Me without cause.” – John 15:25\n“The mind governed by the flesh is hostile to God.” – Romans 8:7\nIsrael is hated because it proves the Bible is true.\nJesus is hated because He breaks every false lie.\nFor years, entire generations were taught:\n“Israel is illegitimate.”\n“Jesus was just a prophet.”\n“The Bible is corrupted.”\n“The Jews control the world.”\n“Christians are the enemy.”\nThis is not education — it’s indoctrination.\nIt’s brainwashing designed to keep you from the one truth that sets you free.",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:55.995Z",
-      "contentHash": ""
-    },
-    {
-      "songId": "C4tXr2RSxPI",
-      "videoId": "C4tXr2RSxPI",
-      "title": "Still Be My Vision (A Modern Worship Hymn Inspired by “Be Thou My Vision”)",
-      "state": "released",
-      "traceId": "C4tXr2RSxPI",
-      "publishedAt": "2025-07-02T10:00:06Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=C4tXr2RSxPI",
-      "artwork": "",
-      "lyrics": "[Verse 1]\nBe my true vision, O Light of my soul\nStill be my compass, wherever I go\nYou are my wisdom, You are my word\nI ever with You, my Savior and Lord\n[Verse 2]\nBe my protection, my sword and my shield\nGuard every heartbeat, on battlefield\nYou are my glory, my treasure divine\nI seek no riches — just that You’re mine\n[Chorus]\nYou are my fire, my truth, my light\nStay near in shadow, stand tall in the fight\nAll of my days, in You I’ll abide —\nMy Shepherd, my Savior, my King, my Guide\n[Verse 3]\nBe my compassion, my mercy and grace",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:56.109Z",
-      "contentHash": ""
     }
   ],
-  "signalCount": 94,
+  "signalCount": 98,
   "comingSoonCount": 0,
-  "releasedCount": 5,
+  "releasedCount": 1,
   "events": [
     {
       "id": "0lUJcLKIt0o",
