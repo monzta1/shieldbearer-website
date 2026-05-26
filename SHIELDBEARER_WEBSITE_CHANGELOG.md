@@ -7,6 +7,9 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.26.4 - May 2026
+- `/song-meanings`: lyrics restored on the dossier card for every song. v2.26.2 hid them sitewide on the theory that the data only needed to live in `site.json`/DynamoDB for chord generator. Operator wants them visible on the page for the 11 curated dossiers plus the 5 finalized auto-augmented ones. Reverted the CSS that hid `.song-dossier__lyrics` + `.song-dossier-fallback__lyrics` and put the `<section class="song-dossier__block song-dossier__lyrics">` back in `renderDossierBody`.
+
 ## v2.26.3 - May 2026
 - `/song-meanings`: curated the auto-augmented release list down to 5 entries (Let My People Go, Emmaus, !Machine, Celestial Shield, Still Be My Vision). Demoted the 42 other backfilled records in `shieldbearer-songs` (set `releaseDetected = false`) and deleted the leftover `simulated-video-001` test event from `shieldbearer-sentinel-logs` so site-publisher stops resurrecting it. `released[]` now matches what the operator wants visible.
 - `js/song-meanings-augment.js`: Still Be My Vision now renders under a Worship genre group instead of Metal. The dossier renderer already groups by genre, so a new Worship section appears automatically next to the curated Metal/Country groups.
