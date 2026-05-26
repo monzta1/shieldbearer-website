@@ -7,6 +7,20 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.27.2 - May 2026 (Tone pass batch 3 of 3: disable 3 combat pages, rewrite for-ai-artists)
+- **Pre-flight Scripture safety check**: every verse on the three pages being disabled (open-letter, no-rulebook, artist-freedom) was confirmed already preserved on gatekeeping.html before disabling. No Scripture goes dark. See ARCHIVE-NOTES.md "Scripture Preservation Index".
+- **Three pages disabled** (not deleted, not removed): `open-letter`, `no-rulebook`, `artist-freedom`. Each moved to `/unpublished/` in both forms (root `.html` and directory-form `<slug>-dir/`). Each given `<meta name="robots" content="noindex,nofollow">` and a visible "Unpublished" banner at the top of the body. Sitemap entries removed.
+- **for-ai-artists.html REWRITTEN IN PLACE (stays live)**. It is an outward-facing resource for fellow artists, not a critic rebuttal. Cuts and reframes:
+  - "None of those claims are supported by Scripture. Every single one of them is supported by pride." rewritten to "Scripture answers each of these, and it has for thousands of years."
+  - Entire "What They Actually Mean" section cut (six paragraphs including "And the mask comes off", "Then don't make music", "Break that down for me please"). Its Scripture (Matthew 21:15, Galatians 1) is preserved on gatekeeping.
+  - "We have been on warning lists. We have been told to stop." cut (victim frame).
+  - Header "What They Are Really Saying" reframed to "When the Questions Come". Body reworked to give the same answers in declarative voice instead of confrontational framing.
+  - Inline link to `/no-rulebook` in "How to Respond" replaced with the point folded into the sentence.
+  - Bottom "Resources on this site" block: removed Open Letter, No Rulebook, Artist Freedom links. Kept FAQ, On Gatekeeping, AI and Creativity, God Uses Tools, Manifesto, Creed with declarative descriptions ("What Scripture says about gatekeeping, and the pattern it warns against" etc.).
+- **Site-wide scrub**: 518 lines removed across 52 files (26 root .html + 26 directory-form duplicates) of nav, footer, and Related Reading references to the three disabled slugs. Inline prose mentions cleaned on `contact`, `faq`, `how-it-works`, `interviews`. Sitemap entries removed. Final full-site search: **0 hits** for `/open-letter`, `/no-rulebook`, `/artist-freedom` outside `/unpublished/`. `/for-ai-artists` references stay (it is live).
+- **Directory-form duplicates** were re-synced. The site historically maintained both `<slug>.html` and `<slug>/index.html`; the directory forms had drifted out of sync. All pages touched in batches 1-3 were copied root → directory form so both stay current. Future maintenance should keep these in sync.
+- New file: `ARCHIVE-NOTES.md` at repo root. Documents the three disabled pages, the Scripture Preservation Index (which verse from which disabled page lives on which live page), the for-ai-artists rewrite, the in-place trims from batches 1-3, and exact re-enable steps per page or as a bulk revert.
+
 ## v2.27.1 - May 2026 (Tone pass batch 2 of 3: in-place trims)
 - `manifesto.html`: dropped "defending" from "We are naming what has always been true and the freedom to examine it openly." Closing stance changed from "We defend open proclamation and open accountability" to "We stand for open proclamation."
 - `gospel.html`: removed the two-line wounded beat ("We became the AI guys defending AI. But that was never what we were doing."). The Bonhoeffer story and Acts 5:39 quote stay.
