@@ -7,6 +7,15 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.27.1 - May 2026 (Tone pass batch 2 of 3: in-place trims)
+- `manifesto.html`: dropped "defending" from "We are naming what has always been true and the freedom to examine it openly." Closing stance changed from "We defend open proclamation and open accountability" to "We stand for open proclamation."
+- `gospel.html`: removed the two-line wounded beat ("We became the AI guys defending AI. But that was never what we were doing."). The Bonhoeffer story and Acts 5:39 quote stay.
+- `are-you-an-ai-band.html` (quiz): hero reframed from "The title is a dare..." to "Ten honest questions about how music actually gets made today...". "the same standard the gatekeepers use" rewritten to "the same standard every modern record has been made under." Dropped the parentheticals from tier names ("(or recently arrived from 1962)", "(and probably argued about them online)"). Tier 6-8 description rewritten from "the category gatekeepers warn about" to "the category most modern records have been made under." Dropped the dead hero link to /for-ai-artists.
+- `faq.html` AI section: "your pride wearing a guitar strap" rewritten to "a different argument than the one being made". Dropped "Full stop." from "If the music lifts His name, the mission is accomplished." Removed the entire "Bobby better practice. Practice hard Bobby. People won't get saved until your guitar sounds good enough." paragraph. Rewrote "pride masquerading as theological concern does not deserve a quiet response" to "The method is not what carries the witness. Christ is." Mirrored all four edits in the FAQPage JSON-LD blob at the top of the file so structured data matches body.
+- `god-uses-tools.html`: page stays LIVE. Three snark lines removed: hero subtitle "Which is wild because have you actually read the Bible?", section header "But Now in 2026 We Draw the Line at AI" rewritten to "The Same Principle Holds", and "He can use nerds with laptops" rewritten to "He can use the tools we have today." All 11 Biblical examples (donkey, fish, ravens, axe-head, oil jar, burning bush, coin in fish, sling, basket, Balaam, staff) and every verse citation preserved verbatim.
+- Voice across all five files: declarative, no em dashes introduced, no "not X but Y" added, matches the home and music tone.
+- What this batch did NOT do: no file moves, no nav/footer changes, no deletions of Scripture content, no edits to creed, gatekeeping, ai-and-creativity, or any utility/nav page. Batch 3 (disabling the four combat pages) is held pending review of this batch.
+
 ## v2.27.0 - May 2026 (Tone pass batch 1 of 3: Scripture preservation)
 - `/gatekeeping`: three new Scripture-rich sections added between "The Difference" and "The Fulfillment." Purely additive; no existing content touched.
   - **Unexpected Vessels**: Moses, David, Gideon, Amos, Peter and the apostles, Paul. Closes with 1 Corinthians 3:7, 2 Corinthians 12:9, and the workers-in-the-vineyard parable (Matthew 20:1-16).
