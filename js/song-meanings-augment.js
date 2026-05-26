@@ -27,6 +27,30 @@
     return String(text).split(/\n\s*\n/).map(function (s) { return s.trim(); }).filter(Boolean);
   }
 
+  // Pull tags from a pipe-separated reference string like
+  // "Exodus 3:7-10 | Exodus 5:1 | Matthew 24:42". Each ref starts
+  // with a book name (1 or 2 words, optionally prefixed with "1 ",
+  // "2 ", or "3 " for the numbered books). Tags are the unique book
+  // names in first-appearance order, capped so the chip row stays
+  // readable.
+  function tagsFromReference(reference) {
+    var ref = String(reference || "").trim();
+    if (!ref) return [];
+    var parts = ref.split(/\|/);
+    var seen = Object.create(null);
+    var tags = [];
+    for (var i = 0; i < parts.length; i++) {
+      var m = parts[i].trim().match(/^((?:[123]\s+)?[A-Z][a-z]+(?:\s+[A-Z][a-z]+)?)/);
+      if (!m) continue;
+      var book = m[1].trim();
+      if (seen[book]) continue;
+      seen[book] = true;
+      tags.push(book);
+      if (tags.length >= 4) break;
+    }
+    return tags;
+  }
+
   function buildDossierFromRelease(rel) {
     if (!rel || !rel.title) return null;
     var id = slugify(rel.title);
@@ -53,7 +77,7 @@
       genre: "Metal",
       reference: reference,
       thesis: thesis,
-      tags: [],
+      tags: tagsFromReference(reference),
       artwork: artwork,
       meaning: meaning.length ? meaning : [thesis].filter(Boolean),
       scripture: scripture,

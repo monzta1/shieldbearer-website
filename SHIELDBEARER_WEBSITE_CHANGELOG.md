@@ -7,6 +7,20 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.26.1 - May 2026
+- **Auto-update bulletproof.** Reviewed the existing pipeline and confirmed the `/song-meanings` dossier list already auto-augments from `site.json released[]` via `js/song-meanings-augment.js`. The reason Let My People Go was missing was a stale DynamoDB record (no `reference` or `scripture` fields, written before the operator started using `#Reference`). Fixed by:
+  1. Backfilling the `shieldbearer-songs` DynamoDB record for `let-my-people-go` with the four Exodus refs and the Exodus 5:1 quote.
+  2. Manually invoking `sentinelbot-site-publisher` with `{approved: true, source: "youtube"}` so it re-reads DynamoDB and rewrites `site.json` with the refs included in `released[]`.
+  3. Improved `song-meanings-augment.js`: auto-derives tag chips from the `reference` book names (e.g. "Exodus 3:7-10 | Exodus 5:1" → tags ["Exodus"]). The auto dossier now has tags, where it previously defaulted to `[]`.
+  4. Removed the hand-curated static SONG_DOSSIERS entry and no-JS fallback section I had added for Let My People Go in v2.26.0. The auto path now handles it end-to-end. (Static entries still work for older songs that have curated thesis text; new releases come through the auto pipeline.)
+- **End-to-end flow that now works without manual intervention:**
+  1. Operator writes the song .txt with `#Title`, `#SongMeaning`, `#Lyrics`, and `#Reference` (the new shield-cli warning catches a missing `#Reference`).
+  2. `shield ingest` writes the song record to DynamoDB including `reference` + `scripture`.
+  3. `sentinelbot-site-publisher` (event-driven) reads DynamoDB, merges released + coming-soon records, writes the full song into `site.json`'s `released[]` array.
+  4. `js/song-meanings-augment.js` fetches `site.json`, builds a dossier entry per release (now with tag chips from refs), calls `appendSongDossiers()` to add it to the page render.
+  5. The scripture-link infrastructure (v2.19.0) converts the references to BibleGateway ESV links automatically.
+- 0 manual edits to `song-meanings.html` for future releases. Just write the .txt with `#Reference` and run `shield ingest`.
+
 ## v2.26.0 - May 2026
 - `/song-meanings`: full dossier for **Let My People Go** added (entry was missing because the original ingest didn't include scripture refs). Sits at the top of the dossier list as track 12. Four Exodus references (Exodus 3:7-10, 5:1, 7:5, 14:21-22), primary scripture is Exodus 5:1, tags Exodus / Deliverance / Freedom. Matching no-JS fallback section, MusicRecording added to the page's JSON-LD list. Once the scripture-link infrastructure (v2.19.0) sees these refs, they auto-linkify to BibleGateway ESV.
 - `/site.json`: backfilled the `featuredRelease.reference` and `featuredRelease.scripture` fields for Let My People Go so any downstream consumer that reads site.json picks up the refs.
