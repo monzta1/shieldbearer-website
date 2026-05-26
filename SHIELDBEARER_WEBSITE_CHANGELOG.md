@@ -7,6 +7,21 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.27.0 - May 2026
+- **Tone pass on AI-and-Faith section.** Outside review flagged the apologetics pages as defensive and at points combative. Five pages moved to `/unpublished/` (kept deployable, kept in repo, removed from nav and footer): `open-letter`, `for-ai-artists`, `no-rulebook`, `artist-freedom`, `god-uses-tools`. Each has `<meta name="robots" content="noindex,nofollow">` and a red "Unpublished" banner labeling its status.
+- Site-wide: 409 lines of nav, footer, and "Related Reading" links to those pages scrubbed across 24 live HTML files. "AI and Faith" dropdown parent repointed from `/for-ai-artists` to `/gatekeeping`.
+- In-place trims on live pages:
+  - `manifesto.html`: "defending the freedom to examine it openly" → "the freedom to examine it openly"; "We defend open proclamation and open accountability" → "We stand for open proclamation".
+  - `gospel.html`: dropped "We became the AI guys defending AI. But that was never what we were doing."
+  - `are-you-an-ai-band.html`: hero reframed from "The title is a dare." to "Ten honest questions about how music actually gets made today."; "the gatekeepers' own standard" → "the same standard every modern record has been made under"; tier parentheticals "(or recently arrived from 1962)" and "(and probably argued about them online)" removed; deleted the hero link to the now-unpublished `/for-ai-artists`.
+  - `faq.html`: "your pride wearing a guitar strap" → "a different argument than the one being made"; "Full stop." removed; the "Bobby better practice" paragraph removed entirely; "pride masquerading as theological concern does not deserve a quiet response" → "The method is not what carries the witness. Christ is." Mirror edits applied to the JSON-LD FAQPage blob at top of file.
+  - `contact.html`: trimmed the "AI and faith conversation" paragraph; rerouted its inline references to live pages (`/gatekeeping`, `/faq#faq-ai-legitimate`).
+  - `how-it-works.html`: removed `Open Letter` from the doctrine chain in chapter "The thesis is on the record".
+  - `interviews.html`: removed the entire "An Open Letter" promotional section that previously sat below the press cards.
+  - `404.html`: removed the `For AI Artists` error-link card.
+- New file: `UNPUBLISHED.md` at repo root documenting what was disabled, why, and exact re-enable steps for each page individually or all five at once.
+- Doctrine, gatekeeping exegesis, creed, gospel narrative, and AI-and-creativity (the positive declarative pages) all left intact.
+
 ## v2.26.6 - May 2026
 - `/song-meanings`: dropped the "Why we wrote this" block from every dossier. It was the same boilerplate (creed/manifesto links) repeated under every song and added no per-song value. The footer nav and action links stay.
 
