@@ -7,6 +7,9 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.26.6 - May 2026
+- `/song-meanings`: dropped the "Why we wrote this" block from every dossier. It was the same boilerplate (creed/manifesto links) repeated under every song and added no per-song value. The footer nav and action links stay.
+
 ## v2.26.5 - May 2026
 - `/song-meanings`: removed Celestial Shield, Emmaus, !Machine, and Still Be My Vision from the auto-augmented dossier list. Their lyrics were parsed from YouTube descriptions and the extraction was not clean enough to publish. Demoted the four `shieldbearer-songs` records (`releaseDetected = false`) and re-ran the publisher; `released[]` is back down to just Let My People Go. The Worship genre hook in `song-meanings-augment.js` is left in place but currently inactive since no song matches. Future Worship songs (Still Be My Vision once its lyrics are curated by hand) can land in that section by being re-promoted.
 
