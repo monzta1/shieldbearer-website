@@ -7,6 +7,18 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.27.3 - May 2026 (Tone pass batch 4 of 4: negation-as-defense removed)
+Final batch in the tone pass. Four small edits that cut "this is not X" / "no apology" framings. Confident writing states what it IS.
+- `ai-and-creativity.html`: deleted the opening paragraph "This is not a defense of AI. It is a defense of the freedom of the artist to choose..." plus the "Some folks are saying AI is the Antichrist. Let us be real." soft framing. Page now leads with "Every generation has feared the new tool" and goes straight into the principle.
+- `god-uses-tools.html`: deleted the closing "Just to Be Clear / We are not AI advocates / We are Jesus advocates..." section entirely. The eleven Biblical examples now end the page on Scripture, which is a stronger close than the meta-disclaimer.
+- `manifesto.html`: "Censorship Is The Real Issue" beat reframed to "Open Proclamation". Same conviction, positive frame. Was: "Censorship is not only deletion. It is also suppression..." Now: "Shieldbearer proclaims Christ openly, answers for what it makes, and stands behind the work in public. Truth is tested in the light." States what Shieldbearer does, not what opponents do.
+- `faq.html`: three apology/defense refusals rewritten declaratively.
+  - Intro "direct answers, no spin, no apology" → "straight answers".
+  - "Shieldbearer names Christ plainly. Quotes Scripture directly. Makes no apology for either." → drops the "Makes no apology" clause.
+  - Bot fraud answer: "Shieldbearer condemns it without qualification and without apology" → "Shieldbearer condemns it plainly". Mirrored in the FAQPage JSON-LD blob.
+- Dir-form duplicates synced.
+- Tone pass is now complete. Four batches: (1) Scripture preserved onto gatekeeping, (2) in-place sarcasm trims, (3) three combat pages disabled and for-ai-artists rewritten, (4) negation-as-defense removed. No Scripture lost. No pages deleted. All disabled pages restorable per ARCHIVE-NOTES.md.
+
 ## v2.27.2 - May 2026 (Tone pass batch 3 of 3: disable 3 combat pages, rewrite for-ai-artists)
 - **Pre-flight Scripture safety check**: every verse on the three pages being disabled (open-letter, no-rulebook, artist-freedom) was confirmed already preserved on gatekeeping.html before disabling. No Scripture goes dark. See ARCHIVE-NOTES.md "Scripture Preservation Index".
 - **Three pages disabled** (not deleted, not removed): `open-letter`, `no-rulebook`, `artist-freedom`. Each moved to `/unpublished/` in both forms (root `.html` and directory-form `<slug>-dir/`). Each given `<meta name="robots" content="noindex,nofollow">` and a visible "Unpublished" banner at the top of the body. Sitemap entries removed.
