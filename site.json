@@ -1,18 +1,18 @@
 {
-  "generatedAt": "2026-05-02T13:00:08.851Z",
+  "generatedAt": "2026-05-21T12:08:22.217Z",
   "source": "sentinelbot-event-consumer",
   "homepage": {
     "banner": {
       "title": "Let My People Go",
       "image": "https://shieldbearerusa.com/images/signal-room/let-my-people-go.jpg",
-      "sourceUrl": "https://www.youtube.com/watch?v=0lUJcLKIt0o",
+      "sourceUrl": "",
       "activeReleaseId": "let-my-people-go"
     },
     "featuredRelease": {
       "songId": "let-my-people-go",
       "title": "Let My People Go",
-      "videoId": "0lUJcLKIt0o",
-      "sourceUrl": "https://www.youtube.com/watch?v=0lUJcLKIt0o",
+      "videoId": "let-my-people-go",
+      "sourceUrl": "",
       "artwork": "https://shieldbearerusa.com/images/signal-room/let-my-people-go.jpg",
       "lyrics": "Go DOWN, Moses!\nBurn through Egypt’s gates,\nPharaoh’s throne is shaking,\nCause freedom’s on its way!\n\nChains on the innocent,\nCrushed in a starving land,\nIsrael crying out,\nNo strength left to stand.\nOppression on their backs,\nThe fire in their bones,\nGod heard every tear,\nAnd thunder shook the throne!\n\nA whisper turned to a roar,\nA calling carved into stone…\n\nGo down, Moses!\nDeep into the darkness, stand!\nFace that Pharaoh,\nSay the word of Heaven’s command!\nGo down, Moses,\nBreak the yoke and shatter the hold!\nTell that tyrant,\nGOD says let My people GO!\n\nMoses stepped in unafraid,\nStorm in his spirit rose,\nSpoke the Name of Yahweh,\nAnd shook the earth below.\nPharaoh with a hardened heart,\nDefiant in his pride,\nBut judgment like a tidal wave\nWas rolling in the sky!\n\nA whisper turned to a roar,\nA calling carved into stone…\n\nGo down, Moses!\nDeep into the darkness, stand!\nFace that Pharaoh,\nSay the word of Heaven’s command!\nGo down, Moses,\nBreak the yoke and shatter the hold!\nTell that tyrant,\nGOD says let My people GO!\n\nLET… THEM… GO!\n(Tremble, Pharaoh, your kingdom’s falling)\nLET… THEM… GO!\n(The chains you forged are breaking open)\nLET… THEM… GO!\n(Yahweh’s voice is thunder spoken)\nLET MY PEOPLE GO!\n\nGo down, Moses!\nStand where warriors never stand,\nSpeak the freedom\nWritten by the Lord’s own hand!\nGo down, Moses,\nBreak the chains and lift the low!\nTell that tyrant,\nGOD says LET MY PEOPLE GO!",
       "songMeaning": "A cry that shook a nation. A command that broke chains.\n\nGod saw the suffering. God heard the cries. He sent one man straight into the center of power with a message no king could ignore. Barefoot. Stuttering. Wanted for murder. Walked right into the throne room of the most powerful empire on earth.\n\n“Let My people go.”\n\nThat was not a request. That was Heaven breaking in.\n\nWe wrote this because that story is not old. There are still Pharaohs. Still systems. Still chains. And God is still the One who hears every cry, counts every brick, and decides when it ends.\n\nIf you feel held down, held back, or held captive, pay attention.",
@@ -21,23 +21,23 @@
         "ref": "Exodus 5:1",
         "quote": "Thus says the LORD, the God of Israel, 'Let my people go, that they may hold a feast to me in the wilderness.'"
       },
-      "publishedAt": "2026-05-02T12:40:33Z"
+      "publishedAt": "2026-05-21T12:08:22.217Z"
     },
-    "lastUpdatedAt": "2026-05-02T13:00:08.851Z"
+    "lastUpdatedAt": "2026-05-21T12:08:22.217Z"
   },
   "release": {
     "id": "let-my-people-go",
     "source": "shield-ingest-cli",
-    "publishedAt": "2026-05-02T12:40:33Z",
-    "traceId": "youtube:0lUJcLKIt0o"
+    "publishedAt": "2026-05-21T12:08:22.217Z",
+    "traceId": "let-my-people-go#2026-05-21T12:08:22.217Z#SONG_UPDATED"
   },
   "releaseIndex": {
     "let my people go": {
       "id": "let-my-people-go",
       "title": "Let My People Go",
-      "publishedAt": "2026-05-02T12:40:33Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=0lUJcLKIt0o",
-      "traceId": "youtube:0lUJcLKIt0o"
+      "publishedAt": "2026-05-21T12:08:22.217Z",
+      "sourceUrl": "",
+      "traceId": "let-my-people-go#2026-05-21T12:08:22.217Z#SONG_UPDATED"
     },
     "simulated shieldbearer release": {
       "id": "simulated-video-001",
@@ -45,6 +45,300 @@
       "publishedAt": "2026-04-19T02:47:46.470Z",
       "sourceUrl": "https://youtube.com/watch?v=simulated-video-001",
       "traceId": "simulated-video-001"
+    },
+    "sentinels": {
+      "id": "0jPL3Mg88ZQ",
+      "title": "SENTINELS",
+      "publishedAt": "2026-04-14T22:17:26Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=0jPL3Mg88ZQ",
+      "traceId": "0jPL3Mg88ZQ"
+    },
+    "rabbit pig": {
+      "id": "9zvO0HeoEIM",
+      "title": "Rabbit Pig",
+      "publishedAt": "2026-03-27T16:43:41Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=9zvO0HeoEIM",
+      "traceId": "9zvO0HeoEIM"
+    },
+    "my neighbors are listening to metal tonight whether they like it or not": {
+      "id": "JKbStFqCWn0",
+      "title": "My Neighbors Are Listening to Metal Tonight (Whether They Like It or Not)",
+      "publishedAt": "2026-03-15T01:41:29Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=JKbStFqCWn0",
+      "traceId": "JKbStFqCWn0"
+    },
+    "the man": {
+      "id": "9d0qZzeSFno",
+      "title": "The Man",
+      "publishedAt": "2026-02-27T15:16:35Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=9d0qZzeSFno",
+      "traceId": "9d0qZzeSFno"
+    },
+    "the man verbatim scripture": {
+      "id": "lAP0leoM49k",
+      "title": "The Man – Verbatim Scripture",
+      "publishedAt": "2026-02-26T00:00:06Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=lAP0leoM49k",
+      "traceId": "lAP0leoM49k"
+    },
+    "afraid to say his name": {
+      "id": "7ceaw6UuKFI",
+      "title": "Afraid to Say His Name?",
+      "publishedAt": "2026-02-13T15:38:39Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=7ceaw6UuKFI",
+      "traceId": "7ceaw6UuKFI"
+    },
+    "can christian metal go this hard": {
+      "id": "6GXXGAKZHtE",
+      "title": "Can Christian Metal Go This Hard?",
+      "publishedAt": "2026-02-12T02:51:57Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=6GXXGAKZHtE",
+      "traceId": "6GXXGAKZHtE"
+    },
+    "galilean shorts": {
+      "id": "Bse2w3qVK_Y",
+      "title": "GALILEAN #shorts",
+      "publishedAt": "2026-02-10T03:12:05Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=Bse2w3qVK_Y",
+      "traceId": "Bse2w3qVK_Y"
+    },
+    "shieldbearer": {
+      "id": "0sFc9mkhCR0",
+      "title": "Shieldbearer",
+      "publishedAt": "2026-01-23T19:41:11Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=0sFc9mkhCR0",
+      "traceId": "0sFc9mkhCR0"
+    },
+    "nazarene shieldbearer": {
+      "id": "4jEKEp2sYWg",
+      "title": "NAZARENE – Shieldbearer",
+      "publishedAt": "2026-01-06T21:02:36Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=4jEKEp2sYWg",
+      "traceId": "4jEKEp2sYWg"
+    },
+    "ruach": {
+      "id": "JGbJKWL2F0Q",
+      "title": "RUACH",
+      "publishedAt": "2025-12-14T15:07:55Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=JGbJKWL2F0Q",
+      "traceId": "JGbJKWL2F0Q"
+    },
+    "star scepter christian metal based on numbers 24": {
+      "id": "VMQ2mg_n9L8",
+      "title": "Star, Scepter (Christian metal based on Numbers 24)",
+      "publishedAt": "2025-12-04T03:36:54Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=VMQ2mg_n9L8",
+      "traceId": "VMQ2mg_n9L8"
+    },
+    "silent as night": {
+      "id": "Y7a0R2FGDeo",
+      "title": "Silent As Night",
+      "publishedAt": "2025-11-03T19:45:21Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=Y7a0R2FGDeo",
+      "traceId": "Y7a0R2FGDeo"
+    },
+    "tidings of comfort and joy god rest ye merry gentlemen": {
+      "id": "8khugdipSJM",
+      "title": "Tidings of Comfort and Joy (God Rest Ye Merry Gentlemen)",
+      "publishedAt": "2025-10-24T00:24:36Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=8khugdipSJM",
+      "traceId": "8khugdipSJM"
+    },
+    "broken helicopter a father s song": {
+      "id": "CNr54CpYz7o",
+      "title": "Broken Helicopter – A Father’s Song",
+      "publishedAt": "2025-10-17T14:50:28Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=CNr54CpYz7o",
+      "traceId": "CNr54CpYz7o"
+    },
+    "unaliving the giant official christian metal release": {
+      "id": "AIiCw1a5hnM",
+      "title": "Unaliving the Giant (Official Christian Metal Release)",
+      "publishedAt": "2025-10-10T02:30:01Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=AIiCw1a5hnM",
+      "traceId": "AIiCw1a5hnM"
+    },
+    "the architect official christian metal release": {
+      "id": "E9rJluVWvxM",
+      "title": "The Architect (Official Christian Metal Release)",
+      "publishedAt": "2025-09-26T15:41:13Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=E9rJluVWvxM",
+      "traceId": "E9rJluVWvxM"
+    },
+    "gut punch": {
+      "id": "3xi9eDriB-E",
+      "title": "Gut Punch",
+      "publishedAt": "2025-09-19T15:02:46Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=3xi9eDriB-E",
+      "traceId": "3xi9eDriB-E"
+    },
+    "over the skies of hell official lyric video": {
+      "id": "blL7TiDkDrc",
+      "title": "Over the Skies of Hell (Official Lyric Video)",
+      "publishedAt": "2025-09-10T14:54:01Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=blL7TiDkDrc",
+      "traceId": "blL7TiDkDrc"
+    },
+    "1000 suns": {
+      "id": "DsGhOgXLGXI",
+      "title": "1000 Suns",
+      "publishedAt": "2025-09-05T16:28:51Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=DsGhOgXLGXI",
+      "traceId": "DsGhOgXLGXI"
+    },
+    "emmaus shieldbearer official metal anthem": {
+      "id": "0ljswHO8D2I",
+      "title": "Emmaus – Shieldbearer (Official Metal Anthem",
+      "publishedAt": "2025-08-28T12:36:21Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=0ljswHO8D2I",
+      "traceId": "0ljswHO8D2I"
+    },
+    "he found his voice": {
+      "id": "DFfIX-mlS-k",
+      "title": "He Found His Voice",
+      "publishedAt": "2025-08-21T14:48:31Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=DFfIX-mlS-k",
+      "traceId": "DFfIX-mlS-k"
+    },
+    "quake christian metal": {
+      "id": "tH2GpPLY3so",
+      "title": "QUAKE (Christian Metal",
+      "publishedAt": "2025-08-14T00:17:51Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=tH2GpPLY3so",
+      "traceId": "tH2GpPLY3so"
+    },
+    "worth it all official video": {
+      "id": "BwWB95z6lKg",
+      "title": "Worth It All (Official Video)",
+      "publishedAt": "2025-07-30T17:32:30Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=BwWB95z6lKg",
+      "traceId": "BwWB95z6lKg"
+    },
+    "machine outro to celestial shield": {
+      "id": "3CPuHgWr-L0",
+      "title": "!Machine – Outro to Celestial Shield",
+      "publishedAt": "2025-07-25T16:00:06Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=3CPuHgWr-L0",
+      "traceId": "3CPuHgWr-L0"
+    },
+    "celestial shield lyric video shieldbearer": {
+      "id": "vBGEIMXs6h0",
+      "title": "Celestial Shield (Lyric Video) – Shieldbearer",
+      "publishedAt": "2025-07-15T02:04:57Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=vBGEIMXs6h0",
+      "traceId": "vBGEIMXs6h0"
+    },
+    "still be my vision a modern worship hymn inspired by be thou my vision": {
+      "id": "C4tXr2RSxPI",
+      "title": "Still Be My Vision (A Modern Worship Hymn Inspired by “Be Thou My Vision”)",
+      "publishedAt": "2025-07-02T10:00:06Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=C4tXr2RSxPI",
+      "traceId": "C4tXr2RSxPI"
+    },
+    "shieldbearer pahalgam a prayer for india": {
+      "id": "SUXJxqg2gF0",
+      "title": "🇮🇳 Shieldbearer – Pahalgam (A Prayer for India)",
+      "publishedAt": "2025-06-12T18:21:51Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=SUXJxqg2gF0",
+      "traceId": "SUXJxqg2gF0"
+    },
+    "ain t no way but he did shieldbearer": {
+      "id": "2UEY0_xTOuY",
+      "title": "Ain’t No Way (But He Did) – Shieldbearer",
+      "publishedAt": "2025-05-30T10:28:41Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=2UEY0_xTOuY",
+      "traceId": "2UEY0_xTOuY"
+    },
+    "eagle s wrath operation fire": {
+      "id": "erURAmLBVok",
+      "title": "🇺🇸 Eagle’s Wrath (Operation Fire)",
+      "publishedAt": "2025-05-23T10:00:06Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=erURAmLBVok",
+      "traceId": "erURAmLBVok"
+    },
+    "slayer of the grave remastered": {
+      "id": "1hSudFULuJc",
+      "title": "Slayer of the Grave (Remastered)",
+      "publishedAt": "2025-05-05T23:23:39Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=1hSudFULuJc",
+      "traceId": "1hSudFULuJc"
+    },
+    "prison break": {
+      "id": "6tVUPs1KLBQ",
+      "title": "Prison Break",
+      "publishedAt": "2025-05-04T19:06:16Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=6tVUPs1KLBQ",
+      "traceId": "6tVUPs1KLBQ"
+    },
+    "where the morning comes": {
+      "id": "EZOXo15QgLk",
+      "title": "Where the Morning Comes",
+      "publishedAt": "2025-05-04T04:05:47Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=EZOXo15QgLk",
+      "traceId": "EZOXo15QgLk"
+    },
+    "we join the song": {
+      "id": "KARnuqkT6ag",
+      "title": "We Join the Song",
+      "publishedAt": "2025-05-04T04:01:23Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=KARnuqkT6ag",
+      "traceId": "KARnuqkT6ag"
+    },
+    "we believe": {
+      "id": "C4Rgv8w1ljI",
+      "title": "We Believe",
+      "publishedAt": "2025-05-04T03:51:44Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=C4Rgv8w1ljI",
+      "traceId": "C4Rgv8w1ljI"
+    },
+    "washed in grace": {
+      "id": "K7vsc8gqa_4",
+      "title": "Washed in Grace",
+      "publishedAt": "2025-05-04T03:46:45Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=K7vsc8gqa_4",
+      "traceId": "K7vsc8gqa_4"
+    },
+    "the arms that waited": {
+      "id": "Dpb3KRGxguU",
+      "title": "The Arms That Waited",
+      "publishedAt": "2025-05-04T03:39:35Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=Dpb3KRGxguU",
+      "traceId": "Dpb3KRGxguU"
+    },
+    "mercy in the quiet": {
+      "id": "8yOFetfoRAo",
+      "title": "Mercy in the Quiet",
+      "publishedAt": "2025-05-04T03:30:29Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=8yOFetfoRAo",
+      "traceId": "8yOFetfoRAo"
+    },
+    "hymn of the free": {
+      "id": "2HzH15hDTTk",
+      "title": "Hymn of the Free",
+      "publishedAt": "2025-05-04T03:27:07Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=2HzH15hDTTk",
+      "traceId": "2HzH15hDTTk"
+    },
+    "light of dusk": {
+      "id": "Hnewej6WjkE",
+      "title": "Light of Dusk",
+      "publishedAt": "2025-05-04T02:50:26Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=Hnewej6WjkE",
+      "traceId": "Hnewej6WjkE"
+    },
+    "pahalgam a prayer for india": {
+      "id": "9NQkaZbntUs",
+      "title": "Pahalgam (A Prayer for India)",
+      "publishedAt": "2025-04-26T15:28:11Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=9NQkaZbntUs",
+      "traceId": "9NQkaZbntUs"
+    },
+    "slayer of the grave": {
+      "id": "rDtFSFQn8ik",
+      "title": "Slayer of the Grave",
+      "publishedAt": "2025-04-20T04:00:06Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=rDtFSFQn8ik",
+      "traceId": "rDtFSFQn8ik"
     }
   },
   "signal": [
@@ -68,63 +362,6 @@
       "contentHash": ""
     },
     {
-      "songId": "0jPL3Mg88ZQ",
-      "videoId": "",
-      "title": "SENTINELS",
-      "state": "draft",
-      "traceId": "0jPL3Mg88ZQ",
-      "publishedAt": "2026-04-14T22:17:26Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=0jPL3Mg88ZQ",
-      "artwork": "",
-      "lyrics": "Matthew 24:42\nStand awake.\nGuard the truth.\nSound the warning.\nThe King is coming.\nLyrics\nOn the wall in the dead of night\nEyes awake, blades held tight\nTrumpet ready in the hand\nWaiting on the King’s command\nKingdoms fall, empires crawl\nWe do not sleep, we do not stall\nThrough the dark the warning call\nSentinels upon the wall\nIf the sword comes, sound the cry\nRaise the warning to the sky\nVoices tearing through it all\nSentinels upon the wall\nSentinels\nStand awake\nGuard the truth\nFor heaven’s sake\nTrumpets sound\nHear the call\nSentinels upon the wall\nSentinels\nLift your eyes",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:54.231Z",
-      "contentHash": ""
-    },
-    {
-      "songId": "9zvO0HeoEIM",
-      "videoId": "",
-      "title": "Rabbit Pig",
-      "state": "draft",
-      "traceId": "9zvO0HeoEIM",
-      "publishedAt": "2026-03-27T16:43:41Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=9zvO0HeoEIM",
-      "artwork": "",
-      "lyrics": "He adapts. He settles. He starts to think this is just life now.\nUntil one moment changes everything.\n“When he came to his senses…” (Luke 15:17)\nHe gets up.\nHe leaves the mud.\nAnd he runs back to the Father.\nThat’s the message.\nSome stay in the mud.\nSome get up and run.\nSo when you hear:\n“rabbit pig…”\nAsk yourself:\nWhere am I right now?\nAnd more importantly…\nam I staying here, or am I going back?",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:54.350Z",
-      "contentHash": ""
-    },
-    {
-      "songId": "JKbStFqCWn0",
-      "videoId": "",
-      "title": "My Neighbors Are Listening to Metal Tonight (Whether They Like It or Not)",
-      "state": "draft",
-      "traceId": "JKbStFqCWn0",
-      "publishedAt": "2026-03-15T01:41:29Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=JKbStFqCWn0",
-      "artwork": "",
-      "lyrics": "Tracking guitars tonight.\nMy neighbors are listening to metal tonight.\nWhether they like it or not.\nRiffs are sounding furious.\nNew Shieldbearer music coming soon.\nChristian metal.\nHeavy guitars.\nChrist reigns.",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:54.409Z",
-      "contentHash": ""
-    },
-    {
       "songId": "c3wIjZxsSHg",
       "videoId": "",
       "title": "For an AI Band… We Have Way Too Much Guitar Gear",
@@ -141,63 +378,6 @@
         "quote": ""
       },
       "updatedAt": "2026-04-19T02:19:54.449Z",
-      "contentHash": ""
-    },
-    {
-      "songId": "9d0qZzeSFno",
-      "videoId": "",
-      "title": "The Man",
-      "state": "draft",
-      "traceId": "9d0qZzeSFno",
-      "publishedAt": "2026-02-27T15:16:35Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=9d0qZzeSFno",
-      "artwork": "",
-      "lyrics": "[Verse]\nAnd you will hear\nOf wars\nAnd rumors of wars\n[Matthew 24:6]\nSee that you are not troubled\nFor all these things must come to pass\nBut the end is not yet\n[Matthew 24:6]\nNation will rise against nation\nKingdom against kingdom\n[Matthew 24:7]\nFamines\nPestilences\nEarthquakes\nIn various places\n[Matthew 24:7]\nAll these\nAre the beginning\nOf sorrows\n[Matthew 24:8]\nWhen the Man comes around\n[Verse]\nThere will be signs\nIn the sun\nIn the moon\nIn the stars\n[Luke 21:25]\nOn the earth\nDistress of nations\nWith perplexity\n[Luke 21:25]\nThe sea\nAnd the waves\nRoaring\n[Luke 21:25]\nMen’s hearts failing them\nFrom fear\nFrom expectation\n[Luke 21:26]\nOf those things\nWhich are coming\nOn the earth\n[Luke 21:26]\nFor the powers\nOf the heavens\nWill be shaken\n[Luke 21:26]\nWhen the Man comes around\n[Pre-Chorus]\nWatch therefore\nYou do not know\nWhat hour\nYour Lord is coming\n[Matthew 24:42]\nWhen the Man comes around\n[Chorus]\nWhen the Man\nWhen the Man\nWhen the Man comes around\nBehold\nHe is coming\nWith clouds\n[Revelation 1:7]\nEvery eye\nWill see Him\n[Revelation 1:7]\nWhen the Man\nWhen the Man\nWhen the Man comes around\n[Verse]\nJerusalem\nWill be trampled\nBy Gentiles\n[Luke 21:24]\nUntil the times\nOf the Gentiles\nAre fulfilled\n[Luke 21:24]\nBlindness in part\nHas happened\nTo Israel\n[Romans 11:25]\nUntil the fullness\nOf the Gentiles\nHas come in\n[Romans 11:25]\nWhen the Man comes around\n[Section]\nWhen\nThe\nMan\nWhen\nThe\nMan\nThe day of the Lord\nWill come\nAs a thief\nIn the night\n[2 Peter 3:10]\nThe heavens\nWill pass away\nWith a great noise\n[2 Peter 3:10]\nThe elements\nWill melt\nWith fervent heat\n[2 Peter 3:10]\nThe earth\nAnd the works\nThat are in it\nWill be burned up\n[2 Peter 3:10]\nIt is a fearful thing\nTo fall\nInto the hands\nOf the living God\n[Hebrews 10:31]\nWhen the Man comes around\n[Chorus]\nWhen the Man\nWhen the Man\nWhen the Man comes around\nThe kingdoms\nOf this world\nHave become\nThe kingdoms\nOf our Lord\nAnd of His Christ\n[Revelation 11:15]\nHe shall reign\nForever\nAnd ever\n[Revelation 11:15]\nWhen the Man comes around\n[Outro]\nI am\nThe Alpha\nAnd the Omega\n[Revelation 22:13]\nThe Beginning\nAnd the End\n[Revelation 22:13]\nThe First\nAnd the Last\n[Revelation 22:13]\nSurely\nI am coming\nQuickly\n[Revelation 22:20]\nAmen\nEven so\nCome\nLord Jesus\n[Revelation 22:20]",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:54.529Z",
-      "contentHash": ""
-    },
-    {
-      "songId": "lAP0leoM49k",
-      "videoId": "",
-      "title": "The Man – Verbatim Scripture",
-      "state": "draft",
-      "traceId": "lAP0leoM49k",
-      "publishedAt": "2026-02-26T00:00:06Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=lAP0leoM49k",
-      "artwork": "",
-      "lyrics": "[Verse]\nAnd you will hear\nOf wars\nAnd rumors of wars\n[Matthew 24:6]\nSee that you are not troubled\nFor all these things must come to pass\nBut the end is not yet\n[Matthew 24:6]\nNation will rise against nation\nKingdom against kingdom\n[Matthew 24:7]\nFamines\nPestilences\nEarthquakes\nIn various places\n[Matthew 24:7]\nAll these\nAre the beginning\nOf sorrows\n[Matthew 24:8]\nWhen the Man comes around\n[Verse]\nThere will be signs\nIn the sun\nIn the moon\nIn the stars\n[Luke 21:25]\nOn the earth\nDistress of nations\nWith perplexity\n[Luke 21:25]\nThe sea\nAnd the waves\nRoaring\n[Luke 21:25]\nMen’s hearts failing them\nFrom fear\nFrom expectation\n[Luke 21:26]\nOf those things\nWhich are coming\nOn the earth\n[Luke 21:26]\nFor the powers\nOf the heavens\nWill be shaken\n[Luke 21:26]\nWhen the Man comes around\n[Pre-Chorus]\nWatch therefore\nYou do not know\nWhat hour\nYour Lord is coming\n[Matthew 24:42]\nWhen the Man comes around\n[Chorus]\nWhen the Man\nWhen the Man\nWhen the Man comes around\nBehold\nHe is coming\nWith clouds\n[Revelation 1:7]\nEvery eye\nWill see Him\n[Revelation 1:7]\nWhen the Man\nWhen the Man\nWhen the Man comes around\n[Verse]\nJerusalem\nWill be trampled\nBy Gentiles\n[Luke 21:24]\nUntil the times\nOf the Gentiles\nAre fulfilled\n[Luke 21:24]\nBlindness in part\nHas happened\nTo Israel\n[Romans 11:25]\nUntil the fullness\nOf the Gentiles\nHas come in\n[Romans 11:25]\nWhen the Man comes around\n[Section]\nWhen\nThe\nMan\nWhen\nThe\nMan\nThe day of the Lord\nWill come\nAs a thief\nIn the night\n[2 Peter 3:10]\nThe heavens\nWill pass away\nWith a great noise\n[2 Peter 3:10]\nThe elements\nWill melt\nWith fervent heat\n[2 Peter 3:10]\nThe earth\nAnd the works\nThat are in it\nWill be burned up\n[2 Peter 3:10]\nIt is a fearful thing\nTo fall\nInto the hands\nOf the living God\n[Hebrews 10:31]\nWhen the Man comes around\n[Chorus]\nWhen the Man\nWhen the Man\nWhen the Man comes around\nThe kingdoms\nOf this world\nHave become\nThe kingdoms\nOf our Lord\nAnd of His Christ\n[Revelation 11:15]\nHe shall reign\nForever\nAnd ever\n[Revelation 11:15]\nWhen the Man comes around\n[Outro]\nI am\nThe Alpha\nAnd the Omega\n[Revelation 22:13]\nThe Beginning\nAnd the End\n[Revelation 22:13]\nThe First\nAnd the Last\n[Revelation 22:13]\nSurely\nI am coming\nQuickly\n[Revelation 22:20]\nAmen\nEven so\nCome\nLord Jesus\n[Revelation 22:20]",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:54.589Z",
-      "contentHash": ""
-    },
-    {
-      "songId": "7ceaw6UuKFI",
-      "videoId": "",
-      "title": "Afraid to Say His Name?",
-      "state": "draft",
-      "traceId": "7ceaw6UuKFI",
-      "publishedAt": "2026-02-13T15:38:39Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=7ceaw6UuKFI",
-      "artwork": "",
-      "lyrics": "Iron dust and canyoned scars\nFrozen ground from ancient wars\nDry river veins stretched far\nThe wounded red of Mars\nEndless storms of rolling thunder\nClouds that tear the dark asunder\nGravity that drags us under\nThe burning giant Jupiter\nOrbits lock\nPressure climbs\nMass obeys\nCurves of time\nGalilean\nLord of flame\nBefore the stars\nYou bore the Name\nGalilean\nChrist alone\nDarkness breaks\nThe void is torn\nA sun implodes and leaves a scar\nIts burning shell is ripped apart\nMatter crushed beyond the far\nThe shattered core, neutron star\nA spiral flood of burning rays\nA hundred billion suns ablaze\nWe drift within its ancient sway\nThe endless wheel, Milky Way\nLight departs\nStill arrives\nAges pass\nBefore our eyes\nGalilean\nLord of flame\nBefore the stars\nYou bore the Name\nGalilean\nChrist alone\nDarkness breaks\nThe void is torn\nStars ignite\nStars decay\nLight arrives\nFar too late\nWorlds collapse\nTime is torn\nAsh remains\nWhere fire was born\nGalilean\nKing of all\nWhen stars collapse\nAnd heavens fall\nGalilean\nEnd and start\nAll creation\nBears Your mark\nFire fades from every sky\nNight stands bare before the dawn\nWhat was made will pass and die\nJesus reigns\nThe Galilean",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:54.629Z",
       "contentHash": ""
     },
     {
@@ -220,63 +400,6 @@
       "contentHash": ""
     },
     {
-      "songId": "6GXXGAKZHtE",
-      "videoId": "",
-      "title": "Can Christian Metal Go This Hard?",
-      "state": "draft",
-      "traceId": "6GXXGAKZHtE",
-      "publishedAt": "2026-02-12T02:51:57Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=6GXXGAKZHtE",
-      "artwork": "",
-      "lyrics": "Iron dust and canyoned scars\nFrozen ground from ancient wars\nDry river veins stretched far\nThe wounded red of Mars\nEndless storms of rolling thunder\nClouds that tear the dark asunder\nGravity that drags us under\nThe burning giant Jupiter\nOrbits lock\nPressure climbs\nMass obeys\nCurves of time\nGalilean\nLord of flame\nBefore the stars\nYou bore the Name\nGalilean\nChrist alone\nDarkness breaks\nThe void is torn\nA sun implodes and leaves a scar\nIts burning shell is ripped apart\nMatter crushed beyond the far\nThe shattered core, neutron star\nA spiral flood of burning rays\nA hundred billion suns ablaze\nWe drift within its ancient sway\nThe endless wheel, Milky Way\nLight departs\nStill arrives\nAges pass\nBefore our eyes\nGalilean\nLord of flame\nBefore the stars\nYou bore the Name\nGalilean\nChrist alone\nDarkness breaks\nThe void is torn\nStars ignite\nStars decay\nLight arrives\nFar too late\nWorlds collapse\nTime is torn\nAsh remains\nWhere fire was born\nGalilean\nKing of all\nWhen stars collapse\nAnd heavens fall\nGalilean\nEnd and start\nAll creation\nBears Your mark\nFire fades from every sky\nNight stands bare before the dawn\nWhat was made will pass and die\nJesus reigns\nThe Galilean",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:54.709Z",
-      "contentHash": ""
-    },
-    {
-      "songId": "Bse2w3qVK_Y",
-      "videoId": "",
-      "title": "GALILEAN #shorts",
-      "state": "draft",
-      "traceId": "Bse2w3qVK_Y",
-      "publishedAt": "2026-02-10T03:12:05Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=Bse2w3qVK_Y",
-      "artwork": "",
-      "lyrics": "Iron dust and canyoned scars\nFrozen ground from ancient wars\nDry river veins stretched far\nThe wounded red of Mars\nEndless storms of rolling thunder\nClouds that tear the dark asunder\nGravity that drags us under\nThe burning giant Jupiter\nOrbits lock\nPressure climbs\nMass obeys\nCurves of time\nGalilean\nLord of flame\nBefore the stars\nYou bore the Name\nGalilean\nChrist alone\nDarkness breaks\nThe void is torn\nA sun implodes and leaves a scar\nIts burning shell is ripped apart\nMatter crushed beyond the far\nThe shattered core, neutron star\nA spiral flood of burning rays\nA hundred billion suns ablaze\nWe drift within its ancient sway\nThe endless wheel, Milky Way\nLight departs\nStill arrives\nAges pass\nBefore our eyes\nGalilean\nLord of flame\nBefore the stars\nYou bore the Name\nGalilean\nChrist alone\nDarkness breaks\nThe void is torn\nStars ignite\nStars decay\nLight arrives\nFar too late\nWorlds collapse\nTime is torn\nAsh remains\nWhere fire was born\nGalilean\nKing of all\nWhen stars collapse\nAnd heavens fall\nGalilean\nEnd and start\nAll creation\nBears Your mark\nFire fades from every sky\nNight stands bare before the dawn\nWhat was made will pass and die\nJesus reigns\nThe Galilean",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:54.789Z",
-      "contentHash": ""
-    },
-    {
-      "songId": "0sFc9mkhCR0",
-      "videoId": "",
-      "title": "Shieldbearer",
-      "state": "draft",
-      "traceId": "0sFc9mkhCR0",
-      "publishedAt": "2026-01-23T19:41:11Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=0sFc9mkhCR0",
-      "artwork": "",
-      "lyrics": "Iron dust and canyoned scars\nFrozen ground from ancient wars\nDry river veins stretched far\nThe wounded red of Mars\nEndless storms of rolling thunder\nClouds that tear the dark asunder\nGravity that drags us under\nThe burning giant Jupiter\nOrbits lock\nPressure climbs\nMass obeys\nCurves of time\nGalilean\nLord of flame\nBefore the stars\nYou bore the Name\nGalilean\nChrist alone\nDarkness breaks\nThe void is torn\nA sun implodes and leaves a scar\nIts burning shell is ripped apart\nMatter crushed beyond the far\nThe shattered core, neutron star\nA spiral flood of burning rays\nA hundred billion suns ablaze\nWe drift within its ancient sway\nThe endless wheel, Milky Way\nLight departs\nStill arrives\nAges pass\nBefore our eyes\nGalilean\nLord of flame\nBefore the stars\nYou bore the Name\nGalilean\nChrist alone\nDarkness breaks\nThe void is torn\nStars ignite\nStars decay\nLight arrives\nFar too late\nWorlds collapse\nTime is torn\nAsh remains\nWhere fire was born\nGalilean\nKing of all\nWhen stars collapse\nAnd heavens fall\nGalilean\nEnd and start\nAll creation\nBears Your mark\nFire fades from every sky\nNight stands bare before the dawn\nWhat was made will pass and die\nJesus reigns\nThe Galilean",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:54.829Z",
-      "contentHash": ""
-    },
-    {
       "songId": "jLxS2SGTcdk",
       "videoId": "",
       "title": "Nazarene.Heavy.Opens with an oud.#Nazarene #Shieldbearer #ChristianMetal",
@@ -293,44 +416,6 @@
         "quote": ""
       },
       "updatedAt": "2026-04-19T02:19:54.869Z",
-      "contentHash": ""
-    },
-    {
-      "songId": "4jEKEp2sYWg",
-      "videoId": "",
-      "title": "NAZARENE – Shieldbearer",
-      "state": "draft",
-      "traceId": "4jEKEp2sYWg",
-      "publishedAt": "2026-01-06T21:02:36Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=4jEKEp2sYWg",
-      "artwork": "",
-      "lyrics": "LYRICS\nHoly\nMatchless\nLifted high\nCrowned in truth\nBefore all time\nGlory walks in mortal frame\nGod revealed\nWe praise the Name\nBlameless\nFaithful\nWithout stain\nLove stood firm\nIn spite of pain\nYou chose the cross\nYou bore the weight\nStill You reign\nStill You reign\nNAZARENE\nNAZARENE\nALL HONOR\nALL PRAISE\nNAZARENE\nRisen\nLiving\nNever slain\nDeath was bent\nAround Your Name\nKing of kings\nNo equal throne\nChrist alone\nChrist alone\nNAZARENE\nNAZARENE\nALL HONOR\nALL PRAISE\nNAZARENE\nNo other Name\nNo other throne\nNo other power\nChrist alone\nCHRIST\nALONE\nCHRIST\nALONE\nNAZARENE\nNAZARENE\nEVERY KNEE\nEVERY TONGUE\nNAZARENE\nAll glory\nAll praise\nForever\nNAZARENE",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:54.896Z",
-      "contentHash": ""
-    },
-    {
-      "songId": "VPFpm1_lFMk",
-      "videoId": "",
-      "title": "Shieldbearer",
-      "state": "draft",
-      "traceId": "VPFpm1_lFMk",
-      "publishedAt": "2025-12-27T02:11:06Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=VPFpm1_lFMk",
-      "artwork": "",
-      "lyrics": "At some point my son watched this and said,\n“Dad, this isn’t Little Drummer Boy.\nThis is Big Drummer Man.”\nHe was right.\nThis is not a cover or a recreation.\nIt is a drum-led cinematic reimagining.\nA modern offering using modern tools, modern sound, and a lot of enthusiasm.\nNo perfect edits.\nNo subtle restraint.\nJust rhythm, movement, and a creative moment imagined out loud.\nIf it makes you smile, pause, laugh, or ask questions, that is enough.\nSometimes you do not polish the idea.\nYou just put it on the floor and let it exist.",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:54.949Z",
       "contentHash": ""
     },
     {
@@ -353,44 +438,6 @@
       "contentHash": ""
     },
     {
-      "songId": "JGbJKWL2F0Q",
-      "videoId": "",
-      "title": "RUACH",
-      "state": "draft",
-      "traceId": "JGbJKWL2F0Q",
-      "publishedAt": "2025-12-14T15:07:55Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=JGbJKWL2F0Q",
-      "artwork": "",
-      "lyrics": "Master, we proclaim You, sovereign over all\nBy Your breath the void surrendered and the silent depths were called\nWhen the final trumpet tears the heavens from the sky\nEvery nation sees the scars of the Lamb who rose to life\nEvil hunts my footsteps, flesh is drawn toward the fall\nRUACH, drive the dark away, let no deceit remain at all\nYou who scattered legions with the thunder of Your word\nYou who left the heights of glory for redemption undeserved\nIf Your people go to silence, then the stones awake and cry\nEarth itself erupts in witness to the King enthroned on high\nMountains quake with reverence, oceans echo Your decree\nAll creation answers back with a truth no soul can flee\nRUACH, shake the ages\nLet the firmament awake\nIf the stones erupt in thunder\nThen ignite my very frame\nRUACH, shake the ages\nAll You fashioned bow and see\nWhen the cosmos roars allegiance\nThe one who cries is me\nWhere no shadow ever reaches, that is where my soul will rise\nWhere the everlasting brightness burns, I stand before Your eyes\nHosts of blazing warriors wait the whisper of Your will\nAnd with their ranks unending I will praise You standing still\nLord of Lords, Your lifeblood fell and broke the captive chain\nThen You rose in power conquering the darkness and its reign\nTyrant night was shattered when You called the sleepers free\nMaster, I surrender, I fall prostrate at Your feet\nRUACH moving, judgment waking\nNight collapsing, strongholds breaking\nEarth responding, fire ascending\nEvery knee to You bending\nRUACH, shake the ages\nLet the firmament awake\nIf the stones erupt in thunder\nThen ignite my very frame\nRUACH, shake the ages\nAll You fashioned bow and see\nWhen the final roar is spoken\nThe one who cries is me",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:55.009Z",
-      "contentHash": ""
-    },
-    {
-      "songId": "VMQ2mg_n9L8",
-      "videoId": "",
-      "title": "Star, Scepter (Christian metal based on Numbers 24)",
-      "state": "draft",
-      "traceId": "VMQ2mg_n9L8",
-      "publishedAt": "2025-12-04T03:36:54Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=VMQ2mg_n9L8",
-      "artwork": "",
-      "lyrics": "FULL LYRICS (NUMBERS 24 in song)\nThe Spirit of God came upon him\nThe oracle of the man whose eye is opened\nHe sees the vision of the Almighty\nFalling down with eyes uncovered\nHow lovely are your tents, O Jacob\nYour dwellings, O Israel\nLike valleys they spread out\nLike gardens beside the river\nA Star out of Jacob\nA Scepter out of Israel\nA Star out of Jacob\nA Scepter out of Israel\nWater shall flow from his buckets\nHis seed in many waters\nHis king shall be higher than Agag\nHis kingdom shall be exalted\nGod brought him out of Egypt\nHe has the strength of a wild ox\nHe shall eat up the nations\nHe shall crush their bones\nA Star out of Jacob\nA Scepter out of Israel\nA Star out of Jacob\nA Scepter out of Israel\nBlessed is he who blesses you\nCursed is he who curses you\nThe man who hears the words of God\nThe man who knows the knowledge of the Most High\nI see Him, but not now\nI behold Him, but not near\nOut of Jacob he shall come\nHe shall batter the forehead of Moab\nEdom shall be a possession\nSeir also shall be a possession\nOut of Jacob One shall have dominion\nHe shall destroy the remnant of the city\nA Star out of Jacob\nA Scepter out of Israel\nDominion out of Jacob\nDestruction of the foe\nA Star out of Jacob\nA Scepter out of Israel\nDominion out of Jacob\nThe Word of God stands\nSUPPORT SHIELDBEARER",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:55.069Z",
-      "contentHash": ""
-    },
-    {
       "songId": "-G775Xj7WME",
       "videoId": "",
       "title": "AIAIAI (The Only Word Is Adonai)",
@@ -407,101 +454,6 @@
         "quote": ""
       },
       "updatedAt": "2026-04-19T02:19:55.109Z",
-      "contentHash": ""
-    },
-    {
-      "songId": "Y7a0R2FGDeo",
-      "videoId": "",
-      "title": "Silent As Night",
-      "state": "draft",
-      "traceId": "Y7a0R2FGDeo",
-      "publishedAt": "2025-11-03T19:45:21Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=Y7a0R2FGDeo",
-      "artwork": "",
-      "lyrics": "Lyrics – Silent As Night\nThe world screams for a cause they don’t bleed for\nAnd turns away from those who still die for Truth\nChanting peace while the children burn\nSudan bleeds and the cowards turn\nScroll the pain, ignore the flame\nNo outrage when there’s no fame\nThey scream for clout, not for the slain\nThey wear compassion like a chain\nNigeria burns while the world looks away\nVillages fall as the faithful pray\nWhere are the voices that scream for the screen\nWhere are the crowds when the blood runs unseen\nWhere are the banners, where are the hands\nWhere is B L M, where do they stand\nWhere is Greta, where is the roar\nWhere are the cameras we paid for before\nWhere is the outrage, where are the cries\nWhere are the flags when a martyr dies\nThe silence speaks, the silence lies\nHeaven sees through all disguise\nAsh to ash, dust to dust\nThe righteous bleed, the world’s unjust\nHeaven writes the names in fire\nThe silent fall under their desire\nNigeria’s graves uncounted still\nFaith hunted, blood that spills\nJustice trending, hearts offline\nTruth denied for a headline line\nWhere are the prophets\nWhere are the shepherds\nWhere is the church that once was fearless\nThis is your virtue in decay\nYour silence screams louder than hate\nWhere is B L M\nWhere is Greta\nWhere are the human-rights crusaders\nWhere are the cameras\nWhere is the uproar\nWhere are the flags for the faithful torn\nNigeria burns while the world looks away\nChristians die but their faith remains\nHeaven sees and vengeance wakes\nThe silent will answer when Truth shakes\nThe silence says everything\nThe silence will testify\nThe silent will answer\nWhen Truth calls their name\nVerified sources",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:55.149Z",
-      "contentHash": ""
-    },
-    {
-      "songId": "8khugdipSJM",
-      "videoId": "",
-      "title": "Tidings of Comfort and Joy (God Rest Ye Merry Gentlemen)",
-      "state": "draft",
-      "traceId": "8khugdipSJM",
-      "publishedAt": "2025-10-24T00:24:36Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=8khugdipSJM",
-      "artwork": "",
-      "lyrics": "Hark now, all who seek the Light,\nLift up your hearts and hear,\nFor Christ the Lord, Redeemer come,\nHas silenced doubt and fear;\nHe breaks the chains that bound the night,\nAnd draws salvation near.\nGlad tidings of comfort and of joy,\nComfort and joy!\nGlad tidings of comfort and of joy!\nIn Bethlehem of Judah,\nThis holy Child was born,\nAnd laid within a manger\nUpon that blessed morn;\nHis mother, pure and faithful,\nBeheld her Son new-born.\nGlad tidings of comfort and of joy,\nComfort and joy!\nGlad tidings of comfort and of joy!\nFrom God, our loving Father,\nAn angel bright was sent,\nTo shepherds in the fields by night,\nWith Heaven’s message meant:\nThat Christ the Lord, the promised One,\nTo Earth in mercy went.\nGlad tidings of comfort and of joy,\nComfort and joy!\nGlad tidings of comfort and of joy!\n\"Fear not,\" declared the angel voice,\n\"Let nothing bring dismay,\nFor born to you a Savior comes,\nThe Light, the Truth, the Way;\nTo free all souls who trust in Him\nFrom darkness and decay.\"\nGlad tidings of comfort and of joy,\nComfort and joy!\nGlad tidings of comfort and of joy!\nThe shepherds at that holy word\nRejoiced with hearts aflame,\nThey left their flocks in tempest winds\nAnd to the city came,\nTo find the Babe of prophecy,\nAnd praise His holy name.\nGlad tidings of comfort and of joy,\nComfort and joy!\nGlad tidings of comfort and of joy!\nWhen they beheld the Holy Child,\nWhere humble oxen fed,\nThey bowed in awe and worshipped there,\nBefore His lowly bed;\nAnd Mary softly lifted praise\nTo God who sent her Bread.\nGlad tidings of comfort and of joy,\nComfort and joy!\nGlad tidings of comfort and of joy!\nNow raise your songs and praises high,\nAll hearts within this place,\nWith love that binds the brotherhood,\nAnd peace that crowns His grace;\nThis holy time of Christmas shines,\nWith heaven’s bright embrace.\nGlad tidings of comfort and of joy,\nComfort and joy!\nGlad tidings of comfort and of joy!",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:55.169Z",
-      "contentHash": ""
-    },
-    {
-      "songId": "CNr54CpYz7o",
-      "videoId": "",
-      "title": "Broken Helicopter – A Father’s Song",
-      "state": "draft",
-      "traceId": "CNr54CpYz7o",
-      "publishedAt": "2025-10-17T14:50:28Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=CNr54CpYz7o",
-      "artwork": "",
-      "lyrics": "You brought it to me with tearful eyes,\nRotor blades bent, it wouldn’t fly.\nYou held it out with hope so wide,\n&ldquo;Dada, can you fix it, just like last time?&rdquo;\nYour hands were small, your heart was sure,\nThat I could mend what broke for sure.\nI took that toy and held it tight,\nPromised I’d make it soar by night.\nBut time flies faster than toys can spin,\nAnd I can’t fix everything with tools and tin.\nYou’re taller now, your voice has changed,\nBut I still hear that boy’s sweet name,\n&ldquo;Dada…&rdquo; echoing down the hall.\nAnd I’d still fix it all, if I could fix it all.\nNow your battles aren’t with blades and glue,\nThey're on a field with goals in view.\nYou say, &ldquo;Dada, help me with my shot,&rdquo;\nSame little heart, just a different plot.\nI cheer you on, I mark the plays,\nI pass the ball, recall those days.\nFrom broken toys to goals you chase,\nYou still look up, and I take my place.\n'Cause time flies faster than toys can spin,\nAnd I can’t fix everything with tools and tin.\nYou're finding heights I’ll never see,\nBut you’ll always be that boy to me.\nWhen life breaks down or dreams just stall,\nI’ll still fix what I can, I’ll still catch your fall.\nSome things you learn to fix alone,\nSome dreams you chase beyond our home.\nBut if you crash, if you descend,\nKnow my love won’t ever bend.\nTime flies faster than we believe,\nAnd not all wounds will ask to leave.\nBut I’d trade the world to hear you say,\n&ldquo;Hey Dada, can you help today?&rdquo;\nNo matter how the pieces fall,\nI'll still fix what I can, if I can fix it all.\nYou once brought me a broken toy,\nNow you're the man, but still my boy.",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:55.210Z",
-      "contentHash": ""
-    },
-    {
-      "songId": "AIiCw1a5hnM",
-      "videoId": "",
-      "title": "Unaliving the Giant (Official Christian Metal Release)",
-      "state": "draft",
-      "traceId": "AIiCw1a5hnM",
-      "publishedAt": "2025-10-10T02:30:01Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=AIiCw1a5hnM",
-      "artwork": "",
-      "lyrics": "The valley waits beneath the haze,\nHeatline ghosts in the sun’s red gaze.\nA giant laughs, his challenge thrown,\nHe dares the God I’ve always known.\nMy hands still quake, the ground resounds,\nA tremor rolls through sacred ground.\nThe paw was crushed, the claw was torn,\nThe same right hand will strike once more.\nYou trust your height, your blade, your name,\nI walk beside the One untamed.\nYour crown hits the dust as Skull Meets Stone,\nYour crown hits the dust as Skull Meets Stone.\nFall to the ground, your name dethroned,\nYour crown hits the dust as Skull Meets Stone.\nThe ranks hold breath, the moment bends,\nEach heartbeat counts, the stillness ends.\nThe cord swings wide, the line is cast,\nThe air divides, the die is passed.\nHis grin decays, the watchers stare,\nA single sound cuts through the air.\nThe cord releases, the world convicts,\nThe ground remembers what it hits.\nYou trust your height, your blade, your name,\nI walk beside the One untamed.\nYour crown hits the dust as Skull Meets Stone,\nYour crown hits the dust as Skull Meets Stone.\nFall to the ground, your name dethroned,\nYour crown hits the dust as Skull Meets Stone.\nStone to skull, the pride erased,\nThe tyrant falls, the field retraced.\nRaise your voice, let every line,\nUnalive the giant, this field is mine.\nThe ranks surge forward, the nations know,\nThe Lord of Hosts has struck His blow.\nThe ground still hums where giants bled,\nThe call resounds, the Word was said.\nThe breath of God through dust and bone,\nThe field belongs to Him alone.\nYour crown hits the dust as Skull Meets Stone,\nYour crown hits the dust as Skull Meets Stone.\nFall to the ground, your name dethroned,\nYour crown hits the dust as Skull Meets Stone.\nThe giant’s fallen, his name undone,\nUnalive the giant, the field is won.\nThe dust drifts slow, the earth has known,\nThe day was His as Skull Meets Stone.",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:55.249Z",
-      "contentHash": ""
-    },
-    {
-      "songId": "E9rJluVWvxM",
-      "videoId": "",
-      "title": "The Architect (Official Christian Metal Release)",
-      "state": "draft",
-      "traceId": "E9rJluVWvxM",
-      "publishedAt": "2025-09-26T15:41:13Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=E9rJluVWvxM",
-      "artwork": "",
-      "lyrics": "Patterns point to a Pattern-Maker. Order demands an Architect.\nGod is not bound by time. He created it.\nGod is not contained in space. He spoke it.\nGod is not made of matter. He formed it.\nHe is the Intelligent Designer. The Eternal Architect.\n——————————\nLYRICS\nVerse 1\nFrom nothing He spoke, and the darkness obeyed,\nLight split the void and the cosmos displayed.\nPlanets took orbit, the oceans were framed,\nOrder from chaos, creation proclaimed.\nPre-Chorus\nGalaxies burn at the sound of His word,\nYet He bends low, and His whisper is heard.\nChorus\nThe Architect, of worlds and time,\nEars for the deaf, sight restored to the blind.\nHe spoke every star into endless array,\nYet formed us by hand and He calls us by name.\nThe Architect, Designer divine,\nSpace folds in silence to the Author of time.\nThe earth and the heavens obey His design,\nHis kingdom eternal, when stars cease to shine.\nVerse 2\nMountains were lifted, the valleys were cast,\nRivers cut pathways, the ages amassed.\nDNA written, the code of His will,\nEquations unravel yet point to Him still.\nPre-Chorus\nScience will pause where His fingerprints lie,\nWonder will tremble beneath the Most High.\nChorus\nThe Architect, of worlds and time,\nEars for the deaf, sight restored to the blind.\nHe spoke every star into endless array,\nYet formed us by hand and He calls us by name.\nThe Architect, Designer divine,\nSpace folds in silence to the Author of time.\nThe earth and the heavens obey His design,\nHis kingdom eternal, when stars cease to shine.\nBridge\nVoice of thunder, the atoms align,\nUniverse bends to the Maker of Time.\nStars by the billions obey His command,\nYet He reached down, took the dust in His hand.\nBreath of the Almighty ignites every flame,\nBut He knows His children, He calls us by name.\nFinal Chorus\nThe Architect, of worlds and time,\nEars for the deaf, sight restored to the blind.\nHe spoke every star into endless array,\nYet formed us by hand and He calls us by name.\nThe Architect, Designer divine,\nSpace folds in silence to the Author of time.\nThe earth and the heavens obey His design,\nHis kingdom eternal, when stars cease to shine.",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:55.289Z",
       "contentHash": ""
     },
     {
@@ -543,44 +495,6 @@
       "contentHash": ""
     },
     {
-      "songId": "3xi9eDriB-E",
-      "videoId": "",
-      "title": "Gut Punch",
-      "state": "draft",
-      "traceId": "3xi9eDriB-E",
-      "publishedAt": "2025-09-19T15:02:46Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=3xi9eDriB-E",
-      "artwork": "",
-      "lyrics": "August twenty-second on that Blue Line train,\nShe carried the heartache from the war in Ukraine.\nShe thought she’d find freedom in the land of the free,\nBut she bled on that train till that last heartbeat.\nOur nation breaks and our hope lies crushed,\nLife knocked us down with a gut punch.\nThrough all the hurt, are You here holding us?\nWe run into Your arms, run into Your arms Jesus.\nCharlie’s gone, gunned down in Utah,\nBlood on the ground, saw it on a livestream.\nDo we still have that freedom of speech,\nWondered what happened to the American dream.\nOur nation breaks and our hope lies crushed,\nIt hit to the heart like a gut punch.\nThrough all the hurt, will You keep holding us?\nWe run into Your arms, run into Your arms Jesus.\nIn DC they light candles on the Hill,\nHearts are broken but still holding vigil.\nFrom power halls to the common street,\nWe bow our heads where Your mercy meets.\nFear and anger fill the nightly news,\nCandace smirks and blames it on the Jews.\nPointing fingers while the nation bleeds,\nWe’re crying out for the truth we need.\nOur nation breaks and our hope lies crushed,\nIt hit to the heart like a gut punch.\nThrough all the hurt, will You keep holding us?\nWe run into Your arms, run into Your arms Jesus.\nThese broken strings still cry from my guitar,\nI’ll scream Your name till the morning breaks the dark.\nWith heavy hearts through all that grieves us,\nWe run into Your arms, run into Your arms Jesus.",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:55.409Z",
-      "contentHash": ""
-    },
-    {
-      "songId": "blL7TiDkDrc",
-      "videoId": "",
-      "title": "Over the Skies of Hell (Official Lyric Video)",
-      "state": "draft",
-      "traceId": "blL7TiDkDrc",
-      "publishedAt": "2025-09-10T14:54:01Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=blL7TiDkDrc",
-      "artwork": "",
-      "lyrics": "Flames rose high in the dragon’s den,\nChains were clamped on the souls of men.\nDarkness laughed at the world He made,\nBut the sky was split and the grave betrayed.\nHe walked through ash and fire’s breath,\nHe shattered hell, He silenced death.\nWith fury and light in His burning strides,\nHe storms the realm where the serpent hides.\nThe chains all snapped with a single word,\nHis roar the last that hell ever heard.\nNow crowned in flame and clothed in might,\nHe rides… over the skies of hell.\nThe keys He claimed from Satan’s grip,\nThe throne of lies began to slip.\nHe rose with power none could quell,\nKing of Heaven, Slayer of Hell.\nNo demon stood, no gate remained,\nHis voice alone unmade the flame.\nWith fury and light in His burning strides,\nHe storms the realm where the serpent hides.\nThe chains all snapped with a single word,\nHis roar the last that hell ever heard.\nNow crowned in flame and clothed in might,\nHe rides… over the skies of hell.\nHe took their sting, He burned the scroll,\nHe stormed the dark to save my soul.\nHe rides on flame with stars in tow,\nHe speaks and kingdoms rise or bow.\nHis robe is drenched in holy war,\nHis voice, the flood, the lion’s roar.\nThe grave lies torn beneath His will,\nHe reigns over the skies of hell.\nOver the skies of hell,\nOver the skies of hell,\nOver the skies of hell,\nOver the skies of hell.",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:55.449Z",
-      "contentHash": ""
-    },
-    {
       "songId": "CIKoSUPu2cU",
       "videoId": "",
       "title": "Road to 10K – Live Subscriber Count",
@@ -619,82 +533,6 @@
       "contentHash": ""
     },
     {
-      "songId": "DsGhOgXLGXI",
-      "videoId": "",
-      "title": "1000 Suns",
-      "state": "draft",
-      "traceId": "DsGhOgXLGXI",
-      "publishedAt": "2025-09-05T16:28:51Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=DsGhOgXLGXI",
-      "artwork": "",
-      "lyrics": "Jesus Christ reigns in glory, brighter than a thousand suns.\nThe earth convulses at His stride\nThe heavens split, the stars collide\nThe blazing Christ ignites the sky\nNo shadow lives, no darkness hides\nFire crowns His sovereign head\nOceans roar, the sky runs red\nPrison gates are torn apart\nThe King of Glory claims each heart\nFear not for the Lamb stands crowned\nThe King of kings holds holy ground\nYour radiance tears the night in two\nAll creation bows in awe of You\nThe grave lies shattered, death undone\nBy Christ the everlasting Son\nDark powers break, they cannot run\nYou blaze\nBrighter than a thousand suns\nSteel and stone dissolve like sand\nHis word commands, none can withstand\nThe Lion roars, the dead arise\nThe Living One rules earth and skies\nDarkness trembles at Your name\nDemons quake and scream in flame\nHell recoils, its gates unmade\nThe risen Christ forever reigns\nFear not for the Lamb stands crowned\nThe King of kings holds holy ground\nYour radiance tears the night in two\nAll creation bows in awe of You\nThe grave lies shattered, death undone\nBy Christ the everlasting Son\nDark powers break, they cannot run\nYou blaze\nBrighter than a thousand suns\nYour radiance tears the night in two\nAll creation bows in awe of You\nThe grave lies shattered, death undone\nBy Christ the everlasting Son\nDark powers break, they cannot run\nYou blaze\nBrighter than a thousand suns\nBrighter than a thousand suns\nJesus brighter than a thousand suns",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:55.576Z",
-      "contentHash": ""
-    },
-    {
-      "songId": "0ljswHO8D2I",
-      "videoId": "",
-      "title": "Emmaus – Shieldbearer (Official Metal Anthem",
-      "state": "draft",
-      "traceId": "0ljswHO8D2I",
-      "publishedAt": "2025-08-28T12:36:21Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=0ljswHO8D2I",
-      "artwork": "",
-      "lyrics": "The shield we trust is not machine. The shield we trust is Elohim.\nLyrics\nWe walked the road with broken hope…\nThe cross still fresh behind the smoke…\nA Stranger came with wounded feet…\nHe spoke and fire filled the street!\nIt feels like fire when Jesus speaks!\nHearts ignite and iron breaks!\nGraves unseal and tyrants quake!\nLight explodes where shadows creep…\nCall His name and hell grows weak…\nIt feels like fire when Jesus speaks!\nHe lit the scrolls with living breath…\nEach word unwrapped the sting of death…\nThe story burned from Eve to Lamb…\nWe did not know, yet there He stands!\nIt feels like fire when Jesus speaks!\nHearts ignite and iron breaks!\nGraves unseal and tyrants quake!\nLight explodes where shadows creep…\nCall His name and hell grows weak…\nIt feels like fire when Jesus speaks!\nHe vanished, but the flame remained…\nA holy burn that sings His name…\nOur steps turned back, our voices wild…\nWe saw the Lord and walked in fire!\nIt feels like fire when Jesus speaks!\nHearts ignite and iron breaks!\nGraves unseal and tyrants freak!\nLight explodes where shadows creep…\nCall His name and hell grows weak…\nIt feels like fire when Jesus speaks!\nIt feels like fire when Jesus speaks!\nIt feels like fire when Jesus speaks!\nWere not our hearts burning within…\nWhen He spoke to us on the road?",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:55.609Z",
-      "contentHash": ""
-    },
-    {
-      "songId": "DFfIX-mlS-k",
-      "videoId": "",
-      "title": "He Found His Voice",
-      "state": "draft",
-      "traceId": "DFfIX-mlS-k",
-      "publishedAt": "2025-08-21T14:48:31Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=DFfIX-mlS-k",
-      "artwork": "",
-      "lyrics": "They told us you might see the world through colors we can’t always name.\nYou lined up toys instead of words, but we loved you just the same.\nYou did not speak like others did, but oh, your eyes told a tale.\nSo we held on, we prayed and hoped, and followed every little trail.\nAnd now you're counting stars in class, solving puzzles, moving fast.\nYou are the quiet storm that broke through noise, my boy, my joy… he found his voice.\nTo every teacher who helped him rise, you saw the spark behind his eyes.\nYou changed a world with gentle choice, thank you… he found his voice.\nThere were days he would sit in silence still, while others laughed and ran ahead.\nBut now he races to the board, with numbers dancing in his head.\nHe is not defined by any chart, he has a wild and brilliant heart.\nThe boy who once just smiled and waved is standing tall, no need to be saved.\nAnd now he's counting stars in class, solving puzzles, moving fast.\nYou are the quiet storm that broke through noise, my boy, my joy… he found his voice.\nTo every guide who took his hand, you helped us truly understand.\nWith every sound and every choice, thank you… he found his voice.\nSpeech was once a distant dream, now he sings and builds and beams.\nAnd though the journey is far from done, he is rising like the morning sun.\nNow he is counting stars in class, leads the charge, not in the past.\nThe label is gone, it is just pure choice, my son, my light… he found his voice.\nTo the hearts who saw his hidden flame, you loved the boy, not just the name.\nYou helped him sing without the noise, thank you… he found his voice.\nWe once heard silence, now we hear song.\nHe found his voice, where it belonged.",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:55.649Z",
-      "contentHash": ""
-    },
-    {
-      "songId": "tH2GpPLY3so",
-      "videoId": "",
-      "title": "QUAKE (Christian Metal",
-      "state": "draft",
-      "traceId": "tH2GpPLY3so",
-      "publishedAt": "2025-08-14T00:17:51Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=tH2GpPLY3so",
-      "artwork": "",
-      "lyrics": "Low growl in the ground, I hear your walls break\nName on my lips, and the night starts to quake\nYour banners burn where you claimed the streets\nYour captives run as they hear His feet\nNo courtroom trial, the verdict’s screamed\nThe Word made flesh rips apart your schemes\nAsh on the air, your fortress shakes\nThe sky cracks open, and the earth awakes\nQUAKE, when the Name cuts through the haze\nQUAKE, every shadow splits in blaze\nYour crown falls, your strongholds break\nJESUS JESUS JESUS, you quake\nYour venom’s dry, your claws turn dust\nEvery curse you wrote just turns to rust\nThe Lamb stands crowned where you thought Him slain\nHe steps through fire, and He calls your name\nAsh on the air, your fortress shakes\nThe sky cracks open, and the earth awakes\nQUAKE, when the Name cuts through the haze\nQUAKE, every shadow splits in blaze\nYour crown falls, your strongholds break\nJESUS JESUS JESUS, you quake\nBow down (QUAKE)\nSpit out the lies (QUAKE)\nYour kingdom cracks under holy eyes (QUAKE)\nThe grave lies empty, the risen Christ (QUAKE)\nQUAKE, QUAKE\nName of JESUS makes you QUAKE\nQUAKE, when the Name cuts through the haze\nQUAKE, every shadow splits in blaze\nYour crown falls, your strongholds break\nJESUS JESUS JESUS, you quake\nNight goes silent when the demons quake",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:55.689Z",
-      "contentHash": ""
-    },
-    {
       "songId": "zv70Ibp9Be0",
       "videoId": "",
       "title": "53 Tracks. Hours of Work. Still “Just an AI Band”?",
@@ -730,44 +568,6 @@
         "quote": ""
       },
       "updatedAt": "2026-04-19T02:19:55.769Z",
-      "contentHash": ""
-    },
-    {
-      "songId": "BwWB95z6lKg",
-      "videoId": "",
-      "title": "Worth It All (Official Video)",
-      "state": "draft",
-      "traceId": "BwWB95z6lKg",
-      "publishedAt": "2025-07-30T17:32:30Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=BwWB95z6lKg",
-      "artwork": "",
-      "lyrics": "In the silence when you're lonely,\nWhen your heart cries in the night,\nEvery whisper that you're broken,\nKnow I'll always hold you tight.\nI’ve seen every road you've wandered,\nWatched you chasing empty dreams,\nBut my love never faltered,\nI'm closer than it seems.\nWhen the storm comes rollin' through,\nWhen you don't know what to do,\nLift your eyes, you'll find me there\nArms wide open, everywhere.\nForever's not enough to show\nHow deep my love will always go.\nI'd bleed again to bring you home,\nYou're the reason I left my throne.\nNo darkness strong enough to hide,\nFrom a love that won't deny\nForever yours, eternally,\nYou're worth it all to me.\nRemember days you tried to fight me,\nRunning fast, nowhere to hide.\nThrough every shadow, I pursued you,\nYou're the fire in my eyes.\nEvery tear you cried, I caught it,\nEvery scar, I felt the pain.\nI conquered death so you could live,\nYou're the heartbeat in my veins.\nThrough every lie that you've been told,\nI wrote your name in streets of gold.\nSo take my hand and you will see\nThis love is for eternity.\nForever's not enough to show\nHow deep my love will always go.\nI'd bleed again to bring you home,\nYou're the reason I left my throne.\nNo darkness strong enough to hide,\nFrom a love that won't deny\nForever yours, eternally,\nYou're worth it all to me.\nNo greater love has ever been,\nThan one who'd die to rise again.\nI'd cross the stars and raging seas\nJust to have you here with me.\nForever's not enough to show\nHow deep my love will always go.\nI'd bleed again to bring you home,\nYou're the reason I left my throne.\nNo darkness strong enough to hide,\nFrom a love that won't deny\nForever yours, eternally,\nYou're worth it all to me.\nIn the silence, hear my call,\nI’m your Savior through it all.\nForever yours, eternally,\nYou're worth it all to me.",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:55.793Z",
-      "contentHash": ""
-    },
-    {
-      "songId": "3CPuHgWr-L0",
-      "videoId": "",
-      "title": "!Machine – Outro to Celestial Shield",
-      "state": "draft",
-      "traceId": "3CPuHgWr-L0",
-      "publishedAt": "2025-07-25T16:00:06Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=3CPuHgWr-L0",
-      "artwork": "",
-      "lyrics": "!Machine means “Not Machine” in code.\nSome trust in horses.\nSome in machines.\nSame thing.\nWe trust in the name of the Lord our God.\nHis name is ELOHIM.",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:55.849Z",
       "contentHash": ""
     },
     {
@@ -828,25 +628,6 @@
       "contentHash": ""
     },
     {
-      "songId": "vBGEIMXs6h0",
-      "videoId": "",
-      "title": "Celestial Shield (Lyric Video) – Shieldbearer",
-      "state": "draft",
-      "traceId": "vBGEIMXs6h0",
-      "publishedAt": "2025-07-15T02:04:57Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=vBGEIMXs6h0",
-      "artwork": "",
-      "lyrics": "It’s not just about land.\nIt’s not just politics.\nIt’s spiritual.\n“They hated Me without cause.” – John 15:25\n“The mind governed by the flesh is hostile to God.” – Romans 8:7\nIsrael is hated because it proves the Bible is true.\nJesus is hated because He breaks every false lie.\nFor years, entire generations were taught:\n“Israel is illegitimate.”\n“Jesus was just a prophet.”\n“The Bible is corrupted.”\n“The Jews control the world.”\n“Christians are the enemy.”\nThis is not education — it’s indoctrination.\nIt’s brainwashing designed to keep you from the one truth that sets you free.",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:55.995Z",
-      "contentHash": ""
-    },
-    {
       "songId": "mUVrsebALVw",
       "videoId": "",
       "title": "Still Be My Vision - (Shieldbearer Short 2)",
@@ -882,25 +663,6 @@
         "quote": ""
       },
       "updatedAt": "2026-04-19T02:19:56.069Z",
-      "contentHash": ""
-    },
-    {
-      "songId": "C4tXr2RSxPI",
-      "videoId": "",
-      "title": "Still Be My Vision (A Modern Worship Hymn Inspired by “Be Thou My Vision”)",
-      "state": "draft",
-      "traceId": "C4tXr2RSxPI",
-      "publishedAt": "2025-07-02T10:00:06Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=C4tXr2RSxPI",
-      "artwork": "",
-      "lyrics": "[Verse 1]\nBe my true vision, O Light of my soul\nStill be my compass, wherever I go\nYou are my wisdom, You are my word\nI ever with You, my Savior and Lord\n[Verse 2]\nBe my protection, my sword and my shield\nGuard every heartbeat, on battlefield\nYou are my glory, my treasure divine\nI seek no riches — just that You’re mine\n[Chorus]\nYou are my fire, my truth, my light\nStay near in shadow, stand tall in the fight\nAll of my days, in You I’ll abide —\nMy Shepherd, my Savior, my King, my Guide\n[Verse 3]\nBe my compassion, my mercy and grace",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:56.109Z",
       "contentHash": ""
     },
     {
@@ -980,25 +742,6 @@
       "contentHash": ""
     },
     {
-      "songId": "SUXJxqg2gF0",
-      "videoId": "",
-      "title": "🇮🇳 Shieldbearer – Pahalgam (A Prayer for India)",
-      "state": "draft",
-      "traceId": "SUXJxqg2gF0",
-      "publishedAt": "2025-06-12T18:21:51Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=SUXJxqg2gF0",
-      "artwork": "",
-      "lyrics": "(Verse 1)\nFrom endless palms by ancient seas,\nTo where Everest stands in icy breeze,\nThrough monsoon rains and desert plains,\nYour love inspires and still sustains.\n(Pre-Chorus)\nThrough storm and fire, through darkest pain,\nYour love will rise and break her chains.\n(Chorus)\nLet the rivers roar and mountains rise,\nLet the thunder shake the skies.\nYour love has claimed this ancient shore,\nAnd India will sing once more.\nLift her heart with sacred flame,\nLet her song proclaim Your Name.\n(Verse 2)\nThrough Kashmir’s mist and fields of gold,\nThrough jasmine winds and stories old,\nYour Spirit moves, Your voice is near,\nYou dry each sorrow, crush each fear.\n(Pre-Chorus)\nThrough storm and fire, through darkest pain,\nYour love will rise and break her chains.\n(Chorus)\nLet the rivers roar and mountains rise,\nLet the thunder shake the skies.\nYour love has claimed this ancient shore,\nAnd India will sing once more.\nLift her heart with sacred flame,\nLet her song proclaim Your Name.\n(Bridge)\nNo night too dark, no chain too strong,\nYour victory has led her song.\nThe dawn will break, the grave will fall,\nIndia will rise to heed Your call.\n(Final Chorus)\nLet the rivers roar and mountains rise,\nLet the thunder shake the skies.\nYour love has claimed this ancient shore,\nAnd India will sing once more.\nLift her heart with sacred flame,\nLet her song proclaim Your Name.",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:56.289Z",
-      "contentHash": ""
-    },
-    {
       "songId": "Md92kj36aTE",
       "videoId": "",
       "title": "Prison Break - Shieldbearer ( Official",
@@ -1072,25 +815,6 @@
         "quote": ""
       },
       "updatedAt": "2026-04-19T02:19:56.455Z",
-      "contentHash": ""
-    },
-    {
-      "songId": "2UEY0_xTOuY",
-      "videoId": "",
-      "title": "Ain’t No Way (But He Did) – Shieldbearer",
-      "state": "draft",
-      "traceId": "2UEY0_xTOuY",
-      "publishedAt": "2025-05-30T10:28:41Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=2UEY0_xTOuY",
-      "artwork": "",
-      "lyrics": "AIN’T NO WAY (BUT HE DID)\n(Verse 1)\nI was lost in the pit, far gone, undone\nChains wrapped tight, no hope, no sun\nAin’t no way out — that’s what I thought\n'Til mercy found me right where I was\n(Pre-Chorus)\nHe spoke and the silence shattered\nGrace poured out, love ran faster\nAin’t no way He could love like this\nBut He did… oh He did\n(Chorus)\nAin’t no way He moved that stone\nAin’t no way He bore that load\nAin’t no way He took my place\nBut He did — Jesus did\nAin’t no way He bled for me\nAin’t no way He set me free\nAin’t no way He rose again\nBut He did — Jesus did\n(Verse 2)\nI was dead in the dark, buried deep in shame\nEvery lie, every scar, called my name\nAin’t no way back — that’s what they said\nBut Jesus whispered, \"Rise from the dead\"\n(Pre-Chorus)\nHe stepped in and broke the curse\nLifted me up, reversed the worst\nAin’t no way He could win my war\nBut He did… forevermore\n(Chorus)\nAin’t no way He moved that stone\nAin’t no way He bore that load\nAin’t no way He took my place\nBut He did — Jesus did\nAin’t no way He bled for me\nAin’t no way He set me free\nAin’t no way He rose again\nBut He did — Jesus did\n(Bridge)\nNo one else — only Jesus\nNo other hands — scarred to free us\nAin’t no way... but He made a way\nForever saved, forever praise!\n(Final Chorus)\nAin’t no way He moved that stone\nAin’t no way He bore that load\nAin’t no way He took my place\nBut He did — Jesus did\nAin’t no way He bled for me\nAin’t no way He set me free\nAin’t no way He rose again\nBut He did — Jesus did!\n(Outro)\nAin’t no way...\nBut He did.",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:56.489Z",
       "contentHash": ""
     },
     {
@@ -1186,25 +910,6 @@
         "quote": ""
       },
       "updatedAt": "2026-04-19T02:19:56.689Z",
-      "contentHash": ""
-    },
-    {
-      "songId": "erURAmLBVok",
-      "videoId": "",
-      "title": "🇺🇸 Eagle’s Wrath (Operation Fire)",
-      "state": "draft",
-      "traceId": "erURAmLBVok",
-      "publishedAt": "2025-05-23T10:00:06Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=erURAmLBVok",
-      "artwork": "",
-      "lyrics": "Let freedom ring! Let justice fly!\nStrike the flames across the sky.\nOne flag, one force, we stand as one—\n'Til the battle's done, we don’t run.\nLet freedom ring! It’s in our veins—\nThe eagle’s wrath breaks every chain.\n**Verse 2:**\nHouthis howl as the thunder breaks,\nHezbollah runs, the cradle shakes.\nHamas hides from the Reaper’s stare—\nInherent Resolve finds them there.\nThe Navy rolls with steel in the tide,\nMarines charge in, first to fight with pride.\nCoast Guard stands at freedom’s edge,\nGuardians sworn to the homeland’s pledge.",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:56.709Z",
       "contentHash": ""
     },
     {
@@ -1588,177 +1293,6 @@
       "contentHash": ""
     },
     {
-      "songId": "1hSudFULuJc",
-      "videoId": "",
-      "title": "Slayer of the Grave (Remastered)",
-      "state": "draft",
-      "traceId": "1hSudFULuJc",
-      "publishedAt": "2025-05-05T23:23:39Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=1hSudFULuJc",
-      "artwork": "",
-      "lyrics": "For those who have stood with Shieldbearer since the first release — thank you.\nFor those hearing it for the first time — welcome to the battle cry.\nHe is risen. He is victorious.\nThe grave is slain.\n——— LYRICS ———\n(Verse 1)\nDarkness fell, the stone was sealed,\nHope lay buried, cold and still.\nTombs rejoiced, the serpent laughed,\n'Til the thunder split the black!\n(Pre-Chorus)\nChains are shattered, death undone,\nThe grave cannot hold the Risen Son!\n(Chorus 1)\nSlayer of the grave —\nBreaker of tombs!\nConqueror of death —\nRisen from the shattered tomb!\nSlayer of the grave —\nCrushing hell’s domain,\nCrowned with glory,\nForever He reigns!\n(Verse 2)\nShadows fled at His command,\nKeys of death now in His hand.\nSin defeated, wrath disarmed,\nBy nail-pierced hands, forever scarred!\n(Pre-Chorus)\nChains are shattered, death undone,\nThe grave cannot hold the Risen Son!\n(Chorus 2)\nSlayer of the grave —\nBreaker of chains!\nConqueror of death —\nRisen from the shattered tomb!\nSlayer of the grave —\nCrushing hell’s domain,\nCrowned with glory,\nForever He reigns!\n(Bridge)\nO shattered gates! O broken tomb!\nThe Lion roars beyond the gloom!\nO fearful grave, behold your shame —\nYour sting is lost, erased by His Name!\n(Final Chorus)\nSlayer of the grave —\nBreaker of death!\nConqueror of death —\nRisen from the shattered tomb!\nSlayer of the grave —\nCrushing hell’s domain,\nCrowned with glory,\nForever He reigns!",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:57.475Z",
-      "contentHash": ""
-    },
-    {
-      "songId": "6tVUPs1KLBQ",
-      "videoId": "",
-      "title": "Prison Break",
-      "state": "draft",
-      "traceId": "6tVUPs1KLBQ",
-      "publishedAt": "2025-05-04T19:06:16Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=6tVUPs1KLBQ",
-      "artwork": "",
-      "lyrics": "The shadows groaned in death’s domain,\nThe chains were forged in curse and shame.\nThe pit was sealed, the air was dark,\nBut then He came and split the black.\nNo chain can hold the Risen One!\nNo grave can stand the Father’s Son!\nPrison break, the stone was torn,\nThe captives freed, the silence sworn.\nThe earth shook hard when Mercy came,\nThe keys were claimed in Jesus’ name.\nThe gates of Sheol couldn’t take...\nJESUS STORMED THE PRISON BREAK!\nThe tombs gave up the saints long dead,\nThe dark recoiled in fear and dread.\nThe curse collapsed, the veil was shred,\nHe led the lost where angels tread.\nNo pit can cage the King of grace!\nNo power can stop the empty grave!\nPrison break, the stone was torn,\nThe captives freed, the silence sworn.\nThe earth shook hard when Mercy came,\nThe keys were claimed in Jesus’ name.\nThe gates of Sheol couldn’t take...\nJESUS STORMED THE PRISON BREAK!\nHe crushed the doors with nail scarred hands,\nHe shattered chains with one command.\nHe led the captives to the light,\nAnd broke the dark with holy might!\nPrison break, the pit gave way,\nThe dead arose to greet the day.\nThe gates of death were scorched and torn,\nThe grave lay still, no curse was sworn.\nNo demon stood, no serpent swayed,\nThe Risen King had won the day.\nThe realm of death began to quake...\nHE ROSE AND BROKE THE PRISON GATES!\nHe holds the keys.\nThe tombs obey.\nThe chains are gone.\nHe leads the way.",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:57.509Z",
-      "contentHash": ""
-    },
-    {
-      "songId": "EZOXo15QgLk",
-      "videoId": "",
-      "title": "Where the Morning Comes",
-      "state": "draft",
-      "traceId": "EZOXo15QgLk",
-      "publishedAt": "2025-05-04T04:05:47Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=EZOXo15QgLk",
-      "artwork": "",
-      "lyrics": "It is the song of the waiting.\nIt is the anthem of the suffering.\nIt is the promise whispered through the long, dark night.\n→ When prayers seem unanswered.\n→ When grief feels unbearable.\n→ When the world feels too heavy to hold.\nThis is the hope believers have clung to for centuries:\nMorning will come.\n→ Early Christians buried their dead saying, “Until the morning…”\n→ Saints in dark ages sang of dawn breaking over sorrow.\n→ Today, hearts whisper through tears, “One day all will be made new.”\nThis song is for you who wait.\n→ For the mother still praying for her child.\n→ For the widower staring at an empty chair.\n→ For the believer fighting the same battle day after day.\nThe night will end.\nThe grave will give way.\nThe sky will break open.\nAnd Jesus will come.",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:57.549Z",
-      "contentHash": ""
-    },
-    {
-      "songId": "KARnuqkT6ag",
-      "videoId": "",
-      "title": "We Join the Song",
-      "state": "draft",
-      "traceId": "KARnuqkT6ag",
-      "publishedAt": "2025-05-04T04:01:23Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=KARnuqkT6ag",
-      "artwork": "",
-      "lyrics": "We Join the Song is the sound of earth meeting heaven.\nIt’s the whispered praise of the early church.\nIt’s the soaring hymns of medieval choirs.\nIt’s the trembling voices of persecuted believers today.\nIt’s the quiet hum of worshippers driving home, earbuds in, praying between tears.\nAnd it’s also:\n→ The roar of angels.\n→ The shout of saints who’ve gone before.\n→ The melody of heaven itself.\nYou are not singing alone.\nEvery time we lift our voices, we join a song that never stopped:\n→ Sung by Abraham on lonely nights under starry skies.\n→ Sung by David with harp in hidden caves.\n→ Sung by early believers at risk of death.\n→ Sung by martyrs and missionaries and mothers praying in the night.\nAnd now — sung by you:\n→ In kitchens.\n→ In hospitals.\n→ In churches.\n→ In cars.\n→ In silent bedrooms.\nWe join the song. And heaven hears.",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:57.569Z",
-      "contentHash": ""
-    },
-    {
-      "songId": "C4Rgv8w1ljI",
-      "videoId": "",
-      "title": "We Believe",
-      "state": "draft",
-      "traceId": "C4Rgv8w1ljI",
-      "publishedAt": "2025-05-04T03:51:44Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=C4Rgv8w1ljI",
-      "artwork": "",
-      "lyrics": "We still believe.\nWhen culture shifts → we believe.\nWhen friends turn away → we believe.\nWhen prayers feel unanswered → we believe.\nWhen our hearts feel weak → we still believe.\nThis is not an ancient relic or a dead creed.\nThis is the song of the rescued.\nThis is the confession of the redeemed.",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:57.609Z",
-      "contentHash": ""
-    },
-    {
-      "songId": "K7vsc8gqa_4",
-      "videoId": "",
-      "title": "Washed in Grace",
-      "state": "draft",
-      "traceId": "K7vsc8gqa_4",
-      "publishedAt": "2025-05-04T03:46:45Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=K7vsc8gqa_4",
-      "artwork": "",
-      "lyrics": "You are not too far gone.\nYou are not too stained.\nYou are not rejected.\nYou are loved.\nYou are welcome.\nYou are washed in grace.\nCome home to mercy.\nBe made new today.",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:57.689Z",
-      "contentHash": ""
-    },
-    {
-      "songId": "Dpb3KRGxguU",
-      "videoId": "",
-      "title": "The Arms That Waited",
-      "state": "draft",
-      "traceId": "Dpb3KRGxguU",
-      "publishedAt": "2025-05-04T03:39:35Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=Dpb3KRGxguU",
-      "artwork": "",
-      "lyrics": "The Arms That Waited is for every soul who feels far away.\nNot just in the story of the prodigal son long ago → but today.\n→ Sons and daughters who haven’t called home in years.\n→ Parents whose words have wounded, and whose hearts ache for reunion.\n→ Friends who drifted apart after bitter words or silent goodbyes.\n→ Spouses sitting side-by-side, yet miles apart in spirit.\nThis is not just ancient. This is now.\nThrough generations, hearts have wandered.\nThrough every age, the Father has waited.\nNot with a lecture.\nNot with condemnation.\nBut with open arms.",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:57.715Z",
-      "contentHash": ""
-    },
-    {
-      "songId": "8yOFetfoRAo",
-      "videoId": "",
-      "title": "Mercy in the Quiet",
-      "state": "draft",
-      "traceId": "8yOFetfoRAo",
-      "publishedAt": "2025-05-04T03:30:29Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=8yOFetfoRAo",
-      "artwork": "",
-      "lyrics": "\"Be still, and know that I am God.\" (Psalm 46:10)\nNot every battle is loud.\nNot every victory is won with shouting.\nMercy in the Quiet was written for the moments few people see.\n→ When the tears come in the middle of the night.\n→ When the prayers feel hollow and words are few.\n→ When shame whispers, and silence seems louder than God’s voice.\nIt’s there — in the stillness — that mercy often speaks the loudest.\nThrough generations, God’s people have cried softly into the quiet.\n→ The desert wanderer.\n→ The prodigal son far from home.\n→ The early believers, hiding in upper rooms.",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:57.771Z",
-      "contentHash": ""
-    },
-    {
-      "songId": "2HzH15hDTTk",
-      "videoId": "",
-      "title": "Hymn of the Free",
-      "state": "draft",
-      "traceId": "2HzH15hDTTk",
-      "publishedAt": "2025-05-04T03:27:07Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=2HzH15hDTTk",
-      "artwork": "",
-      "lyrics": "→ Martyrs and saints, singing even as earthly powers tried to silence their song.\nAnd now — here we are.\nNot in deserts or stone cells, but in apartments, offices, cars...\nBound by chains just as real → fear, addiction, anger, regret, shame.\nYet the melody has never changed.\nJesus still breaks chains.\nJesus still sets captives free.\nJesus still writes new stories over shattered lives.",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:57.799Z",
-      "contentHash": ""
-    },
-    {
       "songId": "a6GJkJ20NgE",
       "videoId": "",
       "title": "Grace Wrote My Story",
@@ -1795,113 +1329,18 @@
       },
       "updatedAt": "2026-04-19T02:19:57.855Z",
       "contentHash": ""
-    },
-    {
-      "songId": "Hnewej6WjkE",
-      "videoId": "",
-      "title": "Light of Dusk",
-      "state": "draft",
-      "traceId": "Hnewej6WjkE",
-      "publishedAt": "2025-05-04T02:50:26Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=Hnewej6WjkE",
-      "artwork": "",
-      "lyrics": "Today, night looks different.\nWe sit in homes lit not by candles, but by glowing screens.\nOur temples are apartments and crowded cities.\nThe quiet is broken not by crickets, but by phone notifications.\nYet… the need is the same.\n→ We still long for rest when streets grow dark.\n→ We still need a steady flame when hope feels dim.\n→ We still whisper prayers when silence sparks.\nLight of Dusk was born from this longing.",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:57.889Z",
-      "contentHash": ""
-    },
-    {
-      "songId": "GJ_KrOQrgbk",
-      "videoId": "",
-      "title": "Prison Break",
-      "state": "draft",
-      "traceId": "GJ_KrOQrgbk",
-      "publishedAt": "2025-05-03T11:47:28Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=GJ_KrOQrgbk",
-      "artwork": "",
-      "lyrics": "The shadows groaned in death’s domain,\nThe chains were forged in curse and shame.\nThe pit was sealed, the air was dark,\nBut then He came and split the black.\nNo chain can hold the Risen One.\nNo grave can stand the Father’s Son.\nPrison break, the stone was torn,\nThe captives freed, the silence sworn.\nThe earth shook hard when Mercy came,\nThe keys were claimed in Jesus’ name.\nThe gates of Sheol couldn’t take...\nJESUS STORMED THE PRISON BREAK!\nThe tombs gave up the saints long dead,\nThe dark recoiled in fear and dread.\nThe curse collapsed, the veil was shred,\nHe led the lost where angels tread.\nNo pit can cage the King of grace.\nNo power can stop the empty grave.\nPrison break, the stone was torn,\nThe captives freed, the silence sworn.\nThe earth shook hard when Mercy came,\nThe keys were claimed in Jesus’ name.\nThe gates of Sheol couldn’t take...\nJESUS STORMED THE PRISON BREAK!\nHe crushed the doors with nail scarred hands,\nHe shattered chains with one command.\nHe led the captives to the light,\nAnd broke the dark with holy might.\nPrison break, the pit gave way,\nThe dead arose to greet the day.\nThe gates of death were scorched and torn,\nThe grave lay still, no curse was sworn.\nNo demon stood, no serpent swayed,\nThe Risen King had won the day.\nThe realm of death began to quake...\nJESUS ROSE AND BROKE THE PRISON GATES!\nHe holds the keys.\nThe tombs obey.\nThe chains are gone.\nHe leads the way.",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:57.929Z",
-      "contentHash": ""
-    },
-    {
-      "songId": "9NQkaZbntUs",
-      "videoId": "",
-      "title": "Pahalgam (A Prayer for India)",
-      "state": "draft",
-      "traceId": "9NQkaZbntUs",
-      "publishedAt": "2025-04-26T15:28:11Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=9NQkaZbntUs",
-      "artwork": "",
-      "lyrics": "Verse 1\nFrom endless palms by ancient seas,\nTo where Everest stands in icy breeze,\nThrough monsoon rains and desert plains,\nYour love inspires and still sustains.\nPre-Chorus\nThrough storm and fire, through darkest pain,\nYour love will rise and break her chains.\nChorus\nLet the rivers roar and mountains rise,\nLet the thunder shake the skies.\nYour love has claimed this ancient shore,\nAnd India will sing once more.\nLift her heart with sacred flame,\nLet her song proclaim Your Name.\nVerse 2\nThrough Kashmir’s mist and fields of gold,\nThrough jasmine winds and stories old,\nYour Spirit moves, Your voice is near,\nYou dry each sorrow, crush each fear.\nPre-Chorus\nThrough storm and fire, through darkest pain,\nYour love will rise and break her chains.\nChorus\nLet the rivers roar and mountains rise,\nLet the thunder shake the skies.\nYour love has claimed this ancient shore,\nAnd India will sing once more.\nLift her heart with sacred flame,\nLet her song proclaim Your Name.\nBridge\nNo night too dark, no chain too strong,\nYour victory has led her song.\nThe dawn will break, the grave will fall,\nIndia will rise to heed Your call.\nFinal Chorus\nLet the rivers roar and mountains rise,\nLet the thunder shake the skies.\nYour love has claimed this ancient shore,\nAnd India will sing once more.\nLift her heart with sacred flame,\nLet her song proclaim Your Name.",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:57.955Z",
-      "contentHash": ""
-    },
-    {
-      "songId": "rDtFSFQn8ik",
-      "videoId": "",
-      "title": "Slayer of the Grave",
-      "state": "draft",
-      "traceId": "rDtFSFQn8ik",
-      "publishedAt": "2025-04-20T04:00:06Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=rDtFSFQn8ik",
-      "artwork": "",
-      "lyrics": "(Verse 1)\nDarkness fell, the stone was sealed,\nHope lay buried, cold and still.\nTombs rejoiced, the serpent laughed,\n'Til the thunder split the black.\n(Pre-Chorus)\nChains are shattered, death undone,\nThe grave cannot hold the Risen Son!\n(Chorus 1)\nSlayer of the grave\nBreaker of tombs!\nConqueror of death\nRisen from the shattered tomb!\nSlayer of the grave\nCrushing hell’s domain,\nCrowned with glory,\nForever He reigns!\n(Verse 2)\nShadows fled at His command,\nKeys of death now in His hand.\nSin defeated, wrath disarmed,\nBy nail-pierced hands, forever scarred.\n(Pre-Chorus)\nChains are shattered, death undone,\nThe grave cannot hold the Risen Son!\n(Chorus 2)\nSlayer of the grave\nBreaker of chains!\nConqueror of death\nRisen from the shattered tomb!\nSlayer of the grave\nCrushing hell’s domain,\nCrowned with glory,\nForever He reigns!\n(Bridge)\nO shattered gates! O broken tomb!\nThe Lion roars beyond the gloom!\nO fearful grave, behold your shame\nYour sting is lost, erased by His Name!\n(Final Chorus)\nSlayer of the grave\nBreaker of death!\nConqueror of death\nRisen from the shattered tomb!\nSlayer of the grave\nCrushing hell’s domain,\nCrowned with glory,\nForever He reigns!",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:57.989Z",
-      "contentHash": ""
-    },
-    {
-      "songId": "qm2OpjQoWU0",
-      "videoId": "",
-      "title": "Slayer of the Grave",
-      "state": "draft",
-      "traceId": "qm2OpjQoWU0",
-      "publishedAt": "2025-04-15T04:00:54Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=qm2OpjQoWU0",
-      "artwork": "",
-      "lyrics": "Darkness fell, the stone was sealed,\nHope lay buried, cold and still.\nTombs rejoiced, the serpent laughed,\n'Til the thunder split the black.\nChains are shattered, death undone,\nThe grave cannot hold the Risen Son!\nSlayer of the grave —\nBreaker of tombs!\nConqueror of death —\nRisen from the shattered tomb!\nSlayer of the grave —\nCrushing hell’s domain,\nCrowned with glory,\nForever He reigns!\nShadows fled at His command,\nKeys of death now in His hand.\nSin defeated, wrath disarmed,\nBy nail-pierced hands, forever scarred.\nChains are shattered, death undone,\nThe grave cannot hold the Risen Son!\nSlayer of the grave —\nBreaker of chains!\nConqueror of death —\nRisen from the shattered tomb!\nSlayer of the grave —\nCrushing hell’s domain,\nCrowned with glory,\nForever He reigns!\nO shattered gates! O broken tomb!\nThe Lion roars beyond the gloom!\nO fearful grave, behold your shame —\nYour sting is lost, erased by His Name!\nSlayer of the grave —\nBreaker of death!\nConqueror of death —\nRisen from the shattered tomb!\nSlayer of the grave —\nCrushing hell’s domain,\nCrowned with glory,\nForever He reigns!",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:19:58.029Z",
-      "contentHash": ""
     }
   ],
   "comingSoon": [],
   "released": [
     {
       "songId": "let-my-people-go",
-      "videoId": "0lUJcLKIt0o",
+      "videoId": "let-my-people-go",
       "title": "Let My People Go",
       "state": "released",
-      "traceId": "youtube:0lUJcLKIt0o",
-      "publishedAt": "2026-05-02T12:40:33Z",
-      "sourceUrl": "https://www.youtube.com/watch?v=0lUJcLKIt0o",
+      "traceId": "let-my-people-go#2026-05-21T12:08:22.217Z#SONG_UPDATED",
+      "publishedAt": "2026-05-21T12:08:22.217Z",
+      "sourceUrl": "",
       "artwork": "https://shieldbearerusa.com/images/signal-room/let-my-people-go.jpg",
       "lyrics": "Go DOWN, Moses!\nBurn through Egypt’s gates,\nPharaoh’s throne is shaking,\nCause freedom’s on its way!\n\nChains on the innocent,\nCrushed in a starving land,\nIsrael crying out,\nNo strength left to stand.\nOppression on their backs,\nThe fire in their bones,\nGod heard every tear,\nAnd thunder shook the throne!\n\nA whisper turned to a roar,\nA calling carved into stone…\n\nGo down, Moses!\nDeep into the darkness, stand!\nFace that Pharaoh,\nSay the word of Heaven’s command!\nGo down, Moses,\nBreak the yoke and shatter the hold!\nTell that tyrant,\nGOD says let My people GO!\n\nMoses stepped in unafraid,\nStorm in his spirit rose,\nSpoke the Name of Yahweh,\nAnd shook the earth below.\nPharaoh with a hardened heart,\nDefiant in his pride,\nBut judgment like a tidal wave\nWas rolling in the sky!\n\nA whisper turned to a roar,\nA calling carved into stone…\n\nGo down, Moses!\nDeep into the darkness, stand!\nFace that Pharaoh,\nSay the word of Heaven’s command!\nGo down, Moses,\nBreak the yoke and shatter the hold!\nTell that tyrant,\nGOD says let My people GO!\n\nLET… THEM… GO!\n(Tremble, Pharaoh, your kingdom’s falling)\nLET… THEM… GO!\n(The chains you forged are breaking open)\nLET… THEM… GO!\n(Yahweh’s voice is thunder spoken)\nLET MY PEOPLE GO!\n\nGo down, Moses!\nStand where warriors never stand,\nSpeak the freedom\nWritten by the Lord’s own hand!\nGo down, Moses,\nBreak the chains and lift the low!\nTell that tyrant,\nGOD says LET MY PEOPLE GO!",
       "songMeaning": "A cry that shook a nation. A command that broke chains.\n\nGod saw the suffering. God heard the cries. He sent one man straight into the center of power with a message no king could ignore. Barefoot. Stuttering. Wanted for murder. Walked right into the throne room of the most powerful empire on earth.\n\n“Let My people go.”\n\nThat was not a request. That was Heaven breaking in.\n\nWe wrote this because that story is not old. There are still Pharaohs. Still systems. Still chains. And God is still the One who hears every cry, counts every brick, and decides when it ends.\n\nIf you feel held down, held back, or held captive, pay attention.",
@@ -1910,8 +1349,27 @@
         "ref": "Exodus 5:1",
         "quote": "Thus says the LORD, the God of Israel, 'Let my people go, that they may hold a feast to me in the wilderness.'"
       },
-      "updatedAt": "2026-05-02T13:00:08.851Z",
+      "updatedAt": "2026-05-21T12:08:22.217Z",
       "contentHash": "952d5bfc05ad8d15ae1980f11364acca86f3f4907a284d6243ce62404e40a868"
+    },
+    {
+      "songId": "0lUJcLKIt0o",
+      "videoId": "0lUJcLKIt0o",
+      "title": "Let My People Go",
+      "state": "released",
+      "traceId": "youtube:0lUJcLKIt0o",
+      "publishedAt": "2026-05-02T12:40:33Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=0lUJcLKIt0o",
+      "artwork": "",
+      "lyrics": "",
+      "songMeaning": "Shieldbearer - \"Let My People Go\" Heavy Christian Metal Anthem New Single 2026 A cry that shook a nation. A command that broke chains. Scripture-centered, christ, god, faith",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-05-02T13:00:08.851Z",
+      "contentHash": ""
     },
     {
       "songId": "simulated-video-001",
@@ -1931,11 +1389,866 @@
       },
       "updatedAt": "2026-04-19T02:47:46.471Z",
       "contentHash": ""
+    },
+    {
+      "songId": "0jPL3Mg88ZQ",
+      "videoId": "0jPL3Mg88ZQ",
+      "title": "SENTINELS",
+      "state": "released",
+      "traceId": "0jPL3Mg88ZQ",
+      "publishedAt": "2026-04-14T22:17:26Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=0jPL3Mg88ZQ",
+      "artwork": "",
+      "lyrics": "Matthew 24:42\nStand awake.\nGuard the truth.\nSound the warning.\nThe King is coming.\nLyrics\nOn the wall in the dead of night\nEyes awake, blades held tight\nTrumpet ready in the hand\nWaiting on the King’s command\nKingdoms fall, empires crawl\nWe do not sleep, we do not stall\nThrough the dark the warning call\nSentinels upon the wall\nIf the sword comes, sound the cry\nRaise the warning to the sky\nVoices tearing through it all\nSentinels upon the wall\nSentinels\nStand awake\nGuard the truth\nFor heaven’s sake\nTrumpets sound\nHear the call\nSentinels upon the wall\nSentinels\nLift your eyes",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:54.231Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "9zvO0HeoEIM",
+      "videoId": "9zvO0HeoEIM",
+      "title": "Rabbit Pig",
+      "state": "released",
+      "traceId": "9zvO0HeoEIM",
+      "publishedAt": "2026-03-27T16:43:41Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=9zvO0HeoEIM",
+      "artwork": "",
+      "lyrics": "He adapts. He settles. He starts to think this is just life now.\nUntil one moment changes everything.\n“When he came to his senses…” (Luke 15:17)\nHe gets up.\nHe leaves the mud.\nAnd he runs back to the Father.\nThat’s the message.\nSome stay in the mud.\nSome get up and run.\nSo when you hear:\n“rabbit pig…”\nAsk yourself:\nWhere am I right now?\nAnd more importantly…\nam I staying here, or am I going back?",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:54.350Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "JKbStFqCWn0",
+      "videoId": "JKbStFqCWn0",
+      "title": "My Neighbors Are Listening to Metal Tonight (Whether They Like It or Not)",
+      "state": "released",
+      "traceId": "JKbStFqCWn0",
+      "publishedAt": "2026-03-15T01:41:29Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=JKbStFqCWn0",
+      "artwork": "",
+      "lyrics": "Tracking guitars tonight.\nMy neighbors are listening to metal tonight.\nWhether they like it or not.\nRiffs are sounding furious.\nNew Shieldbearer music coming soon.\nChristian metal.\nHeavy guitars.\nChrist reigns.",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:54.409Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "9d0qZzeSFno",
+      "videoId": "9d0qZzeSFno",
+      "title": "The Man",
+      "state": "released",
+      "traceId": "9d0qZzeSFno",
+      "publishedAt": "2026-02-27T15:16:35Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=9d0qZzeSFno",
+      "artwork": "",
+      "lyrics": "[Verse]\nAnd you will hear\nOf wars\nAnd rumors of wars\n[Matthew 24:6]\nSee that you are not troubled\nFor all these things must come to pass\nBut the end is not yet\n[Matthew 24:6]\nNation will rise against nation\nKingdom against kingdom\n[Matthew 24:7]\nFamines\nPestilences\nEarthquakes\nIn various places\n[Matthew 24:7]\nAll these\nAre the beginning\nOf sorrows\n[Matthew 24:8]\nWhen the Man comes around\n[Verse]\nThere will be signs\nIn the sun\nIn the moon\nIn the stars\n[Luke 21:25]\nOn the earth\nDistress of nations\nWith perplexity\n[Luke 21:25]\nThe sea\nAnd the waves\nRoaring\n[Luke 21:25]\nMen’s hearts failing them\nFrom fear\nFrom expectation\n[Luke 21:26]\nOf those things\nWhich are coming\nOn the earth\n[Luke 21:26]\nFor the powers\nOf the heavens\nWill be shaken\n[Luke 21:26]\nWhen the Man comes around\n[Pre-Chorus]\nWatch therefore\nYou do not know\nWhat hour\nYour Lord is coming\n[Matthew 24:42]\nWhen the Man comes around\n[Chorus]\nWhen the Man\nWhen the Man\nWhen the Man comes around\nBehold\nHe is coming\nWith clouds\n[Revelation 1:7]\nEvery eye\nWill see Him\n[Revelation 1:7]\nWhen the Man\nWhen the Man\nWhen the Man comes around\n[Verse]\nJerusalem\nWill be trampled\nBy Gentiles\n[Luke 21:24]\nUntil the times\nOf the Gentiles\nAre fulfilled\n[Luke 21:24]\nBlindness in part\nHas happened\nTo Israel\n[Romans 11:25]\nUntil the fullness\nOf the Gentiles\nHas come in\n[Romans 11:25]\nWhen the Man comes around\n[Section]\nWhen\nThe\nMan\nWhen\nThe\nMan\nThe day of the Lord\nWill come\nAs a thief\nIn the night\n[2 Peter 3:10]\nThe heavens\nWill pass away\nWith a great noise\n[2 Peter 3:10]\nThe elements\nWill melt\nWith fervent heat\n[2 Peter 3:10]\nThe earth\nAnd the works\nThat are in it\nWill be burned up\n[2 Peter 3:10]\nIt is a fearful thing\nTo fall\nInto the hands\nOf the living God\n[Hebrews 10:31]\nWhen the Man comes around\n[Chorus]\nWhen the Man\nWhen the Man\nWhen the Man comes around\nThe kingdoms\nOf this world\nHave become\nThe kingdoms\nOf our Lord\nAnd of His Christ\n[Revelation 11:15]\nHe shall reign\nForever\nAnd ever\n[Revelation 11:15]\nWhen the Man comes around\n[Outro]\nI am\nThe Alpha\nAnd the Omega\n[Revelation 22:13]\nThe Beginning\nAnd the End\n[Revelation 22:13]\nThe First\nAnd the Last\n[Revelation 22:13]\nSurely\nI am coming\nQuickly\n[Revelation 22:20]\nAmen\nEven so\nCome\nLord Jesus\n[Revelation 22:20]",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:54.529Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "lAP0leoM49k",
+      "videoId": "lAP0leoM49k",
+      "title": "The Man – Verbatim Scripture",
+      "state": "released",
+      "traceId": "lAP0leoM49k",
+      "publishedAt": "2026-02-26T00:00:06Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=lAP0leoM49k",
+      "artwork": "",
+      "lyrics": "[Verse]\nAnd you will hear\nOf wars\nAnd rumors of wars\n[Matthew 24:6]\nSee that you are not troubled\nFor all these things must come to pass\nBut the end is not yet\n[Matthew 24:6]\nNation will rise against nation\nKingdom against kingdom\n[Matthew 24:7]\nFamines\nPestilences\nEarthquakes\nIn various places\n[Matthew 24:7]\nAll these\nAre the beginning\nOf sorrows\n[Matthew 24:8]\nWhen the Man comes around\n[Verse]\nThere will be signs\nIn the sun\nIn the moon\nIn the stars\n[Luke 21:25]\nOn the earth\nDistress of nations\nWith perplexity\n[Luke 21:25]\nThe sea\nAnd the waves\nRoaring\n[Luke 21:25]\nMen’s hearts failing them\nFrom fear\nFrom expectation\n[Luke 21:26]\nOf those things\nWhich are coming\nOn the earth\n[Luke 21:26]\nFor the powers\nOf the heavens\nWill be shaken\n[Luke 21:26]\nWhen the Man comes around\n[Pre-Chorus]\nWatch therefore\nYou do not know\nWhat hour\nYour Lord is coming\n[Matthew 24:42]\nWhen the Man comes around\n[Chorus]\nWhen the Man\nWhen the Man\nWhen the Man comes around\nBehold\nHe is coming\nWith clouds\n[Revelation 1:7]\nEvery eye\nWill see Him\n[Revelation 1:7]\nWhen the Man\nWhen the Man\nWhen the Man comes around\n[Verse]\nJerusalem\nWill be trampled\nBy Gentiles\n[Luke 21:24]\nUntil the times\nOf the Gentiles\nAre fulfilled\n[Luke 21:24]\nBlindness in part\nHas happened\nTo Israel\n[Romans 11:25]\nUntil the fullness\nOf the Gentiles\nHas come in\n[Romans 11:25]\nWhen the Man comes around\n[Section]\nWhen\nThe\nMan\nWhen\nThe\nMan\nThe day of the Lord\nWill come\nAs a thief\nIn the night\n[2 Peter 3:10]\nThe heavens\nWill pass away\nWith a great noise\n[2 Peter 3:10]\nThe elements\nWill melt\nWith fervent heat\n[2 Peter 3:10]\nThe earth\nAnd the works\nThat are in it\nWill be burned up\n[2 Peter 3:10]\nIt is a fearful thing\nTo fall\nInto the hands\nOf the living God\n[Hebrews 10:31]\nWhen the Man comes around\n[Chorus]\nWhen the Man\nWhen the Man\nWhen the Man comes around\nThe kingdoms\nOf this world\nHave become\nThe kingdoms\nOf our Lord\nAnd of His Christ\n[Revelation 11:15]\nHe shall reign\nForever\nAnd ever\n[Revelation 11:15]\nWhen the Man comes around\n[Outro]\nI am\nThe Alpha\nAnd the Omega\n[Revelation 22:13]\nThe Beginning\nAnd the End\n[Revelation 22:13]\nThe First\nAnd the Last\n[Revelation 22:13]\nSurely\nI am coming\nQuickly\n[Revelation 22:20]\nAmen\nEven so\nCome\nLord Jesus\n[Revelation 22:20]",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:54.589Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "7ceaw6UuKFI",
+      "videoId": "7ceaw6UuKFI",
+      "title": "Afraid to Say His Name?",
+      "state": "released",
+      "traceId": "7ceaw6UuKFI",
+      "publishedAt": "2026-02-13T15:38:39Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=7ceaw6UuKFI",
+      "artwork": "",
+      "lyrics": "Iron dust and canyoned scars\nFrozen ground from ancient wars\nDry river veins stretched far\nThe wounded red of Mars\nEndless storms of rolling thunder\nClouds that tear the dark asunder\nGravity that drags us under\nThe burning giant Jupiter\nOrbits lock\nPressure climbs\nMass obeys\nCurves of time\nGalilean\nLord of flame\nBefore the stars\nYou bore the Name\nGalilean\nChrist alone\nDarkness breaks\nThe void is torn\nA sun implodes and leaves a scar\nIts burning shell is ripped apart\nMatter crushed beyond the far\nThe shattered core, neutron star\nA spiral flood of burning rays\nA hundred billion suns ablaze\nWe drift within its ancient sway\nThe endless wheel, Milky Way\nLight departs\nStill arrives\nAges pass\nBefore our eyes\nGalilean\nLord of flame\nBefore the stars\nYou bore the Name\nGalilean\nChrist alone\nDarkness breaks\nThe void is torn\nStars ignite\nStars decay\nLight arrives\nFar too late\nWorlds collapse\nTime is torn\nAsh remains\nWhere fire was born\nGalilean\nKing of all\nWhen stars collapse\nAnd heavens fall\nGalilean\nEnd and start\nAll creation\nBears Your mark\nFire fades from every sky\nNight stands bare before the dawn\nWhat was made will pass and die\nJesus reigns\nThe Galilean",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:54.629Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "6GXXGAKZHtE",
+      "videoId": "6GXXGAKZHtE",
+      "title": "Can Christian Metal Go This Hard?",
+      "state": "released",
+      "traceId": "6GXXGAKZHtE",
+      "publishedAt": "2026-02-12T02:51:57Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=6GXXGAKZHtE",
+      "artwork": "",
+      "lyrics": "Iron dust and canyoned scars\nFrozen ground from ancient wars\nDry river veins stretched far\nThe wounded red of Mars\nEndless storms of rolling thunder\nClouds that tear the dark asunder\nGravity that drags us under\nThe burning giant Jupiter\nOrbits lock\nPressure climbs\nMass obeys\nCurves of time\nGalilean\nLord of flame\nBefore the stars\nYou bore the Name\nGalilean\nChrist alone\nDarkness breaks\nThe void is torn\nA sun implodes and leaves a scar\nIts burning shell is ripped apart\nMatter crushed beyond the far\nThe shattered core, neutron star\nA spiral flood of burning rays\nA hundred billion suns ablaze\nWe drift within its ancient sway\nThe endless wheel, Milky Way\nLight departs\nStill arrives\nAges pass\nBefore our eyes\nGalilean\nLord of flame\nBefore the stars\nYou bore the Name\nGalilean\nChrist alone\nDarkness breaks\nThe void is torn\nStars ignite\nStars decay\nLight arrives\nFar too late\nWorlds collapse\nTime is torn\nAsh remains\nWhere fire was born\nGalilean\nKing of all\nWhen stars collapse\nAnd heavens fall\nGalilean\nEnd and start\nAll creation\nBears Your mark\nFire fades from every sky\nNight stands bare before the dawn\nWhat was made will pass and die\nJesus reigns\nThe Galilean",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:54.709Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "Bse2w3qVK_Y",
+      "videoId": "Bse2w3qVK_Y",
+      "title": "GALILEAN #shorts",
+      "state": "released",
+      "traceId": "Bse2w3qVK_Y",
+      "publishedAt": "2026-02-10T03:12:05Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=Bse2w3qVK_Y",
+      "artwork": "",
+      "lyrics": "Iron dust and canyoned scars\nFrozen ground from ancient wars\nDry river veins stretched far\nThe wounded red of Mars\nEndless storms of rolling thunder\nClouds that tear the dark asunder\nGravity that drags us under\nThe burning giant Jupiter\nOrbits lock\nPressure climbs\nMass obeys\nCurves of time\nGalilean\nLord of flame\nBefore the stars\nYou bore the Name\nGalilean\nChrist alone\nDarkness breaks\nThe void is torn\nA sun implodes and leaves a scar\nIts burning shell is ripped apart\nMatter crushed beyond the far\nThe shattered core, neutron star\nA spiral flood of burning rays\nA hundred billion suns ablaze\nWe drift within its ancient sway\nThe endless wheel, Milky Way\nLight departs\nStill arrives\nAges pass\nBefore our eyes\nGalilean\nLord of flame\nBefore the stars\nYou bore the Name\nGalilean\nChrist alone\nDarkness breaks\nThe void is torn\nStars ignite\nStars decay\nLight arrives\nFar too late\nWorlds collapse\nTime is torn\nAsh remains\nWhere fire was born\nGalilean\nKing of all\nWhen stars collapse\nAnd heavens fall\nGalilean\nEnd and start\nAll creation\nBears Your mark\nFire fades from every sky\nNight stands bare before the dawn\nWhat was made will pass and die\nJesus reigns\nThe Galilean",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:54.789Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "0sFc9mkhCR0",
+      "videoId": "0sFc9mkhCR0",
+      "title": "Shieldbearer",
+      "state": "released",
+      "traceId": "0sFc9mkhCR0",
+      "publishedAt": "2026-01-23T19:41:11Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=0sFc9mkhCR0",
+      "artwork": "",
+      "lyrics": "Iron dust and canyoned scars\nFrozen ground from ancient wars\nDry river veins stretched far\nThe wounded red of Mars\nEndless storms of rolling thunder\nClouds that tear the dark asunder\nGravity that drags us under\nThe burning giant Jupiter\nOrbits lock\nPressure climbs\nMass obeys\nCurves of time\nGalilean\nLord of flame\nBefore the stars\nYou bore the Name\nGalilean\nChrist alone\nDarkness breaks\nThe void is torn\nA sun implodes and leaves a scar\nIts burning shell is ripped apart\nMatter crushed beyond the far\nThe shattered core, neutron star\nA spiral flood of burning rays\nA hundred billion suns ablaze\nWe drift within its ancient sway\nThe endless wheel, Milky Way\nLight departs\nStill arrives\nAges pass\nBefore our eyes\nGalilean\nLord of flame\nBefore the stars\nYou bore the Name\nGalilean\nChrist alone\nDarkness breaks\nThe void is torn\nStars ignite\nStars decay\nLight arrives\nFar too late\nWorlds collapse\nTime is torn\nAsh remains\nWhere fire was born\nGalilean\nKing of all\nWhen stars collapse\nAnd heavens fall\nGalilean\nEnd and start\nAll creation\nBears Your mark\nFire fades from every sky\nNight stands bare before the dawn\nWhat was made will pass and die\nJesus reigns\nThe Galilean",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:54.829Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "4jEKEp2sYWg",
+      "videoId": "4jEKEp2sYWg",
+      "title": "NAZARENE – Shieldbearer",
+      "state": "released",
+      "traceId": "4jEKEp2sYWg",
+      "publishedAt": "2026-01-06T21:02:36Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=4jEKEp2sYWg",
+      "artwork": "",
+      "lyrics": "LYRICS\nHoly\nMatchless\nLifted high\nCrowned in truth\nBefore all time\nGlory walks in mortal frame\nGod revealed\nWe praise the Name\nBlameless\nFaithful\nWithout stain\nLove stood firm\nIn spite of pain\nYou chose the cross\nYou bore the weight\nStill You reign\nStill You reign\nNAZARENE\nNAZARENE\nALL HONOR\nALL PRAISE\nNAZARENE\nRisen\nLiving\nNever slain\nDeath was bent\nAround Your Name\nKing of kings\nNo equal throne\nChrist alone\nChrist alone\nNAZARENE\nNAZARENE\nALL HONOR\nALL PRAISE\nNAZARENE\nNo other Name\nNo other throne\nNo other power\nChrist alone\nCHRIST\nALONE\nCHRIST\nALONE\nNAZARENE\nNAZARENE\nEVERY KNEE\nEVERY TONGUE\nNAZARENE\nAll glory\nAll praise\nForever\nNAZARENE",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:54.896Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "VPFpm1_lFMk",
+      "videoId": "VPFpm1_lFMk",
+      "title": "Shieldbearer",
+      "state": "released",
+      "traceId": "VPFpm1_lFMk",
+      "publishedAt": "2025-12-27T02:11:06Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=VPFpm1_lFMk",
+      "artwork": "",
+      "lyrics": "At some point my son watched this and said,\n“Dad, this isn’t Little Drummer Boy.\nThis is Big Drummer Man.”\nHe was right.\nThis is not a cover or a recreation.\nIt is a drum-led cinematic reimagining.\nA modern offering using modern tools, modern sound, and a lot of enthusiasm.\nNo perfect edits.\nNo subtle restraint.\nJust rhythm, movement, and a creative moment imagined out loud.\nIf it makes you smile, pause, laugh, or ask questions, that is enough.\nSometimes you do not polish the idea.\nYou just put it on the floor and let it exist.",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:54.949Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "JGbJKWL2F0Q",
+      "videoId": "JGbJKWL2F0Q",
+      "title": "RUACH",
+      "state": "released",
+      "traceId": "JGbJKWL2F0Q",
+      "publishedAt": "2025-12-14T15:07:55Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=JGbJKWL2F0Q",
+      "artwork": "",
+      "lyrics": "Master, we proclaim You, sovereign over all\nBy Your breath the void surrendered and the silent depths were called\nWhen the final trumpet tears the heavens from the sky\nEvery nation sees the scars of the Lamb who rose to life\nEvil hunts my footsteps, flesh is drawn toward the fall\nRUACH, drive the dark away, let no deceit remain at all\nYou who scattered legions with the thunder of Your word\nYou who left the heights of glory for redemption undeserved\nIf Your people go to silence, then the stones awake and cry\nEarth itself erupts in witness to the King enthroned on high\nMountains quake with reverence, oceans echo Your decree\nAll creation answers back with a truth no soul can flee\nRUACH, shake the ages\nLet the firmament awake\nIf the stones erupt in thunder\nThen ignite my very frame\nRUACH, shake the ages\nAll You fashioned bow and see\nWhen the cosmos roars allegiance\nThe one who cries is me\nWhere no shadow ever reaches, that is where my soul will rise\nWhere the everlasting brightness burns, I stand before Your eyes\nHosts of blazing warriors wait the whisper of Your will\nAnd with their ranks unending I will praise You standing still\nLord of Lords, Your lifeblood fell and broke the captive chain\nThen You rose in power conquering the darkness and its reign\nTyrant night was shattered when You called the sleepers free\nMaster, I surrender, I fall prostrate at Your feet\nRUACH moving, judgment waking\nNight collapsing, strongholds breaking\nEarth responding, fire ascending\nEvery knee to You bending\nRUACH, shake the ages\nLet the firmament awake\nIf the stones erupt in thunder\nThen ignite my very frame\nRUACH, shake the ages\nAll You fashioned bow and see\nWhen the final roar is spoken\nThe one who cries is me",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:55.009Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "VMQ2mg_n9L8",
+      "videoId": "VMQ2mg_n9L8",
+      "title": "Star, Scepter (Christian metal based on Numbers 24)",
+      "state": "released",
+      "traceId": "VMQ2mg_n9L8",
+      "publishedAt": "2025-12-04T03:36:54Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=VMQ2mg_n9L8",
+      "artwork": "",
+      "lyrics": "FULL LYRICS (NUMBERS 24 in song)\nThe Spirit of God came upon him\nThe oracle of the man whose eye is opened\nHe sees the vision of the Almighty\nFalling down with eyes uncovered\nHow lovely are your tents, O Jacob\nYour dwellings, O Israel\nLike valleys they spread out\nLike gardens beside the river\nA Star out of Jacob\nA Scepter out of Israel\nA Star out of Jacob\nA Scepter out of Israel\nWater shall flow from his buckets\nHis seed in many waters\nHis king shall be higher than Agag\nHis kingdom shall be exalted\nGod brought him out of Egypt\nHe has the strength of a wild ox\nHe shall eat up the nations\nHe shall crush their bones\nA Star out of Jacob\nA Scepter out of Israel\nA Star out of Jacob\nA Scepter out of Israel\nBlessed is he who blesses you\nCursed is he who curses you\nThe man who hears the words of God\nThe man who knows the knowledge of the Most High\nI see Him, but not now\nI behold Him, but not near\nOut of Jacob he shall come\nHe shall batter the forehead of Moab\nEdom shall be a possession\nSeir also shall be a possession\nOut of Jacob One shall have dominion\nHe shall destroy the remnant of the city\nA Star out of Jacob\nA Scepter out of Israel\nDominion out of Jacob\nDestruction of the foe\nA Star out of Jacob\nA Scepter out of Israel\nDominion out of Jacob\nThe Word of God stands\nSUPPORT SHIELDBEARER",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:55.069Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "Y7a0R2FGDeo",
+      "videoId": "Y7a0R2FGDeo",
+      "title": "Silent As Night",
+      "state": "released",
+      "traceId": "Y7a0R2FGDeo",
+      "publishedAt": "2025-11-03T19:45:21Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=Y7a0R2FGDeo",
+      "artwork": "",
+      "lyrics": "Lyrics – Silent As Night\nThe world screams for a cause they don’t bleed for\nAnd turns away from those who still die for Truth\nChanting peace while the children burn\nSudan bleeds and the cowards turn\nScroll the pain, ignore the flame\nNo outrage when there’s no fame\nThey scream for clout, not for the slain\nThey wear compassion like a chain\nNigeria burns while the world looks away\nVillages fall as the faithful pray\nWhere are the voices that scream for the screen\nWhere are the crowds when the blood runs unseen\nWhere are the banners, where are the hands\nWhere is B L M, where do they stand\nWhere is Greta, where is the roar\nWhere are the cameras we paid for before\nWhere is the outrage, where are the cries\nWhere are the flags when a martyr dies\nThe silence speaks, the silence lies\nHeaven sees through all disguise\nAsh to ash, dust to dust\nThe righteous bleed, the world’s unjust\nHeaven writes the names in fire\nThe silent fall under their desire\nNigeria’s graves uncounted still\nFaith hunted, blood that spills\nJustice trending, hearts offline\nTruth denied for a headline line\nWhere are the prophets\nWhere are the shepherds\nWhere is the church that once was fearless\nThis is your virtue in decay\nYour silence screams louder than hate\nWhere is B L M\nWhere is Greta\nWhere are the human-rights crusaders\nWhere are the cameras\nWhere is the uproar\nWhere are the flags for the faithful torn\nNigeria burns while the world looks away\nChristians die but their faith remains\nHeaven sees and vengeance wakes\nThe silent will answer when Truth shakes\nThe silence says everything\nThe silence will testify\nThe silent will answer\nWhen Truth calls their name\nVerified sources",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:55.149Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "8khugdipSJM",
+      "videoId": "8khugdipSJM",
+      "title": "Tidings of Comfort and Joy (God Rest Ye Merry Gentlemen)",
+      "state": "released",
+      "traceId": "8khugdipSJM",
+      "publishedAt": "2025-10-24T00:24:36Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=8khugdipSJM",
+      "artwork": "",
+      "lyrics": "Hark now, all who seek the Light,\nLift up your hearts and hear,\nFor Christ the Lord, Redeemer come,\nHas silenced doubt and fear;\nHe breaks the chains that bound the night,\nAnd draws salvation near.\nGlad tidings of comfort and of joy,\nComfort and joy!\nGlad tidings of comfort and of joy!\nIn Bethlehem of Judah,\nThis holy Child was born,\nAnd laid within a manger\nUpon that blessed morn;\nHis mother, pure and faithful,\nBeheld her Son new-born.\nGlad tidings of comfort and of joy,\nComfort and joy!\nGlad tidings of comfort and of joy!\nFrom God, our loving Father,\nAn angel bright was sent,\nTo shepherds in the fields by night,\nWith Heaven’s message meant:\nThat Christ the Lord, the promised One,\nTo Earth in mercy went.\nGlad tidings of comfort and of joy,\nComfort and joy!\nGlad tidings of comfort and of joy!\n\"Fear not,\" declared the angel voice,\n\"Let nothing bring dismay,\nFor born to you a Savior comes,\nThe Light, the Truth, the Way;\nTo free all souls who trust in Him\nFrom darkness and decay.\"\nGlad tidings of comfort and of joy,\nComfort and joy!\nGlad tidings of comfort and of joy!\nThe shepherds at that holy word\nRejoiced with hearts aflame,\nThey left their flocks in tempest winds\nAnd to the city came,\nTo find the Babe of prophecy,\nAnd praise His holy name.\nGlad tidings of comfort and of joy,\nComfort and joy!\nGlad tidings of comfort and of joy!\nWhen they beheld the Holy Child,\nWhere humble oxen fed,\nThey bowed in awe and worshipped there,\nBefore His lowly bed;\nAnd Mary softly lifted praise\nTo God who sent her Bread.\nGlad tidings of comfort and of joy,\nComfort and joy!\nGlad tidings of comfort and of joy!\nNow raise your songs and praises high,\nAll hearts within this place,\nWith love that binds the brotherhood,\nAnd peace that crowns His grace;\nThis holy time of Christmas shines,\nWith heaven’s bright embrace.\nGlad tidings of comfort and of joy,\nComfort and joy!\nGlad tidings of comfort and of joy!",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:55.169Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "CNr54CpYz7o",
+      "videoId": "CNr54CpYz7o",
+      "title": "Broken Helicopter – A Father’s Song",
+      "state": "released",
+      "traceId": "CNr54CpYz7o",
+      "publishedAt": "2025-10-17T14:50:28Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=CNr54CpYz7o",
+      "artwork": "",
+      "lyrics": "You brought it to me with tearful eyes,\nRotor blades bent, it wouldn’t fly.\nYou held it out with hope so wide,\n&ldquo;Dada, can you fix it, just like last time?&rdquo;\nYour hands were small, your heart was sure,\nThat I could mend what broke for sure.\nI took that toy and held it tight,\nPromised I’d make it soar by night.\nBut time flies faster than toys can spin,\nAnd I can’t fix everything with tools and tin.\nYou’re taller now, your voice has changed,\nBut I still hear that boy’s sweet name,\n&ldquo;Dada…&rdquo; echoing down the hall.\nAnd I’d still fix it all, if I could fix it all.\nNow your battles aren’t with blades and glue,\nThey're on a field with goals in view.\nYou say, &ldquo;Dada, help me with my shot,&rdquo;\nSame little heart, just a different plot.\nI cheer you on, I mark the plays,\nI pass the ball, recall those days.\nFrom broken toys to goals you chase,\nYou still look up, and I take my place.\n'Cause time flies faster than toys can spin,\nAnd I can’t fix everything with tools and tin.\nYou're finding heights I’ll never see,\nBut you’ll always be that boy to me.\nWhen life breaks down or dreams just stall,\nI’ll still fix what I can, I’ll still catch your fall.\nSome things you learn to fix alone,\nSome dreams you chase beyond our home.\nBut if you crash, if you descend,\nKnow my love won’t ever bend.\nTime flies faster than we believe,\nAnd not all wounds will ask to leave.\nBut I’d trade the world to hear you say,\n&ldquo;Hey Dada, can you help today?&rdquo;\nNo matter how the pieces fall,\nI'll still fix what I can, if I can fix it all.\nYou once brought me a broken toy,\nNow you're the man, but still my boy.",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:55.210Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "AIiCw1a5hnM",
+      "videoId": "AIiCw1a5hnM",
+      "title": "Unaliving the Giant (Official Christian Metal Release)",
+      "state": "released",
+      "traceId": "AIiCw1a5hnM",
+      "publishedAt": "2025-10-10T02:30:01Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=AIiCw1a5hnM",
+      "artwork": "",
+      "lyrics": "The valley waits beneath the haze,\nHeatline ghosts in the sun’s red gaze.\nA giant laughs, his challenge thrown,\nHe dares the God I’ve always known.\nMy hands still quake, the ground resounds,\nA tremor rolls through sacred ground.\nThe paw was crushed, the claw was torn,\nThe same right hand will strike once more.\nYou trust your height, your blade, your name,\nI walk beside the One untamed.\nYour crown hits the dust as Skull Meets Stone,\nYour crown hits the dust as Skull Meets Stone.\nFall to the ground, your name dethroned,\nYour crown hits the dust as Skull Meets Stone.\nThe ranks hold breath, the moment bends,\nEach heartbeat counts, the stillness ends.\nThe cord swings wide, the line is cast,\nThe air divides, the die is passed.\nHis grin decays, the watchers stare,\nA single sound cuts through the air.\nThe cord releases, the world convicts,\nThe ground remembers what it hits.\nYou trust your height, your blade, your name,\nI walk beside the One untamed.\nYour crown hits the dust as Skull Meets Stone,\nYour crown hits the dust as Skull Meets Stone.\nFall to the ground, your name dethroned,\nYour crown hits the dust as Skull Meets Stone.\nStone to skull, the pride erased,\nThe tyrant falls, the field retraced.\nRaise your voice, let every line,\nUnalive the giant, this field is mine.\nThe ranks surge forward, the nations know,\nThe Lord of Hosts has struck His blow.\nThe ground still hums where giants bled,\nThe call resounds, the Word was said.\nThe breath of God through dust and bone,\nThe field belongs to Him alone.\nYour crown hits the dust as Skull Meets Stone,\nYour crown hits the dust as Skull Meets Stone.\nFall to the ground, your name dethroned,\nYour crown hits the dust as Skull Meets Stone.\nThe giant’s fallen, his name undone,\nUnalive the giant, the field is won.\nThe dust drifts slow, the earth has known,\nThe day was His as Skull Meets Stone.",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:55.249Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "E9rJluVWvxM",
+      "videoId": "E9rJluVWvxM",
+      "title": "The Architect (Official Christian Metal Release)",
+      "state": "released",
+      "traceId": "E9rJluVWvxM",
+      "publishedAt": "2025-09-26T15:41:13Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=E9rJluVWvxM",
+      "artwork": "",
+      "lyrics": "Patterns point to a Pattern-Maker. Order demands an Architect.\nGod is not bound by time. He created it.\nGod is not contained in space. He spoke it.\nGod is not made of matter. He formed it.\nHe is the Intelligent Designer. The Eternal Architect.\n——————————\nLYRICS\nVerse 1\nFrom nothing He spoke, and the darkness obeyed,\nLight split the void and the cosmos displayed.\nPlanets took orbit, the oceans were framed,\nOrder from chaos, creation proclaimed.\nPre-Chorus\nGalaxies burn at the sound of His word,\nYet He bends low, and His whisper is heard.\nChorus\nThe Architect, of worlds and time,\nEars for the deaf, sight restored to the blind.\nHe spoke every star into endless array,\nYet formed us by hand and He calls us by name.\nThe Architect, Designer divine,\nSpace folds in silence to the Author of time.\nThe earth and the heavens obey His design,\nHis kingdom eternal, when stars cease to shine.\nVerse 2\nMountains were lifted, the valleys were cast,\nRivers cut pathways, the ages amassed.\nDNA written, the code of His will,\nEquations unravel yet point to Him still.\nPre-Chorus\nScience will pause where His fingerprints lie,\nWonder will tremble beneath the Most High.\nChorus\nThe Architect, of worlds and time,\nEars for the deaf, sight restored to the blind.\nHe spoke every star into endless array,\nYet formed us by hand and He calls us by name.\nThe Architect, Designer divine,\nSpace folds in silence to the Author of time.\nThe earth and the heavens obey His design,\nHis kingdom eternal, when stars cease to shine.\nBridge\nVoice of thunder, the atoms align,\nUniverse bends to the Maker of Time.\nStars by the billions obey His command,\nYet He reached down, took the dust in His hand.\nBreath of the Almighty ignites every flame,\nBut He knows His children, He calls us by name.\nFinal Chorus\nThe Architect, of worlds and time,\nEars for the deaf, sight restored to the blind.\nHe spoke every star into endless array,\nYet formed us by hand and He calls us by name.\nThe Architect, Designer divine,\nSpace folds in silence to the Author of time.\nThe earth and the heavens obey His design,\nHis kingdom eternal, when stars cease to shine.",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:55.289Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "3xi9eDriB-E",
+      "videoId": "3xi9eDriB-E",
+      "title": "Gut Punch",
+      "state": "released",
+      "traceId": "3xi9eDriB-E",
+      "publishedAt": "2025-09-19T15:02:46Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=3xi9eDriB-E",
+      "artwork": "",
+      "lyrics": "August twenty-second on that Blue Line train,\nShe carried the heartache from the war in Ukraine.\nShe thought she’d find freedom in the land of the free,\nBut she bled on that train till that last heartbeat.\nOur nation breaks and our hope lies crushed,\nLife knocked us down with a gut punch.\nThrough all the hurt, are You here holding us?\nWe run into Your arms, run into Your arms Jesus.\nCharlie’s gone, gunned down in Utah,\nBlood on the ground, saw it on a livestream.\nDo we still have that freedom of speech,\nWondered what happened to the American dream.\nOur nation breaks and our hope lies crushed,\nIt hit to the heart like a gut punch.\nThrough all the hurt, will You keep holding us?\nWe run into Your arms, run into Your arms Jesus.\nIn DC they light candles on the Hill,\nHearts are broken but still holding vigil.\nFrom power halls to the common street,\nWe bow our heads where Your mercy meets.\nFear and anger fill the nightly news,\nCandace smirks and blames it on the Jews.\nPointing fingers while the nation bleeds,\nWe’re crying out for the truth we need.\nOur nation breaks and our hope lies crushed,\nIt hit to the heart like a gut punch.\nThrough all the hurt, will You keep holding us?\nWe run into Your arms, run into Your arms Jesus.\nThese broken strings still cry from my guitar,\nI’ll scream Your name till the morning breaks the dark.\nWith heavy hearts through all that grieves us,\nWe run into Your arms, run into Your arms Jesus.",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:55.409Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "blL7TiDkDrc",
+      "videoId": "blL7TiDkDrc",
+      "title": "Over the Skies of Hell (Official Lyric Video)",
+      "state": "released",
+      "traceId": "blL7TiDkDrc",
+      "publishedAt": "2025-09-10T14:54:01Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=blL7TiDkDrc",
+      "artwork": "",
+      "lyrics": "Flames rose high in the dragon’s den,\nChains were clamped on the souls of men.\nDarkness laughed at the world He made,\nBut the sky was split and the grave betrayed.\nHe walked through ash and fire’s breath,\nHe shattered hell, He silenced death.\nWith fury and light in His burning strides,\nHe storms the realm where the serpent hides.\nThe chains all snapped with a single word,\nHis roar the last that hell ever heard.\nNow crowned in flame and clothed in might,\nHe rides… over the skies of hell.\nThe keys He claimed from Satan’s grip,\nThe throne of lies began to slip.\nHe rose with power none could quell,\nKing of Heaven, Slayer of Hell.\nNo demon stood, no gate remained,\nHis voice alone unmade the flame.\nWith fury and light in His burning strides,\nHe storms the realm where the serpent hides.\nThe chains all snapped with a single word,\nHis roar the last that hell ever heard.\nNow crowned in flame and clothed in might,\nHe rides… over the skies of hell.\nHe took their sting, He burned the scroll,\nHe stormed the dark to save my soul.\nHe rides on flame with stars in tow,\nHe speaks and kingdoms rise or bow.\nHis robe is drenched in holy war,\nHis voice, the flood, the lion’s roar.\nThe grave lies torn beneath His will,\nHe reigns over the skies of hell.\nOver the skies of hell,\nOver the skies of hell,\nOver the skies of hell,\nOver the skies of hell.",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:55.449Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "DsGhOgXLGXI",
+      "videoId": "DsGhOgXLGXI",
+      "title": "1000 Suns",
+      "state": "released",
+      "traceId": "DsGhOgXLGXI",
+      "publishedAt": "2025-09-05T16:28:51Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=DsGhOgXLGXI",
+      "artwork": "",
+      "lyrics": "Jesus Christ reigns in glory, brighter than a thousand suns.\nThe earth convulses at His stride\nThe heavens split, the stars collide\nThe blazing Christ ignites the sky\nNo shadow lives, no darkness hides\nFire crowns His sovereign head\nOceans roar, the sky runs red\nPrison gates are torn apart\nThe King of Glory claims each heart\nFear not for the Lamb stands crowned\nThe King of kings holds holy ground\nYour radiance tears the night in two\nAll creation bows in awe of You\nThe grave lies shattered, death undone\nBy Christ the everlasting Son\nDark powers break, they cannot run\nYou blaze\nBrighter than a thousand suns\nSteel and stone dissolve like sand\nHis word commands, none can withstand\nThe Lion roars, the dead arise\nThe Living One rules earth and skies\nDarkness trembles at Your name\nDemons quake and scream in flame\nHell recoils, its gates unmade\nThe risen Christ forever reigns\nFear not for the Lamb stands crowned\nThe King of kings holds holy ground\nYour radiance tears the night in two\nAll creation bows in awe of You\nThe grave lies shattered, death undone\nBy Christ the everlasting Son\nDark powers break, they cannot run\nYou blaze\nBrighter than a thousand suns\nYour radiance tears the night in two\nAll creation bows in awe of You\nThe grave lies shattered, death undone\nBy Christ the everlasting Son\nDark powers break, they cannot run\nYou blaze\nBrighter than a thousand suns\nBrighter than a thousand suns\nJesus brighter than a thousand suns",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:55.576Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "0ljswHO8D2I",
+      "videoId": "0ljswHO8D2I",
+      "title": "Emmaus – Shieldbearer (Official Metal Anthem",
+      "state": "released",
+      "traceId": "0ljswHO8D2I",
+      "publishedAt": "2025-08-28T12:36:21Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=0ljswHO8D2I",
+      "artwork": "",
+      "lyrics": "The shield we trust is not machine. The shield we trust is Elohim.\nLyrics\nWe walked the road with broken hope…\nThe cross still fresh behind the smoke…\nA Stranger came with wounded feet…\nHe spoke and fire filled the street!\nIt feels like fire when Jesus speaks!\nHearts ignite and iron breaks!\nGraves unseal and tyrants quake!\nLight explodes where shadows creep…\nCall His name and hell grows weak…\nIt feels like fire when Jesus speaks!\nHe lit the scrolls with living breath…\nEach word unwrapped the sting of death…\nThe story burned from Eve to Lamb…\nWe did not know, yet there He stands!\nIt feels like fire when Jesus speaks!\nHearts ignite and iron breaks!\nGraves unseal and tyrants quake!\nLight explodes where shadows creep…\nCall His name and hell grows weak…\nIt feels like fire when Jesus speaks!\nHe vanished, but the flame remained…\nA holy burn that sings His name…\nOur steps turned back, our voices wild…\nWe saw the Lord and walked in fire!\nIt feels like fire when Jesus speaks!\nHearts ignite and iron breaks!\nGraves unseal and tyrants freak!\nLight explodes where shadows creep…\nCall His name and hell grows weak…\nIt feels like fire when Jesus speaks!\nIt feels like fire when Jesus speaks!\nIt feels like fire when Jesus speaks!\nWere not our hearts burning within…\nWhen He spoke to us on the road?",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:55.609Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "DFfIX-mlS-k",
+      "videoId": "DFfIX-mlS-k",
+      "title": "He Found His Voice",
+      "state": "released",
+      "traceId": "DFfIX-mlS-k",
+      "publishedAt": "2025-08-21T14:48:31Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=DFfIX-mlS-k",
+      "artwork": "",
+      "lyrics": "They told us you might see the world through colors we can’t always name.\nYou lined up toys instead of words, but we loved you just the same.\nYou did not speak like others did, but oh, your eyes told a tale.\nSo we held on, we prayed and hoped, and followed every little trail.\nAnd now you're counting stars in class, solving puzzles, moving fast.\nYou are the quiet storm that broke through noise, my boy, my joy… he found his voice.\nTo every teacher who helped him rise, you saw the spark behind his eyes.\nYou changed a world with gentle choice, thank you… he found his voice.\nThere were days he would sit in silence still, while others laughed and ran ahead.\nBut now he races to the board, with numbers dancing in his head.\nHe is not defined by any chart, he has a wild and brilliant heart.\nThe boy who once just smiled and waved is standing tall, no need to be saved.\nAnd now he's counting stars in class, solving puzzles, moving fast.\nYou are the quiet storm that broke through noise, my boy, my joy… he found his voice.\nTo every guide who took his hand, you helped us truly understand.\nWith every sound and every choice, thank you… he found his voice.\nSpeech was once a distant dream, now he sings and builds and beams.\nAnd though the journey is far from done, he is rising like the morning sun.\nNow he is counting stars in class, leads the charge, not in the past.\nThe label is gone, it is just pure choice, my son, my light… he found his voice.\nTo the hearts who saw his hidden flame, you loved the boy, not just the name.\nYou helped him sing without the noise, thank you… he found his voice.\nWe once heard silence, now we hear song.\nHe found his voice, where it belonged.",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:55.649Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "tH2GpPLY3so",
+      "videoId": "tH2GpPLY3so",
+      "title": "QUAKE (Christian Metal",
+      "state": "released",
+      "traceId": "tH2GpPLY3so",
+      "publishedAt": "2025-08-14T00:17:51Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=tH2GpPLY3so",
+      "artwork": "",
+      "lyrics": "Low growl in the ground, I hear your walls break\nName on my lips, and the night starts to quake\nYour banners burn where you claimed the streets\nYour captives run as they hear His feet\nNo courtroom trial, the verdict’s screamed\nThe Word made flesh rips apart your schemes\nAsh on the air, your fortress shakes\nThe sky cracks open, and the earth awakes\nQUAKE, when the Name cuts through the haze\nQUAKE, every shadow splits in blaze\nYour crown falls, your strongholds break\nJESUS JESUS JESUS, you quake\nYour venom’s dry, your claws turn dust\nEvery curse you wrote just turns to rust\nThe Lamb stands crowned where you thought Him slain\nHe steps through fire, and He calls your name\nAsh on the air, your fortress shakes\nThe sky cracks open, and the earth awakes\nQUAKE, when the Name cuts through the haze\nQUAKE, every shadow splits in blaze\nYour crown falls, your strongholds break\nJESUS JESUS JESUS, you quake\nBow down (QUAKE)\nSpit out the lies (QUAKE)\nYour kingdom cracks under holy eyes (QUAKE)\nThe grave lies empty, the risen Christ (QUAKE)\nQUAKE, QUAKE\nName of JESUS makes you QUAKE\nQUAKE, when the Name cuts through the haze\nQUAKE, every shadow splits in blaze\nYour crown falls, your strongholds break\nJESUS JESUS JESUS, you quake\nNight goes silent when the demons quake",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:55.689Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "BwWB95z6lKg",
+      "videoId": "BwWB95z6lKg",
+      "title": "Worth It All (Official Video)",
+      "state": "released",
+      "traceId": "BwWB95z6lKg",
+      "publishedAt": "2025-07-30T17:32:30Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=BwWB95z6lKg",
+      "artwork": "",
+      "lyrics": "In the silence when you're lonely,\nWhen your heart cries in the night,\nEvery whisper that you're broken,\nKnow I'll always hold you tight.\nI’ve seen every road you've wandered,\nWatched you chasing empty dreams,\nBut my love never faltered,\nI'm closer than it seems.\nWhen the storm comes rollin' through,\nWhen you don't know what to do,\nLift your eyes, you'll find me there\nArms wide open, everywhere.\nForever's not enough to show\nHow deep my love will always go.\nI'd bleed again to bring you home,\nYou're the reason I left my throne.\nNo darkness strong enough to hide,\nFrom a love that won't deny\nForever yours, eternally,\nYou're worth it all to me.\nRemember days you tried to fight me,\nRunning fast, nowhere to hide.\nThrough every shadow, I pursued you,\nYou're the fire in my eyes.\nEvery tear you cried, I caught it,\nEvery scar, I felt the pain.\nI conquered death so you could live,\nYou're the heartbeat in my veins.\nThrough every lie that you've been told,\nI wrote your name in streets of gold.\nSo take my hand and you will see\nThis love is for eternity.\nForever's not enough to show\nHow deep my love will always go.\nI'd bleed again to bring you home,\nYou're the reason I left my throne.\nNo darkness strong enough to hide,\nFrom a love that won't deny\nForever yours, eternally,\nYou're worth it all to me.\nNo greater love has ever been,\nThan one who'd die to rise again.\nI'd cross the stars and raging seas\nJust to have you here with me.\nForever's not enough to show\nHow deep my love will always go.\nI'd bleed again to bring you home,\nYou're the reason I left my throne.\nNo darkness strong enough to hide,\nFrom a love that won't deny\nForever yours, eternally,\nYou're worth it all to me.\nIn the silence, hear my call,\nI’m your Savior through it all.\nForever yours, eternally,\nYou're worth it all to me.",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:55.793Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "3CPuHgWr-L0",
+      "videoId": "3CPuHgWr-L0",
+      "title": "!Machine – Outro to Celestial Shield",
+      "state": "released",
+      "traceId": "3CPuHgWr-L0",
+      "publishedAt": "2025-07-25T16:00:06Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=3CPuHgWr-L0",
+      "artwork": "",
+      "lyrics": "!Machine means “Not Machine” in code.\nSome trust in horses.\nSome in machines.\nSame thing.\nWe trust in the name of the Lord our God.\nHis name is ELOHIM.",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:55.849Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "vBGEIMXs6h0",
+      "videoId": "vBGEIMXs6h0",
+      "title": "Celestial Shield (Lyric Video) – Shieldbearer",
+      "state": "released",
+      "traceId": "vBGEIMXs6h0",
+      "publishedAt": "2025-07-15T02:04:57Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=vBGEIMXs6h0",
+      "artwork": "",
+      "lyrics": "It’s not just about land.\nIt’s not just politics.\nIt’s spiritual.\n“They hated Me without cause.” – John 15:25\n“The mind governed by the flesh is hostile to God.” – Romans 8:7\nIsrael is hated because it proves the Bible is true.\nJesus is hated because He breaks every false lie.\nFor years, entire generations were taught:\n“Israel is illegitimate.”\n“Jesus was just a prophet.”\n“The Bible is corrupted.”\n“The Jews control the world.”\n“Christians are the enemy.”\nThis is not education — it’s indoctrination.\nIt’s brainwashing designed to keep you from the one truth that sets you free.",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:55.995Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "C4tXr2RSxPI",
+      "videoId": "C4tXr2RSxPI",
+      "title": "Still Be My Vision (A Modern Worship Hymn Inspired by “Be Thou My Vision”)",
+      "state": "released",
+      "traceId": "C4tXr2RSxPI",
+      "publishedAt": "2025-07-02T10:00:06Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=C4tXr2RSxPI",
+      "artwork": "",
+      "lyrics": "[Verse 1]\nBe my true vision, O Light of my soul\nStill be my compass, wherever I go\nYou are my wisdom, You are my word\nI ever with You, my Savior and Lord\n[Verse 2]\nBe my protection, my sword and my shield\nGuard every heartbeat, on battlefield\nYou are my glory, my treasure divine\nI seek no riches — just that You’re mine\n[Chorus]\nYou are my fire, my truth, my light\nStay near in shadow, stand tall in the fight\nAll of my days, in You I’ll abide —\nMy Shepherd, my Savior, my King, my Guide\n[Verse 3]\nBe my compassion, my mercy and grace",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:56.109Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "SUXJxqg2gF0",
+      "videoId": "SUXJxqg2gF0",
+      "title": "🇮🇳 Shieldbearer – Pahalgam (A Prayer for India)",
+      "state": "released",
+      "traceId": "SUXJxqg2gF0",
+      "publishedAt": "2025-06-12T18:21:51Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=SUXJxqg2gF0",
+      "artwork": "",
+      "lyrics": "(Verse 1)\nFrom endless palms by ancient seas,\nTo where Everest stands in icy breeze,\nThrough monsoon rains and desert plains,\nYour love inspires and still sustains.\n(Pre-Chorus)\nThrough storm and fire, through darkest pain,\nYour love will rise and break her chains.\n(Chorus)\nLet the rivers roar and mountains rise,\nLet the thunder shake the skies.\nYour love has claimed this ancient shore,\nAnd India will sing once more.\nLift her heart with sacred flame,\nLet her song proclaim Your Name.\n(Verse 2)\nThrough Kashmir’s mist and fields of gold,\nThrough jasmine winds and stories old,\nYour Spirit moves, Your voice is near,\nYou dry each sorrow, crush each fear.\n(Pre-Chorus)\nThrough storm and fire, through darkest pain,\nYour love will rise and break her chains.\n(Chorus)\nLet the rivers roar and mountains rise,\nLet the thunder shake the skies.\nYour love has claimed this ancient shore,\nAnd India will sing once more.\nLift her heart with sacred flame,\nLet her song proclaim Your Name.\n(Bridge)\nNo night too dark, no chain too strong,\nYour victory has led her song.\nThe dawn will break, the grave will fall,\nIndia will rise to heed Your call.\n(Final Chorus)\nLet the rivers roar and mountains rise,\nLet the thunder shake the skies.\nYour love has claimed this ancient shore,\nAnd India will sing once more.\nLift her heart with sacred flame,\nLet her song proclaim Your Name.",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:56.289Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "2UEY0_xTOuY",
+      "videoId": "2UEY0_xTOuY",
+      "title": "Ain’t No Way (But He Did) – Shieldbearer",
+      "state": "released",
+      "traceId": "2UEY0_xTOuY",
+      "publishedAt": "2025-05-30T10:28:41Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=2UEY0_xTOuY",
+      "artwork": "",
+      "lyrics": "AIN’T NO WAY (BUT HE DID)\n(Verse 1)\nI was lost in the pit, far gone, undone\nChains wrapped tight, no hope, no sun\nAin’t no way out — that’s what I thought\n'Til mercy found me right where I was\n(Pre-Chorus)\nHe spoke and the silence shattered\nGrace poured out, love ran faster\nAin’t no way He could love like this\nBut He did… oh He did\n(Chorus)\nAin’t no way He moved that stone\nAin’t no way He bore that load\nAin’t no way He took my place\nBut He did — Jesus did\nAin’t no way He bled for me\nAin’t no way He set me free\nAin’t no way He rose again\nBut He did — Jesus did\n(Verse 2)\nI was dead in the dark, buried deep in shame\nEvery lie, every scar, called my name\nAin’t no way back — that’s what they said\nBut Jesus whispered, \"Rise from the dead\"\n(Pre-Chorus)\nHe stepped in and broke the curse\nLifted me up, reversed the worst\nAin’t no way He could win my war\nBut He did… forevermore\n(Chorus)\nAin’t no way He moved that stone\nAin’t no way He bore that load\nAin’t no way He took my place\nBut He did — Jesus did\nAin’t no way He bled for me\nAin’t no way He set me free\nAin’t no way He rose again\nBut He did — Jesus did\n(Bridge)\nNo one else — only Jesus\nNo other hands — scarred to free us\nAin’t no way... but He made a way\nForever saved, forever praise!\n(Final Chorus)\nAin’t no way He moved that stone\nAin’t no way He bore that load\nAin’t no way He took my place\nBut He did — Jesus did\nAin’t no way He bled for me\nAin’t no way He set me free\nAin’t no way He rose again\nBut He did — Jesus did!\n(Outro)\nAin’t no way...\nBut He did.",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:56.489Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "erURAmLBVok",
+      "videoId": "erURAmLBVok",
+      "title": "🇺🇸 Eagle’s Wrath (Operation Fire)",
+      "state": "released",
+      "traceId": "erURAmLBVok",
+      "publishedAt": "2025-05-23T10:00:06Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=erURAmLBVok",
+      "artwork": "",
+      "lyrics": "Let freedom ring! Let justice fly!\nStrike the flames across the sky.\nOne flag, one force, we stand as one—\n'Til the battle's done, we don’t run.\nLet freedom ring! It’s in our veins—\nThe eagle’s wrath breaks every chain.\n**Verse 2:**\nHouthis howl as the thunder breaks,\nHezbollah runs, the cradle shakes.\nHamas hides from the Reaper’s stare—\nInherent Resolve finds them there.\nThe Navy rolls with steel in the tide,\nMarines charge in, first to fight with pride.\nCoast Guard stands at freedom’s edge,\nGuardians sworn to the homeland’s pledge.",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:56.709Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "1hSudFULuJc",
+      "videoId": "1hSudFULuJc",
+      "title": "Slayer of the Grave (Remastered)",
+      "state": "released",
+      "traceId": "1hSudFULuJc",
+      "publishedAt": "2025-05-05T23:23:39Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=1hSudFULuJc",
+      "artwork": "",
+      "lyrics": "For those who have stood with Shieldbearer since the first release — thank you.\nFor those hearing it for the first time — welcome to the battle cry.\nHe is risen. He is victorious.\nThe grave is slain.\n——— LYRICS ———\n(Verse 1)\nDarkness fell, the stone was sealed,\nHope lay buried, cold and still.\nTombs rejoiced, the serpent laughed,\n'Til the thunder split the black!\n(Pre-Chorus)\nChains are shattered, death undone,\nThe grave cannot hold the Risen Son!\n(Chorus 1)\nSlayer of the grave —\nBreaker of tombs!\nConqueror of death —\nRisen from the shattered tomb!\nSlayer of the grave —\nCrushing hell’s domain,\nCrowned with glory,\nForever He reigns!\n(Verse 2)\nShadows fled at His command,\nKeys of death now in His hand.\nSin defeated, wrath disarmed,\nBy nail-pierced hands, forever scarred!\n(Pre-Chorus)\nChains are shattered, death undone,\nThe grave cannot hold the Risen Son!\n(Chorus 2)\nSlayer of the grave —\nBreaker of chains!\nConqueror of death —\nRisen from the shattered tomb!\nSlayer of the grave —\nCrushing hell’s domain,\nCrowned with glory,\nForever He reigns!\n(Bridge)\nO shattered gates! O broken tomb!\nThe Lion roars beyond the gloom!\nO fearful grave, behold your shame —\nYour sting is lost, erased by His Name!\n(Final Chorus)\nSlayer of the grave —\nBreaker of death!\nConqueror of death —\nRisen from the shattered tomb!\nSlayer of the grave —\nCrushing hell’s domain,\nCrowned with glory,\nForever He reigns!",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:57.475Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "6tVUPs1KLBQ",
+      "videoId": "6tVUPs1KLBQ",
+      "title": "Prison Break",
+      "state": "released",
+      "traceId": "6tVUPs1KLBQ",
+      "publishedAt": "2025-05-04T19:06:16Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=6tVUPs1KLBQ",
+      "artwork": "",
+      "lyrics": "The shadows groaned in death’s domain,\nThe chains were forged in curse and shame.\nThe pit was sealed, the air was dark,\nBut then He came and split the black.\nNo chain can hold the Risen One!\nNo grave can stand the Father’s Son!\nPrison break, the stone was torn,\nThe captives freed, the silence sworn.\nThe earth shook hard when Mercy came,\nThe keys were claimed in Jesus’ name.\nThe gates of Sheol couldn’t take...\nJESUS STORMED THE PRISON BREAK!\nThe tombs gave up the saints long dead,\nThe dark recoiled in fear and dread.\nThe curse collapsed, the veil was shred,\nHe led the lost where angels tread.\nNo pit can cage the King of grace!\nNo power can stop the empty grave!\nPrison break, the stone was torn,\nThe captives freed, the silence sworn.\nThe earth shook hard when Mercy came,\nThe keys were claimed in Jesus’ name.\nThe gates of Sheol couldn’t take...\nJESUS STORMED THE PRISON BREAK!\nHe crushed the doors with nail scarred hands,\nHe shattered chains with one command.\nHe led the captives to the light,\nAnd broke the dark with holy might!\nPrison break, the pit gave way,\nThe dead arose to greet the day.\nThe gates of death were scorched and torn,\nThe grave lay still, no curse was sworn.\nNo demon stood, no serpent swayed,\nThe Risen King had won the day.\nThe realm of death began to quake...\nHE ROSE AND BROKE THE PRISON GATES!\nHe holds the keys.\nThe tombs obey.\nThe chains are gone.\nHe leads the way.",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:57.509Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "EZOXo15QgLk",
+      "videoId": "EZOXo15QgLk",
+      "title": "Where the Morning Comes",
+      "state": "released",
+      "traceId": "EZOXo15QgLk",
+      "publishedAt": "2025-05-04T04:05:47Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=EZOXo15QgLk",
+      "artwork": "",
+      "lyrics": "It is the song of the waiting.\nIt is the anthem of the suffering.\nIt is the promise whispered through the long, dark night.\n→ When prayers seem unanswered.\n→ When grief feels unbearable.\n→ When the world feels too heavy to hold.\nThis is the hope believers have clung to for centuries:\nMorning will come.\n→ Early Christians buried their dead saying, “Until the morning…”\n→ Saints in dark ages sang of dawn breaking over sorrow.\n→ Today, hearts whisper through tears, “One day all will be made new.”\nThis song is for you who wait.\n→ For the mother still praying for her child.\n→ For the widower staring at an empty chair.\n→ For the believer fighting the same battle day after day.\nThe night will end.\nThe grave will give way.\nThe sky will break open.\nAnd Jesus will come.",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:57.549Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "KARnuqkT6ag",
+      "videoId": "KARnuqkT6ag",
+      "title": "We Join the Song",
+      "state": "released",
+      "traceId": "KARnuqkT6ag",
+      "publishedAt": "2025-05-04T04:01:23Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=KARnuqkT6ag",
+      "artwork": "",
+      "lyrics": "We Join the Song is the sound of earth meeting heaven.\nIt’s the whispered praise of the early church.\nIt’s the soaring hymns of medieval choirs.\nIt’s the trembling voices of persecuted believers today.\nIt’s the quiet hum of worshippers driving home, earbuds in, praying between tears.\nAnd it’s also:\n→ The roar of angels.\n→ The shout of saints who’ve gone before.\n→ The melody of heaven itself.\nYou are not singing alone.\nEvery time we lift our voices, we join a song that never stopped:\n→ Sung by Abraham on lonely nights under starry skies.\n→ Sung by David with harp in hidden caves.\n→ Sung by early believers at risk of death.\n→ Sung by martyrs and missionaries and mothers praying in the night.\nAnd now — sung by you:\n→ In kitchens.\n→ In hospitals.\n→ In churches.\n→ In cars.\n→ In silent bedrooms.\nWe join the song. And heaven hears.",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:57.569Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "C4Rgv8w1ljI",
+      "videoId": "C4Rgv8w1ljI",
+      "title": "We Believe",
+      "state": "released",
+      "traceId": "C4Rgv8w1ljI",
+      "publishedAt": "2025-05-04T03:51:44Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=C4Rgv8w1ljI",
+      "artwork": "",
+      "lyrics": "We still believe.\nWhen culture shifts → we believe.\nWhen friends turn away → we believe.\nWhen prayers feel unanswered → we believe.\nWhen our hearts feel weak → we still believe.\nThis is not an ancient relic or a dead creed.\nThis is the song of the rescued.\nThis is the confession of the redeemed.",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:57.609Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "K7vsc8gqa_4",
+      "videoId": "K7vsc8gqa_4",
+      "title": "Washed in Grace",
+      "state": "released",
+      "traceId": "K7vsc8gqa_4",
+      "publishedAt": "2025-05-04T03:46:45Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=K7vsc8gqa_4",
+      "artwork": "",
+      "lyrics": "You are not too far gone.\nYou are not too stained.\nYou are not rejected.\nYou are loved.\nYou are welcome.\nYou are washed in grace.\nCome home to mercy.\nBe made new today.",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:57.689Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "Dpb3KRGxguU",
+      "videoId": "Dpb3KRGxguU",
+      "title": "The Arms That Waited",
+      "state": "released",
+      "traceId": "Dpb3KRGxguU",
+      "publishedAt": "2025-05-04T03:39:35Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=Dpb3KRGxguU",
+      "artwork": "",
+      "lyrics": "The Arms That Waited is for every soul who feels far away.\nNot just in the story of the prodigal son long ago → but today.\n→ Sons and daughters who haven’t called home in years.\n→ Parents whose words have wounded, and whose hearts ache for reunion.\n→ Friends who drifted apart after bitter words or silent goodbyes.\n→ Spouses sitting side-by-side, yet miles apart in spirit.\nThis is not just ancient. This is now.\nThrough generations, hearts have wandered.\nThrough every age, the Father has waited.\nNot with a lecture.\nNot with condemnation.\nBut with open arms.",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:57.715Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "8yOFetfoRAo",
+      "videoId": "8yOFetfoRAo",
+      "title": "Mercy in the Quiet",
+      "state": "released",
+      "traceId": "8yOFetfoRAo",
+      "publishedAt": "2025-05-04T03:30:29Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=8yOFetfoRAo",
+      "artwork": "",
+      "lyrics": "\"Be still, and know that I am God.\" (Psalm 46:10)\nNot every battle is loud.\nNot every victory is won with shouting.\nMercy in the Quiet was written for the moments few people see.\n→ When the tears come in the middle of the night.\n→ When the prayers feel hollow and words are few.\n→ When shame whispers, and silence seems louder than God’s voice.\nIt’s there — in the stillness — that mercy often speaks the loudest.\nThrough generations, God’s people have cried softly into the quiet.\n→ The desert wanderer.\n→ The prodigal son far from home.\n→ The early believers, hiding in upper rooms.",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:57.771Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "2HzH15hDTTk",
+      "videoId": "2HzH15hDTTk",
+      "title": "Hymn of the Free",
+      "state": "released",
+      "traceId": "2HzH15hDTTk",
+      "publishedAt": "2025-05-04T03:27:07Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=2HzH15hDTTk",
+      "artwork": "",
+      "lyrics": "→ Martyrs and saints, singing even as earthly powers tried to silence their song.\nAnd now — here we are.\nNot in deserts or stone cells, but in apartments, offices, cars...\nBound by chains just as real → fear, addiction, anger, regret, shame.\nYet the melody has never changed.\nJesus still breaks chains.\nJesus still sets captives free.\nJesus still writes new stories over shattered lives.",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:57.799Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "Hnewej6WjkE",
+      "videoId": "Hnewej6WjkE",
+      "title": "Light of Dusk",
+      "state": "released",
+      "traceId": "Hnewej6WjkE",
+      "publishedAt": "2025-05-04T02:50:26Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=Hnewej6WjkE",
+      "artwork": "",
+      "lyrics": "Today, night looks different.\nWe sit in homes lit not by candles, but by glowing screens.\nOur temples are apartments and crowded cities.\nThe quiet is broken not by crickets, but by phone notifications.\nYet… the need is the same.\n→ We still long for rest when streets grow dark.\n→ We still need a steady flame when hope feels dim.\n→ We still whisper prayers when silence sparks.\nLight of Dusk was born from this longing.",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:57.889Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "GJ_KrOQrgbk",
+      "videoId": "GJ_KrOQrgbk",
+      "title": "Prison Break",
+      "state": "released",
+      "traceId": "GJ_KrOQrgbk",
+      "publishedAt": "2025-05-03T11:47:28Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=GJ_KrOQrgbk",
+      "artwork": "",
+      "lyrics": "The shadows groaned in death’s domain,\nThe chains were forged in curse and shame.\nThe pit was sealed, the air was dark,\nBut then He came and split the black.\nNo chain can hold the Risen One.\nNo grave can stand the Father’s Son.\nPrison break, the stone was torn,\nThe captives freed, the silence sworn.\nThe earth shook hard when Mercy came,\nThe keys were claimed in Jesus’ name.\nThe gates of Sheol couldn’t take...\nJESUS STORMED THE PRISON BREAK!\nThe tombs gave up the saints long dead,\nThe dark recoiled in fear and dread.\nThe curse collapsed, the veil was shred,\nHe led the lost where angels tread.\nNo pit can cage the King of grace.\nNo power can stop the empty grave.\nPrison break, the stone was torn,\nThe captives freed, the silence sworn.\nThe earth shook hard when Mercy came,\nThe keys were claimed in Jesus’ name.\nThe gates of Sheol couldn’t take...\nJESUS STORMED THE PRISON BREAK!\nHe crushed the doors with nail scarred hands,\nHe shattered chains with one command.\nHe led the captives to the light,\nAnd broke the dark with holy might.\nPrison break, the pit gave way,\nThe dead arose to greet the day.\nThe gates of death were scorched and torn,\nThe grave lay still, no curse was sworn.\nNo demon stood, no serpent swayed,\nThe Risen King had won the day.\nThe realm of death began to quake...\nJESUS ROSE AND BROKE THE PRISON GATES!\nHe holds the keys.\nThe tombs obey.\nThe chains are gone.\nHe leads the way.",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:57.929Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "9NQkaZbntUs",
+      "videoId": "9NQkaZbntUs",
+      "title": "Pahalgam (A Prayer for India)",
+      "state": "released",
+      "traceId": "9NQkaZbntUs",
+      "publishedAt": "2025-04-26T15:28:11Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=9NQkaZbntUs",
+      "artwork": "",
+      "lyrics": "Verse 1\nFrom endless palms by ancient seas,\nTo where Everest stands in icy breeze,\nThrough monsoon rains and desert plains,\nYour love inspires and still sustains.\nPre-Chorus\nThrough storm and fire, through darkest pain,\nYour love will rise and break her chains.\nChorus\nLet the rivers roar and mountains rise,\nLet the thunder shake the skies.\nYour love has claimed this ancient shore,\nAnd India will sing once more.\nLift her heart with sacred flame,\nLet her song proclaim Your Name.\nVerse 2\nThrough Kashmir’s mist and fields of gold,\nThrough jasmine winds and stories old,\nYour Spirit moves, Your voice is near,\nYou dry each sorrow, crush each fear.\nPre-Chorus\nThrough storm and fire, through darkest pain,\nYour love will rise and break her chains.\nChorus\nLet the rivers roar and mountains rise,\nLet the thunder shake the skies.\nYour love has claimed this ancient shore,\nAnd India will sing once more.\nLift her heart with sacred flame,\nLet her song proclaim Your Name.\nBridge\nNo night too dark, no chain too strong,\nYour victory has led her song.\nThe dawn will break, the grave will fall,\nIndia will rise to heed Your call.\nFinal Chorus\nLet the rivers roar and mountains rise,\nLet the thunder shake the skies.\nYour love has claimed this ancient shore,\nAnd India will sing once more.\nLift her heart with sacred flame,\nLet her song proclaim Your Name.",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:57.955Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "rDtFSFQn8ik",
+      "videoId": "rDtFSFQn8ik",
+      "title": "Slayer of the Grave",
+      "state": "released",
+      "traceId": "rDtFSFQn8ik",
+      "publishedAt": "2025-04-20T04:00:06Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=rDtFSFQn8ik",
+      "artwork": "",
+      "lyrics": "(Verse 1)\nDarkness fell, the stone was sealed,\nHope lay buried, cold and still.\nTombs rejoiced, the serpent laughed,\n'Til the thunder split the black.\n(Pre-Chorus)\nChains are shattered, death undone,\nThe grave cannot hold the Risen Son!\n(Chorus 1)\nSlayer of the grave\nBreaker of tombs!\nConqueror of death\nRisen from the shattered tomb!\nSlayer of the grave\nCrushing hell’s domain,\nCrowned with glory,\nForever He reigns!\n(Verse 2)\nShadows fled at His command,\nKeys of death now in His hand.\nSin defeated, wrath disarmed,\nBy nail-pierced hands, forever scarred.\n(Pre-Chorus)\nChains are shattered, death undone,\nThe grave cannot hold the Risen Son!\n(Chorus 2)\nSlayer of the grave\nBreaker of chains!\nConqueror of death\nRisen from the shattered tomb!\nSlayer of the grave\nCrushing hell’s domain,\nCrowned with glory,\nForever He reigns!\n(Bridge)\nO shattered gates! O broken tomb!\nThe Lion roars beyond the gloom!\nO fearful grave, behold your shame\nYour sting is lost, erased by His Name!\n(Final Chorus)\nSlayer of the grave\nBreaker of death!\nConqueror of death\nRisen from the shattered tomb!\nSlayer of the grave\nCrushing hell’s domain,\nCrowned with glory,\nForever He reigns!",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:57.989Z",
+      "contentHash": ""
+    },
+    {
+      "songId": "qm2OpjQoWU0",
+      "videoId": "qm2OpjQoWU0",
+      "title": "Slayer of the Grave",
+      "state": "released",
+      "traceId": "qm2OpjQoWU0",
+      "publishedAt": "2025-04-15T04:00:54Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=qm2OpjQoWU0",
+      "artwork": "",
+      "lyrics": "Darkness fell, the stone was sealed,\nHope lay buried, cold and still.\nTombs rejoiced, the serpent laughed,\n'Til the thunder split the black.\nChains are shattered, death undone,\nThe grave cannot hold the Risen Son!\nSlayer of the grave —\nBreaker of tombs!\nConqueror of death —\nRisen from the shattered tomb!\nSlayer of the grave —\nCrushing hell’s domain,\nCrowned with glory,\nForever He reigns!\nShadows fled at His command,\nKeys of death now in His hand.\nSin defeated, wrath disarmed,\nBy nail-pierced hands, forever scarred.\nChains are shattered, death undone,\nThe grave cannot hold the Risen Son!\nSlayer of the grave —\nBreaker of chains!\nConqueror of death —\nRisen from the shattered tomb!\nSlayer of the grave —\nCrushing hell’s domain,\nCrowned with glory,\nForever He reigns!\nO shattered gates! O broken tomb!\nThe Lion roars beyond the gloom!\nO fearful grave, behold your shame —\nYour sting is lost, erased by His Name!\nSlayer of the grave —\nBreaker of death!\nConqueror of death —\nRisen from the shattered tomb!\nSlayer of the grave —\nCrushing hell’s domain,\nCrowned with glory,\nForever He reigns!",
+      "songMeaning": "",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-04-19T02:19:58.029Z",
+      "contentHash": ""
     }
   ],
-  "signalCount": 97,
+  "signalCount": 52,
   "comingSoonCount": 0,
-  "releasedCount": 2,
+  "releasedCount": 48,
   "events": [
     {
       "id": "0lUJcLKIt0o",
