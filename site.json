@@ -39,13 +39,6 @@
       "sourceUrl": "",
       "traceId": "let-my-people-go#2026-05-21T12:08:22.217Z#SONG_UPDATED"
     },
-    "simulated shieldbearer release": {
-      "id": "simulated-video-001",
-      "title": "SIMULATED SHIELDBEARER RELEASE",
-      "publishedAt": "2026-04-19T02:47:46.470Z",
-      "sourceUrl": "https://youtube.com/watch?v=simulated-video-001",
-      "traceId": "simulated-video-001"
-    },
     "emmaus shieldbearer official metal anthem": {
       "id": "0ljswHO8D2I",
       "title": "Emmaus – Shieldbearer (Official Metal Anthem",
@@ -1885,25 +1878,6 @@
       "contentHash": "952d5bfc05ad8d15ae1980f11364acca86f3f4907a284d6243ce62404e40a868"
     },
     {
-      "songId": "simulated-video-001",
-      "videoId": "simulated-video-001",
-      "title": "SIMULATED SHIELDBEARER RELEASE",
-      "state": "released",
-      "traceId": "simulated-video-001",
-      "publishedAt": "2026-04-19T02:47:46.470Z",
-      "sourceUrl": "https://youtube.com/watch?v=simulated-video-001",
-      "artwork": "",
-      "lyrics": "",
-      "songMeaning": "",
-      "reference": "",
-      "scripture": {
-        "ref": "",
-        "quote": ""
-      },
-      "updatedAt": "2026-04-19T02:47:46.471Z",
-      "contentHash": ""
-    },
-    {
       "songId": "0ljswHO8D2I",
       "videoId": "0ljswHO8D2I",
       "title": "Emmaus – Shieldbearer (Official Metal Anthem",
@@ -1982,7 +1956,7 @@
   ],
   "signalCount": 94,
   "comingSoonCount": 0,
-  "releasedCount": 6,
+  "releasedCount": 5,
   "events": [
     {
       "id": "0lUJcLKIt0o",
@@ -1994,24 +1968,6 @@
       "publishedAt": "2026-05-02T12:40:33Z",
       "sourceUrl": "https://www.youtube.com/watch?v=0lUJcLKIt0o",
       "source": "release-detector-youtube",
-      "albumId": "",
-      "albumTitle": "",
-      "albumUrl": "",
-      "videoType": "",
-      "isShort": false,
-      "contentFormat": "full",
-      "excludeFromTimeline": false
-    },
-    {
-      "id": "simulated-video-001",
-      "songId": "simulated-video-001",
-      "eventType": "new_content_detected",
-      "stateAfter": "released",
-      "timestamp": "2026-04-19T02:47:46.471Z",
-      "title": "SIMULATED SHIELDBEARER RELEASE",
-      "publishedAt": "2026-04-19T02:47:46.470Z",
-      "sourceUrl": "https://youtube.com/watch?v=simulated-video-001",
-      "source": "youtube",
       "albumId": "",
       "albumTitle": "",
       "albumUrl": "",
