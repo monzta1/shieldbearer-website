@@ -93,7 +93,12 @@
     };
   }
 
-  fetch(source, { cache: "no-store" })
+  // GitHub Pages CDN caches site.json for max-age=600. cache: "no-store"
+  // only tells the browser to skip its cache; the CDN can still serve a
+  // stale copy. Appending a cache-bust query forces a unique URL so the
+  // edge serves fresh data on every page load.
+  var bustedSource = source + (source.indexOf("?") >= 0 ? "&" : "?") + "_=" + Date.now();
+  fetch(bustedSource, { cache: "no-store" })
     .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(function (data) {
       var released = (data && Array.isArray(data.released)) ? data.released : [];
