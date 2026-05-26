@@ -7,6 +7,10 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.26.3 - May 2026
+- `/song-meanings`: curated the auto-augmented release list down to 5 entries (Let My People Go, Emmaus, !Machine, Celestial Shield, Still Be My Vision). Demoted the 42 other backfilled records in `shieldbearer-songs` (set `releaseDetected = false`) and deleted the leftover `simulated-video-001` test event from `shieldbearer-sentinel-logs` so site-publisher stops resurrecting it. `released[]` now matches what the operator wants visible.
+- `js/song-meanings-augment.js`: Still Be My Vision now renders under a Worship genre group instead of Metal. The dossier renderer already groups by genre, so a new Worship section appears automatically next to the curated Metal/Country groups.
+
 ## v2.26.2 - May 2026
 - `/song-meanings`: lyrics block removed from the rendered dossier UI. The data still lives in `site.json` and DynamoDB (so chord generator and any future utility can consume it) but the public dossier card no longer displays the full lyrics. The Scripture quote, meaning paragraphs, and action links to Spotify/YouTube stay.
 - Fix: `js/song-meanings-augment.js` was fetching `./site.json` relative to the page URL, which works on `/song-meanings.html` but resolves to `/song-meanings/site.json` (404) on the directory-index clean URL `/song-meanings/`. Switched the default source to absolute `/site.json` so the augment runs in both URL forms. This was the reason Worth It All and the other 30 newly-backfilled songs were not appearing on `/song-meanings` even though the data was in `site.json`.

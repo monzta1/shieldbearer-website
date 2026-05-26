@@ -55,6 +55,12 @@
     return tags;
   }
 
+  // Songs that should render under the Worship section instead of the
+  // default Metal group. Keyed by YouTube videoId.
+  var WORSHIP_VIDEO_IDS = {
+    "C4tXr2RSxPI": true // Still Be My Vision
+  };
+
   function buildDossierFromRelease(rel) {
     if (!rel || !rel.title) return null;
     var id = slugify(rel.title);
@@ -66,6 +72,7 @@
     var videoId = rel.videoId || rel.songId || "";
     var artwork = rel.artwork || (videoId ? "https://img.youtube.com/vi/" + encodeURIComponent(videoId) + "/hqdefault.jpg" : "");
     var youtubeUrl = rel.sourceUrl || (videoId ? "https://www.youtube.com/watch?v=" + encodeURIComponent(videoId) : "");
+    var genre = WORSHIP_VIDEO_IDS[videoId] ? "Worship" : "Metal";
     // Scripture is curated and arrives via site.json (publisher
     // passes through whatever the song record carries). Default to
     // empty values when absent so the renderer doesn't crash.
@@ -78,7 +85,7 @@
       id: id,
       number: "—", // em-dash-allow: typographic placeholder for auto-augmented dossiers without a curated number
       title: rel.title,
-      genre: "Metal",
+      genre: genre,
       reference: reference,
       thesis: thesis,
       tags: tagsFromReference(reference),
