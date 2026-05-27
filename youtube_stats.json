@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-27T15:35:06.923Z",
+  "generated_at": "2026-05-27T21:35:06.960Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -29,13 +29,13 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 38,
-      "watchMinutes": 63,
-      "avgViewDurationSec": 100
+      "views": 51,
+      "watchMinutes": 98,
+      "avgViewDurationSec": 116
     },
     "last_30": {
-      "views": 507,
-      "watchMinutes": 1093,
+      "views": 520,
+      "watchMinutes": 1128,
       "avgViewDurationSec": 131
     }
   },
@@ -126,7 +126,7 @@
       "thumbnail": "https://i.ytimg.com/vi/AIiCw1a5hnM/mqdefault.jpg",
       "publishedAt": "2025-10-10T02:30:01Z",
       "url": "https://www.youtube.com/watch?v=AIiCw1a5hnM",
-      "views": 37
+      "views": 38
     },
     {
       "videoId": "vBGEIMXs6h0",
@@ -134,7 +134,7 @@
       "thumbnail": "https://i.ytimg.com/vi/vBGEIMXs6h0/mqdefault.jpg",
       "publishedAt": "2025-07-15T02:04:57Z",
       "url": "https://www.youtube.com/watch?v=vBGEIMXs6h0",
-      "views": 26
+      "views": 27
     }
   ],
   "daily_views": [
@@ -577,18 +577,23 @@
       "date": "2026-05-24",
       "views": 12,
       "minutes": 22
+    },
+    {
+      "date": "2026-05-25",
+      "views": 13,
+      "minutes": 34
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 140
+      "views": 145
     },
     {
       "source": "RELATED_VIDEO",
       "label": "Related video",
-      "views": 123
+      "views": 124
     },
     {
       "source": "NO_LINK_OTHER",
@@ -598,7 +603,7 @@
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 56
+      "views": 61
     },
     {
       "source": "SUBSCRIBER",
@@ -618,7 +623,7 @@
     {
       "source": "YT_OTHER_PAGE",
       "label": "Other YouTube page",
-      "views": 5
+      "views": 6
     },
     {
       "source": "NOTIFICATION",
@@ -628,7 +633,7 @@
     {
       "source": "SHORTS",
       "label": "Shorts feed",
-      "views": 2
+      "views": 3
     },
     {
       "source": "HASHTAGS",
