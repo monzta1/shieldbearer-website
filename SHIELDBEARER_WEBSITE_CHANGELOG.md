@@ -7,6 +7,11 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.27.4 - May 2026
+- `/reach/youtube`: copy update on the "Where viewers watched from (last 48 hours)" block. Two changes paired with the Lambda window fix landed in sentinelbot-youtube-stats-publisher.
+  - Lead now reflects that the window lands on the most recent 48 hours of *finalised* data (today-4 to today-2), not today and yesterday. YouTube's two-day reporting lag is named honestly. Adds the secondary note that small-channel per-country privacy threshold can still leave the list empty, with a pointer to the 30-day block which surfaces more.
+  - Empty-state message ("No country cleared YouTube's per-country reporting threshold over the last forty-eight hours. The 30-day view below has more.") replaces the old "feed has not caught up" framing, since after the Lambda fix the window is no longer asking inside the lag zone.
+
 ## v2.27.3 - May 2026 (Tone pass batch 4 of 4: negation-as-defense removed)
 Final batch in the tone pass. Four small edits that cut "this is not X" / "no apology" framings. Confident writing states what it IS.
 - `ai-and-creativity.html`: deleted the opening paragraph "This is not a defense of AI. It is a defense of the freedom of the artist to choose..." plus the "Some folks are saying AI is the Antichrist. Let us be real." soft framing. Page now leads with "Every generation has feared the new tool" and goes straight into the principle.
