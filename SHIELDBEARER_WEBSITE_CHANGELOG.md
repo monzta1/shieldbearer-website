@@ -7,6 +7,15 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.27.5 - May 2026
+- `/reach/youtube`: reordered and reframed so the indie achievement reads at first glance.
+  - **Hero stat swap.** "Watch hours, last 30 days" (~19 hours, small-looking) replaced with "Top video, lifetime" pulling `top_videos[0].views` (currently 96,120 for *Come and Restore*). The hero quartet is now Subscribers / Videos published / Top video lifetime / Avg view 30d.
+  - **Hero sublabel reframed.** Was "Confirmed views. Every one is a Shieldbearer video that someone pressed play on..." Now "Confirmed YouTube views. Solo project. No label, no manager, no team, no marketing budget. Counted by YouTube's own rules." The indie framing is now load-bearing.
+  - **Section reorder.** Most-Seen Transmissions (Lifetime top videos, anchored by the 96k *Come and Restore*) promoted from the page bottom to right after Recent Signal. Order is now Channel → Recent Signal → Lifetime Top Videos → Growth Curve (90d) → Surging Now (30d) → Discovery Channels → Geography 30d.
+  - **48h geography block dropped from the page.** Data is still in `youtube_stats.json` for direct queries. The block was empty more often than not because of YouTube's per-country privacy floor on smaller channels. Only the 30-day block remains visible, sitting at the page bottom with a declarative explanation.
+  - Lifetime top videos lead copy tightened to reinforce the indie framing.
+- `js/reach.js`: populates `ytTopVideoLifetime` from `top_videos[0].views`; `ytCountries48` render call removed (element no longer exists).
+
 ## v2.27.4 - May 2026
 - `/reach/youtube`: copy update on the "Where viewers watched from (last 48 hours)" block. Two changes paired with the Lambda window fix landed in sentinelbot-youtube-stats-publisher.
   - Lead now reflects that the window lands on the most recent 48 hours of *finalised* data (today-4 to today-2), not today and yesterday. YouTube's two-day reporting lag is named honestly. Adds the secondary note that small-channel per-country privacy threshold can still leave the list empty, with a pointer to the 30-day block which surfaces more.

@@ -279,19 +279,11 @@
     if ($("ytLast30Minutes")) $("ytLast30Minutes").textContent = fmt(l30.watchMinutes) + " watch minutes";
 
     // Hero secondary stats unique to the YouTube subpage:
-    // watch hours and avg view duration for the last 30 days.
-    var watchHoursEl = $("ytWatchHours30");
-    if (watchHoursEl) {
-      var minutes30 = Number(l30.watchMinutes) || 0;
-      var hours30 = minutes30 / 60;
-      // Show as hours unless we are deep enough to read in days.
-      if (hours30 >= 48) {
-        watchHoursEl.textContent = (hours30 / 24).toFixed(1) + " days";
-      } else if (hours30 >= 1) {
-        watchHoursEl.textContent = Math.round(hours30) + " hours";
-      } else {
-        watchHoursEl.textContent = Math.round(minutes30) + " min";
-      }
+    // top single-video lifetime view count and avg view duration.
+    var topVideoEl = $("ytTopVideoLifetime");
+    if (topVideoEl) {
+      var topViews = (topVids && topVids[0] && Number(topVids[0].views)) || 0;
+      topVideoEl.textContent = topViews ? fmt(topViews) : "--";
     }
     var avgSecEl = $("ytAvgViewSec30");
     if (avgSecEl) {
@@ -305,7 +297,8 @@
       }
     }
 
-    renderCountryList("ytCountries48", c48, "ytCountries48Empty");
+    // 48h country block was removed from the page (data still in JSON for
+    // anyone querying directly). Only the 30d block renders.
     renderCountryList("ytCountries30", c30, null);
 
     // Top videos section: only un-hide if we have videos AND the page

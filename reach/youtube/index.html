@@ -522,7 +522,7 @@
           <div class="reach-hero__grid">
             <div class="reach-hero__main">
               <p class="reach-hero__counter"><b id="ytViewsLifetime">0</b></p>
-              <p class="reach-hero__sublabel">Confirmed views. Every one is a Shieldbearer video that someone pressed play on, or that played in their feed. Counted by YouTube&rsquo;s own rules.</p>
+              <p class="reach-hero__sublabel">Confirmed YouTube views. Solo project. No label, no manager, no team, no marketing budget. Counted by YouTube&rsquo;s own rules.</p>
             </div>
             <div class="reach-hero__stats">
               <div class="reach-stat">
@@ -534,8 +534,8 @@
                 <b id="ytVideoCount">--</b>
               </div>
               <div class="reach-stat">
-                <span class="reach-stat__label">Watch hours, last 30 days</span>
-                <b id="ytWatchHours30">--</b>
+                <span class="reach-stat__label">Top video, lifetime</span>
+                <b id="ytTopVideoLifetime">--</b>
               </div>
               <div class="reach-stat">
                 <span class="reach-stat__label">Avg view, last 30 days</span>
@@ -581,22 +581,15 @@
           </div>
         </div>
 
-        <div class="reach-section">
-          <h2>Where viewers watched from<span class="reach-source-tag">Last 48 hours</span></h2>
-          <p class="reach-section__lead">Country breakdown for the most recent forty-eight hours of finalised data. YouTube has a two-day reporting lag, so this window lands on the last two available days rather than today and yesterday. On a smaller channel, individual countries may still fall below YouTube's privacy floor and stay hidden from the breakdown. The 30-day view below tends to surface more.</p>
-          <ul class="reach-list reach-list--geo" id="ytCountries48"></ul>
-          <p class="reach-yt-empty" id="ytCountries48Empty" hidden>No country cleared YouTube's per-country reporting threshold over the last forty-eight hours. The 30-day view below has more.</p>
-        </div>
-
-        <div class="reach-section">
-          <h2>Where viewers watched from<span class="reach-source-tag">Last 30 days</span></h2>
-          <p class="reach-section__lead">Country breakdown across the trailing thirty days. Sorted by total views.</p>
-          <ul class="reach-list reach-list--geo" id="ytCountries30"></ul>
+        <div class="reach-section" id="ytTopVideosSection" hidden>
+          <h2>Most-Seen Transmissions<span class="reach-source-tag">Lifetime</span></h2>
+          <p class="reach-section__lead">Top Shieldbearer videos by lifetime view count. One solo project, no label, no marketing budget. Click through to watch on YouTube.</p>
+          <ul class="reach-list reach-list--videos" id="ytTopVideos"></ul>
         </div>
 
         <div class="reach-section" id="ytGrowthCurveSection" hidden>
           <h2>Growth Curve<span class="reach-source-tag">Last 90 days</span></h2>
-          <p class="reach-section__lead">Real daily views from YouTube Analytics across the trailing 90 days. Every dot on the line is a day. The curve replaces the previous synthesized chart with the actual feed.</p>
+          <p class="reach-section__lead">Real daily views from YouTube Analytics across the trailing 90 days. Every dot on the line is a day.</p>
           <svg class="reach-curve" id="ytGrowthCurve" viewBox="0 0 800 220" preserveAspectRatio="none" aria-label="Daily YouTube views over the trailing 90 days"></svg>
           <p class="reach-curve-empty" id="ytGrowthCurveEmpty" hidden>Growth curve will appear once YouTube Analytics has published two or more distinct daily readings.</p>
         </div>
@@ -613,10 +606,10 @@
           <ul class="reach-list reach-list--traffic" id="ytTrafficSources"></ul>
         </div>
 
-        <div class="reach-section" id="ytTopVideosSection" hidden>
-          <h2>Most-Seen Transmissions<span class="reach-source-tag">Lifetime</span></h2>
-          <p class="reach-section__lead">Top Shieldbearer videos by lifetime view count. Click through to watch on YouTube.</p>
-          <ul class="reach-list reach-list--videos" id="ytTopVideos"></ul>
+        <div class="reach-section">
+          <h2>Where viewers watched from<span class="reach-source-tag">Last 30 days</span></h2>
+          <p class="reach-section__lead">Country breakdown across the trailing thirty days. YouTube applies a per-country privacy floor for smaller channels, so countries below the floor are pooled and not surfaced individually. As the channel grows, more countries will appear here.</p>
+          <ul class="reach-list reach-list--geo" id="ytCountries30"></ul>
         </div>
 
         <div class="reach-meta" id="ytMeta"></div>
