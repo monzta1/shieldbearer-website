@@ -589,8 +589,23 @@
 
         <div class="reach-section" id="ytGrowthCurveSection" hidden>
           <h2>Growth Curve<span class="reach-source-tag">Last 90 days</span></h2>
-          <p class="reach-section__lead">Real daily views from YouTube Analytics across the trailing 90 days. Every dot on the line is a day.</p>
-          <svg class="reach-curve" id="ytGrowthCurve" viewBox="0 0 800 220" preserveAspectRatio="none" aria-label="Daily YouTube views over the trailing 90 days"></svg>
+          <p class="reach-section__lead">Cumulative YouTube views across the trailing 90 days. Each step up is another day of viewers. Solo project, no marketing budget, no team.</p>
+          <div class="reach-yt-recent" id="ytGrowthStats" style="grid-template-columns: repeat(3, 1fr);">
+            <div class="reach-yt-recent__cell">
+              <span class="reach-stat__label">Views, last 90 days</span>
+              <b id="ytGrowthTotal">--</b>
+            </div>
+            <div class="reach-yt-recent__cell">
+              <span class="reach-stat__label">Best day</span>
+              <b id="ytGrowthBestDay">--</b>
+              <span class="reach-yt-recent__sub" id="ytGrowthBestDate">--</span>
+            </div>
+            <div class="reach-yt-recent__cell">
+              <span class="reach-stat__label">Days above 30 views</span>
+              <b id="ytGrowthGoodDays">--</b>
+            </div>
+          </div>
+          <svg class="reach-curve" id="ytGrowthCurve" viewBox="0 0 800 220" preserveAspectRatio="none" aria-label="Cumulative YouTube views over the trailing 90 days"></svg>
           <p class="reach-curve-empty" id="ytGrowthCurveEmpty" hidden>Growth curve will appear once YouTube Analytics has published two or more distinct daily readings.</p>
         </div>
 

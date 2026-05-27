@@ -372,17 +372,24 @@
   // two charts feel like the same instrument. Hides the chart
   // and shows the empty-state line if there are fewer than two
   // distinct daily values.
+  // Growth curve plots CUMULATIVE views across the 90-day window, not
+  // raw daily values. Raw daily on a linear axis got pinned by spike
+  // days (one 468-view day next to 10-view days flattened the rest
+  // visually). Cumulative is monotonically non-decreasing, so spikes
+  // become visible step-ups and the overall direction tells the
+  // growth story honestly.
   function renderYouTubeGrowthCurve(dailyViews) {
     var svg = $("ytGrowthCurve");
     var emptyEl = $("ytGrowthCurveEmpty");
     var section = $("ytGrowthCurveSection");
     if (!svg && !section) return;
-    var points = (dailyViews || []).map(function (p) {
+
+    var raw = (dailyViews || []).map(function (p) {
       var t = Date.parse(p.date);
-      return Number.isFinite(t) ? [t, Number(p.views) || 0] : null;
+      return Number.isFinite(t) ? { t: t, v: Number(p.views) || 0, date: p.date } : null;
     }).filter(Boolean);
-    var distinct = new Set(points.map(function (p) { return p[1]; }));
-    if (points.length < 2 || distinct.size < 2) {
+
+    if (raw.length < 2) {
       if (svg) svg.style.display = "none";
       if (emptyEl) emptyEl.removeAttribute("hidden");
       if (section) section.removeAttribute("hidden");
@@ -392,9 +399,37 @@
     if (emptyEl) emptyEl.setAttribute("hidden", "");
     if (svg) svg.style.display = "";
 
-    points.sort(function (a, b) { return a[0] - b[0]; });
-    var minX = points[0][0], maxX = points[points.length - 1][0];
-    var maxY = points.reduce(function (m, p) { return Math.max(m, p[1]); }, 1);
+    raw.sort(function (a, b) { return a.t - b.t; });
+
+    // Summary stats for the cells above the chart.
+    var total = 0, bestDayViews = 0, bestDayLabel = "", goodDays = 0;
+    for (var i = 0; i < raw.length; i++) {
+      total += raw[i].v;
+      if (raw[i].v > bestDayViews) {
+        bestDayViews = raw[i].v;
+        bestDayLabel = raw[i].date;
+      }
+      if (raw[i].v > 30) goodDays++;
+    }
+    var totalEl = $("ytGrowthTotal");
+    if (totalEl) totalEl.textContent = fmt(total);
+    var bestEl = $("ytGrowthBestDay");
+    if (bestEl) bestEl.textContent = fmt(bestDayViews);
+    var bestDateEl = $("ytGrowthBestDate");
+    if (bestDateEl) bestDateEl.textContent = bestDayLabel || "";
+    var goodEl = $("ytGrowthGoodDays");
+    if (goodEl) goodEl.textContent = fmt(goodDays);
+
+    // Build cumulative series for the path.
+    var cum = [];
+    var running = 0;
+    for (var j = 0; j < raw.length; j++) {
+      running += raw[j].v;
+      cum.push([raw[j].t, running]);
+    }
+
+    var minX = cum[0][0], maxX = cum[cum.length - 1][0];
+    var maxY = cum[cum.length - 1][1] || 1;
     var w = 800, h = 220, padL = 12, padR = 12, padT = 18, padB = 18;
     function sx(x) {
       if (maxX === minX) return padL;
@@ -403,9 +438,9 @@
     function sy(y) {
       return h - padB - (y / maxY) * (h - padT - padB);
     }
-    var path = "M " + sx(points[0][0]) + " " + sy(points[0][1]);
-    for (var i = 1; i < points.length; i++) path += " L " + sx(points[i][0]) + " " + sy(points[i][1]);
-    var areaPath = path + " L " + sx(points[points.length - 1][0]) + " " + (h - padB) + " L " + sx(points[0][0]) + " " + (h - padB) + " Z";
+    var path = "M " + sx(cum[0][0]) + " " + sy(cum[0][1]);
+    for (var k = 1; k < cum.length; k++) path += " L " + sx(cum[k][0]) + " " + sy(cum[k][1]);
+    var areaPath = path + " L " + sx(cum[cum.length - 1][0]) + " " + (h - padB) + " L " + sx(cum[0][0]) + " " + (h - padB) + " Z";
     if (svg) {
       svg.innerHTML = ''
         + '<defs>'

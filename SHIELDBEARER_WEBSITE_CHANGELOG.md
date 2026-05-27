@@ -7,6 +7,12 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.27.6 - May 2026
+- `/reach/youtube` Growth Curve reworked. Previously plotted **raw daily views** on a linear axis. A single 468-view spike day pinned the y-axis and visually flattened every other day to a noise band, making 89 days of real data read as "one good day, otherwise dead." Now plots **cumulative views** across the 90-day window: a monotonically non-decreasing line that always trends upward and turns spike days into visible step-ups.
+- Three summary stats added above the curve (reusing the existing `.reach-yt-recent` cell pattern): **Views, last 90 days** (~2,590), **Best day** (view count + date), **Days above 30 views** (a count of the meaningful-traffic days in the window).
+- Lead copy rewritten from "Real daily views from YouTube Analytics across the trailing 90 days. Every dot on the line is a day." to "Cumulative YouTube views across the trailing 90 days. Each step up is another day of viewers. Solo project, no marketing budget, no team."
+- `js/reach.js`: `renderYouTubeGrowthCurve` now builds a running-sum series before drawing, populates the three summary cells, and keeps the same red gradient styling. The empty-state path (fewer than 2 days of data) unchanged.
+
 ## v2.27.5 - May 2026
 - `/reach/youtube`: reordered and reframed so the indie achievement reads at first glance.
   - **Hero stat swap.** "Watch hours, last 30 days" (~19 hours, small-looking) replaced with "Top video, lifetime" pulling `top_videos[0].views` (currently 96,120 for *Come and Restore*). The hero quartet is now Subscribers / Videos published / Top video lifetime / Avg view 30d.
