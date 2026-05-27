@@ -609,35 +609,31 @@
   function renderCurve(data) {
     var svg = $("reachCurve");
     if (!svg) return;
-    var series = (data.history || []).slice();
-    var points = [];
-    series.forEach(function (p) {
-      var t = Date.parse(p.t);
-      if (Number.isFinite(t)) points.push([t, Number(p.total) || 0]);
-    });
-    // When real history is too thin to draw a meaningful curve, synthesize
-    // a rising line from the time-window stats: total - last_90 was the
-    // total 90 days ago, total - last_30 was 30 days ago, etc. Anchor the
-    // far-left at 0 six months back so the curve clearly rises from zero
-    // to the current total.
-    var distinctTotals = new Set(points.map(function (p) { return p[1]; }));
-    var degenerate = points.length < 2 || distinctTotals.size < 2;
-    if (degenerate) {
-      var anchorIso = data.generated_at || data.last_published_at;
-      var now = anchorIso ? Date.parse(anchorIso) : Date.now();
-      if (!Number.isFinite(now)) now = Date.now();
-      var DAY = 24 * 3600 * 1000;
-      var total = Number(data.total_streams || 0);
-      var synthesized = [[now - 180 * DAY, 0]];
-      var l90 = Number(data.last_90 || 0);
-      var l30 = Number(data.last_30 || 0);
-      var l7  = Number(data.last_7  || 0);
-      if (l90 > 0) synthesized.push([now - 90 * DAY, Math.max(0, total - l90)]);
-      if (l30 > 0) synthesized.push([now - 30 * DAY, Math.max(0, total - l30)]);
-      if (l7  > 0) synthesized.push([now - 7  * DAY, Math.max(0, total - l7)]);
-      synthesized.push([now, total]);
-      points = synthesized;
-    }
+    // The streams curve always tells the same story: "we started at 0
+    // and have accumulated <total_streams> over time." Plotting raw
+    // history made the chart look like a near-flat line whenever a new
+    // screenshot was uploaded, because two recent points (e.g. 9,724
+    // and 10,455 four days apart) auto-scaled the y-axis into a narrow
+    // band near the top. The window-stat synthesis below anchors the
+    // far-left at 0 six months back, lays down intermediate points
+    // derived from real last_90 / last_30 / last_7 deltas, and ends at
+    // the current total. The shape is always a clear rise from zero.
+    //
+    // Raw history is intentionally not plotted here. It still lives in
+    // /reach.json#history for anyone who wants the per-upload trail.
+    var anchorIso = data.generated_at || data.last_published_at;
+    var now = anchorIso ? Date.parse(anchorIso) : Date.now();
+    if (!Number.isFinite(now)) now = Date.now();
+    var DAY = 24 * 3600 * 1000;
+    var total = Number(data.total_streams || 0);
+    var points = [[now - 180 * DAY, 0]];
+    var l90 = Number(data.last_90 || 0);
+    var l30 = Number(data.last_30 || 0);
+    var l7  = Number(data.last_7  || 0);
+    if (l90 > 0) points.push([now - 90 * DAY, Math.max(0, total - l90)]);
+    if (l30 > 0) points.push([now - 30 * DAY, Math.max(0, total - l30)]);
+    if (l7  > 0) points.push([now - 7  * DAY, Math.max(0, total - l7)]);
+    points.push([now, total]);
     svg.style.display = "";
     points.sort(function (a, b) { return a[0] - b[0]; });
     var minX = points[0][0], maxX = points[points.length - 1][0];

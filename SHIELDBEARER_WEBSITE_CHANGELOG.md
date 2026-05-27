@@ -7,6 +7,9 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.27.7 - May 2026
+- `/reach/streams` Growth Curve no longer goes flat after a screenshot upload. Previously, when `reach.json#history` had two or more distinct totals (which happens immediately after the first or second screenshot), the renderer plotted those raw history points. With recent uploads typically clustered in a narrow band (e.g. 9,724 → 10,455 four days apart), the y-axis auto-scaled to that band and the curve read as a near-flat line at the top of the chart. Fix: always use the existing window-stat synthesis path. The curve now anchors at 0 six months back, lays down intermediate points derived from real `last_90` / `last_30` / `last_7` deltas, and ends at the current total. Shape is always a clear rise from zero regardless of how many screenshots have been uploaded. Raw history still lives in `/reach.json#history` for any consumer that wants the per-upload trail; the chart just doesn't plot it.
+
 ## v2.27.6 - May 2026
 - `/reach/youtube` Growth Curve reworked. Previously plotted **raw daily views** on a linear axis. A single 468-view spike day pinned the y-axis and visually flattened every other day to a noise band, making 89 days of real data read as "one good day, otherwise dead." Now plots **cumulative views** across the 90-day window: a monotonically non-decreasing line that always trends upward and turns spike days into visible step-ups.
 - Three summary stats added above the curve (reusing the existing `.reach-yt-recent` cell pattern): **Views, last 90 days** (~2,590), **Best day** (view count + date), **Days above 30 views** (a count of the meaningful-traffic days in the window).
