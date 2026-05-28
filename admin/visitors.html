@@ -105,6 +105,22 @@
       font-size: 13px; color: var(--text-strong); display: flex; flex-wrap: wrap; gap: 1em;
     }
     .session__meta b { color: var(--line); font-weight: 400; letter-spacing: .04em; }
+    .session__loc {
+      color: var(--text-strong);
+      background: rgba(231, 76, 60, 0.16);
+      border: 1px solid var(--line-soft);
+      border-radius: 3px;
+      padding: 1px 9px;
+      font-weight: 700;
+      letter-spacing: .04em;
+    }
+    .session__loc--unknown {
+      color: var(--muted);
+      background: transparent;
+      border: 0;
+      padding: 0;
+      font-weight: 400;
+    }
     .session__pages { list-style: none; padding: 0; margin: 0; }
     .session__page {
       display: grid;
@@ -406,11 +422,14 @@
             ? '<div class="session__ua">' + escapeText(s.user_agent) + '</div>'
             : '';
           var totalDwell = s.total_dwell_ms > 0 ? fmtDuration(s.total_dwell_ms) : "--";
+          var locKnown = s.location && s.location !== "unknown";
+          var locHtml = '<span class="session__loc' + (locKnown ? '' : ' session__loc--unknown') + '">' +
+            escapeText(s.location) + '</span>';
           return '<div class="session">' +
             '<div class="session__head">' +
               '<div class="session__meta">' +
+                locHtml +
                 '<span><b>' + escapeText(s.ip) + '</b></span>' +
-                '<span>' + escapeText(s.location) + '</span>' +
                 '<span>' + escapeText(s.pages.length) + ' page' + (s.pages.length === 1 ? '' : 's') + '</span>' +
                 '<span>dwell ' + escapeText(totalDwell) + '</span>' +
                 '<span>' + escapeText(fmtRelative(s.last_ts)) + '</span>' +

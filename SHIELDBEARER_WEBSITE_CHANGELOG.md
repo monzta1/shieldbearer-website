@@ -7,6 +7,9 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.27.14 - May 2026
+- `/admin/visitors`: the per-session location (city, region) now reads as a highlighted red chip and leads the session header row, so the list is easy to skim by where people are. Known locations get the chip; "unknown" (older pathless rows) stays muted and unstyled so it recedes instead of drawing the eye.
+
 ## v2.27.13 - May 2026
 - `/admin/metrics`: new **Top cities** section below **Where in the world**, showing the top 6 cities by sessions with share. Sourced from GA4 (`city` + `region` dimensions), formatted as "City, Region" (e.g. "Catharpin, Virginia") to match the visitor-logger location style.
 - Backend (paired commit in `sentinelbot-lambda`): `sentinelbot-metrics-publisher` adds a `fetchCities` GA4 report and writes a `cities` array into `admin/metrics.json`. Defaults to `[]` if empty. `renderCities` mirrors `renderGeography`.
