@@ -65,13 +65,19 @@
           if (extras) for (var k in extras) body[k] = extras[k];
           var payload = JSON.stringify(body);
 
+          // text/plain keeps this a CORS "simple request" so there is
+          // no preflight OPTIONS. A preflighted beacon gets dropped when
+          // a fast-bouncing visitor tears the page down before the
+          // OPTIONS+POST round trip finishes, which silently lost every
+          // "open" event and left pathless orphan rows. The Lambda
+          // JSON-parses the body regardless of content type.
           if (navigator.sendBeacon) {
-            var blob = new Blob([payload], { type: "application/json" });
+            var blob = new Blob([payload], { type: "text/plain;charset=UTF-8" });
             if (navigator.sendBeacon(visitorApi, blob)) return;
           }
           fetch(visitorApi, {
             method: "POST",
-            headers: { "content-type": "application/json" },
+            headers: { "content-type": "text/plain;charset=UTF-8" },
             body: payload,
             keepalive: true,
             credentials: "omit",

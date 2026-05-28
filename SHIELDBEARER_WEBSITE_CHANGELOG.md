@@ -7,6 +7,11 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.27.10 - May 2026
+- Fixed the visitor beacon silently losing every `open` event. The beacon sent its payload as a `Blob`/fetch with content type `application/json`, which is not CORS-safelisted, so each cross-origin POST required a preflight `OPTIONS` first. On a fast-bouncing visit the page tore down before the preflight + POST round trip finished, so the `open` event was dropped while the later `close` event (preflight cache now warm, single POST) still landed. The result was `/admin/visitors` filling with pathless orphan rows that carried no path, IP, or location, even though geo resolution worked fine when an open row did land.
+- Changed the beacon content type to `text/plain;charset=UTF-8` in `js/sentinelbot.js` (both the `sendBeacon` Blob and the fetch fallback). That makes the request a CORS simple request with no preflight, so the `open` beacon flushes reliably even on a fast bounce. The visitor-logger Lambda already JSON-parses the body regardless of content type, so no backend change was needed (verified live: a text/plain POST writes a full row with path + location + IP).
+- No change to the `open` / `heartbeat` / `close` protocol, the Lambda, the table, or the admin read path. Single-line content-type swap.
+
 ## v2.27.9 - May 2026
 - `/reach/streams`: new **Surging Now** section (Spotify, last 28 days) sits above the existing **Top Transmissions** (all-time) block. Mirrors the YouTube reach page layout: lifetime block + surge block, side by side conceptually.
 - Backend path (paired commit in `sentinelbot-lambda` repo): the screenshot parser now recognises a 4th screen type, `spotify_songs_28d`. The vision model reads the "Last 28 days" / "All-time" window label visible at the top of every Spotify for Artists Top Tracks screenshot and tags the envelope accordingly. The two windows write to two separate JSON artifacts: lifetime to `/spotify_songs.json` (existing), 28-day to `/spotify_songs_28d.json` (new).
