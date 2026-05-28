@@ -1,6 +1,7 @@
 {
-  "generated_at": "2026-05-27T17:19:05.569Z",
+  "generated_at": "2026-05-28T00:25:32.176Z",
   "source": "Spotify for Artists",
+  "window": "all-time",
   "songs": [
     {
       "title": "Silent As Night",
@@ -45,5 +46,5 @@
   ],
   "track_count": 10,
   "total_spotify_streams": 9209,
-  "last_published_at": "2026-05-27T17:19:04.135Z"
+  "last_published_at": "2026-05-28T00:25:31.139Z"
 }
