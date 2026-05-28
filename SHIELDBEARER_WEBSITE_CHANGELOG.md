@@ -7,6 +7,11 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.27.11 - May 2026
+- `/admin/metrics`: new **Where in the world** section between the channel mix and the event list, showing the top 6 countries by sessions with share, sourced from GA4 (same source as the rest of the page). Closes the gap where the GA4 dashboard showed visitor geography but our admin metrics page did not.
+- Backend (paired commit in `sentinelbot-lambda`): `sentinelbot-metrics-publisher` now runs a GA4 `country` report and writes a `geography` array into `admin/metrics.json` alongside `channels` and `events`. Field shape matches channels (`name`, `sessions`, `share`). Defaults to `[]` if the report returns nothing.
+- Renderer is additive: `renderGeography` mirrors `renderChannels`, reuses the existing row styles, escapes country names, and shows "No geography data this period." when empty. No change to the passphrase gate or fetch path.
+
 ## v2.27.10 - May 2026
 - Fixed the visitor beacon silently losing every `open` event. The beacon sent its payload as a `Blob`/fetch with content type `application/json`, which is not CORS-safelisted, so each cross-origin POST required a preflight `OPTIONS` first. On a fast-bouncing visit the page tore down before the preflight + POST round trip finished, so the `open` event was dropped while the later `close` event (preflight cache now warm, single POST) still landed. The result was `/admin/visitors` filling with pathless orphan rows that carried no path, IP, or location, even though geo resolution worked fine when an open row did land.
 - Changed the beacon content type to `text/plain;charset=UTF-8` in `js/sentinelbot.js` (both the `sendBeacon` Blob and the fetch fallback). That makes the request a CORS simple request with no preflight, so the `open` beacon flushes reliably even on a fast bounce. The visitor-logger Lambda already JSON-parses the body regardless of content type, so no backend change was needed (verified live: a text/plain POST writes a full row with path + location + IP).

@@ -192,6 +192,13 @@
     </div>
 
     <div class="metrics-section">
+      <h3>Where in the world</h3>
+      <ul class="metrics-list" id="metrics-geography">
+        <li class="metrics-row metrics-row--empty">Loading geography.</li>
+      </ul>
+    </div>
+
+    <div class="metrics-section">
       <h3>What people did</h3>
       <ul class="metrics-list" id="metrics-events">
         <li class="metrics-row metrics-row--empty">Loading event counts.</li>
@@ -318,6 +325,23 @@
           '</li>';
         }).join("");
       }
+      function renderGeography(geography) {
+        var node = el("metrics-geography");
+        if (!node) return;
+        if (!Array.isArray(geography) || !geography.length) {
+          node.innerHTML = '<li class="metrics-row metrics-row--empty">No geography data this period.</li>';
+          return;
+        }
+        node.innerHTML = geography.slice(0, 6).map(function (row) {
+          var name = String(row.name || "Unknown");
+          var sessions = fmtNumber(row.sessions);
+          var share = row.share != null ? Number(row.share).toFixed(1) + "%" : "";
+          return '<li class="metrics-row">' +
+            '<span class="metrics-row__label">' + escapeText(name) + '</span>' +
+            '<span class="metrics-row__value">' + sessions + (share ? ' <span class="metrics-row__share">(' + share + ')</span>' : '') + '</span>' +
+          '</li>';
+        }).join("");
+      }
       function renderEvents(events) {
         var node = el("metrics-events");
         if (!node) return;
@@ -373,6 +397,7 @@
           renderMeta(data);
           renderHeadline(data && data.headline);
           renderChannels(data && data.channels);
+          renderGeography(data && data.geography);
           renderEvents(data && data.events);
           renderShipped(data && data.shipped);
         })
