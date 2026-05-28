@@ -159,6 +159,26 @@
   //      expressed as days. Translates the abstract count into something
   //      visceral.
   function renderInsights(data) {
+    // Recent surge: what fraction of all-time streams arrived in the
+    // last 30 days. For Shieldbearer this is currently around 63% --
+    // the single most striking growth signal on the page. Headline it.
+    var surgeEl = $("reachSurgePct");
+    var surgeNote = $("reachSurgeNote");
+    if (surgeEl) {
+      var totalSurge = Number(data.total_streams || 0);
+      var l30Surge = Number(data.last_30 || 0);
+      if (totalSurge > 0 && l30Surge > 0) {
+        var surgePct = Math.round((l30Surge / totalSurge) * 100);
+        surgeEl.textContent = surgePct + "%";
+        if (surgeNote) {
+          surgeNote.textContent = "of all-time streams in the last 30 days (" + fmt(l30Surge) + " of " + fmt(totalSurge) + ")";
+        }
+      } else {
+        surgeEl.textContent = "--";
+        if (surgeNote) surgeNote.textContent = "of all-time streams in the last 30 days";
+      }
+    }
+
     var vEl = $("reachVelocity");
     var vNote = $("reachVelocityNote");
     if (vEl && vNote) {
@@ -584,6 +604,27 @@
       "<b>" + n + "</b> flags. <b>" + n + "</b> signals that made it through. " +
       "The leaderboard below is ranked by total confirmed transmissions; " +
       "new territories are marked when they first appear.";
+
+    // Biggest-market anchor: pre-frame the leaderboard with the top
+    // country plus what share of all-time streams it represents. Makes
+    // the country list feel weighted instead of a flat enumeration.
+    var anchorEl = $("reachTopMarketLine");
+    if (!anchorEl) return;
+    var sorted = (data.countries || []).slice().sort(function (a, b) {
+      return (Number(b.streams) || 0) - (Number(a.streams) || 0);
+    });
+    var top = sorted[0];
+    var total = Number(data.total_streams || 0);
+    if (top && top.streams && total > 0) {
+      var topPct = Math.round((Number(top.streams) / total) * 100);
+      anchorEl.innerHTML =
+        "Biggest market: <b>" + escapeHtml(top.country || "?") + "</b> at <b>" +
+        fmt(top.streams) + "</b> streams. About <b>" + topPct +
+        "%</b> of all-time signal.";
+      anchorEl.removeAttribute("hidden");
+    } else {
+      anchorEl.setAttribute("hidden", "");
+    }
   }
 
   function renderList(data) {

@@ -7,6 +7,14 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.27.8 - May 2026
+- `/reach/streams` stacked impressively to match the `/reach/youtube` treatment.
+  - **Indie framing in hero sublabel.** Was *"Confirmed transmissions of the Gospel. One for every verified stream..."* Now *"Confirmed Spotify streams. Solo project. No label, no manager, no team, no marketing budget. One for every verified play of a Shieldbearer track."* The indie context now leads.
+  - **New 'Recent surge' insight cell.** Headline number is `last_30 / total_streams` as a percentage. Currently reads **63%** with the supporting note *"of all-time streams in the last 30 days (6,610 of 10,455)"*. Insights grid expanded from 3-up to 4-up (collapses to 2-up under 880px). This is the single most striking number on the streams page and now leads the insights row.
+  - **'Biggest market' anchor above the country list.** New line *"Biggest market: **United States** at **3,369** streams. About **32%** of all-time signal."* pre-frames the country leaderboard so the US weight reads explicitly rather than only as the longest bar in the list. Uses the existing `escapeHtml` and `fmt` helpers; sorted by `streams` desc.
+- `js/reach.js`: new `reachSurgePct` / `reachSurgeNote` populators in `renderInsights`; `renderListIntro` now also populates the `reachTopMarketLine` anchor.
+- CSS additions in `reach/streams/index.html`: `.reach-section__anchor` (red-bordered callout for the biggest-market line), and a 4-column → 2-column responsive switch for the insights grid.
+
 ## v2.27.7 - May 2026
 - `/reach/streams` Growth Curve no longer goes flat after a screenshot upload. Previously, when `reach.json#history` had two or more distinct totals (which happens immediately after the first or second screenshot), the renderer plotted those raw history points. With recent uploads typically clustered in a narrow band (e.g. 9,724 → 10,455 four days apart), the y-axis auto-scaled to that band and the curve read as a near-flat line at the top of the chart. Fix: always use the existing window-stat synthesis path. The curve now anchors at 0 six months back, lays down intermediate points derived from real `last_90` / `last_30` / `last_7` deltas, and ends at the current total. Shape is always a clear rise from zero regardless of how many screenshots have been uploaded. Raw history still lives in `/reach.json#history` for any consumer that wants the per-upload trail; the chart just doesn't plot it.
 
