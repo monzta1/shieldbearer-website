@@ -7,6 +7,10 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.27.13 - May 2026
+- `/admin/metrics`: new **Top cities** section below **Where in the world**, showing the top 6 cities by sessions with share. Sourced from GA4 (`city` + `region` dimensions), formatted as "City, Region" (e.g. "Catharpin, Virginia") to match the visitor-logger location style.
+- Backend (paired commit in `sentinelbot-lambda`): `sentinelbot-metrics-publisher` adds a `fetchCities` GA4 report and writes a `cities` array into `admin/metrics.json`. Defaults to `[]` if empty. `renderCities` mirrors `renderGeography`.
+
 ## v2.27.12 - May 2026
 - Fixed `/admin/metrics` showing only "Loading..." on every reload after the first. The gate script calls `unlock()`, which tried to call `window.__metricsBoot()` immediately, but that function is defined in a later `<script>` block that had not executed yet. First-time passphrase entry worked (boot was defined by the time the button was clicked); every already-unlocked reload skipped the boot and left all sections stuck on their placeholder text with no error banner.
 - `unlock()` now sets a `window.__metricsUnlocked` flag, and the boot script runs itself once at the end if that flag is set. Both paths boot exactly once, no double fetch.

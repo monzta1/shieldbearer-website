@@ -199,6 +199,13 @@
     </div>
 
     <div class="metrics-section">
+      <h3>Top cities</h3>
+      <ul class="metrics-list" id="metrics-cities">
+        <li class="metrics-row metrics-row--empty">Loading cities.</li>
+      </ul>
+    </div>
+
+    <div class="metrics-section">
       <h3>What people did</h3>
       <ul class="metrics-list" id="metrics-events">
         <li class="metrics-row metrics-row--empty">Loading event counts.</li>
@@ -346,6 +353,23 @@
           '</li>';
         }).join("");
       }
+      function renderCities(cities) {
+        var node = el("metrics-cities");
+        if (!node) return;
+        if (!Array.isArray(cities) || !cities.length) {
+          node.innerHTML = '<li class="metrics-row metrics-row--empty">No city data this period.</li>';
+          return;
+        }
+        node.innerHTML = cities.slice(0, 6).map(function (row) {
+          var name = String(row.name || "Unknown");
+          var sessions = fmtNumber(row.sessions);
+          var share = row.share != null ? Number(row.share).toFixed(1) + "%" : "";
+          return '<li class="metrics-row">' +
+            '<span class="metrics-row__label">' + escapeText(name) + '</span>' +
+            '<span class="metrics-row__value">' + sessions + (share ? ' <span class="metrics-row__share">(' + share + ')</span>' : '') + '</span>' +
+          '</li>';
+        }).join("");
+      }
       function renderEvents(events) {
         var node = el("metrics-events");
         if (!node) return;
@@ -402,6 +426,7 @@
           renderHeadline(data && data.headline);
           renderChannels(data && data.channels);
           renderGeography(data && data.geography);
+          renderCities(data && data.cities);
           renderEvents(data && data.events);
           renderShipped(data && data.shipped);
         })
