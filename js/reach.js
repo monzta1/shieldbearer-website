@@ -11,6 +11,7 @@
 (function () {
   var SRC = "/reach.json";
   var SPOTIFY_SRC = "/spotify_songs.json";
+  var SPOTIFY_28D_SRC = "/spotify_songs_28d.json";
   var YOUTUBE_SRC = "/youtube_stats.json";
 
   // Song title -> cover artwork. Sourced from /images and from
@@ -595,6 +596,48 @@
     }).join("");
   }
 
+  // Spotify Surging Now (last 28 days). Pulls /spotify_songs_28d.json.
+  // Same shape as the lifetime block above but with a 28d window tag
+  // and a different "total" key (total_spotify_streams_28d). If the
+  // file is missing or empty, the section stays hidden. The lifetime
+  // and 28d files are independent: a missing 28d file is normal until
+  // the operator uploads a "Last 28 days" screenshot.
+  function renderSpotifySurge(spotify28d) {
+    var section = $("spotifySurgeSection");
+    var list = $("spotifySurgeList");
+    var intro = $("spotifySurgeIntro");
+    if (!section || !list) return;
+    var songs = (spotify28d && Array.isArray(spotify28d.songs)) ? spotify28d.songs : [];
+    if (!songs.length) {
+      section.setAttribute("hidden", "");
+      section.style.display = "none";
+      list.innerHTML = "";
+      if (intro) intro.textContent = "";
+      return;
+    }
+    section.removeAttribute("hidden");
+    section.style.display = "";
+    var total = Number(spotify28d.total_spotify_streams_28d || 0);
+    if (intro) {
+      intro.innerHTML =
+        "What's hot right now on Spotify. " +
+        "<b>" + songs.length + "</b> tracks logged in the last 28 days, " +
+        "<b>" + fmt(total) + "</b> recent plays.";
+    }
+    var max = songs.reduce(function (m, s) { return Math.max(m, Number(s.streams) || 0); }, 1);
+    list.innerHTML = songs.map(function (s) {
+      var pct = Math.max(2, Math.round(((Number(s.streams) || 0) / max) * 100));
+      var title = escapeHtml(s.title || "?");
+      var art = artForTitle(s.title);
+      return '<li>' +
+        '<span class="reach-list__art"><img src="' + art + '" alt="" onerror="this.src=\'/images/logo.png\'" loading="lazy" /></span>' +
+        '<span class="reach-list__name">' + title + '</span>' +
+        '<span class="reach-list__streams">' + fmt(s.streams) + '</span>' +
+        '<span class="reach-list__bar"><span style="width:' + pct + '%"></span></span>' +
+      '</li>';
+    }).join("");
+  }
+
   function renderListIntro(data) {
     var el = $("reachListIntro");
     if (!el) return;
@@ -804,6 +847,14 @@
   fetch(SPOTIFY_SRC + "?cb=" + Date.now(), { cache: "no-store" })
     .then(function (r) { return r.ok ? r.json() : null; })
     .then(renderTopTransmissions)
+    .catch(function () { /* silent */ });
+
+  // Spotify 28-day surge. Independent of the lifetime file: the section
+  // stays hidden until the operator uploads a "Last 28 days" screenshot
+  // and the parser commits /spotify_songs_28d.json.
+  fetch(SPOTIFY_28D_SRC + "?cb=" + Date.now(), { cache: "no-store" })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(renderSpotifySurge)
     .catch(function () { /* silent */ });
 
   // YouTube data. Used on /reach/youtube (full report) and on /reach

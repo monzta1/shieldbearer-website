@@ -7,6 +7,13 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.27.9 - May 2026
+- `/reach/streams`: new **Surging Now** section (Spotify, last 28 days) sits above the existing **Top Transmissions** (all-time) block. Mirrors the YouTube reach page layout: lifetime block + surge block, side by side conceptually.
+- Backend path (paired commit in `sentinelbot-lambda` repo): the screenshot parser now recognises a 4th screen type, `spotify_songs_28d`. The vision model reads the "Last 28 days" / "All-time" window label visible at the top of every Spotify for Artists Top Tracks screenshot and tags the envelope accordingly. The two windows write to two separate JSON artifacts: lifetime to `/spotify_songs.json` (existing), 28-day to `/spotify_songs_28d.json` (new).
+- Frontend: new `renderSpotifySurge` reads `/spotify_songs_28d.json`, renders into `#spotifySurgeSection` with intro line "What's hot right now on Spotify. N tracks logged in the last 28 days, M recent plays." Section stays hidden until the operator uploads a "Last 28 days" screenshot for the first time.
+- The all-time **Top Transmissions** section header now reads `Spotify for Artists · All-time` (was just `Spotify for Artists`) so the window scope is explicit and parallel to the new section's `Spotify · Last 28 days` tag.
+- 108 parser tests pass (+16 covering the new envelope type, artifact shape, window tagging, and lifetime/28d isolation).
+
 ## v2.27.8 - May 2026
 - `/reach/streams` stacked impressively to match the `/reach/youtube` treatment.
   - **Indie framing in hero sublabel.** Was *"Confirmed transmissions of the Gospel. One for every verified stream..."* Now *"Confirmed Spotify streams. Solo project. No label, no manager, no team, no marketing budget. One for every verified play of a Shieldbearer track."* The indie context now leads.
