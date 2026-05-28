@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-28T08:00:15.473Z",
+  "generatedAt": "2026-05-28T10:13:37.970Z",
   "period": {
     "label": "May 2026 so far",
     "start": "2026-05-01",
@@ -25,6 +25,38 @@
       "name": "Organic Search",
       "sessions": 45,
       "share": 20.3
+    }
+  ],
+  "geography": [
+    {
+      "name": "United States",
+      "sessions": 200,
+      "share": 92.6
+    },
+    {
+      "name": "India",
+      "sessions": 4,
+      "share": 1.9
+    },
+    {
+      "name": "United Kingdom",
+      "sessions": 4,
+      "share": 1.9
+    },
+    {
+      "name": "Canada",
+      "sessions": 2,
+      "share": 0.9
+    },
+    {
+      "name": "Kuwait",
+      "sessions": 2,
+      "share": 0.9
+    },
+    {
+      "name": "(not set)",
+      "sessions": 1,
+      "share": 0.5
     }
   ],
   "events": [
