@@ -7,6 +7,10 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.27.12 - May 2026
+- Fixed `/admin/metrics` showing only "Loading..." on every reload after the first. The gate script calls `unlock()`, which tried to call `window.__metricsBoot()` immediately, but that function is defined in a later `<script>` block that had not executed yet. First-time passphrase entry worked (boot was defined by the time the button was clicked); every already-unlocked reload skipped the boot and left all sections stuck on their placeholder text with no error banner.
+- `unlock()` now sets a `window.__metricsUnlocked` flag, and the boot script runs itself once at the end if that flag is set. Both paths boot exactly once, no double fetch.
+
 ## v2.27.11 - May 2026
 - `/admin/metrics`: new **Where in the world** section between the channel mix and the event list, showing the top 6 countries by sessions with share, sourced from GA4 (same source as the rest of the page). Closes the gap where the GA4 dashboard showed visitor geography but our admin metrics page did not.
 - Backend (paired commit in `sentinelbot-lambda`): `sentinelbot-metrics-publisher` now runs a GA4 `country` report and writes a `geography` array into `admin/metrics.json` alongside `channels` and `events`. Field shape matches channels (`name`, `sessions`, `share`). Defaults to `[]` if the report returns nothing.

@@ -237,6 +237,10 @@
         document.body.classList.remove("pass-locked");
         var g = document.getElementById("passGate");
         if (g) g.remove();
+        // On an already-unlocked reload this runs before the boot
+        // script below has defined __metricsBoot, so record intent and
+        // let that script boot itself once it is defined.
+        window.__metricsUnlocked = true;
         if (window.__metricsBoot) window.__metricsBoot();
       }
       try {
@@ -405,6 +409,11 @@
           renderStatus("Numbers are refreshing. Check back later.");
         });
     };
+
+    // If the session was already unlocked, the gate script called
+    // unlock() before this script defined __metricsBoot, so the boot
+    // was skipped. Run it now.
+    if (window.__metricsUnlocked) window.__metricsBoot();
   </script>
 </body>
 </html>
