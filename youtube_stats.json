@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-27T22:42:52.047Z",
+  "generated_at": "2026-05-28T00:49:24.807Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,28 +15,28 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-05-23",
-      "end": "2026-05-25"
+      "start": "2026-05-24",
+      "end": "2026-05-26"
     },
     "last_7": {
-      "start": "2026-05-20",
-      "end": "2026-05-27"
+      "start": "2026-05-21",
+      "end": "2026-05-28"
     },
     "last_30": {
-      "start": "2026-04-27",
-      "end": "2026-05-27"
+      "start": "2026-04-28",
+      "end": "2026-05-28"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 51,
-      "watchMinutes": 98,
-      "avgViewDurationSec": 116
+      "views": 47,
+      "watchMinutes": 94,
+      "avgViewDurationSec": 121
     },
     "last_30": {
-      "views": 520,
-      "watchMinutes": 1128,
-      "avgViewDurationSec": 131
+      "views": 510,
+      "watchMinutes": 1119,
+      "avgViewDurationSec": 133
     }
   },
   "last_48h_countries": [],
@@ -71,8 +71,8 @@
       "videoId": "vBGEIMXs6h0",
       "title": "Celestial Shield (Lyric Video) – Shieldbearer | Christian Metal | Israel, Prophecy & Warfare",
       "thumbnail": "https://i.ytimg.com/vi/vBGEIMXs6h0/mqdefault.jpg",
-      "views": 12008,
-      "likes": 542,
+      "views": 12009,
+      "likes": 541,
       "publishedAt": "2025-07-15T02:04:57Z",
       "url": "https://www.youtube.com/watch?v=vBGEIMXs6h0"
     },
@@ -126,7 +126,7 @@
       "thumbnail": "https://i.ytimg.com/vi/AIiCw1a5hnM/mqdefault.jpg",
       "publishedAt": "2025-10-10T02:30:01Z",
       "url": "https://www.youtube.com/watch?v=AIiCw1a5hnM",
-      "views": 38
+      "views": 36
     },
     {
       "videoId": "vBGEIMXs6h0",
@@ -134,15 +134,10 @@
       "thumbnail": "https://i.ytimg.com/vi/vBGEIMXs6h0/mqdefault.jpg",
       "publishedAt": "2025-07-15T02:04:57Z",
       "url": "https://www.youtube.com/watch?v=vBGEIMXs6h0",
-      "views": 27
+      "views": 26
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-02-26",
-      "views": 34,
-      "minutes": 85
-    },
     {
       "date": "2026-02-27",
       "views": 468,
@@ -588,12 +583,12 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 145
+      "views": 144
     },
     {
       "source": "RELATED_VIDEO",
       "label": "Related video",
-      "views": 124
+      "views": 121
     },
     {
       "source": "NO_LINK_OTHER",
@@ -603,7 +598,7 @@
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 61
+      "views": 59
     },
     {
       "source": "SUBSCRIBER",
@@ -618,7 +613,7 @@
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 30
+      "views": 26
     },
     {
       "source": "YT_OTHER_PAGE",
