@@ -108,7 +108,32 @@
       "engagedShare": null
     }
   ],
-  "shipped": [],
+  "shipped": [
+    {
+      "date": "2026-05-29",
+      "label": "The Architect added to the lyrics dossier"
+    },
+    {
+      "date": "2026-05-29",
+      "label": "Press page: outlet logos + auto-publishing premiere card"
+    },
+    {
+      "date": "2026-05-28",
+      "label": "Admin metrics: visitor geography (countries + cities)"
+    },
+    {
+      "date": "2026-05-28",
+      "label": "Visitor beacon fix: first-party pageviews now captured"
+    },
+    {
+      "date": "2026-05-27",
+      "label": "Spotify Surging Now (last 28 days) on the streams page"
+    },
+    {
+      "date": "2026-05-24",
+      "label": "Reach restructured into YouTube + Streams sub-pages"
+    }
+  ],
   "source": "ga4-data-api",
   "note": "Numbers are aggregates only. Refreshed daily at 04:00 ET."
 }
