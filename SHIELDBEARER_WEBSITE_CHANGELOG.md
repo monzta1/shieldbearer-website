@@ -7,6 +7,10 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.27.17 - May 2026
+- `/interviews`: added outlet logo badges to the press-clip cards. Sourced each outlet's logo, saved locally under `/images/press/` (so they satisfy the page CSP's `'self'` img-src rather than hotlinking), and render a 40px square badge beside the outlet name: Eternal Flames UK (6 cards), Heaven's Metal Magazine, The Metal Resource. The Gribbin card keeps its YouTube video thumbnail; the Metal Archives credential card is left as-is (its only icon is a 16px favicon, too small to use).
+- New CSS `.press-card__brand` (flex row) + `.press-logo` (contain-fit square chip). New assets: `images/press/eternal-flames.webp` (1024²), `images/press/heavens-metal.jpg` (192²), `images/press/metal-resource.png` (80²). Verified card structure with jsdom; mirrored to `interviews/index.html`.
+
 ## v2.27.16 - May 2026
 - `/interviews` (press page): the Bryan Gribbin / All Music Matters N'At premiere card now shows the YouTube thumbnail immediately (maxresdefault with an hqdefault onerror fallback, served from the CSP-allowed img.youtube.com), with the red play glyph overlaid.
 - At premiere time (data-premiere 2026-05-29T16:30:00Z = 12:30 PM ET) the inline countdown script now auto-converts the card in place to a normal published interview instead of freezing on "LIVE": it removes the countdown and the "Upcoming Premiere" badge, drops the `press-card--upcoming` styling, swaps the excerpt to past-tense (`data-live-excerpt`), retags "Premieres May 29" to "Watch now", and updates the aria-label. The thumbnail persists. A visitor loading after the drop sees the published state immediately.
