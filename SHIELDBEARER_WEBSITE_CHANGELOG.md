@@ -7,6 +7,9 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.27.15 - May 2026
+- `/reach/streams`: swapped section order so **Top Transmissions** (Spotify for Artists, all-time) now sits above **Surging Now** (Spotify, last 28 days). DOM reorder only; both render into their existing IDs, so no JS change.
+
 ## v2.27.14 - May 2026
 - `/admin/visitors`: the per-session location (city, region) now reads as a highlighted red chip and leads the session header row, so the list is easy to skim by where people are. Known locations get the chip; "unknown" (older pathless rows) stays muted and unstyled so it recedes instead of drawing the eye.
 
