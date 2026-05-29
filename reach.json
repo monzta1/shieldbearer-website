@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-29T01:00:23.960Z",
-  "total_streams": 10668,
-  "last_90": 8241,
-  "last_30": 6797,
-  "last_7": 976,
+  "generated_at": "2026-05-29T17:05:34.718Z",
+  "total_streams": 10879,
+  "last_90": 8452,
+  "last_30": 7008,
+  "last_7": 1187,
   "nations": 17,
   "countries": [
     {
@@ -16,7 +16,7 @@
       "country": "Germany",
       "code": "DE",
       "flag": "🇩🇪",
-      "streams": 722
+      "streams": 746
     },
     {
       "country": "France",
@@ -43,16 +43,16 @@
       "streams": 232
     },
     {
+      "country": "Spain",
+      "code": "ES",
+      "flag": "🇪🇸",
+      "streams": 229
+    },
+    {
       "country": "Sweden",
       "code": "SE",
       "flag": "🇸🇪",
       "streams": 215
-    },
-    {
-      "country": "Spain",
-      "code": "ES",
-      "flag": "🇪🇸",
-      "streams": 204
     },
     {
       "country": "Belgium",
@@ -149,7 +149,11 @@
     {
       "t": "2026-05-29T01:00:23.709Z",
       "total": 10668
+    },
+    {
+      "t": "2026-05-29T17:05:34.465Z",
+      "total": 10879
     }
   ],
-  "last_published_at": "2026-05-29T01:00:23.709Z"
+  "last_published_at": "2026-05-29T17:05:34.465Z"
 }
