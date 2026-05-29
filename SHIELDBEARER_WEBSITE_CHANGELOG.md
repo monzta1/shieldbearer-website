@@ -7,6 +7,11 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.27.16 - May 2026
+- `/interviews` (press page): the Bryan Gribbin / All Music Matters N'At premiere card now shows the YouTube thumbnail immediately (maxresdefault with an hqdefault onerror fallback, served from the CSP-allowed img.youtube.com), with the red play glyph overlaid.
+- At premiere time (data-premiere 2026-05-29T16:30:00Z = 12:30 PM ET) the inline countdown script now auto-converts the card in place to a normal published interview instead of freezing on "LIVE": it removes the countdown and the "Upcoming Premiere" badge, drops the `press-card--upcoming` styling, swaps the excerpt to past-tense (`data-live-excerpt`), retags "Premieres May 29" to "Watch now", and updates the aria-label. The thumbnail persists. A visitor loading after the drop sees the published state immediately.
+- Removed the now-unused `.upcoming-play` and `.upcoming-countdown--live` CSS rules orphaned by the change. Verified both pre-drop and post-drop states with jsdom. Mirrored to `interviews/index.html`.
+
 ## v2.27.15 - May 2026
 - `/reach/streams`: swapped section order so **Top Transmissions** (Spotify for Artists, all-time) now sits above **Surging Now** (Spotify, last 28 days). DOM reorder only; both render into their existing IDs, so no JS change.
 

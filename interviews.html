@@ -203,20 +203,38 @@
       text-transform: uppercase;
       padding: .35rem .8rem;
     }
+    .upcoming-thumb {
+      position: relative;
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border: 1px solid rgba(231,76,60,.3);
+      background: #000;
+      margin-bottom: 1.1rem;
+    }
+    .upcoming-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .upcoming-thumb__play {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 74px; height: 53px;
+      filter: drop-shadow(0 4px 16px rgba(0,0,0,.65));
+      transition: transform .2s;
+      pointer-events: none;
+    }
+    .press-card:hover .upcoming-thumb__play { transform: translate(-50%, -50%) scale(1.08); }
     .upcoming-head {
       display: flex;
       gap: 1rem;
       align-items: center;
       margin-bottom: .6rem;
     }
-    .upcoming-play {
-      flex: 0 0 56px;
-      width: 56px;
-      height: 56px;
-      filter: drop-shadow(0 4px 14px rgba(231,76,60,.4));
-      transition: transform .2s;
-    }
-    .press-card--upcoming:hover .upcoming-play { transform: scale(1.08); }
     .upcoming-head .headline {
       margin: 0;
       padding-right: 0;
@@ -250,7 +268,6 @@
       text-transform: uppercase;
       margin-top: 2px;
     }
-    .upcoming-countdown--live .upcoming-countdown__n { color: var(--red-bright); }
     @media (max-width: 600px) {
       .press-card--upcoming { padding-top: 2.8rem; }
       .upcoming-head { flex-direction: column; align-items: flex-start; gap: .8rem; }
@@ -380,14 +397,21 @@
            target="_blank" rel="noopener"
            class="press-card press-card--featured press-card--upcoming"
            data-premiere="2026-05-29T16:30:00Z"
+           data-live-excerpt="A long-form podcast feature on Bryan Gribbin&rsquo;s All Music Matters N&rsquo;At. The full conversation is now live on YouTube."
+           data-live-aria="Watch: Moncy Abraham of Shieldbearer on All Music Matters N'At with Bryan Gribbin"
            aria-label="Upcoming podcast premiere: Moncy Abraham of Shieldbearer on All Music Matters N'At with Bryan Gribbin">
           <span class="upcoming-badge">Upcoming Premiere</span>
           <span class="outlet">All Music Matters N&rsquo;At &middot; Bryan Gribbin</span>
-          <div class="upcoming-head">
-            <svg class="upcoming-play" viewBox="0 0 90 64" aria-hidden="true" focusable="false">
+          <span class="upcoming-thumb">
+            <img src="https://img.youtube.com/vi/Mv8Igt43u70/maxresdefault.jpg"
+                 onerror="this.onerror=null;this.src='https://img.youtube.com/vi/Mv8Igt43u70/hqdefault.jpg'"
+                 alt="Moncy Abraham of Shieldbearer on All Music Matters N'At with Bryan Gribbin" loading="lazy" />
+            <svg class="upcoming-thumb__play" viewBox="0 0 90 64" aria-hidden="true" focusable="false">
               <rect x="0" y="0" width="90" height="64" rx="14" ry="14" fill="#e74c3c"/>
               <polygon points="36,18 36,46 60,32" fill="#fff"/>
             </svg>
+          </span>
+          <div class="upcoming-head">
             <p class="headline">Moncy Abraham of Shieldbearer</p>
           </div>
           <p class="excerpt">A long-form podcast feature on Bryan Gribbin&rsquo;s All Music Matters N&rsquo;At. Premieres Friday May 29, 2026 at 12:30 PM ET on YouTube. The full conversation lands when the show goes live.</p>
@@ -397,7 +421,7 @@
             <div class="upcoming-countdown__cell"><span class="upcoming-countdown__n" id="upc-mins">--</span><span class="upcoming-countdown__l">Mins</span></div>
             <div class="upcoming-countdown__cell"><span class="upcoming-countdown__n" id="upc-secs">--</span><span class="upcoming-countdown__l">Secs</span></div>
           </div>
-          <div class="tags"><span class="tag">Podcast</span><span class="tag">YouTube</span><span class="tag">Premieres May 29</span></div>
+          <div class="tags"><span class="tag">Podcast</span><span class="tag">YouTube</span><span class="tag tag--premiere">Premieres May 29</span></div>
         </a>
 
         <!-- Eternal Flames: Galilean feature -->
@@ -582,8 +606,11 @@
        Upcoming-premiere countdown.
 
        Reads data-premiere off .press-card--upcoming. Updates the
-       four cells every second until the target passes, then flips
-       to a "Live now" message and stops the interval. No deps.
+       four cells every second until the target passes, then converts
+       the card in place to a normal published interview (drops the
+       countdown + upcoming badge, swaps the excerpt and tag to their
+       data-live-* copy) and stops the interval. The thumbnail stays.
+       No deps.
        ============================================================= */
     (function () {
       var card = document.querySelector(".press-card--upcoming");
@@ -604,13 +631,23 @@
 
       function pad(n) { return String(n).padStart(2, "0"); }
 
+      function goLive() {
+        if (box && box.parentNode) box.parentNode.removeChild(box);
+        var badge = card.querySelector(".upcoming-badge");
+        if (badge && badge.parentNode) badge.parentNode.removeChild(badge);
+        card.classList.remove("press-card--upcoming");
+        var ex = card.querySelector(".excerpt");
+        var liveExcerpt = card.getAttribute("data-live-excerpt");
+        if (ex && liveExcerpt) ex.innerHTML = liveExcerpt;
+        var pTag = card.querySelector(".tag--premiere");
+        if (pTag) { pTag.textContent = "Watch now"; pTag.classList.remove("tag--premiere"); }
+        var liveAria = card.getAttribute("data-live-aria");
+        if (liveAria) card.setAttribute("aria-label", liveAria);
+      }
+
       function render() {
         var diff = target - Date.now();
-        if (diff <= 0) {
-          d.textContent = "00"; h.textContent = "00"; m.textContent = "00"; s.textContent = "LIVE";
-          box.classList.add("upcoming-countdown--live");
-          return false;
-        }
+        if (diff <= 0) { goLive(); return false; }
         d.textContent = pad(Math.floor(diff / DAY));
         h.textContent = pad(Math.floor((diff % DAY) / HOUR));
         m.textContent = pad(Math.floor((diff % HOUR) / MIN));
