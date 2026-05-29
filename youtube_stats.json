@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-28T21:35:15.000Z",
+  "generated_at": "2026-05-29T03:35:14.510Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,28 +15,28 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-05-24",
-      "end": "2026-05-26"
+      "start": "2026-05-25",
+      "end": "2026-05-27"
     },
     "last_7": {
-      "start": "2026-05-21",
-      "end": "2026-05-28"
+      "start": "2026-05-22",
+      "end": "2026-05-29"
     },
     "last_30": {
-      "start": "2026-04-28",
-      "end": "2026-05-28"
+      "start": "2026-04-29",
+      "end": "2026-05-29"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 61,
-      "watchMinutes": 122,
-      "avgViewDurationSec": 122
+      "views": 54,
+      "watchMinutes": 110,
+      "avgViewDurationSec": 125
     },
     "last_30": {
-      "views": 524,
-      "watchMinutes": 1147,
-      "avgViewDurationSec": 133
+      "views": 512,
+      "watchMinutes": 1139,
+      "avgViewDurationSec": 135
     }
   },
   "last_48h_countries": [],
@@ -81,7 +81,7 @@
       "title": "Ruler of the Storm – Shieldbearer (Official Lyric Video | Christian Metal Anthem)",
       "thumbnail": "https://i.ytimg.com/vi/9FHgbbVBT1A/mqdefault.jpg",
       "views": 9829,
-      "likes": 736,
+      "likes": 735,
       "publishedAt": "2025-05-16T10:00:06Z",
       "url": "https://www.youtube.com/watch?v=9FHgbbVBT1A"
     },
@@ -118,7 +118,7 @@
       "thumbnail": "https://i.ytimg.com/vi/0jPL3Mg88ZQ/mqdefault.jpg",
       "publishedAt": "2026-04-14T22:17:26Z",
       "url": "https://www.youtube.com/watch?v=0jPL3Mg88ZQ",
-      "views": 42
+      "views": 40
     },
     {
       "videoId": "AIiCw1a5hnM",
@@ -134,15 +134,10 @@
       "thumbnail": "https://i.ytimg.com/vi/vBGEIMXs6h0/mqdefault.jpg",
       "publishedAt": "2025-07-15T02:04:57Z",
       "url": "https://www.youtube.com/watch?v=vBGEIMXs6h0",
-      "views": 27
+      "views": 26
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-02-27",
-      "views": 468,
-      "minutes": 63
-    },
     {
       "date": "2026-02-28",
       "views": 23,
@@ -588,7 +583,7 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 148
+      "views": 147
     },
     {
       "source": "RELATED_VIDEO",
@@ -608,17 +603,17 @@
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 49
+      "views": 46
     },
     {
       "source": "YT_CHANNEL",
       "label": "Channel page",
-      "views": 38
+      "views": 36
     },
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 27
+      "views": 21
     },
     {
       "source": "YT_OTHER_PAGE",
