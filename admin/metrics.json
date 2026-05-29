@@ -1,37 +1,37 @@
 {
-  "generatedAt": "2026-05-28T10:23:25.589Z",
+  "generatedAt": "2026-05-29T08:00:16.600Z",
   "period": {
     "label": "May 2026 so far",
     "start": "2026-05-01",
     "end": "2026-05-31"
   },
   "headline": {
-    "sessions": 217,
-    "deltaPct": -44.5,
+    "sessions": 226,
+    "deltaPct": -42.2,
     "comparison": "vs April 2026"
   },
   "channels": [
     {
       "name": "Organic Social",
-      "sessions": 106,
-      "share": 47.3
+      "sessions": 109,
+      "share": 46.6
     },
     {
       "name": "Direct",
-      "sessions": 60,
-      "share": 26.8
+      "sessions": 61,
+      "share": 26.1
     },
     {
       "name": "Organic Search",
-      "sessions": 45,
+      "sessions": 47,
       "share": 20.1
     }
   ],
   "geography": [
     {
       "name": "United States",
-      "sessions": 200,
-      "share": 92.2
+      "sessions": 209,
+      "share": 92.5
     },
     {
       "name": "India",
@@ -56,45 +56,45 @@
     {
       "name": "(not set)",
       "sessions": 1,
-      "share": 0.5
+      "share": 0.4
     }
   ],
   "cities": [
     {
       "name": "Catharpin, Virginia",
-      "sessions": 68,
-      "share": 34.5
+      "sessions": 69,
+      "share": 33.7
     },
     {
       "name": "South Riding, Virginia",
       "sessions": 32,
-      "share": 16.2
+      "share": 15.6
     },
     {
       "name": "Baltimore, Maryland",
       "sessions": 27,
-      "share": 13.7
+      "share": 13.2
     },
     {
       "name": "Ocean City, Maryland",
       "sessions": 17,
-      "share": 8.6
+      "share": 8.3
     },
     {
       "name": "Brambleton, Virginia",
       "sessions": 11,
-      "share": 5.6
+      "share": 5.4
     },
     {
       "name": "Valley Park, Missouri",
       "sessions": 9,
-      "share": 4.6
+      "share": 4.4
     }
   ],
   "events": [
     {
       "name": "scroll_depth",
-      "count": 1111,
+      "count": 1210,
       "engagedShare": null
     },
     {
