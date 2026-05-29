@@ -7,6 +7,10 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.27.18 - May 2026
+- `/song-meanings` (lyrics carousel): added **The Architect** (Track 12) as the featured first dossier, ahead of Sentinels. Full lyrics, three-paragraph meaning, Isaiah 43:1 anchor verse, references (Genesis 1:3 | Isaiah 43:1 | Colossians 1:16 | Isaiah 35:5), tags (Creation / Sovereignty / Intimacy), local artwork `images/the-architect-art.png`, and YouTube action (watch?v=E9rJluVWvxM). Structural song labels (Pre-Chorus, Chorus, etc.) stripped to match the existing label-free lyric style; choruses kept as sung. Verified render with jsdom (12 entries, featured first).
+- Added to both the root `song-meanings.html` and the dir-form `song-meanings/index.html`. NOTE: these two files have diverged. `/song-meanings` (root, the nav target) renders lyrics; `/song-meanings/` (dir-form) was previously changed to hide the lyrics block and link out to Spotify/YouTube instead. The new entry is in both, but the dir-form will not display its lyric text until that divergence is reconciled.
+
 ## v2.27.17 - May 2026
 - `/interviews`: added outlet logo badges to the press-clip cards. Sourced each outlet's logo, saved locally under `/images/press/` (so they satisfy the page CSP's `'self'` img-src rather than hotlinking), and render a 40px square badge beside the outlet name: Eternal Flames UK (6 cards), Heaven's Metal Magazine, The Metal Resource. The Gribbin card keeps its YouTube video thumbnail; the Metal Archives credential card is left as-is (its only icon is a 16px favicon, too small to use).
 - New CSS `.press-card__brand` (flex row) + `.press-logo` (contain-fit square chip). New assets: `images/press/eternal-flames.webp` (1024²), `images/press/heavens-metal.jpg` (192²), `images/press/metal-resource.png` (80²). Verified card structure with jsdom; mirrored to `interviews/index.html`.
