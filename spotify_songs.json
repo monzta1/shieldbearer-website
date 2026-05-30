@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-05-29T17:05:35.828Z",
+  "generated_at": "2026-05-30T23:12:28.174Z",
   "source": "Spotify for Artists",
   "window": "all-time",
   "songs": [
     {
       "title": "Silent As Night",
-      "streams": 5138
+      "streams": 5241
     },
     {
       "title": "Quake",
-      "streams": 963
+      "streams": 970
     },
     {
       "title": "1000 Suns",
-      "streams": 795
+      "streams": 801
     },
     {
       "title": "Unaliving the Giant",
-      "streams": 784
+      "streams": 791
     },
     {
       "title": "Sentinels",
-      "streams": 558
+      "streams": 564
     },
     {
       "title": "The Architect",
@@ -41,10 +41,10 @@
     },
     {
       "title": "Still Be My Vision",
-      "streams": 155
+      "streams": 156
     }
   ],
   "track_count": 10,
-  "total_spotify_streams": 9638,
-  "last_published_at": "2026-05-29T17:05:34.465Z"
+  "total_spotify_streams": 9768,
+  "last_published_at": "2026-05-30T23:12:27.126Z"
 }
