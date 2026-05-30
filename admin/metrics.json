@@ -1,57 +1,57 @@
 {
-  "generatedAt": "2026-05-29T08:00:16.600Z",
+  "generatedAt": "2026-05-30T08:00:16.078Z",
   "period": {
     "label": "May 2026 so far",
     "start": "2026-05-01",
     "end": "2026-05-31"
   },
   "headline": {
-    "sessions": 226,
-    "deltaPct": -42.2,
+    "sessions": 237,
+    "deltaPct": -39.4,
     "comparison": "vs April 2026"
   },
   "channels": [
     {
       "name": "Organic Social",
-      "sessions": 109,
-      "share": 46.6
+      "sessions": 113,
+      "share": 46.5
     },
     {
       "name": "Direct",
-      "sessions": 61,
-      "share": 26.1
+      "sessions": 63,
+      "share": 25.9
     },
     {
       "name": "Organic Search",
-      "sessions": 47,
-      "share": 20.1
+      "sessions": 48,
+      "share": 19.8
     }
   ],
   "geography": [
     {
       "name": "United States",
-      "sessions": 209,
-      "share": 92.5
+      "sessions": 220,
+      "share": 92.8
     },
     {
       "name": "India",
       "sessions": 4,
-      "share": 1.8
+      "share": 1.7
     },
     {
       "name": "United Kingdom",
       "sessions": 4,
-      "share": 1.8
+      "share": 1.7
     },
     {
       "name": "Canada",
       "sessions": 2,
-      "share": 0.9
+      "share": 0.8
     },
     {
       "name": "Kuwait",
       "sessions": 2,
-      "share": 0.9
+      "share": 0.8
     },
     {
       "name": "(not set)",
@@ -63,48 +63,48 @@
     {
       "name": "Catharpin, Virginia",
       "sessions": 69,
-      "share": 33.7
+      "share": 32.2
     },
     {
       "name": "South Riding, Virginia",
       "sessions": 32,
-      "share": 15.6
+      "share": 15
     },
     {
       "name": "Baltimore, Maryland",
       "sessions": 27,
-      "share": 13.2
+      "share": 12.6
     },
     {
       "name": "Ocean City, Maryland",
       "sessions": 17,
-      "share": 8.3
+      "share": 7.9
     },
     {
       "name": "Brambleton, Virginia",
       "sessions": 11,
-      "share": 5.4
+      "share": 5.1
     },
     {
-      "name": "Valley Park, Missouri",
+      "name": "Unknown, Virginia",
       "sessions": 9,
-      "share": 4.4
+      "share": 4.2
     }
   ],
   "events": [
     {
       "name": "scroll_depth",
-      "count": 1210,
+      "count": 1305,
+      "engagedShare": null
+    },
+    {
+      "name": "listen_click",
+      "count": 5,
       "engagedShare": null
     },
     {
       "name": "merch_click",
       "count": 4,
-      "engagedShare": null
-    },
-    {
-      "name": "listen_click",
-      "count": 3,
       "engagedShare": null
     }
   ],
