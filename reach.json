@@ -1,28 +1,28 @@
 {
-  "generated_at": "2026-05-30T23:12:27.374Z",
-  "total_streams": 11113,
-  "last_90": 8690,
-  "last_30": 7141,
-  "last_7": 1149,
+  "generated_at": "2026-06-01T11:35:09.201Z",
+  "total_streams": 11256,
+  "last_90": 8805,
+  "last_30": 6968,
+  "last_7": 830,
   "nations": 17,
   "countries": [
     {
       "country": "United States",
       "code": "US",
       "flag": "🇺🇸",
-      "streams": 3596
+      "streams": 3650
     },
     {
       "country": "Germany",
       "code": "DE",
       "flag": "🇩🇪",
-      "streams": 828
+      "streams": 834
     },
     {
       "country": "France",
       "code": "FR",
       "flag": "🇫🇷",
-      "streams": 705
+      "streams": 710
     },
     {
       "country": "United Kingdom",
@@ -31,16 +31,16 @@
       "streams": 313
     },
     {
+      "country": "Spain",
+      "code": "ES",
+      "flag": "🇪🇸",
+      "streams": 277
+    },
+    {
       "country": "The Netherlands",
       "code": "NL",
       "flag": "🇳🇱",
       "streams": 268
-    },
-    {
-      "country": "Spain",
-      "code": "ES",
-      "flag": "🇪🇸",
-      "streams": 263
     },
     {
       "country": "Canada",
@@ -49,16 +49,16 @@
       "streams": 255
     },
     {
+      "country": "Switzerland",
+      "code": "CH",
+      "flag": "🇨🇭",
+      "streams": 239
+    },
+    {
       "country": "Sweden",
       "code": "SE",
       "flag": "🇸🇪",
       "streams": 215
-    },
-    {
-      "country": "Switzerland",
-      "code": "CH",
-      "flag": "🇨🇭",
-      "streams": 209
     },
     {
       "country": "Belgium",
@@ -76,7 +76,7 @@
       "country": "Italy",
       "code": "IT",
       "flag": "🇮🇹",
-      "streams": 108
+      "streams": 133
     },
     {
       "country": "Singapore",
@@ -157,7 +157,11 @@
     {
       "t": "2026-05-30T23:12:27.126Z",
       "total": 11113
+    },
+    {
+      "t": "2026-06-01T11:35:08.913Z",
+      "total": 11256
     }
   ],
-  "last_published_at": "2026-05-30T23:12:27.126Z"
+  "last_published_at": "2026-06-01T11:35:08.913Z"
 }
