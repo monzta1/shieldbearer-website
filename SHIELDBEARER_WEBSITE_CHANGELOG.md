@@ -7,6 +7,9 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.27.19 - June 2026
+- `/faq` AI-litigation question: added a live 2026 example alongside the historical Gibson v. Ibanez (1977) one. New paragraph cites the March 2026 Düsseldorf ruling granting Fender copyright protection over the Stratocaster body shape, and the resulting cease-and-desist campaign against S-style builders across Europe (LSL, PRS, Sire, Harley Benton, Suhr, Schecter, Yamaha Pacifica, Ibanez). Same paragraph mirrored into the FAQPage JSON-LD `text` blob for structured-data parity. Mirrored to `faq/index.html`.
+
 ## v2.27.18 - May 2026
 - `/song-meanings` (lyrics carousel): added **The Architect** (Track 12) as the featured first dossier, ahead of Sentinels. Full lyrics, three-paragraph meaning, Isaiah 43:1 anchor verse, references (Genesis 1:3 | Isaiah 43:1 | Colossians 1:16 | Isaiah 35:5), tags (Creation / Sovereignty / Intimacy), local artwork `images/the-architect-art.png`, and YouTube action (watch?v=E9rJluVWvxM). Structural song labels (Pre-Chorus, Chorus, etc.) stripped to match the existing label-free lyric style; choruses kept as sung. Verified render with jsdom (12 entries, featured first).
 - Added to both the root `song-meanings.html` and the dir-form `song-meanings/index.html`. NOTE: these two files have diverged. `/song-meanings` (root, the nav target) renders lyrics; `/song-meanings/` (dir-form) was previously changed to hide the lyrics block and link out to Spotify/YouTube instead. The new entry is in both, but the dir-form will not display its lyric text until that divergence is reconciled.
