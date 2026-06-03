@@ -1,50 +1,85 @@
 {
-  "generatedAt": "2026-06-02T08:00:16.152Z",
+  "generatedAt": "2026-06-03T08:00:15.650Z",
   "period": {
     "label": "June 2026 so far",
     "start": "2026-06-01",
     "end": "2026-06-30"
   },
   "headline": {
-    "sessions": 3,
-    "deltaPct": -98.8,
+    "sessions": 14,
+    "deltaPct": -94.3,
     "comparison": "vs May 2026"
   },
   "channels": [
     {
+      "name": "Direct",
+      "sessions": 8,
+      "share": 42.1
+    },
+    {
       "name": "Referral",
-      "sessions": 2,
-      "share": 50
+      "sessions": 5,
+      "share": 26.3
     },
     {
       "name": "Unassigned",
-      "sessions": 2,
-      "share": 50
+      "sessions": 5,
+      "share": 26.3
     }
   ],
   "geography": [
     {
       "name": "United States",
-      "sessions": 3,
-      "share": 100
+      "sessions": 12,
+      "share": 85.7
+    },
+    {
+      "name": "India",
+      "sessions": 1,
+      "share": 7.1
+    },
+    {
+      "name": "Poland",
+      "sessions": 1,
+      "share": 7.1
     }
   ],
   "cities": [
     {
       "name": "Unknown, Virginia",
+      "sessions": 4,
+      "share": 28.6
+    },
+    {
+      "name": "(not set), Virginia",
       "sessions": 2,
-      "share": 66.7
+      "share": 14.3
+    },
+    {
+      "name": "Brambleton, Virginia",
+      "sessions": 2,
+      "share": 14.3
     },
     {
       "name": "Baltimore, Maryland",
       "sessions": 1,
-      "share": 33.3
+      "share": 7.1
+    },
+    {
+      "name": "Carson, California",
+      "sessions": 1,
+      "share": 7.1
+    },
+    {
+      "name": "Council Bluffs, Iowa",
+      "sessions": 1,
+      "share": 7.1
     }
   ],
   "events": [
     {
       "name": "scroll_depth",
-      "count": 4,
+      "count": 66,
       "engagedShare": null
     }
   ],
