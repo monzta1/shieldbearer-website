@@ -1,85 +1,85 @@
 {
-  "generatedAt": "2026-06-03T08:00:15.650Z",
+  "generatedAt": "2026-06-04T08:00:16.229Z",
   "period": {
     "label": "June 2026 so far",
     "start": "2026-06-01",
     "end": "2026-06-30"
   },
   "headline": {
-    "sessions": 14,
-    "deltaPct": -94.3,
+    "sessions": 16,
+    "deltaPct": -93.4,
     "comparison": "vs May 2026"
   },
   "channels": [
     {
       "name": "Direct",
-      "sessions": 8,
-      "share": 42.1
+      "sessions": 10,
+      "share": 62.5
     },
     {
       "name": "Referral",
       "sessions": 5,
-      "share": 26.3
+      "share": 31.3
     },
     {
-      "name": "Unassigned",
-      "sessions": 5,
-      "share": 26.3
+      "name": "Organic Social",
+      "sessions": 1,
+      "share": 6.3
     }
   ],
   "geography": [
     {
       "name": "United States",
-      "sessions": 12,
-      "share": 85.7
+      "sessions": 14,
+      "share": 87.5
     },
     {
       "name": "India",
       "sessions": 1,
-      "share": 7.1
+      "share": 6.3
     },
     {
       "name": "Poland",
       "sessions": 1,
-      "share": 7.1
+      "share": 6.3
     }
   ],
   "cities": [
     {
-      "name": "Unknown, Virginia",
-      "sessions": 4,
-      "share": 28.6
+      "name": "(not set), Virginia",
+      "sessions": 6,
+      "share": 37.5
     },
     {
-      "name": "(not set), Virginia",
+      "name": "Baltimore, Maryland",
       "sessions": 2,
-      "share": 14.3
+      "share": 12.5
     },
     {
       "name": "Brambleton, Virginia",
       "sessions": 2,
-      "share": 14.3
+      "share": 12.5
     },
     {
-      "name": "Baltimore, Maryland",
-      "sessions": 1,
-      "share": 7.1
+      "name": "Council Bluffs, Iowa",
+      "sessions": 2,
+      "share": 12.5
     },
     {
       "name": "Carson, California",
       "sessions": 1,
-      "share": 7.1
+      "share": 6.3
     },
     {
-      "name": "Council Bluffs, Iowa",
+      "name": "Idaho Springs, Colorado",
       "sessions": 1,
-      "share": 7.1
+      "share": 6.3
     }
   ],
   "events": [
     {
       "name": "scroll_depth",
-      "count": 66,
+      "count": 69,
       "engagedShare": null
     }
   ],
