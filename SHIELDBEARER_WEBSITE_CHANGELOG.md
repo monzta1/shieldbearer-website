@@ -7,6 +7,20 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.28.0 - June 2026
+- **Sitewide scroll-reveal animation.** Below-the-fold blocks now fade in and rise 28px into place as they enter the viewport, then stay revealed (one-way, unobserved after firing). Subtle, slow, single gesture; matches the Positive Grid pattern. Pure vanilla JS + CSS, no dependency, no build step.
+- Mechanism: `.sb-reveal` starts at `opacity:0; transform:translateY(28px)` and transitions to `opacity:1; transform:none` over 0.7s with `cubic-bezier(0.4,0,0.2,1)`. Per-element stagger via `style="--sb-delay: <ms>"`. `IntersectionObserver` (threshold 0.15, rootMargin `0px 0px -10% 0px`) fires the reveal, then unobserves.
+- Accessibility: hidden initial state is scoped under `html.js-reveal-enabled` (no-JS shows everything fully). The class is set synchronously as the first executable line of `js/main.js` so the gap before paint is minimal. If `IntersectionObserver` is missing, the JS strips the class and content stays visible. A `@media (prefers-reduced-motion: reduce)` block disables transform and transition entirely.
+- Performance: deferred logic in the existing shared `js/main.js`. Animates only `opacity` and `transform` (compositor-friendly). No scroll polling. Reveal nodes are tracked in a `WeakSet`; `window.sbRevealRefresh()` is idempotent so multiple injection scripts can call it safely.
+- Injection scripts that rebuild DOM after fetch now call `window.sbRevealRefresh()`: `js/featured-release.js` (homepage release notes), `js/signal-room-callout.js` (footer callout). `js/signal-room-home.js` swaps existing nodes via `textContent` only, so the observer already saw them at parse time.
+- Class application (tasteful, all below-the-fold, no nav/header/hero):
+  - Homepage: featured release, Signal Room block, Galilean, Worth It All, Watch Posts, Merch callout, AI quiz callout, Manifesto teaser (8 sections).
+  - `/music`: Armory section + Signal band.
+  - `/signal-room`: invocation section (hero skipped).
+  - `/reach` and the YouTube + Streams sub-pages: every `.reach-section` block.
+  - Long-form content pages: `about`, `story`, `manifesto`, `gospel`, `faq`, `gatekeeping`, `process`, `how-it-works`, `sentinelbot`, `for-ai-artists`, `interviews`. `song-meanings` deliberately skipped because its dossier panels already have their own animation rhythm.
+- Verification: jsdom run confirmed Signal Room reveals in both empty (fetch fails) and populated (fetch returns live song) states; no-JS visibility checked (no unscoped `.sb-reveal` rules); reduced-motion media block in place; nothing above the fold carries the class. All dir-form duplicates mirrored.
+
 ## v2.27.19 - June 2026
 - `/faq` AI-litigation question: added a live 2026 example alongside the historical Gibson v. Ibanez (1977) one. New paragraph cites the March 2026 Düsseldorf ruling granting Fender copyright protection over the Stratocaster body shape, and the resulting cease-and-desist campaign against S-style builders across Europe (LSL, PRS, Sire, Harley Benton, Suhr, Schecter, Yamaha Pacifica, Ibanez). Same paragraph mirrored into the FAQPage JSON-LD `text` blob for structured-data parity. Mirrored to `faq/index.html`.
 

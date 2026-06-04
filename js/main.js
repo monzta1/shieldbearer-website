@@ -1,7 +1,20 @@
 /* =============================================================
    SHIELDBEARER: Main JS
-   Handles: nav scroll, mobile menu, active link, meaning cards
+   Handles: nav scroll, mobile menu, active link, meaning cards,
+            scroll-reveal flag + observer (see sb-reveal block at end).
    ============================================================= */
+
+/* sb-reveal flag.
+
+   Set synchronously, first thing, BEFORE any IIFE runs and before any
+   body paint can complete on slow first-load. The hidden initial state
+   for .sb-reveal in css/style.css is scoped under html.js-reveal-enabled,
+   so this line is the gate: until it lands, content stays fully visible
+   (no-JS path). Once it lands, .sb-reveal nodes hide, then animate in as
+   the IntersectionObserver block at the bottom of this file sees them. */
+try {
+  document.documentElement.classList.add('js-reveal-enabled');
+} catch (e) { /* no document, no harm */ }
 
 (function () {
   'use strict';
@@ -238,4 +251,59 @@
     });
   }
 
+})();
+
+/* =============================================================
+   sb-reveal: scroll-triggered fade-and-rise.
+
+   Pairs with css/style.css .sb-reveal rules and the html.js-reveal-enabled
+   flag set above. IntersectionObserver picks up .sb-reveal nodes as they
+   enter the viewport, adds .sb-reveal--in (which transitions opacity and
+   translateY), then unobserves so it never re-animates or re-costs.
+
+   Public hook: window.sbRevealRefresh(). Idempotent. Injection scripts
+   (featured-release, signal-room-callout, song-meanings-augment) call it
+   after rebuilding DOM so newly inserted .sb-reveal nodes get observed.
+   ============================================================= */
+(function () {
+  'use strict';
+
+  if (!('IntersectionObserver' in window)) {
+    /* Observer unsupported. Flip the gate off so nothing stays hidden. */
+    try { document.documentElement.classList.remove('js-reveal-enabled'); } catch (e) {}
+    window.sbRevealRefresh = function () {};
+    return;
+  }
+
+  var observed = new WeakSet();
+  var observer = new IntersectionObserver(function (entries) {
+    for (var i = 0; i < entries.length; i++) {
+      var entry = entries[i];
+      if (entry.isIntersecting) {
+        entry.target.classList.add('sb-reveal--in');
+        observer.unobserve(entry.target);
+      }
+    }
+  }, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -10% 0px'
+  });
+
+  function refresh() {
+    var nodes = document.querySelectorAll('.sb-reveal');
+    for (var i = 0; i < nodes.length; i++) {
+      var el = nodes[i];
+      if (observed.has(el)) continue;
+      if (el.classList.contains('sb-reveal--in')) continue;
+      observed.add(el);
+      observer.observe(el);
+    }
+  }
+  window.sbRevealRefresh = refresh;
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', refresh);
+  } else {
+    refresh();
+  }
 })();

@@ -68,6 +68,13 @@
           notesScroll.appendChild(p);
         }
       }
+
+      // Newly injected nodes that carry .sb-reveal need to be picked up
+      // by the scroll-reveal observer set up in js/main.js. Idempotent;
+      // safe to call even if no .sb-reveal nodes were added.
+      if (typeof window.sbRevealRefresh === "function") {
+        window.sbRevealRefresh();
+      }
     })
     .catch(function () { /* static fallback in markup wins */ });
 })();

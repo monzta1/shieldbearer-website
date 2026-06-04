@@ -17,6 +17,11 @@
       var list = (d && (d.comingSoon || d.incoming)) || [];
       if (Array.isArray(list) && list.length && list[0] && list[0].title) {
         for (var i = 0; i < els.length; i++) { els[i].hidden = false; }
+        // Unhidden callout nodes that carry .sb-reveal need the scroll
+        // observer to re-evaluate them now that they have a layout box.
+        if (typeof window.sbRevealRefresh === "function") {
+          window.sbRevealRefresh();
+        }
       }
     })
     .catch(function () { /* stay hidden silently */ });
