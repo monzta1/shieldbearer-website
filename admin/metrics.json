@@ -1,90 +1,90 @@
 {
-  "generatedAt": "2026-06-05T08:00:15.809Z",
+  "generatedAt": "2026-06-06T08:00:15.761Z",
   "period": {
     "label": "June 2026 so far",
     "start": "2026-06-01",
     "end": "2026-06-30"
   },
   "headline": {
-    "sessions": 20,
-    "deltaPct": -91.8,
+    "sessions": 23,
+    "deltaPct": -90.6,
     "comparison": "vs May 2026"
   },
   "channels": [
     {
       "name": "Direct",
-      "sessions": 12,
-      "share": 54.5
+      "sessions": 14,
+      "share": 56
     },
     {
       "name": "Referral",
-      "sessions": 7,
-      "share": 31.8
+      "sessions": 8,
+      "share": 32
     },
     {
       "name": "Unassigned",
       "sessions": 2,
-      "share": 9.1
+      "share": 8
     }
   ],
   "geography": [
     {
       "name": "United States",
-      "sessions": 17,
-      "share": 85
+      "sessions": 20,
+      "share": 87
     },
     {
       "name": "Germany",
       "sessions": 1,
-      "share": 5
+      "share": 4.3
     },
     {
       "name": "India",
       "sessions": 1,
-      "share": 5
+      "share": 4.3
     },
     {
       "name": "Poland",
       "sessions": 1,
-      "share": 5
+      "share": 4.3
     }
   ],
   "cities": [
     {
-      "name": "(not set), Virginia",
-      "sessions": 6,
-      "share": 30
+      "name": "Brambleton, Virginia",
+      "sessions": 8,
+      "share": 34.8
     },
     {
-      "name": "Brambleton, Virginia",
-      "sessions": 5,
-      "share": 25
+      "name": "(not set), Virginia",
+      "sessions": 6,
+      "share": 26.1
     },
     {
       "name": "Baltimore, Maryland",
       "sessions": 2,
-      "share": 10
+      "share": 8.7
     },
     {
       "name": "Council Bluffs, Iowa",
       "sessions": 2,
-      "share": 10
+      "share": 8.7
     },
     {
-      "name": "Unknown",
+      "name": "(not set)",
       "sessions": 1,
-      "share": 5
+      "share": 4.3
     },
     {
       "name": "Carson, California",
       "sessions": 1,
-      "share": 5
+      "share": 4.3
     }
   ],
   "events": [
     {
       "name": "scroll_depth",
-      "count": 72,
+      "count": 83,
       "engagedShare": null
     }
   ],
