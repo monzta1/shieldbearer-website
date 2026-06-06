@@ -7,6 +7,12 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.28.1 - June 2026
+- `/reach/streams` Top Transmissions: source tag is now dynamic. The block reads `window` from `/spotify_songs.json` and renders **Spotify for Artists · All-time** or **Spotify for Artists · Last 12 months** based on which Spotify for Artists screenshot was last uploaded. Missing field falls back to All-time so legacy artifacts are unchanged.
+- Paired backend commit in `sentinelbot-lambda`: the screenshot parser now recognises **Last 12 months** Spotify Top Tracks screenshots alongside All-time / Lifetime. The detected window is stored in DynamoDB and embedded in the committed `spotify_songs.json`. The sanity check (which forbids per-song stream counts from going DOWN) is skipped when the window is 12 months, since rolling-window numbers can legitimately decrease as old streams age out.
+- Operator workflow: when Spotify for Artists' all-time view is showing broken numbers, upload the **Last 12 months** screenshot instead. The frontend will swap the label and the section heading stays "Top Transmissions". When Spotify recovers, upload an all-time screenshot and the label flips back automatically.
+- 130 parser tests pass (+22 covering the 12-months path, window canonicalization, merge propagation, legacy default, and end-to-end envelope round-trip). jsdom frontend check confirmed legacy, explicit all-time, and 12-months artifacts all render correctly.
+
 ## v2.28.0 - June 2026
 - **Sitewide scroll-reveal animation.** Below-the-fold blocks now fade in and rise 28px into place as they enter the viewport, then stay revealed (one-way, unobserved after firing). Subtle, slow, single gesture; matches the Positive Grid pattern. Pure vanilla JS + CSS, no dependency, no build step.
 - Mechanism: `.sb-reveal` starts at `opacity:0; transform:translateY(28px)` and transitions to `opacity:1; transform:none` over 0.7s with `cubic-bezier(0.4,0,0.2,1)`. Per-element stagger via `style="--sb-delay: <ms>"`. `IntersectionObserver` (threshold 0.15, rootMargin `0px 0px -10% 0px`) fires the reveal, then unobserves.

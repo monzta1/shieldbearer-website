@@ -564,6 +564,7 @@
     var section = $("topTransmissionsSection");
     var list = $("topTransmissionsList");
     var intro = $("topTransmissionsIntro");
+    var tag = $("topTransmissionsTag");
     if (!section || !list) return;
     var songs = (spotify && Array.isArray(spotify.songs)) ? spotify.songs : [];
     if (!songs.length) {
@@ -575,6 +576,15 @@
     }
     section.removeAttribute("hidden");
     section.style.display = "";
+    // Source-tag window: spotify_songs.json carries window = "all-time" or
+    // "last-12-months". The all-time path is the default; the 12-months
+    // path is what the operator uploads when Spotify's all-time view is
+    // showing broken numbers. Missing window (legacy artifacts) -> all-time.
+    if (tag) {
+      var win = (spotify && spotify.window) || "all-time";
+      var label = win === "last-12-months" ? "Last 12 months" : "All-time";
+      tag.innerHTML = "Spotify for Artists &middot; " + label;
+    }
     var total = Number(spotify.total_spotify_streams || 0);
     if (intro) {
       intro.innerHTML =
