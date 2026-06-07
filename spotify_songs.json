@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-06T22:57:59.820Z",
+  "generated_at": "2026-06-07T15:09:51.479Z",
   "source": "Spotify for Artists",
   "window": "last-12-months",
   "songs": [
@@ -38,13 +38,9 @@
     {
       "title": "The Man",
       "streams": 246
-    },
-    {
-      "title": "Still Be My Vision",
-      "streams": 162
     }
   ],
-  "track_count": 10,
-  "total_spotify_streams": 12040,
-  "last_published_at": "2026-06-06T22:57:58.857Z"
+  "track_count": 9,
+  "total_spotify_streams": 11878,
+  "last_published_at": "2026-06-07T15:09:50.427Z"
 }
