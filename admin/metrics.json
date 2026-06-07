@@ -1,90 +1,90 @@
 {
-  "generatedAt": "2026-06-06T08:00:15.761Z",
+  "generatedAt": "2026-06-07T08:00:15.817Z",
   "period": {
     "label": "June 2026 so far",
     "start": "2026-06-01",
     "end": "2026-06-30"
   },
   "headline": {
-    "sessions": 23,
-    "deltaPct": -90.6,
+    "sessions": 26,
+    "deltaPct": -89.3,
     "comparison": "vs May 2026"
   },
   "channels": [
     {
       "name": "Direct",
-      "sessions": 14,
-      "share": 56
+      "sessions": 16,
+      "share": 57.1
     },
     {
       "name": "Referral",
-      "sessions": 8,
-      "share": 32
+      "sessions": 9,
+      "share": 32.1
     },
     {
       "name": "Unassigned",
       "sessions": 2,
-      "share": 8
+      "share": 7.1
     }
   ],
   "geography": [
     {
       "name": "United States",
-      "sessions": 20,
-      "share": 87
+      "sessions": 23,
+      "share": 88.5
     },
     {
       "name": "Germany",
       "sessions": 1,
-      "share": 4.3
+      "share": 3.8
     },
     {
       "name": "India",
       "sessions": 1,
-      "share": 4.3
+      "share": 3.8
     },
     {
       "name": "Poland",
       "sessions": 1,
-      "share": 4.3
+      "share": 3.8
     }
   ],
   "cities": [
     {
       "name": "Brambleton, Virginia",
-      "sessions": 8,
-      "share": 34.8
+      "sessions": 11,
+      "share": 42.3
     },
     {
       "name": "(not set), Virginia",
       "sessions": 6,
-      "share": 26.1
+      "share": 23.1
     },
     {
       "name": "Baltimore, Maryland",
       "sessions": 2,
-      "share": 8.7
+      "share": 7.7
     },
     {
       "name": "Council Bluffs, Iowa",
       "sessions": 2,
-      "share": 8.7
+      "share": 7.7
     },
     {
       "name": "(not set)",
       "sessions": 1,
-      "share": 4.3
+      "share": 3.8
     },
     {
       "name": "Carson, California",
       "sessions": 1,
-      "share": 4.3
+      "share": 3.8
     }
   ],
   "events": [
     {
       "name": "scroll_depth",
-      "count": 83,
+      "count": 92,
       "engagedShare": null
     }
   ],
