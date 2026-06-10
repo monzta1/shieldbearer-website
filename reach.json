@@ -1,34 +1,52 @@
 {
-  "generated_at": "2026-06-07T15:10:13.199Z",
-  "total_streams": 13565,
-  "last_90": 10943,
-  "last_30": 7729,
-  "last_7": 1756,
+  "generated_at": "2026-06-10T01:33:26.528Z",
+  "total_streams": 14280,
+  "last_90": 11596,
+  "last_30": 7719,
+  "last_7": 1439,
   "nations": 17,
   "countries": [
     {
       "country": "United States",
       "code": "US",
       "flag": "🇺🇸",
-      "streams": 4454
+      "streams": 4759
     },
     {
       "country": "Germany",
       "code": "DE",
       "flag": "🇩🇪",
-      "streams": 1097
+      "streams": 1127
     },
     {
       "country": "France",
       "code": "FR",
       "flag": "🇫🇷",
-      "streams": 1056
+      "streams": 1070
     },
     {
       "country": "United Kingdom",
       "code": "GB",
       "flag": "🇬🇧",
-      "streams": 346
+      "streams": 387
+    },
+    {
+      "country": "Switzerland",
+      "code": "CH",
+      "flag": "🇨🇭",
+      "streams": 312
+    },
+    {
+      "country": "Italy",
+      "code": "IT",
+      "flag": "🇮🇹",
+      "streams": 294
+    },
+    {
+      "country": "Spain",
+      "code": "ES",
+      "flag": "🇪🇸",
+      "streams": 287
     },
     {
       "country": "The Netherlands",
@@ -43,24 +61,6 @@
       "streams": 280
     },
     {
-      "country": "Spain",
-      "code": "ES",
-      "flag": "🇪🇸",
-      "streams": 277
-    },
-    {
-      "country": "Italy",
-      "code": "IT",
-      "flag": "🇮🇹",
-      "streams": 261
-    },
-    {
-      "country": "Switzerland",
-      "code": "CH",
-      "flag": "🇨🇭",
-      "streams": 255
-    },
-    {
       "country": "Sweden",
       "code": "SE",
       "flag": "🇸🇪",
@@ -70,13 +70,13 @@
       "country": "Brazil",
       "code": "BR",
       "flag": "🇧🇷",
-      "streams": 218
+      "streams": 233
     },
     {
       "country": "Belgium",
       "code": "BE",
       "flag": "🇧🇪",
-      "streams": 212
+      "streams": 227
     },
     {
       "country": "Mexico",
@@ -94,7 +94,7 @@
       "country": "Austria",
       "code": "AT",
       "flag": "🇦🇹",
-      "streams": 68
+      "streams": 73
     },
     {
       "country": "India",
@@ -177,7 +177,11 @@
     {
       "t": "2026-06-07T15:10:13.110Z",
       "total": 13565
+    },
+    {
+      "t": "2026-06-10T01:33:26.240Z",
+      "total": 14280
     }
   ],
-  "last_published_at": "2026-06-07T15:10:13.110Z"
+  "last_published_at": "2026-06-10T01:33:26.240Z"
 }
