@@ -1,95 +1,95 @@
 {
-  "generatedAt": "2026-06-09T08:00:16.005Z",
+  "generatedAt": "2026-06-10T08:00:16.398Z",
   "period": {
     "label": "June 2026 so far",
     "start": "2026-06-01",
     "end": "2026-06-30"
   },
   "headline": {
-    "sessions": 32,
-    "deltaPct": -86.9,
+    "sessions": 34,
+    "deltaPct": -86.1,
     "comparison": "vs May 2026"
   },
   "channels": [
     {
       "name": "Direct",
-      "sessions": 20,
-      "share": 58.8
+      "sessions": 21,
+      "share": 58.3
     },
     {
       "name": "Referral",
-      "sessions": 11,
-      "share": 32.4
+      "sessions": 12,
+      "share": 33.3
     },
     {
       "name": "Unassigned",
       "sessions": 2,
-      "share": 5.9
+      "share": 5.6
     }
   ],
   "geography": [
     {
       "name": "United States",
-      "sessions": 28,
-      "share": 87.5
+      "sessions": 30,
+      "share": 88.2
     },
     {
       "name": "Chile",
       "sessions": 1,
-      "share": 3.1
+      "share": 2.9
     },
     {
       "name": "Germany",
       "sessions": 1,
-      "share": 3.1
+      "share": 2.9
     },
     {
       "name": "India",
       "sessions": 1,
-      "share": 3.1
+      "share": 2.9
     },
     {
       "name": "Poland",
       "sessions": 1,
-      "share": 3.1
+      "share": 2.9
     }
   ],
   "cities": [
     {
       "name": "Brambleton, Virginia",
-      "sessions": 14,
-      "share": 43.8
+      "sessions": 16,
+      "share": 47.1
     },
     {
       "name": "(not set), Virginia",
       "sessions": 6,
-      "share": 18.8
+      "share": 17.6
     },
     {
       "name": "Baltimore, Maryland",
       "sessions": 3,
-      "share": 9.4
+      "share": 8.8
     },
     {
       "name": "Council Bluffs, Iowa",
       "sessions": 2,
-      "share": 6.3
+      "share": 5.9
     },
     {
       "name": "(not set)",
       "sessions": 1,
-      "share": 3.1
+      "share": 2.9
     },
     {
       "name": "Bowie, Maryland",
       "sessions": 1,
-      "share": 3.1
+      "share": 2.9
     }
   ],
   "events": [
     {
       "name": "scroll_depth",
-      "count": 104,
+      "count": 113,
       "engagedShare": null
     }
   ],
