@@ -1,46 +1,46 @@
 {
-  "generated_at": "2026-06-07T15:10:13.899Z",
+  "generated_at": "2026-06-10T01:33:27.400Z",
   "source": "Spotify for Artists",
   "window": "last-12-months",
   "songs": [
     {
       "title": "Silent As Night",
-      "streams": 5990
+      "streams": 6235
     },
     {
       "title": "Quake",
-      "streams": 1300
+      "streams": 1470
     },
     {
       "title": "1000 Suns",
-      "streams": 1128
+      "streams": 1292
     },
     {
       "title": "Unaliving the Giant",
-      "streams": 1081
-    },
-    {
-      "title": "Sentinels",
-      "streams": 670
+      "streams": 1238
     },
     {
       "title": "The Architect",
-      "streams": 613
+      "streams": 724
+    },
+    {
+      "title": "Sentinels",
+      "streams": 722
     },
     {
       "title": "Ruach",
-      "streams": 583
+      "streams": 688
+    },
+    {
+      "title": "The Man",
+      "streams": 285
     },
     {
       "title": "Tidings of Comfort and Joy",
       "streams": 267
-    },
-    {
-      "title": "The Man",
-      "streams": 246
     }
   ],
   "track_count": 9,
-  "total_spotify_streams": 11878,
-  "last_published_at": "2026-06-07T15:10:13.110Z"
+  "total_spotify_streams": 12921,
+  "last_published_at": "2026-06-10T01:33:26.240Z"
 }
