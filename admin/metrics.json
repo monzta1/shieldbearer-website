@@ -1,89 +1,89 @@
 {
-  "generatedAt": "2026-06-11T08:00:15.811Z",
+  "generatedAt": "2026-06-12T08:00:15.918Z",
   "period": {
     "label": "June 2026 so far",
     "start": "2026-06-01",
     "end": "2026-06-30"
   },
   "headline": {
-    "sessions": 36,
-    "deltaPct": -85.2,
+    "sessions": 37,
+    "deltaPct": -84.8,
     "comparison": "vs May 2026"
   },
   "channels": [
     {
       "name": "Direct",
-      "sessions": 21,
-      "share": 56.8
+      "sessions": 22,
+      "share": 57.9
     },
     {
       "name": "Referral",
       "sessions": 14,
-      "share": 37.8
+      "share": 36.8
     },
     {
       "name": "Organic Social",
       "sessions": 1,
-      "share": 2.7
+      "share": 2.6
     }
   ],
   "geography": [
     {
       "name": "United States",
-      "sessions": 32,
-      "share": 88.9
+      "sessions": 33,
+      "share": 89.2
     },
     {
       "name": "Chile",
       "sessions": 1,
-      "share": 2.8
+      "share": 2.7
     },
     {
       "name": "Germany",
       "sessions": 1,
-      "share": 2.8
+      "share": 2.7
     },
     {
       "name": "India",
       "sessions": 1,
-      "share": 2.8
+      "share": 2.7
     },
     {
       "name": "Poland",
       "sessions": 1,
-      "share": 2.8
+      "share": 2.7
     }
   ],
   "cities": [
     {
       "name": "Brambleton, Virginia",
       "sessions": 16,
-      "share": 44.4
+      "share": 43.2
     },
     {
       "name": "(not set), Virginia",
       "sessions": 6,
-      "share": 16.7
+      "share": 16.2
     },
     {
       "name": "Baltimore, Maryland",
       "sessions": 3,
-      "share": 8.3
+      "share": 8.1
     },
     {
       "name": "Council Bluffs, Iowa",
       "sessions": 2,
-      "share": 5.6
+      "share": 5.4
+    },
+    {
+      "name": "South Riding, Virginia",
+      "sessions": 2,
+      "share": 5.4
     },
     {
       "name": "(not set)",
       "sessions": 1,
-      "share": 2.8
-    },
-    {
-      "name": "Bowie, Maryland",
-      "sessions": 1,
-      "share": 2.8
+      "share": 2.7
     }
   ],
   "events": [
