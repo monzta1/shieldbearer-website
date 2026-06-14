@@ -1,50 +1,50 @@
 {
-  "generated_at": "2026-06-14T01:00:34.879Z",
+  "generated_at": "2026-06-14T23:03:20.380Z",
   "source": "Spotify for Artists",
   "window": "28d",
   "songs": [
     {
-      "title": "Silent As Night",
-      "streams": 3353
-    },
-    {
       "title": "Quake",
-      "streams": 1022
+      "streams": 61
     },
     {
       "title": "1000 Suns",
-      "streams": 986
+      "streams": 57
     },
     {
       "title": "Unaliving the Giant",
-      "streams": 930
+      "streams": 52
+    },
+    {
+      "title": "Silent As Night",
+      "streams": 47
     },
     {
       "title": "The Architect",
-      "streams": 554
+      "streams": 47
     },
     {
       "title": "Ruach",
-      "streams": 534
-    },
-    {
-      "title": "Sentinels",
-      "streams": 444
+      "streams": 44
     },
     {
       "title": "The Man",
-      "streams": 265
+      "streams": 22
     },
     {
-      "title": "Still Be My Vision",
-      "streams": 19
+      "title": "Sentinels",
+      "streams": 9
     },
     {
-      "title": "Worth It All",
-      "streams": 10
+      "title": "AIAIAI",
+      "streams": 1
+    },
+    {
+      "title": "Celestial Shield",
+      "streams": 1
     }
   ],
   "track_count": 10,
-  "total_spotify_streams_28d": 8117,
-  "last_published_at": "2026-06-14T01:00:33.601Z"
+  "total_spotify_streams_28d": 341,
+  "last_published_at": "2026-06-14T23:03:19.142Z"
 }
