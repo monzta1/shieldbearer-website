@@ -1,100 +1,100 @@
 {
-  "generatedAt": "2026-06-13T08:00:15.833Z",
+  "generatedAt": "2026-06-14T08:00:15.891Z",
   "period": {
     "label": "June 2026 so far",
     "start": "2026-06-01",
     "end": "2026-06-30"
   },
   "headline": {
-    "sessions": 42,
-    "deltaPct": -82.8,
+    "sessions": 44,
+    "deltaPct": -82,
     "comparison": "vs May 2026"
   },
   "channels": [
     {
       "name": "Direct",
-      "sessions": 23,
-      "share": 52.3
+      "sessions": 24,
+      "share": 53.3
     },
     {
       "name": "Referral",
-      "sessions": 15,
-      "share": 34.1
+      "sessions": 17,
+      "share": 37.8
     },
     {
-      "name": "Unassigned",
-      "sessions": 3,
-      "share": 6.8
+      "name": "Organic Social",
+      "sessions": 2,
+      "share": 4.4
     }
   ],
   "geography": [
     {
       "name": "United States",
-      "sessions": 37,
-      "share": 88.1
+      "sessions": 39,
+      "share": 88.6
     },
     {
       "name": "Chile",
       "sessions": 1,
-      "share": 2.4
+      "share": 2.3
     },
     {
       "name": "Czechia",
       "sessions": 1,
-      "share": 2.4
+      "share": 2.3
     },
     {
       "name": "Germany",
       "sessions": 1,
-      "share": 2.4
+      "share": 2.3
     },
     {
       "name": "India",
       "sessions": 1,
-      "share": 2.4
+      "share": 2.3
     },
     {
       "name": "Poland",
       "sessions": 1,
-      "share": 2.4
+      "share": 2.3
     }
   ],
   "cities": [
     {
       "name": "Brambleton, Virginia",
       "sessions": 16,
-      "share": 38.1
+      "share": 36.4
     },
     {
       "name": "(not set), Virginia",
-      "sessions": 6,
-      "share": 14.3
+      "sessions": 8,
+      "share": 18.2
     },
     {
       "name": "Baltimore, Maryland",
       "sessions": 3,
-      "share": 7.1
+      "share": 6.8
     },
     {
       "name": "Unknown, Virginia",
       "sessions": 2,
-      "share": 4.8
+      "share": 4.5
     },
     {
       "name": "Council Bluffs, Iowa",
       "sessions": 2,
-      "share": 4.8
+      "share": 4.5
     },
     {
       "name": "South Riding, Virginia",
       "sessions": 2,
-      "share": 4.8
+      "share": 4.5
     }
   ],
   "events": [
     {
       "name": "scroll_depth",
-      "count": 127,
+      "count": 132,
       "engagedShare": null
     }
   ],
