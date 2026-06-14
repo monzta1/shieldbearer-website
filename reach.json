@@ -1,34 +1,40 @@
 {
-  "generated_at": "2026-06-12T09:49:07.954Z",
-  "total_streams": 15354,
-  "last_90": 12654,
-  "last_30": 8314,
-  "last_7": 1797,
+  "generated_at": "2026-06-14T01:00:33.941Z",
+  "total_streams": 15720,
+  "last_90": 13005,
+  "last_30": 8102,
+  "last_7": 1449,
   "nations": 17,
   "countries": [
     {
       "country": "United States",
       "code": "US",
       "flag": "🇺🇸",
-      "streams": 5359
+      "streams": 5523
     },
     {
       "country": "Germany",
       "code": "DE",
       "flag": "🇩🇪",
-      "streams": 1223
+      "streams": 1269
     },
     {
       "country": "France",
       "code": "FR",
       "flag": "🇫🇷",
-      "streams": 1091
+      "streams": 1119
     },
     {
       "country": "United Kingdom",
       "code": "GB",
       "flag": "🇬🇧",
-      "streams": 408
+      "streams": 442
+    },
+    {
+      "country": "Italy",
+      "code": "IT",
+      "flag": "🇮🇹",
+      "streams": 337
     },
     {
       "country": "Spain",
@@ -41,12 +47,6 @@
       "code": "CH",
       "flag": "🇨🇭",
       "streams": 312
-    },
-    {
-      "country": "Italy",
-      "code": "IT",
-      "flag": "🇮🇹",
-      "streams": 311
     },
     {
       "country": "The Netherlands",
@@ -76,7 +76,7 @@
       "country": "Belgium",
       "code": "BE",
       "flag": "🇧🇪",
-      "streams": 227
+      "streams": 236
     },
     {
       "country": "Mexico",
@@ -189,7 +189,11 @@
     {
       "t": "2026-06-12T09:49:07.624Z",
       "total": 15354
+    },
+    {
+      "t": "2026-06-14T01:00:33.601Z",
+      "total": 15720
     }
   ],
-  "last_published_at": "2026-06-12T09:49:07.624Z"
+  "last_published_at": "2026-06-14T01:00:33.601Z"
 }
