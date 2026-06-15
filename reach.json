@@ -1,28 +1,28 @@
 {
-  "generated_at": "2026-06-14T23:03:19.441Z",
-  "total_streams": 16080,
-  "last_90": 13365,
-  "last_30": 8462,
-  "last_7": 1809,
+  "generated_at": "2026-06-15T21:43:53.291Z",
+  "total_streams": 16429,
+  "last_90": 13700,
+  "last_30": 8541,
+  "last_7": 1828,
   "nations": 17,
   "countries": [
     {
       "country": "United States",
       "code": "US",
       "flag": "🇺🇸",
-      "streams": 5725
+      "streams": 5856
     },
     {
       "country": "Germany",
       "code": "DE",
       "flag": "🇩🇪",
-      "streams": 1269
+      "streams": 1317
     },
     {
       "country": "France",
       "code": "FR",
       "flag": "🇫🇷",
-      "streams": 1137
+      "streams": 1147
     },
     {
       "country": "United Kingdom",
@@ -37,28 +37,28 @@
       "streams": 337
     },
     {
-      "country": "Spain",
-      "code": "ES",
-      "flag": "🇪🇸",
-      "streams": 320
-    },
-    {
       "country": "Switzerland",
       "code": "CH",
       "flag": "🇨🇭",
-      "streams": 312
+      "streams": 335
+    },
+    {
+      "country": "Spain",
+      "code": "ES",
+      "flag": "🇪🇸",
+      "streams": 325
     },
     {
       "country": "The Netherlands",
       "code": "NL",
       "flag": "🇳🇱",
-      "streams": 309
+      "streams": 318
     },
     {
       "country": "Canada",
       "code": "CA",
       "flag": "🇨🇦",
-      "streams": 292
+      "streams": 297
     },
     {
       "country": "Sweden",
@@ -67,16 +67,16 @@
       "streams": 253
     },
     {
+      "country": "Belgium",
+      "code": "BE",
+      "flag": "🇧🇪",
+      "streams": 246
+    },
+    {
       "country": "Brazil",
       "code": "BR",
       "flag": "🇧🇷",
       "streams": 246
-    },
-    {
-      "country": "Belgium",
-      "code": "BE",
-      "flag": "🇧🇪",
-      "streams": 236
     },
     {
       "country": "Mexico",
@@ -197,7 +197,11 @@
     {
       "t": "2026-06-14T23:03:19.142Z",
       "total": 16080
+    },
+    {
+      "t": "2026-06-15T21:43:52.975Z",
+      "total": 16429
     }
   ],
-  "last_published_at": "2026-06-14T23:03:19.142Z"
+  "last_published_at": "2026-06-15T21:43:52.975Z"
 }
