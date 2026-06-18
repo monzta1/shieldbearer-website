@@ -1,34 +1,40 @@
 {
-  "generated_at": "2026-06-15T21:43:53.291Z",
-  "total_streams": 16429,
-  "last_90": 13700,
-  "last_30": 8541,
-  "last_7": 1828,
-  "nations": 17,
+  "generated_at": "2026-06-18T01:11:59.944Z",
+  "total_streams": 17145,
+  "last_90": 14353,
+  "last_30": 8375,
+  "last_7": 1428,
+  "nations": 20,
   "countries": [
     {
       "country": "United States",
       "code": "US",
       "flag": "🇺🇸",
-      "streams": 5856
+      "streams": 6186
     },
     {
       "country": "Germany",
       "code": "DE",
       "flag": "🇩🇪",
-      "streams": 1317
+      "streams": 1324
     },
     {
       "country": "France",
       "code": "FR",
       "flag": "🇫🇷",
-      "streams": 1147
+      "streams": 1222
     },
     {
       "country": "United Kingdom",
       "code": "GB",
       "flag": "🇬🇧",
-      "streams": 442
+      "streams": 450
+    },
+    {
+      "country": "Spain",
+      "code": "ES",
+      "flag": "🇪🇸",
+      "streams": 352
     },
     {
       "country": "Italy",
@@ -41,12 +47,6 @@
       "code": "CH",
       "flag": "🇨🇭",
       "streams": 335
-    },
-    {
-      "country": "Spain",
-      "code": "ES",
-      "flag": "🇪🇸",
-      "streams": 325
     },
     {
       "country": "The Netherlands",
@@ -82,7 +82,7 @@
       "country": "Mexico",
       "code": "MX",
       "flag": "🇲🇽",
-      "streams": 100
+      "streams": 131
     },
     {
       "country": "Austria",
@@ -97,16 +97,34 @@
       "streams": 80
     },
     {
+      "country": "Poland",
+      "code": "PL",
+      "flag": "🇵🇱",
+      "streams": 34
+    },
+    {
       "country": "India",
       "code": "IN",
       "flag": "🇮🇳",
       "streams": 24
     },
     {
+      "country": "Romania",
+      "code": "RO",
+      "flag": "🇷🇴",
+      "streams": 18
+    },
+    {
       "country": "United Arab Emirates",
       "code": "AE",
       "flag": "🇦🇪",
       "streams": 17
+    },
+    {
+      "country": "Norway",
+      "code": "NO",
+      "flag": "🇳🇴",
+      "streams": 5
     }
   ],
   "history": [
@@ -201,7 +219,11 @@
     {
       "t": "2026-06-15T21:43:52.975Z",
       "total": 16429
+    },
+    {
+      "t": "2026-06-18T01:11:59.658Z",
+      "total": 17145
     }
   ],
-  "last_published_at": "2026-06-15T21:43:52.975Z"
+  "last_published_at": "2026-06-18T01:11:59.658Z"
 }
