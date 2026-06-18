@@ -165,7 +165,7 @@
     <div id="uploadArea" class="upload-area">
       <input id="fileInput" type="file" accept="image/*" multiple />
       <label for="fileInput">Choose Screenshots</label>
-      <p>Select one or more screenshots from your gallery. Upload the totals screen and the country screen together; they get merged into one record.</p>
+      <p>Select up to 5 screenshots from your gallery. Upload the totals screen and the country screen together; they get merged into one record. If the country list is too long for one screenshot, upload several country screens and they get combined.</p>
       <div id="previews" class="previews"></div>
     </div>
 
@@ -229,7 +229,7 @@
     var API = "https://g7a5tqlxaj.execute-api.us-east-1.amazonaws.com/stats";
     var ADMIN_KEY = "shieldbearer-stats-2026";
 
-    var MAX_IMAGES = 4;
+    var MAX_IMAGES = 5;
     var fileInput = document.getElementById("fileInput");
     var previewsEl = document.getElementById("previews");
     var submitBtn = document.getElementById("submitBtn");

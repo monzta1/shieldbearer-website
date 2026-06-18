@@ -7,6 +7,12 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.28.2 - June 2026
+- `/admin/stats` upload: raised the per-upload screenshot cap from 4 to 5. The country list (DistroKid "Streams by Country") is sometimes too long to fit in one screenshot, so the operator can now upload several country screens and they get combined into one record. Updated the upload helper copy to say so.
+- Paired backend commit in `sentinelbot-lambda`: the screenshot parser now CONCATENATES the country rows across every DistroKid country screen in a batch instead of keeping only the single longest list. Dedupe is by ISO code (or lowercased country name when the country is unmapped); when the same country appears in two screenshots at a scroll overlap, the higher stream count wins (counters only increment). The POST guard now rejects more than 5 images (was 4).
+- NOTE on terminology: the geographic country list lives in the DistroKid reach pipeline, not the Spotify songs pipeline. The Spotify per-song lists (all-time, 12-months, 28-day) were already merged by title and are unchanged. The 4-to-5 cap and the country concat fix both apply to the same single upload endpoint, so a batch mixing DistroKid country screens and a Spotify screen still works.
+- 138 parser tests pass (+8 covering multi-screenshot country concatenation, scroll-overlap dedup, totals-plus-country-slices merge, and unmapped-country dedup by name). Website test gate unaffected by these changes.
+
 ## v2.28.1 - June 2026
 - `/reach/streams` Top Transmissions: source tag is now dynamic. The block reads `window` from `/spotify_songs.json` and renders **Spotify for Artists · All-time** or **Spotify for Artists · Last 12 months** based on which Spotify for Artists screenshot was last uploaded. Missing field falls back to All-time so legacy artifacts are unchanged.
 - Paired backend commit in `sentinelbot-lambda`: the screenshot parser now recognises **Last 12 months** Spotify Top Tracks screenshots alongside All-time / Lifetime. The detected window is stored in DynamoDB and embedded in the committed `spotify_songs.json`. The sanity check (which forbids per-song stream counts from going DOWN) is skipped when the window is 12 months, since rolling-window numbers can legitimately decrease as old streams age out.
