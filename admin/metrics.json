@@ -1,100 +1,100 @@
 {
-  "generatedAt": "2026-06-17T08:00:15.481Z",
+  "generatedAt": "2026-06-18T08:00:16.113Z",
   "period": {
     "label": "June 2026 so far",
     "start": "2026-06-01",
     "end": "2026-06-30"
   },
   "headline": {
-    "sessions": 48,
-    "deltaPct": -80.3,
+    "sessions": 49,
+    "deltaPct": -79.9,
     "comparison": "vs May 2026"
   },
   "channels": [
     {
       "name": "Direct",
       "sessions": 24,
-      "share": 49
+      "share": 48
     },
     {
       "name": "Referral",
-      "sessions": 20,
-      "share": 40.8
+      "sessions": 21,
+      "share": 42
     },
     {
       "name": "Organic Social",
       "sessions": 3,
-      "share": 6.1
+      "share": 6
     }
   ],
   "geography": [
     {
       "name": "United States",
-      "sessions": 43,
-      "share": 89.6
+      "sessions": 44,
+      "share": 89.8
     },
     {
       "name": "Chile",
       "sessions": 1,
-      "share": 2.1
+      "share": 2
     },
     {
       "name": "Czechia",
       "sessions": 1,
-      "share": 2.1
+      "share": 2
     },
     {
       "name": "Germany",
       "sessions": 1,
-      "share": 2.1
+      "share": 2
     },
     {
       "name": "India",
       "sessions": 1,
-      "share": 2.1
+      "share": 2
     },
     {
       "name": "Poland",
       "sessions": 1,
-      "share": 2.1
+      "share": 2
     }
   ],
   "cities": [
     {
       "name": "Brambleton, Virginia",
       "sessions": 16,
-      "share": 33.3
+      "share": 32.7
     },
     {
       "name": "(not set), Virginia",
-      "sessions": 13,
-      "share": 27.1
+      "sessions": 14,
+      "share": 28.6
     },
     {
       "name": "Baltimore, Maryland",
       "sessions": 3,
-      "share": 6.3
+      "share": 6.1
     },
     {
       "name": "Council Bluffs, Iowa",
       "sessions": 2,
-      "share": 4.2
+      "share": 4.1
     },
     {
       "name": "South Riding, Virginia",
       "sessions": 2,
-      "share": 4.2
+      "share": 4.1
     },
     {
       "name": "St. Louis, Missouri",
       "sessions": 2,
-      "share": 4.2
+      "share": 4.1
     }
   ],
   "events": [
     {
       "name": "scroll_depth",
-      "count": 145,
+      "count": 146,
       "engagedShare": null
     }
   ],
