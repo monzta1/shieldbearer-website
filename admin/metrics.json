@@ -1,37 +1,37 @@
 {
-  "generatedAt": "2026-06-18T08:00:16.113Z",
+  "generatedAt": "2026-06-19T08:00:15.823Z",
   "period": {
     "label": "June 2026 so far",
     "start": "2026-06-01",
     "end": "2026-06-30"
   },
   "headline": {
-    "sessions": 49,
-    "deltaPct": -79.9,
+    "sessions": 51,
+    "deltaPct": -79.1,
     "comparison": "vs May 2026"
   },
   "channels": [
     {
       "name": "Direct",
       "sessions": 24,
-      "share": 48
+      "share": 47.1
     },
     {
       "name": "Referral",
-      "sessions": 21,
-      "share": 42
+      "sessions": 23,
+      "share": 45.1
     },
     {
       "name": "Organic Social",
       "sessions": 3,
-      "share": 6
+      "share": 5.9
     }
   ],
   "geography": [
     {
       "name": "United States",
-      "sessions": 44,
-      "share": 89.8
+      "sessions": 46,
+      "share": 90.2
     },
     {
       "name": "Chile",
@@ -63,38 +63,38 @@
     {
       "name": "Brambleton, Virginia",
       "sessions": 16,
-      "share": 32.7
+      "share": 31.4
     },
     {
       "name": "(not set), Virginia",
-      "sessions": 14,
-      "share": 28.6
+      "sessions": 15,
+      "share": 29.4
     },
     {
       "name": "Baltimore, Maryland",
       "sessions": 3,
-      "share": 6.1
+      "share": 5.9
+    },
+    {
+      "name": "Unknown, Virginia",
+      "sessions": 2,
+      "share": 3.9
     },
     {
       "name": "Council Bluffs, Iowa",
       "sessions": 2,
-      "share": 4.1
+      "share": 3.9
     },
     {
       "name": "South Riding, Virginia",
       "sessions": 2,
-      "share": 4.1
-    },
-    {
-      "name": "St. Louis, Missouri",
-      "sessions": 2,
-      "share": 4.1
+      "share": 3.9
     }
   ],
   "events": [
     {
       "name": "scroll_depth",
-      "count": 146,
+      "count": 147,
       "engagedShare": null
     }
   ],
