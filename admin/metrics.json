@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-19T08:00:15.823Z",
+  "generatedAt": "2026-06-20T08:00:15.799Z",
   "period": {
     "label": "June 2026 so far",
     "start": "2026-06-01",
@@ -61,24 +61,19 @@
   ],
   "cities": [
     {
+      "name": "(not set), Virginia",
+      "sessions": 17,
+      "share": 33.3
+    },
+    {
       "name": "Brambleton, Virginia",
       "sessions": 16,
       "share": 31.4
     },
     {
-      "name": "(not set), Virginia",
-      "sessions": 15,
-      "share": 29.4
-    },
-    {
       "name": "Baltimore, Maryland",
       "sessions": 3,
       "share": 5.9
-    },
-    {
-      "name": "Unknown, Virginia",
-      "sessions": 2,
-      "share": 3.9
     },
     {
       "name": "Council Bluffs, Iowa",
@@ -87,6 +82,11 @@
     },
     {
       "name": "South Riding, Virginia",
+      "sessions": 2,
+      "share": 3.9
+    },
+    {
+      "name": "St. Louis, Missouri",
       "sessions": 2,
       "share": 3.9
     }
