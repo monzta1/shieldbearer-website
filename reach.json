@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-06-18T01:11:59.944Z",
-  "total_streams": 17145,
-  "last_90": 14353,
-  "last_30": 8375,
-  "last_7": 1428,
+  "generated_at": "2026-06-20T13:22:13.433Z",
+  "total_streams": 17893,
+  "last_90": 15058,
+  "last_30": 8606,
+  "last_7": 1467,
   "nations": 20,
   "countries": [
     {
       "country": "United States",
       "code": "US",
       "flag": "🇺🇸",
-      "streams": 6186
+      "streams": 6590
     },
     {
       "country": "Germany",
       "code": "DE",
       "flag": "🇩🇪",
-      "streams": 1324
+      "streams": 1348
     },
     {
       "country": "France",
@@ -28,7 +28,7 @@
       "country": "United Kingdom",
       "code": "GB",
       "flag": "🇬🇧",
-      "streams": 450
+      "streams": 455
     },
     {
       "country": "Spain",
@@ -49,22 +49,22 @@
       "streams": 335
     },
     {
-      "country": "The Netherlands",
-      "code": "NL",
-      "flag": "🇳🇱",
-      "streams": 318
-    },
-    {
       "country": "Canada",
       "code": "CA",
       "flag": "🇨🇦",
-      "streams": 297
+      "streams": 334
+    },
+    {
+      "country": "The Netherlands",
+      "code": "NL",
+      "flag": "🇳🇱",
+      "streams": 333
     },
     {
       "country": "Sweden",
       "code": "SE",
       "flag": "🇸🇪",
-      "streams": 253
+      "streams": 276
     },
     {
       "country": "Belgium",
@@ -94,7 +94,7 @@
       "country": "Singapore",
       "code": "SG",
       "flag": "🇸🇬",
-      "streams": 80
+      "streams": 87
     },
     {
       "country": "Poland",
@@ -103,16 +103,16 @@
       "streams": 34
     },
     {
+      "country": "Romania",
+      "code": "RO",
+      "flag": "🇷🇴",
+      "streams": 33
+    },
+    {
       "country": "India",
       "code": "IN",
       "flag": "🇮🇳",
       "streams": 24
-    },
-    {
-      "country": "Romania",
-      "code": "RO",
-      "flag": "🇷🇴",
-      "streams": 18
     },
     {
       "country": "United Arab Emirates",
@@ -223,7 +223,11 @@
     {
       "t": "2026-06-18T01:11:59.658Z",
       "total": 17145
+    },
+    {
+      "t": "2026-06-20T13:22:13.010Z",
+      "total": 17893
     }
   ],
-  "last_published_at": "2026-06-18T01:11:59.658Z"
+  "last_published_at": "2026-06-20T13:22:13.010Z"
 }
