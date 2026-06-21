@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-06-20T13:22:13.433Z",
-  "total_streams": 17893,
-  "last_90": 15058,
-  "last_30": 8606,
-  "last_7": 1467,
-  "nations": 20,
+  "generated_at": "2026-06-21T21:05:47.717Z",
+  "total_streams": 18626,
+  "last_90": 15785,
+  "last_30": 9114,
+  "last_7": 1852,
+  "nations": 21,
   "countries": [
     {
       "country": "United States",
       "code": "US",
       "flag": "🇺🇸",
-      "streams": 6590
+      "streams": 7058
     },
     {
       "country": "Germany",
@@ -40,7 +40,13 @@
       "country": "Italy",
       "code": "IT",
       "flag": "🇮🇹",
-      "streams": 337
+      "streams": 348
+    },
+    {
+      "country": "The Netherlands",
+      "code": "NL",
+      "flag": "🇳🇱",
+      "streams": 338
     },
     {
       "country": "Switzerland",
@@ -53,12 +59,6 @@
       "code": "CA",
       "flag": "🇨🇦",
       "streams": 334
-    },
-    {
-      "country": "The Netherlands",
-      "code": "NL",
-      "flag": "🇳🇱",
-      "streams": 333
     },
     {
       "country": "Sweden",
@@ -88,13 +88,19 @@
       "country": "Austria",
       "code": "AT",
       "flag": "🇦🇹",
-      "streams": 94
+      "streams": 99
     },
     {
       "country": "Singapore",
       "code": "SG",
       "flag": "🇸🇬",
       "streams": 87
+    },
+    {
+      "country": "Japan",
+      "code": "JP",
+      "flag": "🇯🇵",
+      "streams": 40
     },
     {
       "country": "Poland",
@@ -227,7 +233,11 @@
     {
       "t": "2026-06-20T13:22:13.010Z",
       "total": 17893
+    },
+    {
+      "t": "2026-06-21T21:05:47.381Z",
+      "total": 18626
     }
   ],
-  "last_published_at": "2026-06-20T13:22:13.010Z"
+  "last_published_at": "2026-06-21T21:05:47.381Z"
 }
