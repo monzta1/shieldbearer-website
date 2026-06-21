@@ -1,100 +1,100 @@
 {
-  "generatedAt": "2026-06-20T08:00:15.799Z",
+  "generatedAt": "2026-06-21T08:00:15.796Z",
   "period": {
     "label": "June 2026 so far",
     "start": "2026-06-01",
     "end": "2026-06-30"
   },
   "headline": {
-    "sessions": 51,
-    "deltaPct": -79.1,
+    "sessions": 59,
+    "deltaPct": -75.8,
     "comparison": "vs May 2026"
   },
   "channels": [
     {
       "name": "Direct",
-      "sessions": 24,
-      "share": 47.1
+      "sessions": 28,
+      "share": 45.9
     },
     {
       "name": "Referral",
-      "sessions": 23,
-      "share": 45.1
+      "sessions": 26,
+      "share": 42.6
     },
     {
       "name": "Organic Social",
       "sessions": 3,
-      "share": 5.9
+      "share": 4.9
     }
   ],
   "geography": [
     {
       "name": "United States",
-      "sessions": 46,
-      "share": 90.2
+      "sessions": 54,
+      "share": 91.5
     },
     {
       "name": "Chile",
       "sessions": 1,
-      "share": 2
+      "share": 1.7
     },
     {
       "name": "Czechia",
       "sessions": 1,
-      "share": 2
+      "share": 1.7
     },
     {
       "name": "Germany",
       "sessions": 1,
-      "share": 2
+      "share": 1.7
     },
     {
       "name": "India",
       "sessions": 1,
-      "share": 2
+      "share": 1.7
     },
     {
       "name": "Poland",
       "sessions": 1,
-      "share": 2
+      "share": 1.7
     }
   ],
   "cities": [
     {
       "name": "(not set), Virginia",
       "sessions": 17,
-      "share": 33.3
+      "share": 28.3
     },
     {
       "name": "Brambleton, Virginia",
       "sessions": 16,
-      "share": 31.4
+      "share": 26.7
     },
     {
       "name": "Baltimore, Maryland",
       "sessions": 3,
-      "share": 5.9
+      "share": 5
     },
     {
       "name": "Council Bluffs, Iowa",
       "sessions": 2,
-      "share": 3.9
+      "share": 3.3
     },
     {
-      "name": "South Riding, Virginia",
+      "name": "Leesburg, Virginia",
       "sessions": 2,
-      "share": 3.9
+      "share": 3.3
     },
     {
-      "name": "St. Louis, Missouri",
+      "name": "San Antonio, Texas",
       "sessions": 2,
-      "share": 3.9
+      "share": 3.3
     }
   ],
   "events": [
     {
       "name": "scroll_depth",
-      "count": 147,
+      "count": 154,
       "engagedShare": null
     }
   ],
