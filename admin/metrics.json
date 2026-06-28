@@ -1,42 +1,42 @@
 {
-  "generatedAt": "2026-06-27T08:00:15.312Z",
+  "generatedAt": "2026-06-28T08:00:15.344Z",
   "period": {
     "label": "June 2026 so far",
     "start": "2026-06-01",
     "end": "2026-06-30"
   },
   "headline": {
-    "sessions": 90,
-    "deltaPct": -63.1,
+    "sessions": 92,
+    "deltaPct": -62.3,
     "comparison": "vs May 2026"
   },
   "channels": [
     {
       "name": "Direct",
-      "sessions": 40,
-      "share": 44
+      "sessions": 41,
+      "share": 44.6
     },
     {
       "name": "Referral",
-      "sessions": 29,
-      "share": 31.9
+      "sessions": 30,
+      "share": 32.6
     },
     {
       "name": "Organic Social",
-      "sessions": 17,
-      "share": 18.7
+      "sessions": 18,
+      "share": 19.6
     }
   ],
   "geography": [
     {
       "name": "United States",
-      "sessions": 80,
-      "share": 88.9
+      "sessions": 82,
+      "share": 89.1
     },
     {
       "name": "Germany",
       "sessions": 4,
-      "share": 4.4
+      "share": 4.3
     },
     {
       "name": "Chile",
@@ -62,39 +62,39 @@
   "cities": [
     {
       "name": "(not set), Virginia",
-      "sessions": 25,
-      "share": 28.7
+      "sessions": 28,
+      "share": 31.5
     },
     {
       "name": "Brambleton, Virginia",
       "sessions": 16,
-      "share": 18.4
+      "share": 18
     },
     {
       "name": "San Antonio, Texas",
       "sessions": 5,
-      "share": 5.7
+      "share": 5.6
     },
     {
       "name": "Prineville, Oregon",
       "sessions": 4,
-      "share": 4.6
-    },
-    {
-      "name": "Unknown, Virginia",
-      "sessions": 3,
-      "share": 3.4
+      "share": 4.5
     },
     {
       "name": "Baltimore, Maryland",
       "sessions": 3,
       "share": 3.4
+    },
+    {
+      "name": "Unknown, Virginia",
+      "sessions": 2,
+      "share": 2.2
     }
   ],
   "events": [
     {
       "name": "scroll_depth",
-      "count": 181,
+      "count": 183,
       "engagedShare": null
     }
   ],
