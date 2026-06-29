@@ -1,94 +1,94 @@
 {
-  "generatedAt": "2026-06-28T08:00:15.344Z",
+  "generatedAt": "2026-06-29T08:00:15.319Z",
   "period": {
     "label": "June 2026 so far",
     "start": "2026-06-01",
     "end": "2026-06-30"
   },
   "headline": {
-    "sessions": 92,
-    "deltaPct": -62.3,
+    "sessions": 97,
+    "deltaPct": -60.2,
     "comparison": "vs May 2026"
   },
   "channels": [
     {
       "name": "Direct",
       "sessions": 41,
-      "share": 44.6
+      "share": 41.8
     },
     {
       "name": "Referral",
-      "sessions": 30,
-      "share": 32.6
+      "sessions": 33,
+      "share": 33.7
     },
     {
       "name": "Organic Social",
-      "sessions": 18,
-      "share": 19.6
+      "sessions": 19,
+      "share": 19.4
     }
   ],
   "geography": [
     {
       "name": "United States",
-      "sessions": 82,
-      "share": 89.1
+      "sessions": 87,
+      "share": 89.7
     },
     {
       "name": "Germany",
       "sessions": 4,
-      "share": 4.3
+      "share": 4.1
     },
     {
       "name": "Chile",
       "sessions": 1,
-      "share": 1.1
+      "share": 1
     },
     {
       "name": "Czechia",
       "sessions": 1,
-      "share": 1.1
+      "share": 1
     },
     {
       "name": "India",
       "sessions": 1,
-      "share": 1.1
+      "share": 1
     },
     {
       "name": "Ireland",
       "sessions": 1,
-      "share": 1.1
+      "share": 1
     }
   ],
   "cities": [
     {
       "name": "(not set), Virginia",
-      "sessions": 28,
-      "share": 31.5
+      "sessions": 31,
+      "share": 33
     },
     {
       "name": "Brambleton, Virginia",
       "sessions": 16,
-      "share": 18
+      "share": 17
     },
     {
       "name": "San Antonio, Texas",
       "sessions": 5,
-      "share": 5.6
+      "share": 5.3
+    },
+    {
+      "name": "Unknown, Virginia",
+      "sessions": 4,
+      "share": 4.3
     },
     {
       "name": "Prineville, Oregon",
       "sessions": 4,
-      "share": 4.5
+      "share": 4.3
     },
     {
       "name": "Baltimore, Maryland",
       "sessions": 3,
-      "share": 3.4
-    },
-    {
-      "name": "Unknown, Virginia",
-      "sessions": 2,
-      "share": 2.2
+      "share": 3.2
     }
   ],
   "events": [
