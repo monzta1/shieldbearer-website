@@ -1,103 +1,19 @@
 {
-  "generatedAt": "2026-06-30T08:00:15.029Z",
+  "generatedAt": "2026-07-01T08:00:15.409Z",
   "period": {
-    "label": "June 2026 so far",
-    "start": "2026-06-01",
-    "end": "2026-06-30"
+    "label": "July 2026 so far",
+    "start": "2026-07-01",
+    "end": "2026-07-31"
   },
   "headline": {
-    "sessions": 99,
-    "deltaPct": -59.4,
-    "comparison": "vs May 2026"
+    "sessions": 0,
+    "deltaPct": -100,
+    "comparison": "vs June 2026"
   },
-  "channels": [
-    {
-      "name": "Direct",
-      "sessions": 41,
-      "share": 41.4
-    },
-    {
-      "name": "Referral",
-      "sessions": 35,
-      "share": 35.4
-    },
-    {
-      "name": "Organic Social",
-      "sessions": 19,
-      "share": 19.2
-    }
-  ],
-  "geography": [
-    {
-      "name": "United States",
-      "sessions": 89,
-      "share": 89.9
-    },
-    {
-      "name": "Germany",
-      "sessions": 4,
-      "share": 4
-    },
-    {
-      "name": "Chile",
-      "sessions": 1,
-      "share": 1
-    },
-    {
-      "name": "Czechia",
-      "sessions": 1,
-      "share": 1
-    },
-    {
-      "name": "India",
-      "sessions": 1,
-      "share": 1
-    },
-    {
-      "name": "Ireland",
-      "sessions": 1,
-      "share": 1
-    }
-  ],
-  "cities": [
-    {
-      "name": "(not set), Virginia",
-      "sessions": 35,
-      "share": 36.5
-    },
-    {
-      "name": "Brambleton, Virginia",
-      "sessions": 16,
-      "share": 16.7
-    },
-    {
-      "name": "San Antonio, Texas",
-      "sessions": 5,
-      "share": 5.2
-    },
-    {
-      "name": "Prineville, Oregon",
-      "sessions": 4,
-      "share": 4.2
-    },
-    {
-      "name": "Baltimore, Maryland",
-      "sessions": 3,
-      "share": 3.1
-    },
-    {
-      "name": "Unknown, Virginia",
-      "sessions": 2,
-      "share": 2.1
-    }
-  ],
-  "events": [
-    {
-      "name": "scroll_depth",
-      "count": 186,
-      "engagedShare": null
-    }
-  ],
+  "channels": [],
+  "geography": [],
+  "cities": [],
+  "events": [],
   "shipped": [
     {
       "date": "2026-05-29",
