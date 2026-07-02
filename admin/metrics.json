@@ -1,19 +1,48 @@
 {
-  "generatedAt": "2026-07-01T08:00:15.409Z",
+  "generatedAt": "2026-07-02T08:00:14.918Z",
   "period": {
     "label": "July 2026 so far",
     "start": "2026-07-01",
     "end": "2026-07-31"
   },
   "headline": {
-    "sessions": 0,
-    "deltaPct": -100,
+    "sessions": 1,
+    "deltaPct": -99,
     "comparison": "vs June 2026"
   },
-  "channels": [],
-  "geography": [],
-  "cities": [],
-  "events": [],
+  "channels": [
+    {
+      "name": "Referral",
+      "sessions": 1,
+      "share": 50
+    },
+    {
+      "name": "Unassigned",
+      "sessions": 1,
+      "share": 50
+    }
+  ],
+  "geography": [
+    {
+      "name": "United States",
+      "sessions": 1,
+      "share": 100
+    }
+  ],
+  "cities": [
+    {
+      "name": "Unknown, Virginia",
+      "sessions": 1,
+      "share": 100
+    }
+  ],
+  "events": [
+    {
+      "name": "scroll_depth",
+      "count": 2,
+      "engagedShare": null
+    }
+  ],
   "shipped": [
     {
       "date": "2026-05-29",
