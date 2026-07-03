@@ -1,45 +1,65 @@
 {
-  "generatedAt": "2026-07-02T08:00:14.918Z",
+  "generatedAt": "2026-07-03T08:00:15.346Z",
   "period": {
     "label": "July 2026 so far",
     "start": "2026-07-01",
     "end": "2026-07-31"
   },
   "headline": {
-    "sessions": 1,
-    "deltaPct": -99,
+    "sessions": 5,
+    "deltaPct": -95,
     "comparison": "vs June 2026"
   },
   "channels": [
     {
-      "name": "Referral",
-      "sessions": 1,
-      "share": 50
+      "name": "Cross-network",
+      "sessions": 3,
+      "share": 60
     },
     {
-      "name": "Unassigned",
+      "name": "Organic Social",
       "sessions": 1,
-      "share": 50
+      "share": 20
+    },
+    {
+      "name": "Referral",
+      "sessions": 1,
+      "share": 20
     }
   ],
   "geography": [
     {
       "name": "United States",
-      "sessions": 1,
+      "sessions": 5,
       "share": 100
     }
   ],
   "cities": [
     {
-      "name": "Unknown, Virginia",
+      "name": "Prineville, Oregon",
+      "sessions": 2,
+      "share": 40
+    },
+    {
+      "name": "(not set), Virginia",
       "sessions": 1,
-      "share": 100
+      "share": 20
+    },
+    {
+      "name": "Fort Worth, Texas",
+      "sessions": 1,
+      "share": 20
+    },
+    {
+      "name": "Mount Pleasant, South Carolina",
+      "sessions": 1,
+      "share": 20
     }
   ],
   "events": [
     {
       "name": "scroll_depth",
-      "count": 2,
+      "count": 4,
       "engagedShare": null
     }
   ],
