@@ -42,6 +42,25 @@
   },
   "signal": [
     {
+      "songId": "cars",
+      "videoId": "",
+      "title": "Cars",
+      "state": "draft",
+      "traceId": "cars#2026-06-24T11:47:29.926Z#SONG_CREATED",
+      "publishedAt": "2026-06-24T11:47:29.926Z",
+      "sourceUrl": "",
+      "artwork": "https://shieldbearerusa.com/images/signal-room/cars.jpg",
+      "lyrics": "The sheriff woke me up at two a.m.\nSaid, \"Sir, you better come outside\"\nBlue lights bouncing off the houses\nOn our quiet little drive\n\nAn ambulance was pulling off\nNeighbors standing in the dark\nAnd there sat that old Camry\nWith a hole punched through its heart\n\nThat car wasn't just transportation\nIt was part of who we are\nSoccer cleats and church on Sundays\nFrench fries underneath the stars\n\nSchool drop-offs and family road trips\nRainy days and summer scars\nFunny how you never notice\nHow much life lives in your cars\n\n'Cause cars ain't just cars when you've got kids\nThey're backseat songs and weekend trips\nThey're \"Dad, turn up that radio\"\nAnd \"Can we stop for ice cream?\" on the road\n\nThey're little boys growing up too fast\nIn a rearview mirror made of glass\nAnd sometimes God reminds your heart\nThere's more to life than cars\n\nThey said some teenagers were drinking\nLost control and crossed the line\nHit a parked car in a driveway\nAnd changed a family's night\n\nFor a moment I was angry\nThen a thought came over me\nLord, thank You that nobody was sitting\nIn that driver's seat\n\n'Cause cars ain't just cars when you've got kids\nThey're backseat songs and weekend trips\nThey're \"Dad, turn up that radio\"\nAnd \"Can we stop for ice cream?\" on the road\n\nThey're little boys growing up too fast\nIn a rearview mirror made of glass\nAnd sometimes God reminds your heart\nThere's more to life than cars\n\nA week later my phone started ringing\nInsurance on the line\nI figured we'd get enough\nTo help us get by\n\nThen they told me what they valued it at\nAnd I almost dropped that phone\nAfter six and a half years and sixty thousand miles\nThey paid more than what we'd brought it home for\n\nNow tell me that ain't God\n\n'Cause cars ain't just cars when you've got kids\nThey're answered prayers and memories lived\nThey're every mile His hand was there\nProtecting us when we weren't aware\n\nSix and a half years of mercy\nSixty thousand miles of grace\nAnd when that old Camry reached the end\nThe Lord still made a way\n\nWhat looked like loss became a blessing\nWhat looked like the end became a start\nAnd maybe that's what faith really is\n\nLearning there's more to life than cars\n\nWe used to sing\n\n\"Defender...\nProtector...\nMy Shelter...\nMy Savior...\"\n\nBack then it was a song\n\nNow it's a testimony\n\nThank You, Jesus",
+      "songMeaning": "A true story about family, memories, faith, and discovering that some things are worth more than what they cost.\n\nKnown primarily for Christian metal, Shieldbearer steps into country storytelling with \"Cars,\" one of our most personal songs yet.\n\nThis song is inspired by a real-life experience that reminded us of God's protection, provision, and faithfulness. Sometimes the things we think we own end up teaching us what really matters.\n\nIf this song resonates with you, please like, comment, subscribe, and share it with someone who needs encouragement.\n\nJesus is Lord.",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-06-24T11:47:29.926Z",
+      "contentHash": ""
+    },
+    {
       "songId": "0lUJcLKIt0o",
       "videoId": "",
       "title": "Let My People Go",
@@ -1926,7 +1945,7 @@
       "contentHash": "952d5bfc05ad8d15ae1980f11364acca86f3f4907a284d6243ce62404e40a868"
     }
   ],
-  "signalCount": 98,
+  "signalCount": 99,
   "comingSoonCount": 0,
   "releasedCount": 1,
   "events": [
