@@ -1,64 +1,64 @@
 {
-  "generatedAt": "2026-07-05T08:00:14.973Z",
+  "generatedAt": "2026-07-06T08:00:15.187Z",
   "period": {
     "label": "July 2026 so far",
     "start": "2026-07-01",
     "end": "2026-07-31"
   },
   "headline": {
-    "sessions": 11,
-    "deltaPct": -89,
+    "sessions": 13,
+    "deltaPct": -87,
     "comparison": "vs June 2026"
   },
   "channels": [
     {
       "name": "Organic Social",
       "sessions": 7,
-      "share": 63.6
+      "share": 53.8
     },
     {
       "name": "Referral",
-      "sessions": 3,
-      "share": 27.3
+      "sessions": 5,
+      "share": 38.5
     },
     {
       "name": "Direct",
       "sessions": 1,
-      "share": 9.1
+      "share": 7.7
     }
   ],
   "geography": [
     {
       "name": "United States",
-      "sessions": 11,
+      "sessions": 13,
       "share": 100
     }
   ],
   "cities": [
     {
       "name": "Panama City Beach, Florida",
-      "sessions": 5,
-      "share": 45.5
+      "sessions": 7,
+      "share": 53.8
     },
     {
       "name": "Prineville, Oregon",
       "sessions": 3,
-      "share": 27.3
+      "share": 23.1
     },
     {
       "name": "(not set), Virginia",
       "sessions": 1,
-      "share": 9.1
+      "share": 7.7
     },
     {
       "name": "Fort Worth, Texas",
       "sessions": 1,
-      "share": 9.1
+      "share": 7.7
     },
     {
       "name": "Mount Pleasant, South Carolina",
       "sessions": 1,
-      "share": 9.1
+      "share": 7.7
     }
   ],
   "events": [
