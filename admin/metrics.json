@@ -1,64 +1,74 @@
 {
-  "generatedAt": "2026-07-06T08:00:15.187Z",
+  "generatedAt": "2026-07-07T08:00:15.067Z",
   "period": {
     "label": "July 2026 so far",
     "start": "2026-07-01",
     "end": "2026-07-31"
   },
   "headline": {
-    "sessions": 13,
-    "deltaPct": -87,
+    "sessions": 15,
+    "deltaPct": -85,
     "comparison": "vs June 2026"
   },
   "channels": [
     {
       "name": "Organic Social",
       "sessions": 7,
-      "share": 53.8
+      "share": 46.7
     },
     {
       "name": "Referral",
       "sessions": 5,
-      "share": 38.5
+      "share": 33.3
     },
     {
       "name": "Direct",
-      "sessions": 1,
-      "share": 7.7
+      "sessions": 3,
+      "share": 20
     }
   ],
   "geography": [
     {
       "name": "United States",
-      "sessions": 13,
-      "share": 100
+      "sessions": 14,
+      "share": 93.3
+    },
+    {
+      "name": "France",
+      "sessions": 1,
+      "share": 6.7
     }
   ],
   "cities": [
     {
       "name": "Panama City Beach, Florida",
       "sessions": 7,
-      "share": 53.8
+      "share": 46.7
     },
     {
       "name": "Prineville, Oregon",
       "sessions": 3,
-      "share": 23.1
+      "share": 20
+    },
+    {
+      "name": "Unknown",
+      "sessions": 1,
+      "share": 6.7
     },
     {
       "name": "(not set), Virginia",
       "sessions": 1,
-      "share": 7.7
+      "share": 6.7
     },
     {
       "name": "Fort Worth, Texas",
       "sessions": 1,
-      "share": 7.7
+      "share": 6.7
     },
     {
       "name": "Mount Pleasant, South Carolina",
       "sessions": 1,
-      "share": 7.7
+      "share": 6.7
     }
   ],
   "events": [
