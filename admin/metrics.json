@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-15T08:00:15.226Z",
+  "generatedAt": "2026-07-16T08:00:15.038Z",
   "period": {
     "label": "July 2026 so far",
     "start": "2026-07-01",
@@ -62,8 +62,8 @@
     },
     {
       "name": "(not set), Virginia",
-      "sessions": 2,
-      "share": 6.1
+      "sessions": 3,
+      "share": 9.1
     },
     {
       "name": "Fort Worth, Texas",
