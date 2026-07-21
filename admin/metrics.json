@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-20T08:00:14.764Z",
+  "generatedAt": "2026-07-21T08:00:14.727Z",
   "period": {
     "label": "July 2026 so far",
     "start": "2026-07-01",
@@ -51,17 +51,17 @@
       "share": 20.6
     },
     {
+      "name": "(not set), Virginia",
+      "sessions": 4,
+      "share": 11.8
+    },
+    {
       "name": "Prineville, Oregon",
       "sessions": 4,
       "share": 11.8
     },
     {
       "name": "(not set)",
-      "sessions": 3,
-      "share": 8.8
-    },
-    {
-      "name": "(not set), Virginia",
       "sessions": 3,
       "share": 8.8
     },
