@@ -220,7 +220,9 @@
       transition: background .2s, box-shadow .2s, border-color .2s, color .2s, transform .2s;
     }
     .hero-ctas .btn--red {
-      box-shadow: 0 10px 26px rgba(192,57,43,.34);
+      min-width: 252px;
+      font-size: .84rem;
+      box-shadow: 0 10px 30px rgba(231,76,60,.42), 0 0 60px rgba(231,76,60,.18);
     }
     .hero-ctas .btn--red:hover {
       box-shadow: 0 14px 34px rgba(231,76,60,.48);
@@ -661,10 +663,28 @@
       letter-spacing: .14em;
       text-transform: uppercase;
       color: var(--off-white);
+      font-variant-numeric: tabular-nums;
     }
     .sr-home__countdown b {
       color: var(--red-bright);
       font-size: 1rem;
+      display: inline-block;
+      min-width: 2ch;
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+    /* Live pulse beside the Signal Room eyebrow. Opacity-only. */
+    .sr-home__eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--red-bright);
+      box-shadow: 0 0 8px rgba(231,76,60,.8);
+      margin-right: .5rem;
+      vertical-align: 1px;
+      animation: glow-pulse 2.4s ease-in-out infinite;
     }
     .sr-home__cta {
       font-size: .82rem;
@@ -1432,6 +1452,7 @@ The Galilean</p>
   <script src="/js/featured-release.js" defer></script>
   <script src="/js/watch-posts.js" defer></script>
   <script src="/js/signal-room-home.js" defer></script>
+  <script src="/js/hero-embers.js" defer></script>
 <script src="/js/scripture-links.js" defer></script>
 </body>
 </html>
