@@ -1,89 +1,94 @@
 {
-  "generatedAt": "2026-07-21T08:00:14.727Z",
+  "generatedAt": "2026-07-22T08:00:15.037Z",
   "period": {
     "label": "July 2026 so far",
     "start": "2026-07-01",
     "end": "2026-07-31"
   },
   "headline": {
-    "sessions": 34,
-    "deltaPct": -66,
+    "sessions": 39,
+    "deltaPct": -61,
     "comparison": "vs June 2026"
   },
   "channels": [
     {
       "name": "Organic Social",
-      "sessions": 15,
-      "share": 44.1
+      "sessions": 18,
+      "share": 41.9
     },
     {
       "name": "Direct",
       "sessions": 12,
-      "share": 35.3
+      "share": 27.9
     },
     {
       "name": "Referral",
-      "sessions": 6,
-      "share": 17.6
+      "sessions": 8,
+      "share": 18.6
     }
   ],
   "geography": [
     {
       "name": "United States",
-      "sessions": 32,
-      "share": 94.1
+      "sessions": 37,
+      "share": 94.9
     },
     {
       "name": "France",
       "sessions": 1,
-      "share": 2.9
+      "share": 2.6
     },
     {
       "name": "India",
       "sessions": 1,
-      "share": 2.9
+      "share": 2.6
     }
   ],
   "cities": [
     {
       "name": "Panama City Beach, Florida",
       "sessions": 7,
-      "share": 20.6
+      "share": 17.9
+    },
+    {
+      "name": "Unknown, Virginia",
+      "sessions": 5,
+      "share": 12.8
     },
     {
       "name": "(not set), Virginia",
       "sessions": 4,
-      "share": 11.8
+      "share": 10.3
     },
     {
       "name": "Prineville, Oregon",
       "sessions": 4,
-      "share": 11.8
+      "share": 10.3
     },
     {
       "name": "(not set)",
       "sessions": 3,
-      "share": 8.8
+      "share": 7.7
     },
     {
       "name": "Fort Worth, Texas",
       "sessions": 2,
-      "share": 5.9
-    },
-    {
-      "name": "South Elgin, Illinois",
-      "sessions": 2,
-      "share": 5.9
+      "share": 5.1
     }
   ],
   "events": [
     {
       "name": "scroll_depth",
-      "count": 36,
+      "count": 73,
       "engagedShare": null
     },
     {
       "name": "listen_click",
+      "count": 1,
+      "engagedShare": null
+    },
+    {
+      "name": "merch_click",
       "count": 1,
       "engagedShare": null
     }
