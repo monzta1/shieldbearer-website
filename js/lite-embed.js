@@ -65,12 +65,26 @@
     var title = iframe.getAttribute('title') || '';
     var allowValue = iframe.getAttribute('allow') || '';
 
+    /* Wrappers like .video-frame-wrap size their iframe with
+       position:absolute inside a padded aspect box. The facade must
+       fill the box the same way or it would stack under the padding. */
+    var wasAbsolute = false;
+    try {
+      wasAbsolute = window.getComputedStyle(iframe).position === 'absolute';
+    } catch (e) {}
+
     var facade = document.createElement('button');
     facade.type = 'button';
     facade.className = 'lite-yt';
     facade.setAttribute('aria-label', 'Play' + (title ? ': ' + title : ' video'));
     facade.style.backgroundImage =
       'url("https://img.youtube.com/vi/' + id + '/hqdefault.jpg")';
+    if (wasAbsolute) {
+      facade.style.position = 'absolute';
+      facade.style.inset = '0';
+      facade.style.height = '100%';
+      facade.style.aspectRatio = 'auto';
+    }
 
     var btn = document.createElement('span');
     btn.className = 'lite-yt__btn';
