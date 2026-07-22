@@ -7,6 +7,9 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.29.2 - July 2026
+- Fix: stretched logo in the nav and footer on the eight pages that got intrinsic image dimensions in v2.29.0. The logo img tags gained width/height attributes while the CSS constrained only height, so the attribute width won and distorted the mark. Both logo rules now carry width:auto. Regression introduced and fixed same day.
+
 ## v2.29.1 - July 2026
 - `scripts/verify-live.sh`: dropped artist-freedom, no-rulebook, open-letter from the clean-URL check list. The three pages were archived to `unpublished/` back in v2.27.2 but this list was never updated, so live verification has failed on every run since. Same class of rot as the CLEAN_PAGES fix in v2.29.0. No site content changed.
 
