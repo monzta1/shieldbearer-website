@@ -2,12 +2,12 @@
 
 Live working state. Update this file with every meaningful change so the next agent (or future-you) lands oriented. Out-of-date state is worse than no state.
 
-## Current state (last updated 2026-05-22)
+## Current state (last updated 2026-07-21)
 
 | Field | Value |
 | ----- | ----- |
-| Active branch | `sentinelbot-stable` (production) |
-| Latest commit | v2.17.0 -- `/admin/visitors` v2 with open/heartbeat/close beacon protocol + per-page duration + total session dwell |
+| Active branch | `sentinelbot-stable` (production); `redesign-2026` carries the unmerged v2.29.0 visual overhaul |
+| Latest commit | production at v2.28.2; `redesign-2026` at v2.29.0 (visual/motion overhaul, tagged rollback point `pre-redesign-2026`) |
 | Test gate | structural + 70/70 jsdom + 100% line coverage |
 | Last live verification | 2026-05-22, all passes |
 | Execution mode | Operator-led, agent executes (A-method for stepwise tasks) |

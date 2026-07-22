@@ -10,6 +10,10 @@
   --red-bright: #e74c3c;
   --white:      #f0ebe0;
   --off-white:  #a8a29a;
+  /* Body-copy tone. Brighter than --off-white so prose passes WCAG AA
+     on the near-black background. --off-white and --muted stay for
+     decorative labels, metadata, and chrome only. */
+  --text-body:  #c9c5be;
   --muted:      #525252;
   --black:      #040404;
   --black-2:    #080808;
@@ -30,7 +34,7 @@
   --sp-md:      1.5rem;   /* 24px: component internal padding */
   --sp-lg:      2rem;     /* 32px: between components */
   --sp-xl:      3rem;     /* 48px: generous layout breathing room */
-  --sp-section: 5rem;     /* 80px: vertical section padding */
+  --sp-section: clamp(4.2rem, 8vw, 6.5rem); /* fluid vertical section padding */
 }
 
 /* ── RESET ── */
@@ -38,7 +42,7 @@
 html { scroll-behavior: smooth; }
 body {
   background: var(--black);
-  color: var(--off-white);
+  color: var(--text-body);
   font-family: var(--font-body);
   font-weight: 400;
   font-size: 17px;
@@ -103,7 +107,7 @@ button { cursor: pointer; font-family: inherit; }
 .section-body {
   font-size: 1rem;
   line-height: 1.9;
-  color: rgba(168,162,154,.74);
+  color: rgba(201,197,190,.9);
 }
 
 /* ── UTILITY ── */
@@ -444,7 +448,7 @@ button { cursor: pointer; font-family: inherit; }
 .page-hero .display-title { margin-bottom: .4rem; }
 .page-hero p {
   font-size: 1.02rem;
-  color: rgba(168,162,154,.68);
+  color: rgba(201,197,190,.86);
   max-width: 700px;
   line-height: 1.85;
 }
@@ -570,7 +574,7 @@ section { padding: var(--sp-section) 0; position: relative; }
 .scripture-block p {
   font-size: .88rem;
   line-height: 1.75;
-  color: rgba(168,162,154,.7);
+  color: rgba(201,197,190,.82);
   font-style: italic;
 }
 
@@ -625,7 +629,7 @@ section { padding: var(--sp-section) 0; position: relative; }
 .press-card .excerpt {
   font-size: 1rem;
   line-height: 1.8;
-  color: rgba(168,162,154,.5);
+  color: rgba(201,197,190,.76);
   margin-bottom: .9rem;
 }
 .press-card .tags { display: flex; gap: .4rem; flex-wrap: wrap; }
@@ -687,7 +691,7 @@ section { padding: var(--sp-section) 0; position: relative; }
 .meaning-card .mc-body {
   font-size: 1rem;
   line-height: 1.9;
-  color: rgba(168,162,154,.72);
+  color: rgba(201,197,190,.88);
   max-height: 0;
   overflow: hidden;
   transition: max-height .5s ease, opacity .4s;
@@ -804,7 +808,7 @@ section { padding: var(--sp-section) 0; position: relative; }
 .footer-brand p {
   font-size: 1rem;
   line-height: 1.85;
-  color: rgba(168,162,154,.45);
+  color: rgba(168,162,154,.62);
   max-width: 280px;
 }
 .footer-col h4 {
@@ -1016,7 +1020,7 @@ section { padding: var(--sp-section) 0; position: relative; }
 .world-copy {
   font-size: .9rem;
   line-height: 1.75;
-  color: rgba(168,162,154,.72);
+  color: rgba(201,197,190,.84);
   margin-bottom: 1.2rem;
 }
 .world-link {
@@ -1471,6 +1475,162 @@ section { padding: var(--sp-section) 0; position: relative; }
   50%       { opacity: 1;  transform: scaleY(1.3); }
 }
 
+/* ── MOTION SYSTEM ── */
+
+/* Page entry: quick one-shot fade. Animation, never a gated opacity,
+   so content can never be stranded hidden. */
+@keyframes page-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+body { animation: page-in 200ms ease-out both; }
+
+/* Crimson sweep across primary buttons. A skewed light band rides
+   over the button face on hover. Transform-only. */
+.btn { position: relative; overflow: hidden; }
+.btn--red::after,
+.form-submit::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, transparent 32%, rgba(255,255,255,.24) 50%, transparent 68%);
+  transform: translateX(-120%) skewX(-14deg);
+  transition: transform .55s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+.form-submit { position: relative; overflow: hidden; }
+.btn--red:hover::after,
+.form-submit:hover::after { transform: translateX(120%) skewX(-14deg); }
+
+/* Nav underline slide. Excludes the merch CTA (it is a button). */
+.nav-links li:not(.nav-merch) > a { position: relative; }
+.nav-links li:not(.nav-merch) > a::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  bottom: -7px;
+  height: 1px;
+  background: var(--red-bright);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.nav-links li:not(.nav-merch) > a:hover::after,
+.nav-links li:not(.nav-merch) > a.active::after { transform: scaleX(1); }
+
+/* Card hover: existing lift plus a crimson edge glow. */
+.press-card:hover {
+  box-shadow:
+    0 16px 34px rgba(0,0,0,.42),
+    0 0 0 1px rgba(231,76,60,.22),
+    0 0 30px rgba(231,76,60,.1);
+}
+
+/* Section-rule draw-in. Bars inside a scroll-reveal block draw from
+   their origin once the block reveals. Static (no-JS, reduced-motion)
+   renders the bar fully drawn. */
+html.js-reveal-enabled .sb-reveal .bar {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .5s cubic-bezier(0.4, 0, 0.2, 1) .12s;
+}
+html.js-reveal-enabled .sb-reveal .bar--center { transform-origin: center; }
+html.js-reveal-enabled .sb-reveal.sb-reveal--in .bar,
+html.js-reveal-enabled.sb-reveal-failsafe .sb-reveal .bar { transform: scaleX(1); }
+
+/* Mobile menu: staggered link cascade on open. Hidden state exists
+   only while .open is animating, so a closed or no-JS menu is never
+   left transparent. */
+@keyframes mob-link-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
+}
+.mob-menu.open a {
+  animation: mob-link-in .32s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+.mob-menu.open a:nth-child(2)  { animation-delay: 30ms; }
+.mob-menu.open a:nth-child(3)  { animation-delay: 60ms; }
+.mob-menu.open a:nth-child(4)  { animation-delay: 90ms; }
+.mob-menu.open a:nth-child(5)  { animation-delay: 120ms; }
+.mob-menu.open a:nth-child(6)  { animation-delay: 150ms; }
+.mob-menu.open a:nth-child(7)  { animation-delay: 180ms; }
+.mob-menu.open a:nth-child(8)  { animation-delay: 210ms; }
+.mob-menu.open a:nth-child(9)  { animation-delay: 240ms; }
+.mob-menu.open a:nth-child(10) { animation-delay: 270ms; }
+.mob-menu.open a:nth-child(n+11) { animation-delay: 300ms; }
+
+/* ── MOBILE MINI-BAR ── */
+/* Injected by js/main.js. Hidden at desktop widths; a slim two-shortcut
+   dock on phones. Static by design (no entrance animation). */
+.sb-minibar {
+  display: none;
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 998;
+  background: rgba(4,4,4,.97);
+  border-top: 1px solid rgba(192,57,43,.4);
+  padding: 0 0 env(safe-area-inset-bottom);
+  align-items: stretch;
+}
+.sb-minibar__link {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  font-family: var(--font-head);
+  font-size: .74rem;
+  font-weight: 600;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: rgba(240,235,224,.88);
+}
+.sb-minibar__link--listen {
+  background: var(--red);
+  color: #fff;
+}
+.sb-minibar__close {
+  width: 46px;
+  min-height: 52px;
+  background: transparent;
+  border: none;
+  border-left: 1px solid rgba(168,162,154,.14);
+  color: rgba(168,162,154,.6);
+  font-size: 1.25rem;
+  line-height: 1;
+}
+@media (max-width: 767px) {
+  .sb-minibar { display: flex; }
+  /* Lift the SentinelBot presence above the bar. */
+  body.has-minibar #sentinelbot-presence {
+    bottom: calc(64px + env(safe-area-inset-bottom));
+  }
+  /* Keep page endings reachable above the fixed bar. */
+  body.has-minibar .site-footer {
+    padding-bottom: calc(56px + env(safe-area-inset-bottom));
+  }
+}
+
+/* Keyboard focus: unmissable, on-brand. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--red-bright);
+  outline-offset: 2px;
+}
+
+/* Reduced motion: kill everything, sitewide, last word. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+  html { scroll-behavior: auto; }
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 1200px) {
   :root { --pad: 1.8rem; --nav-h: 62px; }
@@ -1597,9 +1757,9 @@ a.scripture-link:focus-visible {
    ===================================================================== */
 html.js-reveal-enabled .sb-reveal {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
-              transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(16px);
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   transition-delay: var(--sb-delay, 0ms);
   will-change: opacity, transform;
 }
@@ -1607,9 +1767,35 @@ html.js-reveal-enabled .sb-reveal.sb-reveal--in {
   opacity: 1;
   transform: none;
 }
+/* Failsafe: if reveals have not fired within 2.5s of load (slow
+   device, observer starvation, injected content missed), everything
+   unhides. Class added by the safety timer in js/main.js. */
+html.js-reveal-enabled.sb-reveal-failsafe .sb-reveal {
+  opacity: 1;
+  transform: none;
+}
+/* Directional + scale variants. Same timing, different entry. */
+html.js-reveal-enabled .sb-reveal--left  { transform: translateX(-16px); }
+html.js-reveal-enabled .sb-reveal--right { transform: translateX(16px); }
+html.js-reveal-enabled .sb-reveal--scale { transform: scale(.97); }
+html.js-reveal-enabled .sb-reveal--left.sb-reveal--in,
+html.js-reveal-enabled .sb-reveal--right.sb-reveal--in,
+html.js-reveal-enabled .sb-reveal--scale.sb-reveal--in { transform: none; }
+/* Grid-children stagger: any container marked sb-stagger delays its
+   direct .sb-reveal children in 50ms steps (first 8, then flat). */
+.sb-stagger > .sb-reveal:nth-child(2) { --sb-delay: 50ms; }
+.sb-stagger > .sb-reveal:nth-child(3) { --sb-delay: 100ms; }
+.sb-stagger > .sb-reveal:nth-child(4) { --sb-delay: 150ms; }
+.sb-stagger > .sb-reveal:nth-child(5) { --sb-delay: 200ms; }
+.sb-stagger > .sb-reveal:nth-child(6) { --sb-delay: 250ms; }
+.sb-stagger > .sb-reveal:nth-child(7) { --sb-delay: 300ms; }
+.sb-stagger > .sb-reveal:nth-child(n+8) { --sb-delay: 350ms; }
 @media (prefers-reduced-motion: reduce) {
   html.js-reveal-enabled .sb-reveal,
-  html.js-reveal-enabled .sb-reveal.sb-reveal--in {
+  html.js-reveal-enabled .sb-reveal.sb-reveal--in,
+  html.js-reveal-enabled .sb-reveal--left,
+  html.js-reveal-enabled .sb-reveal--right,
+  html.js-reveal-enabled .sb-reveal--scale {
     opacity: 1;
     transform: none;
     transition: none;

@@ -62,13 +62,31 @@
       background: var(--dark-2);
       border: 1px solid rgba(168,162,154,.16);
       overflow: hidden;
+      position: relative;
       transition: border-color .2s, transform .2s, box-shadow .2s;
     }
+    .track-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(to right, var(--red-bright), rgba(231,76,60,.15));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 1;
+    }
+    .track-card:hover::before { transform: scaleX(1); }
     .track-card:hover {
       border-color: rgba(192,57,43,.55);
       transform: translateY(-6px);
-      box-shadow: 0 18px 34px rgba(0,0,0,.45);
+      box-shadow:
+        0 18px 34px rgba(0,0,0,.45),
+        0 0 0 1px rgba(231,76,60,.22),
+        0 0 30px rgba(231,76,60,.1);
     }
+    .track-card .track-art img { transition: transform .45s cubic-bezier(0.4, 0, 0.2, 1); }
+    .track-card:hover .track-art img { transform: scale(1.045); }
     .track-art {
       width: 100%; aspect-ratio: 1;
       background: linear-gradient(135deg, #160707, #08080f);
@@ -98,6 +116,8 @@
       color: var(--red-bright);
       margin-bottom: 1rem;
       display: block;
+      border-left: 2px solid rgba(231,76,60,.5);
+      padding-left: .55rem;
     }
     .track-info .track-desc {
       font-size: 1rem;
@@ -114,9 +134,18 @@
       color: var(--off-white);
       border: 1px solid rgba(168,162,154,.2);
       padding: .42rem .8rem;
-      transition: all .2s;
+      display: inline-flex;
+      align-items: center;
+      transition: border-color .2s, color .2s, background .2s;
     }
-    .track-link:hover { border-color: var(--red-bright); color: #fff; }
+    .track-link:hover {
+      border-color: var(--red-bright);
+      color: #fff;
+      background: rgba(231,76,60,.08);
+    }
+    @media (pointer: coarse) {
+      .track-link { min-height: 44px; padding: .42rem 1rem; }
+    }
 
     /* Embed section */
     .embed-placeholder {
@@ -193,7 +222,7 @@
 
   <!-- NAV -->
   <nav class="site-nav" id="mainNav">
-    <a href="/" class="nav-logo"><img src="/images/logo.png" alt="Shieldbearer"></a>
+    <a href="/" class="nav-logo"><img src="/images/logo.png" alt="Shieldbearer" width="1536" height="1024"></a>
     <ul class="nav-links">
       <li><a href="/">Home</a></li>
       <li class="nav-dropdown">
@@ -309,12 +338,12 @@
         </iframe>
       </div>
 
-      <div class="track-grid">
+      <div class="track-grid sb-stagger">
 
         <!-- TRACK: Galilean -->
-        <div class="track-card">
+        <div class="track-card sb-reveal">
           <div class="track-art">
-            <img src="/images/galilean-art.png" alt="Galilean" onerror="this.parentElement.querySelector('.art-num').style.display='block'">
+            <img src="/images/galilean-art.png" alt="Galilean" onerror="this.parentElement.querySelector('.art-num').style.display='block'" width="1536" height="1024">
             <div class="art-num" style="display:none">01</div>
           </div>
           <div class="track-info">
@@ -332,9 +361,9 @@
         </div>
 
         <!-- TRACK: Ruach -->
-        <div class="track-card">
+        <div class="track-card sb-reveal">
           <div class="track-art">
-            <img src="/images/ruach-art.png" alt="Ruach" onerror="this.parentElement.querySelector('.art-num').style.display='block'">
+            <img src="/images/ruach-art.png" alt="Ruach" onerror="this.parentElement.querySelector('.art-num').style.display='block'" width="1536" height="1024">
             <div class="art-num" style="display:none">02</div>
           </div>
           <div class="track-info">
@@ -352,9 +381,9 @@
         </div>
 
         <!-- TRACK: Quake -->
-        <div class="track-card">
+        <div class="track-card sb-reveal">
           <div class="track-art">
-            <img src="/images/quake-art.png" alt="Quake" onerror="this.parentElement.querySelector('.art-num').style.display='block'">
+            <img src="/images/quake-art.png" alt="Quake" onerror="this.parentElement.querySelector('.art-num').style.display='block'" width="1536" height="1024">
             <div class="art-num" style="display:none">03</div>
           </div>
           <div class="track-info">
@@ -372,9 +401,9 @@
         </div>
 
         <!-- TRACK: The Architect -->
-        <div class="track-card">
+        <div class="track-card sb-reveal">
           <div class="track-art">
-            <img src="/images/the-architect-art.png" alt="The Architect" onerror="this.parentElement.querySelector('.art-num').style.display='block'">
+            <img src="/images/the-architect-art.png" alt="The Architect" onerror="this.parentElement.querySelector('.art-num').style.display='block'" width="1536" height="1024">
             <div class="art-num" style="display:none">08</div>
           </div>
           <div class="track-info">
@@ -391,7 +420,7 @@
         </div>
 
         <!-- TRACK: Eagle's Wrath (Operation Fire) -->
-        <div class="track-card">
+        <div class="track-card sb-reveal">
           <div class="track-art">
             <img src="https://img.youtube.com/vi/erURAmLBVok/hqdefault.jpg" alt="Eagle's Wrath (Operation Fire)" onerror="this.parentElement.querySelector('.art-num').style.display='block'">
             <div class="art-num" style="display:none">09</div>
@@ -410,9 +439,9 @@
         </div>
 
         <!-- TRACK: The Man -->
-        <div class="track-card">
+        <div class="track-card sb-reveal">
           <div class="track-art">
-            <img src="/images/the-man-art.png" alt="The Man" onerror="this.parentElement.querySelector('.art-num').style.display='block'">
+            <img src="/images/the-man-art.png" alt="The Man" onerror="this.parentElement.querySelector('.art-num').style.display='block'" width="1280" height="1032">
             <div class="art-num" style="display:none">04</div>
           </div>
           <div class="track-info">
@@ -430,9 +459,9 @@
         </div>
 
         <!-- TRACK: Celestial Shield -->
-        <div class="track-card">
+        <div class="track-card sb-reveal">
           <div class="track-art">
-            <img src="/images/celestial-shield-art.jpg" alt="Celestial Shield" onerror="this.parentElement.querySelector('.art-num').style.display='block'">
+            <img src="/images/celestial-shield-art.jpg" alt="Celestial Shield" onerror="this.parentElement.querySelector('.art-num').style.display='block'" width="1024" height="1024">
             <div class="art-num" style="display:none">05</div>
           </div>
           <div class="track-info">
@@ -450,9 +479,9 @@
         </div>
 
         <!-- TRACK: Lanterns -->
-        <div class="track-card">
+        <div class="track-card sb-reveal">
           <div class="track-art">
-            <img src="/images/lanterns-art.jpg" alt="Lanterns" onerror="this.parentElement.querySelector('.art-num').style.display='block'">
+            <img src="/images/lanterns-art.jpg" alt="Lanterns" onerror="this.parentElement.querySelector('.art-num').style.display='block'" width="1440" height="1440">
             <div class="art-num" style="display:none">06</div>
           </div>
           <div class="track-info">
@@ -470,9 +499,9 @@
         </div>
 
         <!-- TRACK: A Wretch Like Me -->
-        <div class="track-card">
+        <div class="track-card sb-reveal">
           <div class="track-art">
-            <img src="/images/wretch-like-me-art.png" alt="A Wretch Like Me" onerror="this.parentElement.querySelector('.art-num').style.display='block'">
+            <img src="/images/wretch-like-me-art.png" alt="A Wretch Like Me" onerror="this.parentElement.querySelector('.art-num').style.display='block'" width="1024" height="1024">
             <div class="art-num" style="display:none">07</div>
           </div>
           <div class="track-info">
@@ -520,7 +549,7 @@
   <footer class="site-footer">
     <div class="footer-main">
       <div class="footer-brand">
-        <a href="/" class="logo"><img src="/images/logo.png" alt="Shieldbearer"></a>
+        <a href="/" class="logo"><img src="/images/logo.png" alt="Shieldbearer" width="1536" height="1024"></a>
         <p>Shieldbearer is Christian metal with Scripture at the center. Christ is named plainly in every release and every conversation.</p>
       </div>
       <div class="footer-col">

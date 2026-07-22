@@ -251,6 +251,56 @@ try {
     });
   }
 
+  /* ── MOBILE MINI-BAR ── */
+  /* Slim fixed bar with the two conversion shortcuts. Injected on
+     every page (CSS shows it under 768px only), dismissible for the
+     session. Styles live in css/style.css under .sb-minibar. */
+  function addMiniBar() {
+    if (document.getElementById('sbMinibar')) return;
+    var dismissed = false;
+    try { dismissed = sessionStorage.getItem('sb_minibar_dismissed') === '1'; } catch (e) {}
+    if (dismissed) return;
+
+    var bar = document.createElement('nav');
+    bar.id = 'sbMinibar';
+    bar.className = 'sb-minibar';
+    bar.setAttribute('aria-label', 'Quick actions');
+
+    var listen = document.createElement('a');
+    listen.href = '/music';
+    listen.className = 'sb-minibar__link sb-minibar__link--listen';
+    listen.textContent = 'Listen';
+
+    var merch = document.createElement('a');
+    merch.href = 'https://shop.shieldbearerusa.com';
+    merch.target = '_blank';
+    merch.rel = 'noopener';
+    merch.className = 'sb-minibar__link';
+    merch.textContent = 'Merch';
+
+    var close = document.createElement('button');
+    close.type = 'button';
+    close.className = 'sb-minibar__close';
+    close.setAttribute('aria-label', 'Dismiss quick actions');
+    close.textContent = '×';
+    close.addEventListener('click', function () {
+      try { sessionStorage.setItem('sb_minibar_dismissed', '1'); } catch (e) {}
+      bar.remove();
+      document.body.classList.remove('has-minibar');
+    });
+
+    bar.appendChild(listen);
+    bar.appendChild(merch);
+    bar.appendChild(close);
+    document.body.appendChild(bar);
+    document.body.classList.add('has-minibar');
+
+    listen.addEventListener('click', function () { track('minibar_listen'); });
+    merch.addEventListener('click', function () { track('minibar_merch'); });
+  }
+
+  addMiniBar();
+
 })();
 
 /* =============================================================
@@ -290,16 +340,33 @@ try {
   });
 
   function refresh() {
+    var viewportH = window.innerHeight || 0;
     var nodes = document.querySelectorAll('.sb-reveal');
     for (var i = 0; i < nodes.length; i++) {
       var el = nodes[i];
       if (observed.has(el)) continue;
       if (el.classList.contains('sb-reveal--in')) continue;
       observed.add(el);
+      /* Anything already inside the initial viewport reveals now,
+         with no transition delay, instead of waiting a frame for the
+         observer callback. Kills the above-the-fold hidden flash. */
+      var rect = el.getBoundingClientRect();
+      if (rect.top < viewportH && rect.bottom > 0) {
+        el.style.setProperty('--sb-delay', '0ms');
+        el.classList.add('sb-reveal--in');
+        continue;
+      }
       observer.observe(el);
     }
   }
   window.sbRevealRefresh = refresh;
+
+  /* Failsafe: 2.5s after load, force-show anything still hidden.
+     Covers observer starvation, injected nodes nobody refreshed,
+     and slow devices. Reveal-once semantics are preserved. */
+  setTimeout(function () {
+    try { document.documentElement.classList.add('sb-reveal-failsafe'); } catch (e) {}
+  }, 2500);
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', refresh);

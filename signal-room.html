@@ -61,10 +61,18 @@
     body {
       min-height: 100vh;
       padding: 0;
-      opacity: 0;
-      transition: opacity 1.2s ease;
+      /* Page-entry fade as a one-shot animation, never a JS-gated
+         opacity. An animation always completes, so no-JS visitors
+         and slow loads can never be stuck on an invisible page. */
+      animation: signal-page-in 400ms ease-out both;
     }
-    body.is-loaded { opacity: 1; }
+    @keyframes signal-page-in {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      body { animation: none; }
+    }
     .wrap { max-width: 1120px; margin: 0 auto; padding: 32px 20px 72px; position: relative; z-index: 2; }
     .signal-room-hero .bar { background: #e74c3c; }
     .signal-desk-scene {
@@ -956,12 +964,6 @@
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          document.body.classList.add("is-loaded");
-        });
-      });
-
       const revealables = [];
 
       revealables.forEach((selector, index) => {
