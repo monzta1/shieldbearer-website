@@ -40,10 +40,13 @@ echo "Verifying live site: $BASE"
 echo "========================================="
 
 # Clean URLs (the canonical paths post-cleanup).
+# artist-freedom, no-rulebook, open-letter removed 2026-07-21: archived
+# to unpublished/ in v2.27.2 per ARCHIVE-NOTES.md; this list was never
+# updated, so the script failed on every run since.
 clean_paths=(
-  "" about ai-and-creativity artist-freedom contact creed epk faq
+  "" about ai-and-creativity contact creed epk faq
   for-ai-artists gatekeeping god-uses-tools gospel interviews manifesto
-  music no-rulebook open-letter process sentinelbot signal-room
+  music process sentinelbot signal-room
   song-meanings story timeline videos
 )
 for path in "${clean_paths[@]}"; do

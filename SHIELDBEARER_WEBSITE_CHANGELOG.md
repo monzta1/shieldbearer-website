@@ -7,8 +7,11 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
-## v2.29.0 - July 2026 (branch: redesign-2026, NOT yet merged)
-- **Visual and motion overhaul.** Sitewide pass on typography contrast, motion, mobile conversion, and load performance. Content, URLs, palette, and brand identity unchanged. Work lives on the `redesign-2026` branch; production tagged `pre-redesign-2026` before branching. Merging is the operator's call.
+## v2.29.1 - July 2026
+- `scripts/verify-live.sh`: dropped artist-freedom, no-rulebook, open-letter from the clean-URL check list. The three pages were archived to `unpublished/` back in v2.27.2 but this list was never updated, so live verification has failed on every run since. Same class of rot as the CLEAN_PAGES fix in v2.29.0. No site content changed.
+
+## v2.29.0 - July 2026 (merged to production 2026-07-21)
+- **Visual and motion overhaul.** Sitewide pass on typography contrast, motion, mobile conversion, and load performance. Content, URLs, palette, and brand identity unchanged. Production tagged `pre-redesign-2026` before branching; merged and deployed 2026-07-21 on operator instruction.
 - Repo hygiene (pre-existing failures): `scripts/test.sh` CLEAN_PAGES still listed the three pages archived to `unpublished/` (open-letter, no-rulebook, artist-freedom); `song-meanings.html` had drifted behind `song-meanings/index.html` (legacy visitors still saw lyrics the clean form deliberately hides). Both repaired; suite back to green.
 - Reveal system: 400ms/16px (was 700ms/28px), directional and scale variants, `.sb-stagger` 50ms grid steps, elements already in the initial viewport reveal instantly, and a 2.5s failsafe force-shows anything still hidden.
 - Signal Room: body no longer boots at `opacity:0` waiting on a JS class (no-JS visitors used to get a permanently invisible page). Page-entry fade is now a one-shot CSS animation.
