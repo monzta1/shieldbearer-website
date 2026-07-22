@@ -1475,6 +1475,110 @@ section { padding: var(--sp-section) 0; position: relative; }
   50%       { opacity: 1;  transform: scaleY(1.3); }
 }
 
+/* ── MOTION SYSTEM ── */
+
+/* Page entry: quick one-shot fade. Animation, never a gated opacity,
+   so content can never be stranded hidden. */
+@keyframes page-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+body { animation: page-in 200ms ease-out both; }
+
+/* Crimson sweep across primary buttons. A skewed light band rides
+   over the button face on hover. Transform-only. */
+.btn { position: relative; overflow: hidden; }
+.btn--red::after,
+.form-submit::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, transparent 32%, rgba(255,255,255,.24) 50%, transparent 68%);
+  transform: translateX(-120%) skewX(-14deg);
+  transition: transform .55s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+.form-submit { position: relative; overflow: hidden; }
+.btn--red:hover::after,
+.form-submit:hover::after { transform: translateX(120%) skewX(-14deg); }
+
+/* Nav underline slide. Excludes the merch CTA (it is a button). */
+.nav-links li:not(.nav-merch) > a { position: relative; }
+.nav-links li:not(.nav-merch) > a::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  bottom: -7px;
+  height: 1px;
+  background: var(--red-bright);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.nav-links li:not(.nav-merch) > a:hover::after,
+.nav-links li:not(.nav-merch) > a.active::after { transform: scaleX(1); }
+
+/* Card hover: existing lift plus a crimson edge glow. */
+.press-card:hover {
+  box-shadow:
+    0 16px 34px rgba(0,0,0,.42),
+    0 0 0 1px rgba(231,76,60,.22),
+    0 0 30px rgba(231,76,60,.1);
+}
+
+/* Section-rule draw-in. Bars inside a scroll-reveal block draw from
+   their origin once the block reveals. Static (no-JS, reduced-motion)
+   renders the bar fully drawn. */
+html.js-reveal-enabled .sb-reveal .bar {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .5s cubic-bezier(0.4, 0, 0.2, 1) .12s;
+}
+html.js-reveal-enabled .sb-reveal .bar--center { transform-origin: center; }
+html.js-reveal-enabled .sb-reveal.sb-reveal--in .bar,
+html.js-reveal-enabled.sb-reveal-failsafe .sb-reveal .bar { transform: scaleX(1); }
+
+/* Mobile menu: staggered link cascade on open. Hidden state exists
+   only while .open is animating, so a closed or no-JS menu is never
+   left transparent. */
+@keyframes mob-link-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
+}
+.mob-menu.open a {
+  animation: mob-link-in .32s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+.mob-menu.open a:nth-child(2)  { animation-delay: 30ms; }
+.mob-menu.open a:nth-child(3)  { animation-delay: 60ms; }
+.mob-menu.open a:nth-child(4)  { animation-delay: 90ms; }
+.mob-menu.open a:nth-child(5)  { animation-delay: 120ms; }
+.mob-menu.open a:nth-child(6)  { animation-delay: 150ms; }
+.mob-menu.open a:nth-child(7)  { animation-delay: 180ms; }
+.mob-menu.open a:nth-child(8)  { animation-delay: 210ms; }
+.mob-menu.open a:nth-child(9)  { animation-delay: 240ms; }
+.mob-menu.open a:nth-child(10) { animation-delay: 270ms; }
+.mob-menu.open a:nth-child(n+11) { animation-delay: 300ms; }
+
+/* Keyboard focus: unmissable, on-brand. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--red-bright);
+  outline-offset: 2px;
+}
+
+/* Reduced motion: kill everything, sitewide, last word. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+  html { scroll-behavior: auto; }
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 1200px) {
   :root { --pad: 1.8rem; --nav-h: 62px; }
