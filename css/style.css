@@ -1559,6 +1559,58 @@ html.js-reveal-enabled.sb-reveal-failsafe .sb-reveal .bar { transform: scaleX(1)
 .mob-menu.open a:nth-child(10) { animation-delay: 270ms; }
 .mob-menu.open a:nth-child(n+11) { animation-delay: 300ms; }
 
+/* ── MOBILE MINI-BAR ── */
+/* Injected by js/main.js. Hidden at desktop widths; a slim two-shortcut
+   dock on phones. Static by design (no entrance animation). */
+.sb-minibar {
+  display: none;
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 998;
+  background: rgba(4,4,4,.97);
+  border-top: 1px solid rgba(192,57,43,.4);
+  padding: 0 0 env(safe-area-inset-bottom);
+  align-items: stretch;
+}
+.sb-minibar__link {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  font-family: var(--font-head);
+  font-size: .74rem;
+  font-weight: 600;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: rgba(240,235,224,.88);
+}
+.sb-minibar__link--listen {
+  background: var(--red);
+  color: #fff;
+}
+.sb-minibar__close {
+  width: 46px;
+  min-height: 52px;
+  background: transparent;
+  border: none;
+  border-left: 1px solid rgba(168,162,154,.14);
+  color: rgba(168,162,154,.6);
+  font-size: 1.25rem;
+  line-height: 1;
+}
+@media (max-width: 767px) {
+  .sb-minibar { display: flex; }
+  /* Lift the SentinelBot presence above the bar. */
+  body.has-minibar #sentinelbot-presence {
+    bottom: calc(64px + env(safe-area-inset-bottom));
+  }
+  /* Keep page endings reachable above the fixed bar. */
+  body.has-minibar .site-footer {
+    padding-bottom: calc(56px + env(safe-area-inset-bottom));
+  }
+}
+
 /* Keyboard focus: unmissable, on-brand. */
 a:focus-visible,
 button:focus-visible,

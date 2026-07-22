@@ -575,6 +575,75 @@ async function flushMicrotasks() {
 })();
 
 // ----------------------------------------------------------------------
+// main.js: mobile mini-bar. Injected on every page, dismiss persists
+// for the session, dismissed state suppresses re-injection.
+// ----------------------------------------------------------------------
+
+(async () => {
+  const html = `<!doctype html><html><body>
+    <div class="mob-menu" id="mobMenu"></div>
+    <footer class="site-footer"></footer>
+  </body></html>`;
+  const dom = new JSDOM(html, {
+    url: "https://shieldbearerusa.com/creed/",
+    runScripts: "outside-only"
+  });
+  dom.window.window = dom.window;
+  dom.window._sentinelOwnerDom = dom;
+  dom.window.sbTrack = function () {};
+  runScriptInWindow(dom.window, "js/main.js");
+  await flushMicrotasks();
+
+  const doc = dom.window.document;
+  const bar = doc.getElementById("sbMinibar");
+  assert(bar, "main.js: mini-bar injected");
+  if (bar) {
+    assert(doc.body.classList.contains("has-minibar"), "main.js: body carries has-minibar class");
+    const listen = bar.querySelector(".sb-minibar__link--listen");
+    assert(listen, "main.js: mini-bar has Listen shortcut");
+    if (listen) {
+      assertEqual(listen.getAttribute("href"), "/music", "main.js: Listen href is absolute /music");
+    }
+    const merch = Array.from(bar.querySelectorAll("a")).find((a) => /merch/i.test(a.textContent));
+    assert(merch, "main.js: mini-bar has Merch shortcut");
+    if (merch) {
+      assert(/noopener/.test(merch.getAttribute("rel") || ""), "main.js: Merch link carries rel=noopener");
+    }
+
+    // Dismiss removes the bar and persists for the session.
+    const close = bar.querySelector(".sb-minibar__close");
+    assert(close, "main.js: mini-bar has dismiss button");
+    if (close) {
+      close.click();
+      await flushMicrotasks();
+      assert(!doc.getElementById("sbMinibar"), "main.js: dismiss removes the mini-bar");
+      assert(!doc.body.classList.contains("has-minibar"), "main.js: dismiss clears has-minibar class");
+      assertEqual(
+        dom.window.sessionStorage.getItem("sb_minibar_dismissed"),
+        "1",
+        "main.js: dismiss persists in sessionStorage"
+      );
+    }
+  }
+
+  // A page load in the same session must not re-inject.
+  const dom2 = new JSDOM(html, {
+    url: "https://shieldbearerusa.com/creed/",
+    runScripts: "outside-only"
+  });
+  dom2.window.window = dom2.window;
+  dom2.window._sentinelOwnerDom = dom2;
+  dom2.window.sbTrack = function () {};
+  dom2.window.sessionStorage.setItem("sb_minibar_dismissed", "1");
+  runScriptInWindow(dom2.window, "js/main.js");
+  await flushMicrotasks();
+  assert(
+    !dom2.window.document.getElementById("sbMinibar"),
+    "main.js: dismissed session does not re-inject the mini-bar"
+  );
+})();
+
+// ----------------------------------------------------------------------
 // watch-posts.js
 // ----------------------------------------------------------------------
 
