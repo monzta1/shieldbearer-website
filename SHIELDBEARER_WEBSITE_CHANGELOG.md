@@ -7,6 +7,19 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.29.0 - July 2026 (branch: redesign-2026, NOT yet merged)
+- **Visual and motion overhaul.** Sitewide pass on typography contrast, motion, mobile conversion, and load performance. Content, URLs, palette, and brand identity unchanged. Work lives on the `redesign-2026` branch; production tagged `pre-redesign-2026` before branching. Merging is the operator's call.
+- Repo hygiene (pre-existing failures): `scripts/test.sh` CLEAN_PAGES still listed the three pages archived to `unpublished/` (open-letter, no-rulebook, artist-freedom); `song-meanings.html` had drifted behind `song-meanings/index.html` (legacy visitors still saw lyrics the clean form deliberately hides). Both repaired; suite back to green.
+- Reveal system: 400ms/16px (was 700ms/28px), directional and scale variants, `.sb-stagger` 50ms grid steps, elements already in the initial viewport reveal instantly, and a 2.5s failsafe force-shows anything still hidden.
+- Signal Room: body no longer boots at `opacity:0` waiting on a JS class (no-JS visitors used to get a permanently invisible page). Page-entry fade is now a one-shot CSS animation.
+- Typography: new `--text-body` (#c9c5be) prose tone meets WCAG AA on the near-black ground; section padding goes fluid via clamp.
+- Motion system: 200ms page-entry fade, crimson sweep on primary buttons, nav underline slide, press-card edge glow, section rule bars draw in on reveal, mobile menu links cascade, focus-visible outlines, and a global `prefers-reduced-motion` kill switch.
+- Homepage: canvas ember layer behind the hero art (`js/hero-embers.js`; injected by JS only, skipped under reduced-motion and Save-Data, paused when hidden or offscreen). Listen Now reads visibly primary. Signal Room countdown gets tabular numerals and a live pulse dot.
+- The Armory: release cards get a drawn crimson top accent, edge glow, slow art zoom, per-card stagger; scripture reference reads as a tagged rule; platform pills are uniform with 44px targets on coarse pointers.
+- Mobile mini-bar: slim Listen + Merch dock under 768px on every page, dismissible for the session, SentinelBot presence and footer lift above it. Six new jsdom assertions cover it.
+- Performance: `js/lite-embed.js` swaps YouTube iframes for thumbnail facades (real player injects on tap; no-JS keeps the iframes; the 12-embed videos page now loads zero players up front). Responsive hero preloads on the homepage. Remaining eager media iframes lazified. 56 images across 8 pages get intrinsic width/height against CLS.
+- Deferred with reasons: WebP/AVIF conversion (no encoder on this machine; `tools/encode-hero-images.sh` is the documented path once `brew install webp libavif` happens), font self-hosting (Google Fonts already ships `display=swap`; self-hosting would touch every page head for marginal gain).
+
 ## v2.28.2 - June 2026
 - `/admin/stats` upload: raised the per-upload screenshot cap from 4 to 5. The country list (DistroKid "Streams by Country") is sometimes too long to fit in one screenshot, so the operator can now upload several country screens and they get combined into one record. Updated the upload helper copy to say so.
 - Paired backend commit in `sentinelbot-lambda`: the screenshot parser now CONCATENATES the country rows across every DistroKid country screen in a batch instead of keeping only the single longest list. Dedupe is by ISO code (or lowercased country name when the country is unmapped); when the same country appears in two screenshots at a scroll overlap, the higher stream count wins (counters only increment). The POST guard now rejects more than 5 images (was 4).
