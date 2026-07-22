@@ -10,6 +10,10 @@
   --red-bright: #e74c3c;
   --white:      #f0ebe0;
   --off-white:  #a8a29a;
+  /* Body-copy tone. Brighter than --off-white so prose passes WCAG AA
+     on the near-black background. --off-white and --muted stay for
+     decorative labels, metadata, and chrome only. */
+  --text-body:  #c9c5be;
   --muted:      #525252;
   --black:      #040404;
   --black-2:    #080808;
@@ -30,7 +34,7 @@
   --sp-md:      1.5rem;   /* 24px: component internal padding */
   --sp-lg:      2rem;     /* 32px: between components */
   --sp-xl:      3rem;     /* 48px: generous layout breathing room */
-  --sp-section: 5rem;     /* 80px: vertical section padding */
+  --sp-section: clamp(4.2rem, 8vw, 6.5rem); /* fluid vertical section padding */
 }
 
 /* ── RESET ── */
@@ -38,7 +42,7 @@
 html { scroll-behavior: smooth; }
 body {
   background: var(--black);
-  color: var(--off-white);
+  color: var(--text-body);
   font-family: var(--font-body);
   font-weight: 400;
   font-size: 17px;
@@ -103,7 +107,7 @@ button { cursor: pointer; font-family: inherit; }
 .section-body {
   font-size: 1rem;
   line-height: 1.9;
-  color: rgba(168,162,154,.74);
+  color: rgba(201,197,190,.9);
 }
 
 /* ── UTILITY ── */
@@ -444,7 +448,7 @@ button { cursor: pointer; font-family: inherit; }
 .page-hero .display-title { margin-bottom: .4rem; }
 .page-hero p {
   font-size: 1.02rem;
-  color: rgba(168,162,154,.68);
+  color: rgba(201,197,190,.86);
   max-width: 700px;
   line-height: 1.85;
 }
@@ -570,7 +574,7 @@ section { padding: var(--sp-section) 0; position: relative; }
 .scripture-block p {
   font-size: .88rem;
   line-height: 1.75;
-  color: rgba(168,162,154,.7);
+  color: rgba(201,197,190,.82);
   font-style: italic;
 }
 
@@ -625,7 +629,7 @@ section { padding: var(--sp-section) 0; position: relative; }
 .press-card .excerpt {
   font-size: 1rem;
   line-height: 1.8;
-  color: rgba(168,162,154,.5);
+  color: rgba(201,197,190,.76);
   margin-bottom: .9rem;
 }
 .press-card .tags { display: flex; gap: .4rem; flex-wrap: wrap; }
@@ -687,7 +691,7 @@ section { padding: var(--sp-section) 0; position: relative; }
 .meaning-card .mc-body {
   font-size: 1rem;
   line-height: 1.9;
-  color: rgba(168,162,154,.72);
+  color: rgba(201,197,190,.88);
   max-height: 0;
   overflow: hidden;
   transition: max-height .5s ease, opacity .4s;
@@ -804,7 +808,7 @@ section { padding: var(--sp-section) 0; position: relative; }
 .footer-brand p {
   font-size: 1rem;
   line-height: 1.85;
-  color: rgba(168,162,154,.45);
+  color: rgba(168,162,154,.62);
   max-width: 280px;
 }
 .footer-col h4 {
@@ -1016,7 +1020,7 @@ section { padding: var(--sp-section) 0; position: relative; }
 .world-copy {
   font-size: .9rem;
   line-height: 1.75;
-  color: rgba(168,162,154,.72);
+  color: rgba(201,197,190,.84);
   margin-bottom: 1.2rem;
 }
 .world-link {
