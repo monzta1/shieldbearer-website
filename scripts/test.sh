@@ -66,7 +66,9 @@ done
 # internal hrefs use absolute /paths. Each one should map to a
 # folder/index.html on disk so GitHub Pages serves it without the
 # .html suffix. Catches typos and missing folders.
-CLEAN_PAGES="sentinelbot signal-room timeline creed gospel faq about story process manifesto music contact epk song-meanings for-ai-artists gatekeeping open-letter no-rulebook ai-and-creativity god-uses-tools artist-freedom interviews videos are-you-an-ai-band"
+# open-letter, no-rulebook, artist-freedom removed 2026-07-21: archived
+# to unpublished/ per ARCHIVE-NOTES.md but this list was never updated.
+CLEAN_PAGES="sentinelbot signal-room timeline creed gospel faq about story process manifesto music contact epk song-meanings for-ai-artists gatekeeping ai-and-creativity god-uses-tools interviews videos are-you-an-ai-band"
 for cp in $CLEAN_PAGES; do
   check "Clean URL folder exists: /$cp" "$([ -f "$cp/index.html" ] && echo true || echo false)"
   check "Legacy .html still exists: $cp.html" "$([ -f "$cp.html" ] && echo true || echo false)"

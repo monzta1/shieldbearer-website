@@ -611,6 +611,15 @@
       font-style: italic;
       margin: 0;
     }
+    /* Public dossier hides the lyrics block. Lyrics data still lives in
+       site.json + DynamoDB for downstream tools (chord generator, etc.). */
+    .song-dossier__lyrics { display: none; }
+    .song-dossier-fallback__lyrics { display: none; }
+    /* The static fallback section labels its lyrics block with an
+       <h3>Lyrics</h3> right before the <pre>. Hide that header too so we
+       don't leave a stray title. */
+    .song-dossier-fallback__item h3 + .song-dossier-fallback__lyrics { display: none; }
+    .song-dossier-fallback__item h3:has(+ .song-dossier-fallback__lyrics) { display: none; }
   </style>
 </head>
 <body data-scripture-links>
@@ -2332,11 +2341,15 @@ Sentinels upon the wall`,
               '<span class="song-dossier__scripture-ref">' + escapeHtml(song.scripture.ref) + '</span>' +
               '<p class="song-dossier__scripture-quote">' + escapeHtml(song.scripture.quote) + '</p>' +
             '</section>' : '') +
-            (lyricsText ? '<section class="song-dossier__block song-dossier__lyrics">' +
-              '<h3 class="song-dossier__block-title">Lyrics</h3>' +
-              '<pre class="song-dossier__lyrics-text">' + lyricsText + '</pre>' +
-            '</section>' : '') +
+            // Lyrics intentionally not rendered here. The data lives in
+            // site.json and DynamoDB for downstream tools (chord generator,
+            // future utilities) but the public dossier just links to
+            // Spotify/YouTube where listeners can read along with the audio.
             '<div class="song-dossier__actions">' + actionLinks.join('') + '</div>' +
+            '<section class="song-dossier__block song-dossier__related" aria-label="Related reading">' +
+              '<h3 class="song-dossier__block-title">Why we wrote this</h3>' +
+              '<p>Every song sits inside a doctrine and a mission. <a href="/creed">Read the creed</a> for what we believe. <a href="/manifesto">Read the manifesto</a> for why we sing it loud.</p>' +
+            '</section>' +
             '<div class="song-dossier__footer-nav">' +
               (prevSong ? '<a href="#' + escapeHtml(prevSong.id) + '">← Prev: ' + escapeHtml(prevSong.title) + '</a>' : '<span>← Start of Archive</span>') +
               (nextSong ? '<a href="#' + escapeHtml(nextSong.id) + '">Next: ' + escapeHtml(nextSong.title) + ' →</a>' : '<span>End of Archive →</span>') +
