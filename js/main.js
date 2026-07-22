@@ -290,16 +290,33 @@ try {
   });
 
   function refresh() {
+    var viewportH = window.innerHeight || 0;
     var nodes = document.querySelectorAll('.sb-reveal');
     for (var i = 0; i < nodes.length; i++) {
       var el = nodes[i];
       if (observed.has(el)) continue;
       if (el.classList.contains('sb-reveal--in')) continue;
       observed.add(el);
+      /* Anything already inside the initial viewport reveals now,
+         with no transition delay, instead of waiting a frame for the
+         observer callback. Kills the above-the-fold hidden flash. */
+      var rect = el.getBoundingClientRect();
+      if (rect.top < viewportH && rect.bottom > 0) {
+        el.style.setProperty('--sb-delay', '0ms');
+        el.classList.add('sb-reveal--in');
+        continue;
+      }
       observer.observe(el);
     }
   }
   window.sbRevealRefresh = refresh;
+
+  /* Failsafe: 2.5s after load, force-show anything still hidden.
+     Covers observer starvation, injected nodes nobody refreshed,
+     and slow devices. Reveal-once semantics are preserved. */
+  setTimeout(function () {
+    try { document.documentElement.classList.add('sb-reveal-failsafe'); } catch (e) {}
+  }, 2500);
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', refresh);

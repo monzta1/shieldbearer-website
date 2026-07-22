@@ -1597,9 +1597,9 @@ a.scripture-link:focus-visible {
    ===================================================================== */
 html.js-reveal-enabled .sb-reveal {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
-              transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(16px);
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   transition-delay: var(--sb-delay, 0ms);
   will-change: opacity, transform;
 }
@@ -1607,9 +1607,35 @@ html.js-reveal-enabled .sb-reveal.sb-reveal--in {
   opacity: 1;
   transform: none;
 }
+/* Failsafe: if reveals have not fired within 2.5s of load (slow
+   device, observer starvation, injected content missed), everything
+   unhides. Class added by the safety timer in js/main.js. */
+html.js-reveal-enabled.sb-reveal-failsafe .sb-reveal {
+  opacity: 1;
+  transform: none;
+}
+/* Directional + scale variants. Same timing, different entry. */
+html.js-reveal-enabled .sb-reveal--left  { transform: translateX(-16px); }
+html.js-reveal-enabled .sb-reveal--right { transform: translateX(16px); }
+html.js-reveal-enabled .sb-reveal--scale { transform: scale(.97); }
+html.js-reveal-enabled .sb-reveal--left.sb-reveal--in,
+html.js-reveal-enabled .sb-reveal--right.sb-reveal--in,
+html.js-reveal-enabled .sb-reveal--scale.sb-reveal--in { transform: none; }
+/* Grid-children stagger: any container marked sb-stagger delays its
+   direct .sb-reveal children in 50ms steps (first 8, then flat). */
+.sb-stagger > .sb-reveal:nth-child(2) { --sb-delay: 50ms; }
+.sb-stagger > .sb-reveal:nth-child(3) { --sb-delay: 100ms; }
+.sb-stagger > .sb-reveal:nth-child(4) { --sb-delay: 150ms; }
+.sb-stagger > .sb-reveal:nth-child(5) { --sb-delay: 200ms; }
+.sb-stagger > .sb-reveal:nth-child(6) { --sb-delay: 250ms; }
+.sb-stagger > .sb-reveal:nth-child(7) { --sb-delay: 300ms; }
+.sb-stagger > .sb-reveal:nth-child(n+8) { --sb-delay: 350ms; }
 @media (prefers-reduced-motion: reduce) {
   html.js-reveal-enabled .sb-reveal,
-  html.js-reveal-enabled .sb-reveal.sb-reveal--in {
+  html.js-reveal-enabled .sb-reveal.sb-reveal--in,
+  html.js-reveal-enabled .sb-reveal--left,
+  html.js-reveal-enabled .sb-reveal--right,
+  html.js-reveal-enabled .sb-reveal--scale {
     opacity: 1;
     transform: none;
     transition: none;
