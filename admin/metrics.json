@@ -1,85 +1,85 @@
 {
-  "generatedAt": "2026-07-22T08:00:15.037Z",
+  "generatedAt": "2026-07-23T08:00:15.150Z",
   "period": {
     "label": "July 2026 so far",
     "start": "2026-07-01",
     "end": "2026-07-31"
   },
   "headline": {
-    "sessions": 39,
-    "deltaPct": -61,
+    "sessions": 40,
+    "deltaPct": -60,
     "comparison": "vs June 2026"
   },
   "channels": [
     {
       "name": "Organic Social",
       "sessions": 18,
-      "share": 41.9
+      "share": 43.9
     },
     {
       "name": "Direct",
       "sessions": 12,
-      "share": 27.9
+      "share": 29.3
     },
     {
       "name": "Referral",
-      "sessions": 8,
-      "share": 18.6
+      "sessions": 9,
+      "share": 22
     }
   ],
   "geography": [
     {
       "name": "United States",
-      "sessions": 37,
-      "share": 94.9
+      "sessions": 38,
+      "share": 95
     },
     {
       "name": "France",
       "sessions": 1,
-      "share": 2.6
+      "share": 2.5
     },
     {
       "name": "India",
       "sessions": 1,
-      "share": 2.6
+      "share": 2.5
     }
   ],
   "cities": [
     {
+      "name": "(not set), Virginia",
+      "sessions": 9,
+      "share": 22.5
+    },
+    {
       "name": "Panama City Beach, Florida",
       "sessions": 7,
-      "share": 17.9
-    },
-    {
-      "name": "Unknown, Virginia",
-      "sessions": 5,
-      "share": 12.8
-    },
-    {
-      "name": "(not set), Virginia",
-      "sessions": 4,
-      "share": 10.3
+      "share": 17.5
     },
     {
       "name": "Prineville, Oregon",
       "sessions": 4,
-      "share": 10.3
+      "share": 10
     },
     {
       "name": "(not set)",
       "sessions": 3,
-      "share": 7.7
+      "share": 7.5
     },
     {
       "name": "Fort Worth, Texas",
       "sessions": 2,
-      "share": 5.1
+      "share": 5
+    },
+    {
+      "name": "South Elgin, Illinois",
+      "sessions": 2,
+      "share": 5
     }
   ],
   "events": [
     {
       "name": "scroll_depth",
-      "count": 73,
+      "count": 70,
       "engagedShare": null
     },
     {
