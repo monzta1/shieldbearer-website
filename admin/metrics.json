@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T08:00:15.150Z",
+  "generatedAt": "2026-07-24T08:00:15.006Z",
   "period": {
     "label": "July 2026 so far",
     "start": "2026-07-01",
@@ -14,17 +14,17 @@
     {
       "name": "Organic Social",
       "sessions": 18,
-      "share": 43.9
+      "share": 45
     },
     {
       "name": "Direct",
       "sessions": 12,
-      "share": 29.3
+      "share": 30
     },
     {
       "name": "Referral",
       "sessions": 9,
-      "share": 22
+      "share": 22.5
     }
   ],
   "geography": [
@@ -47,8 +47,8 @@
   "cities": [
     {
       "name": "(not set), Virginia",
-      "sessions": 9,
-      "share": 22.5
+      "sessions": 10,
+      "share": 25
     },
     {
       "name": "Panama City Beach, Florida",
