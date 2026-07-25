@@ -4,10 +4,6 @@
   "window": "last-12-months",
   "songs": [
     {
-      "title": "Silent As Night",
-      "streams": 7226
-    },
-    {
       "title": "Quake",
       "streams": 2901
     },
@@ -44,7 +40,7 @@
       "streams": 180
     }
   ],
-  "track_count": 10,
-  "total_spotify_streams": 20842,
+  "track_count": 9,
+  "total_spotify_streams": 13616,
   "last_published_at": "2026-06-30T17:04:18.558Z"
 }

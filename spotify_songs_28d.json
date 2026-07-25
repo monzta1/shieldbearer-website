@@ -16,10 +16,6 @@
       "streams": 1599
     },
     {
-      "title": "Silent As Night",
-      "streams": 1531
-    },
-    {
       "title": "The Architect",
       "streams": 1251
     },
@@ -44,7 +40,7 @@
       "streams": 23
     }
   ],
-  "track_count": 10,
-  "total_spotify_streams_28d": 10173,
+  "track_count": 9,
+  "total_spotify_streams_28d": 8642,
   "last_published_at": "2026-06-30T17:04:18.558Z"
 }
