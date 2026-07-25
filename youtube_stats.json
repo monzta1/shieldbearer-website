@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-25T17:24:01.700Z",
+  "generated_at": "2026-07-25T21:35:14.484Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -29,23 +29,30 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 38,
-      "watchMinutes": 109,
-      "avgViewDurationSec": 173
+      "views": 51,
+      "watchMinutes": 162,
+      "avgViewDurationSec": 191
     },
     "last_30": {
-      "views": 311,
-      "watchMinutes": 746,
-      "avgViewDurationSec": 144
+      "views": 324,
+      "watchMinutes": 799,
+      "avgViewDurationSec": 148
     }
   },
-  "last_48h_countries": [],
+  "last_48h_countries": [
+    {
+      "code": "US",
+      "name": "United States",
+      "flag": "🇺🇸",
+      "views": 10
+    }
+  ],
   "last_30d_countries": [
     {
       "code": "US",
       "name": "United States",
       "flag": "🇺🇸",
-      "views": 37
+      "views": 47
     },
     {
       "code": "IN",
@@ -77,7 +84,7 @@
       "videoId": "vBGEIMXs6h0",
       "title": "Celestial Shield (Lyric Video) – Shieldbearer | Christian Metal | Israel, Prophecy & Warfare",
       "thumbnail": "https://i.ytimg.com/vi/vBGEIMXs6h0/mqdefault.jpg",
-      "views": 12031,
+      "views": 12032,
       "likes": 536,
       "publishedAt": "2025-07-15T02:04:57Z",
       "url": "https://www.youtube.com/watch?v=vBGEIMXs6h0"
@@ -119,6 +126,14 @@
       "views": 35
     },
     {
+      "videoId": "tH2GpPLY3so",
+      "title": "Shieldbearer – QUAKE (Christian Metal | Official Audio)",
+      "thumbnail": "https://i.ytimg.com/vi/tH2GpPLY3so/mqdefault.jpg",
+      "publishedAt": "2025-08-14T00:17:51Z",
+      "url": "https://www.youtube.com/watch?v=tH2GpPLY3so",
+      "views": 28
+    },
+    {
       "videoId": "0jPL3Mg88ZQ",
       "title": "SHIELDBEARER - SENTINELS | Official Video",
       "thumbnail": "https://i.ytimg.com/vi/0jPL3Mg88ZQ/mqdefault.jpg",
@@ -127,20 +142,12 @@
       "views": 23
     },
     {
-      "videoId": "tH2GpPLY3so",
-      "title": "Shieldbearer – QUAKE (Christian Metal | Official Audio)",
-      "thumbnail": "https://i.ytimg.com/vi/tH2GpPLY3so/mqdefault.jpg",
-      "publishedAt": "2025-08-14T00:17:51Z",
-      "url": "https://www.youtube.com/watch?v=tH2GpPLY3so",
-      "views": 23
-    },
-    {
       "videoId": "W-1_SdI-jxo",
       "title": "Shieldbearer – Amazing Grace (Lit by Fire – Alt Mix) [Official Audio | A Wretch Like Me Album]",
       "thumbnail": "https://i.ytimg.com/vi/W-1_SdI-jxo/mqdefault.jpg",
       "publishedAt": "2025-05-14T02:23:48Z",
       "url": "https://www.youtube.com/watch?v=W-1_SdI-jxo",
-      "views": 14
+      "views": 15
     }
   ],
   "daily_views": [
@@ -583,13 +590,18 @@
       "date": "2026-07-22",
       "views": 9,
       "minutes": 28
+    },
+    {
+      "date": "2026-07-23",
+      "views": 13,
+      "minutes": 53
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 113
+      "views": 126
     },
     {
       "source": "SUBSCRIBER",
