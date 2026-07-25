@@ -1,46 +1,46 @@
 {
-  "generated_at": "2026-06-30T17:04:20.850Z",
+  "generated_at": "2026-07-25T16:30:16.384Z",
   "source": "Spotify for Artists",
   "window": "28d",
   "songs": [
     {
       "title": "Quake",
-      "streams": 1823
+      "streams": 1112
     },
     {
       "title": "1000 Suns",
-      "streams": 1760
+      "streams": 1083
     },
     {
       "title": "Unaliving the Giant",
-      "streams": 1599
+      "streams": 857
     },
     {
       "title": "The Architect",
-      "streams": 1251
+      "streams": 675
     },
     {
       "title": "Ruach",
-      "streams": 1135
-    },
-    {
-      "title": "The Man",
-      "streams": 568
+      "streams": 617
     },
     {
       "title": "Sentinels",
-      "streams": 460
+      "streams": 237
+    },
+    {
+      "title": "The Man",
+      "streams": 237
     },
     {
       "title": "Let My People Go",
-      "streams": 23
+      "streams": 19
     },
     {
       "title": "Still Be My Vision",
-      "streams": 23
+      "streams": 16
     }
   ],
   "track_count": 9,
-  "total_spotify_streams_28d": 8642,
-  "last_published_at": "2026-06-30T17:04:18.558Z"
+  "total_spotify_streams_28d": 4853,
+  "last_published_at": "2026-07-25T16:30:15.281Z"
 }
