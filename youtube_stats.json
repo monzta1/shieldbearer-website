@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-30T21:35:14.584Z",
+  "generated_at": "2026-07-25T17:24:01.700Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -8,35 +8,35 @@
     "url": "https://www.youtube.com/channel/UCgL4mzUUcYtqxx-0IdjoqIw",
     "published_at": "2025-04-14T03:40:06.969878Z",
     "thumbnail": "https://yt3.ggpht.com/IpsLcp29bRpbou_LxaA2FazbHG9QfOHy_bcBiI8vkg_EBDaje4f78m2f1t4vsaB_gk5wqLLz=s800-c-k-c0x00ffffff-no-rj",
-    "views_lifetime": 239841,
+    "views_lifetime": 240983,
     "subscribers": 12300,
     "subscribers_hidden": false,
-    "video_count": 96
+    "video_count": 97
   },
   "windows": {
     "last_48h": {
-      "start": "2026-05-26",
-      "end": "2026-05-28"
+      "start": "2026-07-21",
+      "end": "2026-07-23"
     },
     "last_7": {
-      "start": "2026-05-23",
-      "end": "2026-05-30"
+      "start": "2026-07-18",
+      "end": "2026-07-25"
     },
     "last_30": {
-      "start": "2026-04-30",
-      "end": "2026-05-30"
+      "start": "2026-06-25",
+      "end": "2026-07-25"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 59,
+      "views": 38,
       "watchMinutes": 109,
-      "avgViewDurationSec": 112
+      "avgViewDurationSec": 173
     },
     "last_30": {
-      "views": 516,
-      "watchMinutes": 1142,
-      "avgViewDurationSec": 134
+      "views": 311,
+      "watchMinutes": 746,
+      "avgViewDurationSec": 144
     }
   },
   "last_48h_countries": [],
@@ -45,7 +45,13 @@
       "code": "US",
       "name": "United States",
       "flag": "🇺🇸",
-      "views": 138
+      "views": 37
+    },
+    {
+      "code": "IN",
+      "name": "India",
+      "flag": "🇮🇳",
+      "views": 12
     }
   ],
   "top_videos": [
@@ -53,8 +59,8 @@
       "videoId": "6u_a5zdTLWQ",
       "title": "Shieldbearer – Come and Restore [Christian Worship | Lanterns Album | Official Audio]",
       "thumbnail": "https://i.ytimg.com/vi/6u_a5zdTLWQ/mqdefault.jpg",
-      "views": 96120,
-      "likes": 37,
+      "views": 96121,
+      "likes": 38,
       "publishedAt": "2025-05-04T03:07:07Z",
       "url": "https://www.youtube.com/watch?v=6u_a5zdTLWQ"
     },
@@ -62,8 +68,8 @@
       "videoId": "9NQkaZbntUs",
       "title": "Shieldbearer – Pahalgam (A Prayer for India) [Official Audio]",
       "thumbnail": "https://i.ytimg.com/vi/9NQkaZbntUs/mqdefault.jpg",
-      "views": 62394,
-      "likes": 320,
+      "views": 62395,
+      "likes": 319,
       "publishedAt": "2025-04-26T15:28:11Z",
       "url": "https://www.youtube.com/watch?v=9NQkaZbntUs"
     },
@@ -71,8 +77,8 @@
       "videoId": "vBGEIMXs6h0",
       "title": "Celestial Shield (Lyric Video) – Shieldbearer | Christian Metal | Israel, Prophecy & Warfare",
       "thumbnail": "https://i.ytimg.com/vi/vBGEIMXs6h0/mqdefault.jpg",
-      "views": 12014,
-      "likes": 540,
+      "views": 12031,
+      "likes": 536,
       "publishedAt": "2025-07-15T02:04:57Z",
       "url": "https://www.youtube.com/watch?v=vBGEIMXs6h0"
     },
@@ -80,8 +86,8 @@
       "videoId": "9FHgbbVBT1A",
       "title": "Ruler of the Storm – Shieldbearer (Official Lyric Video | Christian Metal Anthem)",
       "thumbnail": "https://i.ytimg.com/vi/9FHgbbVBT1A/mqdefault.jpg",
-      "views": 9831,
-      "likes": 735,
+      "views": 9835,
+      "likes": 730,
       "publishedAt": "2025-05-16T10:00:06Z",
       "url": "https://www.youtube.com/watch?v=9FHgbbVBT1A"
     },
@@ -89,28 +95,28 @@
       "videoId": "8khugdipSJM",
       "title": "Shieldbearer – Tidings of Comfort and Joy (God Rest Ye Merry Gentlemen) [Metal Christmas Anthem]",
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
-      "views": 8177,
-      "likes": 23,
+      "views": 8246,
+      "likes": 24,
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM"
     }
   ],
   "top_videos_30d": [
     {
-      "videoId": "0lUJcLKIt0o",
-      "title": "Shieldbearer - Let My People Go | Heavy Christian Metal Anthem",
-      "thumbnail": "https://i.ytimg.com/vi/0lUJcLKIt0o/mqdefault.jpg",
-      "publishedAt": "2026-05-02T12:40:33Z",
-      "url": "https://www.youtube.com/watch?v=0lUJcLKIt0o",
-      "views": 52
+      "videoId": "pRPnsQovq70",
+      "title": "Cars | You Won’t Believe This True Story | Shieldbearer",
+      "thumbnail": "https://i.ytimg.com/vi/pRPnsQovq70/mqdefault.jpg",
+      "publishedAt": "2026-06-27T14:14:44Z",
+      "url": "https://www.youtube.com/watch?v=pRPnsQovq70",
+      "views": 58
     },
     {
-      "videoId": "PFLLqgj8BPA",
-      "title": "Shieldbearer – Amazing Grace (Revival Mix) [Official Audio | A Wretch Like Me Album]",
-      "thumbnail": "https://i.ytimg.com/vi/PFLLqgj8BPA/mqdefault.jpg",
-      "publishedAt": "2025-05-14T02:09:45Z",
-      "url": "https://www.youtube.com/watch?v=PFLLqgj8BPA",
-      "views": 45
+      "videoId": "8khugdipSJM",
+      "title": "Shieldbearer – Tidings of Comfort and Joy (God Rest Ye Merry Gentlemen) [Metal Christmas Anthem]",
+      "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
+      "publishedAt": "2025-10-24T00:24:36Z",
+      "url": "https://www.youtube.com/watch?v=8khugdipSJM",
+      "views": 35
     },
     {
       "videoId": "0jPL3Mg88ZQ",
@@ -118,306 +124,26 @@
       "thumbnail": "https://i.ytimg.com/vi/0jPL3Mg88ZQ/mqdefault.jpg",
       "publishedAt": "2026-04-14T22:17:26Z",
       "url": "https://www.youtube.com/watch?v=0jPL3Mg88ZQ",
-      "views": 42
+      "views": 23
     },
     {
-      "videoId": "AIiCw1a5hnM",
-      "title": "Shieldbearer – Unaliving the Giant (Official Christian Metal Release)",
-      "thumbnail": "https://i.ytimg.com/vi/AIiCw1a5hnM/mqdefault.jpg",
-      "publishedAt": "2025-10-10T02:30:01Z",
-      "url": "https://www.youtube.com/watch?v=AIiCw1a5hnM",
-      "views": 37
+      "videoId": "tH2GpPLY3so",
+      "title": "Shieldbearer – QUAKE (Christian Metal | Official Audio)",
+      "thumbnail": "https://i.ytimg.com/vi/tH2GpPLY3so/mqdefault.jpg",
+      "publishedAt": "2025-08-14T00:17:51Z",
+      "url": "https://www.youtube.com/watch?v=tH2GpPLY3so",
+      "views": 23
     },
     {
-      "videoId": "vBGEIMXs6h0",
-      "title": "Celestial Shield (Lyric Video) – Shieldbearer | Christian Metal | Israel, Prophecy & Warfare",
-      "thumbnail": "https://i.ytimg.com/vi/vBGEIMXs6h0/mqdefault.jpg",
-      "publishedAt": "2025-07-15T02:04:57Z",
-      "url": "https://www.youtube.com/watch?v=vBGEIMXs6h0",
-      "views": 28
+      "videoId": "W-1_SdI-jxo",
+      "title": "Shieldbearer – Amazing Grace (Lit by Fire – Alt Mix) [Official Audio | A Wretch Like Me Album]",
+      "thumbnail": "https://i.ytimg.com/vi/W-1_SdI-jxo/mqdefault.jpg",
+      "publishedAt": "2025-05-14T02:23:48Z",
+      "url": "https://www.youtube.com/watch?v=W-1_SdI-jxo",
+      "views": 14
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-03-01",
-      "views": 6,
-      "minutes": 14
-    },
-    {
-      "date": "2026-03-02",
-      "views": 15,
-      "minutes": 43
-    },
-    {
-      "date": "2026-03-03",
-      "views": 17,
-      "minutes": 46
-    },
-    {
-      "date": "2026-03-04",
-      "views": 26,
-      "minutes": 61
-    },
-    {
-      "date": "2026-03-05",
-      "views": 28,
-      "minutes": 74
-    },
-    {
-      "date": "2026-03-06",
-      "views": 25,
-      "minutes": 59
-    },
-    {
-      "date": "2026-03-07",
-      "views": 18,
-      "minutes": 22
-    },
-    {
-      "date": "2026-03-08",
-      "views": 26,
-      "minutes": 50
-    },
-    {
-      "date": "2026-03-09",
-      "views": 45,
-      "minutes": 107
-    },
-    {
-      "date": "2026-03-10",
-      "views": 27,
-      "minutes": 48
-    },
-    {
-      "date": "2026-03-11",
-      "views": 35,
-      "minutes": 37
-    },
-    {
-      "date": "2026-03-12",
-      "views": 29,
-      "minutes": 85
-    },
-    {
-      "date": "2026-03-13",
-      "views": 49,
-      "minutes": 192
-    },
-    {
-      "date": "2026-03-14",
-      "views": 220,
-      "minutes": 44
-    },
-    {
-      "date": "2026-03-15",
-      "views": 91,
-      "minutes": 30
-    },
-    {
-      "date": "2026-03-16",
-      "views": 48,
-      "minutes": 72
-    },
-    {
-      "date": "2026-03-17",
-      "views": 148,
-      "minutes": 30
-    },
-    {
-      "date": "2026-03-18",
-      "views": 9,
-      "minutes": 35
-    },
-    {
-      "date": "2026-03-19",
-      "views": 13,
-      "minutes": 15
-    },
-    {
-      "date": "2026-03-20",
-      "views": 12,
-      "minutes": 28
-    },
-    {
-      "date": "2026-03-21",
-      "views": 3,
-      "minutes": 8
-    },
-    {
-      "date": "2026-03-22",
-      "views": 44,
-      "minutes": 60
-    },
-    {
-      "date": "2026-03-23",
-      "views": 3,
-      "minutes": 2
-    },
-    {
-      "date": "2026-03-24",
-      "views": 17,
-      "minutes": 48
-    },
-    {
-      "date": "2026-03-25",
-      "views": 19,
-      "minutes": 43
-    },
-    {
-      "date": "2026-03-26",
-      "views": 44,
-      "minutes": 160
-    },
-    {
-      "date": "2026-03-27",
-      "views": 32,
-      "minutes": 90
-    },
-    {
-      "date": "2026-03-28",
-      "views": 21,
-      "minutes": 64
-    },
-    {
-      "date": "2026-03-29",
-      "views": 9,
-      "minutes": 12
-    },
-    {
-      "date": "2026-03-30",
-      "views": 14,
-      "minutes": 21
-    },
-    {
-      "date": "2026-03-31",
-      "views": 14,
-      "minutes": 43
-    },
-    {
-      "date": "2026-04-01",
-      "views": 24,
-      "minutes": 61
-    },
-    {
-      "date": "2026-04-02",
-      "views": 15,
-      "minutes": 19
-    },
-    {
-      "date": "2026-04-03",
-      "views": 27,
-      "minutes": 77
-    },
-    {
-      "date": "2026-04-04",
-      "views": 19,
-      "minutes": 36
-    },
-    {
-      "date": "2026-04-05",
-      "views": 23,
-      "minutes": 29
-    },
-    {
-      "date": "2026-04-06",
-      "views": 18,
-      "minutes": 57
-    },
-    {
-      "date": "2026-04-07",
-      "views": 15,
-      "minutes": 48
-    },
-    {
-      "date": "2026-04-08",
-      "views": 31,
-      "minutes": 44
-    },
-    {
-      "date": "2026-04-09",
-      "views": 23,
-      "minutes": 57
-    },
-    {
-      "date": "2026-04-10",
-      "views": 23,
-      "minutes": 49
-    },
-    {
-      "date": "2026-04-11",
-      "views": 26,
-      "minutes": 26
-    },
-    {
-      "date": "2026-04-12",
-      "views": 5,
-      "minutes": 6
-    },
-    {
-      "date": "2026-04-13",
-      "views": 6,
-      "minutes": 5
-    },
-    {
-      "date": "2026-04-14",
-      "views": 13,
-      "minutes": 29
-    },
-    {
-      "date": "2026-04-15",
-      "views": 24,
-      "minutes": 34
-    },
-    {
-      "date": "2026-04-16",
-      "views": 3,
-      "minutes": 1
-    },
-    {
-      "date": "2026-04-17",
-      "views": 33,
-      "minutes": 100
-    },
-    {
-      "date": "2026-04-18",
-      "views": 16,
-      "minutes": 37
-    },
-    {
-      "date": "2026-04-19",
-      "views": 18,
-      "minutes": 28
-    },
-    {
-      "date": "2026-04-20",
-      "views": 8,
-      "minutes": 9
-    },
-    {
-      "date": "2026-04-21",
-      "views": 10,
-      "minutes": 5
-    },
-    {
-      "date": "2026-04-22",
-      "views": 18,
-      "minutes": 24
-    },
-    {
-      "date": "2026-04-23",
-      "views": 19,
-      "minutes": 34
-    },
-    {
-      "date": "2026-04-24",
-      "views": 11,
-      "minutes": 25
-    },
-    {
-      "date": "2026-04-25",
-      "views": 5,
-      "minutes": 12
-    },
     {
       "date": "2026-04-26",
       "views": 8,
@@ -570,8 +296,8 @@
     },
     {
       "date": "2026-05-26",
-      "views": 14,
-      "minutes": 27
+      "views": 13,
+      "minutes": 22
     },
     {
       "date": "2026-05-27",
@@ -582,47 +308,322 @@
       "date": "2026-05-28",
       "views": 2,
       "minutes": 0
+    },
+    {
+      "date": "2026-05-29",
+      "views": 18,
+      "minutes": 18
+    },
+    {
+      "date": "2026-05-30",
+      "views": 28,
+      "minutes": 38
+    },
+    {
+      "date": "2026-05-31",
+      "views": 10,
+      "minutes": 35
+    },
+    {
+      "date": "2026-06-01",
+      "views": 4,
+      "minutes": 6
+    },
+    {
+      "date": "2026-06-02",
+      "views": 11,
+      "minutes": 34
+    },
+    {
+      "date": "2026-06-03",
+      "views": 13,
+      "minutes": 13
+    },
+    {
+      "date": "2026-06-04",
+      "views": 8,
+      "minutes": 14
+    },
+    {
+      "date": "2026-06-05",
+      "views": 8,
+      "minutes": 15
+    },
+    {
+      "date": "2026-06-06",
+      "views": 2,
+      "minutes": 9
+    },
+    {
+      "date": "2026-06-07",
+      "views": 7,
+      "minutes": 22
+    },
+    {
+      "date": "2026-06-08",
+      "views": 8,
+      "minutes": 12
+    },
+    {
+      "date": "2026-06-09",
+      "views": 2,
+      "minutes": 3
+    },
+    {
+      "date": "2026-06-10",
+      "views": 8,
+      "minutes": 16
+    },
+    {
+      "date": "2026-06-11",
+      "views": 8,
+      "minutes": 14
+    },
+    {
+      "date": "2026-06-12",
+      "views": 12,
+      "minutes": 23
+    },
+    {
+      "date": "2026-06-13",
+      "views": 9,
+      "minutes": 34
+    },
+    {
+      "date": "2026-06-14",
+      "views": 9,
+      "minutes": 24
+    },
+    {
+      "date": "2026-06-15",
+      "views": 17,
+      "minutes": 59
+    },
+    {
+      "date": "2026-06-16",
+      "views": 8,
+      "minutes": 18
+    },
+    {
+      "date": "2026-06-17",
+      "views": 6,
+      "minutes": 7
+    },
+    {
+      "date": "2026-06-18",
+      "views": 11,
+      "minutes": 18
+    },
+    {
+      "date": "2026-06-19",
+      "views": 9,
+      "minutes": 13
+    },
+    {
+      "date": "2026-06-20",
+      "views": 7,
+      "minutes": 11
+    },
+    {
+      "date": "2026-06-21",
+      "views": 7,
+      "minutes": 15
+    },
+    {
+      "date": "2026-06-22",
+      "views": 11,
+      "minutes": 45
+    },
+    {
+      "date": "2026-06-23",
+      "views": 9,
+      "minutes": 19
+    },
+    {
+      "date": "2026-06-24",
+      "views": 3,
+      "minutes": 7
+    },
+    {
+      "date": "2026-06-25",
+      "views": 9,
+      "minutes": 16
+    },
+    {
+      "date": "2026-06-26",
+      "views": 5,
+      "minutes": 15
+    },
+    {
+      "date": "2026-06-27",
+      "views": 49,
+      "minutes": 136
+    },
+    {
+      "date": "2026-06-28",
+      "views": 24,
+      "minutes": 57
+    },
+    {
+      "date": "2026-06-29",
+      "views": 14,
+      "minutes": 33
+    },
+    {
+      "date": "2026-06-30",
+      "views": 19,
+      "minutes": 49
+    },
+    {
+      "date": "2026-07-01",
+      "views": 13,
+      "minutes": 23
+    },
+    {
+      "date": "2026-07-02",
+      "views": 3,
+      "minutes": 11
+    },
+    {
+      "date": "2026-07-03",
+      "views": 6,
+      "minutes": 8
+    },
+    {
+      "date": "2026-07-04",
+      "views": 19,
+      "minutes": 46
+    },
+    {
+      "date": "2026-07-05",
+      "views": 9,
+      "minutes": 27
+    },
+    {
+      "date": "2026-07-06",
+      "views": 5,
+      "minutes": 11
+    },
+    {
+      "date": "2026-07-07",
+      "views": 7,
+      "minutes": 16
+    },
+    {
+      "date": "2026-07-08",
+      "views": 15,
+      "minutes": 28
+    },
+    {
+      "date": "2026-07-09",
+      "views": 23,
+      "minutes": 51
+    },
+    {
+      "date": "2026-07-10",
+      "views": 4,
+      "minutes": 6
+    },
+    {
+      "date": "2026-07-11",
+      "views": 13,
+      "minutes": 5
+    },
+    {
+      "date": "2026-07-12",
+      "views": 8,
+      "minutes": 35
+    },
+    {
+      "date": "2026-07-13",
+      "views": 4,
+      "minutes": 5
+    },
+    {
+      "date": "2026-07-14",
+      "views": 5,
+      "minutes": 21
+    },
+    {
+      "date": "2026-07-15",
+      "views": 5,
+      "minutes": 5
+    },
+    {
+      "date": "2026-07-16",
+      "views": 3,
+      "minutes": 0
+    },
+    {
+      "date": "2026-07-17",
+      "views": 11,
+      "minutes": 21
+    },
+    {
+      "date": "2026-07-18",
+      "views": 5,
+      "minutes": 8
+    },
+    {
+      "date": "2026-07-19",
+      "views": 3,
+      "minutes": 13
+    },
+    {
+      "date": "2026-07-20",
+      "views": 14,
+      "minutes": 39
+    },
+    {
+      "date": "2026-07-21",
+      "views": 7,
+      "minutes": 19
+    },
+    {
+      "date": "2026-07-22",
+      "views": 9,
+      "minutes": 28
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 148
-    },
-    {
-      "source": "RELATED_VIDEO",
-      "label": "Related video",
-      "views": 127
-    },
-    {
-      "source": "NO_LINK_OTHER",
-      "label": "No referrer",
-      "views": 63
-    },
-    {
-      "source": "YT_SEARCH",
-      "label": "YouTube search",
-      "views": 63
+      "views": 113
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 49
+      "views": 65
     },
     {
-      "source": "YT_CHANNEL",
-      "label": "Channel page",
-      "views": 33
+      "source": "YT_SEARCH",
+      "label": "YouTube search",
+      "views": 42
     },
     {
       "source": "EXT_URL",
       "label": "External URL",
+      "views": 31
+    },
+    {
+      "source": "YT_CHANNEL",
+      "label": "Channel page",
       "views": 19
+    },
+    {
+      "source": "RELATED_VIDEO",
+      "label": "Related video",
+      "views": 17
     },
     {
       "source": "YT_OTHER_PAGE",
       "label": "Other YouTube page",
+      "views": 11
+    },
+    {
+      "source": "NO_LINK_OTHER",
+      "label": "No referrer",
       "views": 9
     },
     {
@@ -633,11 +634,6 @@
     {
       "source": "SHORTS",
       "label": "Shorts feed",
-      "views": 1
-    },
-    {
-      "source": "HASHTAGS",
-      "label": "Hashtag pages",
       "views": 1
     }
   ]
