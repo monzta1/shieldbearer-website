@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-27T03:35:14.218Z",
+  "generated_at": "2026-07-27T21:35:14.307Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -29,14 +29,14 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 52,
-      "watchMinutes": 159,
-      "avgViewDurationSec": 184
+      "views": 59,
+      "watchMinutes": 183,
+      "avgViewDurationSec": 186
     },
     "last_30": {
-      "views": 319,
-      "watchMinutes": 787,
-      "avgViewDurationSec": 148
+      "views": 326,
+      "watchMinutes": 811,
+      "avgViewDurationSec": 149
     }
   },
   "last_48h_countries": [
@@ -84,7 +84,7 @@
       "videoId": "vBGEIMXs6h0",
       "title": "Celestial Shield (Lyric Video) – Shieldbearer | Christian Metal | Israel, Prophecy & Warfare",
       "thumbnail": "https://i.ytimg.com/vi/vBGEIMXs6h0/mqdefault.jpg",
-      "views": 12034,
+      "views": 12035,
       "likes": 536,
       "publishedAt": "2025-07-15T02:04:57Z",
       "url": "https://www.youtube.com/watch?v=vBGEIMXs6h0"
@@ -123,7 +123,7 @@
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM",
-      "views": 35
+      "views": 38
     },
     {
       "videoId": "0jPL3Mg88ZQ",
@@ -590,18 +590,23 @@
       "date": "2026-07-24",
       "views": 9,
       "minutes": 19
+    },
+    {
+      "date": "2026-07-25",
+      "views": 7,
+      "minutes": 23
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 123
+      "views": 124
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 65
+      "views": 68
     },
     {
       "source": "YT_SEARCH",
@@ -616,12 +621,12 @@
     {
       "source": "YT_CHANNEL",
       "label": "Channel page",
-      "views": 19
+      "views": 20
     },
     {
       "source": "RELATED_VIDEO",
       "label": "Related video",
-      "views": 17
+      "views": 18
     },
     {
       "source": "YT_OTHER_PAGE",
@@ -631,7 +636,7 @@
     {
       "source": "NO_LINK_OTHER",
       "label": "No referrer",
-      "views": 9
+      "views": 10
     },
     {
       "source": "NOTIFICATION",
