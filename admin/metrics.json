@@ -1,85 +1,85 @@
 {
-  "generatedAt": "2026-07-26T08:00:15.262Z",
+  "generatedAt": "2026-07-27T08:00:15.023Z",
   "period": {
     "label": "July 2026 so far",
     "start": "2026-07-01",
     "end": "2026-07-31"
   },
   "headline": {
-    "sessions": 44,
-    "deltaPct": -56,
+    "sessions": 46,
+    "deltaPct": -54,
     "comparison": "vs June 2026"
   },
   "channels": [
     {
       "name": "Organic Social",
       "sessions": 22,
-      "share": 47.8
+      "share": 46.8
     },
     {
       "name": "Direct",
       "sessions": 12,
-      "share": 26.1
+      "share": 25.5
     },
     {
       "name": "Referral",
-      "sessions": 9,
-      "share": 19.6
+      "sessions": 10,
+      "share": 21.3
     }
   ],
   "geography": [
     {
       "name": "United States",
-      "sessions": 42,
-      "share": 95.5
+      "sessions": 44,
+      "share": 95.7
     },
     {
       "name": "France",
       "sessions": 1,
-      "share": 2.3
+      "share": 2.2
     },
     {
       "name": "India",
       "sessions": 1,
-      "share": 2.3
+      "share": 2.2
     }
   ],
   "cities": [
     {
       "name": "(not set), Virginia",
-      "sessions": 10,
-      "share": 22.7
+      "sessions": 13,
+      "share": 28.3
     },
     {
       "name": "Panama City Beach, Florida",
       "sessions": 7,
-      "share": 15.9
+      "share": 15.2
     },
     {
       "name": "Prineville, Oregon",
       "sessions": 4,
-      "share": 9.1
-    },
-    {
-      "name": "Unknown, Virginia",
-      "sessions": 3,
-      "share": 6.8
+      "share": 8.7
     },
     {
       "name": "(not set)",
       "sessions": 3,
-      "share": 6.8
+      "share": 6.5
     },
     {
       "name": "Fort Worth, Texas",
       "sessions": 2,
-      "share": 4.5
+      "share": 4.3
+    },
+    {
+      "name": "South Elgin, Illinois",
+      "sessions": 2,
+      "share": 4.3
     }
   ],
   "events": [
     {
       "name": "scroll_depth",
-      "count": 77,
+      "count": 82,
       "engagedShare": null
     },
     {
