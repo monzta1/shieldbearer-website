@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-28T03:35:14.152Z",
+  "generated_at": "2026-07-28T21:35:14.127Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -29,14 +29,14 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 43,
-      "watchMinutes": 135,
-      "avgViewDurationSec": 188
+      "views": 54,
+      "watchMinutes": 165,
+      "avgViewDurationSec": 184
     },
     "last_30": {
-      "views": 275,
-      "watchMinutes": 666,
-      "avgViewDurationSec": 145
+      "views": 286,
+      "watchMinutes": 696,
+      "avgViewDurationSec": 146
     }
   },
   "last_48h_countries": [],
@@ -108,7 +108,7 @@
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM",
-      "views": 34
+      "views": 38
     },
     {
       "videoId": "pRPnsQovq70",
@@ -124,7 +124,7 @@
       "thumbnail": "https://i.ytimg.com/vi/0jPL3Mg88ZQ/mqdefault.jpg",
       "publishedAt": "2026-04-14T22:17:26Z",
       "url": "https://www.youtube.com/watch?v=0jPL3Mg88ZQ",
-      "views": 19
+      "views": 21
     },
     {
       "videoId": "tH2GpPLY3so",
@@ -135,11 +135,11 @@
       "views": 16
     },
     {
-      "videoId": "W-1_SdI-jxo",
-      "title": "Shieldbearer – Amazing Grace (Lit by Fire – Alt Mix) [Official Audio | A Wretch Like Me Album]",
-      "thumbnail": "https://i.ytimg.com/vi/W-1_SdI-jxo/mqdefault.jpg",
-      "publishedAt": "2025-05-14T02:23:48Z",
-      "url": "https://www.youtube.com/watch?v=W-1_SdI-jxo",
+      "videoId": "DFfIX-mlS-k",
+      "title": "He Found His Voice | Autism Testimony Song for My Son Leo | Shieldbearer (Christian Music)",
+      "thumbnail": "https://i.ytimg.com/vi/DFfIX-mlS-k/mqdefault.jpg",
+      "publishedAt": "2025-08-21T14:48:31Z",
+      "url": "https://www.youtube.com/watch?v=DFfIX-mlS-k",
       "views": 10
     }
   ],
@@ -583,23 +583,28 @@
       "date": "2026-07-25",
       "views": 7,
       "minutes": 23
+    },
+    {
+      "date": "2026-07-26",
+      "views": 11,
+      "minutes": 30
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 114
+      "views": 116
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 54
+      "views": 59
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 36
+      "views": 39
     },
     {
       "source": "EXT_URL",
@@ -609,7 +614,7 @@
     {
       "source": "RELATED_VIDEO",
       "label": "Related video",
-      "views": 17
+      "views": 18
     },
     {
       "source": "YT_CHANNEL",
