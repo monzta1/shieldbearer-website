@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-27T21:35:14.307Z",
+  "generated_at": "2026-07-28T03:35:14.152Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,44 +15,37 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-07-23",
-      "end": "2026-07-25"
+      "start": "2026-07-24",
+      "end": "2026-07-26"
     },
     "last_7": {
-      "start": "2026-07-20",
-      "end": "2026-07-27"
+      "start": "2026-07-21",
+      "end": "2026-07-28"
     },
     "last_30": {
-      "start": "2026-06-27",
-      "end": "2026-07-27"
+      "start": "2026-06-28",
+      "end": "2026-07-28"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 59,
-      "watchMinutes": 183,
-      "avgViewDurationSec": 186
+      "views": 43,
+      "watchMinutes": 135,
+      "avgViewDurationSec": 188
     },
     "last_30": {
-      "views": 326,
-      "watchMinutes": 811,
-      "avgViewDurationSec": 149
+      "views": 275,
+      "watchMinutes": 666,
+      "avgViewDurationSec": 145
     }
   },
-  "last_48h_countries": [
-    {
-      "code": "US",
-      "name": "United States",
-      "flag": "🇺🇸",
-      "views": 10
-    }
-  ],
+  "last_48h_countries": [],
   "last_30d_countries": [
     {
       "code": "US",
       "name": "United States",
       "flag": "🇺🇸",
-      "views": 47
+      "views": 13
     },
     {
       "code": "IN",
@@ -110,20 +103,20 @@
   ],
   "top_videos_30d": [
     {
-      "videoId": "pRPnsQovq70",
-      "title": "Cars | You Won’t Believe This True Story | Shieldbearer",
-      "thumbnail": "https://i.ytimg.com/vi/pRPnsQovq70/mqdefault.jpg",
-      "publishedAt": "2026-06-27T14:14:44Z",
-      "url": "https://www.youtube.com/watch?v=pRPnsQovq70",
-      "views": 58
-    },
-    {
       "videoId": "8khugdipSJM",
       "title": "Shieldbearer – Tidings of Comfort and Joy (God Rest Ye Merry Gentlemen) [Metal Christmas Anthem]",
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM",
-      "views": 38
+      "views": 34
+    },
+    {
+      "videoId": "pRPnsQovq70",
+      "title": "Cars | You Won’t Believe This True Story | Shieldbearer",
+      "thumbnail": "https://i.ytimg.com/vi/pRPnsQovq70/mqdefault.jpg",
+      "publishedAt": "2026-06-27T14:14:44Z",
+      "url": "https://www.youtube.com/watch?v=pRPnsQovq70",
+      "views": 31
     },
     {
       "videoId": "0jPL3Mg88ZQ",
@@ -131,7 +124,7 @@
       "thumbnail": "https://i.ytimg.com/vi/0jPL3Mg88ZQ/mqdefault.jpg",
       "publishedAt": "2026-04-14T22:17:26Z",
       "url": "https://www.youtube.com/watch?v=0jPL3Mg88ZQ",
-      "views": 21
+      "views": 19
     },
     {
       "videoId": "tH2GpPLY3so",
@@ -139,7 +132,7 @@
       "thumbnail": "https://i.ytimg.com/vi/tH2GpPLY3so/mqdefault.jpg",
       "publishedAt": "2025-08-14T00:17:51Z",
       "url": "https://www.youtube.com/watch?v=tH2GpPLY3so",
-      "views": 21
+      "views": 16
     },
     {
       "videoId": "W-1_SdI-jxo",
@@ -147,15 +140,10 @@
       "thumbnail": "https://i.ytimg.com/vi/W-1_SdI-jxo/mqdefault.jpg",
       "publishedAt": "2025-05-14T02:23:48Z",
       "url": "https://www.youtube.com/watch?v=W-1_SdI-jxo",
-      "views": 11
+      "views": 10
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-04-28",
-      "views": 12,
-      "minutes": 7
-    },
     {
       "date": "2026-04-29",
       "views": 11,
@@ -583,8 +571,8 @@
     },
     {
       "date": "2026-07-23",
-      "views": 13,
-      "minutes": 53
+      "views": 11,
+      "minutes": 44
     },
     {
       "date": "2026-07-24",
@@ -601,47 +589,47 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 124
+      "views": 114
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 68
+      "views": 54
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 40
+      "views": 36
     },
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 31
-    },
-    {
-      "source": "YT_CHANNEL",
-      "label": "Channel page",
-      "views": 20
+      "views": 23
     },
     {
       "source": "RELATED_VIDEO",
       "label": "Related video",
-      "views": 18
+      "views": 17
+    },
+    {
+      "source": "YT_CHANNEL",
+      "label": "Channel page",
+      "views": 13
     },
     {
       "source": "YT_OTHER_PAGE",
       "label": "Other YouTube page",
-      "views": 11
+      "views": 8
     },
     {
       "source": "NO_LINK_OTHER",
       "label": "No referrer",
-      "views": 10
+      "views": 7
     },
     {
       "source": "NOTIFICATION",
       "label": "Notifications",
-      "views": 3
+      "views": 2
     },
     {
       "source": "SHORTS",
