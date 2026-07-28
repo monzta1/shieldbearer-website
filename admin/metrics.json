@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-27T08:00:15.023Z",
+  "generatedAt": "2026-07-28T08:00:14.945Z",
   "period": {
     "label": "July 2026 so far",
     "start": "2026-07-01",
@@ -14,17 +14,17 @@
     {
       "name": "Organic Social",
       "sessions": 22,
-      "share": 46.8
+      "share": 47.8
     },
     {
       "name": "Direct",
-      "sessions": 12,
-      "share": 25.5
+      "sessions": 13,
+      "share": 28.3
     },
     {
       "name": "Referral",
       "sessions": 10,
-      "share": 21.3
+      "share": 21.7
     }
   ],
   "geography": [
@@ -47,8 +47,8 @@
   "cities": [
     {
       "name": "(not set), Virginia",
-      "sessions": 13,
-      "share": 28.3
+      "sessions": 14,
+      "share": 30.4
     },
     {
       "name": "Panama City Beach, Florida",
@@ -56,14 +56,14 @@
       "share": 15.2
     },
     {
-      "name": "Prineville, Oregon",
+      "name": "(not set)",
       "sessions": 4,
       "share": 8.7
     },
     {
-      "name": "(not set)",
-      "sessions": 3,
-      "share": 6.5
+      "name": "Prineville, Oregon",
+      "sessions": 4,
+      "share": 8.7
     },
     {
       "name": "Fort Worth, Texas",
