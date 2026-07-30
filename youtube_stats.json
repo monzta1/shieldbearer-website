@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-29T21:35:13.886Z",
+  "generated_at": "2026-07-30T03:35:13.689Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,27 +15,27 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-07-25",
-      "end": "2026-07-27"
+      "start": "2026-07-26",
+      "end": "2026-07-28"
     },
     "last_7": {
-      "start": "2026-07-22",
-      "end": "2026-07-29"
+      "start": "2026-07-23",
+      "end": "2026-07-30"
     },
     "last_30": {
-      "start": "2026-06-29",
-      "end": "2026-07-29"
+      "start": "2026-06-30",
+      "end": "2026-07-30"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 50,
-      "watchMinutes": 152,
+      "views": 41,
+      "watchMinutes": 124,
       "avgViewDurationSec": 182
     },
     "last_30": {
-      "views": 265,
-      "watchMinutes": 645,
+      "views": 251,
+      "watchMinutes": 611,
       "avgViewDurationSec": 146
     }
   },
@@ -97,14 +97,6 @@
   ],
   "top_videos_30d": [
     {
-      "videoId": "pRPnsQovq70",
-      "title": "Cars | You Won’t Believe This True Story | Shieldbearer",
-      "thumbnail": "https://i.ytimg.com/vi/pRPnsQovq70/mqdefault.jpg",
-      "publishedAt": "2026-06-27T14:14:44Z",
-      "url": "https://www.youtube.com/watch?v=pRPnsQovq70",
-      "views": 25
-    },
-    {
       "videoId": "8khugdipSJM",
       "title": "Shieldbearer – Tidings of Comfort and Joy (God Rest Ye Merry Gentlemen) [Metal Christmas Anthem]",
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
@@ -113,12 +105,20 @@
       "views": 24
     },
     {
+      "videoId": "pRPnsQovq70",
+      "title": "Cars | You Won’t Believe This True Story | Shieldbearer",
+      "thumbnail": "https://i.ytimg.com/vi/pRPnsQovq70/mqdefault.jpg",
+      "publishedAt": "2026-06-27T14:14:44Z",
+      "url": "https://www.youtube.com/watch?v=pRPnsQovq70",
+      "views": 20
+    },
+    {
       "videoId": "0jPL3Mg88ZQ",
       "title": "SHIELDBEARER - SENTINELS | Official Video",
       "thumbnail": "https://i.ytimg.com/vi/0jPL3Mg88ZQ/mqdefault.jpg",
       "publishedAt": "2026-04-14T22:17:26Z",
       "url": "https://www.youtube.com/watch?v=0jPL3Mg88ZQ",
-      "views": 19
+      "views": 17
     },
     {
       "videoId": "tH2GpPLY3so",
@@ -126,7 +126,7 @@
       "thumbnail": "https://i.ytimg.com/vi/tH2GpPLY3so/mqdefault.jpg",
       "publishedAt": "2025-08-14T00:17:51Z",
       "url": "https://www.youtube.com/watch?v=tH2GpPLY3so",
-      "views": 15
+      "views": 14
     },
     {
       "videoId": "W-1_SdI-jxo",
@@ -138,11 +138,6 @@
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-04-30",
-      "views": 40,
-      "minutes": 89
-    },
     {
       "date": "2026-05-01",
       "views": 28,
@@ -588,17 +583,17 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 115
+      "views": 111
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 52
+      "views": 48
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 35
+      "views": 34
     },
     {
       "source": "EXT_URL",
@@ -608,7 +603,7 @@
     {
       "source": "RELATED_VIDEO",
       "label": "Related video",
-      "views": 16
+      "views": 14
     },
     {
       "source": "YT_CHANNEL",
@@ -616,14 +611,14 @@
       "views": 12
     },
     {
-      "source": "YT_OTHER_PAGE",
-      "label": "Other YouTube page",
-      "views": 7
-    },
-    {
       "source": "NO_LINK_OTHER",
       "label": "No referrer",
-      "views": 6
+      "views": 5
+    },
+    {
+      "source": "YT_OTHER_PAGE",
+      "label": "Other YouTube page",
+      "views": 5
     },
     {
       "source": "NOTIFICATION",
