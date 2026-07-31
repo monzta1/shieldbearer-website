@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-30T21:35:13.962Z",
+  "generated_at": "2026-07-31T03:35:13.741Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,27 +15,27 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-07-26",
-      "end": "2026-07-28"
+      "start": "2026-07-27",
+      "end": "2026-07-29"
     },
     "last_7": {
-      "start": "2026-07-23",
-      "end": "2026-07-30"
+      "start": "2026-07-24",
+      "end": "2026-07-31"
     },
     "last_30": {
-      "start": "2026-06-30",
-      "end": "2026-07-30"
+      "start": "2026-07-01",
+      "end": "2026-07-31"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 72,
-      "watchMinutes": 217,
-      "avgViewDurationSec": 181
+      "views": 61,
+      "watchMinutes": 172,
+      "avgViewDurationSec": 170
     },
     "last_30": {
-      "views": 282,
-      "watchMinutes": 704,
+      "views": 263,
+      "watchMinutes": 655,
       "avgViewDurationSec": 149
     }
   },
@@ -115,23 +115,7 @@
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM",
-      "views": 27
-    },
-    {
-      "videoId": "pRPnsQovq70",
-      "title": "Cars | You Won’t Believe This True Story | Shieldbearer",
-      "thumbnail": "https://i.ytimg.com/vi/pRPnsQovq70/mqdefault.jpg",
-      "publishedAt": "2026-06-27T14:14:44Z",
-      "url": "https://www.youtube.com/watch?v=pRPnsQovq70",
-      "views": 20
-    },
-    {
-      "videoId": "0jPL3Mg88ZQ",
-      "title": "SHIELDBEARER - SENTINELS | Official Video",
-      "thumbnail": "https://i.ytimg.com/vi/0jPL3Mg88ZQ/mqdefault.jpg",
-      "publishedAt": "2026-04-14T22:17:26Z",
-      "url": "https://www.youtube.com/watch?v=0jPL3Mg88ZQ",
-      "views": 17
+      "views": 34
     },
     {
       "videoId": "tH2GpPLY3so",
@@ -139,7 +123,23 @@
       "thumbnail": "https://i.ytimg.com/vi/tH2GpPLY3so/mqdefault.jpg",
       "publishedAt": "2025-08-14T00:17:51Z",
       "url": "https://www.youtube.com/watch?v=tH2GpPLY3so",
-      "views": 15
+      "views": 21
+    },
+    {
+      "videoId": "0jPL3Mg88ZQ",
+      "title": "SHIELDBEARER - SENTINELS | Official Video",
+      "thumbnail": "https://i.ytimg.com/vi/0jPL3Mg88ZQ/mqdefault.jpg",
+      "publishedAt": "2026-04-14T22:17:26Z",
+      "url": "https://www.youtube.com/watch?v=0jPL3Mg88ZQ",
+      "views": 20
+    },
+    {
+      "videoId": "DsGhOgXLGXI",
+      "title": "Shieldbearer – 1000 Suns | Christian Metal Worship",
+      "thumbnail": "https://i.ytimg.com/vi/DsGhOgXLGXI/mqdefault.jpg",
+      "publishedAt": "2025-09-05T16:28:51Z",
+      "url": "https://www.youtube.com/watch?v=DsGhOgXLGXI",
+      "views": 14
     },
     {
       "videoId": "W-1_SdI-jxo",
@@ -147,15 +147,10 @@
       "thumbnail": "https://i.ytimg.com/vi/W-1_SdI-jxo/mqdefault.jpg",
       "publishedAt": "2025-05-14T02:23:48Z",
       "url": "https://www.youtube.com/watch?v=W-1_SdI-jxo",
-      "views": 12
+      "views": 13
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-05-01",
-      "views": 28,
-      "minutes": 75
-    },
     {
       "date": "2026-05-02",
       "views": 76,
@@ -601,32 +596,32 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 138
+      "views": 133
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 50
+      "views": 46
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 34
+      "views": 31
     },
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 21
-    },
-    {
-      "source": "RELATED_VIDEO",
-      "label": "Related video",
-      "views": 14
+      "views": 17
     },
     {
       "source": "YT_CHANNEL",
       "label": "Channel page",
       "views": 12
+    },
+    {
+      "source": "RELATED_VIDEO",
+      "label": "Related video",
+      "views": 11
     },
     {
       "source": "NO_LINK_OTHER",
