@@ -1,98 +1,19 @@
 {
-  "generatedAt": "2026-07-31T08:00:15.125Z",
+  "generatedAt": "2026-08-01T08:00:15.516Z",
   "period": {
-    "label": "July 2026 so far",
-    "start": "2026-07-01",
-    "end": "2026-07-31"
+    "label": "August 2026 so far",
+    "start": "2026-08-01",
+    "end": "2026-08-31"
   },
   "headline": {
-    "sessions": 48,
-    "deltaPct": -52,
-    "comparison": "vs June 2026"
+    "sessions": 0,
+    "deltaPct": -100,
+    "comparison": "vs July 2026"
   },
-  "channels": [
-    {
-      "name": "Organic Social",
-      "sessions": 24,
-      "share": 50
-    },
-    {
-      "name": "Direct",
-      "sessions": 13,
-      "share": 27.1
-    },
-    {
-      "name": "Referral",
-      "sessions": 10,
-      "share": 20.8
-    }
-  ],
-  "geography": [
-    {
-      "name": "United States",
-      "sessions": 46,
-      "share": 95.8
-    },
-    {
-      "name": "France",
-      "sessions": 1,
-      "share": 2.1
-    },
-    {
-      "name": "India",
-      "sessions": 1,
-      "share": 2.1
-    }
-  ],
-  "cities": [
-    {
-      "name": "(not set), Virginia",
-      "sessions": 14,
-      "share": 29.2
-    },
-    {
-      "name": "Panama City Beach, Florida",
-      "sessions": 7,
-      "share": 14.6
-    },
-    {
-      "name": "(not set)",
-      "sessions": 4,
-      "share": 8.3
-    },
-    {
-      "name": "Prineville, Oregon",
-      "sessions": 4,
-      "share": 8.3
-    },
-    {
-      "name": "Fort Worth, Texas",
-      "sessions": 2,
-      "share": 4.2
-    },
-    {
-      "name": "South Elgin, Illinois",
-      "sessions": 2,
-      "share": 4.2
-    }
-  ],
-  "events": [
-    {
-      "name": "scroll_depth",
-      "count": 82,
-      "engagedShare": null
-    },
-    {
-      "name": "listen_click",
-      "count": 1,
-      "engagedShare": null
-    },
-    {
-      "name": "merch_click",
-      "count": 1,
-      "engagedShare": null
-    }
-  ],
+  "channels": [],
+  "geography": [],
+  "cities": [],
+  "events": [],
   "shipped": [
     {
       "date": "2026-05-29",
