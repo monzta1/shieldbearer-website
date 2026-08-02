@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-02T03:35:13.925Z",
+  "generated_at": "2026-08-02T21:35:14.344Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -29,14 +29,14 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 49,
-      "watchMinutes": 132,
-      "avgViewDurationSec": 162
+      "views": 52,
+      "watchMinutes": 136,
+      "avgViewDurationSec": 157
     },
     "last_30": {
-      "views": 251,
-      "watchMinutes": 623,
-      "avgViewDurationSec": 149
+      "views": 254,
+      "watchMinutes": 627,
+      "avgViewDurationSec": 148
     }
   },
   "last_48h_countries": [],
@@ -111,19 +111,19 @@
       "views": 34
     },
     {
-      "videoId": "0jPL3Mg88ZQ",
-      "title": "SHIELDBEARER - SENTINELS | Official Video",
-      "thumbnail": "https://i.ytimg.com/vi/0jPL3Mg88ZQ/mqdefault.jpg",
-      "publishedAt": "2026-04-14T22:17:26Z",
-      "url": "https://www.youtube.com/watch?v=0jPL3Mg88ZQ",
-      "views": 20
-    },
-    {
       "videoId": "tH2GpPLY3so",
       "title": "Shieldbearer – QUAKE (Christian Metal | Official Audio)",
       "thumbnail": "https://i.ytimg.com/vi/tH2GpPLY3so/mqdefault.jpg",
       "publishedAt": "2025-08-14T00:17:51Z",
       "url": "https://www.youtube.com/watch?v=tH2GpPLY3so",
+      "views": 21
+    },
+    {
+      "videoId": "0jPL3Mg88ZQ",
+      "title": "SHIELDBEARER - SENTINELS | Official Video",
+      "thumbnail": "https://i.ytimg.com/vi/0jPL3Mg88ZQ/mqdefault.jpg",
+      "publishedAt": "2026-04-14T22:17:26Z",
+      "url": "https://www.youtube.com/watch?v=0jPL3Mg88ZQ",
       "views": 20
     },
     {
@@ -583,13 +583,18 @@
       "date": "2026-07-30",
       "views": 3,
       "minutes": 1
+    },
+    {
+      "date": "2026-07-31",
+      "views": 3,
+      "minutes": 4
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 128
+      "views": 130
     },
     {
       "source": "SUBSCRIBER",
@@ -609,7 +614,7 @@
     {
       "source": "YT_CHANNEL",
       "label": "Channel page",
-      "views": 11
+      "views": 12
     },
     {
       "source": "RELATED_VIDEO",
