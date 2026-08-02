@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-01T21:35:14.513Z",
+  "generated_at": "2026-08-02T03:35:13.925Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,38 +15,31 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-07-28",
-      "end": "2026-07-30"
+      "start": "2026-07-29",
+      "end": "2026-07-31"
     },
     "last_7": {
-      "start": "2026-07-25",
-      "end": "2026-08-01"
+      "start": "2026-07-26",
+      "end": "2026-08-02"
     },
     "last_30": {
-      "start": "2026-07-02",
-      "end": "2026-08-01"
+      "start": "2026-07-03",
+      "end": "2026-08-02"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 56,
-      "watchMinutes": 156,
-      "avgViewDurationSec": 167
+      "views": 49,
+      "watchMinutes": 132,
+      "avgViewDurationSec": 162
     },
     "last_30": {
-      "views": 254,
-      "watchMinutes": 635,
-      "avgViewDurationSec": 150
+      "views": 251,
+      "watchMinutes": 623,
+      "avgViewDurationSec": 149
     }
   },
-  "last_48h_countries": [
-    {
-      "code": "US",
-      "name": "United States",
-      "flag": "🇺🇸",
-      "views": 16
-    }
-  ],
+  "last_48h_countries": [],
   "last_30d_countries": [
     {
       "code": "US",
@@ -102,7 +95,7 @@
       "videoId": "8khugdipSJM",
       "title": "Shieldbearer – Tidings of Comfort and Joy (God Rest Ye Merry Gentlemen) [Metal Christmas Anthem]",
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
-      "views": 8258,
+      "views": 8260,
       "likes": 24,
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM"
@@ -115,7 +108,7 @@
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM",
-      "views": 35
+      "views": 34
     },
     {
       "videoId": "0jPL3Mg88ZQ",
@@ -147,15 +140,10 @@
       "thumbnail": "https://i.ytimg.com/vi/W-1_SdI-jxo/mqdefault.jpg",
       "publishedAt": "2025-05-14T02:23:48Z",
       "url": "https://www.youtube.com/watch?v=W-1_SdI-jxo",
-      "views": 13
+      "views": 12
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-05-03",
-      "views": 20,
-      "minutes": 41
-    },
     {
       "date": "2026-05-04",
       "views": 18,
@@ -601,12 +589,12 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 130
+      "views": 128
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 42
+      "views": 41
     },
     {
       "source": "YT_SEARCH",
