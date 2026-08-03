@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-02T21:35:14.344Z",
+  "generated_at": "2026-08-03T03:35:14.043Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,28 +15,28 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-07-29",
-      "end": "2026-07-31"
+      "start": "2026-07-30",
+      "end": "2026-08-01"
     },
     "last_7": {
-      "start": "2026-07-26",
-      "end": "2026-08-02"
+      "start": "2026-07-27",
+      "end": "2026-08-03"
     },
     "last_30": {
-      "start": "2026-07-03",
-      "end": "2026-08-02"
+      "start": "2026-07-04",
+      "end": "2026-08-03"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 52,
-      "watchMinutes": 136,
-      "avgViewDurationSec": 157
+      "views": 41,
+      "watchMinutes": 106,
+      "avgViewDurationSec": 155
     },
     "last_30": {
-      "views": 254,
-      "watchMinutes": 627,
-      "avgViewDurationSec": 148
+      "views": 248,
+      "watchMinutes": 619,
+      "avgViewDurationSec": 149
     }
   },
   "last_48h_countries": [],
@@ -95,7 +95,7 @@
       "videoId": "8khugdipSJM",
       "title": "Shieldbearer – Tidings of Comfort and Joy (God Rest Ye Merry Gentlemen) [Metal Christmas Anthem]",
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
-      "views": 8260,
+      "views": 8261,
       "likes": 24,
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM"
@@ -144,11 +144,6 @@
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-05-04",
-      "views": 18,
-      "minutes": 27
-    },
     {
       "date": "2026-05-05",
       "views": 38,
@@ -594,7 +589,7 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 130
+      "views": 127
     },
     {
       "source": "SUBSCRIBER",
@@ -604,12 +599,12 @@
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 29
+      "views": 28
     },
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 19
+      "views": 17
     },
     {
       "source": "YT_CHANNEL",
