@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-05T03:35:13.847Z",
+  "generated_at": "2026-08-05T21:35:14.092Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -29,13 +29,13 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 19,
-      "watchMinutes": 30,
-      "avgViewDurationSec": 103
+      "views": 23,
+      "watchMinutes": 36,
+      "avgViewDurationSec": 105
     },
     "last_30": {
-      "views": 232,
-      "watchMinutes": 569,
+      "views": 236,
+      "watchMinutes": 575,
       "avgViewDurationSec": 147
     }
   },
@@ -583,23 +583,28 @@
       "date": "2026-08-02",
       "views": 4,
       "minutes": 1
+    },
+    {
+      "date": "2026-08-03",
+      "views": 4,
+      "minutes": 5
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 127
+      "views": 129
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 27
+      "views": 28
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 25
+      "views": 26
     },
     {
       "source": "EXT_URL",
