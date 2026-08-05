@@ -1,80 +1,85 @@
 {
-  "generatedAt": "2026-08-04T08:00:15.091Z",
+  "generatedAt": "2026-08-05T08:00:15.062Z",
   "period": {
     "label": "August 2026 so far",
     "start": "2026-08-01",
     "end": "2026-08-31"
   },
   "headline": {
-    "sessions": 16,
-    "deltaPct": -66.7,
+    "sessions": 17,
+    "deltaPct": -64.6,
     "comparison": "vs July 2026"
   },
   "channels": [
     {
       "name": "Organic Social",
-      "sessions": 7,
-      "share": 38.9
-    },
-    {
-      "name": "Unassigned",
-      "sessions": 5,
-      "share": 27.8
+      "sessions": 12,
+      "share": 70.6
     },
     {
       "name": "Organic Search",
       "sessions": 2,
-      "share": 11.1
+      "share": 11.8
+    },
+    {
+      "name": "Referral",
+      "sessions": 2,
+      "share": 11.8
     }
   ],
   "geography": [
     {
       "name": "United States",
       "sessions": 15,
-      "share": 93.8
+      "share": 88.2
     },
     {
       "name": "Ireland",
       "sessions": 1,
-      "share": 6.3
+      "share": 5.9
+    },
+    {
+      "name": "Sweden",
+      "sessions": 1,
+      "share": 5.9
     }
   ],
   "cities": [
     {
       "name": "South Riding, Virginia",
       "sessions": 8,
-      "share": 50
+      "share": 47.1
     },
     {
       "name": "Prineville, Oregon",
       "sessions": 3,
-      "share": 18.8
+      "share": 17.6
     },
     {
       "name": "Clarks Summit, Pennsylvania",
       "sessions": 2,
-      "share": 12.5
+      "share": 11.8
     },
     {
       "name": "Baltimore, Maryland",
       "sessions": 1,
-      "share": 6.3
+      "share": 5.9
     },
     {
       "name": "Dublin, County Dublin",
       "sessions": 1,
-      "share": 6.3
+      "share": 5.9
     },
     {
       "name": "Forest City, North Carolina",
       "sessions": 1,
-      "share": 6.3
+      "share": 5.9
     }
   ],
   "events": [
     {
       "name": "scroll_depth",
-      "count": 18,
+      "count": 22,
       "engagedShare": null
     }
   ],
