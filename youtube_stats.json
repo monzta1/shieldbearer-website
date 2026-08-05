@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T21:35:14.142Z",
+  "generated_at": "2026-08-05T03:35:13.847Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,28 +15,28 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-07-31",
-      "end": "2026-08-02"
+      "start": "2026-08-01",
+      "end": "2026-08-03"
     },
     "last_7": {
-      "start": "2026-07-28",
-      "end": "2026-08-04"
+      "start": "2026-07-29",
+      "end": "2026-08-05"
     },
     "last_30": {
-      "start": "2026-07-05",
-      "end": "2026-08-04"
+      "start": "2026-07-06",
+      "end": "2026-08-05"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 50,
-      "watchMinutes": 123,
-      "avgViewDurationSec": 151
+      "views": 19,
+      "watchMinutes": 30,
+      "avgViewDurationSec": 103
     },
     "last_30": {
-      "views": 241,
-      "watchMinutes": 596,
-      "avgViewDurationSec": 149
+      "views": 232,
+      "watchMinutes": 569,
+      "avgViewDurationSec": 147
     }
   },
   "last_48h_countries": [],
@@ -108,7 +108,7 @@
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM",
-      "views": 32
+      "views": 27
     },
     {
       "videoId": "tH2GpPLY3so",
@@ -144,11 +144,6 @@
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-05-06",
-      "views": 12,
-      "minutes": 25
-    },
     {
       "date": "2026-05-07",
       "views": 39,
@@ -599,7 +594,7 @@
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 36
+      "views": 27
     },
     {
       "source": "YT_SEARCH",
