@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-05T21:35:14.092Z",
+  "generated_at": "2026-08-06T03:35:14.105Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,27 +15,27 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-08-01",
-      "end": "2026-08-03"
+      "start": "2026-08-02",
+      "end": "2026-08-04"
     },
     "last_7": {
-      "start": "2026-07-29",
-      "end": "2026-08-05"
+      "start": "2026-07-30",
+      "end": "2026-08-06"
     },
     "last_30": {
-      "start": "2026-07-06",
-      "end": "2026-08-05"
+      "start": "2026-07-07",
+      "end": "2026-08-06"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 23,
-      "watchMinutes": 36,
+      "views": 22,
+      "watchMinutes": 35,
       "avgViewDurationSec": 105
     },
     "last_30": {
-      "views": 236,
-      "watchMinutes": 575,
+      "views": 231,
+      "watchMinutes": 563,
       "avgViewDurationSec": 147
     }
   },
@@ -124,7 +124,7 @@
       "thumbnail": "https://i.ytimg.com/vi/0jPL3Mg88ZQ/mqdefault.jpg",
       "publishedAt": "2026-04-14T22:17:26Z",
       "url": "https://www.youtube.com/watch?v=0jPL3Mg88ZQ",
-      "views": 19
+      "views": 17
     },
     {
       "videoId": "DsGhOgXLGXI",
@@ -140,15 +140,10 @@
       "thumbnail": "https://i.ytimg.com/vi/W-1_SdI-jxo/mqdefault.jpg",
       "publishedAt": "2025-05-14T02:23:48Z",
       "url": "https://www.youtube.com/watch?v=W-1_SdI-jxo",
-      "views": 13
+      "views": 11
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-05-07",
-      "views": 39,
-      "minutes": 137
-    },
     {
       "date": "2026-05-08",
       "views": 10,
@@ -594,7 +589,7 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 129
+      "views": 124
     },
     {
       "source": "SUBSCRIBER",
