@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-06T21:35:14.207Z",
+  "generated_at": "2026-08-07T03:35:13.861Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,27 +15,27 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-08-02",
-      "end": "2026-08-04"
+      "start": "2026-08-03",
+      "end": "2026-08-05"
     },
     "last_7": {
-      "start": "2026-07-30",
-      "end": "2026-08-06"
+      "start": "2026-07-31",
+      "end": "2026-08-07"
     },
     "last_30": {
-      "start": "2026-07-07",
-      "end": "2026-08-06"
+      "start": "2026-07-08",
+      "end": "2026-08-07"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 24,
-      "watchMinutes": 36,
-      "avgViewDurationSec": 99
+      "views": 21,
+      "watchMinutes": 35,
+      "avgViewDurationSec": 110
     },
     "last_30": {
-      "views": 233,
-      "watchMinutes": 564,
+      "views": 226,
+      "watchMinutes": 548,
       "avgViewDurationSec": 146
     }
   },
@@ -116,7 +116,7 @@
       "thumbnail": "https://i.ytimg.com/vi/tH2GpPLY3so/mqdefault.jpg",
       "publishedAt": "2025-08-14T00:17:51Z",
       "url": "https://www.youtube.com/watch?v=tH2GpPLY3so",
-      "views": 21
+      "views": 20
     },
     {
       "videoId": "0jPL3Mg88ZQ",
@@ -140,15 +140,10 @@
       "thumbnail": "https://i.ytimg.com/vi/W-1_SdI-jxo/mqdefault.jpg",
       "publishedAt": "2025-05-14T02:23:48Z",
       "url": "https://www.youtube.com/watch?v=W-1_SdI-jxo",
-      "views": 13
+      "views": 12
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-05-08",
-      "views": 10,
-      "minutes": 15
-    },
     {
       "date": "2026-05-09",
       "views": 7,
@@ -594,7 +589,7 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 126
+      "views": 121
     },
     {
       "source": "SUBSCRIBER",
@@ -604,7 +599,7 @@
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 26
+      "views": 24
     },
     {
       "source": "EXT_URL",
