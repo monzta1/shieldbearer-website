@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T21:35:13.692Z",
+  "generated_at": "2026-08-08T03:35:14.063Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,28 +15,28 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-08-03",
-      "end": "2026-08-05"
+      "start": "2026-08-04",
+      "end": "2026-08-06"
     },
     "last_7": {
-      "start": "2026-07-31",
-      "end": "2026-08-07"
+      "start": "2026-08-01",
+      "end": "2026-08-08"
     },
     "last_30": {
-      "start": "2026-07-08",
-      "end": "2026-08-07"
+      "start": "2026-07-09",
+      "end": "2026-08-08"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 27,
-      "watchMinutes": 40,
-      "avgViewDurationSec": 96
+      "views": 24,
+      "watchMinutes": 36,
+      "avgViewDurationSec": 98
     },
     "last_30": {
-      "views": 232,
-      "watchMinutes": 553,
-      "avgViewDurationSec": 144
+      "views": 217,
+      "watchMinutes": 525,
+      "avgViewDurationSec": 146
     }
   },
   "last_48h_countries": [],
@@ -108,7 +108,7 @@
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM",
-      "views": 27
+      "views": 25
     },
     {
       "videoId": "tH2GpPLY3so",
@@ -119,14 +119,6 @@
       "views": 20
     },
     {
-      "videoId": "0jPL3Mg88ZQ",
-      "title": "SHIELDBEARER - SENTINELS | Official Video",
-      "thumbnail": "https://i.ytimg.com/vi/0jPL3Mg88ZQ/mqdefault.jpg",
-      "publishedAt": "2026-04-14T22:17:26Z",
-      "url": "https://www.youtube.com/watch?v=0jPL3Mg88ZQ",
-      "views": 17
-    },
-    {
       "videoId": "DsGhOgXLGXI",
       "title": "Shieldbearer – 1000 Suns | Christian Metal Worship",
       "thumbnail": "https://i.ytimg.com/vi/DsGhOgXLGXI/mqdefault.jpg",
@@ -135,20 +127,23 @@
       "views": 15
     },
     {
+      "videoId": "0jPL3Mg88ZQ",
+      "title": "SHIELDBEARER - SENTINELS | Official Video",
+      "thumbnail": "https://i.ytimg.com/vi/0jPL3Mg88ZQ/mqdefault.jpg",
+      "publishedAt": "2026-04-14T22:17:26Z",
+      "url": "https://www.youtube.com/watch?v=0jPL3Mg88ZQ",
+      "views": 13
+    },
+    {
       "videoId": "W-1_SdI-jxo",
       "title": "Shieldbearer – Amazing Grace (Lit by Fire – Alt Mix) [Official Audio | A Wretch Like Me Album]",
       "thumbnail": "https://i.ytimg.com/vi/W-1_SdI-jxo/mqdefault.jpg",
       "publishedAt": "2025-05-14T02:23:48Z",
       "url": "https://www.youtube.com/watch?v=W-1_SdI-jxo",
-      "views": 12
+      "views": 11
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-05-09",
-      "views": 7,
-      "minutes": 10
-    },
     {
       "date": "2026-05-10",
       "views": 32,
@@ -594,12 +589,12 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 124
+      "views": 111
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 28
+      "views": 27
     },
     {
       "source": "YT_SEARCH",
@@ -624,7 +619,7 @@
     {
       "source": "YT_OTHER_PAGE",
       "label": "Other YouTube page",
-      "views": 8
+      "views": 7
     },
     {
       "source": "NO_LINK_OTHER",
