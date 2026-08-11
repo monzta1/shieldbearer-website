@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-11T03:35:13.959Z",
+  "generated_at": "2026-08-11T21:35:14.268Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -29,14 +29,14 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 34,
-      "watchMinutes": 128,
-      "avgViewDurationSec": 226
+      "views": 39,
+      "watchMinutes": 140,
+      "avgViewDurationSec": 216
     },
     "last_30": {
-      "views": 203,
-      "watchMinutes": 583,
-      "avgViewDurationSec": 174
+      "views": 208,
+      "watchMinutes": 595,
+      "avgViewDurationSec": 173
     }
   },
   "last_48h_countries": [
@@ -109,7 +109,7 @@
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM",
-      "views": 34
+      "views": 36
     },
     {
       "videoId": "tH2GpPLY3so",
@@ -584,6 +584,11 @@
       "date": "2026-08-08",
       "views": 14,
       "minutes": 105
+    },
+    {
+      "date": "2026-08-09",
+      "views": 5,
+      "minutes": 12
     }
   ],
   "traffic_sources_30d": [
@@ -595,7 +600,7 @@
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 37
+      "views": 38
     },
     {
       "source": "YT_SEARCH",
@@ -605,7 +610,7 @@
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 10
+      "views": 12
     },
     {
       "source": "YT_CHANNEL",
@@ -613,13 +618,13 @@
       "views": 7
     },
     {
-      "source": "NO_LINK_OTHER",
-      "label": "No referrer",
-      "views": 5
-    },
-    {
       "source": "YT_OTHER_PAGE",
       "label": "Other YouTube page",
+      "views": 6
+    },
+    {
+      "source": "NO_LINK_OTHER",
+      "label": "No referrer",
       "views": 5
     },
     {
@@ -630,6 +635,11 @@
     {
       "source": "NOTIFICATION",
       "label": "Notifications",
+      "views": 1
+    },
+    {
+      "source": "SHORTS",
+      "label": "Shorts feed",
       "views": 1
     }
   ]
