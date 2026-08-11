@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T21:35:14.054Z",
+  "generated_at": "2026-08-11T03:35:13.959Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,28 +15,28 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-08-06",
-      "end": "2026-08-08"
+      "start": "2026-08-07",
+      "end": "2026-08-09"
     },
     "last_7": {
-      "start": "2026-08-03",
-      "end": "2026-08-10"
+      "start": "2026-08-04",
+      "end": "2026-08-11"
     },
     "last_30": {
-      "start": "2026-07-11",
-      "end": "2026-08-10"
+      "start": "2026-07-12",
+      "end": "2026-08-11"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 38,
-      "watchMinutes": 134,
-      "avgViewDurationSec": 218
+      "views": 34,
+      "watchMinutes": 128,
+      "avgViewDurationSec": 226
     },
     "last_30": {
-      "views": 216,
-      "watchMinutes": 588,
-      "avgViewDurationSec": 165
+      "views": 203,
+      "watchMinutes": 583,
+      "avgViewDurationSec": 174
     }
   },
   "last_48h_countries": [
@@ -145,11 +145,6 @@
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-05-12",
-      "views": 21,
-      "minutes": 48
-    },
     {
       "date": "2026-05-13",
       "views": 22,
@@ -595,22 +590,22 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 108
+      "views": 106
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 38
+      "views": 37
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 31
+      "views": 29
     },
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 17
+      "views": 10
     },
     {
       "source": "YT_CHANNEL",
@@ -618,13 +613,13 @@
       "views": 7
     },
     {
-      "source": "YT_OTHER_PAGE",
-      "label": "Other YouTube page",
-      "views": 6
-    },
-    {
       "source": "NO_LINK_OTHER",
       "label": "No referrer",
+      "views": 5
+    },
+    {
+      "source": "YT_OTHER_PAGE",
+      "label": "Other YouTube page",
       "views": 5
     },
     {
