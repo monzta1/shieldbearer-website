@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-12T03:35:14.279Z",
+  "generated_at": "2026-08-12T21:35:13.828Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -29,14 +29,14 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 37,
-      "watchMinutes": 139,
-      "avgViewDurationSec": 226
+      "views": 48,
+      "watchMinutes": 146,
+      "avgViewDurationSec": 191
     },
     "last_30": {
-      "views": 200,
-      "watchMinutes": 560,
-      "avgViewDurationSec": 169
+      "views": 211,
+      "watchMinutes": 567,
+      "avgViewDurationSec": 164
     }
   },
   "last_48h_countries": [
@@ -117,7 +117,7 @@
       "thumbnail": "https://i.ytimg.com/vi/tH2GpPLY3so/mqdefault.jpg",
       "publishedAt": "2025-08-14T00:17:51Z",
       "url": "https://www.youtube.com/watch?v=tH2GpPLY3so",
-      "views": 21
+      "views": 22
     },
     {
       "videoId": "DsGhOgXLGXI",
@@ -133,7 +133,7 @@
       "thumbnail": "https://i.ytimg.com/vi/0jPL3Mg88ZQ/mqdefault.jpg",
       "publishedAt": "2026-04-14T22:17:26Z",
       "url": "https://www.youtube.com/watch?v=0jPL3Mg88ZQ",
-      "views": 11
+      "views": 13
     },
     {
       "videoId": "W-1_SdI-jxo",
@@ -584,6 +584,11 @@
       "date": "2026-08-09",
       "views": 5,
       "minutes": 12
+    },
+    {
+      "date": "2026-08-10",
+      "views": 11,
+      "minutes": 7
     }
   ],
   "traffic_sources_30d": [
@@ -600,7 +605,12 @@
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 29
+      "views": 33
+    },
+    {
+      "source": "YT_CHANNEL",
+      "label": "Channel page",
+      "views": 12
     },
     {
       "source": "EXT_URL",
@@ -615,11 +625,6 @@
     {
       "source": "NO_LINK_OTHER",
       "label": "No referrer",
-      "views": 5
-    },
-    {
-      "source": "YT_CHANNEL",
-      "label": "Channel page",
       "views": 5
     },
     {
