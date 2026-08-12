@@ -1,90 +1,100 @@
 {
-  "generatedAt": "2026-08-11T08:00:15.482Z",
+  "generatedAt": "2026-08-12T08:00:15.026Z",
   "period": {
     "label": "August 2026 so far",
     "start": "2026-08-01",
     "end": "2026-08-31"
   },
   "headline": {
-    "sessions": 22,
-    "deltaPct": -54.2,
+    "sessions": 24,
+    "deltaPct": -50,
     "comparison": "vs July 2026"
   },
   "channels": [
     {
       "name": "Organic Social",
       "sessions": 13,
-      "share": 59.1
+      "share": 54.2
     },
     {
       "name": "Organic Search",
-      "sessions": 5,
-      "share": 22.7
+      "sessions": 6,
+      "share": 25
     },
     {
       "name": "Direct",
-      "sessions": 2,
-      "share": 9.1
+      "sessions": 3,
+      "share": 12.5
     }
   ],
   "geography": [
     {
       "name": "United States",
-      "sessions": 19,
-      "share": 86.4
+      "sessions": 20,
+      "share": 83.3
     },
     {
       "name": "India",
       "sessions": 1,
-      "share": 4.5
+      "share": 4.2
     },
     {
       "name": "Ireland",
       "sessions": 1,
-      "share": 4.5
+      "share": 4.2
+    },
+    {
+      "name": "Netherlands",
+      "sessions": 1,
+      "share": 4.2
     },
     {
       "name": "Sweden",
       "sessions": 1,
-      "share": 4.5
+      "share": 4.2
     }
   ],
   "cities": [
     {
       "name": "South Riding, Virginia",
       "sessions": 8,
-      "share": 36.4
+      "share": 33.3
     },
     {
       "name": "Prineville, Oregon",
       "sessions": 3,
-      "share": 13.6
+      "share": 12.5
+    },
+    {
+      "name": "(not set)",
+      "sessions": 2,
+      "share": 8.3
+    },
+    {
+      "name": "(not set), Virginia",
+      "sessions": 2,
+      "share": 8.3
     },
     {
       "name": "Clarks Summit, Pennsylvania",
       "sessions": 2,
-      "share": 9.1
+      "share": 8.3
     },
     {
-      "name": "Unknown",
-      "sessions": 1,
-      "share": 4.5
-    },
-    {
-      "name": "Unknown, Virginia",
-      "sessions": 1,
-      "share": 4.5
-    },
-    {
-      "name": "(not set), Virginia",
-      "sessions": 1,
-      "share": 4.5
+      "name": "Newtown Grant, Pennsylvania",
+      "sessions": 2,
+      "share": 8.3
     }
   ],
   "events": [
     {
       "name": "scroll_depth",
       "count": 28,
+      "engagedShare": null
+    },
+    {
+      "name": "listen_click",
+      "count": 1,
       "engagedShare": null
     }
   ],
