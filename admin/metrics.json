@@ -1,89 +1,94 @@
 {
-  "generatedAt": "2026-08-12T08:00:15.026Z",
+  "generatedAt": "2026-08-13T08:00:15.063Z",
   "period": {
     "label": "August 2026 so far",
     "start": "2026-08-01",
     "end": "2026-08-31"
   },
   "headline": {
-    "sessions": 24,
-    "deltaPct": -50,
+    "sessions": 26,
+    "deltaPct": -45.8,
     "comparison": "vs July 2026"
   },
   "channels": [
     {
       "name": "Organic Social",
       "sessions": 13,
-      "share": 54.2
+      "share": 50
     },
     {
       "name": "Organic Search",
       "sessions": 6,
-      "share": 25
+      "share": 23.1
     },
     {
       "name": "Direct",
-      "sessions": 3,
-      "share": 12.5
+      "sessions": 5,
+      "share": 19.2
     }
   ],
   "geography": [
     {
       "name": "United States",
       "sessions": 20,
-      "share": 83.3
+      "share": 76.9
+    },
+    {
+      "name": "China",
+      "sessions": 1,
+      "share": 3.8
     },
     {
       "name": "India",
       "sessions": 1,
-      "share": 4.2
+      "share": 3.8
     },
     {
       "name": "Ireland",
       "sessions": 1,
-      "share": 4.2
+      "share": 3.8
     },
     {
       "name": "Netherlands",
       "sessions": 1,
-      "share": 4.2
+      "share": 3.8
     },
     {
       "name": "Sweden",
       "sessions": 1,
-      "share": 4.2
+      "share": 3.8
     }
   ],
   "cities": [
     {
       "name": "South Riding, Virginia",
       "sessions": 8,
-      "share": 33.3
+      "share": 30.8
     },
     {
       "name": "Prineville, Oregon",
       "sessions": 3,
-      "share": 12.5
+      "share": 11.5
     },
     {
       "name": "(not set)",
       "sessions": 2,
-      "share": 8.3
+      "share": 7.7
     },
     {
       "name": "(not set), Virginia",
       "sessions": 2,
-      "share": 8.3
+      "share": 7.7
     },
     {
       "name": "Clarks Summit, Pennsylvania",
       "sessions": 2,
-      "share": 8.3
+      "share": 7.7
     },
     {
       "name": "Newtown Grant, Pennsylvania",
       "sessions": 2,
-      "share": 8.3
+      "share": 7.7
     }
   ],
   "events": [
