@@ -1,100 +1,100 @@
 {
-  "generatedAt": "2026-08-14T08:00:15.159Z",
+  "generatedAt": "2026-08-15T08:00:15.400Z",
   "period": {
     "label": "August 2026 so far",
     "start": "2026-08-01",
     "end": "2026-08-31"
   },
   "headline": {
-    "sessions": 36,
-    "deltaPct": -25,
+    "sessions": 41,
+    "deltaPct": -14.6,
     "comparison": "vs July 2026"
   },
   "channels": [
     {
       "name": "Direct",
-      "sessions": 14,
-      "share": 37.8
+      "sessions": 17,
+      "share": 39.5
     },
     {
       "name": "Organic Social",
       "sessions": 13,
-      "share": 35.1
+      "share": 30.2
     },
     {
       "name": "Organic Search",
       "sessions": 6,
-      "share": 16.2
+      "share": 14
     }
   ],
   "geography": [
     {
       "name": "United States",
-      "sessions": 29,
-      "share": 80.6
+      "sessions": 31,
+      "share": 75.6
+    },
+    {
+      "name": "India",
+      "sessions": 4,
+      "share": 9.8
     },
     {
       "name": "China",
       "sessions": 2,
-      "share": 5.6
-    },
-    {
-      "name": "India",
-      "sessions": 1,
-      "share": 2.8
+      "share": 4.9
     },
     {
       "name": "Ireland",
       "sessions": 1,
-      "share": 2.8
+      "share": 2.4
     },
     {
       "name": "Netherlands",
       "sessions": 1,
-      "share": 2.8
+      "share": 2.4
     },
     {
       "name": "Sweden",
       "sessions": 1,
-      "share": 2.8
+      "share": 2.4
     }
   ],
   "cities": [
     {
       "name": "South Riding, Virginia",
-      "sessions": 9,
-      "share": 25
-    },
-    {
-      "name": "Unknown, California",
-      "sessions": 3,
-      "share": 8.3
+      "sessions": 11,
+      "share": 26.2
     },
     {
       "name": "(not set)",
       "sessions": 3,
-      "share": 8.3
+      "share": 7.1
+    },
+    {
+      "name": "(not set), California",
+      "sessions": 3,
+      "share": 7.1
     },
     {
       "name": "Prineville, Oregon",
       "sessions": 3,
-      "share": 8.3
+      "share": 7.1
     },
     {
       "name": "Santa Clara, California",
       "sessions": 3,
-      "share": 8.3
+      "share": 7.1
     },
     {
       "name": "(not set), Virginia",
       "sessions": 2,
-      "share": 5.6
+      "share": 4.8
     }
   ],
   "events": [
     {
       "name": "scroll_depth",
-      "count": 33,
+      "count": 50,
       "engagedShare": null
     },
     {
