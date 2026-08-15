@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T21:35:13.879Z",
+  "generated_at": "2026-08-15T03:35:13.898Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,28 +15,28 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-08-10",
-      "end": "2026-08-12"
+      "start": "2026-08-11",
+      "end": "2026-08-13"
     },
     "last_7": {
-      "start": "2026-08-07",
-      "end": "2026-08-14"
+      "start": "2026-08-08",
+      "end": "2026-08-15"
     },
     "last_30": {
-      "start": "2026-07-15",
-      "end": "2026-08-14"
+      "start": "2026-07-16",
+      "end": "2026-08-15"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 53,
-      "watchMinutes": 157,
-      "avgViewDurationSec": 185
+      "views": 47,
+      "watchMinutes": 150,
+      "avgViewDurationSec": 201
     },
     "last_30": {
-      "views": 219,
-      "watchMinutes": 566,
-      "avgViewDurationSec": 157
+      "views": 214,
+      "watchMinutes": 560,
+      "avgViewDurationSec": 160
     }
   },
   "last_48h_countries": [],
@@ -89,8 +89,8 @@
       "videoId": "8khugdipSJM",
       "title": "Shieldbearer – Tidings of Comfort and Joy (God Rest Ye Merry Gentlemen) [Metal Christmas Anthem]",
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
-      "views": 8276,
-      "likes": 24,
+      "views": 8277,
+      "likes": 25,
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM"
     }
@@ -102,7 +102,7 @@
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM",
-      "views": 31
+      "views": 30
     },
     {
       "videoId": "tH2GpPLY3so",
@@ -138,11 +138,6 @@
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-05-16",
-      "views": 17,
-      "minutes": 42
-    },
     {
       "date": "2026-05-17",
       "views": 10,
@@ -593,17 +588,12 @@
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 34
+      "views": 33
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 32
-    },
-    {
-      "source": "EXT_URL",
-      "label": "External URL",
-      "views": 14
+      "views": 31
     },
     {
       "source": "YT_CHANNEL",
@@ -611,9 +601,14 @@
       "views": 13
     },
     {
+      "source": "EXT_URL",
+      "label": "External URL",
+      "views": 12
+    },
+    {
       "source": "YT_OTHER_PAGE",
       "label": "Other YouTube page",
-      "views": 8
+      "views": 7
     },
     {
       "source": "NO_LINK_OTHER",
