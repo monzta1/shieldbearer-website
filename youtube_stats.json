@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-17T03:35:13.791Z",
+  "generated_at": "2026-08-17T21:35:14.131Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -29,14 +29,14 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 39,
-      "watchMinutes": 62,
-      "avgViewDurationSec": 100
+      "views": 49,
+      "watchMinutes": 118,
+      "avgViewDurationSec": 151
     },
     "last_30": {
-      "views": 211,
-      "watchMinutes": 566,
-      "avgViewDurationSec": 164
+      "views": 221,
+      "watchMinutes": 623,
+      "avgViewDurationSec": 172
     }
   },
   "last_48h_countries": [],
@@ -81,7 +81,7 @@
       "title": "Ruler of the Storm – Shieldbearer (Official Lyric Video | Christian Metal Anthem)",
       "thumbnail": "https://i.ytimg.com/vi/9FHgbbVBT1A/mqdefault.jpg",
       "views": 9838,
-      "likes": 729,
+      "likes": 728,
       "publishedAt": "2025-05-16T10:00:06Z",
       "url": "https://www.youtube.com/watch?v=9FHgbbVBT1A"
     },
@@ -102,7 +102,7 @@
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM",
-      "views": 32
+      "views": 36
     },
     {
       "videoId": "tH2GpPLY3so",
@@ -118,7 +118,7 @@
       "thumbnail": "https://i.ytimg.com/vi/0jPL3Mg88ZQ/mqdefault.jpg",
       "publishedAt": "2026-04-14T22:17:26Z",
       "url": "https://www.youtube.com/watch?v=0jPL3Mg88ZQ",
-      "views": 16
+      "views": 17
     },
     {
       "videoId": "DsGhOgXLGXI",
@@ -577,18 +577,23 @@
       "date": "2026-08-14",
       "views": 5,
       "minutes": 17
+    },
+    {
+      "date": "2026-08-15",
+      "views": 10,
+      "minutes": 56
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 106
+      "views": 113
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 32
+      "views": 33
     },
     {
       "source": "YT_SEARCH",
@@ -608,7 +613,7 @@
     {
       "source": "YT_OTHER_PAGE",
       "label": "Other YouTube page",
-      "views": 7
+      "views": 9
     },
     {
       "source": "NO_LINK_OTHER",
