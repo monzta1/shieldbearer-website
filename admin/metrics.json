@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-16T08:00:15.180Z",
+  "generatedAt": "2026-08-17T08:00:15.013Z",
   "period": {
     "label": "August 2026 so far",
     "start": "2026-08-01",
@@ -14,17 +14,17 @@
     {
       "name": "Direct",
       "sessions": 26,
-      "share": 50
+      "share": 52
     },
     {
       "name": "Organic Social",
       "sessions": 13,
-      "share": 25
+      "share": 26
     },
     {
       "name": "Organic Search",
       "sessions": 6,
-      "share": 11.5
+      "share": 12
     }
   ],
   "geography": [
@@ -63,32 +63,32 @@
     {
       "name": "South Riding, Virginia",
       "sessions": 11,
-      "share": 22
+      "share": 21.6
     },
     {
       "name": "(not set)",
-      "sessions": 3,
-      "share": 6
+      "sessions": 5,
+      "share": 9.8
     },
     {
       "name": "(not set), California",
-      "sessions": 3,
-      "share": 6
+      "sessions": 5,
+      "share": 9.8
     },
     {
       "name": "Prineville, Oregon",
       "sessions": 3,
-      "share": 6
+      "share": 5.9
     },
     {
       "name": "Santa Clara, California",
       "sessions": 3,
-      "share": 6
+      "share": 5.9
     },
     {
-      "name": "Unknown",
+      "name": "(not set), Virginia",
       "sessions": 2,
-      "share": 4
+      "share": 3.9
     }
   ],
   "events": [
