@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-17T21:35:14.131Z",
+  "generated_at": "2026-08-18T03:35:13.868Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,28 +15,28 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-08-13",
-      "end": "2026-08-15"
+      "start": "2026-08-14",
+      "end": "2026-08-16"
     },
     "last_7": {
-      "start": "2026-08-10",
-      "end": "2026-08-17"
+      "start": "2026-08-11",
+      "end": "2026-08-18"
     },
     "last_30": {
-      "start": "2026-07-18",
-      "end": "2026-08-17"
+      "start": "2026-07-19",
+      "end": "2026-08-18"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 49,
-      "watchMinutes": 118,
-      "avgViewDurationSec": 151
+      "views": 38,
+      "watchMinutes": 111,
+      "avgViewDurationSec": 175
     },
     "last_30": {
-      "views": 221,
-      "watchMinutes": 623,
-      "avgViewDurationSec": 172
+      "views": 216,
+      "watchMinutes": 614,
+      "avgViewDurationSec": 173
     }
   },
   "last_48h_countries": [],
@@ -110,7 +110,7 @@
       "thumbnail": "https://i.ytimg.com/vi/tH2GpPLY3so/mqdefault.jpg",
       "publishedAt": "2025-08-14T00:17:51Z",
       "url": "https://www.youtube.com/watch?v=tH2GpPLY3so",
-      "views": 20
+      "views": 19
     },
     {
       "videoId": "0jPL3Mg88ZQ",
@@ -126,7 +126,7 @@
       "thumbnail": "https://i.ytimg.com/vi/DsGhOgXLGXI/mqdefault.jpg",
       "publishedAt": "2025-09-05T16:28:51Z",
       "url": "https://www.youtube.com/watch?v=DsGhOgXLGXI",
-      "views": 13
+      "views": 12
     },
     {
       "videoId": "vBGEIMXs6h0",
@@ -138,11 +138,6 @@
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-05-19",
-      "views": 11,
-      "minutes": 7
-    },
     {
       "date": "2026-05-20",
       "views": 4,
@@ -588,12 +583,12 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 113
+      "views": 110
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 33
+      "views": 32
     },
     {
       "source": "YT_SEARCH",
@@ -613,7 +608,7 @@
     {
       "source": "YT_OTHER_PAGE",
       "label": "Other YouTube page",
-      "views": 9
+      "views": 8
     },
     {
       "source": "NO_LINK_OTHER",
