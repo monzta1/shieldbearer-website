@@ -1,62 +1,62 @@
 {
-  "generatedAt": "2026-08-18T08:00:15.117Z",
+  "generatedAt": "2026-08-19T08:00:15.400Z",
   "period": {
     "label": "August 2026 so far",
     "start": "2026-08-01",
     "end": "2026-08-31"
   },
   "headline": {
-    "sessions": 51,
-    "deltaPct": 6.3,
+    "sessions": 52,
+    "deltaPct": 8.3,
     "comparison": "vs July 2026"
   },
   "channels": [
     {
       "name": "Direct",
       "sessions": 27,
-      "share": 51.9
+      "share": 50.9
     },
     {
       "name": "Organic Social",
-      "sessions": 13,
-      "share": 25
+      "sessions": 14,
+      "share": 26.4
     },
     {
       "name": "Organic Search",
       "sessions": 6,
-      "share": 11.5
+      "share": 11.3
     }
   ],
   "geography": [
     {
       "name": "United States",
-      "sessions": 39,
-      "share": 76.5
+      "sessions": 40,
+      "share": 76.9
     },
     {
       "name": "India",
       "sessions": 5,
-      "share": 9.8
+      "share": 9.6
     },
     {
       "name": "China",
       "sessions": 2,
-      "share": 3.9
+      "share": 3.8
     },
     {
       "name": "France",
       "sessions": 1,
-      "share": 2
+      "share": 1.9
     },
     {
       "name": "Ireland",
       "sessions": 1,
-      "share": 2
+      "share": 1.9
     },
     {
       "name": "Netherlands",
       "sessions": 1,
-      "share": 2
+      "share": 1.9
     }
   ],
   "cities": [
