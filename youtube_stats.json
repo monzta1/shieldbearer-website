@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19T21:35:13.921Z",
+  "generated_at": "2026-08-20T03:35:14.075Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,27 +15,27 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-08-15",
-      "end": "2026-08-17"
+      "start": "2026-08-16",
+      "end": "2026-08-18"
     },
     "last_7": {
-      "start": "2026-08-12",
-      "end": "2026-08-19"
+      "start": "2026-08-13",
+      "end": "2026-08-20"
     },
     "last_30": {
-      "start": "2026-07-20",
-      "end": "2026-08-19"
+      "start": "2026-07-21",
+      "end": "2026-08-20"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 40,
-      "watchMinutes": 116,
-      "avgViewDurationSec": 179
+      "views": 30,
+      "watchMinutes": 98,
+      "avgViewDurationSec": 204
     },
     "last_30": {
-      "views": 222,
-      "watchMinutes": 614,
+      "views": 208,
+      "watchMinutes": 574,
       "avgViewDurationSec": 169
     }
   },
@@ -110,7 +110,7 @@
       "thumbnail": "https://i.ytimg.com/vi/tH2GpPLY3so/mqdefault.jpg",
       "publishedAt": "2025-08-14T00:17:51Z",
       "url": "https://www.youtube.com/watch?v=tH2GpPLY3so",
-      "views": 18
+      "views": 16
     },
     {
       "videoId": "0jPL3Mg88ZQ",
@@ -118,15 +118,7 @@
       "thumbnail": "https://i.ytimg.com/vi/0jPL3Mg88ZQ/mqdefault.jpg",
       "publishedAt": "2026-04-14T22:17:26Z",
       "url": "https://www.youtube.com/watch?v=0jPL3Mg88ZQ",
-      "views": 17
-    },
-    {
-      "videoId": "DsGhOgXLGXI",
-      "title": "Shieldbearer – 1000 Suns | Christian Metal Worship",
-      "thumbnail": "https://i.ytimg.com/vi/DsGhOgXLGXI/mqdefault.jpg",
-      "publishedAt": "2025-09-05T16:28:51Z",
-      "url": "https://www.youtube.com/watch?v=DsGhOgXLGXI",
-      "views": 11
+      "views": 13
     },
     {
       "videoId": "vBGEIMXs6h0",
@@ -135,14 +127,17 @@
       "publishedAt": "2025-07-15T02:04:57Z",
       "url": "https://www.youtube.com/watch?v=vBGEIMXs6h0",
       "views": 10
+    },
+    {
+      "videoId": "DsGhOgXLGXI",
+      "title": "Shieldbearer – 1000 Suns | Christian Metal Worship",
+      "thumbnail": "https://i.ytimg.com/vi/DsGhOgXLGXI/mqdefault.jpg",
+      "publishedAt": "2025-09-05T16:28:51Z",
+      "url": "https://www.youtube.com/watch?v=DsGhOgXLGXI",
+      "views": 9
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-05-21",
-      "views": 7,
-      "minutes": 12
-    },
     {
       "date": "2026-05-22",
       "views": 10,
@@ -588,7 +583,7 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 113
+      "views": 108
     },
     {
       "source": "SUBSCRIBER",
@@ -598,17 +593,17 @@
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 30
-    },
-    {
-      "source": "YT_CHANNEL",
-      "label": "Channel page",
-      "views": 13
+      "views": 26
     },
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 13
+      "views": 12
+    },
+    {
+      "source": "YT_CHANNEL",
+      "label": "Channel page",
+      "views": 11
     },
     {
       "source": "YT_OTHER_PAGE",
@@ -616,14 +611,14 @@
       "views": 8
     },
     {
-      "source": "NO_LINK_OTHER",
-      "label": "No referrer",
-      "views": 5
-    },
-    {
       "source": "RELATED_VIDEO",
       "label": "Related video",
       "views": 4
+    },
+    {
+      "source": "NO_LINK_OTHER",
+      "label": "No referrer",
+      "views": 3
     },
     {
       "source": "SHORTS",
