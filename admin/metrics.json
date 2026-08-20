@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-19T08:00:15.400Z",
+  "generatedAt": "2026-08-20T08:00:14.991Z",
   "period": {
     "label": "August 2026 so far",
     "start": "2026-08-01",
@@ -14,17 +14,17 @@
     {
       "name": "Direct",
       "sessions": 27,
-      "share": 50.9
+      "share": 51.9
     },
     {
       "name": "Organic Social",
       "sessions": 14,
-      "share": 26.4
+      "share": 26.9
     },
     {
       "name": "Organic Search",
       "sessions": 6,
-      "share": 11.3
+      "share": 11.5
     }
   ],
   "geography": [
