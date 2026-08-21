@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-21T03:35:14.228Z",
+  "generated_at": "2026-08-21T21:35:13.875Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -29,14 +29,14 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 29,
-      "watchMinutes": 105,
-      "avgViewDurationSec": 226
+      "views": 31,
+      "watchMinutes": 106,
+      "avgViewDurationSec": 212
     },
     "last_30": {
-      "views": 206,
-      "watchMinutes": 573,
-      "avgViewDurationSec": 171
+      "views": 208,
+      "watchMinutes": 574,
+      "avgViewDurationSec": 169
     }
   },
   "last_48h_countries": [],
@@ -72,7 +72,7 @@
       "title": "Celestial Shield (Lyric Video) – Shieldbearer | Christian Metal | Israel, Prophecy & Warfare",
       "thumbnail": "https://i.ytimg.com/vi/vBGEIMXs6h0/mqdefault.jpg",
       "views": 12039,
-      "likes": 536,
+      "likes": 534,
       "publishedAt": "2025-07-15T02:04:57Z",
       "url": "https://www.youtube.com/watch?v=vBGEIMXs6h0"
     },
@@ -577,13 +577,18 @@
       "date": "2026-08-18",
       "views": 5,
       "minutes": 18
+    },
+    {
+      "date": "2026-08-19",
+      "views": 2,
+      "minutes": 0
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 105
+      "views": 106
     },
     {
       "source": "SUBSCRIBER",
@@ -593,7 +598,7 @@
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 25
+      "views": 26
     },
     {
       "source": "EXT_URL",
