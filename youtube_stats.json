@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-21T21:35:13.875Z",
+  "generated_at": "2026-08-22T03:35:13.450Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,28 +15,28 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-08-17",
-      "end": "2026-08-19"
+      "start": "2026-08-18",
+      "end": "2026-08-20"
     },
     "last_7": {
-      "start": "2026-08-14",
-      "end": "2026-08-21"
+      "start": "2026-08-15",
+      "end": "2026-08-22"
     },
     "last_30": {
-      "start": "2026-07-22",
-      "end": "2026-08-21"
+      "start": "2026-07-23",
+      "end": "2026-08-22"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 31,
-      "watchMinutes": 106,
-      "avgViewDurationSec": 212
+      "views": 26,
+      "watchMinutes": 89,
+      "avgViewDurationSec": 214
     },
     "last_30": {
-      "views": 208,
-      "watchMinutes": 574,
-      "avgViewDurationSec": 169
+      "views": 199,
+      "watchMinutes": 546,
+      "avgViewDurationSec": 168
     }
   },
   "last_48h_countries": [],
@@ -110,7 +110,7 @@
       "thumbnail": "https://i.ytimg.com/vi/tH2GpPLY3so/mqdefault.jpg",
       "publishedAt": "2025-08-14T00:17:51Z",
       "url": "https://www.youtube.com/watch?v=tH2GpPLY3so",
-      "views": 15
+      "views": 14
     },
     {
       "videoId": "0jPL3Mg88ZQ",
@@ -121,28 +121,23 @@
       "views": 11
     },
     {
-      "videoId": "vBGEIMXs6h0",
-      "title": "Celestial Shield (Lyric Video) – Shieldbearer | Christian Metal | Israel, Prophecy & Warfare",
-      "thumbnail": "https://i.ytimg.com/vi/vBGEIMXs6h0/mqdefault.jpg",
-      "publishedAt": "2025-07-15T02:04:57Z",
-      "url": "https://www.youtube.com/watch?v=vBGEIMXs6h0",
-      "views": 11
-    },
-    {
       "videoId": "E9rJluVWvxM",
       "title": "Shieldbearer – The Architect (Official Christian Metal Release)",
       "thumbnail": "https://i.ytimg.com/vi/E9rJluVWvxM/mqdefault.jpg",
       "publishedAt": "2025-09-26T15:41:13Z",
       "url": "https://www.youtube.com/watch?v=E9rJluVWvxM",
       "views": 10
+    },
+    {
+      "videoId": "W-1_SdI-jxo",
+      "title": "Shieldbearer – Amazing Grace (Lit by Fire – Alt Mix) [Official Audio | A Wretch Like Me Album]",
+      "thumbnail": "https://i.ytimg.com/vi/W-1_SdI-jxo/mqdefault.jpg",
+      "publishedAt": "2025-05-14T02:23:48Z",
+      "url": "https://www.youtube.com/watch?v=W-1_SdI-jxo",
+      "views": 9
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-05-23",
-      "views": 5,
-      "minutes": 6
-    },
     {
       "date": "2026-05-24",
       "views": 12,
@@ -588,7 +583,7 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 106
+      "views": 103
     },
     {
       "source": "SUBSCRIBER",
@@ -598,17 +593,17 @@
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 26
-    },
-    {
-      "source": "EXT_URL",
-      "label": "External URL",
-      "views": 12
+      "views": 24
     },
     {
       "source": "YT_CHANNEL",
       "label": "Channel page",
       "views": 11
+    },
+    {
+      "source": "EXT_URL",
+      "label": "External URL",
+      "views": 10
     },
     {
       "source": "YT_OTHER_PAGE",
@@ -618,12 +613,12 @@
     {
       "source": "RELATED_VIDEO",
       "label": "Related video",
-      "views": 5
+      "views": 4
     },
     {
       "source": "NO_LINK_OTHER",
       "label": "No referrer",
-      "views": 3
+      "views": 2
     },
     {
       "source": "SHORTS",
