@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-24T03:35:14.016Z",
+  "generated_at": "2026-08-24T21:35:14.176Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -29,14 +29,14 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 22,
-      "watchMinutes": 40,
-      "avgViewDurationSec": 135
+      "views": 26,
+      "watchMinutes": 75,
+      "avgViewDurationSec": 205
     },
     "last_30": {
-      "views": 189,
-      "watchMinutes": 495,
-      "avgViewDurationSec": 164
+      "views": 193,
+      "watchMinutes": 530,
+      "avgViewDurationSec": 171
     }
   },
   "last_48h_countries": [],
@@ -102,7 +102,7 @@
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM",
-      "views": 37
+      "views": 38
     },
     {
       "videoId": "0jPL3Mg88ZQ",
@@ -121,11 +121,11 @@
       "views": 10
     },
     {
-      "videoId": "blL7TiDkDrc",
-      "title": "Shieldbearer – Over the Skies of Hell (Official Lyric Video) | 10K Subscribers Special",
-      "thumbnail": "https://i.ytimg.com/vi/blL7TiDkDrc/mqdefault.jpg",
-      "publishedAt": "2025-09-10T14:54:01Z",
-      "url": "https://www.youtube.com/watch?v=blL7TiDkDrc",
+      "videoId": "GJ_KrOQrgbk",
+      "title": "Shieldbearer – Prison Break [Christian Metal | Official Audio | Celestial Shield Album]",
+      "thumbnail": "https://i.ytimg.com/vi/GJ_KrOQrgbk/mqdefault.jpg",
+      "publishedAt": "2025-05-03T11:47:28Z",
+      "url": "https://www.youtube.com/watch?v=GJ_KrOQrgbk",
       "views": 9
     },
     {
@@ -134,7 +134,7 @@
       "thumbnail": "https://i.ytimg.com/vi/W-1_SdI-jxo/mqdefault.jpg",
       "publishedAt": "2025-05-14T02:23:48Z",
       "url": "https://www.youtube.com/watch?v=W-1_SdI-jxo",
-      "views": 8
+      "views": 9
     }
   ],
   "daily_views": [
@@ -577,18 +577,23 @@
       "date": "2026-08-21",
       "views": 4,
       "minutes": 5
+    },
+    {
+      "date": "2026-08-22",
+      "views": 4,
+      "minutes": 34
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 84
+      "views": 85
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 36
+      "views": 38
     },
     {
       "source": "YT_SEARCH",
@@ -596,13 +601,13 @@
       "views": 28
     },
     {
-      "source": "YT_CHANNEL",
-      "label": "Channel page",
-      "views": 12
-    },
-    {
       "source": "YT_OTHER_PAGE",
       "label": "Other YouTube page",
+      "views": 13
+    },
+    {
+      "source": "YT_CHANNEL",
+      "label": "Channel page",
       "views": 12
     },
     {
