@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-23T21:35:13.744Z",
+  "generated_at": "2026-08-24T03:35:14.016Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,28 +15,28 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-08-19",
-      "end": "2026-08-21"
+      "start": "2026-08-20",
+      "end": "2026-08-22"
     },
     "last_7": {
-      "start": "2026-08-16",
-      "end": "2026-08-23"
+      "start": "2026-08-17",
+      "end": "2026-08-24"
     },
     "last_30": {
-      "start": "2026-07-24",
-      "end": "2026-08-23"
+      "start": "2026-07-25",
+      "end": "2026-08-24"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 26,
-      "watchMinutes": 45,
-      "avgViewDurationSec": 123
+      "views": 22,
+      "watchMinutes": 40,
+      "avgViewDurationSec": 135
     },
     "last_30": {
-      "views": 198,
-      "watchMinutes": 515,
-      "avgViewDurationSec": 162
+      "views": 189,
+      "watchMinutes": 495,
+      "avgViewDurationSec": 164
     }
   },
   "last_48h_countries": [],
@@ -89,7 +89,7 @@
       "videoId": "8khugdipSJM",
       "title": "Shieldbearer – Tidings of Comfort and Joy (God Rest Ye Merry Gentlemen) [Metal Christmas Anthem]",
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
-      "views": 8284,
+      "views": 8286,
       "likes": 25,
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM"
@@ -110,7 +110,7 @@
       "thumbnail": "https://i.ytimg.com/vi/0jPL3Mg88ZQ/mqdefault.jpg",
       "publishedAt": "2026-04-14T22:17:26Z",
       "url": "https://www.youtube.com/watch?v=0jPL3Mg88ZQ",
-      "views": 11
+      "views": 10
     },
     {
       "videoId": "E9rJluVWvxM",
@@ -121,28 +121,23 @@
       "views": 10
     },
     {
-      "videoId": "tH2GpPLY3so",
-      "title": "Shieldbearer – QUAKE (Christian Metal | Official Audio)",
-      "thumbnail": "https://i.ytimg.com/vi/tH2GpPLY3so/mqdefault.jpg",
-      "publishedAt": "2025-08-14T00:17:51Z",
-      "url": "https://www.youtube.com/watch?v=tH2GpPLY3so",
-      "views": 10
-    },
-    {
       "videoId": "blL7TiDkDrc",
       "title": "Shieldbearer – Over the Skies of Hell (Official Lyric Video) | 10K Subscribers Special",
       "thumbnail": "https://i.ytimg.com/vi/blL7TiDkDrc/mqdefault.jpg",
       "publishedAt": "2025-09-10T14:54:01Z",
       "url": "https://www.youtube.com/watch?v=blL7TiDkDrc",
       "views": 9
+    },
+    {
+      "videoId": "W-1_SdI-jxo",
+      "title": "Shieldbearer – Amazing Grace (Lit by Fire – Alt Mix) [Official Audio | A Wretch Like Me Album]",
+      "thumbnail": "https://i.ytimg.com/vi/W-1_SdI-jxo/mqdefault.jpg",
+      "publishedAt": "2025-05-14T02:23:48Z",
+      "url": "https://www.youtube.com/watch?v=W-1_SdI-jxo",
+      "views": 8
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-05-25",
-      "views": 13,
-      "minutes": 34
-    },
     {
       "date": "2026-05-26",
       "views": 13,
@@ -588,7 +583,7 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 92
+      "views": 84
     },
     {
       "source": "SUBSCRIBER",
@@ -598,7 +593,7 @@
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 29
+      "views": 28
     },
     {
       "source": "YT_CHANNEL",
