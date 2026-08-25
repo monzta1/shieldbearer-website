@@ -1,92 +1,92 @@
 {
-  "generatedAt": "2026-08-24T08:00:15.190Z",
+  "generatedAt": "2026-08-25T08:00:14.869Z",
   "period": {
     "label": "August 2026 so far",
     "start": "2026-08-01",
     "end": "2026-08-31"
   },
   "headline": {
-    "sessions": 54,
-    "deltaPct": 12.5,
+    "sessions": 56,
+    "deltaPct": 16.7,
     "comparison": "vs July 2026"
   },
   "channels": [
     {
       "name": "Direct",
-      "sessions": 29,
-      "share": 53.7
+      "sessions": 31,
+      "share": 55.4
     },
     {
       "name": "Organic Social",
       "sessions": 14,
-      "share": 25.9
+      "share": 25
     },
     {
       "name": "Organic Search",
       "sessions": 6,
-      "share": 11.1
+      "share": 10.7
     }
   ],
   "geography": [
     {
       "name": "United States",
-      "sessions": 42,
-      "share": 77.8
+      "sessions": 44,
+      "share": 78.6
     },
     {
       "name": "India",
       "sessions": 5,
-      "share": 9.3
+      "share": 8.9
     },
     {
       "name": "China",
       "sessions": 2,
-      "share": 3.7
+      "share": 3.6
     },
     {
       "name": "France",
       "sessions": 1,
-      "share": 1.9
+      "share": 1.8
     },
     {
       "name": "Ireland",
       "sessions": 1,
-      "share": 1.9
+      "share": 1.8
     },
     {
       "name": "Netherlands",
       "sessions": 1,
-      "share": 1.9
+      "share": 1.8
     }
   ],
   "cities": [
     {
       "name": "South Riding, Virginia",
       "sessions": 11,
-      "share": 21.2
+      "share": 20.8
     },
     {
       "name": "(not set)",
       "sessions": 5,
-      "share": 9.6
+      "share": 9.4
     },
     {
       "name": "(not set), California",
       "sessions": 5,
-      "share": 9.6
+      "share": 9.4
     },
     {
       "name": "Prineville, Oregon",
       "sessions": 3,
-      "share": 5.8
+      "share": 5.7
     },
     {
       "name": "Santa Clara, California",
       "sessions": 3,
-      "share": 5.8
+      "share": 5.7
     },
     {
-      "name": "(not set), Virginia",
+      "name": "(not set), Colorado",
       "sessions": 2,
       "share": 3.8
     }
