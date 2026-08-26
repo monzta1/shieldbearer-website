@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T08:00:14.869Z",
+  "generatedAt": "2026-08-26T08:00:15.364Z",
   "period": {
     "label": "August 2026 so far",
     "start": "2026-08-01",
@@ -63,32 +63,32 @@
     {
       "name": "South Riding, Virginia",
       "sessions": 11,
-      "share": 20.8
+      "share": 20.4
     },
     {
       "name": "(not set)",
       "sessions": 5,
-      "share": 9.4
+      "share": 9.3
     },
     {
       "name": "(not set), California",
       "sessions": 5,
-      "share": 9.4
+      "share": 9.3
+    },
+    {
+      "name": "(not set), Colorado",
+      "sessions": 3,
+      "share": 5.6
     },
     {
       "name": "Prineville, Oregon",
       "sessions": 3,
-      "share": 5.7
+      "share": 5.6
     },
     {
       "name": "Santa Clara, California",
       "sessions": 3,
-      "share": 5.7
-    },
-    {
-      "name": "(not set), Colorado",
-      "sessions": 2,
-      "share": 3.8
+      "share": 5.6
     }
   ],
   "events": [
