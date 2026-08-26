@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-25T21:35:14.356Z",
+  "generated_at": "2026-08-26T03:35:14.211Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,27 +15,27 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-08-21",
-      "end": "2026-08-23"
+      "start": "2026-08-22",
+      "end": "2026-08-24"
     },
     "last_7": {
-      "start": "2026-08-18",
-      "end": "2026-08-25"
+      "start": "2026-08-19",
+      "end": "2026-08-26"
     },
     "last_30": {
-      "start": "2026-07-26",
-      "end": "2026-08-25"
+      "start": "2026-07-27",
+      "end": "2026-08-26"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 28,
-      "watchMinutes": 95,
-      "avgViewDurationSec": 239
+      "views": 23,
+      "watchMinutes": 77,
+      "avgViewDurationSec": 244
     },
     "last_30": {
-      "views": 193,
-      "watchMinutes": 535,
+      "views": 182,
+      "watchMinutes": 504,
       "avgViewDurationSec": 174
     }
   },
@@ -102,15 +102,7 @@
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM",
-      "views": 37
-    },
-    {
-      "videoId": "0jPL3Mg88ZQ",
-      "title": "SHIELDBEARER - SENTINELS | Official Video",
-      "thumbnail": "https://i.ytimg.com/vi/0jPL3Mg88ZQ/mqdefault.jpg",
-      "publishedAt": "2026-04-14T22:17:26Z",
-      "url": "https://www.youtube.com/watch?v=0jPL3Mg88ZQ",
-      "views": 10
+      "views": 33
     },
     {
       "videoId": "E9rJluVWvxM",
@@ -135,14 +127,17 @@
       "publishedAt": "2025-05-14T02:23:48Z",
       "url": "https://www.youtube.com/watch?v=W-1_SdI-jxo",
       "views": 9
+    },
+    {
+      "videoId": "tH2GpPLY3so",
+      "title": "Shieldbearer – QUAKE (Christian Metal | Official Audio)",
+      "thumbnail": "https://i.ytimg.com/vi/tH2GpPLY3so/mqdefault.jpg",
+      "publishedAt": "2025-08-14T00:17:51Z",
+      "url": "https://www.youtube.com/watch?v=tH2GpPLY3so",
+      "views": 9
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-05-27",
-      "views": 13,
-      "minutes": 17
-    },
     {
       "date": "2026-05-28",
       "views": 2,
@@ -588,17 +583,17 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 86
+      "views": 84
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 36
+      "views": 31
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 31
+      "views": 28
     },
     {
       "source": "YT_OTHER_PAGE",
@@ -618,7 +613,7 @@
     {
       "source": "RELATED_VIDEO",
       "label": "Related video",
-      "views": 3
+      "views": 2
     },
     {
       "source": "NO_LINK_OTHER",
