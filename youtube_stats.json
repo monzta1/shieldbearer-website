@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T03:35:14.211Z",
+  "generated_at": "2026-08-26T21:35:14.289Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -29,14 +29,14 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 23,
-      "watchMinutes": 77,
-      "avgViewDurationSec": 244
+      "views": 25,
+      "watchMinutes": 78,
+      "avgViewDurationSec": 223
     },
     "last_30": {
-      "views": 182,
-      "watchMinutes": 504,
-      "avgViewDurationSec": 174
+      "views": 184,
+      "watchMinutes": 505,
+      "avgViewDurationSec": 173
     }
   },
   "last_48h_countries": [],
@@ -118,7 +118,7 @@
       "thumbnail": "https://i.ytimg.com/vi/GJ_KrOQrgbk/mqdefault.jpg",
       "publishedAt": "2025-05-03T11:47:28Z",
       "url": "https://www.youtube.com/watch?v=GJ_KrOQrgbk",
-      "views": 9
+      "views": 10
     },
     {
       "videoId": "W-1_SdI-jxo",
@@ -577,6 +577,11 @@
       "date": "2026-08-23",
       "views": 7,
       "minutes": 29
+    },
+    {
+      "date": "2026-08-24",
+      "views": 2,
+      "minutes": 1
     }
   ],
   "traffic_sources_30d": [
@@ -593,7 +598,7 @@
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 28
+      "views": 29
     },
     {
       "source": "YT_OTHER_PAGE",
@@ -608,7 +613,7 @@
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 10
+      "views": 11
     },
     {
       "source": "RELATED_VIDEO",
