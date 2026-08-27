@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T21:35:14.289Z",
+  "generated_at": "2026-08-27T03:35:13.517Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,28 +15,28 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-08-22",
-      "end": "2026-08-24"
+      "start": "2026-08-23",
+      "end": "2026-08-25"
     },
     "last_7": {
-      "start": "2026-08-19",
-      "end": "2026-08-26"
+      "start": "2026-08-20",
+      "end": "2026-08-27"
     },
     "last_30": {
-      "start": "2026-07-27",
-      "end": "2026-08-26"
+      "start": "2026-07-28",
+      "end": "2026-08-27"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 25,
-      "watchMinutes": 78,
-      "avgViewDurationSec": 223
+      "views": 23,
+      "watchMinutes": 77,
+      "avgViewDurationSec": 245
     },
     "last_30": {
-      "views": 184,
-      "watchMinutes": 505,
-      "avgViewDurationSec": 173
+      "views": 181,
+      "watchMinutes": 499,
+      "avgViewDurationSec": 174
     }
   },
   "last_48h_countries": [],
@@ -81,7 +81,7 @@
       "title": "Ruler of the Storm – Shieldbearer (Official Lyric Video | Christian Metal Anthem)",
       "thumbnail": "https://i.ytimg.com/vi/9FHgbbVBT1A/mqdefault.jpg",
       "views": 9838,
-      "likes": 728,
+      "likes": 727,
       "publishedAt": "2025-05-16T10:00:06Z",
       "url": "https://www.youtube.com/watch?v=9FHgbbVBT1A"
     },
@@ -138,11 +138,6 @@
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-05-28",
-      "views": 2,
-      "minutes": 0
-    },
     {
       "date": "2026-05-29",
       "views": 18,
@@ -588,7 +583,7 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 84
+      "views": 81
     },
     {
       "source": "SUBSCRIBER",
