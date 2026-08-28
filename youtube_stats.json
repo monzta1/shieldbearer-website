@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-28T03:35:14.272Z",
+  "generated_at": "2026-08-28T21:35:14.242Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -29,14 +29,14 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 21,
+      "views": 22,
       "watchMinutes": 83,
-      "avgViewDurationSec": 264
+      "avgViewDurationSec": 251
     },
     "last_30": {
-      "views": 154,
+      "views": 155,
       "watchMinutes": 420,
-      "avgViewDurationSec": 173
+      "avgViewDurationSec": 172
     }
   },
   "last_48h_countries": [],
@@ -89,7 +89,7 @@
       "videoId": "8khugdipSJM",
       "title": "Shieldbearer – Tidings of Comfort and Joy (God Rest Ye Merry Gentlemen) [Metal Christmas Anthem]",
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
-      "views": 8286,
+      "views": 8287,
       "likes": 25,
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM"
@@ -577,13 +577,18 @@
       "date": "2026-08-25",
       "views": 4,
       "minutes": 13
+    },
+    {
+      "date": "2026-08-26",
+      "views": 1,
+      "minutes": 0
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 55
+      "views": 56
     },
     {
       "source": "SUBSCRIBER",
