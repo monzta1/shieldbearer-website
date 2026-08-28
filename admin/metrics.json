@@ -1,47 +1,47 @@
 {
-  "generatedAt": "2026-08-27T08:00:15.415Z",
+  "generatedAt": "2026-08-28T08:00:15.023Z",
   "period": {
     "label": "August 2026 so far",
     "start": "2026-08-01",
     "end": "2026-08-31"
   },
   "headline": {
-    "sessions": 56,
-    "deltaPct": 16.7,
+    "sessions": 57,
+    "deltaPct": 18.8,
     "comparison": "vs July 2026"
   },
   "channels": [
     {
       "name": "Direct",
       "sessions": 31,
-      "share": 55.4
+      "share": 53.4
     },
     {
       "name": "Organic Social",
       "sessions": 14,
-      "share": 25
+      "share": 24.1
     },
     {
       "name": "Organic Search",
-      "sessions": 6,
-      "share": 10.7
+      "sessions": 7,
+      "share": 12.1
     }
   ],
   "geography": [
     {
       "name": "United States",
       "sessions": 44,
-      "share": 78.6
+      "share": 77.2
     },
     {
       "name": "India",
       "sessions": 5,
-      "share": 8.9
+      "share": 8.8
     },
     {
       "name": "China",
       "sessions": 2,
-      "share": 3.6
+      "share": 3.5
     },
     {
       "name": "France",
@@ -94,7 +94,7 @@
   "events": [
     {
       "name": "scroll_depth",
-      "count": 55,
+      "count": 57,
       "engagedShare": null
     },
     {
