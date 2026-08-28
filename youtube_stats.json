@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-27T21:35:14.575Z",
+  "generated_at": "2026-08-28T03:35:14.272Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,28 +15,28 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-08-23",
-      "end": "2026-08-25"
+      "start": "2026-08-24",
+      "end": "2026-08-26"
     },
     "last_7": {
-      "start": "2026-08-20",
-      "end": "2026-08-27"
+      "start": "2026-08-21",
+      "end": "2026-08-28"
     },
     "last_30": {
-      "start": "2026-07-28",
-      "end": "2026-08-27"
+      "start": "2026-07-29",
+      "end": "2026-08-28"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 27,
-      "watchMinutes": 91,
-      "avgViewDurationSec": 237
+      "views": 21,
+      "watchMinutes": 83,
+      "avgViewDurationSec": 264
     },
     "last_30": {
-      "views": 185,
-      "watchMinutes": 513,
-      "avgViewDurationSec": 174
+      "views": 154,
+      "watchMinutes": 420,
+      "avgViewDurationSec": 173
     }
   },
   "last_48h_countries": [],
@@ -45,7 +45,7 @@
       "code": "US",
       "name": "United States",
       "flag": "🇺🇸",
-      "views": 26
+      "views": 10
     }
   ],
   "top_videos": [
@@ -102,7 +102,7 @@
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM",
-      "views": 33
+      "views": 30
     },
     {
       "videoId": "GJ_KrOQrgbk",
@@ -113,20 +113,12 @@
       "views": 11
     },
     {
-      "videoId": "E9rJluVWvxM",
-      "title": "Shieldbearer – The Architect (Official Christian Metal Release)",
-      "thumbnail": "https://i.ytimg.com/vi/E9rJluVWvxM/mqdefault.jpg",
-      "publishedAt": "2025-09-26T15:41:13Z",
-      "url": "https://www.youtube.com/watch?v=E9rJluVWvxM",
-      "views": 10
-    },
-    {
-      "videoId": "W-1_SdI-jxo",
-      "title": "Shieldbearer – Amazing Grace (Lit by Fire – Alt Mix) [Official Audio | A Wretch Like Me Album]",
-      "thumbnail": "https://i.ytimg.com/vi/W-1_SdI-jxo/mqdefault.jpg",
-      "publishedAt": "2025-05-14T02:23:48Z",
-      "url": "https://www.youtube.com/watch?v=W-1_SdI-jxo",
-      "views": 9
+      "videoId": "0jPL3Mg88ZQ",
+      "title": "SHIELDBEARER - SENTINELS | Official Video",
+      "thumbnail": "https://i.ytimg.com/vi/0jPL3Mg88ZQ/mqdefault.jpg",
+      "publishedAt": "2026-04-14T22:17:26Z",
+      "url": "https://www.youtube.com/watch?v=0jPL3Mg88ZQ",
+      "views": 8
     },
     {
       "videoId": "tH2GpPLY3so",
@@ -134,15 +126,18 @@
       "thumbnail": "https://i.ytimg.com/vi/tH2GpPLY3so/mqdefault.jpg",
       "publishedAt": "2025-08-14T00:17:51Z",
       "url": "https://www.youtube.com/watch?v=tH2GpPLY3so",
-      "views": 9
+      "views": 8
+    },
+    {
+      "videoId": "BwWB95z6lKg",
+      "title": "Shieldbearer – Worth It All (Official Video)",
+      "thumbnail": "https://i.ytimg.com/vi/BwWB95z6lKg/mqdefault.jpg",
+      "publishedAt": "2025-07-30T17:32:30Z",
+      "url": "https://www.youtube.com/watch?v=BwWB95z6lKg",
+      "views": 7
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-05-29",
-      "views": 18,
-      "minutes": 18
-    },
     {
       "date": "2026-05-30",
       "views": 28,
@@ -588,12 +583,12 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 83
+      "views": 55
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 32
+      "views": 30
     },
     {
       "source": "YT_SEARCH",
@@ -603,7 +598,7 @@
     {
       "source": "YT_OTHER_PAGE",
       "label": "Other YouTube page",
-      "views": 14
+      "views": 13
     },
     {
       "source": "EXT_URL",
