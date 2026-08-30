@@ -1,104 +1,109 @@
 {
-  "generatedAt": "2026-08-29T08:00:15.111Z",
+  "generatedAt": "2026-08-30T08:00:14.981Z",
   "period": {
     "label": "August 2026 so far",
     "start": "2026-08-01",
     "end": "2026-08-31"
   },
   "headline": {
-    "sessions": 57,
-    "deltaPct": 18.8,
+    "sessions": 59,
+    "deltaPct": 22.9,
     "comparison": "vs July 2026"
   },
   "channels": [
     {
       "name": "Direct",
       "sessions": 31,
-      "share": 54.4
+      "share": 51.7
     },
     {
       "name": "Organic Social",
       "sessions": 14,
-      "share": 24.6
+      "share": 23.3
     },
     {
       "name": "Organic Search",
-      "sessions": 7,
-      "share": 12.3
+      "sessions": 9,
+      "share": 15
     }
   ],
   "geography": [
     {
       "name": "United States",
-      "sessions": 44,
-      "share": 77.2
+      "sessions": 46,
+      "share": 78
     },
     {
       "name": "India",
       "sessions": 5,
-      "share": 8.8
+      "share": 8.5
     },
     {
       "name": "China",
       "sessions": 2,
-      "share": 3.5
+      "share": 3.4
     },
     {
       "name": "France",
       "sessions": 1,
-      "share": 1.8
+      "share": 1.7
     },
     {
       "name": "Ireland",
       "sessions": 1,
-      "share": 1.8
+      "share": 1.7
     },
     {
       "name": "Netherlands",
       "sessions": 1,
-      "share": 1.8
+      "share": 1.7
     }
   ],
   "cities": [
     {
       "name": "South Riding, Virginia",
       "sessions": 11,
-      "share": 20.4
+      "share": 20
     },
     {
       "name": "(not set)",
       "sessions": 5,
-      "share": 9.3
+      "share": 9.1
     },
     {
       "name": "(not set), California",
       "sessions": 5,
-      "share": 9.3
+      "share": 9.1
     },
     {
       "name": "(not set), Colorado",
       "sessions": 3,
-      "share": 5.6
+      "share": 5.5
     },
     {
       "name": "Prineville, Oregon",
       "sessions": 3,
-      "share": 5.6
+      "share": 5.5
     },
     {
       "name": "Santa Clara, California",
       "sessions": 3,
-      "share": 5.6
+      "share": 5.5
     }
   ],
   "events": [
     {
       "name": "scroll_depth",
-      "count": 57,
+      "count": 61,
       "engagedShare": null
     },
     {
       "name": "listen_click",
+      "count": 1,
+      "engagedShare": null
+    },
+    {
+      "name": "merch_click",
       "count": 1,
       "engagedShare": null
     }
