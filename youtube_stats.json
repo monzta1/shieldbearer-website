@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-30T03:35:14.052Z",
+  "generated_at": "2026-08-30T21:35:14.220Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -29,14 +29,14 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 18,
-      "watchMinutes": 49,
-      "avgViewDurationSec": 174
+      "views": 23,
+      "watchMinutes": 55,
+      "avgViewDurationSec": 167
     },
     "last_30": {
-      "views": 155,
-      "watchMinutes": 423,
-      "avgViewDurationSec": 173
+      "views": 160,
+      "watchMinutes": 429,
+      "avgViewDurationSec": 172
     }
   },
   "last_48h_countries": [],
@@ -102,7 +102,7 @@
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM",
-      "views": 29
+      "views": 30
     },
     {
       "videoId": "GJ_KrOQrgbk",
@@ -110,7 +110,7 @@
       "thumbnail": "https://i.ytimg.com/vi/GJ_KrOQrgbk/mqdefault.jpg",
       "publishedAt": "2025-05-03T11:47:28Z",
       "url": "https://www.youtube.com/watch?v=GJ_KrOQrgbk",
-      "views": 12
+      "views": 13
     },
     {
       "videoId": "0jPL3Mg88ZQ",
@@ -118,7 +118,7 @@
       "thumbnail": "https://i.ytimg.com/vi/0jPL3Mg88ZQ/mqdefault.jpg",
       "publishedAt": "2026-04-14T22:17:26Z",
       "url": "https://www.youtube.com/watch?v=0jPL3Mg88ZQ",
-      "views": 9
+      "views": 10
     },
     {
       "videoId": "tH2GpPLY3so",
@@ -577,23 +577,28 @@
       "date": "2026-08-27",
       "views": 4,
       "minutes": 6
+    },
+    {
+      "date": "2026-08-28",
+      "views": 5,
+      "minutes": 6
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 56
+      "views": 58
+    },
+    {
+      "source": "YT_SEARCH",
+      "label": "YouTube search",
+      "views": 31
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
       "views": 30
-    },
-    {
-      "source": "YT_SEARCH",
-      "label": "YouTube search",
-      "views": 28
     },
     {
       "source": "YT_OTHER_PAGE",
