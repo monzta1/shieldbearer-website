@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-30T21:35:14.220Z",
+  "generated_at": "2026-08-31T03:35:14.061Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,28 +15,28 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-08-26",
-      "end": "2026-08-28"
+      "start": "2026-08-27",
+      "end": "2026-08-29"
     },
     "last_7": {
-      "start": "2026-08-23",
-      "end": "2026-08-30"
+      "start": "2026-08-24",
+      "end": "2026-08-31"
     },
     "last_30": {
-      "start": "2026-07-31",
-      "end": "2026-08-30"
+      "start": "2026-08-01",
+      "end": "2026-08-31"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 23,
-      "watchMinutes": 55,
-      "avgViewDurationSec": 167
+      "views": 16,
+      "watchMinutes": 26,
+      "avgViewDurationSec": 114
     },
     "last_30": {
-      "views": 160,
-      "watchMinutes": 429,
-      "avgViewDurationSec": 172
+      "views": 157,
+      "watchMinutes": 425,
+      "avgViewDurationSec": 174
     }
   },
   "last_48h_countries": [],
@@ -126,23 +126,18 @@
       "thumbnail": "https://i.ytimg.com/vi/tH2GpPLY3so/mqdefault.jpg",
       "publishedAt": "2025-08-14T00:17:51Z",
       "url": "https://www.youtube.com/watch?v=tH2GpPLY3so",
-      "views": 9
+      "views": 8
     },
     {
-      "videoId": "BwWB95z6lKg",
-      "title": "Shieldbearer – Worth It All (Official Video)",
-      "thumbnail": "https://i.ytimg.com/vi/BwWB95z6lKg/mqdefault.jpg",
-      "publishedAt": "2025-07-30T17:32:30Z",
-      "url": "https://www.youtube.com/watch?v=BwWB95z6lKg",
+      "videoId": "E9rJluVWvxM",
+      "title": "Shieldbearer – The Architect (Official Christian Metal Release)",
+      "thumbnail": "https://i.ytimg.com/vi/E9rJluVWvxM/mqdefault.jpg",
+      "publishedAt": "2025-09-26T15:41:13Z",
+      "url": "https://www.youtube.com/watch?v=E9rJluVWvxM",
       "views": 7
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-06-01",
-      "views": 4,
-      "minutes": 6
-    },
     {
       "date": "2026-06-02",
       "views": 11,
@@ -588,7 +583,7 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 58
+      "views": 56
     },
     {
       "source": "YT_SEARCH",
@@ -608,7 +603,7 @@
     {
       "source": "YT_CHANNEL",
       "label": "Channel page",
-      "views": 13
+      "views": 12
     },
     {
       "source": "EXT_URL",
