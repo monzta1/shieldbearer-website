@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-31T21:35:14.118Z",
+  "generated_at": "2026-09-01T03:35:13.792Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,28 +15,28 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-08-27",
-      "end": "2026-08-29"
+      "start": "2026-08-28",
+      "end": "2026-08-30"
     },
     "last_7": {
-      "start": "2026-08-24",
-      "end": "2026-08-31"
+      "start": "2026-08-25",
+      "end": "2026-09-01"
     },
     "last_30": {
-      "start": "2026-08-01",
-      "end": "2026-08-31"
+      "start": "2026-08-02",
+      "end": "2026-09-01"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 22,
-      "watchMinutes": 38,
-      "avgViewDurationSec": 126
+      "views": 20,
+      "watchMinutes": 37,
+      "avgViewDurationSec": 138
     },
     "last_30": {
-      "views": 163,
-      "watchMinutes": 436,
-      "avgViewDurationSec": 174
+      "views": 155,
+      "watchMinutes": 414,
+      "avgViewDurationSec": 175
     }
   },
   "last_48h_countries": [],
@@ -102,7 +102,7 @@
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM",
-      "views": 30
+      "views": 28
     },
     {
       "videoId": "GJ_KrOQrgbk",
@@ -121,28 +121,23 @@
       "views": 11
     },
     {
-      "videoId": "tH2GpPLY3so",
-      "title": "Shieldbearer – QUAKE (Christian Metal | Official Audio)",
-      "thumbnail": "https://i.ytimg.com/vi/tH2GpPLY3so/mqdefault.jpg",
-      "publishedAt": "2025-08-14T00:17:51Z",
-      "url": "https://www.youtube.com/watch?v=tH2GpPLY3so",
-      "views": 8
-    },
-    {
       "videoId": "BwWB95z6lKg",
       "title": "Shieldbearer – Worth It All (Official Video)",
       "thumbnail": "https://i.ytimg.com/vi/BwWB95z6lKg/mqdefault.jpg",
       "publishedAt": "2025-07-30T17:32:30Z",
       "url": "https://www.youtube.com/watch?v=BwWB95z6lKg",
       "views": 7
+    },
+    {
+      "videoId": "E9rJluVWvxM",
+      "title": "Shieldbearer – The Architect (Official Christian Metal Release)",
+      "thumbnail": "https://i.ytimg.com/vi/E9rJluVWvxM/mqdefault.jpg",
+      "publishedAt": "2025-09-26T15:41:13Z",
+      "url": "https://www.youtube.com/watch?v=E9rJluVWvxM",
+      "views": 7
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-06-02",
-      "views": 11,
-      "minutes": 34
-    },
     {
       "date": "2026-06-03",
       "views": 13,
@@ -588,7 +583,7 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 58
+      "views": 55
     },
     {
       "source": "YT_SEARCH",
@@ -598,12 +593,7 @@
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 30
-    },
-    {
-      "source": "YT_OTHER_PAGE",
-      "label": "Other YouTube page",
-      "views": 14
+      "views": 28
     },
     {
       "source": "YT_CHANNEL",
@@ -611,9 +601,14 @@
       "views": 12
     },
     {
+      "source": "YT_OTHER_PAGE",
+      "label": "Other YouTube page",
+      "views": 12
+    },
+    {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 10
+      "views": 9
     },
     {
       "source": "NO_LINK_OTHER",
