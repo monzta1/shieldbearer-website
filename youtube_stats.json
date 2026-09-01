@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T03:35:13.792Z",
+  "generated_at": "2026-09-01T21:35:13.881Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -29,14 +29,14 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 20,
-      "watchMinutes": 37,
-      "avgViewDurationSec": 138
+      "views": 27,
+      "watchMinutes": 49,
+      "avgViewDurationSec": 140
     },
     "last_30": {
-      "views": 155,
-      "watchMinutes": 414,
-      "avgViewDurationSec": 175
+      "views": 162,
+      "watchMinutes": 426,
+      "avgViewDurationSec": 174
     }
   },
   "last_48h_countries": [],
@@ -89,7 +89,7 @@
       "videoId": "8khugdipSJM",
       "title": "Shieldbearer – Tidings of Comfort and Joy (God Rest Ye Merry Gentlemen) [Metal Christmas Anthem]",
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
-      "views": 8288,
+      "views": 8290,
       "likes": 25,
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM"
@@ -110,7 +110,7 @@
       "thumbnail": "https://i.ytimg.com/vi/GJ_KrOQrgbk/mqdefault.jpg",
       "publishedAt": "2025-05-03T11:47:28Z",
       "url": "https://www.youtube.com/watch?v=GJ_KrOQrgbk",
-      "views": 13
+      "views": 14
     },
     {
       "videoId": "0jPL3Mg88ZQ",
@@ -577,23 +577,28 @@
       "date": "2026-08-29",
       "views": 6,
       "minutes": 11
+    },
+    {
+      "date": "2026-08-30",
+      "views": 7,
+      "minutes": 12
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 55
+      "views": 57
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 34
+      "views": 36
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 28
+      "views": 29
     },
     {
       "source": "YT_CHANNEL",
@@ -608,12 +613,12 @@
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 9
+      "views": 10
     },
     {
       "source": "NO_LINK_OTHER",
       "label": "No referrer",
-      "views": 2
+      "views": 3
     },
     {
       "source": "RELATED_VIDEO",
