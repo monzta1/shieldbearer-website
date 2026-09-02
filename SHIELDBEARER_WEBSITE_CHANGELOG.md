@@ -7,6 +7,12 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.31.0 - September 2026
+- /tonecommand embeds the Judas Priest demo video (one sentence, an empty
+  slot, six minutes, eight scenes) in a new "Watch it build a rig from
+  nothing" section, using the same 16:9 lazy iframe pattern as the videos
+  page. CSP already allowed the YouTube frame; no policy change.
+
 ## v2.30.0 - September 2026
 - /tonecommand feature list updated for ToneCommand v0.8.0: live progress
   with a real STOP, building a full preset from an empty slot, cable

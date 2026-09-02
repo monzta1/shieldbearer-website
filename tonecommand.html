@@ -64,6 +64,10 @@
     .tc-box li { font-size: 1rem; line-height: 1.85; color: rgba(240,235,224,.76); margin-bottom: .5rem; }
     .tc-emblem { display: block; width: min(300px, 70%); height: auto; margin: 0 auto 1.6rem; }
     .tc-shot { display: block; width: 100%; height: auto; margin: 1rem 0 .6rem; border: 1px solid rgba(168,162,154,.14); }
+    .tc-video { position: relative; width: 100%; padding-top: 56.25%; margin: 1rem 0 .6rem;
+                background: linear-gradient(135deg, #050505, #140707);
+                border: 1px solid rgba(168,162,154,.14); }
+    .tc-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
     .tc-cap { font-size: .85rem; color: rgba(240,235,224,.5); font-style: italic; margin-bottom: 1.4rem; }
     .tc-cta { display: inline-block; margin: .3rem .6rem .6rem 0; padding: .7rem 1.2rem;
               border: 1px solid var(--red); color: #fff; text-decoration: none;
@@ -197,6 +201,17 @@
           <p>Guitar players who use modern digital rigs have a problem nobody talks about. The gear can do almost anything, and getting it to do one specific thing means hunting through hundreds of menus on a screen the size of a postcard. You know the sound you want. You just cannot find the twelve settings that make it.</p>
           <p><strong>ToneCommand lets you ask for it in plain English instead.</strong> You type something like "tighten up the low end and give me a bit more bite for drop C", and it works out exactly which settings that means on your rig, shows you the list, and changes them only when you say go.</p>
           <p>It is free, it runs on your own computer, and anyone can read every line of how it works.</p>
+
+          <h2>Watch it build a rig from nothing</h2>
+          <p>One typed sentence: a Judas Priest preset, all eight scenes, different albums and eras. The recording starts on a freshly erased, completely empty preset slot. Six minutes later the finished rig is standing on the hardware, every scene named on the footswitches, saved under its own name.</p>
+          <div class="tc-video">
+            <iframe src="https://www.youtube.com/embed/jCNAZyyt5o8"
+                    title="I Typed One Sentence. AI Built an 8-Scene Judas Priest FM9 Preset in 6 Minutes | ToneCommand"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+          </div>
+          <p class="tc-cap">Unedited, on a real FM9, on version 0.8.0. The AI in this run was a GPT model; bring whichever you like.</p>
 
           <h2>Who it is for</h2>
           <p>Right now, people who own a <strong>Fractal FM9</strong>. That is a guitar processor a lot of touring and worship players use: it replaces a wall of amplifiers and pedals with one unit. Powerful, and famously deep to program.</p>
