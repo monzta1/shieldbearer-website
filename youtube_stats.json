@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-02T03:35:14.053Z",
+  "generated_at": "2026-09-02T21:35:14.470Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -11,7 +11,7 @@
     "views_lifetime": 240983,
     "subscribers": 12200,
     "subscribers_hidden": false,
-    "video_count": 97
+    "video_count": 98
   },
   "windows": {
     "last_48h": {
@@ -29,14 +29,14 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 23,
-      "watchMinutes": 36,
-      "avgViewDurationSec": 126
+      "views": 27,
+      "watchMinutes": 56,
+      "avgViewDurationSec": 159
     },
     "last_30": {
-      "views": 158,
-      "watchMinutes": 425,
-      "avgViewDurationSec": 177
+      "views": 162,
+      "watchMinutes": 445,
+      "avgViewDurationSec": 180
     }
   },
   "last_48h_countries": [],
@@ -102,7 +102,7 @@
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM",
-      "views": 27
+      "views": 29
     },
     {
       "videoId": "GJ_KrOQrgbk",
@@ -121,19 +121,19 @@
       "views": 9
     },
     {
+      "videoId": "W-1_SdI-jxo",
+      "title": "Shieldbearer – Amazing Grace (Lit by Fire – Alt Mix) [Official Audio | A Wretch Like Me Album]",
+      "thumbnail": "https://i.ytimg.com/vi/W-1_SdI-jxo/mqdefault.jpg",
+      "publishedAt": "2025-05-14T02:23:48Z",
+      "url": "https://www.youtube.com/watch?v=W-1_SdI-jxo",
+      "views": 8
+    },
+    {
       "videoId": "BwWB95z6lKg",
       "title": "Shieldbearer – Worth It All (Official Video)",
       "thumbnail": "https://i.ytimg.com/vi/BwWB95z6lKg/mqdefault.jpg",
       "publishedAt": "2025-07-30T17:32:30Z",
       "url": "https://www.youtube.com/watch?v=BwWB95z6lKg",
-      "views": 7
-    },
-    {
-      "videoId": "E9rJluVWvxM",
-      "title": "Shieldbearer – The Architect (Official Christian Metal Release)",
-      "thumbnail": "https://i.ytimg.com/vi/E9rJluVWvxM/mqdefault.jpg",
-      "publishedAt": "2025-09-26T15:41:13Z",
-      "url": "https://www.youtube.com/watch?v=E9rJluVWvxM",
       "views": 7
     }
   ],
@@ -577,18 +577,23 @@
       "date": "2026-08-30",
       "views": 7,
       "minutes": 12
+    },
+    {
+      "date": "2026-08-31",
+      "views": 4,
+      "minutes": 19
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 56
+      "views": 58
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 34
+      "views": 36
     },
     {
       "source": "SUBSCRIBER",
