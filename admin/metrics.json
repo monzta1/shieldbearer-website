@@ -1,19 +1,63 @@
 {
-  "generatedAt": "2026-09-01T08:00:15.069Z",
+  "generatedAt": "2026-09-02T08:00:15.301Z",
   "period": {
     "label": "September 2026 so far",
     "start": "2026-09-01",
     "end": "2026-09-30"
   },
   "headline": {
-    "sessions": 0,
-    "deltaPct": -100,
+    "sessions": 6,
+    "deltaPct": -90.3,
     "comparison": "vs August 2026"
   },
-  "channels": [],
-  "geography": [],
-  "cities": [],
-  "events": [],
+  "channels": [
+    {
+      "name": "Unassigned",
+      "sessions": 4,
+      "share": 50
+    },
+    {
+      "name": "Organic Social",
+      "sessions": 3,
+      "share": 37.5
+    },
+    {
+      "name": "Direct",
+      "sessions": 1,
+      "share": 12.5
+    }
+  ],
+  "geography": [
+    {
+      "name": "United States",
+      "sessions": 5,
+      "share": 83.3
+    },
+    {
+      "name": "Germany",
+      "sessions": 1,
+      "share": 16.7
+    }
+  ],
+  "cities": [
+    {
+      "name": "Unknown, Virginia",
+      "sessions": 5,
+      "share": 83.3
+    },
+    {
+      "name": "Butzbach, Hessen",
+      "sessions": 1,
+      "share": 16.7
+    }
+  ],
+  "events": [
+    {
+      "name": "scroll_depth",
+      "count": 7,
+      "engagedShare": null
+    }
+  ],
   "shipped": [
     {
       "date": "2026-05-29",
