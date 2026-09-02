@@ -7,6 +7,12 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.30.0 - September 2026
+- /tonecommand feature list updated for ToneCommand v0.8.0: live progress
+  with a real STOP, building a full preset from an empty slot, cable
+  watching with instant reconnect, and gig mode. Four list items added in
+  the page's existing voice; nothing else on the page touched.
+
 ## v2.29.2 - July 2026
 - Fix: stretched logo in the nav and footer on the eight pages that got intrinsic image dimensions in v2.29.0. The logo img tags gained width/height attributes while the CSS constrained only height, so the attribute width won and distorted the mark. Both logo rules now carry width:auto. Regression introduced and fixed same day.
 
