@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-02T21:35:14.470Z",
+  "generated_at": "2026-09-03T03:35:14.329Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,28 +15,28 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-08-29",
-      "end": "2026-08-31"
+      "start": "2026-08-30",
+      "end": "2026-09-01"
     },
     "last_7": {
-      "start": "2026-08-26",
-      "end": "2026-09-02"
+      "start": "2026-08-27",
+      "end": "2026-09-03"
     },
     "last_30": {
-      "start": "2026-08-03",
-      "end": "2026-09-02"
+      "start": "2026-08-04",
+      "end": "2026-09-03"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 27,
+      "views": 26,
       "watchMinutes": 56,
-      "avgViewDurationSec": 159
+      "avgViewDurationSec": 167
     },
     "last_30": {
-      "views": 162,
-      "watchMinutes": 445,
-      "avgViewDurationSec": 180
+      "views": 158,
+      "watchMinutes": 439,
+      "avgViewDurationSec": 181
     }
   },
   "last_48h_countries": [],
@@ -102,7 +102,7 @@
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM",
-      "views": 29
+      "views": 27
     },
     {
       "videoId": "GJ_KrOQrgbk",
@@ -121,28 +121,23 @@
       "views": 9
     },
     {
-      "videoId": "W-1_SdI-jxo",
-      "title": "Shieldbearer – Amazing Grace (Lit by Fire – Alt Mix) [Official Audio | A Wretch Like Me Album]",
-      "thumbnail": "https://i.ytimg.com/vi/W-1_SdI-jxo/mqdefault.jpg",
-      "publishedAt": "2025-05-14T02:23:48Z",
-      "url": "https://www.youtube.com/watch?v=W-1_SdI-jxo",
-      "views": 8
-    },
-    {
       "videoId": "BwWB95z6lKg",
       "title": "Shieldbearer – Worth It All (Official Video)",
       "thumbnail": "https://i.ytimg.com/vi/BwWB95z6lKg/mqdefault.jpg",
       "publishedAt": "2025-07-30T17:32:30Z",
       "url": "https://www.youtube.com/watch?v=BwWB95z6lKg",
       "views": 7
+    },
+    {
+      "videoId": "E9rJluVWvxM",
+      "title": "Shieldbearer – The Architect (Official Christian Metal Release)",
+      "thumbnail": "https://i.ytimg.com/vi/E9rJluVWvxM/mqdefault.jpg",
+      "publishedAt": "2025-09-26T15:41:13Z",
+      "url": "https://www.youtube.com/watch?v=E9rJluVWvxM",
+      "views": 7
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-06-04",
-      "views": 8,
-      "minutes": 14
-    },
     {
       "date": "2026-06-05",
       "views": 8,
@@ -588,17 +583,17 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 58
+      "views": 56
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 36
+      "views": 35
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 29
+      "views": 28
     },
     {
       "source": "YT_CHANNEL",
