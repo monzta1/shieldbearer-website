@@ -1,60 +1,80 @@
 {
-  "generatedAt": "2026-09-02T08:00:15.301Z",
+  "generatedAt": "2026-09-03T08:00:15.226Z",
   "period": {
     "label": "September 2026 so far",
     "start": "2026-09-01",
     "end": "2026-09-30"
   },
   "headline": {
-    "sessions": 6,
-    "deltaPct": -90.3,
+    "sessions": 11,
+    "deltaPct": -82.3,
     "comparison": "vs August 2026"
   },
   "channels": [
     {
-      "name": "Unassigned",
-      "sessions": 4,
+      "name": "Organic Social",
+      "sessions": 6,
       "share": 50
     },
     {
-      "name": "Organic Social",
+      "name": "Direct",
       "sessions": 3,
-      "share": 37.5
+      "share": 25
     },
     {
-      "name": "Direct",
-      "sessions": 1,
-      "share": 12.5
+      "name": "Unassigned",
+      "sessions": 3,
+      "share": 25
     }
   ],
   "geography": [
     {
       "name": "United States",
-      "sessions": 5,
-      "share": 83.3
+      "sessions": 9,
+      "share": 81.8
     },
     {
       "name": "Germany",
       "sessions": 1,
-      "share": 16.7
+      "share": 9.1
+    },
+    {
+      "name": "Vietnam",
+      "sessions": 1,
+      "share": 9.1
     }
   ],
   "cities": [
     {
-      "name": "Unknown, Virginia",
+      "name": "(not set), Virginia",
       "sessions": 5,
-      "share": 83.3
+      "share": 45.5
+    },
+    {
+      "name": "South Riding, Virginia",
+      "sessions": 3,
+      "share": 27.3
+    },
+    {
+      "name": "Unknown, Thanh Hoa",
+      "sessions": 1,
+      "share": 9.1
     },
     {
       "name": "Butzbach, Hessen",
       "sessions": 1,
-      "share": 16.7
+      "share": 9.1
+    },
+    {
+      "name": "Wake Forest, North Carolina",
+      "sessions": 1,
+      "share": 9.1
     }
   ],
   "events": [
     {
       "name": "scroll_depth",
-      "count": 7,
+      "count": 17,
       "engagedShare": null
     }
   ],
