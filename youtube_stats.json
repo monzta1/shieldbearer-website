@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-03T03:35:14.329Z",
+  "generated_at": "2026-09-03T21:35:15.798Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -29,13 +29,13 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 26,
-      "watchMinutes": 56,
-      "avgViewDurationSec": 167
+      "views": 30,
+      "watchMinutes": 61,
+      "avgViewDurationSec": 166
     },
     "last_30": {
-      "views": 158,
-      "watchMinutes": 439,
+      "views": 162,
+      "watchMinutes": 444,
       "avgViewDurationSec": 181
     }
   },
@@ -89,7 +89,7 @@
       "videoId": "8khugdipSJM",
       "title": "Shieldbearer – Tidings of Comfort and Joy (God Rest Ye Merry Gentlemen) [Metal Christmas Anthem]",
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
-      "views": 8290,
+      "views": 8291,
       "likes": 25,
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM"
@@ -110,7 +110,7 @@
       "thumbnail": "https://i.ytimg.com/vi/GJ_KrOQrgbk/mqdefault.jpg",
       "publishedAt": "2025-05-03T11:47:28Z",
       "url": "https://www.youtube.com/watch?v=GJ_KrOQrgbk",
-      "views": 14
+      "views": 15
     },
     {
       "videoId": "0jPL3Mg88ZQ",
@@ -121,19 +121,19 @@
       "views": 9
     },
     {
+      "videoId": "tH2GpPLY3so",
+      "title": "Shieldbearer – QUAKE (Christian Metal | Official Audio)",
+      "thumbnail": "https://i.ytimg.com/vi/tH2GpPLY3so/mqdefault.jpg",
+      "publishedAt": "2025-08-14T00:17:51Z",
+      "url": "https://www.youtube.com/watch?v=tH2GpPLY3so",
+      "views": 8
+    },
+    {
       "videoId": "BwWB95z6lKg",
       "title": "Shieldbearer – Worth It All (Official Video)",
       "thumbnail": "https://i.ytimg.com/vi/BwWB95z6lKg/mqdefault.jpg",
       "publishedAt": "2025-07-30T17:32:30Z",
       "url": "https://www.youtube.com/watch?v=BwWB95z6lKg",
-      "views": 7
-    },
-    {
-      "videoId": "E9rJluVWvxM",
-      "title": "Shieldbearer – The Architect (Official Christian Metal Release)",
-      "thumbnail": "https://i.ytimg.com/vi/E9rJluVWvxM/mqdefault.jpg",
-      "publishedAt": "2025-09-26T15:41:13Z",
-      "url": "https://www.youtube.com/watch?v=E9rJluVWvxM",
       "views": 7
     }
   ],
@@ -577,18 +577,23 @@
       "date": "2026-08-31",
       "views": 4,
       "minutes": 19
+    },
+    {
+      "date": "2026-09-01",
+      "views": 4,
+      "minutes": 5
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 56
+      "views": 57
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 35
+      "views": 37
     },
     {
       "source": "SUBSCRIBER",
@@ -623,6 +628,11 @@
     {
       "source": "SHORTS",
       "label": "Shorts feed",
+      "views": 1
+    },
+    {
+      "source": "HASHTAGS",
+      "label": "Hashtag pages",
       "views": 1
     }
   ]
