@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-04T03:35:14.268Z",
+  "generated_at": "2026-09-04T21:35:14.159Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -29,23 +29,30 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 26,
-      "watchMinutes": 54,
-      "avgViewDurationSec": 182
+      "views": 115,
+      "watchMinutes": 253,
+      "avgViewDurationSec": 156
     },
     "last_30": {
-      "views": 160,
-      "watchMinutes": 442,
-      "avgViewDurationSec": 183
+      "views": 249,
+      "watchMinutes": 641,
+      "avgViewDurationSec": 171
     }
   },
-  "last_48h_countries": [],
+  "last_48h_countries": [
+    {
+      "code": "US",
+      "name": "United States",
+      "flag": "🇺🇸",
+      "views": 35
+    }
+  ],
   "last_30d_countries": [
     {
       "code": "US",
       "name": "United States",
       "flag": "🇺🇸",
-      "views": 10
+      "views": 45
     }
   ],
   "top_videos": [
@@ -97,6 +104,14 @@
   ],
   "top_videos_30d": [
     {
+      "videoId": "jCNAZyyt5o8",
+      "title": "I Typed One Sentence. AI Built an 8-Scene Judas Priest FM9 Preset in 6 Minutes | ToneCommand",
+      "thumbnail": "https://i.ytimg.com/vi/jCNAZyyt5o8/mqdefault.jpg",
+      "publishedAt": "2026-09-02T15:26:11Z",
+      "url": "https://www.youtube.com/watch?v=jCNAZyyt5o8",
+      "views": 82
+    },
+    {
       "videoId": "8khugdipSJM",
       "title": "Shieldbearer – Tidings of Comfort and Joy (God Rest Ye Merry Gentlemen) [Metal Christmas Anthem]",
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
@@ -118,7 +133,7 @@
       "thumbnail": "https://i.ytimg.com/vi/0jPL3Mg88ZQ/mqdefault.jpg",
       "publishedAt": "2026-04-14T22:17:26Z",
       "url": "https://www.youtube.com/watch?v=0jPL3Mg88ZQ",
-      "views": 9
+      "views": 10
     },
     {
       "videoId": "tH2GpPLY3so",
@@ -127,14 +142,6 @@
       "publishedAt": "2025-08-14T00:17:51Z",
       "url": "https://www.youtube.com/watch?v=tH2GpPLY3so",
       "views": 8
-    },
-    {
-      "videoId": "BwWB95z6lKg",
-      "title": "Shieldbearer – Worth It All (Official Video)",
-      "thumbnail": "https://i.ytimg.com/vi/BwWB95z6lKg/mqdefault.jpg",
-      "publishedAt": "2025-07-30T17:32:30Z",
-      "url": "https://www.youtube.com/watch?v=BwWB95z6lKg",
-      "views": 7
     }
   ],
   "daily_views": [
@@ -577,47 +584,57 @@
       "date": "2026-09-01",
       "views": 4,
       "minutes": 5
+    },
+    {
+      "date": "2026-09-02",
+      "views": 89,
+      "minutes": 198
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
+      "views": 57
+    },
+    {
+      "source": "EXT_URL",
+      "label": "External URL",
       "views": 55
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 37
+      "views": 44
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 28
-    },
-    {
-      "source": "YT_CHANNEL",
-      "label": "Channel page",
-      "views": 12
-    },
-    {
-      "source": "YT_OTHER_PAGE",
-      "label": "Other YouTube page",
-      "views": 12
-    },
-    {
-      "source": "EXT_URL",
-      "label": "External URL",
-      "views": 10
+      "views": 37
     },
     {
       "source": "NO_LINK_OTHER",
       "label": "No referrer",
-      "views": 2
+      "views": 22
+    },
+    {
+      "source": "YT_CHANNEL",
+      "label": "Channel page",
+      "views": 14
+    },
+    {
+      "source": "YT_OTHER_PAGE",
+      "label": "Other YouTube page",
+      "views": 13
     },
     {
       "source": "RELATED_VIDEO",
       "label": "Related video",
+      "views": 3
+    },
+    {
+      "source": "NOTIFICATION",
+      "label": "Notifications",
       "views": 2
     },
     {
