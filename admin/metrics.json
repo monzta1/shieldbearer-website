@@ -1,80 +1,95 @@
 {
-  "generatedAt": "2026-09-03T08:00:15.226Z",
+  "generatedAt": "2026-09-04T08:00:14.972Z",
   "period": {
     "label": "September 2026 so far",
     "start": "2026-09-01",
     "end": "2026-09-30"
   },
   "headline": {
-    "sessions": 11,
-    "deltaPct": -82.3,
+    "sessions": 13,
+    "deltaPct": -79,
     "comparison": "vs August 2026"
   },
   "channels": [
     {
       "name": "Organic Social",
-      "sessions": 6,
+      "sessions": 7,
       "share": 50
     },
     {
       "name": "Direct",
-      "sessions": 3,
-      "share": 25
+      "sessions": 5,
+      "share": 35.7
     },
     {
       "name": "Unassigned",
-      "sessions": 3,
-      "share": 25
+      "sessions": 2,
+      "share": 14.3
     }
   ],
   "geography": [
     {
       "name": "United States",
-      "sessions": 9,
-      "share": 81.8
+      "sessions": 10,
+      "share": 71.4
     },
     {
       "name": "Germany",
       "sessions": 1,
-      "share": 9.1
+      "share": 7.1
+    },
+    {
+      "name": "Singapore",
+      "sessions": 1,
+      "share": 7.1
+    },
+    {
+      "name": "United Kingdom",
+      "sessions": 1,
+      "share": 7.1
     },
     {
       "name": "Vietnam",
       "sessions": 1,
-      "share": 9.1
+      "share": 7.1
     }
   ],
   "cities": [
     {
       "name": "(not set), Virginia",
       "sessions": 5,
-      "share": 45.5
+      "share": 35.7
     },
     {
       "name": "South Riding, Virginia",
-      "sessions": 3,
-      "share": 27.3
+      "sessions": 4,
+      "share": 28.6
     },
     {
-      "name": "Unknown, Thanh Hoa",
+      "name": "(not set), Thanh Hoa",
       "sessions": 1,
-      "share": 9.1
+      "share": 7.1
     },
     {
       "name": "Butzbach, Hessen",
       "sessions": 1,
-      "share": 9.1
+      "share": 7.1
     },
     {
-      "name": "Wake Forest, North Carolina",
+      "name": "Marlow, England",
       "sessions": 1,
-      "share": 9.1
+      "share": 7.1
+    },
+    {
+      "name": "Singapore",
+      "sessions": 1,
+      "share": 7.1
     }
   ],
   "events": [
     {
       "name": "scroll_depth",
-      "count": 17,
+      "count": 31,
       "engagedShare": null
     }
   ],
