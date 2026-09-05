@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-04T21:35:14.159Z",
+  "generated_at": "2026-09-05T03:35:13.536Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -8,35 +8,35 @@
     "url": "https://www.youtube.com/channel/UCgL4mzUUcYtqxx-0IdjoqIw",
     "published_at": "2025-04-14T03:40:06.969878Z",
     "thumbnail": "https://yt3.ggpht.com/IpsLcp29bRpbou_LxaA2FazbHG9QfOHy_bcBiI8vkg_EBDaje4f78m2f1t4vsaB_gk5wqLLz=s800-c-k-c0x00ffffff-no-rj",
-    "views_lifetime": 242065,
+    "views_lifetime": 242090,
     "subscribers": 12200,
     "subscribers_hidden": false,
     "video_count": 98
   },
   "windows": {
     "last_48h": {
-      "start": "2026-08-31",
-      "end": "2026-09-02"
+      "start": "2026-09-01",
+      "end": "2026-09-03"
     },
     "last_7": {
-      "start": "2026-08-28",
-      "end": "2026-09-04"
+      "start": "2026-08-29",
+      "end": "2026-09-05"
     },
     "last_30": {
-      "start": "2026-08-05",
-      "end": "2026-09-04"
+      "start": "2026-08-06",
+      "end": "2026-09-05"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 115,
-      "watchMinutes": 253,
-      "avgViewDurationSec": 156
+      "views": 110,
+      "watchMinutes": 247,
+      "avgViewDurationSec": 157
     },
     "last_30": {
-      "views": 249,
-      "watchMinutes": 641,
-      "avgViewDurationSec": 171
+      "views": 243,
+      "watchMinutes": 636,
+      "avgViewDurationSec": 174
     }
   },
   "last_48h_countries": [
@@ -145,11 +145,6 @@
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-06-06",
-      "views": 2,
-      "minutes": 9
-    },
     {
       "date": "2026-06-07",
       "views": 7,
@@ -593,19 +588,19 @@
   ],
   "traffic_sources_30d": [
     {
-      "source": "PLAYLIST",
-      "label": "From a playlist",
-      "views": 57
-    },
-    {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 55
+      "views": 54
+    },
+    {
+      "source": "PLAYLIST",
+      "label": "From a playlist",
+      "views": 54
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 44
+      "views": 42
     },
     {
       "source": "SUBSCRIBER",
