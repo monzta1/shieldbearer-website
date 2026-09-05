@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-04T08:00:14.972Z",
+  "generatedAt": "2026-09-05T08:00:16.545Z",
   "period": {
     "label": "September 2026 so far",
     "start": "2026-09-01",
@@ -14,17 +14,17 @@
     {
       "name": "Organic Social",
       "sessions": 7,
-      "share": 50
+      "share": 53.8
     },
     {
       "name": "Direct",
       "sessions": 5,
-      "share": 35.7
+      "share": 38.5
     },
     {
       "name": "Unassigned",
-      "sessions": 2,
-      "share": 14.3
+      "sessions": 1,
+      "share": 7.7
     }
   ],
   "geography": [
@@ -89,7 +89,7 @@
   "events": [
     {
       "name": "scroll_depth",
-      "count": 31,
+      "count": 33,
       "engagedShare": null
     }
   ],
