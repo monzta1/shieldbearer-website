@@ -1,89 +1,89 @@
 {
-  "generatedAt": "2026-09-05T08:00:16.545Z",
+  "generatedAt": "2026-09-06T08:00:15.077Z",
   "period": {
     "label": "September 2026 so far",
     "start": "2026-09-01",
     "end": "2026-09-30"
   },
   "headline": {
-    "sessions": 13,
-    "deltaPct": -79,
+    "sessions": 14,
+    "deltaPct": -77.4,
     "comparison": "vs August 2026"
   },
   "channels": [
     {
       "name": "Organic Social",
       "sessions": 7,
-      "share": 53.8
+      "share": 46.7
     },
     {
       "name": "Direct",
-      "sessions": 5,
-      "share": 38.5
+      "sessions": 6,
+      "share": 40
     },
     {
       "name": "Unassigned",
-      "sessions": 1,
-      "share": 7.7
+      "sessions": 2,
+      "share": 13.3
     }
   ],
   "geography": [
     {
       "name": "United States",
       "sessions": 10,
-      "share": 71.4
+      "share": 66.7
+    },
+    {
+      "name": "Singapore",
+      "sessions": 2,
+      "share": 13.3
     },
     {
       "name": "Germany",
       "sessions": 1,
-      "share": 7.1
-    },
-    {
-      "name": "Singapore",
-      "sessions": 1,
-      "share": 7.1
+      "share": 6.7
     },
     {
       "name": "United Kingdom",
       "sessions": 1,
-      "share": 7.1
+      "share": 6.7
     },
     {
       "name": "Vietnam",
       "sessions": 1,
-      "share": 7.1
+      "share": 6.7
     }
   ],
   "cities": [
     {
       "name": "(not set), Virginia",
       "sessions": 5,
-      "share": 35.7
+      "share": 33.3
     },
     {
       "name": "South Riding, Virginia",
       "sessions": 4,
-      "share": 28.6
+      "share": 26.7
+    },
+    {
+      "name": "Unknown",
+      "sessions": 1,
+      "share": 6.7
     },
     {
       "name": "(not set), Thanh Hoa",
       "sessions": 1,
-      "share": 7.1
+      "share": 6.7
     },
     {
       "name": "Butzbach, Hessen",
       "sessions": 1,
-      "share": 7.1
+      "share": 6.7
     },
     {
       "name": "Marlow, England",
       "sessions": 1,
-      "share": 7.1
-    },
-    {
-      "name": "Singapore",
-      "sessions": 1,
-      "share": 7.1
+      "share": 6.7
     }
   ],
   "events": [
