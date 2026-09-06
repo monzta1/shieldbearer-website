@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-05T21:35:13.871Z",
+  "generated_at": "2026-09-06T03:35:13.865Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -11,32 +11,32 @@
     "views_lifetime": 242090,
     "subscribers": 12200,
     "subscribers_hidden": false,
-    "video_count": 97
+    "video_count": 99
   },
   "windows": {
     "last_48h": {
-      "start": "2026-09-01",
-      "end": "2026-09-03"
+      "start": "2026-09-02",
+      "end": "2026-09-04"
     },
     "last_7": {
-      "start": "2026-08-29",
-      "end": "2026-09-05"
+      "start": "2026-08-30",
+      "end": "2026-09-06"
     },
     "last_30": {
-      "start": "2026-08-06",
-      "end": "2026-09-05"
+      "start": "2026-08-07",
+      "end": "2026-09-06"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 163,
-      "watchMinutes": 325,
-      "avgViewDurationSec": 143
+      "views": 157,
+      "watchMinutes": 314,
+      "avgViewDurationSec": 142
     },
     "last_30": {
-      "views": 296,
-      "watchMinutes": 714,
-      "avgViewDurationSec": 164
+      "views": 290,
+      "watchMinutes": 704,
+      "avgViewDurationSec": 166
     }
   },
   "last_48h_countries": [
@@ -117,7 +117,7 @@
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM",
-      "views": 28
+      "views": 25
     },
     {
       "videoId": "GJ_KrOQrgbk",
@@ -136,20 +136,15 @@
       "views": 11
     },
     {
-      "videoId": "tH2GpPLY3so",
-      "title": "Shieldbearer – QUAKE (Christian Metal | Official Audio)",
-      "thumbnail": "https://i.ytimg.com/vi/tH2GpPLY3so/mqdefault.jpg",
-      "publishedAt": "2025-08-14T00:17:51Z",
-      "url": "https://www.youtube.com/watch?v=tH2GpPLY3so",
-      "views": 8
+      "videoId": "BwWB95z6lKg",
+      "title": "Shieldbearer – Worth It All (Official Video)",
+      "thumbnail": "https://i.ytimg.com/vi/BwWB95z6lKg/mqdefault.jpg",
+      "publishedAt": "2025-07-30T17:32:30Z",
+      "url": "https://www.youtube.com/watch?v=BwWB95z6lKg",
+      "views": 7
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-06-07",
-      "views": 7,
-      "minutes": 22
-    },
     {
       "date": "2026-06-08",
       "views": 8,
@@ -600,17 +595,17 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 56
+      "views": 54
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 48
+      "views": 47
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 44
+      "views": 41
     },
     {
       "source": "NO_LINK_OTHER",
