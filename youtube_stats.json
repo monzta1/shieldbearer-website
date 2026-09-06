@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-06T03:35:13.865Z",
+  "generated_at": "2026-09-06T21:35:14.023Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -8,10 +8,10 @@
     "url": "https://www.youtube.com/channel/UCgL4mzUUcYtqxx-0IdjoqIw",
     "published_at": "2025-04-14T03:40:06.969878Z",
     "thumbnail": "https://yt3.ggpht.com/IpsLcp29bRpbou_LxaA2FazbHG9QfOHy_bcBiI8vkg_EBDaje4f78m2f1t4vsaB_gk5wqLLz=s800-c-k-c0x00ffffff-no-rj",
-    "views_lifetime": 242090,
+    "views_lifetime": 242127,
     "subscribers": 12200,
     "subscribers_hidden": false,
-    "video_count": 99
+    "video_count": 100
   },
   "windows": {
     "last_48h": {
@@ -29,14 +29,14 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 157,
-      "watchMinutes": 314,
-      "avgViewDurationSec": 142
+      "views": 174,
+      "watchMinutes": 342,
+      "avgViewDurationSec": 141
     },
     "last_30": {
-      "views": 290,
-      "watchMinutes": 704,
-      "avgViewDurationSec": 166
+      "views": 307,
+      "watchMinutes": 732,
+      "avgViewDurationSec": 164
     }
   },
   "last_48h_countries": [
@@ -88,7 +88,7 @@
       "title": "Ruler of the Storm – Shieldbearer (Official Lyric Video | Christian Metal Anthem)",
       "thumbnail": "https://i.ytimg.com/vi/9FHgbbVBT1A/mqdefault.jpg",
       "views": 9838,
-      "likes": 726,
+      "likes": 725,
       "publishedAt": "2025-05-16T10:00:06Z",
       "url": "https://www.youtube.com/watch?v=9FHgbbVBT1A"
     },
@@ -109,7 +109,7 @@
       "thumbnail": "https://i.ytimg.com/vi/jCNAZyyt5o8/mqdefault.jpg",
       "publishedAt": "2026-09-02T15:26:11Z",
       "url": "https://www.youtube.com/watch?v=jCNAZyyt5o8",
-      "views": 129
+      "views": 145
     },
     {
       "videoId": "8khugdipSJM",
@@ -584,13 +584,18 @@
       "date": "2026-09-03",
       "views": 53,
       "minutes": 78
+    },
+    {
+      "date": "2026-09-04",
+      "views": 17,
+      "minutes": 28
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 79
+      "views": 88
     },
     {
       "source": "PLAYLIST",
@@ -600,17 +605,17 @@
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 47
+      "views": 49
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 41
+      "views": 44
     },
     {
       "source": "NO_LINK_OTHER",
       "label": "No referrer",
-      "views": 34
+      "views": 37
     },
     {
       "source": "YT_CHANNEL",
