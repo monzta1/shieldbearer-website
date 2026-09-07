@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-06T21:35:14.023Z",
+  "generated_at": "2026-09-07T03:35:14.172Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,28 +15,28 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-09-02",
-      "end": "2026-09-04"
+      "start": "2026-09-03",
+      "end": "2026-09-05"
     },
     "last_7": {
-      "start": "2026-08-30",
-      "end": "2026-09-06"
+      "start": "2026-08-31",
+      "end": "2026-09-07"
     },
     "last_30": {
-      "start": "2026-08-07",
-      "end": "2026-09-06"
+      "start": "2026-08-08",
+      "end": "2026-09-07"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 174,
-      "watchMinutes": 342,
-      "avgViewDurationSec": 141
+      "views": 167,
+      "watchMinutes": 330,
+      "avgViewDurationSec": 140
     },
     "last_30": {
-      "views": 307,
-      "watchMinutes": 732,
-      "avgViewDurationSec": 164
+      "views": 301,
+      "watchMinutes": 725,
+      "avgViewDurationSec": 166
     }
   },
   "last_48h_countries": [
@@ -44,7 +44,7 @@
       "code": "US",
       "name": "United States",
       "flag": "🇺🇸",
-      "views": 54
+      "views": 19
     }
   ],
   "last_30d_countries": [
@@ -117,7 +117,7 @@
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM",
-      "views": 25
+      "views": 23
     },
     {
       "videoId": "GJ_KrOQrgbk",
@@ -125,7 +125,7 @@
       "thumbnail": "https://i.ytimg.com/vi/GJ_KrOQrgbk/mqdefault.jpg",
       "publishedAt": "2025-05-03T11:47:28Z",
       "url": "https://www.youtube.com/watch?v=GJ_KrOQrgbk",
-      "views": 15
+      "views": 14
     },
     {
       "videoId": "0jPL3Mg88ZQ",
@@ -136,20 +136,15 @@
       "views": 11
     },
     {
-      "videoId": "BwWB95z6lKg",
-      "title": "Shieldbearer – Worth It All (Official Video)",
-      "thumbnail": "https://i.ytimg.com/vi/BwWB95z6lKg/mqdefault.jpg",
-      "publishedAt": "2025-07-30T17:32:30Z",
-      "url": "https://www.youtube.com/watch?v=BwWB95z6lKg",
+      "videoId": "E9rJluVWvxM",
+      "title": "Shieldbearer – The Architect (Official Christian Metal Release)",
+      "thumbnail": "https://i.ytimg.com/vi/E9rJluVWvxM/mqdefault.jpg",
+      "publishedAt": "2025-09-26T15:41:13Z",
+      "url": "https://www.youtube.com/watch?v=E9rJluVWvxM",
       "views": 7
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-06-08",
-      "views": 8,
-      "minutes": 12
-    },
     {
       "date": "2026-06-09",
       "views": 2,
@@ -600,17 +595,17 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 54
+      "views": 52
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 49
+      "views": 48
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 44
+      "views": 41
     },
     {
       "source": "NO_LINK_OTHER",
