@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-07T03:35:14.172Z",
+  "generated_at": "2026-09-07T21:35:14.103Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -8,10 +8,10 @@
     "url": "https://www.youtube.com/channel/UCgL4mzUUcYtqxx-0IdjoqIw",
     "published_at": "2025-04-14T03:40:06.969878Z",
     "thumbnail": "https://yt3.ggpht.com/IpsLcp29bRpbou_LxaA2FazbHG9QfOHy_bcBiI8vkg_EBDaje4f78m2f1t4vsaB_gk5wqLLz=s800-c-k-c0x00ffffff-no-rj",
-    "views_lifetime": 242127,
+    "views_lifetime": 242143,
     "subscribers": 12200,
     "subscribers_hidden": false,
-    "video_count": 100
+    "video_count": 97
   },
   "windows": {
     "last_48h": {
@@ -29,14 +29,14 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 167,
-      "watchMinutes": 330,
-      "avgViewDurationSec": 140
+      "views": 201,
+      "watchMinutes": 379,
+      "avgViewDurationSec": 135
     },
     "last_30": {
-      "views": 301,
-      "watchMinutes": 725,
-      "avgViewDurationSec": 166
+      "views": 335,
+      "watchMinutes": 775,
+      "avgViewDurationSec": 161
     }
   },
   "last_48h_countries": [
@@ -109,7 +109,7 @@
       "thumbnail": "https://i.ytimg.com/vi/jCNAZyyt5o8/mqdefault.jpg",
       "publishedAt": "2026-09-02T15:26:11Z",
       "url": "https://www.youtube.com/watch?v=jCNAZyyt5o8",
-      "views": 145
+      "views": 164
     },
     {
       "videoId": "8khugdipSJM",
@@ -136,12 +136,12 @@
       "views": 11
     },
     {
-      "videoId": "E9rJluVWvxM",
-      "title": "Shieldbearer – The Architect (Official Christian Metal Release)",
-      "thumbnail": "https://i.ytimg.com/vi/E9rJluVWvxM/mqdefault.jpg",
-      "publishedAt": "2025-09-26T15:41:13Z",
-      "url": "https://www.youtube.com/watch?v=E9rJluVWvxM",
-      "views": 7
+      "videoId": "tH2GpPLY3so",
+      "title": "Shieldbearer – QUAKE (Christian Metal | Official Audio)",
+      "thumbnail": "https://i.ytimg.com/vi/tH2GpPLY3so/mqdefault.jpg",
+      "publishedAt": "2025-08-14T00:17:51Z",
+      "url": "https://www.youtube.com/watch?v=tH2GpPLY3so",
+      "views": 11
     }
   ],
   "daily_views": [
@@ -584,28 +584,33 @@
       "date": "2026-09-04",
       "views": 17,
       "minutes": 28
+    },
+    {
+      "date": "2026-09-05",
+      "views": 34,
+      "minutes": 49
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 88
-    },
-    {
-      "source": "PLAYLIST",
-      "label": "From a playlist",
-      "views": 52
+      "views": 99
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 48
+      "views": 63
+    },
+    {
+      "source": "PLAYLIST",
+      "label": "From a playlist",
+      "views": 53
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 41
+      "views": 45
     },
     {
       "source": "NO_LINK_OTHER",
@@ -620,7 +625,7 @@
     {
       "source": "YT_OTHER_PAGE",
       "label": "Other YouTube page",
-      "views": 13
+      "views": 15
     },
     {
       "source": "RELATED_VIDEO",
@@ -630,7 +635,7 @@
     {
       "source": "NOTIFICATION",
       "label": "Notifications",
-      "views": 2
+      "views": 3
     },
     {
       "source": "SHORTS",
