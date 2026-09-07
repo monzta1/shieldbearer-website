@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-09-06T08:00:15.077Z",
+  "generatedAt": "2026-09-07T08:00:15.311Z",
   "period": {
     "label": "September 2026 so far",
     "start": "2026-09-01",
     "end": "2026-09-30"
   },
   "headline": {
-    "sessions": 14,
-    "deltaPct": -77.4,
+    "sessions": 15,
+    "deltaPct": -75.8,
     "comparison": "vs August 2026"
   },
   "channels": [
@@ -22,74 +22,74 @@
       "share": 40
     },
     {
-      "name": "Unassigned",
-      "sessions": 2,
-      "share": 13.3
+      "name": "Organic Search",
+      "sessions": 1,
+      "share": 6.7
     }
   ],
   "geography": [
     {
       "name": "United States",
-      "sessions": 10,
-      "share": 66.7
+      "sessions": 11,
+      "share": 68.8
     },
     {
       "name": "Singapore",
       "sessions": 2,
-      "share": 13.3
+      "share": 12.5
     },
     {
       "name": "Germany",
       "sessions": 1,
-      "share": 6.7
+      "share": 6.3
     },
     {
       "name": "United Kingdom",
       "sessions": 1,
-      "share": 6.7
+      "share": 6.3
     },
     {
       "name": "Vietnam",
       "sessions": 1,
-      "share": 6.7
+      "share": 6.3
     }
   ],
   "cities": [
     {
       "name": "(not set), Virginia",
       "sessions": 5,
-      "share": 33.3
+      "share": 31.3
     },
     {
       "name": "South Riding, Virginia",
       "sessions": 4,
-      "share": 26.7
+      "share": 25
     },
     {
-      "name": "Unknown",
+      "name": "(not set)",
       "sessions": 1,
-      "share": 6.7
+      "share": 6.3
     },
     {
       "name": "(not set), Thanh Hoa",
       "sessions": 1,
-      "share": 6.7
+      "share": 6.3
     },
     {
       "name": "Butzbach, Hessen",
       "sessions": 1,
-      "share": 6.7
+      "share": 6.3
     },
     {
       "name": "Marlow, England",
       "sessions": 1,
-      "share": 6.7
+      "share": 6.3
     }
   ],
   "events": [
     {
       "name": "scroll_depth",
-      "count": 33,
+      "count": 34,
       "engagedShare": null
     }
   ],
