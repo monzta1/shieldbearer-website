@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-07T21:35:14.103Z",
+  "generated_at": "2026-09-08T03:35:14.659Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,44 +15,37 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-09-03",
-      "end": "2026-09-05"
+      "start": "2026-09-04",
+      "end": "2026-09-06"
     },
     "last_7": {
-      "start": "2026-08-31",
-      "end": "2026-09-07"
+      "start": "2026-09-01",
+      "end": "2026-09-08"
     },
     "last_30": {
-      "start": "2026-08-08",
-      "end": "2026-09-07"
+      "start": "2026-08-09",
+      "end": "2026-09-08"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 201,
-      "watchMinutes": 379,
-      "avgViewDurationSec": 135
+      "views": 197,
+      "watchMinutes": 359,
+      "avgViewDurationSec": 131
     },
     "last_30": {
-      "views": 335,
-      "watchMinutes": 775,
-      "avgViewDurationSec": 161
+      "views": 321,
+      "watchMinutes": 670,
+      "avgViewDurationSec": 146
     }
   },
-  "last_48h_countries": [
-    {
-      "code": "US",
-      "name": "United States",
-      "flag": "🇺🇸",
-      "views": 19
-    }
-  ],
+  "last_48h_countries": [],
   "last_30d_countries": [
     {
       "code": "US",
       "name": "United States",
       "flag": "🇺🇸",
-      "views": 64
+      "views": 54
     }
   ],
   "top_videos": [
@@ -96,7 +89,7 @@
       "videoId": "8khugdipSJM",
       "title": "Shieldbearer – Tidings of Comfort and Joy (God Rest Ye Merry Gentlemen) [Metal Christmas Anthem]",
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
-      "views": 8291,
+      "views": 8292,
       "likes": 25,
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM"
@@ -117,7 +110,7 @@
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM",
-      "views": 23
+      "views": 16
     },
     {
       "videoId": "GJ_KrOQrgbk",
@@ -145,11 +138,6 @@
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-06-09",
-      "views": 2,
-      "minutes": 3
-    },
     {
       "date": "2026-06-10",
       "views": 8,
@@ -600,12 +588,12 @@
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 63
+      "views": 52
     },
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 53
+      "views": 50
     },
     {
       "source": "YT_SEARCH",
