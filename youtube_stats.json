@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-09T21:35:13.946Z",
+  "generated_at": "2026-09-10T03:35:14.254Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,28 +15,28 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-09-05",
-      "end": "2026-09-07"
+      "start": "2026-09-06",
+      "end": "2026-09-08"
     },
     "last_7": {
-      "start": "2026-09-02",
-      "end": "2026-09-09"
+      "start": "2026-09-03",
+      "end": "2026-09-10"
     },
     "last_30": {
-      "start": "2026-08-10",
-      "end": "2026-09-09"
+      "start": "2026-08-11",
+      "end": "2026-09-10"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 298,
-      "watchMinutes": 434,
-      "avgViewDurationSec": 126
+      "views": 209,
+      "watchMinutes": 235,
+      "avgViewDurationSec": 111
     },
     "last_30": {
-      "views": 421,
-      "watchMinutes": 737,
-      "avgViewDurationSec": 140
+      "views": 410,
+      "watchMinutes": 730,
+      "avgViewDurationSec": 143
     }
   },
   "last_48h_countries": [],
@@ -129,20 +129,15 @@
       "views": 14
     },
     {
-      "videoId": "tH2GpPLY3so",
-      "title": "Shieldbearer – QUAKE (Christian Metal | Official Audio)",
-      "thumbnail": "https://i.ytimg.com/vi/tH2GpPLY3so/mqdefault.jpg",
-      "publishedAt": "2025-08-14T00:17:51Z",
-      "url": "https://www.youtube.com/watch?v=tH2GpPLY3so",
-      "views": 12
+      "videoId": "2P8VZ1OwF1k",
+      "title": "TONECOMMAND AI building a Soldano SLO-100 inspired preset on my FM9",
+      "thumbnail": "https://i.ytimg.com/vi/2P8VZ1OwF1k/mqdefault.jpg",
+      "publishedAt": "2026-09-06T12:30:38Z",
+      "url": "https://www.youtube.com/watch?v=2P8VZ1OwF1k",
+      "views": 11
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-06-11",
-      "views": 8,
-      "minutes": 14
-    },
     {
       "date": "2026-06-12",
       "views": 12,
@@ -598,7 +593,7 @@
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 59
+      "views": 55
     },
     {
       "source": "PLAYLIST",
@@ -611,14 +606,14 @@
       "views": 41
     },
     {
-      "source": "YT_CHANNEL",
-      "label": "Channel page",
-      "views": 19
-    },
-    {
       "source": "YT_OTHER_PAGE",
       "label": "Other YouTube page",
       "views": 14
+    },
+    {
+      "source": "YT_CHANNEL",
+      "label": "Channel page",
+      "views": 12
     },
     {
       "source": "RELATED_VIDEO",
