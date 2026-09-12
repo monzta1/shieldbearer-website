@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-11T21:35:14.085Z",
+  "generated_at": "2026-09-12T03:35:13.732Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,28 +15,28 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-09-07",
-      "end": "2026-09-09"
+      "start": "2026-09-08",
+      "end": "2026-09-10"
     },
     "last_7": {
-      "start": "2026-09-04",
-      "end": "2026-09-11"
+      "start": "2026-09-05",
+      "end": "2026-09-12"
     },
     "last_30": {
-      "start": "2026-08-12",
-      "end": "2026-09-11"
+      "start": "2026-08-13",
+      "end": "2026-09-12"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 198,
-      "watchMinutes": 171,
-      "avgViewDurationSec": 100
+      "views": 181,
+      "watchMinutes": 143,
+      "avgViewDurationSec": 96
     },
     "last_30": {
-      "views": 445,
-      "watchMinutes": 736,
-      "avgViewDurationSec": 139
+      "views": 435,
+      "watchMinutes": 718,
+      "avgViewDurationSec": 141
     }
   },
   "last_48h_countries": [],
@@ -134,15 +134,10 @@
       "thumbnail": "https://i.ytimg.com/vi/GJ_KrOQrgbk/mqdefault.jpg",
       "publishedAt": "2025-05-03T11:47:28Z",
       "url": "https://www.youtube.com/watch?v=GJ_KrOQrgbk",
-      "views": 13
+      "views": 11
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-06-13",
-      "views": 9,
-      "minutes": 34
-    },
     {
       "date": "2026-06-14",
       "views": 9,
@@ -588,12 +583,12 @@
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 135
+      "views": 133
     },
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 111
+      "views": 109
     },
     {
       "source": "YT_SEARCH",
@@ -603,7 +598,7 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 55
+      "views": 50
     },
     {
       "source": "NO_LINK_OTHER",
@@ -611,14 +606,14 @@
       "views": 42
     },
     {
-      "source": "YT_CHANNEL",
-      "label": "Channel page",
-      "views": 12
-    },
-    {
       "source": "YT_OTHER_PAGE",
       "label": "Other YouTube page",
       "views": 12
+    },
+    {
+      "source": "YT_CHANNEL",
+      "label": "Channel page",
+      "views": 11
     },
     {
       "source": "RELATED_VIDEO",
