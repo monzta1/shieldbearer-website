@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-15T21:35:14.251Z",
+  "generated_at": "2026-09-16T03:35:14.255Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,27 +15,27 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-09-11",
-      "end": "2026-09-13"
+      "start": "2026-09-12",
+      "end": "2026-09-14"
     },
     "last_7": {
-      "start": "2026-09-08",
-      "end": "2026-09-15"
+      "start": "2026-09-09",
+      "end": "2026-09-16"
     },
     "last_30": {
-      "start": "2026-08-16",
-      "end": "2026-09-15"
+      "start": "2026-08-17",
+      "end": "2026-09-16"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 102,
-      "watchMinutes": 62,
-      "avgViewDurationSec": 65
+      "views": 80,
+      "watchMinutes": 56,
+      "avgViewDurationSec": 67
     },
     "last_30": {
       "views": 471,
-      "watchMinutes": 673,
+      "watchMinutes": 677,
       "avgViewDurationSec": 126
     }
   },
@@ -138,11 +138,6 @@
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-06-17",
-      "views": 6,
-      "minutes": 7
-    },
     {
       "date": "2026-06-18",
       "views": 11,
@@ -545,17 +540,17 @@
     },
     {
       "date": "2026-09-06",
-      "views": 55,
+      "views": 56,
       "minutes": 58
     },
     {
       "date": "2026-09-07",
-      "views": 47,
-      "minutes": 12
+      "views": 49,
+      "minutes": 21
     },
     {
       "date": "2026-09-08",
-      "views": 22,
+      "views": 23,
       "minutes": 6
     },
     {
@@ -580,15 +575,15 @@
     },
     {
       "date": "2026-09-13",
-      "views": 15,
-      "minutes": 15
+      "views": 0,
+      "minutes": 0
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 144
+      "views": 143
     },
     {
       "source": "EXT_URL",
@@ -601,13 +596,13 @@
       "views": 71
     },
     {
-      "source": "PLAYLIST",
-      "label": "From a playlist",
-      "views": 45
-    },
-    {
       "source": "NO_LINK_OTHER",
       "label": "No referrer",
+      "views": 42
+    },
+    {
+      "source": "PLAYLIST",
+      "label": "From a playlist",
       "views": 42
     },
     {
