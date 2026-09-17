@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-17T03:35:14.335Z",
+  "generated_at": "2026-09-17T21:35:14.671Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -29,14 +29,14 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 71,
+      "views": 73,
       "watchMinutes": 72,
-      "avgViewDurationSec": 90
+      "avgViewDurationSec": 88
     },
     "last_30": {
-      "views": 473,
-      "watchMinutes": 683,
-      "avgViewDurationSec": 128
+      "views": 475,
+      "watchMinutes": 684,
+      "avgViewDurationSec": 127
     }
   },
   "last_48h_countries": [],
@@ -63,7 +63,7 @@
       "title": "Shieldbearer – Pahalgam (A Prayer for India) [Official Audio]",
       "thumbnail": "https://i.ytimg.com/vi/9NQkaZbntUs/mqdefault.jpg",
       "views": 62396,
-      "likes": 318,
+      "likes": 317,
       "publishedAt": "2025-04-26T15:28:11Z",
       "url": "https://www.youtube.com/watch?v=9NQkaZbntUs"
     },
@@ -89,7 +89,7 @@
       "videoId": "8khugdipSJM",
       "title": "Shieldbearer – Tidings of Comfort and Joy (God Rest Ye Merry Gentlemen) [Metal Christmas Anthem]",
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
-      "views": 8297,
+      "views": 8299,
       "likes": 25,
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM"
@@ -577,13 +577,18 @@
       "date": "2026-09-14",
       "views": 11,
       "minutes": 23
+    },
+    {
+      "date": "2026-09-15",
+      "views": 2,
+      "minutes": 0
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 142
+      "views": 144
     },
     {
       "source": "EXT_URL",
