@@ -1,89 +1,94 @@
 {
-  "generatedAt": "2026-09-16T08:00:15.983Z",
+  "generatedAt": "2026-09-17T08:00:15.536Z",
   "period": {
     "label": "September 2026 so far",
     "start": "2026-09-01",
     "end": "2026-09-30"
   },
   "headline": {
-    "sessions": 16,
-    "deltaPct": -74.2,
+    "sessions": 17,
+    "deltaPct": -72.6,
     "comparison": "vs August 2026"
   },
   "channels": [
     {
       "name": "Direct",
-      "sessions": 7,
-      "share": 43.8
+      "sessions": 8,
+      "share": 47.1
     },
     {
       "name": "Organic Social",
       "sessions": 7,
-      "share": 43.8
+      "share": 41.2
     },
     {
       "name": "Organic Search",
       "sessions": 1,
-      "share": 6.3
+      "share": 5.9
     }
   ],
   "geography": [
     {
       "name": "United States",
       "sessions": 12,
-      "share": 70.6
+      "share": 66.7
     },
     {
       "name": "Singapore",
       "sessions": 2,
-      "share": 11.8
+      "share": 11.1
+    },
+    {
+      "name": "Unknown",
+      "sessions": 1,
+      "share": 5.6
     },
     {
       "name": "Germany",
       "sessions": 1,
-      "share": 5.9
+      "share": 5.6
     },
     {
       "name": "United Kingdom",
       "sessions": 1,
-      "share": 5.9
+      "share": 5.6
     },
     {
       "name": "Vietnam",
       "sessions": 1,
-      "share": 5.9
+      "share": 5.6
     }
   ],
   "cities": [
     {
       "name": "(not set), Virginia",
       "sessions": 5,
-      "share": 29.4
+      "share": 27.8
     },
     {
       "name": "South Riding, Virginia",
       "sessions": 4,
-      "share": 23.5
+      "share": 22.2
+    },
+    {
+      "name": "Unknown",
+      "sessions": 1,
+      "share": 5.6
     },
     {
       "name": "(not set)",
       "sessions": 1,
-      "share": 5.9
+      "share": 5.6
     },
     {
       "name": "(not set), Thanh Hoa",
       "sessions": 1,
-      "share": 5.9
+      "share": 5.6
     },
     {
       "name": "Ashburn, Virginia",
       "sessions": 1,
-      "share": 5.9
-    },
-    {
-      "name": "Butzbach, Hessen",
-      "sessions": 1,
-      "share": 5.9
+      "share": 5.6
     }
   ],
   "events": [
