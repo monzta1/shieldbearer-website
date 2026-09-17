@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-16T21:35:14.236Z",
+  "generated_at": "2026-09-17T03:35:14.335Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,27 +15,27 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-09-12",
-      "end": "2026-09-14"
+      "start": "2026-09-13",
+      "end": "2026-09-15"
     },
     "last_7": {
-      "start": "2026-09-09",
-      "end": "2026-09-16"
+      "start": "2026-09-10",
+      "end": "2026-09-17"
     },
     "last_30": {
-      "start": "2026-08-17",
-      "end": "2026-09-16"
+      "start": "2026-08-18",
+      "end": "2026-09-17"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 91,
-      "watchMinutes": 79,
-      "avgViewDurationSec": 82
+      "views": 71,
+      "watchMinutes": 72,
+      "avgViewDurationSec": 90
     },
     "last_30": {
-      "views": 482,
-      "watchMinutes": 700,
+      "views": 473,
+      "watchMinutes": 683,
       "avgViewDurationSec": 128
     }
   },
@@ -129,20 +129,15 @@
       "views": 16
     },
     {
-      "videoId": "GJ_KrOQrgbk",
-      "title": "Shieldbearer – Prison Break [Christian Metal | Official Audio | Celestial Shield Album]",
-      "thumbnail": "https://i.ytimg.com/vi/GJ_KrOQrgbk/mqdefault.jpg",
-      "publishedAt": "2025-05-03T11:47:28Z",
-      "url": "https://www.youtube.com/watch?v=GJ_KrOQrgbk",
-      "views": 12
+      "videoId": "tH2GpPLY3so",
+      "title": "Shieldbearer – QUAKE (Christian Metal | Official Audio)",
+      "thumbnail": "https://i.ytimg.com/vi/tH2GpPLY3so/mqdefault.jpg",
+      "publishedAt": "2025-08-14T00:17:51Z",
+      "url": "https://www.youtube.com/watch?v=tH2GpPLY3so",
+      "views": 11
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-06-18",
-      "views": 11,
-      "minutes": 18
-    },
     {
       "date": "2026-06-19",
       "views": 9,
@@ -540,13 +535,13 @@
     },
     {
       "date": "2026-09-06",
-      "views": 56,
+      "views": 55,
       "minutes": 58
     },
     {
       "date": "2026-09-07",
-      "views": 49,
-      "minutes": 21
+      "views": 47,
+      "minutes": 12
     },
     {
       "date": "2026-09-08",
@@ -561,11 +556,11 @@
     {
       "date": "2026-09-10",
       "views": 12,
-      "minutes": 3
+      "minutes": 4
     },
     {
       "date": "2026-09-11",
-      "views": 12,
+      "views": 11,
       "minutes": 8
     },
     {
@@ -575,8 +570,8 @@
     },
     {
       "date": "2026-09-13",
-      "views": 0,
-      "minutes": 0
+      "views": 15,
+      "minutes": 15
     },
     {
       "date": "2026-09-14",
@@ -588,7 +583,7 @@
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 145
+      "views": 142
     },
     {
       "source": "EXT_URL",
@@ -598,12 +593,12 @@
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 75
+      "views": 74
     },
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 46
+      "views": 44
     },
     {
       "source": "NO_LINK_OTHER",
@@ -613,7 +608,7 @@
     {
       "source": "RELATED_VIDEO",
       "label": "Related video",
-      "views": 19
+      "views": 18
     },
     {
       "source": "YT_CHANNEL",
@@ -628,7 +623,7 @@
     {
       "source": "NOTIFICATION",
       "label": "Notifications",
-      "views": 7
+      "views": 8
     },
     {
       "source": "HASHTAGS",
