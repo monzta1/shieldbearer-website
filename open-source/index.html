@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N7SR64KL');
+  </script>
+  <!-- End Google Tag Manager -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open Source | Shieldbearer</title>
+  <meta name="description" content="Free software built by Shieldbearer, a metal band. ToneCommand, Handsoff, Beakon and IRCommand: what each one does, in plain English, and why the human stays in command.">
+  <meta property="og:title" content="Open Source | Shieldbearer" />
+  <meta property="og:description" content="Free software from a metal band. ToneCommand, Handsoff, Beakon and IRCommand, in plain English." />
+  <meta property="og:image" content="https://shieldbearerusa.com/images/tonecommand-share.png" />
+  <meta property="og:image:width" content="1280" />
+  <meta property="og:image:height" content="640" />
+  <meta property="og:image:alt" content="The ToneCommand emblem, one of four tools built by Shieldbearer." />
+  <meta property="og:url" content="https://shieldbearerusa.com/open-source" />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://shieldbearerusa.com/open-source" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Open Source | Shieldbearer" />
+  <meta name="twitter:description" content="Free software from a metal band. ToneCommand, Handsoff, Beakon and IRCommand, in plain English." />
+  <meta name="twitter:image" content="https://shieldbearerusa.com/images/tonecommand-share.png" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://tagassistant.google.com https://www.clarity.ms https://scripts.clarity.ms https://open.spotify.com https://www.youtube.com https://app.convertkit.com https://fonts.googleapis.com;
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    font-src 'self' https://fonts.gstatic.com;
+    frame-src https://open.spotify.com https://www.youtube.com https://www.googletagmanager.com;
+    img-src 'self' data: https://img.youtube.com https://shieldbearerusa.com https://www.google-analytics.com https://www.googletagmanager.com https://www.clarity.ms https://c.clarity.ms;
+    connect-src 'self' https://app.convertkit.com https://www.google-analytics.com https://region1.google-analytics.com https://stats.g.doubleclick.net https://www.googletagmanager.com https://www.clarity.ms https://c.clarity.ms https://j.clarity.ms https://tagassistant.google.com https://g7a5tqlxaj.execute-api.us-east-1.amazonaws.com https://*.lambda-url.us-east-1.on.aws;
+  ">
+  <link rel="icon" href="/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200;300;400;500;600&family=Roboto+Condensed:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .tc-wrap { max-width: 900px; margin: 0 auto; padding: 0 var(--pad); }
+    .tc-box {
+      background: var(--dark-2);
+      border: 1px solid rgba(168,162,154,.08);
+      border-top: 2px solid var(--red);
+      padding: clamp(1.2rem, 2.2vw, 2rem);
+    }
+    .tc-box p { font-size: 1rem; line-height: 1.9; color: rgba(240,235,224,.76); margin-bottom: 1rem; }
+    .tc-box h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.25rem, 2.8vw, 1.9rem);
+      letter-spacing: .06em; color: #fff;
+      margin: 1.8rem 0 .6rem; padding-top: .9rem;
+      border-top: 1px solid rgba(168,162,154,.1);
+    }
+    .tc-box h2:first-of-type { margin-top: .3rem; padding-top: 0; border-top: 0; }
+    .tc-box ul { margin: 0 0 1rem 1.1rem; }
+    .tc-box li { font-size: 1rem; line-height: 1.85; color: rgba(240,235,224,.76); margin-bottom: .5rem; }
+    .tc-emblem { display: block; width: min(300px, 70%); height: auto; margin: 0 auto 1.6rem; }
+    .tc-shot { display: block; width: 100%; height: auto; margin: 1rem 0 .6rem; border: 1px solid rgba(168,162,154,.14); }
+    .tc-video { position: relative; width: 100%; padding-top: 56.25%; margin: 1rem 0 .6rem;
+                background: linear-gradient(135deg, #050505, #140707);
+                border: 1px solid rgba(168,162,154,.14); }
+    .tc-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .tc-cap { font-size: .85rem; color: rgba(240,235,224,.5); font-style: italic; margin-bottom: 1.4rem; }
+    .tc-cta { display: inline-block; margin: .3rem .6rem .6rem 0; padding: .7rem 1.2rem;
+              border: 1px solid var(--red); color: #fff; text-decoration: none;
+              font-family: var(--font-display); letter-spacing: .08em; }
+    .tc-cta:hover { background: var(--red); }
+    .tc-pull { font-family: var(--font-display); font-size: clamp(1.1rem,2.4vw,1.5rem);
+               letter-spacing: .07em; color: #fff; text-align: center;
+               margin: 1.8rem 0; line-height: 1.5; }
+    .os-head { display: grid; grid-template-columns: 120px minmax(0,1fr); gap: 1.2rem; align-items: center; margin: 1.6rem 0 .8rem; }
+    .os-head img { width: 120px; height: 120px; display: block; border: 1px solid rgba(168,162,154,.14); }
+    .os-mark { width: 120px; height: 120px; display: flex; align-items: center; justify-content: center;
+               font-family: var(--font-display); font-size: 2.6rem; letter-spacing: .08em; color: #fff;
+               background: linear-gradient(135deg, #050505, #140707); border: 1px solid rgba(168,162,154,.14); }
+    .os-head h2 { margin: 0; padding: 0; border: 0; }
+    .os-tag { display: inline-block; margin-top: .35rem; font-family: var(--font-display); font-size: .8rem;
+              letter-spacing: .12em; color: var(--red-bright); text-transform: uppercase; }
+    .os-tag--shop { color: rgba(240,235,224,.55); }
+    .os-fact { font-family: var(--font-display); font-size: clamp(1rem,2vw,1.25rem); letter-spacing: .05em;
+               color: #fff; border-left: 2px solid var(--red); padding: .2rem 0 .2rem 1rem; margin: 1rem 0 1.1rem; line-height: 1.6; }
+    @media (max-width: 560px) {
+      .os-head { grid-template-columns: 84px minmax(0,1fr); gap: .9rem; }
+      .os-head img, .os-mark { width: 84px; height: 84px; }
+      .os-mark { font-size: 1.9rem; }
+    }
+  </style>
+</head>
+<body data-scripture-links>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N7SR64KL"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <div class="mob-menu" id="mobMenu" role="dialog" aria-label="Navigation">
+    <button class="mob-close" id="mobClose" aria-label="Close menu">&#x2715;</button>
+    <a href="/">Home</a>
+    <a href="/music">Music</a>
+    <a href="/music">The Armory</a>
+    <a href="/videos">Signal Fire</a>
+    <a href="/song-meanings">Lyrics</a>
+    <a href="/signal-room">Signal Room</a>
+    <a href="/reach">Reach</a>
+    <a href="/reach/streams" class="mob-menu__sub">Streams</a>
+    <a href="/reach/youtube" class="mob-menu__sub">YouTube</a>
+    <a href="/about">About</a>
+    <a href="/story">The Story</a>
+    <a href="/process">The Process</a>
+    <a href="/how-it-works">How It Works</a>
+    <a href="/faq">FAQ</a>
+    <a href="/interviews">Press</a>
+    <a href="/interviews">Press Coverage</a>
+    <a href="/epk">Press Kit</a>
+    <a href="/creed">The Creed</a>
+    <a href="/manifesto">The Manifesto</a>
+    <a href="/gospel">The Gospel</a>
+    <a href="/for-ai-artists">For AI Artists</a>
+    <a href="/faq#faq-ai-legitimate">AI and Faith FAQ</a>
+    <a href="/gatekeeping">On Gatekeeping</a>
+    <a href="/ai-and-creativity">AI and Creativity</a>
+    <a href="/god-uses-tools">God Uses Tools</a>
+    <a href="/sentinelbot">SentinelBot</a>
+    <a href="/tonecommand">ToneCommand</a>
+    <a href="/open-source">Open Source</a>
+    <a href="/are-you-an-ai-band">Are You An AI Band?</a>
+    <a href="/contact">Contact</a>
+    <a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener" style="color:var(--red-bright)">Merch</a>
+  </div>
+
+  <nav class="site-nav" id="mainNav">
+    <a href="/" class="nav-logo"><img src="/images/logo.png" alt="Shieldbearer"></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li class="nav-dropdown">
+        <a href="/music">Music</a>
+        <div class="nav-dropdown__menu">
+          <a href="/music">The Armory</a>
+          <a href="/videos">Signal Fire</a>
+          <a href="/song-meanings">Lyrics</a>
+          <a href="/signal-room">Signal Room</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/reach">Reach</a>
+        <div class="nav-dropdown__menu">
+          <a href="/reach/streams">Streams</a>
+          <a href="/reach/youtube">YouTube</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/about">About</a>
+        <div class="nav-dropdown__menu">
+          <a href="/story">The Story</a>
+          <a href="/process">The Process</a>
+          <a href="/how-it-works">How It Works</a>
+          <a href="/faq">FAQ</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/interviews">Press</a>
+        <div class="nav-dropdown__menu">
+          <a href="/interviews">Press Coverage</a>
+          <a href="/epk">Press Kit</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/manifesto">Words</a>
+        <div class="nav-dropdown__menu">
+          <a href="/creed">The Creed</a>
+          <a href="/manifesto">The Manifesto</a>
+          <a href="/gospel">The Gospel</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="/for-ai-artists">AI and Faith</a>
+        <div class="nav-dropdown__menu">
+          <a href="/for-ai-artists">For AI Artists</a>
+          <a href="/faq#faq-ai-legitimate">AI and Faith FAQ</a>
+          <a href="/gatekeeping">On Gatekeeping</a>
+          <a href="/ai-and-creativity">AI and Creativity</a>
+          <a href="/god-uses-tools">God Uses Tools</a>
+          <a href="/sentinelbot">SentinelBot</a>
+          <a href="/tonecommand">ToneCommand</a>
+          <a href="/open-source">Open Source</a>
+          <a href="/are-you-an-ai-band">Are You An AI Band?</a>
+        </div>
+      </li>
+      <li><a href="/contact">Contact</a></li>
+      <li class="nav-merch"><a href="https://shop.shieldbearerusa.com" target="_blank" rel="noopener">Merch</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="page-hero section--dark">
+    <div class="container page-hero-inner">
+      <span class="eyebrow">Built by Shieldbearer</span>
+      <h1 class="display-title">Open Source</h1>
+      <div class="bar"></div>
+      <p>Free tools from a metal band. Old soul. New machine. Humans in command.</p>
+    </div>
+  </div>
+
+  <section class="section--darker sb-reveal">
+    <div class="container">
+      <div class="tc-wrap">
+        <div class="tc-box">
+
+          <h2>Between songs</h2>
+          <p>When Moncy is not writing music he builds software, and he gives it away. Some of it is used by other guitar players, and their names are in it. Some of it builds the other software. All of it follows the one rule that runs through everything on this site: the machine proposes, the person decides.</p>
+          <p>Two of these tools are open source today, which means the code is public and anyone can read every line, use it, and improve it. The other two are still in the workshop. They are real and they run every day; they have not been released yet.</p>
+
+          <div class="os-head">
+            <img src="/images/tonecommand-logo.png" alt="The ToneCommand emblem: a TC monogram inside a gear, wrapped in blue electrical fire." width="512" height="512">
+            <div>
+              <h2>ToneCommand</h2>
+              <span class="os-tag">Free. Open source.</span>
+            </div>
+          </div>
+          <p>A modern guitar rig is a computer. It can make almost any sound ever recorded, and getting one specific sound out of it means hunting through hundreds of menus on a screen the size of a postcard. You know what you want. You cannot find the twelve settings that make it.</p>
+          <p>ToneCommand lets you type the sound you want in plain English. It works out which settings that means, shows you the whole list, and changes nothing until you say go.</p>
+          <p class="os-fact">Someone typed one sentence asking for a Judas Priest rig across eight eras. Six minutes later the finished preset stood on the hardware, every footswitch named, on video, unedited.</p>
+          <p>It gives the unit an undo button it never had. It lights up every other sound a change would quietly affect before you commit. It can hear a speaker cabinet in your rig before you decide on it and put your own cab straight back. It refuses to guess: if it cannot verify that a change landed, it tells you to go and listen. Every check it runs ends with the same line, "ears: pending, always."</p>
+          <p>The emblem is a TC monogram inside a gear. Bronze for the old soul, blued steel for the workmanship, and electric blue fire in the traces for the part that is genuinely new, with a human monogram at the centre holding both. There is a whole page on it, and a shirt.</p>
+          <p>
+            <a class="tc-cta" href="/tonecommand">The ToneCommand page</a>
+            <a class="tc-cta" href="https://github.com/monzta1/ToneCommand" target="_blank" rel="noopener">Get it on GitHub</a>
+          </p>
+
+          <div class="os-head">
+            <img src="/images/handsoff-logo.png" alt="The Handsoff mark: a letter H drawn as a twin-panel fighter with a wheel at its heart, glowing blue on black." width="512" height="512">
+            <div>
+              <h2>Handsoff</h2>
+              <span class="os-tag">Free. Open source.</span>
+            </div>
+          </div>
+          <p>Everyone has heard that AI can write software now. The part nobody talks about is trust. When a machine tells you the work is done, tested and reviewed, how do you know it is not just saying so?</p>
+          <p>Handsoff is a foreman. It refuses to let a piece of work move forward until the test actually ran, a second, independent AI actually reviewed it, and a person actually pressed approve. Every one of those steps is chained to the one before it, so none of it can be quietly rewritten afterwards. If the machine claims something it did not do, Handsoff says so, in writing, and stops.</p>
+          <p class="os-fact">In a single day it took ten features through ToneCommand, start to finish. On another night it ran while Moncy slept; he woke up to finished work and a written record of every decision.</p>
+          <p>It comes with Mission Control, a screen that shows the whole run live: what phase the work is in, what is proven, what is waiting on a human, and a button for that human to press. It works on a laptop and it works on a phone.</p>
+          <p>The mark is the letter H, drawn as a twin-panel fighter with a wheel at its heart. Two hands off the controls, one wheel still steering, and a nod to a certain fighter everyone recognises.</p>
+          <p>
+            <a class="tc-cta" href="https://github.com/monzta1/project-handsoff" target="_blank" rel="noopener">Get it on GitHub</a>
+          </p>
+
+          <div class="os-head">
+            <img src="/images/beakon-logo.png" alt="The Beakon mark: a chiselled metal letter B with a burning gold beacon at its centre, standing on dark rock." width="512" height="512">
+            <div>
+              <h2>Beakon</h2>
+              <span class="os-tag os-tag--shop">In the workshop</span>
+            </div>
+          </div>
+          <p>Moncy writes a task on his laptop in a coffee shop. A computer at home receives it, hands the job to a second machine, which hands it to Handsoff, and reports back to his phone: received, started, done. When the work is finished the folder empties itself and a log keeps the record.</p>
+          <p class="os-fact">There is no cloud service in the middle and no account to sign up for. The first real test was sent from a phone hotspot, and the laptop at home had started on it three seconds later.</p>
+          <p>Beakon is how the band ships software from anywhere. It is named for what it is: a light you set on a hill, and someone comes.</p>
+          <p>The mark is a B cut from stone with a beacon burning at its centre and the signal rippling out across the ground below it.</p>
+
+          <div class="os-head">
+            <div class="os-mark" aria-hidden="true">IR</div>
+            <div>
+              <h2>IRCommand</h2>
+              <span class="os-tag os-tag--shop">In the workshop</span>
+            </div>
+          </div>
+          <p>A guitar amplifier is only half the sound. The other half is the speaker cabinet and the microphone in front of it, and modern rigs load that half from a recording called an impulse response. Serious players collect thousands of them, with names like "412 V30 57 cap edge", and nobody can remember what any of them actually sound like.</p>
+          <p class="os-fact">IRCommand listened to all 7,655 of Moncy's, measured every one, and found that only 2,404 are genuinely different from each other.</p>
+          <p>Now you can ask it for a cabinet "darker than the one I am using, without the ribbon mic" and it answers from measurements rather than filenames. ToneCommand asks it for advice when it builds a rig. It has no emblem yet. It has been too busy.</p>
+
+          <h2>Why give it away</h2>
+          <p>Because the same conviction runs through the music. Tools serve people. Every one of these is built so that a person stays in command, can see exactly what the machine did, and can undo it. The code is public where it can be, and the names of the people who helped are on it.</p>
+          <p class="tc-pull">The machine proposes. You dispose.</p>
+          <p>Built on a real rig, for real shows. Worship sets on Sunday, and metal when the stage calls for it.</p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="/js/config.js"></script>
+  <script src="/js/analytics.js" defer></script>
+  <script src="/js/main.js" defer></script>
+<script src="/js/scripture-links.js" defer></script>
+</body>
+</html>

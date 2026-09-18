@@ -7,6 +7,18 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.32.0 - September 2026
+- New /open-source page: the four tools built by Shieldbearer (ToneCommand,
+  Handsoff, Beakon, IRCommand), each with its mark, what it does in plain
+  English for a non-technical reader, one true jaw-dropping fact, and its
+  honest status: ToneCommand and Handsoff are free and open source with
+  GitHub links; Beakon and IRCommand are labelled "in the workshop" because
+  they are not released. Built on the /tonecommand template (same head, nav
+  and footer). New images: handsoff-logo.png and beakon-logo.png at 512px.
+- "Open Source" added to the nav beside ToneCommand across every page file
+  (mobile menu and the Words dropdown; signal-room's list form handled).
+- Sitemap entry for /open-source.
+
 ## v2.31.0 - September 2026
 - /tonecommand embeds the Judas Priest demo video (one sentence, an empty
   slot, six minutes, eight scenes) in a new "Watch it build a rig from
