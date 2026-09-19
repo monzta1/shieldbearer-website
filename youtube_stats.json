@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-19T03:35:14.603Z",
+  "generated_at": "2026-09-19T21:35:14.079Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -29,14 +29,14 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 56,
-      "watchMinutes": 65,
-      "avgViewDurationSec": 102
+      "views": 68,
+      "watchMinutes": 83,
+      "avgViewDurationSec": 97
     },
     "last_30": {
-      "views": 478,
-      "watchMinutes": 679,
-      "avgViewDurationSec": 126
+      "views": 485,
+      "watchMinutes": 689,
+      "avgViewDurationSec": 124
     }
   },
   "last_48h_countries": [],
@@ -81,7 +81,7 @@
       "title": "Ruler of the Storm – Shieldbearer (Official Lyric Video | Christian Metal Anthem)",
       "thumbnail": "https://i.ytimg.com/vi/9FHgbbVBT1A/mqdefault.jpg",
       "views": 9838,
-      "likes": 725,
+      "likes": 724,
       "publishedAt": "2025-05-16T10:00:06Z",
       "url": "https://www.youtube.com/watch?v=9FHgbbVBT1A"
     },
@@ -110,7 +110,7 @@
       "thumbnail": "https://i.ytimg.com/vi/7f840w5mQis/mqdefault.jpg",
       "publishedAt": "2026-09-06T00:58:30Z",
       "url": "https://www.youtube.com/watch?v=7f840w5mQis",
-      "views": 109
+      "views": 110
     },
     {
       "videoId": "2P8VZ1OwF1k",
@@ -118,7 +118,7 @@
       "thumbnail": "https://i.ytimg.com/vi/2P8VZ1OwF1k/mqdefault.jpg",
       "publishedAt": "2026-09-06T12:30:38Z",
       "url": "https://www.youtube.com/watch?v=2P8VZ1OwF1k",
-      "views": 26
+      "views": 33
     },
     {
       "videoId": "8khugdipSJM",
@@ -126,15 +126,15 @@
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM",
-      "views": 16
+      "views": 18
     },
     {
-      "videoId": "GJ_KrOQrgbk",
-      "title": "Shieldbearer – Prison Break [Christian Metal | Official Audio | Celestial Shield Album]",
-      "thumbnail": "https://i.ytimg.com/vi/GJ_KrOQrgbk/mqdefault.jpg",
-      "publishedAt": "2025-05-03T11:47:28Z",
-      "url": "https://www.youtube.com/watch?v=GJ_KrOQrgbk",
-      "views": 11
+      "videoId": "tH2GpPLY3so",
+      "title": "Shieldbearer – QUAKE (Christian Metal | Official Audio)",
+      "thumbnail": "https://i.ytimg.com/vi/tH2GpPLY3so/mqdefault.jpg",
+      "publishedAt": "2025-08-14T00:17:51Z",
+      "url": "https://www.youtube.com/watch?v=tH2GpPLY3so",
+      "views": 12
     }
   ],
   "daily_views": [
@@ -535,7 +535,7 @@
     },
     {
       "date": "2026-09-08",
-      "views": 23,
+      "views": 22,
       "minutes": 6
     },
     {
@@ -555,7 +555,7 @@
     },
     {
       "date": "2026-09-12",
-      "views": 22,
+      "views": 21,
       "minutes": 20
     },
     {
@@ -577,33 +577,38 @@
       "date": "2026-09-16",
       "views": 6,
       "minutes": 6
+    },
+    {
+      "date": "2026-09-17",
+      "views": 13,
+      "minutes": 18
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 144
+      "views": 145
     },
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 119
+      "views": 123
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 75
+      "views": 78
     },
     {
       "source": "NO_LINK_OTHER",
       "label": "No referrer",
-      "views": 43
+      "views": 47
     },
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 43
+      "views": 44
     },
     {
       "source": "RELATED_VIDEO",
