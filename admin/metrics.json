@@ -1,100 +1,100 @@
 {
-  "generatedAt": "2026-09-19T08:00:14.882Z",
+  "generatedAt": "2026-09-19T12:56:53.362Z",
   "period": {
     "label": "September 2026 so far",
     "start": "2026-09-01",
     "end": "2026-09-30"
   },
   "headline": {
-    "sessions": 24,
-    "deltaPct": -61.3,
+    "sessions": 26,
+    "deltaPct": -58.1,
     "comparison": "vs August 2026"
   },
   "channels": [
     {
       "name": "Direct",
-      "sessions": 12,
-      "share": 41.4
+      "sessions": 14,
+      "share": 45.2
     },
     {
       "name": "Organic Social",
       "sessions": 10,
-      "share": 34.5
+      "share": 32.3
     },
     {
       "name": "Unassigned",
       "sessions": 6,
-      "share": 20.7
+      "share": 19.4
     }
   ],
   "geography": [
     {
       "name": "United States",
       "sessions": 18,
-      "share": 72
+      "share": 66.7
+    },
+    {
+      "name": "Unknown",
+      "sessions": 2,
+      "share": 7.4
+    },
+    {
+      "name": "Germany",
+      "sessions": 2,
+      "share": 7.4
     },
     {
       "name": "Singapore",
       "sessions": 2,
-      "share": 8
-    },
-    {
-      "name": "Unknown",
-      "sessions": 1,
-      "share": 4
+      "share": 7.4
     },
     {
       "name": "(not set)",
       "sessions": 1,
-      "share": 4
-    },
-    {
-      "name": "Germany",
-      "sessions": 1,
-      "share": 4
+      "share": 3.7
     },
     {
       "name": "United Kingdom",
       "sessions": 1,
-      "share": 4
+      "share": 3.7
     }
   ],
   "cities": [
     {
       "name": "Unknown, Virginia",
       "sessions": 5,
-      "share": 20
+      "share": 18.5
     },
     {
       "name": "(not set), Virginia",
       "sessions": 5,
-      "share": 20
+      "share": 18.5
     },
     {
       "name": "South Riding, Virginia",
       "sessions": 4,
-      "share": 16
+      "share": 14.8
+    },
+    {
+      "name": "Unknown",
+      "sessions": 2,
+      "share": 7.4
     },
     {
       "name": "(not set)",
       "sessions": 2,
-      "share": 8
-    },
-    {
-      "name": "Unknown",
-      "sessions": 1,
-      "share": 4
+      "share": 7.4
     },
     {
       "name": "(not set), Thanh Hoa",
       "sessions": 1,
-      "share": 4
+      "share": 3.7
     }
   ],
   "events": [
     {
       "name": "scroll_depth",
-      "count": 49,
+      "count": 50,
       "engagedShare": null
     },
     {
