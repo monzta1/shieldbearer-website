@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T21:35:14.259Z",
+  "generated_at": "2026-09-19T03:35:14.603Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,28 +15,28 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-09-14",
-      "end": "2026-09-16"
+      "start": "2026-09-15",
+      "end": "2026-09-17"
     },
     "last_7": {
-      "start": "2026-09-11",
-      "end": "2026-09-18"
+      "start": "2026-09-12",
+      "end": "2026-09-19"
     },
     "last_30": {
-      "start": "2026-08-19",
-      "end": "2026-09-18"
+      "start": "2026-08-20",
+      "end": "2026-09-19"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 68,
-      "watchMinutes": 74,
-      "avgViewDurationSec": 96
+      "views": 56,
+      "watchMinutes": 65,
+      "avgViewDurationSec": 102
     },
     "last_30": {
-      "views": 480,
-      "watchMinutes": 680,
-      "avgViewDurationSec": 125
+      "views": 478,
+      "watchMinutes": 679,
+      "avgViewDurationSec": 126
     }
   },
   "last_48h_countries": [],
@@ -89,7 +89,7 @@
       "videoId": "8khugdipSJM",
       "title": "Shieldbearer – Tidings of Comfort and Joy (God Rest Ye Merry Gentlemen) [Metal Christmas Anthem]",
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
-      "views": 8300,
+      "views": 8302,
       "likes": 25,
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM"
@@ -138,11 +138,6 @@
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-06-20",
-      "views": 7,
-      "minutes": 11
-    },
     {
       "date": "2026-06-21",
       "views": 7,
@@ -598,16 +593,16 @@
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 76
-    },
-    {
-      "source": "PLAYLIST",
-      "label": "From a playlist",
-      "views": 44
+      "views": 75
     },
     {
       "source": "NO_LINK_OTHER",
       "label": "No referrer",
+      "views": 43
+    },
+    {
+      "source": "PLAYLIST",
+      "label": "From a playlist",
       "views": 43
     },
     {
