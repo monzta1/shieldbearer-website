@@ -7,6 +7,10 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.32.1 - September 2026
+- /open-source: the Beakon mark is the new artwork (two curved blades around a
+  burning core); alt text and the emblem line updated to describe it.
+
 ## v2.32.0 - September 2026
 - New /open-source page: the four tools built by Shieldbearer (ToneCommand,
   Handsoff, Beakon, IRCommand), each with its mark, what it does in plain
