@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-19T21:35:14.079Z",
+  "generated_at": "2026-09-20T03:35:14.001Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,27 +15,27 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-09-15",
-      "end": "2026-09-17"
+      "start": "2026-09-16",
+      "end": "2026-09-18"
     },
     "last_7": {
-      "start": "2026-09-12",
-      "end": "2026-09-19"
+      "start": "2026-09-13",
+      "end": "2026-09-20"
     },
     "last_30": {
-      "start": "2026-08-20",
-      "end": "2026-09-19"
+      "start": "2026-08-21",
+      "end": "2026-09-20"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 68,
-      "watchMinutes": 83,
-      "avgViewDurationSec": 97
+      "views": 47,
+      "watchMinutes": 63,
+      "avgViewDurationSec": 104
     },
     "last_30": {
       "views": 485,
-      "watchMinutes": 689,
+      "watchMinutes": 690,
       "avgViewDurationSec": 124
     }
   },
@@ -138,11 +138,6 @@
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-06-21",
-      "views": 7,
-      "minutes": 15
-    },
     {
       "date": "2026-06-22",
       "views": 11,
@@ -535,7 +530,7 @@
     },
     {
       "date": "2026-09-08",
-      "views": 22,
+      "views": 23,
       "minutes": 6
     },
     {
@@ -555,7 +550,7 @@
     },
     {
       "date": "2026-09-12",
-      "views": 21,
+      "views": 22,
       "minutes": 20
     },
     {
@@ -575,20 +570,20 @@
     },
     {
       "date": "2026-09-16",
-      "views": 6,
-      "minutes": 6
+      "views": 0,
+      "minutes": 0
     },
     {
       "date": "2026-09-17",
-      "views": 13,
-      "minutes": 18
+      "views": 0,
+      "minutes": 0
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 145
+      "views": 144
     },
     {
       "source": "EXT_URL",
@@ -598,7 +593,7 @@
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 78
+      "views": 76
     },
     {
       "source": "NO_LINK_OTHER",
@@ -618,17 +613,17 @@
     {
       "source": "YT_CHANNEL",
       "label": "Channel page",
-      "views": 13
-    },
-    {
-      "source": "YT_OTHER_PAGE",
-      "label": "Other YouTube page",
-      "views": 9
+      "views": 12
     },
     {
       "source": "NOTIFICATION",
       "label": "Notifications",
       "views": 8
+    },
+    {
+      "source": "YT_OTHER_PAGE",
+      "label": "Other YouTube page",
+      "views": 7
     },
     {
       "source": "HASHTAGS",
