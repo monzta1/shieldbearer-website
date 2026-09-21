@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T21:35:14.091Z",
+  "generated_at": "2026-09-21T03:35:13.987Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,27 +15,27 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-09-16",
-      "end": "2026-09-18"
+      "start": "2026-09-17",
+      "end": "2026-09-19"
     },
     "last_7": {
-      "start": "2026-09-13",
-      "end": "2026-09-20"
+      "start": "2026-09-14",
+      "end": "2026-09-21"
     },
     "last_30": {
-      "start": "2026-08-21",
-      "end": "2026-09-20"
+      "start": "2026-08-22",
+      "end": "2026-09-21"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 76,
-      "watchMinutes": 135,
-      "avgViewDurationSec": 132
+      "views": 61,
+      "watchMinutes": 120,
+      "avgViewDurationSec": 138
     },
     "last_30": {
-      "views": 514,
-      "watchMinutes": 762,
+      "views": 510,
+      "watchMinutes": 756,
       "avgViewDurationSec": 128
     }
   },
@@ -126,7 +126,7 @@
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM",
-      "views": 20
+      "views": 19
     },
     {
       "videoId": "tH2GpPLY3so",
@@ -138,11 +138,6 @@
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-06-22",
-      "views": 11,
-      "minutes": 45
-    },
     {
       "date": "2026-06-23",
       "views": 9,
@@ -598,7 +593,7 @@
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 84
+      "views": 81
     },
     {
       "source": "NO_LINK_OTHER",
@@ -621,14 +616,14 @@
       "views": 12
     },
     {
-      "source": "YT_OTHER_PAGE",
-      "label": "Other YouTube page",
-      "views": 8
-    },
-    {
       "source": "NOTIFICATION",
       "label": "Notifications",
       "views": 8
+    },
+    {
+      "source": "YT_OTHER_PAGE",
+      "label": "Other YouTube page",
+      "views": 7
     },
     {
       "source": "HASHTAGS",
