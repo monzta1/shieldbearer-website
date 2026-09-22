@@ -1923,7 +1923,16 @@
       "contentHash": ""
     }
   ],
-  "comingSoon": [],
+  "comingSoon": [
+    {
+      "title": "Venom",
+      "lyrics": "",
+      "teaserLyrics": "",
+      "artwork": "https://shieldbearerusa.com/images/signal-room/venom.jpg",
+      "songMeaning": "\"Just as Moses lifted up the serpent in the wilderness, so must the Son of Man be lifted up, that whoever believes in Him may have eternal life.\"\nJohn 3:14 to 15\nBefore there was a cross on Calvary,\nthere was a serpent in the wilderness.\nIsrael had grown impatient.\nThey complained against God.\nThey despised the bread He provided.\nTheir hearts turned from the One who had delivered them.\n\"Then the LORD sent venomous snakes among them; they bit the people and many Israelites died.\"\nNumbers 21:6\nThe venom in their veins revealed something deeper.\nSin had already poisoned their hearts.\nThe people cried out for mercy.\nGod did something unexpected.\nHe told Moses to make a bronze serpent\nand lift it high on a pole.\n\"Anyone who was bitten could look at the bronze snake and live.\"\nNumbers 21:9\nThe bronze serpent had no power.\nLooking was an act of faith.\nGod was the One who healed.\nMore than a thousand years later,\nJesus revealed that this miracle had always been pointing to Him.\n\"Just as Moses lifted up the serpent in the wilderness, so must the Son of Man be lifted up.\"\nJohn 3:14\nOn the cross,\nJesus became the fulfillment of that ancient picture.\nHe took the judgment we deserved.\nHe bore our sin.\nHe defeated death.\nThe venom of sin met the blood of Christ.\nThe poison did not win.\nThe cross did.\nThis song is not about snakes.\nIt is about the poison of sin,\nthe mercy of God,\nand the Savior who became the cure.\nLook to Christ.\nLive.",
+      "status": "coming_soon"
+    }
+  ],
   "released": [
     {
       "songId": "let-my-people-go",
