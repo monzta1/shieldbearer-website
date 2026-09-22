@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T03:35:14.380Z",
+  "generated_at": "2026-09-22T21:35:13.951Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -29,14 +29,14 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 58,
-      "watchMinutes": 98,
-      "avgViewDurationSec": 115
+      "views": 79,
+      "watchMinutes": 119,
+      "avgViewDurationSec": 105
     },
     "last_30": {
-      "views": 508,
-      "watchMinutes": 715,
-      "avgViewDurationSec": 120
+      "views": 529,
+      "watchMinutes": 737,
+      "avgViewDurationSec": 118
     }
   },
   "last_48h_countries": [],
@@ -81,7 +81,7 @@
       "title": "Ruler of the Storm – Shieldbearer (Official Lyric Video | Christian Metal Anthem)",
       "thumbnail": "https://i.ytimg.com/vi/9FHgbbVBT1A/mqdefault.jpg",
       "views": 9838,
-      "likes": 725,
+      "likes": 724,
       "publishedAt": "2025-05-16T10:00:06Z",
       "url": "https://www.youtube.com/watch?v=9FHgbbVBT1A"
     },
@@ -102,7 +102,7 @@
       "thumbnail": "https://i.ytimg.com/vi/jCNAZyyt5o8/mqdefault.jpg",
       "publishedAt": "2026-09-02T15:26:11Z",
       "url": "https://www.youtube.com/watch?v=jCNAZyyt5o8",
-      "views": 200
+      "views": 203
     },
     {
       "videoId": "7f840w5mQis",
@@ -110,7 +110,7 @@
       "thumbnail": "https://i.ytimg.com/vi/7f840w5mQis/mqdefault.jpg",
       "publishedAt": "2026-09-06T00:58:30Z",
       "url": "https://www.youtube.com/watch?v=7f840w5mQis",
-      "views": 113
+      "views": 116
     },
     {
       "videoId": "2P8VZ1OwF1k",
@@ -118,7 +118,7 @@
       "thumbnail": "https://i.ytimg.com/vi/2P8VZ1OwF1k/mqdefault.jpg",
       "publishedAt": "2026-09-06T12:30:38Z",
       "url": "https://www.youtube.com/watch?v=2P8VZ1OwF1k",
-      "views": 49
+      "views": 54
     },
     {
       "videoId": "8khugdipSJM",
@@ -134,7 +134,7 @@
       "thumbnail": "https://i.ytimg.com/vi/tH2GpPLY3so/mqdefault.jpg",
       "publishedAt": "2025-08-14T00:17:51Z",
       "url": "https://www.youtube.com/watch?v=tH2GpPLY3so",
-      "views": 14
+      "views": 15
     }
   ],
   "daily_views": [
@@ -577,6 +577,11 @@
       "date": "2026-09-19",
       "views": 9,
       "minutes": 1
+    },
+    {
+      "date": "2026-09-20",
+      "views": 0,
+      "minutes": 0
     }
   ],
   "traffic_sources_30d": [
@@ -588,27 +593,27 @@
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 132
+      "views": 138
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 86
+      "views": 93
     },
     {
       "source": "NO_LINK_OTHER",
       "label": "No referrer",
-      "views": 57
+      "views": 59
     },
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 45
+      "views": 48
     },
     {
       "source": "RELATED_VIDEO",
       "label": "Related video",
-      "views": 17
+      "views": 18
     },
     {
       "source": "YT_CHANNEL",
@@ -616,14 +621,14 @@
       "views": 12
     },
     {
-      "source": "NOTIFICATION",
-      "label": "Notifications",
+      "source": "YT_OTHER_PAGE",
+      "label": "Other YouTube page",
       "views": 8
     },
     {
-      "source": "YT_OTHER_PAGE",
-      "label": "Other YouTube page",
-      "views": 6
+      "source": "NOTIFICATION",
+      "label": "Notifications",
+      "views": 8
     },
     {
       "source": "HASHTAGS",
