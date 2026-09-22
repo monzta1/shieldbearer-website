@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T21:35:16.768Z",
+  "generated_at": "2026-09-22T03:35:14.380Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,28 +15,28 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-09-17",
-      "end": "2026-09-19"
+      "start": "2026-09-18",
+      "end": "2026-09-20"
     },
     "last_7": {
-      "start": "2026-09-14",
-      "end": "2026-09-21"
+      "start": "2026-09-15",
+      "end": "2026-09-22"
     },
     "last_30": {
-      "start": "2026-08-22",
-      "end": "2026-09-21"
+      "start": "2026-08-23",
+      "end": "2026-09-22"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 70,
-      "watchMinutes": 122,
-      "avgViewDurationSec": 123
+      "views": 58,
+      "watchMinutes": 98,
+      "avgViewDurationSec": 115
     },
     "last_30": {
-      "views": 513,
-      "watchMinutes": 750,
-      "avgViewDurationSec": 125
+      "views": 508,
+      "watchMinutes": 715,
+      "avgViewDurationSec": 120
     }
   },
   "last_48h_countries": [],
@@ -110,7 +110,7 @@
       "thumbnail": "https://i.ytimg.com/vi/7f840w5mQis/mqdefault.jpg",
       "publishedAt": "2026-09-06T00:58:30Z",
       "url": "https://www.youtube.com/watch?v=7f840w5mQis",
-      "views": 114
+      "views": 113
     },
     {
       "videoId": "2P8VZ1OwF1k",
@@ -126,7 +126,7 @@
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM",
-      "views": 21
+      "views": 20
     },
     {
       "videoId": "tH2GpPLY3so",
@@ -138,11 +138,6 @@
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-06-23",
-      "views": 9,
-      "minutes": 19
-    },
     {
       "date": "2026-06-24",
       "views": 3,
@@ -588,7 +583,7 @@
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 146
+      "views": 144
     },
     {
       "source": "EXT_URL",
@@ -608,7 +603,7 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 46
+      "views": 45
     },
     {
       "source": "RELATED_VIDEO",
@@ -628,7 +623,7 @@
     {
       "source": "YT_OTHER_PAGE",
       "label": "Other YouTube page",
-      "views": 7
+      "views": 6
     },
     {
       "source": "HASHTAGS",
