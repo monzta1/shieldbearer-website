@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-23T08:00:15.037Z",
+  "generatedAt": "2026-09-24T08:00:15.335Z",
   "period": {
     "label": "September 2026 so far",
     "start": "2026-09-01",
@@ -35,8 +35,8 @@
     },
     {
       "name": "(not set)",
-      "sessions": 4,
-      "share": 12.9
+      "sessions": 5,
+      "share": 16.1
     },
     {
       "name": "Germany",
@@ -49,12 +49,12 @@
       "share": 6.5
     },
     {
-      "name": "Unknown",
+      "name": "United Kingdom",
       "sessions": 1,
       "share": 3.2
     },
     {
-      "name": "United Kingdom",
+      "name": "Vietnam",
       "sessions": 1,
       "share": 3.2
     }
@@ -62,13 +62,13 @@
   "cities": [
     {
       "name": "(not set), Virginia",
-      "sessions": 11,
-      "share": 35.5
+      "sessions": 12,
+      "share": 38.7
     },
     {
       "name": "(not set)",
-      "sessions": 5,
-      "share": 16.1
+      "sessions": 6,
+      "share": 19.4
     },
     {
       "name": "South Riding, Virginia",
@@ -76,17 +76,17 @@
       "share": 12.9
     },
     {
-      "name": "Unknown",
-      "sessions": 1,
-      "share": 3.2
-    },
-    {
-      "name": "Unknown, Virginia",
-      "sessions": 1,
-      "share": 3.2
-    },
-    {
       "name": "(not set), Thanh Hoa",
+      "sessions": 1,
+      "share": 3.2
+    },
+    {
+      "name": "Ashburn, Virginia",
+      "sessions": 1,
+      "share": 3.2
+    },
+    {
+      "name": "Butzbach, Hessen",
       "sessions": 1,
       "share": 3.2
     }
