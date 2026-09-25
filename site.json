@@ -1925,12 +1925,23 @@
   ],
   "comingSoon": [
     {
+      "songId": "venom",
+      "videoId": "",
       "title": "Venom",
-      "lyrics": "Fire on the horizon… serpents in the sand,\nA nation in the desert with no one left to stand.\nBodies in the wasteland, dying where they fall,\nBut mercy starts rising at the mercy of His call.\n\nThey turned from the Holy One, forgot the things He gave,\nCursed the bread of heaven on the journey that would save.\nSerpents in the darkness, striking without sound,\nAnd every heart infected felt the poison pulling down.\n\nMoses lifts the serpent high, bronze burning in the light,\nA symbol of the lifted Son who breaks the serpent’s bite.\n\nVenom… but He is the cure.\nVenom… and His truth endures.\nOne look, and chains fall off your soul.\nOne look, and you are made whole.\nFrom serpent sting to Calvary, the prophecy is true,\nThe One who takes the venom’s curse\nPoured out His blood for you.\n\nA shadow in the wilderness becomes the saving sign,\nThe serpent raised in judgment points to Christ’s redeeming line.\nThe venom of rebellion meets the antidote of grace,\nAnd death itself is shattered by the Holy One we face.\n\nMoses lifts the serpent high, bronze blazing on the tree,\nThe lifted serpent pointing to the lifted King of majesty.\n\nVenom… but He is the cure.\nVenom… and His truth endures.\nOne look, and chains fall off your soul.\nOne look, and you are made whole.\nFrom serpent sting to Calvary, the prophecy is true,\nThe One who takes the venom’s curse\nPoured out His blood for you.\n\nLook and live, His mercy calls.\nThe lifted Son has broken all.\nNo venom left to rule your blood,\nJust resurrection in His love.\nLift high the cross where death was slain,\nThe serpent’s power has lost its reign!\n\nVenom… defeated in the light.\nVenom… crushed by Heaven’s might.\nOne look, and hell has lost its hold.\nOne look, and you rise bold.\n\nFrom desert nights to Heaven’s throne,\nThe ancient sign revealed,\nThe One the serpent couldn’t claim\nIs the One by whom we’re healed.",
-      "teaserLyrics": "",
+      "state": "coming_soon",
+      "traceId": "venom#2026-09-22T00:38:05.802Z#SONG_UPDATED",
+      "publishedAt": "2026-09-22T00:38:05.802Z",
+      "sourceUrl": "",
       "artwork": "https://shieldbearerusa.com/images/signal-room/venom.jpg",
+      "lyrics": "Fire on the horizon… serpents in the sand,\nA nation in the desert with no one left to stand.\nBodies in the wasteland, dying where they fall,\nBut mercy starts rising at the mercy of His call.\n\nThey turned from the Holy One, forgot the things He gave,\nCursed the bread of heaven on the journey that would save.\nSerpents in the darkness, striking without sound,\nAnd every heart infected felt the poison pulling down.\n\nMoses lifts the serpent high, bronze burning in the light,\nA symbol of the lifted Son who breaks the serpent’s bite.\n\nVenom… but He is the cure.\nVenom… and His truth endures.\nOne look, and chains fall off your soul.\nOne look, and you are made whole.\nFrom serpent sting to Calvary, the prophecy is true,\nThe One who takes the venom’s curse\nPoured out His blood for you.\n\nA shadow in the wilderness becomes the saving sign,\nThe serpent raised in judgment points to Christ’s redeeming line.\nThe venom of rebellion meets the antidote of grace,\nAnd death itself is shattered by the Holy One we face.\n\nMoses lifts the serpent high, bronze blazing on the tree,\nThe lifted serpent pointing to the lifted King of majesty.\n\nVenom… but He is the cure.\nVenom… and His truth endures.\nOne look, and chains fall off your soul.\nOne look, and you are made whole.\nFrom serpent sting to Calvary, the prophecy is true,\nThe One who takes the venom’s curse\nPoured out His blood for you.\n\nLook and live, His mercy calls.\nThe lifted Son has broken all.\nNo venom left to rule your blood,\nJust resurrection in His love.\nLift high the cross where death was slain,\nThe serpent’s power has lost its reign!\n\nVenom… defeated in the light.\nVenom… crushed by Heaven’s might.\nOne look, and hell has lost its hold.\nOne look, and you rise bold.\n\nFrom desert nights to Heaven’s throne,\nThe ancient sign revealed,\nThe One the serpent couldn’t claim\nIs the One by whom we’re healed.",
       "songMeaning": "\"Just as Moses lifted up the serpent in the wilderness, so must the Son of Man be lifted up, that whoever believes in Him may have eternal life.\"\nJohn 3:14 to 15\nBefore there was a cross on Calvary,\nthere was a serpent in the wilderness.\nIsrael had grown impatient.\nThey complained against God.\nThey despised the bread He provided.\nTheir hearts turned from the One who had delivered them.\n\"Then the LORD sent venomous snakes among them; they bit the people and many Israelites died.\"\nNumbers 21:6\nThe venom in their veins revealed something deeper.\nSin had already poisoned their hearts.\nThe people cried out for mercy.\nGod did something unexpected.\nHe told Moses to make a bronze serpent\nand lift it high on a pole.\n\"Anyone who was bitten could look at the bronze snake and live.\"\nNumbers 21:9\nThe bronze serpent had no power.\nLooking was an act of faith.\nGod was the One who healed.\nMore than a thousand years later,\nJesus revealed that this miracle had always been pointing to Him.\n\"Just as Moses lifted up the serpent in the wilderness, so must the Son of Man be lifted up.\"\nJohn 3:14\nOn the cross,\nJesus became the fulfillment of that ancient picture.\nHe took the judgment we deserved.\nHe bore our sin.\nHe defeated death.\nThe venom of sin met the blood of Christ.\nThe poison did not win.\nThe cross did.\nThis song is not about snakes.\nIt is about the poison of sin,\nthe mercy of God,\nand the Savior who became the cure.\nLook to Christ.\nLive.",
-      "status": "coming_soon"
+      "reference": "Numbers 21:4 to 9; John 3:14 to 17; Genesis 3:15; Isaiah 53:5; 2 Corinthians 5:21; 1 Peter 2:24",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-09-22T00:38:05.802Z",
+      "contentHash": "8db1b1353762273d10fc65b03e574e3d9a5b395ef4d28e08044f0b19137942d6"
     }
   ],
   "released": [
@@ -1955,7 +1966,7 @@
     }
   ],
   "signalCount": 99,
-  "comingSoonCount": 0,
+  "comingSoonCount": 1,
   "releasedCount": 1,
   "events": [
     {
