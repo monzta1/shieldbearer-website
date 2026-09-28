@@ -1,105 +1,105 @@
 {
-  "generatedAt": "2026-09-27T08:00:15.453Z",
+  "generatedAt": "2026-09-28T08:00:14.726Z",
   "period": {
     "label": "September 2026 so far",
     "start": "2026-09-01",
     "end": "2026-09-30"
   },
   "headline": {
-    "sessions": 30,
-    "deltaPct": -51.6,
+    "sessions": 32,
+    "deltaPct": -48.4,
     "comparison": "vs August 2026"
   },
   "channels": [
     {
       "name": "Direct",
-      "sessions": 16,
-      "share": 53.3
+      "sessions": 18,
+      "share": 54.5
     },
     {
       "name": "Organic Social",
       "sessions": 12,
-      "share": 40
+      "share": 36.4
     },
     {
-      "name": "Organic Search",
-      "sessions": 1,
-      "share": 3.3
+      "name": "Unassigned",
+      "sessions": 2,
+      "share": 6.1
     }
   ],
   "geography": [
     {
       "name": "United States",
-      "sessions": 20,
-      "share": 64.5
+      "sessions": 21,
+      "share": 63.6
     },
     {
       "name": "(not set)",
       "sessions": 5,
-      "share": 16.1
+      "share": 15.2
     },
     {
       "name": "Germany",
       "sessions": 2,
-      "share": 6.5
+      "share": 6.1
     },
     {
       "name": "Singapore",
       "sessions": 2,
-      "share": 6.5
+      "share": 6.1
+    },
+    {
+      "name": "Unknown",
+      "sessions": 1,
+      "share": 3
     },
     {
       "name": "United Kingdom",
       "sessions": 1,
-      "share": 3.2
-    },
-    {
-      "name": "Vietnam",
-      "sessions": 1,
-      "share": 3.2
+      "share": 3
     }
   ],
   "cities": [
     {
       "name": "(not set), Virginia",
       "sessions": 12,
-      "share": 38.7
+      "share": 36.4
     },
     {
       "name": "(not set)",
       "sessions": 6,
-      "share": 19.4
+      "share": 18.2
     },
     {
       "name": "South Riding, Virginia",
       "sessions": 4,
-      "share": 12.9
+      "share": 12.1
+    },
+    {
+      "name": "Unknown",
+      "sessions": 1,
+      "share": 3
     },
     {
       "name": "(not set), Thanh Hoa",
       "sessions": 1,
-      "share": 3.2
+      "share": 3
     },
     {
       "name": "Ashburn, Virginia",
       "sessions": 1,
-      "share": 3.2
-    },
-    {
-      "name": "Butzbach, Hessen",
-      "sessions": 1,
-      "share": 3.2
+      "share": 3
     }
   ],
   "events": [
     {
       "name": "scroll_depth",
-      "count": 65,
+      "count": 66,
       "engagedShare": null
     },
     {
       "name": "merch_click",
-      "count": 1,
+      "count": 2,
       "engagedShare": null
     }
   ],
