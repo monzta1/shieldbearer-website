@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-30T03:35:14.033Z",
+  "generated_at": "2026-09-30T21:35:14.289Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -29,13 +29,13 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 70,
-      "watchMinutes": 88,
+      "views": 76,
+      "watchMinutes": 96,
       "avgViewDurationSec": 88
     },
     "last_30": {
-      "views": 589,
-      "watchMinutes": 791,
+      "views": 595,
+      "watchMinutes": 799,
       "avgViewDurationSec": 110
     }
   },
@@ -118,7 +118,7 @@
       "thumbnail": "https://i.ytimg.com/vi/2P8VZ1OwF1k/mqdefault.jpg",
       "publishedAt": "2026-09-06T12:30:38Z",
       "url": "https://www.youtube.com/watch?v=2P8VZ1OwF1k",
-      "views": 95
+      "views": 96
     },
     {
       "videoId": "8khugdipSJM",
@@ -129,12 +129,12 @@
       "views": 18
     },
     {
-      "videoId": "tH2GpPLY3so",
-      "title": "Shieldbearer – QUAKE (Christian Metal | Official Audio)",
-      "thumbnail": "https://i.ytimg.com/vi/tH2GpPLY3so/mqdefault.jpg",
-      "publishedAt": "2025-08-14T00:17:51Z",
-      "url": "https://www.youtube.com/watch?v=tH2GpPLY3so",
-      "views": 15
+      "videoId": "0jPL3Mg88ZQ",
+      "title": "SHIELDBEARER - SENTINELS | Official Video",
+      "thumbnail": "https://i.ytimg.com/vi/0jPL3Mg88ZQ/mqdefault.jpg",
+      "publishedAt": "2026-04-14T22:17:26Z",
+      "url": "https://www.youtube.com/watch?v=0jPL3Mg88ZQ",
+      "views": 16
     }
   ],
   "daily_views": [
@@ -577,18 +577,23 @@
       "date": "2026-09-27",
       "views": 9,
       "minutes": 4
+    },
+    {
+      "date": "2026-09-28",
+      "views": 6,
+      "minutes": 7
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 175
+      "views": 176
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 145
+      "views": 146
     },
     {
       "source": "YT_SEARCH",
@@ -598,17 +603,17 @@
     {
       "source": "NO_LINK_OTHER",
       "label": "No referrer",
-      "views": 69
+      "views": 70
     },
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 42
+      "views": 44
     },
     {
       "source": "RELATED_VIDEO",
       "label": "Related video",
-      "views": 21
+      "views": 22
     },
     {
       "source": "YT_CHANNEL",
