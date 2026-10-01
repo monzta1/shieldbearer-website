@@ -1,108 +1,19 @@
 {
-  "generatedAt": "2026-09-30T08:00:14.793Z",
+  "generatedAt": "2026-10-01T08:00:18.006Z",
   "period": {
-    "label": "September 2026 so far",
-    "start": "2026-09-01",
-    "end": "2026-09-30"
+    "label": "October 2026 so far",
+    "start": "2026-10-01",
+    "end": "2026-10-31"
   },
   "headline": {
-    "sessions": 44,
-    "deltaPct": -29,
-    "comparison": "vs August 2026"
+    "sessions": 0,
+    "deltaPct": -100,
+    "comparison": "vs September 2026"
   },
-  "channels": [
-    {
-      "name": "Direct",
-      "sessions": 28,
-      "share": 62.2
-    },
-    {
-      "name": "Organic Social",
-      "sessions": 12,
-      "share": 26.7
-    },
-    {
-      "name": "AI Assistant",
-      "sessions": 2,
-      "share": 4.4
-    }
-  ],
-  "geography": [
-    {
-      "name": "United States",
-      "sessions": 32,
-      "share": 71.1
-    },
-    {
-      "name": "(not set)",
-      "sessions": 6,
-      "share": 13.3
-    },
-    {
-      "name": "Germany",
-      "sessions": 2,
-      "share": 4.4
-    },
-    {
-      "name": "Singapore",
-      "sessions": 2,
-      "share": 4.4
-    },
-    {
-      "name": "Brazil",
-      "sessions": 1,
-      "share": 2.2
-    },
-    {
-      "name": "United Kingdom",
-      "sessions": 1,
-      "share": 2.2
-    }
-  ],
-  "cities": [
-    {
-      "name": "(not set), Virginia",
-      "sessions": 12,
-      "share": 26.7
-    },
-    {
-      "name": "(not set)",
-      "sessions": 8,
-      "share": 17.8
-    },
-    {
-      "name": "South Riding, Virginia",
-      "sessions": 4,
-      "share": 8.9
-    },
-    {
-      "name": "(not set), California",
-      "sessions": 2,
-      "share": 4.4
-    },
-    {
-      "name": "Houston, Texas",
-      "sessions": 2,
-      "share": 4.4
-    },
-    {
-      "name": "Oklahoma City, Oklahoma",
-      "sessions": 2,
-      "share": 4.4
-    }
-  ],
-  "events": [
-    {
-      "name": "scroll_depth",
-      "count": 70,
-      "engagedShare": null
-    },
-    {
-      "name": "merch_click",
-      "count": 3,
-      "engagedShare": null
-    }
-  ],
+  "channels": [],
+  "geography": [],
+  "cities": [],
+  "events": [],
   "shipped": [
     {
       "date": "2026-05-29",
