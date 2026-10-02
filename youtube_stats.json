@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T21:35:14.411Z",
+  "generated_at": "2026-10-02T03:35:14.028Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,27 +15,27 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-09-27",
-      "end": "2026-09-29"
+      "start": "2026-09-28",
+      "end": "2026-09-30"
     },
     "last_7": {
-      "start": "2026-09-24",
-      "end": "2026-10-01"
+      "start": "2026-09-25",
+      "end": "2026-10-02"
     },
     "last_30": {
-      "start": "2026-09-01",
-      "end": "2026-10-01"
+      "start": "2026-09-02",
+      "end": "2026-10-02"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 77,
-      "watchMinutes": 100,
-      "avgViewDurationSec": 92
+      "views": 74,
+      "watchMinutes": 89,
+      "avgViewDurationSec": 86
     },
     "last_30": {
-      "views": 600,
-      "watchMinutes": 791,
+      "views": 596,
+      "watchMinutes": 786,
       "avgViewDurationSec": 108
     }
   },
@@ -89,7 +89,7 @@
       "videoId": "8khugdipSJM",
       "title": "Shieldbearer – Tidings of Comfort and Joy (God Rest Ye Merry Gentlemen) [Metal Christmas Anthem]",
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
-      "views": 8306,
+      "views": 8307,
       "likes": 26,
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM"
@@ -138,11 +138,6 @@
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-07-03",
-      "views": 6,
-      "minutes": 8
-    },
     {
       "date": "2026-07-04",
       "views": 19,
@@ -598,7 +593,7 @@
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 105
+      "views": 103
     },
     {
       "source": "NO_LINK_OTHER",
@@ -608,7 +603,7 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 46
+      "views": 45
     },
     {
       "source": "RELATED_VIDEO",
@@ -629,11 +624,6 @@
       "source": "NOTIFICATION",
       "label": "Notifications",
       "views": 8
-    },
-    {
-      "source": "HASHTAGS",
-      "label": "Hashtag pages",
-      "views": 1
     },
     {
       "source": "SHORTS",
