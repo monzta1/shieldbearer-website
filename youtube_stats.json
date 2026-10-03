@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-03T03:35:14.195Z",
+  "generated_at": "2026-10-03T21:35:14.382Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -29,23 +29,30 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 50,
-      "watchMinutes": 35,
-      "avgViewDurationSec": 54
+      "views": 69,
+      "watchMinutes": 106,
+      "avgViewDurationSec": 113
     },
     "last_30": {
-      "views": 511,
-      "watchMinutes": 587,
-      "avgViewDurationSec": 97
+      "views": 530,
+      "watchMinutes": 658,
+      "avgViewDurationSec": 104
     }
   },
-  "last_48h_countries": [],
+  "last_48h_countries": [
+    {
+      "code": "US",
+      "name": "United States",
+      "flag": "🇺🇸",
+      "views": 11
+    }
+  ],
   "last_30d_countries": [
     {
       "code": "US",
       "name": "United States",
       "flag": "🇺🇸",
-      "views": 19
+      "views": 30
     }
   ],
   "top_videos": [
@@ -89,7 +96,7 @@
       "videoId": "8khugdipSJM",
       "title": "Shieldbearer – Tidings of Comfort and Joy (God Rest Ye Merry Gentlemen) [Metal Christmas Anthem]",
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
-      "views": 8310,
+      "views": 8311,
       "likes": 26,
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM"
@@ -118,7 +125,7 @@
       "thumbnail": "https://i.ytimg.com/vi/2P8VZ1OwF1k/mqdefault.jpg",
       "publishedAt": "2026-09-06T12:30:38Z",
       "url": "https://www.youtube.com/watch?v=2P8VZ1OwF1k",
-      "views": 96
+      "views": 97
     },
     {
       "videoId": "8khugdipSJM",
@@ -126,7 +133,7 @@
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM",
-      "views": 16
+      "views": 18
     },
     {
       "videoId": "0jPL3Mg88ZQ",
@@ -134,7 +141,7 @@
       "thumbnail": "https://i.ytimg.com/vi/0jPL3Mg88ZQ/mqdefault.jpg",
       "publishedAt": "2026-04-14T22:17:26Z",
       "url": "https://www.youtube.com/watch?v=0jPL3Mg88ZQ",
-      "views": 15
+      "views": 17
     }
   ],
   "daily_views": [
@@ -577,6 +584,11 @@
       "date": "2026-09-30",
       "views": 4,
       "minutes": 0
+    },
+    {
+      "date": "2026-10-01",
+      "views": 19,
+      "minutes": 71
     }
   ],
   "traffic_sources_30d": [
@@ -593,17 +605,17 @@
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 97
+      "views": 99
+    },
+    {
+      "source": "PLAYLIST",
+      "label": "From a playlist",
+      "views": 61
     },
     {
       "source": "NO_LINK_OTHER",
       "label": "No referrer",
       "views": 52
-    },
-    {
-      "source": "PLAYLIST",
-      "label": "From a playlist",
-      "views": 44
     },
     {
       "source": "RELATED_VIDEO",
