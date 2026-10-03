@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-02T08:00:14.936Z",
+  "generatedAt": "2026-10-03T08:00:15.247Z",
   "period": {
     "label": "October 2026 so far",
     "start": "2026-10-01",
@@ -14,12 +14,7 @@
     {
       "name": "Organic Video",
       "sessions": 1,
-      "share": 50
-    },
-    {
-      "name": "Unassigned",
-      "sessions": 1,
-      "share": 50
+      "share": 100
     }
   ],
   "geography": [
