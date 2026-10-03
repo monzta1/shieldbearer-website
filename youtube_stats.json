@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T21:35:13.996Z",
+  "generated_at": "2026-10-03T03:35:14.195Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,28 +15,28 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-09-28",
-      "end": "2026-09-30"
+      "start": "2026-09-29",
+      "end": "2026-10-01"
     },
     "last_7": {
-      "start": "2026-09-25",
-      "end": "2026-10-02"
+      "start": "2026-09-26",
+      "end": "2026-10-03"
     },
     "last_30": {
-      "start": "2026-09-02",
-      "end": "2026-10-02"
+      "start": "2026-09-03",
+      "end": "2026-10-03"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 78,
-      "watchMinutes": 89,
-      "avgViewDurationSec": 81
+      "views": 50,
+      "watchMinutes": 35,
+      "avgViewDurationSec": 54
     },
     "last_30": {
-      "views": 600,
-      "watchMinutes": 786,
-      "avgViewDurationSec": 107
+      "views": 511,
+      "watchMinutes": 587,
+      "avgViewDurationSec": 97
     }
   },
   "last_48h_countries": [],
@@ -45,7 +45,7 @@
       "code": "US",
       "name": "United States",
       "flag": "🇺🇸",
-      "views": 54
+      "views": 19
     }
   ],
   "top_videos": [
@@ -89,7 +89,7 @@
       "videoId": "8khugdipSJM",
       "title": "Shieldbearer – Tidings of Comfort and Joy (God Rest Ye Merry Gentlemen) [Metal Christmas Anthem]",
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
-      "views": 8309,
+      "views": 8310,
       "likes": 26,
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM"
@@ -102,7 +102,7 @@
       "thumbnail": "https://i.ytimg.com/vi/jCNAZyyt5o8/mqdefault.jpg",
       "publishedAt": "2026-09-02T15:26:11Z",
       "url": "https://www.youtube.com/watch?v=jCNAZyyt5o8",
-      "views": 226
+      "views": 144
     },
     {
       "videoId": "7f840w5mQis",
@@ -121,28 +121,23 @@
       "views": 96
     },
     {
-      "videoId": "0jPL3Mg88ZQ",
-      "title": "SHIELDBEARER - SENTINELS | Official Video",
-      "thumbnail": "https://i.ytimg.com/vi/0jPL3Mg88ZQ/mqdefault.jpg",
-      "publishedAt": "2026-04-14T22:17:26Z",
-      "url": "https://www.youtube.com/watch?v=0jPL3Mg88ZQ",
-      "views": 16
-    },
-    {
       "videoId": "8khugdipSJM",
       "title": "Shieldbearer – Tidings of Comfort and Joy (God Rest Ye Merry Gentlemen) [Metal Christmas Anthem]",
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM",
       "views": 16
+    },
+    {
+      "videoId": "0jPL3Mg88ZQ",
+      "title": "SHIELDBEARER - SENTINELS | Official Video",
+      "thumbnail": "https://i.ytimg.com/vi/0jPL3Mg88ZQ/mqdefault.jpg",
+      "publishedAt": "2026-04-14T22:17:26Z",
+      "url": "https://www.youtube.com/watch?v=0jPL3Mg88ZQ",
+      "views": 15
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-07-04",
-      "views": 19,
-      "minutes": 46
-    },
     {
       "date": "2026-07-05",
       "views": 9,
@@ -586,49 +581,49 @@
   ],
   "traffic_sources_30d": [
     {
-      "source": "EXT_URL",
-      "label": "External URL",
-      "views": 178
-    },
-    {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 146
+      "views": 137
+    },
+    {
+      "source": "EXT_URL",
+      "label": "External URL",
+      "views": 133
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 104
+      "views": 97
     },
     {
       "source": "NO_LINK_OTHER",
       "label": "No referrer",
-      "views": 72
+      "views": 52
     },
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 46
+      "views": 44
     },
     {
       "source": "RELATED_VIDEO",
       "label": "Related video",
-      "views": 22
+      "views": 21
     },
     {
       "source": "YT_CHANNEL",
       "label": "Channel page",
-      "views": 15
+      "views": 13
     },
     {
       "source": "YT_OTHER_PAGE",
       "label": "Other YouTube page",
-      "views": 9
+      "views": 8
     },
     {
       "source": "NOTIFICATION",
       "label": "Notifications",
-      "views": 8
+      "views": 6
     },
     {
       "source": "SHORTS",
