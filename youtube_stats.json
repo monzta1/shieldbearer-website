@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-04T03:35:13.828Z",
+  "generated_at": "2026-10-04T21:35:14.287Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -29,14 +29,14 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 47,
-      "watchMinutes": 95,
-      "avgViewDurationSec": 138
+      "views": 79,
+      "watchMinutes": 211,
+      "avgViewDurationSec": 181
     },
     "last_30": {
-      "views": 477,
-      "watchMinutes": 580,
-      "avgViewDurationSec": 103
+      "views": 509,
+      "watchMinutes": 696,
+      "avgViewDurationSec": 114
     }
   },
   "last_48h_countries": [
@@ -44,7 +44,7 @@
       "code": "US",
       "name": "United States",
       "flag": "🇺🇸",
-      "views": 11
+      "views": 23
     }
   ],
   "last_30d_countries": [
@@ -52,7 +52,7 @@
       "code": "US",
       "name": "United States",
       "flag": "🇺🇸",
-      "views": 11
+      "views": 23
     }
   ],
   "top_videos": [
@@ -78,7 +78,7 @@
       "videoId": "vBGEIMXs6h0",
       "title": "Celestial Shield (Lyric Video) – Shieldbearer | Christian Metal | Israel, Prophecy & Warfare",
       "thumbnail": "https://i.ytimg.com/vi/vBGEIMXs6h0/mqdefault.jpg",
-      "views": 12048,
+      "views": 12049,
       "likes": 534,
       "publishedAt": "2025-07-15T02:04:57Z",
       "url": "https://www.youtube.com/watch?v=vBGEIMXs6h0"
@@ -109,7 +109,7 @@
       "thumbnail": "https://i.ytimg.com/vi/7f840w5mQis/mqdefault.jpg",
       "publishedAt": "2026-09-06T00:58:30Z",
       "url": "https://www.youtube.com/watch?v=7f840w5mQis",
-      "views": 128
+      "views": 129
     },
     {
       "videoId": "2P8VZ1OwF1k",
@@ -117,7 +117,7 @@
       "thumbnail": "https://i.ytimg.com/vi/2P8VZ1OwF1k/mqdefault.jpg",
       "publishedAt": "2026-09-06T12:30:38Z",
       "url": "https://www.youtube.com/watch?v=2P8VZ1OwF1k",
-      "views": 97
+      "views": 100
     },
     {
       "videoId": "jCNAZyyt5o8",
@@ -133,15 +133,15 @@
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM",
-      "views": 17
+      "views": 19
     },
     {
-      "videoId": "0jPL3Mg88ZQ",
-      "title": "SHIELDBEARER - SENTINELS | Official Video",
-      "thumbnail": "https://i.ytimg.com/vi/0jPL3Mg88ZQ/mqdefault.jpg",
-      "publishedAt": "2026-04-14T22:17:26Z",
-      "url": "https://www.youtube.com/watch?v=0jPL3Mg88ZQ",
-      "views": 16
+      "videoId": "tH2GpPLY3so",
+      "title": "Shieldbearer – QUAKE (Christian Metal | Official Audio)",
+      "thumbnail": "https://i.ytimg.com/vi/tH2GpPLY3so/mqdefault.jpg",
+      "publishedAt": "2025-08-14T00:17:51Z",
+      "url": "https://www.youtube.com/watch?v=tH2GpPLY3so",
+      "views": 19
     }
   ],
   "daily_views": [
@@ -584,6 +584,11 @@
       "date": "2026-10-01",
       "views": 19,
       "minutes": 71
+    },
+    {
+      "date": "2026-10-02",
+      "views": 32,
+      "minutes": 116
     }
   ],
   "traffic_sources_30d": [
@@ -595,17 +600,17 @@
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 108
+      "views": 110
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 97
+      "views": 100
     },
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 59
+      "views": 83
     },
     {
       "source": "NO_LINK_OTHER",
@@ -620,12 +625,12 @@
     {
       "source": "YT_CHANNEL",
       "label": "Channel page",
-      "views": 12
+      "views": 14
     },
     {
       "source": "YT_OTHER_PAGE",
       "label": "Other YouTube page",
-      "views": 8
+      "views": 9
     },
     {
       "source": "NOTIFICATION",
