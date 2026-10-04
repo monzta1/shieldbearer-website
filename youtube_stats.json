@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-03T21:35:14.382Z",
+  "generated_at": "2026-10-04T03:35:13.828Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,28 +15,28 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-09-29",
-      "end": "2026-10-01"
+      "start": "2026-09-30",
+      "end": "2026-10-02"
     },
     "last_7": {
-      "start": "2026-09-26",
-      "end": "2026-10-03"
+      "start": "2026-09-27",
+      "end": "2026-10-04"
     },
     "last_30": {
-      "start": "2026-09-03",
-      "end": "2026-10-03"
+      "start": "2026-09-04",
+      "end": "2026-10-04"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 69,
-      "watchMinutes": 106,
-      "avgViewDurationSec": 113
+      "views": 47,
+      "watchMinutes": 95,
+      "avgViewDurationSec": 138
     },
     "last_30": {
-      "views": 530,
-      "watchMinutes": 658,
-      "avgViewDurationSec": 104
+      "views": 477,
+      "watchMinutes": 580,
+      "avgViewDurationSec": 103
     }
   },
   "last_48h_countries": [
@@ -52,7 +52,7 @@
       "code": "US",
       "name": "United States",
       "flag": "🇺🇸",
-      "views": 30
+      "views": 11
     }
   ],
   "top_videos": [
@@ -104,14 +104,6 @@
   ],
   "top_videos_30d": [
     {
-      "videoId": "jCNAZyyt5o8",
-      "title": "I Typed One Sentence. AI Built an 8-Scene Judas Priest FM9 Preset in 6 Minutes | ToneCommand",
-      "thumbnail": "https://i.ytimg.com/vi/jCNAZyyt5o8/mqdefault.jpg",
-      "publishedAt": "2026-09-02T15:26:11Z",
-      "url": "https://www.youtube.com/watch?v=jCNAZyyt5o8",
-      "views": 144
-    },
-    {
       "videoId": "7f840w5mQis",
       "title": "I Typed 8 Metal Tones Into My FM9. Didn't Touch a Knob.",
       "thumbnail": "https://i.ytimg.com/vi/7f840w5mQis/mqdefault.jpg",
@@ -128,12 +120,20 @@
       "views": 97
     },
     {
+      "videoId": "jCNAZyyt5o8",
+      "title": "I Typed One Sentence. AI Built an 8-Scene Judas Priest FM9 Preset in 6 Minutes | ToneCommand",
+      "thumbnail": "https://i.ytimg.com/vi/jCNAZyyt5o8/mqdefault.jpg",
+      "publishedAt": "2026-09-02T15:26:11Z",
+      "url": "https://www.youtube.com/watch?v=jCNAZyyt5o8",
+      "views": 97
+    },
+    {
       "videoId": "8khugdipSJM",
       "title": "Shieldbearer – Tidings of Comfort and Joy (God Rest Ye Merry Gentlemen) [Metal Christmas Anthem]",
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM",
-      "views": 18
+      "views": 17
     },
     {
       "videoId": "0jPL3Mg88ZQ",
@@ -141,15 +141,10 @@
       "thumbnail": "https://i.ytimg.com/vi/0jPL3Mg88ZQ/mqdefault.jpg",
       "publishedAt": "2026-04-14T22:17:26Z",
       "url": "https://www.youtube.com/watch?v=0jPL3Mg88ZQ",
-      "views": 17
+      "views": 16
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-07-05",
-      "views": 9,
-      "minutes": 27
-    },
     {
       "date": "2026-07-06",
       "views": 5,
@@ -595,27 +590,27 @@
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 137
+      "views": 126
     },
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 133
+      "views": 108
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 99
+      "views": 97
     },
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 61
+      "views": 59
     },
     {
       "source": "NO_LINK_OTHER",
       "label": "No referrer",
-      "views": 52
+      "views": 40
     },
     {
       "source": "RELATED_VIDEO",
@@ -625,7 +620,7 @@
     {
       "source": "YT_CHANNEL",
       "label": "Channel page",
-      "views": 13
+      "views": 12
     },
     {
       "source": "YT_OTHER_PAGE",
