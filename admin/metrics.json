@@ -1,34 +1,59 @@
 {
-  "generatedAt": "2026-10-03T08:00:15.247Z",
+  "generatedAt": "2026-10-04T08:00:15.008Z",
   "period": {
     "label": "October 2026 so far",
     "start": "2026-10-01",
     "end": "2026-10-31"
   },
   "headline": {
-    "sessions": 1,
-    "deltaPct": -98,
+    "sessions": 4,
+    "deltaPct": -91.8,
     "comparison": "vs September 2026"
   },
   "channels": [
     {
+      "name": "Direct",
+      "sessions": 3,
+      "share": 75
+    },
+    {
       "name": "Organic Video",
       "sessions": 1,
-      "share": 100
+      "share": 25
     }
   ],
   "geography": [
     {
+      "name": "Finland",
+      "sessions": 2,
+      "share": 50
+    },
+    {
+      "name": "China",
+      "sessions": 1,
+      "share": 25
+    },
+    {
       "name": "United States",
       "sessions": 1,
-      "share": 100
+      "share": 25
     }
   ],
   "cities": [
     {
+      "name": "Unknown",
+      "sessions": 2,
+      "share": 50
+    },
+    {
       "name": "Bradley, Illinois",
       "sessions": 1,
-      "share": 100
+      "share": 25
+    },
+    {
+      "name": "Chengdu, Sichuan",
+      "sessions": 1,
+      "share": 25
     }
   ],
   "events": [
