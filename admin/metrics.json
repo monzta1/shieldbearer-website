@@ -1,65 +1,95 @@
 {
-  "generatedAt": "2026-10-04T08:00:15.008Z",
+  "generatedAt": "2026-10-05T08:00:15.359Z",
   "period": {
     "label": "October 2026 so far",
     "start": "2026-10-01",
     "end": "2026-10-31"
   },
   "headline": {
-    "sessions": 4,
-    "deltaPct": -91.8,
+    "sessions": 7,
+    "deltaPct": -85.7,
     "comparison": "vs September 2026"
   },
   "channels": [
     {
       "name": "Direct",
-      "sessions": 3,
-      "share": 75
+      "sessions": 4,
+      "share": 44.4
     },
     {
-      "name": "Organic Video",
-      "sessions": 1,
-      "share": 25
+      "name": "Organic Social",
+      "sessions": 2,
+      "share": 22.2
+    },
+    {
+      "name": "Unassigned",
+      "sessions": 2,
+      "share": 22.2
     }
   ],
   "geography": [
     {
       "name": "Finland",
       "sessions": 2,
-      "share": 50
+      "share": 28.6
+    },
+    {
+      "name": "Iceland",
+      "sessions": 2,
+      "share": 28.6
+    },
+    {
+      "name": "Unknown",
+      "sessions": 1,
+      "share": 14.3
     },
     {
       "name": "China",
       "sessions": 1,
-      "share": 25
+      "share": 14.3
     },
     {
       "name": "United States",
       "sessions": 1,
-      "share": 25
+      "share": 14.3
     }
   ],
   "cities": [
     {
-      "name": "Unknown",
+      "name": "(not set)",
       "sessions": 2,
-      "share": 50
+      "share": 28.6
+    },
+    {
+      "name": "Reykjavik, Reykjavikurborg",
+      "sessions": 2,
+      "share": 28.6
+    },
+    {
+      "name": "Unknown",
+      "sessions": 1,
+      "share": 14.3
     },
     {
       "name": "Bradley, Illinois",
       "sessions": 1,
-      "share": 25
+      "share": 14.3
     },
     {
       "name": "Chengdu, Sichuan",
       "sessions": 1,
-      "share": 25
+      "share": 14.3
     }
   ],
   "events": [
     {
       "name": "scroll_depth",
-      "count": 8,
+      "count": 14,
+      "engagedShare": null
+    },
+    {
+      "name": "listen_click",
+      "count": 1,
       "engagedShare": null
     }
   ],
