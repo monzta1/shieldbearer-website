@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T03:35:13.987Z",
+  "generated_at": "2026-10-05T21:35:14.482Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -29,14 +29,14 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 70,
-      "watchMinutes": 207,
-      "avgViewDurationSec": 197
+      "views": 83,
+      "watchMinutes": 235,
+      "avgViewDurationSec": 193
     },
     "last_30": {
-      "views": 492,
-      "watchMinutes": 668,
-      "avgViewDurationSec": 113
+      "views": 505,
+      "watchMinutes": 696,
+      "avgViewDurationSec": 115
     }
   },
   "last_48h_countries": [
@@ -117,7 +117,7 @@
       "thumbnail": "https://i.ytimg.com/vi/2P8VZ1OwF1k/mqdefault.jpg",
       "publishedAt": "2026-09-06T12:30:38Z",
       "url": "https://www.youtube.com/watch?v=2P8VZ1OwF1k",
-      "views": 100
+      "views": 102
     },
     {
       "videoId": "jCNAZyyt5o8",
@@ -133,7 +133,7 @@
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM",
-      "views": 19
+      "views": 20
     },
     {
       "videoId": "tH2GpPLY3so",
@@ -584,13 +584,18 @@
       "date": "2026-10-02",
       "views": 32,
       "minutes": 116
+    },
+    {
+      "date": "2026-10-03",
+      "views": 13,
+      "minutes": 28
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 124
+      "views": 126
     },
     {
       "source": "EXT_URL",
@@ -600,12 +605,12 @@
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 97
+      "views": 100
     },
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 83
+      "views": 90
     },
     {
       "source": "NO_LINK_OTHER",
@@ -620,7 +625,7 @@
     {
       "source": "YT_CHANNEL",
       "label": "Channel page",
-      "views": 14
+      "views": 15
     },
     {
       "source": "YT_OTHER_PAGE",
