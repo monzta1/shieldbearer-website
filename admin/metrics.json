@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T08:00:15.359Z",
+  "generatedAt": "2026-10-06T08:00:15.055Z",
   "period": {
     "label": "October 2026 so far",
     "start": "2026-10-01",
@@ -14,17 +14,17 @@
     {
       "name": "Direct",
       "sessions": 4,
-      "share": 44.4
+      "share": 57.1
     },
     {
       "name": "Organic Social",
       "sessions": 2,
-      "share": 22.2
+      "share": 28.6
     },
     {
-      "name": "Unassigned",
-      "sessions": 2,
-      "share": 22.2
+      "name": "Organic Video",
+      "sessions": 1,
+      "share": 14.3
     }
   ],
   "geography": [
@@ -39,7 +39,7 @@
       "share": 28.6
     },
     {
-      "name": "Unknown",
+      "name": "(not set)",
       "sessions": 1,
       "share": 14.3
     },
@@ -57,18 +57,13 @@
   "cities": [
     {
       "name": "(not set)",
-      "sessions": 2,
-      "share": 28.6
+      "sessions": 3,
+      "share": 42.9
     },
     {
       "name": "Reykjavik, Reykjavikurborg",
       "sessions": 2,
       "share": 28.6
-    },
-    {
-      "name": "Unknown",
-      "sessions": 1,
-      "share": 14.3
     },
     {
       "name": "Bradley, Illinois",
