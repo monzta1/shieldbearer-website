@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-06T21:35:14.267Z",
+  "generated_at": "2026-10-07T03:35:14.006Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,28 +15,28 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-10-02",
-      "end": "2026-10-04"
+      "start": "2026-10-03",
+      "end": "2026-10-05"
     },
     "last_7": {
-      "start": "2026-09-29",
-      "end": "2026-10-06"
+      "start": "2026-09-30",
+      "end": "2026-10-07"
     },
     "last_30": {
-      "start": "2026-09-06",
-      "end": "2026-10-06"
+      "start": "2026-09-07",
+      "end": "2026-10-07"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 121,
-      "watchMinutes": 396,
-      "avgViewDurationSec": 212
+      "views": 112,
+      "watchMinutes": 385,
+      "avgViewDurationSec": 220
     },
     "last_30": {
-      "views": 515,
-      "watchMinutes": 816,
-      "avgViewDurationSec": 129
+      "views": 460,
+      "watchMinutes": 758,
+      "avgViewDurationSec": 128
     }
   },
   "last_48h_countries": [
@@ -44,7 +44,7 @@
       "code": "US",
       "name": "United States",
       "flag": "🇺🇸",
-      "views": 46
+      "views": 34
     }
   ],
   "last_30d_countries": [
@@ -104,20 +104,20 @@
   ],
   "top_videos_30d": [
     {
-      "videoId": "7f840w5mQis",
-      "title": "I Typed 8 Metal Tones Into My FM9. Didn't Touch a Knob.",
-      "thumbnail": "https://i.ytimg.com/vi/7f840w5mQis/mqdefault.jpg",
-      "publishedAt": "2026-09-06T00:58:30Z",
-      "url": "https://www.youtube.com/watch?v=7f840w5mQis",
-      "views": 123
-    },
-    {
       "videoId": "2P8VZ1OwF1k",
       "title": "TONECOMMAND AI building a Soldano SLO-100 inspired preset on my FM9",
       "thumbnail": "https://i.ytimg.com/vi/2P8VZ1OwF1k/mqdefault.jpg",
       "publishedAt": "2026-09-06T12:30:38Z",
       "url": "https://www.youtube.com/watch?v=2P8VZ1OwF1k",
-      "views": 102
+      "views": 93
+    },
+    {
+      "videoId": "7f840w5mQis",
+      "title": "I Typed 8 Metal Tones Into My FM9. Didn't Touch a Knob.",
+      "thumbnail": "https://i.ytimg.com/vi/7f840w5mQis/mqdefault.jpg",
+      "publishedAt": "2026-09-06T00:58:30Z",
+      "url": "https://www.youtube.com/watch?v=7f840w5mQis",
+      "views": 89
     },
     {
       "videoId": "jCNAZyyt5o8",
@@ -125,7 +125,7 @@
       "thumbnail": "https://i.ytimg.com/vi/jCNAZyyt5o8/mqdefault.jpg",
       "publishedAt": "2026-09-02T15:26:11Z",
       "url": "https://www.youtube.com/watch?v=jCNAZyyt5o8",
-      "views": 62
+      "views": 55
     },
     {
       "videoId": "0jPL3Mg88ZQ",
@@ -145,11 +145,6 @@
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-07-08",
-      "views": 15,
-      "minutes": 28
-    },
     {
       "date": "2026-07-09",
       "views": 23,
@@ -595,37 +590,37 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 130
-    },
-    {
-      "source": "SUBSCRIBER",
-      "label": "From subscriptions",
-      "views": 111
+      "views": 128
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 97
+      "views": 89
     },
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 91
+      "views": 86
+    },
+    {
+      "source": "SUBSCRIBER",
+      "label": "From subscriptions",
+      "views": 78
     },
     {
       "source": "NO_LINK_OTHER",
       "label": "No referrer",
-      "views": 38
+      "views": 37
     },
     {
       "source": "RELATED_VIDEO",
       "label": "Related video",
-      "views": 21
+      "views": 20
     },
     {
       "source": "YT_CHANNEL",
       "label": "Channel page",
-      "views": 15
+      "views": 12
     },
     {
       "source": "YT_OTHER_PAGE",
@@ -635,7 +630,7 @@
     {
       "source": "NOTIFICATION",
       "label": "Notifications",
-      "views": 5
+      "views": 3
     },
     {
       "source": "SHORTS",
