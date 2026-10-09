@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-08T21:35:14.380Z",
+  "generated_at": "2026-10-09T03:35:14.354Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,28 +15,28 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-10-04",
-      "end": "2026-10-06"
+      "start": "2026-10-05",
+      "end": "2026-10-07"
     },
     "last_7": {
-      "start": "2026-10-01",
-      "end": "2026-10-08"
+      "start": "2026-10-02",
+      "end": "2026-10-09"
     },
     "last_30": {
-      "start": "2026-09-08",
-      "end": "2026-10-08"
+      "start": "2026-09-09",
+      "end": "2026-10-09"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 137,
-      "watchMinutes": 451,
-      "avgViewDurationSec": 211
+      "views": 118,
+      "watchMinutes": 380,
+      "avgViewDurationSec": 207
     },
     "last_30": {
-      "views": 442,
-      "watchMinutes": 811,
-      "avgViewDurationSec": 134
+      "views": 420,
+      "watchMinutes": 805,
+      "avgViewDurationSec": 135
     }
   },
   "last_48h_countries": [
@@ -44,7 +44,7 @@
       "code": "US",
       "name": "United States",
       "flag": "🇺🇸",
-      "views": 44
+      "views": 10
     }
   ],
   "last_30d_countries": [
@@ -78,7 +78,7 @@
       "videoId": "vBGEIMXs6h0",
       "title": "Celestial Shield (Lyric Video) – Shieldbearer | Christian Metal | Israel, Prophecy & Warfare",
       "thumbnail": "https://i.ytimg.com/vi/vBGEIMXs6h0/mqdefault.jpg",
-      "views": 12050,
+      "views": 12051,
       "likes": 534,
       "publishedAt": "2025-07-15T02:04:57Z",
       "url": "https://www.youtube.com/watch?v=vBGEIMXs6h0"
@@ -109,15 +109,7 @@
       "thumbnail": "https://i.ytimg.com/vi/2P8VZ1OwF1k/mqdefault.jpg",
       "publishedAt": "2026-09-06T12:30:38Z",
       "url": "https://www.youtube.com/watch?v=2P8VZ1OwF1k",
-      "views": 96
-    },
-    {
-      "videoId": "7f840w5mQis",
-      "title": "I Typed 8 Metal Tones Into My FM9. Didn't Touch a Knob.",
-      "thumbnail": "https://i.ytimg.com/vi/7f840w5mQis/mqdefault.jpg",
-      "publishedAt": "2026-09-06T00:58:30Z",
-      "url": "https://www.youtube.com/watch?v=7f840w5mQis",
-      "views": 58
+      "views": 89
     },
     {
       "videoId": "jCNAZyyt5o8",
@@ -125,7 +117,15 @@
       "thumbnail": "https://i.ytimg.com/vi/jCNAZyyt5o8/mqdefault.jpg",
       "publishedAt": "2026-09-02T15:26:11Z",
       "url": "https://www.youtube.com/watch?v=jCNAZyyt5o8",
-      "views": 49
+      "views": 47
+    },
+    {
+      "videoId": "7f840w5mQis",
+      "title": "I Typed 8 Metal Tones Into My FM9. Didn't Touch a Knob.",
+      "thumbnail": "https://i.ytimg.com/vi/7f840w5mQis/mqdefault.jpg",
+      "publishedAt": "2026-09-06T00:58:30Z",
+      "url": "https://www.youtube.com/watch?v=7f840w5mQis",
+      "views": 46
     },
     {
       "videoId": "0jPL3Mg88ZQ",
@@ -145,11 +145,6 @@
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-07-10",
-      "views": 4,
-      "minutes": 6
-    },
     {
       "date": "2026-07-11",
       "views": 13,
@@ -595,22 +590,17 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 143
+      "views": 142
     },
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 88
+      "views": 85
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 85
-    },
-    {
-      "source": "SUBSCRIBER",
-      "label": "From subscriptions",
-      "views": 47
+      "views": 82
     },
     {
       "source": "NO_LINK_OTHER",
@@ -618,9 +608,14 @@
       "views": 37
     },
     {
+      "source": "SUBSCRIBER",
+      "label": "From subscriptions",
+      "views": 34
+    },
+    {
       "source": "RELATED_VIDEO",
       "label": "Related video",
-      "views": 19
+      "views": 18
     },
     {
       "source": "YT_CHANNEL",
@@ -635,7 +630,7 @@
     {
       "source": "NOTIFICATION",
       "label": "Notifications",
-      "views": 2
+      "views": 1
     },
     {
       "source": "SHORTS",
