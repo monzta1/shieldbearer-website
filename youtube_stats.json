@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T03:35:14.354Z",
+  "generated_at": "2026-10-09T21:35:14.444Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -29,14 +29,14 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 118,
-      "watchMinutes": 380,
-      "avgViewDurationSec": 207
+      "views": 120,
+      "watchMinutes": 388,
+      "avgViewDurationSec": 208
     },
     "last_30": {
-      "views": 420,
-      "watchMinutes": 805,
-      "avgViewDurationSec": 135
+      "views": 422,
+      "watchMinutes": 813,
+      "avgViewDurationSec": 136
     }
   },
   "last_48h_countries": [
@@ -128,19 +128,19 @@
       "views": 46
     },
     {
-      "videoId": "0jPL3Mg88ZQ",
-      "title": "SHIELDBEARER - SENTINELS | Official Video",
-      "thumbnail": "https://i.ytimg.com/vi/0jPL3Mg88ZQ/mqdefault.jpg",
-      "publishedAt": "2026-04-14T22:17:26Z",
-      "url": "https://www.youtube.com/watch?v=0jPL3Mg88ZQ",
-      "views": 21
-    },
-    {
       "videoId": "8khugdipSJM",
       "title": "Shieldbearer – Tidings of Comfort and Joy (God Rest Ye Merry Gentlemen) [Metal Christmas Anthem]",
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM",
+      "views": 22
+    },
+    {
+      "videoId": "0jPL3Mg88ZQ",
+      "title": "SHIELDBEARER - SENTINELS | Official Video",
+      "thumbnail": "https://i.ytimg.com/vi/0jPL3Mg88ZQ/mqdefault.jpg",
+      "publishedAt": "2026-04-14T22:17:26Z",
+      "url": "https://www.youtube.com/watch?v=0jPL3Mg88ZQ",
       "views": 21
     }
   ],
@@ -584,13 +584,18 @@
       "date": "2026-10-06",
       "views": 23,
       "minutes": 58
+    },
+    {
+      "date": "2026-10-07",
+      "views": 2,
+      "minutes": 8
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 142
+      "views": 143
     },
     {
       "source": "EXT_URL",
@@ -610,7 +615,7 @@
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 34
+      "views": 35
     },
     {
       "source": "RELATED_VIDEO",
