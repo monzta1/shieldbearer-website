@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-10T03:35:14.251Z",
+  "generated_at": "2026-10-10T21:35:14.227Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -29,14 +29,14 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 88,
-      "watchMinutes": 271,
-      "avgViewDurationSec": 196
+      "views": 94,
+      "watchMinutes": 281,
+      "avgViewDurationSec": 190
     },
     "last_30": {
-      "views": 403,
-      "watchMinutes": 805,
-      "avgViewDurationSec": 139
+      "views": 409,
+      "watchMinutes": 815,
+      "avgViewDurationSec": 138
     }
   },
   "last_48h_countries": [
@@ -109,7 +109,7 @@
       "thumbnail": "https://i.ytimg.com/vi/2P8VZ1OwF1k/mqdefault.jpg",
       "publishedAt": "2026-09-06T12:30:38Z",
       "url": "https://www.youtube.com/watch?v=2P8VZ1OwF1k",
-      "views": 85
+      "views": 86
     },
     {
       "videoId": "jCNAZyyt5o8",
@@ -117,7 +117,7 @@
       "thumbnail": "https://i.ytimg.com/vi/jCNAZyyt5o8/mqdefault.jpg",
       "publishedAt": "2026-09-02T15:26:11Z",
       "url": "https://www.youtube.com/watch?v=jCNAZyyt5o8",
-      "views": 42
+      "views": 44
     },
     {
       "videoId": "7f840w5mQis",
@@ -584,23 +584,28 @@
       "date": "2026-10-07",
       "views": 2,
       "minutes": 8
+    },
+    {
+      "date": "2026-10-08",
+      "views": 6,
+      "minutes": 10
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 141
+      "views": 142
     },
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 80
+      "views": 82
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 79
+      "views": 80
     },
     {
       "source": "NO_LINK_OTHER",
@@ -615,7 +620,7 @@
     {
       "source": "RELATED_VIDEO",
       "label": "Related video",
-      "views": 15
+      "views": 16
     },
     {
       "source": "YT_CHANNEL",
@@ -625,7 +630,7 @@
     {
       "source": "YT_OTHER_PAGE",
       "label": "Other YouTube page",
-      "views": 7
+      "views": 8
     },
     {
       "source": "NOTIFICATION",
