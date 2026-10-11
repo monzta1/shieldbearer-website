@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-11T03:35:14.009Z",
+  "generated_at": "2026-10-11T21:35:14.146Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -29,14 +29,14 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 81,
-      "watchMinutes": 253,
-      "avgViewDurationSec": 192
+      "views": 94,
+      "watchMinutes": 268,
+      "avgViewDurationSec": 184
     },
     "last_30": {
-      "views": 397,
-      "watchMinutes": 811,
-      "avgViewDurationSec": 140
+      "views": 410,
+      "watchMinutes": 825,
+      "avgViewDurationSec": 139
     }
   },
   "last_48h_countries": [],
@@ -71,7 +71,7 @@
       "videoId": "vBGEIMXs6h0",
       "title": "Celestial Shield (Lyric Video) – Shieldbearer | Christian Metal | Israel, Prophecy & Warfare",
       "thumbnail": "https://i.ytimg.com/vi/vBGEIMXs6h0/mqdefault.jpg",
-      "views": 12051,
+      "views": 12052,
       "likes": 534,
       "publishedAt": "2025-07-15T02:04:57Z",
       "url": "https://www.youtube.com/watch?v=vBGEIMXs6h0"
@@ -102,7 +102,7 @@
       "thumbnail": "https://i.ytimg.com/vi/2P8VZ1OwF1k/mqdefault.jpg",
       "publishedAt": "2026-09-06T12:30:38Z",
       "url": "https://www.youtube.com/watch?v=2P8VZ1OwF1k",
-      "views": 85
+      "views": 89
     },
     {
       "videoId": "jCNAZyyt5o8",
@@ -110,7 +110,7 @@
       "thumbnail": "https://i.ytimg.com/vi/jCNAZyyt5o8/mqdefault.jpg",
       "publishedAt": "2026-09-02T15:26:11Z",
       "url": "https://www.youtube.com/watch?v=jCNAZyyt5o8",
-      "views": 39
+      "views": 42
     },
     {
       "videoId": "7f840w5mQis",
@@ -134,7 +134,7 @@
       "thumbnail": "https://i.ytimg.com/vi/0jPL3Mg88ZQ/mqdefault.jpg",
       "publishedAt": "2026-04-14T22:17:26Z",
       "url": "https://www.youtube.com/watch?v=0jPL3Mg88ZQ",
-      "views": 19
+      "views": 20
     }
   ],
   "daily_views": [
@@ -577,23 +577,28 @@
       "date": "2026-10-08",
       "views": 6,
       "minutes": 10
+    },
+    {
+      "date": "2026-10-09",
+      "views": 13,
+      "minutes": 14
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 142
-    },
-    {
-      "source": "EXT_URL",
-      "label": "External URL",
-      "views": 79
+      "views": 144
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 78
+      "views": 85
+    },
+    {
+      "source": "EXT_URL",
+      "label": "External URL",
+      "views": 83
     },
     {
       "source": "NO_LINK_OTHER",
