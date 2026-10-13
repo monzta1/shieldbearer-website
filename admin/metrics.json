@@ -1,100 +1,95 @@
 {
-  "generatedAt": "2026-10-12T08:00:14.976Z",
+  "generatedAt": "2026-10-13T08:00:15.150Z",
   "period": {
     "label": "October 2026 so far",
     "start": "2026-10-01",
     "end": "2026-10-31"
   },
   "headline": {
-    "sessions": 17,
-    "deltaPct": -65.3,
+    "sessions": 20,
+    "deltaPct": -59.2,
     "comparison": "vs September 2026"
   },
   "channels": [
     {
       "name": "Direct",
-      "sessions": 14,
-      "share": 82.4
+      "sessions": 16,
+      "share": 72.7
     },
     {
       "name": "Organic Social",
       "sessions": 2,
-      "share": 11.8
+      "share": 9.1
     },
     {
-      "name": "Organic Video",
-      "sessions": 1,
-      "share": 5.9
+      "name": "Unassigned",
+      "sessions": 2,
+      "share": 9.1
     }
   ],
   "geography": [
     {
       "name": "United States",
-      "sessions": 10,
-      "share": 58.8
+      "sessions": 13,
+      "share": 65
+    },
+    {
+      "name": "(not set)",
+      "sessions": 2,
+      "share": 10
     },
     {
       "name": "Finland",
       "sessions": 2,
-      "share": 11.8
+      "share": 10
     },
     {
       "name": "Iceland",
       "sessions": 2,
-      "share": 11.8
-    },
-    {
-      "name": "Unknown",
-      "sessions": 1,
-      "share": 5.9
-    },
-    {
-      "name": "(not set)",
-      "sessions": 1,
-      "share": 5.9
+      "share": 10
     },
     {
       "name": "China",
       "sessions": 1,
-      "share": 5.9
+      "share": 5
     }
   ],
   "cities": [
     {
-      "name": "Unknown, Colorado",
-      "sessions": 3,
-      "share": 17.6
+      "name": "(not set)",
+      "sessions": 4,
+      "share": 20
     },
     {
-      "name": "(not set)",
+      "name": "(not set), Colorado",
       "sessions": 3,
-      "share": 17.6
+      "share": 15
     },
     {
       "name": "Memphis, Tennessee",
       "sessions": 2,
-      "share": 11.8
+      "share": 10
     },
     {
       "name": "Reykjavik, Reykjavikurborg",
       "sessions": 2,
-      "share": 11.8
+      "share": 10
     },
     {
       "name": "Santa Clara, California",
       "sessions": 2,
-      "share": 11.8
+      "share": 10
     },
     {
-      "name": "Unknown",
+      "name": "Bradley, Illinois",
       "sessions": 1,
-      "share": 5.9
+      "share": 5
     }
   ],
   "events": [
     {
       "name": "scroll_depth",
-      "count": 14,
+      "count": 22,
       "engagedShare": null
     },
     {
