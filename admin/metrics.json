@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-13T08:00:15.150Z",
+  "generatedAt": "2026-10-14T08:00:14.961Z",
   "period": {
     "label": "October 2026 so far",
     "start": "2026-10-01",
@@ -14,17 +14,17 @@
     {
       "name": "Direct",
       "sessions": 16,
-      "share": 72.7
+      "share": 80
     },
     {
       "name": "Organic Social",
       "sessions": 2,
-      "share": 9.1
+      "share": 10
     },
     {
-      "name": "Unassigned",
-      "sessions": 2,
-      "share": 9.1
+      "name": "Organic Search",
+      "sessions": 1,
+      "share": 5
     }
   ],
   "geography": [
