@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T21:35:14.203Z",
+  "generated_at": "2026-10-15T03:35:14.092Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,28 +15,28 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-10-10",
-      "end": "2026-10-12"
+      "start": "2026-10-11",
+      "end": "2026-10-13"
     },
     "last_7": {
-      "start": "2026-10-07",
-      "end": "2026-10-14"
+      "start": "2026-10-08",
+      "end": "2026-10-15"
     },
     "last_30": {
-      "start": "2026-09-14",
-      "end": "2026-10-14"
+      "start": "2026-09-15",
+      "end": "2026-10-15"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 65,
-      "watchMinutes": 151,
-      "avgViewDurationSec": 164
+      "views": 63,
+      "watchMinutes": 143,
+      "avgViewDurationSec": 161
     },
     "last_30": {
-      "views": 407,
-      "watchMinutes": 899,
-      "avgViewDurationSec": 149
+      "views": 396,
+      "watchMinutes": 876,
+      "avgViewDurationSec": 148
     }
   },
   "last_48h_countries": [],
@@ -102,7 +102,7 @@
       "thumbnail": "https://i.ytimg.com/vi/2P8VZ1OwF1k/mqdefault.jpg",
       "publishedAt": "2026-09-06T12:30:38Z",
       "url": "https://www.youtube.com/watch?v=2P8VZ1OwF1k",
-      "views": 91
+      "views": 89
     },
     {
       "videoId": "jCNAZyyt5o8",
@@ -110,7 +110,7 @@
       "thumbnail": "https://i.ytimg.com/vi/jCNAZyyt5o8/mqdefault.jpg",
       "publishedAt": "2026-09-02T15:26:11Z",
       "url": "https://www.youtube.com/watch?v=jCNAZyyt5o8",
-      "views": 39
+      "views": 38
     },
     {
       "videoId": "7f840w5mQis",
@@ -121,28 +121,23 @@
       "views": 24
     },
     {
-      "videoId": "8khugdipSJM",
-      "title": "Shieldbearer – Tidings of Comfort and Joy (God Rest Ye Merry Gentlemen) [Metal Christmas Anthem]",
-      "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
-      "publishedAt": "2025-10-24T00:24:36Z",
-      "url": "https://www.youtube.com/watch?v=8khugdipSJM",
-      "views": 21
-    },
-    {
       "videoId": "0jPL3Mg88ZQ",
       "title": "SHIELDBEARER - SENTINELS | Official Video",
       "thumbnail": "https://i.ytimg.com/vi/0jPL3Mg88ZQ/mqdefault.jpg",
       "publishedAt": "2026-04-14T22:17:26Z",
       "url": "https://www.youtube.com/watch?v=0jPL3Mg88ZQ",
       "views": 20
+    },
+    {
+      "videoId": "8khugdipSJM",
+      "title": "Shieldbearer – Tidings of Comfort and Joy (God Rest Ye Merry Gentlemen) [Metal Christmas Anthem]",
+      "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
+      "publishedAt": "2025-10-24T00:24:36Z",
+      "url": "https://www.youtube.com/watch?v=8khugdipSJM",
+      "views": 20
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-07-16",
-      "views": 3,
-      "minutes": 0
-    },
     {
       "date": "2026-07-17",
       "views": 11,
@@ -588,17 +583,17 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 146
-    },
-    {
-      "source": "YT_SEARCH",
-      "label": "YouTube search",
-      "views": 84
+      "views": 142
     },
     {
       "source": "EXT_URL",
       "label": "External URL",
       "views": 84
+    },
+    {
+      "source": "YT_SEARCH",
+      "label": "YouTube search",
+      "views": 79
     },
     {
       "source": "NO_LINK_OTHER",
@@ -608,7 +603,7 @@
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 21
+      "views": 19
     },
     {
       "source": "YT_CHANNEL",
