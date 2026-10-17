@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T21:35:14.354Z",
+  "generated_at": "2026-10-17T03:35:14.399Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,28 +15,28 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-10-12",
-      "end": "2026-10-14"
+      "start": "2026-10-13",
+      "end": "2026-10-15"
     },
     "last_7": {
-      "start": "2026-10-09",
-      "end": "2026-10-16"
+      "start": "2026-10-10",
+      "end": "2026-10-17"
     },
     "last_30": {
-      "start": "2026-09-16",
-      "end": "2026-10-16"
+      "start": "2026-09-17",
+      "end": "2026-10-17"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 90,
-      "watchMinutes": 188,
-      "avgViewDurationSec": 148
+      "views": 77,
+      "watchMinutes": 173,
+      "avgViewDurationSec": 153
     },
     "last_30": {
-      "views": 427,
-      "watchMinutes": 931,
-      "avgViewDurationSec": 146
+      "views": 421,
+      "watchMinutes": 925,
+      "avgViewDurationSec": 147
     }
   },
   "last_48h_countries": [],
@@ -71,7 +71,7 @@
       "videoId": "vBGEIMXs6h0",
       "title": "Celestial Shield (Lyric Video) – Shieldbearer | Christian Metal | Israel, Prophecy & Warfare",
       "thumbnail": "https://i.ytimg.com/vi/vBGEIMXs6h0/mqdefault.jpg",
-      "views": 12055,
+      "views": 12056,
       "likes": 534,
       "publishedAt": "2025-07-15T02:04:57Z",
       "url": "https://www.youtube.com/watch?v=vBGEIMXs6h0"
@@ -80,7 +80,7 @@
       "videoId": "9FHgbbVBT1A",
       "title": "Ruler of the Storm – Shieldbearer (Official Lyric Video | Christian Metal Anthem)",
       "thumbnail": "https://i.ytimg.com/vi/9FHgbbVBT1A/mqdefault.jpg",
-      "views": 9838,
+      "views": 9839,
       "likes": 722,
       "publishedAt": "2025-05-16T10:00:06Z",
       "url": "https://www.youtube.com/watch?v=9FHgbbVBT1A"
@@ -134,15 +134,10 @@
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM",
-      "views": 23
+      "views": 22
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-07-18",
-      "views": 5,
-      "minutes": 8
-    },
     {
       "date": "2026-07-19",
       "views": 3,
@@ -588,7 +583,7 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 159
+      "views": 157
     },
     {
       "source": "EXT_URL",
@@ -598,12 +593,12 @@
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 82
+      "views": 79
     },
     {
       "source": "NO_LINK_OTHER",
       "label": "No referrer",
-      "views": 40
+      "views": 39
     },
     {
       "source": "SUBSCRIBER",
