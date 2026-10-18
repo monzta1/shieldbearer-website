@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T21:35:14.078Z",
+  "generated_at": "2026-10-18T03:35:14.381Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -11,32 +11,32 @@
     "views_lifetime": 242496,
     "subscribers": 12200,
     "subscribers_hidden": false,
-    "video_count": 100
+    "video_count": 101
   },
   "windows": {
     "last_48h": {
-      "start": "2026-10-13",
-      "end": "2026-10-15"
+      "start": "2026-10-14",
+      "end": "2026-10-16"
     },
     "last_7": {
-      "start": "2026-10-10",
-      "end": "2026-10-17"
+      "start": "2026-10-11",
+      "end": "2026-10-18"
     },
     "last_30": {
-      "start": "2026-09-17",
-      "end": "2026-10-17"
+      "start": "2026-09-18",
+      "end": "2026-10-18"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 89,
-      "watchMinutes": 199,
-      "avgViewDurationSec": 150
+      "views": 70,
+      "watchMinutes": 134,
+      "avgViewDurationSec": 127
     },
     "last_30": {
-      "views": 433,
-      "watchMinutes": 950,
-      "avgViewDurationSec": 147
+      "views": 420,
+      "watchMinutes": 932,
+      "avgViewDurationSec": 148
     }
   },
   "last_48h_countries": [],
@@ -53,7 +53,7 @@
       "videoId": "6u_a5zdTLWQ",
       "title": "Shieldbearer – Come and Restore [Christian Worship | Lanterns Album | Official Audio]",
       "thumbnail": "https://i.ytimg.com/vi/6u_a5zdTLWQ/mqdefault.jpg",
-      "views": 96124,
+      "views": 96125,
       "likes": 38,
       "publishedAt": "2025-05-04T03:07:07Z",
       "url": "https://www.youtube.com/watch?v=6u_a5zdTLWQ"
@@ -80,8 +80,8 @@
       "videoId": "9FHgbbVBT1A",
       "title": "Ruler of the Storm – Shieldbearer (Official Lyric Video | Christian Metal Anthem)",
       "thumbnail": "https://i.ytimg.com/vi/9FHgbbVBT1A/mqdefault.jpg",
-      "views": 9839,
-      "likes": 722,
+      "views": 9840,
+      "likes": 721,
       "publishedAt": "2025-05-16T10:00:06Z",
       "url": "https://www.youtube.com/watch?v=9FHgbbVBT1A"
     },
@@ -89,7 +89,7 @@
       "videoId": "8khugdipSJM",
       "title": "Shieldbearer – Tidings of Comfort and Joy (God Rest Ye Merry Gentlemen) [Metal Christmas Anthem]",
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
-      "views": 8325,
+      "views": 8327,
       "likes": 26,
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM"
@@ -102,7 +102,7 @@
       "thumbnail": "https://i.ytimg.com/vi/2P8VZ1OwF1k/mqdefault.jpg",
       "publishedAt": "2026-09-06T12:30:38Z",
       "url": "https://www.youtube.com/watch?v=2P8VZ1OwF1k",
-      "views": 92
+      "views": 86
     },
     {
       "videoId": "jCNAZyyt5o8",
@@ -118,7 +118,7 @@
       "thumbnail": "https://i.ytimg.com/vi/7f840w5mQis/mqdefault.jpg",
       "publishedAt": "2026-09-06T00:58:30Z",
       "url": "https://www.youtube.com/watch?v=7f840w5mQis",
-      "views": 29
+      "views": 27
     },
     {
       "videoId": "0jPL3Mg88ZQ",
@@ -134,15 +134,10 @@
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM",
-      "views": 23
+      "views": 21
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-07-19",
-      "views": 3,
-      "minutes": 13
-    },
     {
       "date": "2026-07-20",
       "views": 14,
@@ -570,7 +565,7 @@
     },
     {
       "date": "2026-10-13",
-      "views": 23,
+      "views": 22,
       "minutes": 45
     },
     {
@@ -588,27 +583,27 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 161
+      "views": 160
     },
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 92
+      "views": 89
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 79
+      "views": 76
     },
     {
       "source": "NO_LINK_OTHER",
       "label": "No referrer",
-      "views": 40
+      "views": 36
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 22
+      "views": 21
     },
     {
       "source": "YT_CHANNEL",
