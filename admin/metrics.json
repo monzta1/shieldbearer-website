@@ -1,94 +1,94 @@
 {
-  "generatedAt": "2026-10-18T08:00:14.970Z",
+  "generatedAt": "2026-10-19T08:00:16.228Z",
   "period": {
     "label": "October 2026 so far",
     "start": "2026-10-01",
     "end": "2026-10-31"
   },
   "headline": {
-    "sessions": 22,
-    "deltaPct": -55.1,
+    "sessions": 24,
+    "deltaPct": -51,
     "comparison": "vs September 2026"
   },
   "channels": [
     {
       "name": "Direct",
-      "sessions": 17,
-      "share": 77.3
+      "sessions": 19,
+      "share": 79.2
     },
     {
       "name": "Organic Social",
       "sessions": 3,
-      "share": 13.6
+      "share": 12.5
     },
     {
       "name": "Organic Search",
       "sessions": 1,
-      "share": 4.5
+      "share": 4.2
     }
   ],
   "geography": [
     {
       "name": "United States",
       "sessions": 14,
-      "share": 63.6
+      "share": 58.3
     },
     {
       "name": "(not set)",
-      "sessions": 2,
-      "share": 9.1
+      "sessions": 3,
+      "share": 12.5
     },
     {
       "name": "Finland",
       "sessions": 2,
-      "share": 9.1
+      "share": 8.3
     },
     {
       "name": "Iceland",
       "sessions": 2,
-      "share": 9.1
+      "share": 8.3
     },
     {
       "name": "Bangladesh",
       "sessions": 1,
-      "share": 4.5
+      "share": 4.2
     },
     {
       "name": "China",
       "sessions": 1,
-      "share": 4.5
+      "share": 4.2
     }
   ],
   "cities": [
     {
       "name": "(not set)",
-      "sessions": 4,
-      "share": 18.2
+      "sessions": 5,
+      "share": 20.8
     },
     {
       "name": "(not set), Colorado",
       "sessions": 3,
-      "share": 13.6
+      "share": 12.5
     },
     {
       "name": "Memphis, Tennessee",
       "sessions": 2,
-      "share": 9.1
+      "share": 8.3
     },
     {
       "name": "Reykjavik, Reykjavikurborg",
       "sessions": 2,
-      "share": 9.1
+      "share": 8.3
     },
     {
       "name": "Santa Clara, California",
       "sessions": 2,
-      "share": 9.1
+      "share": 8.3
     },
     {
-      "name": "Unknown, Virginia",
+      "name": "(not set), Virginia",
       "sessions": 1,
-      "share": 4.5
+      "share": 4.2
     }
   ],
   "events": [
