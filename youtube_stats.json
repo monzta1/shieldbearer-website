@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T21:35:14.433Z",
+  "generated_at": "2026-10-21T03:35:13.940Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,28 +15,28 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-10-16",
-      "end": "2026-10-18"
+      "start": "2026-10-17",
+      "end": "2026-10-19"
     },
     "last_7": {
-      "start": "2026-10-13",
-      "end": "2026-10-20"
+      "start": "2026-10-14",
+      "end": "2026-10-21"
     },
     "last_30": {
-      "start": "2026-09-20",
-      "end": "2026-10-20"
+      "start": "2026-09-21",
+      "end": "2026-10-21"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 145,
-      "watchMinutes": 223,
-      "avgViewDurationSec": 108
+      "views": 123,
+      "watchMinutes": 177,
+      "avgViewDurationSec": 103
     },
     "last_30": {
-      "views": 483,
-      "watchMinutes": 1001,
-      "avgViewDurationSec": 141
+      "views": 462,
+      "watchMinutes": 980,
+      "avgViewDurationSec": 143
     }
   },
   "last_48h_countries": [
@@ -115,7 +115,7 @@
       "thumbnail": "https://i.ytimg.com/vi/2P8VZ1OwF1k/mqdefault.jpg",
       "publishedAt": "2026-09-06T12:30:38Z",
       "url": "https://www.youtube.com/watch?v=2P8VZ1OwF1k",
-      "views": 101
+      "views": 96
     },
     {
       "videoId": "jCNAZyyt5o8",
@@ -123,23 +123,7 @@
       "thumbnail": "https://i.ytimg.com/vi/jCNAZyyt5o8/mqdefault.jpg",
       "publishedAt": "2026-09-02T15:26:11Z",
       "url": "https://www.youtube.com/watch?v=jCNAZyyt5o8",
-      "views": 56
-    },
-    {
-      "videoId": "7f840w5mQis",
-      "title": "I Typed 8 Metal Tones Into My FM9. Didn't Touch a Knob.",
-      "thumbnail": "https://i.ytimg.com/vi/7f840w5mQis/mqdefault.jpg",
-      "publishedAt": "2026-09-06T00:58:30Z",
-      "url": "https://www.youtube.com/watch?v=7f840w5mQis",
-      "views": 24
-    },
-    {
-      "videoId": "0jPL3Mg88ZQ",
-      "title": "SHIELDBEARER - SENTINELS | Official Video",
-      "thumbnail": "https://i.ytimg.com/vi/0jPL3Mg88ZQ/mqdefault.jpg",
-      "publishedAt": "2026-04-14T22:17:26Z",
-      "url": "https://www.youtube.com/watch?v=0jPL3Mg88ZQ",
-      "views": 23
+      "views": 53
     },
     {
       "videoId": "8khugdipSJM",
@@ -148,14 +132,25 @@
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM",
       "views": 23
+    },
+    {
+      "videoId": "0jPL3Mg88ZQ",
+      "title": "SHIELDBEARER - SENTINELS | Official Video",
+      "thumbnail": "https://i.ytimg.com/vi/0jPL3Mg88ZQ/mqdefault.jpg",
+      "publishedAt": "2026-04-14T22:17:26Z",
+      "url": "https://www.youtube.com/watch?v=0jPL3Mg88ZQ",
+      "views": 22
+    },
+    {
+      "videoId": "7f840w5mQis",
+      "title": "I Typed 8 Metal Tones Into My FM9. Didn't Touch a Knob.",
+      "thumbnail": "https://i.ytimg.com/vi/7f840w5mQis/mqdefault.jpg",
+      "publishedAt": "2026-09-06T00:58:30Z",
+      "url": "https://www.youtube.com/watch?v=7f840w5mQis",
+      "views": 21
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-07-22",
-      "views": 9,
-      "minutes": 28
-    },
     {
       "date": "2026-07-23",
       "views": 11,
@@ -601,17 +596,17 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 159
+      "views": 157
     },
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 130
+      "views": 124
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 77
+      "views": 70
     },
     {
       "source": "SUBSCRIBER",
@@ -621,7 +616,7 @@
     {
       "source": "NO_LINK_OTHER",
       "label": "No referrer",
-      "views": 29
+      "views": 26
     },
     {
       "source": "YT_CHANNEL",
@@ -631,12 +626,12 @@
     {
       "source": "RELATED_VIDEO",
       "label": "Related video",
-      "views": 17
+      "views": 16
     },
     {
       "source": "YT_OTHER_PAGE",
       "label": "Other YouTube page",
-      "views": 12
+      "views": 10
     },
     {
       "source": "NOTIFICATION",
