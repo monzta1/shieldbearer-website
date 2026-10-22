@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T03:35:14.057Z",
+  "generated_at": "2026-10-22T21:35:14.163Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -29,14 +29,14 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 148,
-      "watchMinutes": 265,
-      "avgViewDurationSec": 134
+      "views": 169,
+      "watchMinutes": 280,
+      "avgViewDurationSec": 133
     },
     "last_30": {
-      "views": 482,
-      "watchMinutes": 1045,
-      "avgViewDurationSec": 150
+      "views": 503,
+      "watchMinutes": 1060,
+      "avgViewDurationSec": 149
     }
   },
   "last_48h_countries": [
@@ -85,7 +85,7 @@
       "title": "Celestial Shield (Lyric Video) – Shieldbearer | Christian Metal | Israel, Prophecy & Warfare",
       "thumbnail": "https://i.ytimg.com/vi/vBGEIMXs6h0/mqdefault.jpg",
       "views": 12057,
-      "likes": 533,
+      "likes": 531,
       "publishedAt": "2025-07-15T02:04:57Z",
       "url": "https://www.youtube.com/watch?v=vBGEIMXs6h0"
     },
@@ -94,7 +94,7 @@
       "title": "Ruler of the Storm – Shieldbearer (Official Lyric Video | Christian Metal Anthem)",
       "thumbnail": "https://i.ytimg.com/vi/9FHgbbVBT1A/mqdefault.jpg",
       "views": 9841,
-      "likes": 720,
+      "likes": 718,
       "publishedAt": "2025-05-16T10:00:06Z",
       "url": "https://www.youtube.com/watch?v=9FHgbbVBT1A"
     },
@@ -115,7 +115,7 @@
       "thumbnail": "https://i.ytimg.com/vi/2P8VZ1OwF1k/mqdefault.jpg",
       "publishedAt": "2026-09-06T12:30:38Z",
       "url": "https://www.youtube.com/watch?v=2P8VZ1OwF1k",
-      "views": 94
+      "views": 95
     },
     {
       "videoId": "jCNAZyyt5o8",
@@ -126,20 +126,20 @@
       "views": 62
     },
     {
-      "videoId": "8khugdipSJM",
-      "title": "Shieldbearer – Tidings of Comfort and Joy (God Rest Ye Merry Gentlemen) [Metal Christmas Anthem]",
-      "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
-      "publishedAt": "2025-10-24T00:24:36Z",
-      "url": "https://www.youtube.com/watch?v=8khugdipSJM",
-      "views": 27
-    },
-    {
       "videoId": "TsJvHYh3iJo",
       "title": "SHIELDBEARER | MONOLITH | CHRISTIAN METAL",
       "thumbnail": "https://i.ytimg.com/vi/TsJvHYh3iJo/mqdefault.jpg",
       "publishedAt": "2026-10-18T00:41:07Z",
       "url": "https://www.youtube.com/watch?v=TsJvHYh3iJo",
-      "views": 27
+      "views": 45
+    },
+    {
+      "videoId": "8khugdipSJM",
+      "title": "Shieldbearer – Tidings of Comfort and Joy (God Rest Ye Merry Gentlemen) [Metal Christmas Anthem]",
+      "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
+      "publishedAt": "2025-10-24T00:24:36Z",
+      "url": "https://www.youtube.com/watch?v=8khugdipSJM",
+      "views": 28
     },
     {
       "videoId": "0jPL3Mg88ZQ",
@@ -590,6 +590,11 @@
       "date": "2026-10-19",
       "views": 35,
       "minutes": 97
+    },
+    {
+      "date": "2026-10-20",
+      "views": 21,
+      "minutes": 14
     }
   ],
   "traffic_sources_30d": [
@@ -601,22 +606,22 @@
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 132
-    },
-    {
-      "source": "YT_SEARCH",
-      "label": "YouTube search",
-      "views": 69
+      "views": 133
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 55
+      "views": 72
+    },
+    {
+      "source": "YT_SEARCH",
+      "label": "YouTube search",
+      "views": 71
     },
     {
       "source": "NO_LINK_OTHER",
       "label": "No referrer",
-      "views": 24
+      "views": 25
     },
     {
       "source": "YT_CHANNEL",
