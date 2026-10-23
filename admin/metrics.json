@@ -1,100 +1,100 @@
 {
-  "generatedAt": "2026-10-22T08:00:15.416Z",
+  "generatedAt": "2026-10-23T08:00:15.249Z",
   "period": {
     "label": "October 2026 so far",
     "start": "2026-10-01",
     "end": "2026-10-31"
   },
   "headline": {
-    "sessions": 29,
-    "deltaPct": -40.8,
+    "sessions": 32,
+    "deltaPct": -34.7,
     "comparison": "vs September 2026"
   },
   "channels": [
     {
       "name": "Direct",
-      "sessions": 21,
-      "share": 72.4
+      "sessions": 24,
+      "share": 75
     },
     {
       "name": "Organic Social",
       "sessions": 5,
-      "share": 17.2
+      "share": 15.6
     },
     {
       "name": "Organic Search",
       "sessions": 2,
-      "share": 6.9
+      "share": 6.3
     }
   ],
   "geography": [
     {
       "name": "United States",
       "sessions": 19,
-      "share": 65.5
+      "share": 59.4
     },
     {
       "name": "(not set)",
       "sessions": 3,
-      "share": 10.3
+      "share": 9.4
     },
     {
       "name": "Finland",
       "sessions": 2,
-      "share": 6.9
+      "share": 6.3
+    },
+    {
+      "name": "Germany",
+      "sessions": 2,
+      "share": 6.3
     },
     {
       "name": "Iceland",
       "sessions": 2,
-      "share": 6.9
+      "share": 6.3
     },
     {
       "name": "Bangladesh",
       "sessions": 1,
-      "share": 3.4
-    },
-    {
-      "name": "China",
-      "sessions": 1,
-      "share": 3.4
+      "share": 3.1
     }
   ],
   "cities": [
     {
       "name": "(not set)",
       "sessions": 5,
-      "share": 17.2
+      "share": 15.6
     },
     {
       "name": "(not set), Virginia",
       "sessions": 4,
-      "share": 13.8
+      "share": 12.5
     },
     {
       "name": "(not set), Colorado",
       "sessions": 3,
-      "share": 10.3
+      "share": 9.4
+    },
+    {
+      "name": "Cloppenburg, Lower Saxony",
+      "sessions": 2,
+      "share": 6.3
     },
     {
       "name": "Memphis, Tennessee",
       "sessions": 2,
-      "share": 6.9
+      "share": 6.3
     },
     {
       "name": "Reykjavik, Reykjavikurborg",
       "sessions": 2,
-      "share": 6.9
-    },
-    {
-      "name": "Santa Clara, California",
-      "sessions": 2,
-      "share": 6.9
+      "share": 6.3
     }
   ],
   "events": [
     {
       "name": "scroll_depth",
-      "count": 34,
+      "count": 38,
       "engagedShare": null
     },
     {
