@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T03:35:13.822Z",
+  "generated_at": "2026-10-23T21:35:14.131Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -29,13 +29,13 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 157,
-      "watchMinutes": 255,
-      "avgViewDurationSec": 132
+      "views": 189,
+      "watchMinutes": 301,
+      "avgViewDurationSec": 133
     },
     "last_30": {
-      "views": 492,
-      "watchMinutes": 1046,
+      "views": 524,
+      "watchMinutes": 1092,
       "avgViewDurationSec": 151
     }
   },
@@ -108,7 +108,7 @@
       "thumbnail": "https://i.ytimg.com/vi/2P8VZ1OwF1k/mqdefault.jpg",
       "publishedAt": "2026-09-06T12:30:38Z",
       "url": "https://www.youtube.com/watch?v=2P8VZ1OwF1k",
-      "views": 92
+      "views": 97
     },
     {
       "videoId": "jCNAZyyt5o8",
@@ -116,7 +116,7 @@
       "thumbnail": "https://i.ytimg.com/vi/jCNAZyyt5o8/mqdefault.jpg",
       "publishedAt": "2026-09-02T15:26:11Z",
       "url": "https://www.youtube.com/watch?v=jCNAZyyt5o8",
-      "views": 58
+      "views": 68
     },
     {
       "videoId": "TsJvHYh3iJo",
@@ -124,7 +124,7 @@
       "thumbnail": "https://i.ytimg.com/vi/TsJvHYh3iJo/mqdefault.jpg",
       "publishedAt": "2026-10-18T00:41:07Z",
       "url": "https://www.youtube.com/watch?v=TsJvHYh3iJo",
-      "views": 45
+      "views": 58
     },
     {
       "videoId": "8khugdipSJM",
@@ -583,23 +583,28 @@
       "date": "2026-10-20",
       "views": 21,
       "minutes": 14
+    },
+    {
+      "date": "2026-10-21",
+      "views": 32,
+      "minutes": 46
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 155
+      "views": 156
     },
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 128
+      "views": 139
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 71
+      "views": 84
     },
     {
       "source": "YT_SEARCH",
@@ -609,12 +614,12 @@
     {
       "source": "NO_LINK_OTHER",
       "label": "No referrer",
-      "views": 22
+      "views": 27
     },
     {
       "source": "YT_CHANNEL",
       "label": "Channel page",
-      "views": 18
+      "views": 19
     },
     {
       "source": "RELATED_VIDEO",
@@ -624,7 +629,7 @@
     {
       "source": "YT_OTHER_PAGE",
       "label": "Other YouTube page",
-      "views": 11
+      "views": 12
     },
     {
       "source": "NOTIFICATION",
