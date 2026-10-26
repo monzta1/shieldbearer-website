@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T21:35:13.977Z",
+  "generated_at": "2026-10-26T03:35:14.516Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,28 +15,28 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-10-21",
-      "end": "2026-10-23"
+      "start": "2026-10-22",
+      "end": "2026-10-24"
     },
     "last_7": {
-      "start": "2026-10-18",
-      "end": "2026-10-25"
+      "start": "2026-10-19",
+      "end": "2026-10-26"
     },
     "last_30": {
-      "start": "2026-09-25",
-      "end": "2026-10-25"
+      "start": "2026-09-26",
+      "end": "2026-10-26"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 148,
-      "watchMinutes": 256,
-      "avgViewDurationSec": 151
+      "views": 114,
+      "watchMinutes": 207,
+      "avgViewDurationSec": 172
     },
     "last_30": {
-      "views": 539,
-      "watchMinutes": 1124,
-      "avgViewDurationSec": 151
+      "views": 511,
+      "watchMinutes": 1069,
+      "avgViewDurationSec": 153
     }
   },
   "last_48h_countries": [],
@@ -108,7 +108,7 @@
       "thumbnail": "https://i.ytimg.com/vi/2P8VZ1OwF1k/mqdefault.jpg",
       "publishedAt": "2026-09-06T12:30:38Z",
       "url": "https://www.youtube.com/watch?v=2P8VZ1OwF1k",
-      "views": 103
+      "views": 86
     },
     {
       "videoId": "jCNAZyyt5o8",
@@ -116,7 +116,7 @@
       "thumbnail": "https://i.ytimg.com/vi/jCNAZyyt5o8/mqdefault.jpg",
       "publishedAt": "2026-09-02T15:26:11Z",
       "url": "https://www.youtube.com/watch?v=jCNAZyyt5o8",
-      "views": 71
+      "views": 64
     },
     {
       "videoId": "TsJvHYh3iJo",
@@ -140,15 +140,10 @@
       "thumbnail": "https://i.ytimg.com/vi/0jPL3Mg88ZQ/mqdefault.jpg",
       "publishedAt": "2026-04-14T22:17:26Z",
       "url": "https://www.youtube.com/watch?v=0jPL3Mg88ZQ",
-      "views": 21
+      "views": 19
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-07-27",
-      "views": 3,
-      "minutes": 5
-    },
     {
       "date": "2026-07-28",
       "views": 31,
@@ -571,7 +566,7 @@
     },
     {
       "date": "2026-10-20",
-      "views": 21,
+      "views": 20,
       "minutes": 14
     },
     {
@@ -594,12 +589,12 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 158
+      "views": 157
     },
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 143
+      "views": 125
     },
     {
       "source": "SUBSCRIBER",
@@ -609,12 +604,12 @@
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 78
+      "views": 74
     },
     {
       "source": "NO_LINK_OTHER",
       "label": "No referrer",
-      "views": 27
+      "views": 23
     },
     {
       "source": "YT_CHANNEL",
@@ -629,7 +624,7 @@
     {
       "source": "YT_OTHER_PAGE",
       "label": "Other YouTube page",
-      "views": 10
+      "views": 9
     },
     {
       "source": "NOTIFICATION",
