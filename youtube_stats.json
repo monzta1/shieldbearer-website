@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26T21:35:14.429Z",
+  "generated_at": "2026-10-27T03:35:14.322Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,28 +15,28 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-10-22",
-      "end": "2026-10-24"
+      "start": "2026-10-23",
+      "end": "2026-10-25"
     },
     "last_7": {
-      "start": "2026-10-19",
-      "end": "2026-10-26"
+      "start": "2026-10-20",
+      "end": "2026-10-27"
     },
     "last_30": {
-      "start": "2026-09-26",
-      "end": "2026-10-26"
+      "start": "2026-09-27",
+      "end": "2026-10-27"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 122,
-      "watchMinutes": 235,
-      "avgViewDurationSec": 175
+      "views": 87,
+      "watchMinutes": 138,
+      "avgViewDurationSec": 144
     },
     "last_30": {
-      "views": 519,
-      "watchMinutes": 1096,
-      "avgViewDurationSec": 154
+      "views": 497,
+      "watchMinutes": 1085,
+      "avgViewDurationSec": 158
     }
   },
   "last_48h_countries": [],
@@ -77,7 +77,7 @@
       "videoId": "vBGEIMXs6h0",
       "title": "Celestial Shield (Lyric Video) – Shieldbearer | Christian Metal | Israel, Prophecy & Warfare",
       "thumbnail": "https://i.ytimg.com/vi/vBGEIMXs6h0/mqdefault.jpg",
-      "views": 12057,
+      "views": 12058,
       "likes": 531,
       "publishedAt": "2025-07-15T02:04:57Z",
       "url": "https://www.youtube.com/watch?v=vBGEIMXs6h0"
@@ -108,15 +108,7 @@
       "thumbnail": "https://i.ytimg.com/vi/2P8VZ1OwF1k/mqdefault.jpg",
       "publishedAt": "2026-09-06T12:30:38Z",
       "url": "https://www.youtube.com/watch?v=2P8VZ1OwF1k",
-      "views": 88
-    },
-    {
-      "videoId": "jCNAZyyt5o8",
-      "title": "I Typed One Sentence. AI Built an 8-Scene Judas Priest FM9 Preset in 6 Minutes | ToneCommand",
-      "thumbnail": "https://i.ytimg.com/vi/jCNAZyyt5o8/mqdefault.jpg",
-      "publishedAt": "2026-09-02T15:26:11Z",
-      "url": "https://www.youtube.com/watch?v=jCNAZyyt5o8",
-      "views": 64
+      "views": 77
     },
     {
       "videoId": "TsJvHYh3iJo",
@@ -127,12 +119,20 @@
       "views": 63
     },
     {
+      "videoId": "jCNAZyyt5o8",
+      "title": "I Typed One Sentence. AI Built an 8-Scene Judas Priest FM9 Preset in 6 Minutes | ToneCommand",
+      "thumbnail": "https://i.ytimg.com/vi/jCNAZyyt5o8/mqdefault.jpg",
+      "publishedAt": "2026-09-02T15:26:11Z",
+      "url": "https://www.youtube.com/watch?v=jCNAZyyt5o8",
+      "views": 61
+    },
+    {
       "videoId": "8khugdipSJM",
       "title": "Shieldbearer – Tidings of Comfort and Joy (God Rest Ye Merry Gentlemen) [Metal Christmas Anthem]",
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM",
-      "views": 30
+      "views": 29
     },
     {
       "videoId": "0jPL3Mg88ZQ",
@@ -140,15 +140,10 @@
       "thumbnail": "https://i.ytimg.com/vi/0jPL3Mg88ZQ/mqdefault.jpg",
       "publishedAt": "2026-04-14T22:17:26Z",
       "url": "https://www.youtube.com/watch?v=0jPL3Mg88ZQ",
-      "views": 19
+      "views": 18
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-07-28",
-      "views": 31,
-      "minutes": 92
-    },
     {
       "date": "2026-07-29",
       "views": 1,
@@ -594,37 +589,37 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 157
+      "views": 156
     },
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 127
+      "views": 122
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 88
+      "views": 86
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 75
+      "views": 66
     },
     {
       "source": "NO_LINK_OTHER",
       "label": "No referrer",
-      "views": 24
+      "views": 22
     },
     {
       "source": "YT_CHANNEL",
       "label": "Channel page",
-      "views": 23
+      "views": 21
     },
     {
       "source": "RELATED_VIDEO",
       "label": "Related video",
-      "views": 15
+      "views": 14
     },
     {
       "source": "YT_OTHER_PAGE",
