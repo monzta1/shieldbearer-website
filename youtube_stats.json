@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T03:35:14.896Z",
+  "generated_at": "2026-10-28T21:35:13.937Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -29,23 +29,30 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 74,
-      "watchMinutes": 147,
+      "views": 144,
+      "watchMinutes": 284,
       "avgViewDurationSec": 154
     },
     "last_30": {
-      "views": 495,
-      "watchMinutes": 1105,
+      "views": 565,
+      "watchMinutes": 1242,
       "avgViewDurationSec": 161
     }
   },
-  "last_48h_countries": [],
+  "last_48h_countries": [
+    {
+      "code": "US",
+      "name": "United States",
+      "flag": "🇺🇸",
+      "views": 21
+    }
+  ],
   "last_30d_countries": [
     {
       "code": "US",
       "name": "United States",
       "flag": "🇺🇸",
-      "views": 67
+      "views": 88
     },
     {
       "code": "DE",
@@ -108,7 +115,7 @@
       "thumbnail": "https://i.ytimg.com/vi/2P8VZ1OwF1k/mqdefault.jpg",
       "publishedAt": "2026-09-06T12:30:38Z",
       "url": "https://www.youtube.com/watch?v=2P8VZ1OwF1k",
-      "views": 73
+      "views": 74
     },
     {
       "videoId": "TsJvHYh3iJo",
@@ -116,7 +123,7 @@
       "thumbnail": "https://i.ytimg.com/vi/TsJvHYh3iJo/mqdefault.jpg",
       "publishedAt": "2026-10-18T00:41:07Z",
       "url": "https://www.youtube.com/watch?v=TsJvHYh3iJo",
-      "views": 63
+      "views": 64
     },
     {
       "videoId": "jCNAZyyt5o8",
@@ -124,7 +131,15 @@
       "thumbnail": "https://i.ytimg.com/vi/jCNAZyyt5o8/mqdefault.jpg",
       "publishedAt": "2026-09-02T15:26:11Z",
       "url": "https://www.youtube.com/watch?v=jCNAZyyt5o8",
-      "views": 60
+      "views": 63
+    },
+    {
+      "videoId": "LjQZ_m5LqhE",
+      "title": "Demon Hunter - I'm Done (SHIELDBEARER Cover) | Official Music Video",
+      "thumbnail": "https://i.ytimg.com/vi/LjQZ_m5LqhE/mqdefault.jpg",
+      "publishedAt": "2026-10-26T18:18:56Z",
+      "url": "https://www.youtube.com/watch?v=LjQZ_m5LqhE",
+      "views": 47
     },
     {
       "videoId": "8khugdipSJM",
@@ -133,14 +148,6 @@
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM",
       "views": 31
-    },
-    {
-      "videoId": "0jPL3Mg88ZQ",
-      "title": "SHIELDBEARER - SENTINELS | Official Video",
-      "thumbnail": "https://i.ytimg.com/vi/0jPL3Mg88ZQ/mqdefault.jpg",
-      "publishedAt": "2026-04-14T22:17:26Z",
-      "url": "https://www.youtube.com/watch?v=0jPL3Mg88ZQ",
-      "views": 17
     }
   ],
   "daily_views": [
@@ -583,53 +590,58 @@
       "date": "2026-10-25",
       "views": 7,
       "minutes": 23
+    },
+    {
+      "date": "2026-10-26",
+      "views": 70,
+      "minutes": 137
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 158
+      "views": 163
     },
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 119
+      "views": 126
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 86
+      "views": 111
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 63
+      "views": 72
     },
     {
       "source": "NO_LINK_OTHER",
       "label": "No referrer",
-      "views": 24
+      "views": 34
     },
     {
       "source": "YT_CHANNEL",
       "label": "Channel page",
-      "views": 21
+      "views": 28
     },
     {
       "source": "RELATED_VIDEO",
       "label": "Related video",
-      "views": 14
+      "views": 18
     },
     {
       "source": "YT_OTHER_PAGE",
       "label": "Other YouTube page",
-      "views": 9
+      "views": 10
     },
     {
       "source": "NOTIFICATION",
       "label": "Notifications",
-      "views": 1
+      "views": 3
     },
     {
       "source": "SHORTS",
