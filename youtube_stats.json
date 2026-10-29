@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T21:35:13.937Z",
+  "generated_at": "2026-10-29T03:35:14.402Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,27 +15,27 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-10-24",
-      "end": "2026-10-26"
+      "start": "2026-10-25",
+      "end": "2026-10-27"
     },
     "last_7": {
-      "start": "2026-10-21",
-      "end": "2026-10-28"
+      "start": "2026-10-22",
+      "end": "2026-10-29"
     },
     "last_30": {
-      "start": "2026-09-28",
-      "end": "2026-10-28"
+      "start": "2026-09-29",
+      "end": "2026-10-29"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 144,
-      "watchMinutes": 284,
-      "avgViewDurationSec": 154
+      "views": 112,
+      "watchMinutes": 237,
+      "avgViewDurationSec": 158
     },
     "last_30": {
-      "views": 565,
-      "watchMinutes": 1242,
+      "views": 559,
+      "watchMinutes": 1234,
       "avgViewDurationSec": 161
     }
   },
@@ -84,7 +84,7 @@
       "videoId": "vBGEIMXs6h0",
       "title": "Celestial Shield (Lyric Video) – Shieldbearer | Christian Metal | Israel, Prophecy & Warfare",
       "thumbnail": "https://i.ytimg.com/vi/vBGEIMXs6h0/mqdefault.jpg",
-      "views": 12060,
+      "views": 12059,
       "likes": 531,
       "publishedAt": "2025-07-15T02:04:57Z",
       "url": "https://www.youtube.com/watch?v=vBGEIMXs6h0"
@@ -115,7 +115,7 @@
       "thumbnail": "https://i.ytimg.com/vi/2P8VZ1OwF1k/mqdefault.jpg",
       "publishedAt": "2026-09-06T12:30:38Z",
       "url": "https://www.youtube.com/watch?v=2P8VZ1OwF1k",
-      "views": 74
+      "views": 73
     },
     {
       "videoId": "TsJvHYh3iJo",
@@ -151,11 +151,6 @@
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-07-30",
-      "views": 3,
-      "minutes": 1
-    },
     {
       "date": "2026-07-31",
       "views": 3,
@@ -601,17 +596,17 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 163
+      "views": 161
     },
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 126
+      "views": 125
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 111
+      "views": 110
     },
     {
       "source": "YT_SEARCH",
@@ -621,7 +616,7 @@
     {
       "source": "NO_LINK_OTHER",
       "label": "No referrer",
-      "views": 34
+      "views": 33
     },
     {
       "source": "YT_CHANNEL",
@@ -631,7 +626,7 @@
     {
       "source": "RELATED_VIDEO",
       "label": "Related video",
-      "views": 18
+      "views": 17
     },
     {
       "source": "YT_OTHER_PAGE",
