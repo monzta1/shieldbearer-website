@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T03:35:14.402Z",
+  "generated_at": "2026-10-29T21:35:14.270Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -29,14 +29,14 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 112,
-      "watchMinutes": 237,
-      "avgViewDurationSec": 158
+      "views": 165,
+      "watchMinutes": 345,
+      "avgViewDurationSec": 169
     },
     "last_30": {
-      "views": 559,
-      "watchMinutes": 1234,
-      "avgViewDurationSec": 161
+      "views": 612,
+      "watchMinutes": 1342,
+      "avgViewDurationSec": 164
     }
   },
   "last_48h_countries": [
@@ -110,6 +110,14 @@
   ],
   "top_videos_30d": [
     {
+      "videoId": "LjQZ_m5LqhE",
+      "title": "Demon Hunter - I'm Done (SHIELDBEARER Cover) | Official Music Video",
+      "thumbnail": "https://i.ytimg.com/vi/LjQZ_m5LqhE/mqdefault.jpg",
+      "publishedAt": "2026-10-26T18:18:56Z",
+      "url": "https://www.youtube.com/watch?v=LjQZ_m5LqhE",
+      "views": 86
+    },
+    {
       "videoId": "2P8VZ1OwF1k",
       "title": "TONECOMMAND AI building a Soldano SLO-100 inspired preset on my FM9",
       "thumbnail": "https://i.ytimg.com/vi/2P8VZ1OwF1k/mqdefault.jpg",
@@ -123,7 +131,7 @@
       "thumbnail": "https://i.ytimg.com/vi/TsJvHYh3iJo/mqdefault.jpg",
       "publishedAt": "2026-10-18T00:41:07Z",
       "url": "https://www.youtube.com/watch?v=TsJvHYh3iJo",
-      "views": 64
+      "views": 67
     },
     {
       "videoId": "jCNAZyyt5o8",
@@ -132,14 +140,6 @@
       "publishedAt": "2026-09-02T15:26:11Z",
       "url": "https://www.youtube.com/watch?v=jCNAZyyt5o8",
       "views": 63
-    },
-    {
-      "videoId": "LjQZ_m5LqhE",
-      "title": "Demon Hunter - I'm Done (SHIELDBEARER Cover) | Official Music Video",
-      "thumbnail": "https://i.ytimg.com/vi/LjQZ_m5LqhE/mqdefault.jpg",
-      "publishedAt": "2026-10-26T18:18:56Z",
-      "url": "https://www.youtube.com/watch?v=LjQZ_m5LqhE",
-      "views": 47
     },
     {
       "videoId": "8khugdipSJM",
@@ -590,43 +590,48 @@
       "date": "2026-10-26",
       "views": 70,
       "minutes": 137
+    },
+    {
+      "date": "2026-10-27",
+      "views": 53,
+      "minutes": 108
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 161
-    },
-    {
-      "source": "EXT_URL",
-      "label": "External URL",
-      "views": 125
+      "views": 165
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 110
+      "views": 141
+    },
+    {
+      "source": "EXT_URL",
+      "label": "External URL",
+      "views": 126
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 72
+      "views": 78
     },
     {
       "source": "NO_LINK_OTHER",
       "label": "No referrer",
-      "views": 33
+      "views": 35
     },
     {
       "source": "YT_CHANNEL",
       "label": "Channel page",
-      "views": 28
+      "views": 30
     },
     {
       "source": "RELATED_VIDEO",
       "label": "Related video",
-      "views": 17
+      "views": 23
     },
     {
       "source": "YT_OTHER_PAGE",
@@ -636,7 +641,7 @@
     {
       "source": "NOTIFICATION",
       "label": "Notifications",
-      "views": 3
+      "views": 4
     },
     {
       "source": "SHORTS",
