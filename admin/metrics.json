@@ -1,94 +1,94 @@
 {
-  "generatedAt": "2026-10-29T08:01:06.144Z",
+  "generatedAt": "2026-10-30T08:00:15.386Z",
   "period": {
     "label": "October 2026 so far",
     "start": "2026-10-01",
     "end": "2026-10-31"
   },
   "headline": {
-    "sessions": 36,
-    "deltaPct": -26.5,
+    "sessions": 37,
+    "deltaPct": -24.5,
     "comparison": "vs September 2026"
   },
   "channels": [
     {
       "name": "Direct",
       "sessions": 25,
-      "share": 69.4
+      "share": 67.6
     },
     {
       "name": "Organic Social",
       "sessions": 6,
-      "share": 16.7
+      "share": 16.2
     },
     {
       "name": "Organic Search",
-      "sessions": 4,
-      "share": 11.1
+      "sessions": 5,
+      "share": 13.5
     }
   ],
   "geography": [
     {
       "name": "United States",
       "sessions": 21,
-      "share": 58.3
+      "share": 56.8
     },
     {
       "name": "(not set)",
       "sessions": 4,
-      "share": 11.1
+      "share": 10.8
     },
     {
       "name": "Germany",
       "sessions": 3,
-      "share": 8.3
+      "share": 8.1
     },
     {
       "name": "Finland",
       "sessions": 2,
-      "share": 5.6
+      "share": 5.4
     },
     {
       "name": "Iceland",
       "sessions": 2,
-      "share": 5.6
+      "share": 5.4
     },
     {
       "name": "Bangladesh",
       "sessions": 1,
-      "share": 2.8
+      "share": 2.7
     }
   ],
   "cities": [
     {
       "name": "(not set)",
       "sessions": 6,
-      "share": 16.7
+      "share": 16.2
     },
     {
       "name": "(not set), Virginia",
       "sessions": 4,
-      "share": 11.1
+      "share": 10.8
     },
     {
       "name": "(not set), Colorado",
       "sessions": 3,
-      "share": 8.3
+      "share": 8.1
     },
     {
       "name": "Cloppenburg, Lower Saxony",
       "sessions": 2,
-      "share": 5.6
+      "share": 5.4
     },
     {
       "name": "Memphis, Tennessee",
       "sessions": 2,
-      "share": 5.6
+      "share": 5.4
     },
     {
       "name": "Reykjavik, Reykjavikurborg",
       "sessions": 2,
-      "share": 5.6
+      "share": 5.4
     }
   ],
   "events": [
