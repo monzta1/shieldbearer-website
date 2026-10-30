@@ -1,37 +1,44 @@
 {
-  "generatedAt": "2026-05-21T12:08:22.217Z",
+  "generatedAt": "2026-10-30T10:00:29.711Z",
   "source": "sentinelbot-event-consumer",
   "homepage": {
     "banner": {
-      "title": "Let My People Go",
-      "image": "https://img.youtube.com/vi/0lUJcLKIt0o/maxresdefault.jpg",
-      "sourceUrl": "https://www.youtube.com/watch?v=0lUJcLKIt0o",
-      "activeReleaseId": "let-my-people-go"
+      "title": "Demon Hunter - I'm Done (SHIELDBEARER Cover)",
+      "image": "https://img.youtube.com/vi/LjQZ_m5LqhE/hqdefault.jpg",
+      "sourceUrl": "https://www.youtube.com/watch?v=LjQZ_m5LqhE",
+      "activeReleaseId": "LjQZ_m5LqhE"
     },
     "featuredRelease": {
-      "songId": "let-my-people-go",
-      "title": "Let My People Go",
-      "videoId": "0lUJcLKIt0o",
-      "sourceUrl": "https://www.youtube.com/watch?v=0lUJcLKIt0o",
-      "artwork": "https://img.youtube.com/vi/0lUJcLKIt0o/maxresdefault.jpg",
-      "lyrics": "Go DOWN, Moses!\nBurn through Egypt’s gates,\nPharaoh’s throne is shaking,\nCause freedom’s on its way!\n\nChains on the innocent,\nCrushed in a starving land,\nIsrael crying out,\nNo strength left to stand.\nOppression on their backs,\nThe fire in their bones,\nGod heard every tear,\nAnd thunder shook the throne!\n\nA whisper turned to a roar,\nA calling carved into stone…\n\nGo down, Moses!\nDeep into the darkness, stand!\nFace that Pharaoh,\nSay the word of Heaven’s command!\nGo down, Moses,\nBreak the yoke and shatter the hold!\nTell that tyrant,\nGOD says let My people GO!\n\nMoses stepped in unafraid,\nStorm in his spirit rose,\nSpoke the Name of Yahweh,\nAnd shook the earth below.\nPharaoh with a hardened heart,\nDefiant in his pride,\nBut judgment like a tidal wave\nWas rolling in the sky!\n\nA whisper turned to a roar,\nA calling carved into stone…\n\nGo down, Moses!\nDeep into the darkness, stand!\nFace that Pharaoh,\nSay the word of Heaven’s command!\nGo down, Moses,\nBreak the yoke and shatter the hold!\nTell that tyrant,\nGOD says let My people GO!\n\nLET… THEM… GO!\n(Tremble, Pharaoh, your kingdom’s falling)\nLET… THEM… GO!\n(The chains you forged are breaking open)\nLET… THEM… GO!\n(Yahweh’s voice is thunder spoken)\nLET MY PEOPLE GO!\n\nGo down, Moses!\nStand where warriors never stand,\nSpeak the freedom\nWritten by the Lord’s own hand!\nGo down, Moses,\nBreak the chains and lift the low!\nTell that tyrant,\nGOD says LET MY PEOPLE GO!",
-      "songMeaning": "A cry that shook a nation. A command that broke chains.\n\nGod saw the suffering. God heard the cries. He sent one man straight into the center of power with a message no king could ignore. Barefoot. Stuttering. Wanted for murder. Walked right into the throne room of the most powerful empire on earth.\n\n“Let My people go.”\n\nThat was not a request. That was Heaven breaking in.\n\nWe wrote this because that story is not old. There are still Pharaohs. Still systems. Still chains. And God is still the One who hears every cry, counts every brick, and decides when it ends.\n\nIf you feel held down, held back, or held captive, pay attention.",
-      "reference": "Exodus 3:7-10 | Exodus 5:1 | Exodus 7:5 | Exodus 14:21-22",
+      "songId": "LjQZ_m5LqhE",
+      "title": "Demon Hunter - I'm Done (SHIELDBEARER Cover)",
+      "videoId": "LjQZ_m5LqhE",
+      "sourceUrl": "https://www.youtube.com/watch?v=LjQZ_m5LqhE",
+      "artwork": "https://img.youtube.com/vi/LjQZ_m5LqhE/hqdefault.jpg",
+      "lyrics": "CREDITS\nVocals & Lead Guitar: Shieldbearer\nRhythm Guitars, Bass & Drums: Shieldbearer\nProduced, mixed & mastered at Shieldbearer Studio.\nORIGINAL SONG\n\"I'm Done\" by Demon Hunter.",
+      "songMeaning": "Shieldbearer covers \"I'm Done\" by Demon Hunter. Shieldbearer Radio: CREDITS Vocals Lead Guitar: Shieldbearer Rhythm Guitars, Bass Drums: Shieldbearer Produced, mixed mastered at Shieldbearer Studio. Scripture-centered, christ",
+      "reference": "",
       "scripture": {
-        "ref": "Exodus 5:1",
-        "quote": "Thus says the LORD, the God of Israel, 'Let my people go, that they may hold a feast to me in the wilderness.'"
+        "ref": "",
+        "quote": ""
       },
-      "publishedAt": "2026-05-21T12:08:22.217Z"
+      "publishedAt": "2026-10-26T18:18:56Z"
     },
-    "lastUpdatedAt": "2026-05-21T12:08:22.217Z"
+    "lastUpdatedAt": "2026-10-30T10:00:29.711Z"
   },
   "release": {
-    "id": "let-my-people-go",
-    "source": "shield-ingest-cli",
-    "publishedAt": "2026-05-21T12:08:22.217Z",
-    "traceId": "let-my-people-go#2026-05-21T12:08:22.217Z#SONG_UPDATED"
+    "id": "LjQZ_m5LqhE",
+    "source": "release-detector-youtube",
+    "publishedAt": "2026-10-26T18:18:56Z",
+    "traceId": "youtube:LjQZ_m5LqhE"
   },
   "releaseIndex": {
+    "demon hunter i m done shieldbearer cover": {
+      "id": "LjQZ_m5LqhE",
+      "title": "Demon Hunter - I'm Done (SHIELDBEARER Cover)",
+      "publishedAt": "2026-10-26T18:18:56Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=LjQZ_m5LqhE",
+      "traceId": "youtube:LjQZ_m5LqhE"
+    },
     "let my people go": {
       "id": "let-my-people-go",
       "title": "Let My People Go",
@@ -1946,6 +1953,25 @@
   ],
   "released": [
     {
+      "songId": "LjQZ_m5LqhE",
+      "videoId": "LjQZ_m5LqhE",
+      "title": "Demon Hunter - I'm Done (SHIELDBEARER Cover)",
+      "state": "released",
+      "traceId": "youtube:LjQZ_m5LqhE",
+      "publishedAt": "2026-10-26T18:18:56Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=LjQZ_m5LqhE",
+      "artwork": "",
+      "lyrics": "CREDITS\nVocals & Lead Guitar: Shieldbearer\nRhythm Guitars, Bass & Drums: Shieldbearer\nProduced, mixed & mastered at Shieldbearer Studio.\nORIGINAL SONG\n\"I'm Done\" by Demon Hunter.",
+      "songMeaning": "Shieldbearer covers \"I'm Done\" by Demon Hunter. Shieldbearer Radio: CREDITS Vocals Lead Guitar: Shieldbearer Rhythm Guitars, Bass Drums: Shieldbearer Produced, mixed mastered at Shieldbearer Studio. Scripture-centered, christ",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-10-30T10:00:29.711Z",
+      "contentHash": ""
+    },
+    {
       "songId": "let-my-people-go",
       "videoId": "0lUJcLKIt0o",
       "title": "Let My People Go",
@@ -1967,8 +1993,26 @@
   ],
   "signalCount": 99,
   "comingSoonCount": 1,
-  "releasedCount": 1,
+  "releasedCount": 2,
   "events": [
+    {
+      "id": "LjQZ_m5LqhE",
+      "songId": "LjQZ_m5LqhE",
+      "eventType": "SONG_RELEASED",
+      "stateAfter": "released",
+      "timestamp": "2026-10-30T10:00:29.711Z",
+      "title": "Demon Hunter - I'm Done (SHIELDBEARER Cover)",
+      "publishedAt": "2026-10-26T18:18:56Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=LjQZ_m5LqhE",
+      "source": "release-detector-youtube",
+      "albumId": "",
+      "albumTitle": "",
+      "albumUrl": "",
+      "videoType": "",
+      "isShort": false,
+      "contentFormat": "full",
+      "excludeFromTimeline": false
+    },
     {
       "id": "0lUJcLKIt0o",
       "songId": "0lUJcLKIt0o",
