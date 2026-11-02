@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-01T21:35:14.291Z",
+  "generated_at": "2026-11-02T03:35:13.797Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,28 +15,28 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-10-28",
-      "end": "2026-10-30"
+      "start": "2026-10-29",
+      "end": "2026-10-31"
     },
     "last_7": {
-      "start": "2026-10-25",
-      "end": "2026-11-01"
+      "start": "2026-10-26",
+      "end": "2026-11-02"
     },
     "last_30": {
-      "start": "2026-10-02",
-      "end": "2026-11-01"
+      "start": "2026-10-03",
+      "end": "2026-11-02"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 1003,
-      "watchMinutes": 529,
-      "avgViewDurationSec": 67
+      "views": 996,
+      "watchMinutes": 506,
+      "avgViewDurationSec": 65
     },
     "last_30": {
-      "views": 1453,
-      "watchMinutes": 1520,
-      "avgViewDurationSec": 109
+      "views": 1421,
+      "watchMinutes": 1403,
+      "avgViewDurationSec": 104
     }
   },
   "last_48h_countries": [
@@ -64,7 +64,7 @@
       "code": "US",
       "name": "United States",
       "flag": "🇺🇸",
-      "views": 587
+      "views": 575
     },
     {
       "code": "BR",
@@ -108,7 +108,7 @@
       "videoId": "vBGEIMXs6h0",
       "title": "Celestial Shield (Lyric Video) – Shieldbearer | Christian Metal | Israel, Prophecy & Warfare",
       "thumbnail": "https://i.ytimg.com/vi/vBGEIMXs6h0/mqdefault.jpg",
-      "views": 12060,
+      "views": 12064,
       "likes": 531,
       "publishedAt": "2025-07-15T02:04:57Z",
       "url": "https://www.youtube.com/watch?v=vBGEIMXs6h0"
@@ -155,7 +155,7 @@
       "thumbnail": "https://i.ytimg.com/vi/2P8VZ1OwF1k/mqdefault.jpg",
       "publishedAt": "2026-09-06T12:30:38Z",
       "url": "https://www.youtube.com/watch?v=2P8VZ1OwF1k",
-      "views": 75
+      "views": 72
     },
     {
       "videoId": "TsJvHYh3iJo",
@@ -175,11 +175,6 @@
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-08-03",
-      "views": 4,
-      "minutes": 5
-    },
     {
       "date": "2026-08-04",
       "views": 2,
@@ -633,29 +628,29 @@
       "views": 218
     },
     {
-      "source": "PLAYLIST",
-      "label": "From a playlist",
-      "views": 145
-    },
-    {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 125
+      "views": 123
+    },
+    {
+      "source": "PLAYLIST",
+      "label": "From a playlist",
+      "views": 121
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 101
+      "views": 98
     },
     {
       "source": "YT_OTHER_PAGE",
       "label": "Other YouTube page",
-      "views": 65
+      "views": 64
     },
     {
       "source": "YT_CHANNEL",
       "label": "Channel page",
-      "views": 60
+      "views": 58
     },
     {
       "source": "NO_LINK_OTHER",
