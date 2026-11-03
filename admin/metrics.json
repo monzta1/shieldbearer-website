@@ -1,54 +1,59 @@
 {
-  "generatedAt": "2026-11-02T08:00:15.135Z",
+  "generatedAt": "2026-11-03T08:00:15.764Z",
   "period": {
     "label": "November 2026 so far",
     "start": "2026-11-01",
     "end": "2026-11-30"
   },
   "headline": {
-    "sessions": 2,
-    "deltaPct": -94.9,
+    "sessions": 3,
+    "deltaPct": -92.3,
     "comparison": "vs October 2026"
   },
   "channels": [
     {
       "name": "Direct",
-      "sessions": 1,
-      "share": 33.3
+      "sessions": 2,
+      "share": 66.7
     },
     {
       "name": "Organic Search",
-      "sessions": 1,
-      "share": 33.3
-    },
-    {
-      "name": "Unassigned",
       "sessions": 1,
       "share": 33.3
     }
   ],
   "geography": [
     {
-      "name": "Unknown",
+      "name": "(not set)",
       "sessions": 1,
-      "share": 50
+      "share": 33.3
     },
     {
       "name": "Australia",
       "sessions": 1,
-      "share": 50
+      "share": 33.3
+    },
+    {
+      "name": "United States",
+      "sessions": 1,
+      "share": 33.3
     }
   ],
   "cities": [
     {
-      "name": "Unknown",
+      "name": "Unknown, Virginia",
       "sessions": 1,
-      "share": 50
+      "share": 33.3
+    },
+    {
+      "name": "(not set)",
+      "sessions": 1,
+      "share": 33.3
     },
     {
       "name": "Sydney, New South Wales",
       "sessions": 1,
-      "share": 50
+      "share": 33.3
     }
   ],
   "events": [],
