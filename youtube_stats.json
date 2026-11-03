@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T03:35:14.316Z",
+  "generated_at": "2026-11-03T21:35:14.560Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -29,14 +29,14 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 1365,
-      "watchMinutes": 481,
-      "avgViewDurationSec": 49
+      "views": 1439,
+      "watchMinutes": 519,
+      "avgViewDurationSec": 50
     },
     "last_30": {
-      "views": 1847,
-      "watchMinutes": 1487,
-      "avgViewDurationSec": 92
+      "views": 1921,
+      "watchMinutes": 1526,
+      "avgViewDurationSec": 91
     }
   },
   "last_48h_countries": [
@@ -44,7 +44,7 @@
       "code": "US",
       "name": "United States",
       "flag": "🇺🇸",
-      "views": 761
+      "views": 791
     },
     {
       "code": "BR",
@@ -64,7 +64,7 @@
       "code": "US",
       "name": "United States",
       "flag": "🇺🇸",
-      "views": 826
+      "views": 856
     },
     {
       "code": "BR",
@@ -126,7 +126,7 @@
       "videoId": "8khugdipSJM",
       "title": "Shieldbearer – Tidings of Comfort and Joy (God Rest Ye Merry Gentlemen) [Metal Christmas Anthem]",
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
-      "views": 8347,
+      "views": 8348,
       "likes": 26,
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM"
@@ -139,7 +139,7 @@
       "thumbnail": "https://i.ytimg.com/vi/VEU2PLkmgEQ/mqdefault.jpg",
       "publishedAt": "2026-10-30T16:35:13Z",
       "url": "https://www.youtube.com/watch?v=VEU2PLkmgEQ",
-      "views": 1128
+      "views": 1188
     },
     {
       "videoId": "LjQZ_m5LqhE",
@@ -147,7 +147,7 @@
       "thumbnail": "https://i.ytimg.com/vi/LjQZ_m5LqhE/mqdefault.jpg",
       "publishedAt": "2026-10-26T18:18:56Z",
       "url": "https://www.youtube.com/watch?v=LjQZ_m5LqhE",
-      "views": 204
+      "views": 212
     },
     {
       "videoId": "2P8VZ1OwF1k",
@@ -614,23 +614,33 @@
       "date": "2026-10-31",
       "views": 439,
       "minutes": 112
+    },
+    {
+      "date": "2026-11-01",
+      "views": 74,
+      "minutes": 38
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "SHORTS",
       "label": "Shorts feed",
-      "views": 1016
+      "views": 1062
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 224
+      "views": 227
     },
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 125
+      "views": 127
+    },
+    {
+      "source": "YT_SEARCH",
+      "label": "YouTube search",
+      "views": 119
     },
     {
       "source": "PLAYLIST",
@@ -638,34 +648,34 @@
       "views": 117
     },
     {
-      "source": "YT_SEARCH",
-      "label": "YouTube search",
-      "views": 110
-    },
-    {
       "source": "YT_OTHER_PAGE",
       "label": "Other YouTube page",
-      "views": 96
+      "views": 104
     },
     {
       "source": "YT_CHANNEL",
       "label": "Channel page",
-      "views": 73
+      "views": 74
     },
     {
       "source": "NO_LINK_OTHER",
       "label": "No referrer",
-      "views": 43
+      "views": 44
     },
     {
       "source": "RELATED_VIDEO",
       "label": "Related video",
-      "views": 39
+      "views": 41
     },
     {
       "source": "NOTIFICATION",
       "label": "Notifications",
       "views": 4
+    },
+    {
+      "source": "SOUND_PAGE",
+      "label": "sound page",
+      "views": 2
     }
   ]
 }
