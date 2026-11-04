@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-04T03:35:14.547Z",
+  "generated_at": "2026-11-04T21:35:14.643Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -29,14 +29,14 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 1387,
-      "watchMinutes": 412,
-      "avgViewDurationSec": 41
+      "views": 1419,
+      "watchMinutes": 437,
+      "avgViewDurationSec": 42
     },
     "last_30": {
-      "views": 1877,
-      "watchMinutes": 1357,
-      "avgViewDurationSec": 85
+      "views": 1909,
+      "watchMinutes": 1382,
+      "avgViewDurationSec": 84
     }
   },
   "last_48h_countries": [
@@ -133,7 +133,7 @@
       "thumbnail": "https://i.ytimg.com/vi/VEU2PLkmgEQ/mqdefault.jpg",
       "publishedAt": "2026-10-30T16:35:13Z",
       "url": "https://www.youtube.com/watch?v=VEU2PLkmgEQ",
-      "views": 1188
+      "views": 1197
     },
     {
       "videoId": "LjQZ_m5LqhE",
@@ -141,7 +141,7 @@
       "thumbnail": "https://i.ytimg.com/vi/LjQZ_m5LqhE/mqdefault.jpg",
       "publishedAt": "2026-10-26T18:18:56Z",
       "url": "https://www.youtube.com/watch?v=LjQZ_m5LqhE",
-      "views": 212
+      "views": 219
     },
     {
       "videoId": "2P8VZ1OwF1k",
@@ -149,7 +149,7 @@
       "thumbnail": "https://i.ytimg.com/vi/2P8VZ1OwF1k/mqdefault.jpg",
       "publishedAt": "2026-09-06T12:30:38Z",
       "url": "https://www.youtube.com/watch?v=2P8VZ1OwF1k",
-      "views": 73
+      "views": 75
     },
     {
       "videoId": "TsJvHYh3iJo",
@@ -165,7 +165,7 @@
       "thumbnail": "https://i.ytimg.com/vi/jCNAZyyt5o8/mqdefault.jpg",
       "publishedAt": "2026-09-02T15:26:11Z",
       "url": "https://www.youtube.com/watch?v=jCNAZyyt5o8",
-      "views": 59
+      "views": 60
     }
   ],
   "daily_views": [
@@ -608,28 +608,33 @@
       "date": "2026-11-01",
       "views": 74,
       "minutes": 38
+    },
+    {
+      "date": "2026-11-02",
+      "views": 32,
+      "minutes": 25
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "SHORTS",
       "label": "Shorts feed",
-      "views": 1062
+      "views": 1070
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 227
+      "views": 233
     },
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 126
+      "views": 134
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 118
+      "views": 125
     },
     {
       "source": "YT_OTHER_PAGE",
@@ -649,12 +654,12 @@
     {
       "source": "NO_LINK_OTHER",
       "label": "No referrer",
-      "views": 43
+      "views": 45
     },
     {
       "source": "RELATED_VIDEO",
       "label": "Related video",
-      "views": 41
+      "views": 42
     },
     {
       "source": "NOTIFICATION",
