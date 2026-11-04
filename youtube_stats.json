@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T21:35:14.560Z",
+  "generated_at": "2026-11-04T03:35:14.547Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,28 +15,28 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-10-30",
-      "end": "2026-11-01"
+      "start": "2026-10-31",
+      "end": "2026-11-02"
     },
     "last_7": {
-      "start": "2026-10-27",
-      "end": "2026-11-03"
+      "start": "2026-10-28",
+      "end": "2026-11-04"
     },
     "last_30": {
-      "start": "2026-10-04",
-      "end": "2026-11-03"
+      "start": "2026-10-05",
+      "end": "2026-11-04"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 1439,
-      "watchMinutes": 519,
-      "avgViewDurationSec": 50
+      "views": 1387,
+      "watchMinutes": 412,
+      "avgViewDurationSec": 41
     },
     "last_30": {
-      "views": 1921,
-      "watchMinutes": 1526,
-      "avgViewDurationSec": 91
+      "views": 1877,
+      "watchMinutes": 1357,
+      "avgViewDurationSec": 85
     }
   },
   "last_48h_countries": [
@@ -44,19 +44,13 @@
       "code": "US",
       "name": "United States",
       "flag": "🇺🇸",
-      "views": 791
+      "views": 281
     },
     {
       "code": "BR",
       "name": "Brazil",
       "flag": "🇧🇷",
-      "views": 73
-    },
-    {
-      "code": "CA",
-      "name": "Canada",
-      "flag": "🇨🇦",
-      "views": 33
+      "views": 25
     }
   ],
   "last_30d_countries": [
@@ -64,7 +58,7 @@
       "code": "US",
       "name": "United States",
       "flag": "🇺🇸",
-      "views": 856
+      "views": 822
     },
     {
       "code": "BR",
@@ -175,11 +169,6 @@
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-08-05",
-      "views": 6,
-      "minutes": 5
-    },
     {
       "date": "2026-08-06",
       "views": 6,
@@ -635,22 +624,22 @@
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 127
+      "views": 126
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 119
-    },
-    {
-      "source": "PLAYLIST",
-      "label": "From a playlist",
-      "views": 117
+      "views": 118
     },
     {
       "source": "YT_OTHER_PAGE",
       "label": "Other YouTube page",
       "views": 104
+    },
+    {
+      "source": "PLAYLIST",
+      "label": "From a playlist",
+      "views": 76
     },
     {
       "source": "YT_CHANNEL",
@@ -660,7 +649,7 @@
     {
       "source": "NO_LINK_OTHER",
       "label": "No referrer",
-      "views": 44
+      "views": 43
     },
     {
       "source": "RELATED_VIDEO",
