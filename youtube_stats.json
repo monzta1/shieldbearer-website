@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-04T21:35:14.643Z",
+  "generated_at": "2026-11-05T03:35:14.354Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,27 +15,27 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-10-31",
-      "end": "2026-11-02"
+      "start": "2026-11-01",
+      "end": "2026-11-03"
     },
     "last_7": {
-      "start": "2026-10-28",
-      "end": "2026-11-04"
+      "start": "2026-10-29",
+      "end": "2026-11-05"
     },
     "last_30": {
-      "start": "2026-10-05",
-      "end": "2026-11-04"
+      "start": "2026-10-06",
+      "end": "2026-11-05"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 1419,
-      "watchMinutes": 437,
-      "avgViewDurationSec": 42
+      "views": 1383,
+      "watchMinutes": 371,
+      "avgViewDurationSec": 37
     },
     "last_30": {
-      "views": 1909,
-      "watchMinutes": 1382,
+      "views": 1903,
+      "watchMinutes": 1374,
       "avgViewDurationSec": 84
     }
   },
@@ -44,13 +44,7 @@
       "code": "US",
       "name": "United States",
       "flag": "🇺🇸",
-      "views": 281
-    },
-    {
-      "code": "BR",
-      "name": "Brazil",
-      "flag": "🇧🇷",
-      "views": 25
+      "views": 30
     }
   ],
   "last_30d_countries": [
@@ -149,7 +143,7 @@
       "thumbnail": "https://i.ytimg.com/vi/2P8VZ1OwF1k/mqdefault.jpg",
       "publishedAt": "2026-09-06T12:30:38Z",
       "url": "https://www.youtube.com/watch?v=2P8VZ1OwF1k",
-      "views": 75
+      "views": 74
     },
     {
       "videoId": "TsJvHYh3iJo",
@@ -165,15 +159,10 @@
       "thumbnail": "https://i.ytimg.com/vi/jCNAZyyt5o8/mqdefault.jpg",
       "publishedAt": "2026-09-02T15:26:11Z",
       "url": "https://www.youtube.com/watch?v=jCNAZyyt5o8",
-      "views": 60
+      "views": 59
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-08-06",
-      "views": 6,
-      "minutes": 10
-    },
     {
       "date": "2026-08-07",
       "views": 6,
@@ -629,7 +618,7 @@
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 134
+      "views": 133
     },
     {
       "source": "YT_SEARCH",
@@ -642,19 +631,19 @@
       "views": 104
     },
     {
-      "source": "PLAYLIST",
-      "label": "From a playlist",
-      "views": 76
-    },
-    {
       "source": "YT_CHANNEL",
       "label": "Channel page",
       "views": 74
     },
     {
+      "source": "PLAYLIST",
+      "label": "From a playlist",
+      "views": 73
+    },
+    {
       "source": "NO_LINK_OTHER",
       "label": "No referrer",
-      "views": 45
+      "views": 43
     },
     {
       "source": "RELATED_VIDEO",
