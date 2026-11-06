@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T03:35:14.599Z",
+  "generated_at": "2026-11-06T21:35:14.214Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -29,13 +29,13 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 1333,
-      "watchMinutes": 317,
+      "views": 1329,
+      "watchMinutes": 318,
       "avgViewDurationSec": 33
     },
     "last_30": {
-      "views": 1889,
-      "watchMinutes": 1317,
+      "views": 1885,
+      "watchMinutes": 1318,
       "avgViewDurationSec": 82
     }
   },
@@ -98,7 +98,7 @@
       "videoId": "9FHgbbVBT1A",
       "title": "Ruler of the Storm – Shieldbearer (Official Lyric Video | Christian Metal Anthem)",
       "thumbnail": "https://i.ytimg.com/vi/9FHgbbVBT1A/mqdefault.jpg",
-      "views": 9844,
+      "views": 9845,
       "likes": 717,
       "publishedAt": "2025-05-16T10:00:06Z",
       "url": "https://www.youtube.com/watch?v=9FHgbbVBT1A"
@@ -120,7 +120,7 @@
       "thumbnail": "https://i.ytimg.com/vi/VEU2PLkmgEQ/mqdefault.jpg",
       "publishedAt": "2026-10-30T16:35:13Z",
       "url": "https://www.youtube.com/watch?v=VEU2PLkmgEQ",
-      "views": 1197
+      "views": 1187
     },
     {
       "videoId": "LjQZ_m5LqhE",
@@ -128,7 +128,7 @@
       "thumbnail": "https://i.ytimg.com/vi/LjQZ_m5LqhE/mqdefault.jpg",
       "publishedAt": "2026-10-26T18:18:56Z",
       "url": "https://www.youtube.com/watch?v=LjQZ_m5LqhE",
-      "views": 220
+      "views": 224
     },
     {
       "videoId": "TsJvHYh3iJo",
@@ -144,7 +144,7 @@
       "thumbnail": "https://i.ytimg.com/vi/2P8VZ1OwF1k/mqdefault.jpg",
       "publishedAt": "2026-09-06T12:30:38Z",
       "url": "https://www.youtube.com/watch?v=2P8VZ1OwF1k",
-      "views": 70
+      "views": 71
     },
     {
       "videoId": "jCNAZyyt5o8",
@@ -573,12 +573,12 @@
     },
     {
       "date": "2026-10-30",
-      "views": 779,
-      "minutes": 140
+      "views": 773,
+      "minutes": 139
     },
     {
       "date": "2026-10-31",
-      "views": 439,
+      "views": 434,
       "minutes": 112
     },
     {
@@ -595,28 +595,33 @@
       "date": "2026-11-03",
       "views": 9,
       "minutes": 1
+    },
+    {
+      "date": "2026-11-04",
+      "views": 7,
+      "minutes": 1
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "SHORTS",
       "label": "Shorts feed",
-      "views": 1060
+      "views": 1061
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 234
+      "views": 235
+    },
+    {
+      "source": "YT_SEARCH",
+      "label": "YouTube search",
+      "views": 134
     },
     {
       "source": "EXT_URL",
       "label": "External URL",
       "views": 131
-    },
-    {
-      "source": "YT_SEARCH",
-      "label": "YouTube search",
-      "views": 129
     },
     {
       "source": "YT_OTHER_PAGE",
