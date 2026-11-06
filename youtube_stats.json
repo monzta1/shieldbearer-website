@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T21:35:14.334Z",
+  "generated_at": "2026-11-06T03:35:14.599Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,44 +15,37 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-11-01",
-      "end": "2026-11-03"
+      "start": "2026-11-02",
+      "end": "2026-11-04"
     },
     "last_7": {
-      "start": "2026-10-29",
-      "end": "2026-11-05"
+      "start": "2026-10-30",
+      "end": "2026-11-06"
     },
     "last_30": {
-      "start": "2026-10-06",
-      "end": "2026-11-05"
+      "start": "2026-10-07",
+      "end": "2026-11-06"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 1392,
-      "watchMinutes": 373,
-      "avgViewDurationSec": 37
+      "views": 1333,
+      "watchMinutes": 317,
+      "avgViewDurationSec": 33
     },
     "last_30": {
-      "views": 1912,
-      "watchMinutes": 1375,
-      "avgViewDurationSec": 84
+      "views": 1889,
+      "watchMinutes": 1317,
+      "avgViewDurationSec": 82
     }
   },
-  "last_48h_countries": [
-    {
-      "code": "US",
-      "name": "United States",
-      "flag": "🇺🇸",
-      "views": 30
-    }
-  ],
+  "last_48h_countries": [],
   "last_30d_countries": [
     {
       "code": "US",
       "name": "United States",
       "flag": "🇺🇸",
-      "views": 822
+      "views": 812
     },
     {
       "code": "BR",
@@ -114,7 +107,7 @@
       "videoId": "8khugdipSJM",
       "title": "Shieldbearer – Tidings of Comfort and Joy (God Rest Ye Merry Gentlemen) [Metal Christmas Anthem]",
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
-      "views": 8349,
+      "views": 8350,
       "likes": 26,
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM"
@@ -138,20 +131,20 @@
       "views": 220
     },
     {
-      "videoId": "2P8VZ1OwF1k",
-      "title": "TONECOMMAND AI building a Soldano SLO-100 inspired preset on my FM9",
-      "thumbnail": "https://i.ytimg.com/vi/2P8VZ1OwF1k/mqdefault.jpg",
-      "publishedAt": "2026-09-06T12:30:38Z",
-      "url": "https://www.youtube.com/watch?v=2P8VZ1OwF1k",
-      "views": 74
-    },
-    {
       "videoId": "TsJvHYh3iJo",
       "title": "SHIELDBEARER | MONOLITH | CHRISTIAN METAL",
       "thumbnail": "https://i.ytimg.com/vi/TsJvHYh3iJo/mqdefault.jpg",
       "publishedAt": "2026-10-18T00:41:07Z",
       "url": "https://www.youtube.com/watch?v=TsJvHYh3iJo",
       "views": 73
+    },
+    {
+      "videoId": "2P8VZ1OwF1k",
+      "title": "TONECOMMAND AI building a Soldano SLO-100 inspired preset on my FM9",
+      "thumbnail": "https://i.ytimg.com/vi/2P8VZ1OwF1k/mqdefault.jpg",
+      "publishedAt": "2026-09-06T12:30:38Z",
+      "url": "https://www.youtube.com/watch?v=2P8VZ1OwF1k",
+      "views": 70
     },
     {
       "videoId": "jCNAZyyt5o8",
@@ -163,11 +156,6 @@
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-08-07",
-      "views": 6,
-      "minutes": 6
-    },
     {
       "date": "2026-08-08",
       "views": 14,
@@ -623,12 +611,12 @@
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 134
+      "views": 131
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 131
+      "views": 129
     },
     {
       "source": "YT_OTHER_PAGE",
@@ -638,22 +626,22 @@
     {
       "source": "YT_CHANNEL",
       "label": "Channel page",
-      "views": 74
+      "views": 71
     },
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 73
-    },
-    {
-      "source": "NO_LINK_OTHER",
-      "label": "No referrer",
-      "views": 43
+      "views": 59
     },
     {
       "source": "RELATED_VIDEO",
       "label": "Related video",
       "views": 43
+    },
+    {
+      "source": "NO_LINK_OTHER",
+      "label": "No referrer",
+      "views": 42
     },
     {
       "source": "NOTIFICATION",
