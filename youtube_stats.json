@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T21:35:14.013Z",
+  "generated_at": "2026-11-08T03:35:14.165Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,27 +15,27 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-11-03",
-      "end": "2026-11-05"
+      "start": "2026-11-04",
+      "end": "2026-11-06"
     },
     "last_7": {
-      "start": "2026-10-31",
-      "end": "2026-11-07"
+      "start": "2026-11-01",
+      "end": "2026-11-08"
     },
     "last_30": {
-      "start": "2026-10-08",
-      "end": "2026-11-07"
+      "start": "2026-10-09",
+      "end": "2026-11-08"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 572,
-      "watchMinutes": 215,
-      "avgViewDurationSec": 52
+      "views": 138,
+      "watchMinutes": 103,
+      "avgViewDurationSec": 84
     },
     "last_30": {
-      "views": 1899,
-      "watchMinutes": 1347,
+      "views": 1893,
+      "watchMinutes": 1337,
       "avgViewDurationSec": 83
     }
   },
@@ -71,7 +71,7 @@
       "videoId": "6u_a5zdTLWQ",
       "title": "Shieldbearer – Come and Restore [Christian Worship | Lanterns Album | Official Audio]",
       "thumbnail": "https://i.ytimg.com/vi/6u_a5zdTLWQ/mqdefault.jpg",
-      "views": 96127,
+      "views": 96128,
       "likes": 38,
       "publishedAt": "2025-05-04T03:07:07Z",
       "url": "https://www.youtube.com/watch?v=6u_a5zdTLWQ"
@@ -144,7 +144,7 @@
       "thumbnail": "https://i.ytimg.com/vi/2P8VZ1OwF1k/mqdefault.jpg",
       "publishedAt": "2026-09-06T12:30:38Z",
       "url": "https://www.youtube.com/watch?v=2P8VZ1OwF1k",
-      "views": 73
+      "views": 72
     },
     {
       "videoId": "jCNAZyyt5o8",
@@ -152,15 +152,10 @@
       "thumbnail": "https://i.ytimg.com/vi/jCNAZyyt5o8/mqdefault.jpg",
       "publishedAt": "2026-09-02T15:26:11Z",
       "url": "https://www.youtube.com/watch?v=jCNAZyyt5o8",
-      "views": 63
+      "views": 61
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-08-09",
-      "views": 5,
-      "minutes": 12
-    },
     {
       "date": "2026-08-10",
       "views": 11,
@@ -616,17 +611,17 @@
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 140
+      "views": 139
     },
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 133
+      "views": 131
     },
     {
       "source": "YT_OTHER_PAGE",
       "label": "Other YouTube page",
-      "views": 104
+      "views": 103
     },
     {
       "source": "YT_CHANNEL",
@@ -636,12 +631,12 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 61
+      "views": 60
     },
     {
       "source": "RELATED_VIDEO",
       "label": "Related video",
-      "views": 45
+      "views": 44
     },
     {
       "source": "NO_LINK_OTHER",
