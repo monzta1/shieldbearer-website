@@ -1,100 +1,105 @@
 {
-  "generatedAt": "2026-11-08T08:00:14.849Z",
+  "generatedAt": "2026-11-09T08:00:15.081Z",
   "period": {
     "label": "November 2026 so far",
     "start": "2026-11-01",
     "end": "2026-11-30"
   },
   "headline": {
-    "sessions": 12,
-    "deltaPct": -69.2,
+    "sessions": 17,
+    "deltaPct": -56.4,
     "comparison": "vs October 2026"
   },
   "channels": [
     {
       "name": "Direct",
-      "sessions": 7,
-      "share": 58.3
+      "sessions": 12,
+      "share": 70.6
     },
     {
       "name": "Organic Social",
       "sessions": 4,
-      "share": 33.3
+      "share": 23.5
     },
     {
       "name": "Organic Search",
       "sessions": 1,
-      "share": 8.3
+      "share": 5.9
     }
   ],
   "geography": [
     {
       "name": "United States",
-      "sessions": 5,
-      "share": 41.7
+      "sessions": 9,
+      "share": 52.9
     },
     {
       "name": "(not set)",
       "sessions": 1,
-      "share": 8.3
+      "share": 5.9
     },
     {
       "name": "Australia",
       "sessions": 1,
-      "share": 8.3
+      "share": 5.9
+    },
+    {
+      "name": "China",
+      "sessions": 1,
+      "share": 5.9
     },
     {
       "name": "Finland",
       "sessions": 1,
-      "share": 8.3
+      "share": 5.9
     },
     {
       "name": "Germany",
       "sessions": 1,
-      "share": 8.3
-    },
-    {
-      "name": "Ireland",
-      "sessions": 1,
-      "share": 8.3
+      "share": 5.9
     }
   ],
   "cities": [
     {
-      "name": "Reston, Virginia",
-      "sessions": 2,
-      "share": 15.4
-    },
-    {
       "name": "Unknown",
-      "sessions": 1,
-      "share": 7.7
+      "sessions": 3,
+      "share": 15
     },
     {
       "name": "(not set)",
-      "sessions": 1,
-      "share": 7.7
+      "sessions": 2,
+      "share": 10
+    },
+    {
+      "name": "Burlington, Vermont",
+      "sessions": 2,
+      "share": 10
+    },
+    {
+      "name": "Reston, Virginia",
+      "sessions": 2,
+      "share": 10
     },
     {
       "name": "(not set), Virginia",
       "sessions": 1,
-      "share": 7.7
+      "share": 5
     },
     {
       "name": "Bergen, Lower Saxony",
       "sessions": 1,
-      "share": 7.7
-    },
-    {
-      "name": "Casablanca, Casablanca-Settat",
-      "sessions": 1,
-      "share": 7.7
+      "share": 5
     }
   ],
   "events": [
     {
       "name": "scroll_depth",
-      "count": 16,
+      "count": 32,
+      "engagedShare": null
+    },
+    {
+      "name": "listen_click",
+      "count": 1,
       "engagedShare": null
     }
   ],
