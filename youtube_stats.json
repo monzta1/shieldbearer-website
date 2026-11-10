@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T03:35:14.151Z",
+  "generated_at": "2026-11-10T21:35:14.050Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -29,23 +29,30 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 62,
-      "watchMinutes": 100,
-      "avgViewDurationSec": 127
+      "views": 94,
+      "watchMinutes": 223,
+      "avgViewDurationSec": 175
     },
     "last_30": {
-      "views": 1892,
-      "watchMinutes": 1319,
-      "avgViewDurationSec": 81
+      "views": 1924,
+      "watchMinutes": 1441,
+      "avgViewDurationSec": 87
     }
   },
-  "last_48h_countries": [],
+  "last_48h_countries": [
+    {
+      "code": "US",
+      "name": "United States",
+      "flag": "🇺🇸",
+      "views": 13
+    }
+  ],
   "last_30d_countries": [
     {
       "code": "US",
       "name": "United States",
       "flag": "🇺🇸",
-      "views": 812
+      "views": 825
     },
     {
       "code": "BR",
@@ -128,7 +135,15 @@
       "thumbnail": "https://i.ytimg.com/vi/LjQZ_m5LqhE/mqdefault.jpg",
       "publishedAt": "2026-10-26T18:18:56Z",
       "url": "https://www.youtube.com/watch?v=LjQZ_m5LqhE",
-      "views": 228
+      "views": 232
+    },
+    {
+      "videoId": "2P8VZ1OwF1k",
+      "title": "TONECOMMAND AI building a Soldano SLO-100 inspired preset on my FM9",
+      "thumbnail": "https://i.ytimg.com/vi/2P8VZ1OwF1k/mqdefault.jpg",
+      "publishedAt": "2026-09-06T12:30:38Z",
+      "url": "https://www.youtube.com/watch?v=2P8VZ1OwF1k",
+      "views": 76
     },
     {
       "videoId": "TsJvHYh3iJo",
@@ -137,14 +152,6 @@
       "publishedAt": "2026-10-18T00:41:07Z",
       "url": "https://www.youtube.com/watch?v=TsJvHYh3iJo",
       "views": 75
-    },
-    {
-      "videoId": "2P8VZ1OwF1k",
-      "title": "TONECOMMAND AI building a Soldano SLO-100 inspired preset on my FM9",
-      "thumbnail": "https://i.ytimg.com/vi/2P8VZ1OwF1k/mqdefault.jpg",
-      "publishedAt": "2026-09-06T12:30:38Z",
-      "url": "https://www.youtube.com/watch?v=2P8VZ1OwF1k",
-      "views": 73
     },
     {
       "videoId": "jCNAZyyt5o8",
@@ -595,6 +602,11 @@
       "date": "2026-11-07",
       "views": 16,
       "minutes": 31
+    },
+    {
+      "date": "2026-11-08",
+      "views": 32,
+      "minutes": 122
     }
   ],
   "traffic_sources_30d": [
@@ -606,32 +618,32 @@
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 240
+      "views": 243
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 137
+      "views": 140
     },
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 135
+      "views": 137
     },
     {
       "source": "YT_OTHER_PAGE",
       "label": "Other YouTube page",
-      "views": 103
+      "views": 104
     },
     {
       "source": "YT_CHANNEL",
       "label": "Channel page",
-      "views": 70
+      "views": 74
     },
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 52
+      "views": 71
     },
     {
       "source": "NO_LINK_OTHER",
