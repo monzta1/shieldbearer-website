@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T21:35:14.050Z",
+  "generated_at": "2026-11-11T03:35:14.130Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,28 +15,28 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-11-06",
-      "end": "2026-11-08"
+      "start": "2026-11-07",
+      "end": "2026-11-09"
     },
     "last_7": {
-      "start": "2026-11-03",
-      "end": "2026-11-10"
+      "start": "2026-11-04",
+      "end": "2026-11-11"
     },
     "last_30": {
-      "start": "2026-10-11",
-      "end": "2026-11-10"
+      "start": "2026-10-12",
+      "end": "2026-11-11"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 94,
-      "watchMinutes": 223,
-      "avgViewDurationSec": 175
+      "views": 85,
+      "watchMinutes": 221,
+      "avgViewDurationSec": 184
     },
     "last_30": {
-      "views": 1924,
-      "watchMinutes": 1441,
-      "avgViewDurationSec": 87
+      "views": 1907,
+      "watchMinutes": 1413,
+      "avgViewDurationSec": 86
     }
   },
   "last_48h_countries": [
@@ -96,7 +96,7 @@
       "videoId": "vBGEIMXs6h0",
       "title": "Celestial Shield (Lyric Video) – Shieldbearer | Christian Metal | Israel, Prophecy & Warfare",
       "thumbnail": "https://i.ytimg.com/vi/vBGEIMXs6h0/mqdefault.jpg",
-      "views": 12066,
+      "views": 12067,
       "likes": 531,
       "publishedAt": "2025-07-15T02:04:57Z",
       "url": "https://www.youtube.com/watch?v=vBGEIMXs6h0"
@@ -138,14 +138,6 @@
       "views": 232
     },
     {
-      "videoId": "2P8VZ1OwF1k",
-      "title": "TONECOMMAND AI building a Soldano SLO-100 inspired preset on my FM9",
-      "thumbnail": "https://i.ytimg.com/vi/2P8VZ1OwF1k/mqdefault.jpg",
-      "publishedAt": "2026-09-06T12:30:38Z",
-      "url": "https://www.youtube.com/watch?v=2P8VZ1OwF1k",
-      "views": 76
-    },
-    {
       "videoId": "TsJvHYh3iJo",
       "title": "SHIELDBEARER | MONOLITH | CHRISTIAN METAL",
       "thumbnail": "https://i.ytimg.com/vi/TsJvHYh3iJo/mqdefault.jpg",
@@ -154,20 +146,23 @@
       "views": 75
     },
     {
+      "videoId": "2P8VZ1OwF1k",
+      "title": "TONECOMMAND AI building a Soldano SLO-100 inspired preset on my FM9",
+      "thumbnail": "https://i.ytimg.com/vi/2P8VZ1OwF1k/mqdefault.jpg",
+      "publishedAt": "2026-09-06T12:30:38Z",
+      "url": "https://www.youtube.com/watch?v=2P8VZ1OwF1k",
+      "views": 73
+    },
+    {
       "videoId": "jCNAZyyt5o8",
       "title": "I Typed One Sentence. AI Built an 8-Scene Judas Priest FM9 Preset in 6 Minutes | ToneCommand",
       "thumbnail": "https://i.ytimg.com/vi/jCNAZyyt5o8/mqdefault.jpg",
       "publishedAt": "2026-09-02T15:26:11Z",
       "url": "https://www.youtube.com/watch?v=jCNAZyyt5o8",
-      "views": 60
+      "views": 57
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-08-12",
-      "views": 10,
-      "minutes": 18
-    },
     {
       "date": "2026-08-13",
       "views": 6,
@@ -618,22 +613,22 @@
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 243
+      "views": 242
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 140
+      "views": 136
     },
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 137
+      "views": 129
     },
     {
       "source": "YT_OTHER_PAGE",
       "label": "Other YouTube page",
-      "views": 104
+      "views": 102
     },
     {
       "source": "YT_CHANNEL",
@@ -643,7 +638,7 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 71
+      "views": 70
     },
     {
       "source": "NO_LINK_OTHER",
@@ -653,7 +648,7 @@
     {
       "source": "RELATED_VIDEO",
       "label": "Related video",
-      "views": 43
+      "views": 42
     },
     {
       "source": "NOTIFICATION",
