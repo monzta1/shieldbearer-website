@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T03:35:14.130Z",
+  "generated_at": "2026-11-11T21:35:14.733Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -29,14 +29,14 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 85,
-      "watchMinutes": 221,
-      "avgViewDurationSec": 184
+      "views": 204,
+      "watchMinutes": 247,
+      "avgViewDurationSec": 133
     },
     "last_30": {
-      "views": 1907,
-      "watchMinutes": 1413,
-      "avgViewDurationSec": 86
+      "views": 2026,
+      "watchMinutes": 1439,
+      "avgViewDurationSec": 84
     }
   },
   "last_48h_countries": [
@@ -44,7 +44,7 @@
       "code": "US",
       "name": "United States",
       "flag": "🇺🇸",
-      "views": 13
+      "views": 65
     }
   ],
   "last_30d_countries": [
@@ -52,7 +52,7 @@
       "code": "US",
       "name": "United States",
       "flag": "🇺🇸",
-      "views": 825
+      "views": 877
     },
     {
       "code": "BR",
@@ -87,7 +87,7 @@
       "videoId": "9NQkaZbntUs",
       "title": "Shieldbearer – Pahalgam (A Prayer for India) [Official Audio]",
       "thumbnail": "https://i.ytimg.com/vi/9NQkaZbntUs/mqdefault.jpg",
-      "views": 62397,
+      "views": 62398,
       "likes": 317,
       "publishedAt": "2025-04-26T15:28:11Z",
       "url": "https://www.youtube.com/watch?v=9NQkaZbntUs"
@@ -135,7 +135,23 @@
       "thumbnail": "https://i.ytimg.com/vi/LjQZ_m5LqhE/mqdefault.jpg",
       "publishedAt": "2026-10-26T18:18:56Z",
       "url": "https://www.youtube.com/watch?v=LjQZ_m5LqhE",
-      "views": 232
+      "views": 235
+    },
+    {
+      "videoId": "U5PFUAFlUT4",
+      "title": "Demon Hunter - I'm Done (SHIELDBEARER Cover) #Shorts",
+      "thumbnail": "https://i.ytimg.com/vi/U5PFUAFlUT4/mqdefault.jpg",
+      "publishedAt": "2026-11-09T22:48:48Z",
+      "url": "https://www.youtube.com/watch?v=U5PFUAFlUT4",
+      "views": 112
+    },
+    {
+      "videoId": "2P8VZ1OwF1k",
+      "title": "TONECOMMAND AI building a Soldano SLO-100 inspired preset on my FM9",
+      "thumbnail": "https://i.ytimg.com/vi/2P8VZ1OwF1k/mqdefault.jpg",
+      "publishedAt": "2026-09-06T12:30:38Z",
+      "url": "https://www.youtube.com/watch?v=2P8VZ1OwF1k",
+      "views": 75
     },
     {
       "videoId": "TsJvHYh3iJo",
@@ -144,22 +160,6 @@
       "publishedAt": "2026-10-18T00:41:07Z",
       "url": "https://www.youtube.com/watch?v=TsJvHYh3iJo",
       "views": 75
-    },
-    {
-      "videoId": "2P8VZ1OwF1k",
-      "title": "TONECOMMAND AI building a Soldano SLO-100 inspired preset on my FM9",
-      "thumbnail": "https://i.ytimg.com/vi/2P8VZ1OwF1k/mqdefault.jpg",
-      "publishedAt": "2026-09-06T12:30:38Z",
-      "url": "https://www.youtube.com/watch?v=2P8VZ1OwF1k",
-      "views": 73
-    },
-    {
-      "videoId": "jCNAZyyt5o8",
-      "title": "I Typed One Sentence. AI Built an 8-Scene Judas Priest FM9 Preset in 6 Minutes | ToneCommand",
-      "thumbnail": "https://i.ytimg.com/vi/jCNAZyyt5o8/mqdefault.jpg",
-      "publishedAt": "2026-09-02T15:26:11Z",
-      "url": "https://www.youtube.com/watch?v=jCNAZyyt5o8",
-      "views": 57
     }
   ],
   "daily_views": [
@@ -602,33 +602,38 @@
       "date": "2026-11-08",
       "views": 32,
       "minutes": 122
+    },
+    {
+      "date": "2026-11-09",
+      "views": 119,
+      "minutes": 25
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "SHORTS",
       "label": "Shorts feed",
-      "views": 1063
+      "views": 1167
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 242
+      "views": 246
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 136
+      "views": 139
     },
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 129
+      "views": 132
     },
     {
       "source": "YT_OTHER_PAGE",
       "label": "Other YouTube page",
-      "views": 102
+      "views": 106
     },
     {
       "source": "YT_CHANNEL",
@@ -648,7 +653,7 @@
     {
       "source": "RELATED_VIDEO",
       "label": "Related video",
-      "views": 42
+      "views": 43
     },
     {
       "source": "NOTIFICATION",
@@ -659,6 +664,11 @@
       "source": "SOUND_PAGE",
       "label": "sound page",
       "views": 2
+    },
+    {
+      "source": "HASHTAGS",
+      "label": "Hashtag pages",
+      "views": 0
     }
   ]
 }
