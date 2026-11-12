@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T21:35:14.733Z",
+  "generated_at": "2026-11-12T03:35:14.378Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,28 +15,28 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-11-07",
-      "end": "2026-11-09"
+      "start": "2026-11-08",
+      "end": "2026-11-10"
     },
     "last_7": {
-      "start": "2026-11-04",
-      "end": "2026-11-11"
+      "start": "2026-11-05",
+      "end": "2026-11-12"
     },
     "last_30": {
-      "start": "2026-10-12",
-      "end": "2026-11-11"
+      "start": "2026-10-13",
+      "end": "2026-11-12"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 204,
-      "watchMinutes": 247,
-      "avgViewDurationSec": 133
+      "views": 197,
+      "watchMinutes": 245,
+      "avgViewDurationSec": 135
     },
     "last_30": {
-      "views": 2026,
-      "watchMinutes": 1439,
-      "avgViewDurationSec": 84
+      "views": 2017,
+      "watchMinutes": 1412,
+      "avgViewDurationSec": 83
     }
   },
   "last_48h_countries": [
@@ -163,11 +163,6 @@
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-08-13",
-      "views": 6,
-      "minutes": 11
-    },
     {
       "date": "2026-08-14",
       "views": 5,
@@ -618,12 +613,12 @@
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 246
+      "views": 244
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 139
+      "views": 138
     },
     {
       "source": "EXT_URL",
@@ -638,22 +633,22 @@
     {
       "source": "YT_CHANNEL",
       "label": "Channel page",
-      "views": 74
+      "views": 72
     },
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 70
-    },
-    {
-      "source": "NO_LINK_OTHER",
-      "label": "No referrer",
-      "views": 43
+      "views": 68
     },
     {
       "source": "RELATED_VIDEO",
       "label": "Related video",
       "views": 43
+    },
+    {
+      "source": "NO_LINK_OTHER",
+      "label": "No referrer",
+      "views": 41
     },
     {
       "source": "NOTIFICATION",
