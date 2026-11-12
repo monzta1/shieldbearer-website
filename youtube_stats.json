@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T03:35:14.378Z",
+  "generated_at": "2026-11-12T21:35:14.318Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -29,14 +29,14 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 197,
-      "watchMinutes": 245,
-      "avgViewDurationSec": 135
+      "views": 300,
+      "watchMinutes": 265,
+      "avgViewDurationSec": 113
     },
     "last_30": {
-      "views": 2017,
-      "watchMinutes": 1412,
-      "avgViewDurationSec": 83
+      "views": 2120,
+      "watchMinutes": 1433,
+      "avgViewDurationSec": 82
     }
   },
   "last_48h_countries": [
@@ -78,7 +78,7 @@
       "videoId": "6u_a5zdTLWQ",
       "title": "Shieldbearer – Come and Restore [Christian Worship | Lanterns Album | Official Audio]",
       "thumbnail": "https://i.ytimg.com/vi/6u_a5zdTLWQ/mqdefault.jpg",
-      "views": 96128,
+      "views": 96129,
       "likes": 38,
       "publishedAt": "2025-05-04T03:07:07Z",
       "url": "https://www.youtube.com/watch?v=6u_a5zdTLWQ"
@@ -114,7 +114,7 @@
       "videoId": "8khugdipSJM",
       "title": "Shieldbearer – Tidings of Comfort and Joy (God Rest Ye Merry Gentlemen) [Metal Christmas Anthem]",
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
-      "views": 8355,
+      "views": 8356,
       "likes": 26,
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM"
@@ -135,7 +135,7 @@
       "thumbnail": "https://i.ytimg.com/vi/LjQZ_m5LqhE/mqdefault.jpg",
       "publishedAt": "2026-10-26T18:18:56Z",
       "url": "https://www.youtube.com/watch?v=LjQZ_m5LqhE",
-      "views": 235
+      "views": 242
     },
     {
       "videoId": "U5PFUAFlUT4",
@@ -143,7 +143,7 @@
       "thumbnail": "https://i.ytimg.com/vi/U5PFUAFlUT4/mqdefault.jpg",
       "publishedAt": "2026-11-09T22:48:48Z",
       "url": "https://www.youtube.com/watch?v=U5PFUAFlUT4",
-      "views": 112
+      "views": 202
     },
     {
       "videoId": "2P8VZ1OwF1k",
@@ -151,7 +151,7 @@
       "thumbnail": "https://i.ytimg.com/vi/2P8VZ1OwF1k/mqdefault.jpg",
       "publishedAt": "2026-09-06T12:30:38Z",
       "url": "https://www.youtube.com/watch?v=2P8VZ1OwF1k",
-      "views": 75
+      "views": 77
     },
     {
       "videoId": "TsJvHYh3iJo",
@@ -602,38 +602,43 @@
       "date": "2026-11-09",
       "views": 119,
       "minutes": 25
+    },
+    {
+      "date": "2026-11-10",
+      "views": 103,
+      "minutes": 20
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "SHORTS",
       "label": "Shorts feed",
-      "views": 1167
+      "views": 1244
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 244
+      "views": 249
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 138
+      "views": 146
     },
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 132
+      "views": 134
     },
     {
       "source": "YT_OTHER_PAGE",
       "label": "Other YouTube page",
-      "views": 106
+      "views": 113
     },
     {
       "source": "YT_CHANNEL",
       "label": "Channel page",
-      "views": 72
+      "views": 73
     },
     {
       "source": "PLAYLIST",
@@ -641,14 +646,14 @@
       "views": 68
     },
     {
+      "source": "NO_LINK_OTHER",
+      "label": "No referrer",
+      "views": 44
+    },
+    {
       "source": "RELATED_VIDEO",
       "label": "Related video",
       "views": 43
-    },
-    {
-      "source": "NO_LINK_OTHER",
-      "label": "No referrer",
-      "views": 41
     },
     {
       "source": "NOTIFICATION",
