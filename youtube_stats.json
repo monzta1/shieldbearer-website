@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T21:35:14.318Z",
+  "generated_at": "2026-11-13T03:35:13.930Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,28 +15,28 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-11-08",
-      "end": "2026-11-10"
+      "start": "2026-11-09",
+      "end": "2026-11-11"
     },
     "last_7": {
-      "start": "2026-11-05",
-      "end": "2026-11-12"
+      "start": "2026-11-06",
+      "end": "2026-11-13"
     },
     "last_30": {
-      "start": "2026-10-13",
-      "end": "2026-11-12"
+      "start": "2026-10-14",
+      "end": "2026-11-13"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 300,
-      "watchMinutes": 265,
-      "avgViewDurationSec": 113
+      "views": 284,
+      "watchMinutes": 225,
+      "avgViewDurationSec": 106
     },
     "last_30": {
-      "views": 2120,
-      "watchMinutes": 1433,
-      "avgViewDurationSec": 82
+      "views": 2098,
+      "watchMinutes": 1387,
+      "avgViewDurationSec": 81
     }
   },
   "last_48h_countries": [
@@ -44,7 +44,7 @@
       "code": "US",
       "name": "United States",
       "flag": "🇺🇸",
-      "views": 65
+      "views": 52
     }
   ],
   "last_30d_countries": [
@@ -151,7 +151,7 @@
       "thumbnail": "https://i.ytimg.com/vi/2P8VZ1OwF1k/mqdefault.jpg",
       "publishedAt": "2026-09-06T12:30:38Z",
       "url": "https://www.youtube.com/watch?v=2P8VZ1OwF1k",
-      "views": 77
+      "views": 76
     },
     {
       "videoId": "TsJvHYh3iJo",
@@ -163,11 +163,6 @@
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-08-14",
-      "views": 5,
-      "minutes": 17
-    },
     {
       "date": "2026-08-15",
       "views": 10,
@@ -623,12 +618,12 @@
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 146
+      "views": 144
     },
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 134
+      "views": 130
     },
     {
       "source": "YT_OTHER_PAGE",
@@ -643,12 +638,12 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 68
+      "views": 53
     },
     {
       "source": "NO_LINK_OTHER",
       "label": "No referrer",
-      "views": 44
+      "views": 43
     },
     {
       "source": "RELATED_VIDEO",
