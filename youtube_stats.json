@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T03:35:13.930Z",
+  "generated_at": "2026-11-13T21:35:14.680Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -29,14 +29,14 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 284,
-      "watchMinutes": 225,
-      "avgViewDurationSec": 106
+      "views": 327,
+      "watchMinutes": 233,
+      "avgViewDurationSec": 97
     },
     "last_30": {
-      "views": 2098,
-      "watchMinutes": 1387,
-      "avgViewDurationSec": 81
+      "views": 2141,
+      "watchMinutes": 1395,
+      "avgViewDurationSec": 80
     }
   },
   "last_48h_countries": [
@@ -135,7 +135,7 @@
       "thumbnail": "https://i.ytimg.com/vi/LjQZ_m5LqhE/mqdefault.jpg",
       "publishedAt": "2026-10-26T18:18:56Z",
       "url": "https://www.youtube.com/watch?v=LjQZ_m5LqhE",
-      "views": 242
+      "views": 244
     },
     {
       "videoId": "U5PFUAFlUT4",
@@ -143,7 +143,7 @@
       "thumbnail": "https://i.ytimg.com/vi/U5PFUAFlUT4/mqdefault.jpg",
       "publishedAt": "2026-11-09T22:48:48Z",
       "url": "https://www.youtube.com/watch?v=U5PFUAFlUT4",
-      "views": 202
+      "views": 238
     },
     {
       "videoId": "2P8VZ1OwF1k",
@@ -602,33 +602,38 @@
       "date": "2026-11-10",
       "views": 103,
       "minutes": 20
+    },
+    {
+      "date": "2026-11-11",
+      "views": 43,
+      "minutes": 8
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "SHORTS",
       "label": "Shorts feed",
-      "views": 1244
+      "views": 1278
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 249
+      "views": 250
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 144
+      "views": 146
     },
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 130
+      "views": 134
     },
     {
       "source": "YT_OTHER_PAGE",
       "label": "Other YouTube page",
-      "views": 113
+      "views": 115
     },
     {
       "source": "YT_CHANNEL",
