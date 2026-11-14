@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T03:35:14.275Z",
+  "generated_at": "2026-11-14T21:35:14.340Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -11,7 +11,7 @@
     "views_lifetime": 244907,
     "subscribers": 12200,
     "subscribers_hidden": false,
-    "video_count": 104
+    "video_count": 105
   },
   "windows": {
     "last_48h": {
@@ -29,13 +29,13 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 313,
-      "watchMinutes": 208,
+      "views": 318,
+      "watchMinutes": 212,
       "avgViewDurationSec": 95
     },
     "last_30": {
-      "views": 2131,
-      "watchMinutes": 1386,
+      "views": 2136,
+      "watchMinutes": 1391,
       "avgViewDurationSec": 80
     }
   },
@@ -89,7 +89,7 @@
       "videoId": "vBGEIMXs6h0",
       "title": "Celestial Shield (Lyric Video) – Shieldbearer | Christian Metal | Israel, Prophecy & Warfare",
       "thumbnail": "https://i.ytimg.com/vi/vBGEIMXs6h0/mqdefault.jpg",
-      "views": 12067,
+      "views": 12068,
       "likes": 531,
       "publishedAt": "2025-07-15T02:04:57Z",
       "url": "https://www.youtube.com/watch?v=vBGEIMXs6h0"
@@ -98,7 +98,7 @@
       "videoId": "9FHgbbVBT1A",
       "title": "Ruler of the Storm – Shieldbearer (Official Lyric Video | Christian Metal Anthem)",
       "thumbnail": "https://i.ytimg.com/vi/9FHgbbVBT1A/mqdefault.jpg",
-      "views": 9848,
+      "views": 9851,
       "likes": 717,
       "publishedAt": "2025-05-16T10:00:06Z",
       "url": "https://www.youtube.com/watch?v=9FHgbbVBT1A"
@@ -107,8 +107,8 @@
       "videoId": "8khugdipSJM",
       "title": "Shieldbearer – Tidings of Comfort and Joy (God Rest Ye Merry Gentlemen) [Metal Christmas Anthem]",
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
-      "views": 8356,
-      "likes": 26,
+      "views": 8358,
+      "likes": 27,
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM"
     }
@@ -136,7 +136,7 @@
       "thumbnail": "https://i.ytimg.com/vi/U5PFUAFlUT4/mqdefault.jpg",
       "publishedAt": "2026-11-09T22:48:48Z",
       "url": "https://www.youtube.com/watch?v=U5PFUAFlUT4",
-      "views": 238
+      "views": 239
     },
     {
       "videoId": "2P8VZ1OwF1k",
@@ -144,7 +144,7 @@
       "thumbnail": "https://i.ytimg.com/vi/2P8VZ1OwF1k/mqdefault.jpg",
       "publishedAt": "2026-09-06T12:30:38Z",
       "url": "https://www.youtube.com/watch?v=2P8VZ1OwF1k",
-      "views": 75
+      "views": 77
     },
     {
       "videoId": "TsJvHYh3iJo",
@@ -152,7 +152,7 @@
       "thumbnail": "https://i.ytimg.com/vi/TsJvHYh3iJo/mqdefault.jpg",
       "publishedAt": "2026-10-18T00:41:07Z",
       "url": "https://www.youtube.com/watch?v=TsJvHYh3iJo",
-      "views": 75
+      "views": 76
     }
   ],
   "daily_views": [
@@ -595,6 +595,11 @@
       "date": "2026-11-11",
       "views": 43,
       "minutes": 8
+    },
+    {
+      "date": "2026-11-12",
+      "views": 5,
+      "minutes": 4
     }
   ],
   "traffic_sources_30d": [
@@ -606,17 +611,17 @@
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 248
+      "views": 249
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 145
+      "views": 146
     },
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 130
+      "views": 132
     },
     {
       "source": "YT_OTHER_PAGE",
@@ -631,7 +636,7 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 51
+      "views": 52
     },
     {
       "source": "NO_LINK_OTHER",
