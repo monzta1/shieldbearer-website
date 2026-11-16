@@ -1,100 +1,100 @@
 {
-  "generatedAt": "2026-11-15T08:00:15.277Z",
+  "generatedAt": "2026-11-16T08:00:15.244Z",
   "period": {
     "label": "November 2026 so far",
     "start": "2026-11-01",
     "end": "2026-11-30"
   },
   "headline": {
-    "sessions": 25,
-    "deltaPct": -35.9,
+    "sessions": 29,
+    "deltaPct": -25.6,
     "comparison": "vs October 2026"
   },
   "channels": [
     {
       "name": "Direct",
-      "sessions": 19,
-      "share": 76
+      "sessions": 23,
+      "share": 79.3
     },
     {
       "name": "Organic Social",
       "sessions": 5,
-      "share": 20
+      "share": 17.2
     },
     {
       "name": "Organic Search",
       "sessions": 1,
-      "share": 4
+      "share": 3.4
     }
   ],
   "geography": [
     {
       "name": "United States",
-      "sessions": 14,
-      "share": 56
+      "sessions": 18,
+      "share": 62.1
     },
     {
       "name": "(not set)",
       "sessions": 3,
-      "share": 12
+      "share": 10.3
     },
     {
       "name": "Australia",
       "sessions": 1,
-      "share": 4
+      "share": 3.4
     },
     {
       "name": "China",
       "sessions": 1,
-      "share": 4
+      "share": 3.4
     },
     {
       "name": "Dominican Republic",
       "sessions": 1,
-      "share": 4
+      "share": 3.4
     },
     {
       "name": "Finland",
       "sessions": 1,
-      "share": 4
+      "share": 3.4
     }
   ],
   "cities": [
     {
       "name": "(not set)",
       "sessions": 8,
-      "share": 28.6
+      "share": 25
+    },
+    {
+      "name": "Unknown, Virginia",
+      "sessions": 4,
+      "share": 12.5
     },
     {
       "name": "Ashburn, Virginia",
       "sessions": 3,
-      "share": 10.7
+      "share": 9.4
     },
     {
       "name": "(not set), Virginia",
       "sessions": 2,
-      "share": 7.1
+      "share": 6.3
     },
     {
       "name": "Burlington, Vermont",
       "sessions": 2,
-      "share": 7.1
+      "share": 6.3
     },
     {
       "name": "Reston, Virginia",
       "sessions": 2,
-      "share": 7.1
-    },
-    {
-      "name": "Bergen, Lower Saxony",
-      "sessions": 1,
-      "share": 3.6
+      "share": 6.3
     }
   ],
   "events": [
     {
       "name": "scroll_depth",
-      "count": 43,
+      "count": 52,
       "engagedShare": null
     },
     {
