@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T03:35:13.992Z",
+  "generated_at": "2026-11-16T21:35:14.340Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -8,7 +8,7 @@
     "url": "https://www.youtube.com/channel/UCgL4mzUUcYtqxx-0IdjoqIw",
     "published_at": "2025-04-14T03:40:06.969878Z",
     "thumbnail": "https://yt3.ggpht.com/IpsLcp29bRpbou_LxaA2FazbHG9QfOHy_bcBiI8vkg_EBDaje4f78m2f1t4vsaB_gk5wqLLz=s800-c-k-c0x00ffffff-no-rj",
-    "views_lifetime": 244907,
+    "views_lifetime": 245659,
     "subscribers": 12200,
     "subscribers_hidden": false,
     "video_count": 105
@@ -29,23 +29,30 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 274,
-      "watchMinutes": 67,
-      "avgViewDurationSec": 41
+      "views": 376,
+      "watchMinutes": 295,
+      "avgViewDurationSec": 96
     },
     "last_30": {
-      "views": 2110,
-      "watchMinutes": 1352,
-      "avgViewDurationSec": 80
+      "views": 2212,
+      "watchMinutes": 1580,
+      "avgViewDurationSec": 86
     }
   },
-  "last_48h_countries": [],
+  "last_48h_countries": [
+    {
+      "code": "US",
+      "name": "United States",
+      "flag": "🇺🇸",
+      "views": 31
+    }
+  ],
   "last_30d_countries": [
     {
       "code": "US",
       "name": "United States",
       "flag": "🇺🇸",
-      "views": 877
+      "views": 908
     },
     {
       "code": "BR",
@@ -90,7 +97,7 @@
       "title": "Celestial Shield (Lyric Video) – Shieldbearer | Christian Metal | Israel, Prophecy & Warfare",
       "thumbnail": "https://i.ytimg.com/vi/vBGEIMXs6h0/mqdefault.jpg",
       "views": 12068,
-      "likes": 531,
+      "likes": 530,
       "publishedAt": "2025-07-15T02:04:57Z",
       "url": "https://www.youtube.com/watch?v=vBGEIMXs6h0"
     },
@@ -139,20 +146,20 @@
       "views": 239
     },
     {
+      "videoId": "6tygBKCVVTs",
+      "title": "SHIELDBEARER - REDEMPTION (A Liquid Metal Christmas) | Official Audio",
+      "thumbnail": "https://i.ytimg.com/vi/6tygBKCVVTs/mqdefault.jpg",
+      "publishedAt": "2026-11-14T14:33:30Z",
+      "url": "https://www.youtube.com/watch?v=6tygBKCVVTs",
+      "views": 84
+    },
+    {
       "videoId": "2P8VZ1OwF1k",
       "title": "TONECOMMAND AI building a Soldano SLO-100 inspired preset on my FM9",
       "thumbnail": "https://i.ytimg.com/vi/2P8VZ1OwF1k/mqdefault.jpg",
       "publishedAt": "2026-09-06T12:30:38Z",
       "url": "https://www.youtube.com/watch?v=2P8VZ1OwF1k",
-      "views": 76
-    },
-    {
-      "videoId": "TsJvHYh3iJo",
-      "title": "SHIELDBEARER | MONOLITH | CHRISTIAN METAL",
-      "thumbnail": "https://i.ytimg.com/vi/TsJvHYh3iJo/mqdefault.jpg",
-      "publishedAt": "2026-10-18T00:41:07Z",
-      "url": "https://www.youtube.com/watch?v=TsJvHYh3iJo",
-      "views": 76
+      "views": 77
     }
   ],
   "daily_views": [
@@ -595,6 +602,11 @@
       "date": "2026-11-13",
       "views": 4,
       "minutes": 8
+    },
+    {
+      "date": "2026-11-14",
+      "views": 102,
+      "minutes": 227
     }
   ],
   "traffic_sources_30d": [
@@ -606,42 +618,42 @@
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 244
+      "views": 256
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 139
+      "views": 147
     },
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 129
+      "views": 146
     },
     {
       "source": "YT_OTHER_PAGE",
       "label": "Other YouTube page",
-      "views": 113
-    },
-    {
-      "source": "YT_CHANNEL",
-      "label": "Channel page",
-      "views": 72
-    },
-    {
-      "source": "PLAYLIST",
-      "label": "From a playlist",
-      "views": 48
-    },
-    {
-      "source": "NO_LINK_OTHER",
-      "label": "No referrer",
-      "views": 42
+      "views": 116
     },
     {
       "source": "RELATED_VIDEO",
       "label": "Related video",
-      "views": 39
+      "views": 89
+    },
+    {
+      "source": "YT_CHANNEL",
+      "label": "Channel page",
+      "views": 73
+    },
+    {
+      "source": "PLAYLIST",
+      "label": "From a playlist",
+      "views": 51
+    },
+    {
+      "source": "NO_LINK_OTHER",
+      "label": "No referrer",
+      "views": 50
     },
     {
       "source": "NOTIFICATION",
