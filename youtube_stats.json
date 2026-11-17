@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T21:35:14.340Z",
+  "generated_at": "2026-11-17T03:35:14.508Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,28 +15,28 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-11-12",
-      "end": "2026-11-14"
+      "start": "2026-11-13",
+      "end": "2026-11-15"
     },
     "last_7": {
-      "start": "2026-11-09",
-      "end": "2026-11-16"
+      "start": "2026-11-10",
+      "end": "2026-11-17"
     },
     "last_30": {
-      "start": "2026-10-17",
-      "end": "2026-11-16"
+      "start": "2026-10-18",
+      "end": "2026-11-17"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 376,
-      "watchMinutes": 295,
-      "avgViewDurationSec": 96
+      "views": 257,
+      "watchMinutes": 270,
+      "avgViewDurationSec": 112
     },
     "last_30": {
-      "views": 2212,
-      "watchMinutes": 1580,
-      "avgViewDurationSec": 86
+      "views": 2163,
+      "watchMinutes": 1508,
+      "avgViewDurationSec": 85
     }
   },
   "last_48h_countries": [
@@ -70,7 +70,7 @@
       "code": "DE",
       "name": "Germany",
       "flag": "🇩🇪",
-      "views": 20
+      "views": 10
     }
   ],
   "top_videos": [
@@ -154,20 +154,15 @@
       "views": 84
     },
     {
-      "videoId": "2P8VZ1OwF1k",
-      "title": "TONECOMMAND AI building a Soldano SLO-100 inspired preset on my FM9",
-      "thumbnail": "https://i.ytimg.com/vi/2P8VZ1OwF1k/mqdefault.jpg",
-      "publishedAt": "2026-09-06T12:30:38Z",
-      "url": "https://www.youtube.com/watch?v=2P8VZ1OwF1k",
-      "views": 77
+      "videoId": "TsJvHYh3iJo",
+      "title": "SHIELDBEARER | MONOLITH | CHRISTIAN METAL",
+      "thumbnail": "https://i.ytimg.com/vi/TsJvHYh3iJo/mqdefault.jpg",
+      "publishedAt": "2026-10-18T00:41:07Z",
+      "url": "https://www.youtube.com/watch?v=TsJvHYh3iJo",
+      "views": 72
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-08-18",
-      "views": 5,
-      "minutes": 18
-    },
     {
       "date": "2026-08-19",
       "views": 2,
@@ -618,42 +613,42 @@
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 256
+      "views": 248
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 147
+      "views": 142
     },
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 146
+      "views": 120
     },
     {
       "source": "YT_OTHER_PAGE",
       "label": "Other YouTube page",
-      "views": 116
+      "views": 115
     },
     {
       "source": "RELATED_VIDEO",
       "label": "Related video",
-      "views": 89
+      "views": 86
     },
     {
       "source": "YT_CHANNEL",
       "label": "Channel page",
-      "views": 73
+      "views": 70
     },
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 51
+      "views": 50
     },
     {
       "source": "NO_LINK_OTHER",
       "label": "No referrer",
-      "views": 50
+      "views": 48
     },
     {
       "source": "NOTIFICATION",
