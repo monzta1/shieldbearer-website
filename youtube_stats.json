@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-17T03:35:14.508Z",
+  "generated_at": "2026-11-17T21:35:14.878Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -29,14 +29,14 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 257,
-      "watchMinutes": 270,
-      "avgViewDurationSec": 112
+      "views": 284,
+      "watchMinutes": 361,
+      "avgViewDurationSec": 129
     },
     "last_30": {
-      "views": 2163,
-      "watchMinutes": 1508,
-      "avgViewDurationSec": 85
+      "views": 2190,
+      "watchMinutes": 1600,
+      "avgViewDurationSec": 88
     }
   },
   "last_48h_countries": [
@@ -105,7 +105,7 @@
       "videoId": "9FHgbbVBT1A",
       "title": "Ruler of the Storm – Shieldbearer (Official Lyric Video | Christian Metal Anthem)",
       "thumbnail": "https://i.ytimg.com/vi/9FHgbbVBT1A/mqdefault.jpg",
-      "views": 9852,
+      "views": 9854,
       "likes": 717,
       "publishedAt": "2025-05-16T10:00:06Z",
       "url": "https://www.youtube.com/watch?v=9FHgbbVBT1A"
@@ -135,7 +135,7 @@
       "thumbnail": "https://i.ytimg.com/vi/LjQZ_m5LqhE/mqdefault.jpg",
       "publishedAt": "2026-10-26T18:18:56Z",
       "url": "https://www.youtube.com/watch?v=LjQZ_m5LqhE",
-      "views": 244
+      "views": 246
     },
     {
       "videoId": "U5PFUAFlUT4",
@@ -143,7 +143,7 @@
       "thumbnail": "https://i.ytimg.com/vi/U5PFUAFlUT4/mqdefault.jpg",
       "publishedAt": "2026-11-09T22:48:48Z",
       "url": "https://www.youtube.com/watch?v=U5PFUAFlUT4",
-      "views": 239
+      "views": 240
     },
     {
       "videoId": "6tygBKCVVTs",
@@ -151,7 +151,7 @@
       "thumbnail": "https://i.ytimg.com/vi/6tygBKCVVTs/mqdefault.jpg",
       "publishedAt": "2026-11-14T14:33:30Z",
       "url": "https://www.youtube.com/watch?v=6tygBKCVVTs",
-      "views": 84
+      "views": 94
     },
     {
       "videoId": "TsJvHYh3iJo",
@@ -602,53 +602,58 @@
       "date": "2026-11-14",
       "views": 102,
       "minutes": 227
+    },
+    {
+      "date": "2026-11-15",
+      "views": 27,
+      "minutes": 91
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "SHORTS",
       "label": "Shorts feed",
-      "views": 1278
+      "views": 1279
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 248
+      "views": 253
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 142
+      "views": 144
     },
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 120
+      "views": 130
     },
     {
       "source": "YT_OTHER_PAGE",
       "label": "Other YouTube page",
-      "views": 115
+      "views": 116
     },
     {
       "source": "RELATED_VIDEO",
       "label": "Related video",
-      "views": 86
+      "views": 87
     },
     {
       "source": "YT_CHANNEL",
       "label": "Channel page",
-      "views": 70
+      "views": 75
+    },
+    {
+      "source": "NO_LINK_OTHER",
+      "label": "No referrer",
+      "views": 50
     },
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
       "views": 50
-    },
-    {
-      "source": "NO_LINK_OTHER",
-      "label": "No referrer",
-      "views": 48
     },
     {
       "source": "NOTIFICATION",
