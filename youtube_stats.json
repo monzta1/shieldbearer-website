@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T03:35:14.113Z",
+  "generated_at": "2026-11-18T21:35:14.407Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -29,14 +29,14 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 181,
-      "watchMinutes": 341,
-      "avgViewDurationSec": 151
+      "views": 197,
+      "watchMinutes": 380,
+      "avgViewDurationSec": 152
     },
     "last_30": {
-      "views": 2156,
-      "watchMinutes": 1550,
-      "avgViewDurationSec": 88
+      "views": 2172,
+      "watchMinutes": 1589,
+      "avgViewDurationSec": 89
     }
   },
   "last_48h_countries": [
@@ -90,7 +90,7 @@
       "videoId": "vBGEIMXs6h0",
       "title": "Celestial Shield (Lyric Video) – Shieldbearer | Christian Metal | Israel, Prophecy & Warfare",
       "thumbnail": "https://i.ytimg.com/vi/vBGEIMXs6h0/mqdefault.jpg",
-      "views": 12068,
+      "views": 12069,
       "likes": 530,
       "publishedAt": "2025-07-15T02:04:57Z",
       "url": "https://www.youtube.com/watch?v=vBGEIMXs6h0"
@@ -108,7 +108,7 @@
       "videoId": "8khugdipSJM",
       "title": "Shieldbearer – Tidings of Comfort and Joy (God Rest Ye Merry Gentlemen) [Metal Christmas Anthem]",
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
-      "views": 8364,
+      "views": 8366,
       "likes": 27,
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM"
@@ -129,7 +129,7 @@
       "thumbnail": "https://i.ytimg.com/vi/LjQZ_m5LqhE/mqdefault.jpg",
       "publishedAt": "2026-10-26T18:18:56Z",
       "url": "https://www.youtube.com/watch?v=LjQZ_m5LqhE",
-      "views": 246
+      "views": 247
     },
     {
       "videoId": "U5PFUAFlUT4",
@@ -145,7 +145,7 @@
       "thumbnail": "https://i.ytimg.com/vi/6tygBKCVVTs/mqdefault.jpg",
       "publishedAt": "2026-11-14T14:33:30Z",
       "url": "https://www.youtube.com/watch?v=6tygBKCVVTs",
-      "views": 94
+      "views": 103
     },
     {
       "videoId": "TsJvHYh3iJo",
@@ -596,48 +596,53 @@
       "date": "2026-11-15",
       "views": 27,
       "minutes": 91
+    },
+    {
+      "date": "2026-11-16",
+      "views": 16,
+      "minutes": 39
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "SHORTS",
       "label": "Shorts feed",
-      "views": 1279
+      "views": 1283
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 244
+      "views": 248
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 143
-    },
-    {
-      "source": "YT_OTHER_PAGE",
-      "label": "Other YouTube page",
-      "views": 116
+      "views": 145
     },
     {
       "source": "EXT_URL",
       "label": "External URL",
+      "views": 112
+    },
+    {
+      "source": "YT_OTHER_PAGE",
+      "label": "Other YouTube page",
       "views": 110
     },
     {
       "source": "RELATED_VIDEO",
       "label": "Related video",
-      "views": 86
+      "views": 85
     },
     {
       "source": "YT_CHANNEL",
       "label": "Channel page",
-      "views": 74
+      "views": 77
     },
     {
       "source": "NO_LINK_OTHER",
       "label": "No referrer",
-      "views": 50
+      "views": 56
     },
     {
       "source": "PLAYLIST",
