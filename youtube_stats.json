@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T03:35:14.065Z",
+  "generated_at": "2026-11-21T21:35:15.433Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -8,10 +8,10 @@
     "url": "https://www.youtube.com/channel/UCgL4mzUUcYtqxx-0IdjoqIw",
     "published_at": "2025-04-14T03:40:06.969878Z",
     "thumbnail": "https://yt3.ggpht.com/IpsLcp29bRpbou_LxaA2FazbHG9QfOHy_bcBiI8vkg_EBDaje4f78m2f1t4vsaB_gk5wqLLz=s800-c-k-c0x00ffffff-no-rj",
-    "views_lifetime": 245659,
+    "views_lifetime": 245833,
     "subscribers": 12200,
     "subscribers_hidden": false,
-    "video_count": 107
+    "video_count": 108
   },
   "windows": {
     "last_48h": {
@@ -29,13 +29,13 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 194,
-      "watchMinutes": 487,
-      "avgViewDurationSec": 172
+      "views": 229,
+      "watchMinutes": 521,
+      "avgViewDurationSec": 167
     },
     "last_30": {
-      "views": 2132,
-      "watchMinutes": 1560,
+      "views": 2167,
+      "watchMinutes": 1593,
       "avgViewDurationSec": 88
     }
   },
@@ -72,7 +72,7 @@
       "videoId": "6u_a5zdTLWQ",
       "title": "Shieldbearer – Come and Restore [Christian Worship | Lanterns Album | Official Audio]",
       "thumbnail": "https://i.ytimg.com/vi/6u_a5zdTLWQ/mqdefault.jpg",
-      "views": 96130,
+      "views": 96131,
       "likes": 38,
       "publishedAt": "2025-05-04T03:07:07Z",
       "url": "https://www.youtube.com/watch?v=6u_a5zdTLWQ"
@@ -99,7 +99,7 @@
       "videoId": "9FHgbbVBT1A",
       "title": "Ruler of the Storm – Shieldbearer (Official Lyric Video | Christian Metal Anthem)",
       "thumbnail": "https://i.ytimg.com/vi/9FHgbbVBT1A/mqdefault.jpg",
-      "views": 9854,
+      "views": 9855,
       "likes": 717,
       "publishedAt": "2025-05-16T10:00:06Z",
       "url": "https://www.youtube.com/watch?v=9FHgbbVBT1A"
@@ -108,7 +108,7 @@
       "videoId": "8khugdipSJM",
       "title": "God Rest Ye Merry Gentlemen (Metal Version) | Shieldbearer - Tidings of Comfort and Joy",
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
-      "views": 8368,
+      "views": 8369,
       "likes": 27,
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM"
@@ -129,7 +129,7 @@
       "thumbnail": "https://i.ytimg.com/vi/LjQZ_m5LqhE/mqdefault.jpg",
       "publishedAt": "2026-10-26T18:18:56Z",
       "url": "https://www.youtube.com/watch?v=LjQZ_m5LqhE",
-      "views": 252
+      "views": 254
     },
     {
       "videoId": "U5PFUAFlUT4",
@@ -145,7 +145,7 @@
       "thumbnail": "https://i.ytimg.com/vi/6tygBKCVVTs/mqdefault.jpg",
       "publishedAt": "2026-11-14T14:33:30Z",
       "url": "https://www.youtube.com/watch?v=6tygBKCVVTs",
-      "views": 118
+      "views": 124
     },
     {
       "videoId": "2P8VZ1OwF1k",
@@ -596,23 +596,28 @@
       "date": "2026-11-18",
       "views": 27,
       "minutes": 83
+    },
+    {
+      "date": "2026-11-19",
+      "views": 35,
+      "minutes": 33
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "SHORTS",
       "label": "Shorts feed",
-      "views": 1283
+      "views": 1302
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 203
+      "views": 206
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 156
+      "views": 161
     },
     {
       "source": "YT_OTHER_PAGE",
@@ -627,7 +632,7 @@
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 88
+      "views": 89
     },
     {
       "source": "YT_CHANNEL",
@@ -637,22 +642,27 @@
     {
       "source": "NO_LINK_OTHER",
       "label": "No referrer",
-      "views": 53
+      "views": 54
     },
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 51
+      "views": 54
     },
     {
       "source": "NOTIFICATION",
       "label": "Notifications",
-      "views": 3
+      "views": 5
     },
     {
       "source": "SOUND_PAGE",
       "label": "sound page",
       "views": 2
+    },
+    {
+      "source": "SHORTS_CONTENT_LINKS",
+      "label": "shorts content links",
+      "views": 1
     },
     {
       "source": "HASHTAGS",
