@@ -7,6 +7,14 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.33.0 - November 2026
+- /open-source: two more tools from the workshop, Bandsoff (a hummed idea to
+  a mixed and mastered song, checked against 23 rules from the band's own
+  sessions before anyone hears it) and Armory (the 211 plug-ins and 250
+  effect chains on Moncy's two machines, every value measured, never
+  guessed), each with a lettered mark like IRCommand's, in plain English and
+  one true fact. The intro now says "the others are still in the workshop".
+
 ## v2.32.1 - September 2026
 - /open-source: the Beakon mark is the new artwork (two curved blades around a
   burning core); alt text and the emblem line updated to describe it.
