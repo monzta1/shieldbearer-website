@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T21:35:15.433Z",
+  "generated_at": "2026-11-22T03:35:14.307Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,28 +15,28 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-11-17",
-      "end": "2026-11-19"
+      "start": "2026-11-18",
+      "end": "2026-11-20"
     },
     "last_7": {
-      "start": "2026-11-14",
-      "end": "2026-11-21"
+      "start": "2026-11-15",
+      "end": "2026-11-22"
     },
     "last_30": {
-      "start": "2026-10-22",
-      "end": "2026-11-21"
+      "start": "2026-10-23",
+      "end": "2026-11-22"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 229,
-      "watchMinutes": 521,
-      "avgViewDurationSec": 167
+      "views": 127,
+      "watchMinutes": 293,
+      "avgViewDurationSec": 182
     },
     "last_30": {
-      "views": 2167,
-      "watchMinutes": 1593,
-      "avgViewDurationSec": 88
+      "views": 2156,
+      "watchMinutes": 1567,
+      "avgViewDurationSec": 87
     }
   },
   "last_48h_countries": [
@@ -108,7 +108,7 @@
       "videoId": "8khugdipSJM",
       "title": "God Rest Ye Merry Gentlemen (Metal Version) | Shieldbearer - Tidings of Comfort and Joy",
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
-      "views": 8369,
+      "views": 8371,
       "likes": 27,
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM"
@@ -153,15 +153,10 @@
       "thumbnail": "https://i.ytimg.com/vi/2P8VZ1OwF1k/mqdefault.jpg",
       "publishedAt": "2026-09-06T12:30:38Z",
       "url": "https://www.youtube.com/watch?v=2P8VZ1OwF1k",
-      "views": 41
+      "views": 39
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-08-23",
-      "views": 7,
-      "minutes": 29
-    },
     {
       "date": "2026-08-24",
       "views": 2,
@@ -617,7 +612,7 @@
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 161
+      "views": 155
     },
     {
       "source": "YT_OTHER_PAGE",
@@ -627,12 +622,12 @@
     {
       "source": "RELATED_VIDEO",
       "label": "Related video",
-      "views": 103
+      "views": 102
     },
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 89
+      "views": 88
     },
     {
       "source": "YT_CHANNEL",
@@ -647,7 +642,7 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 54
+      "views": 51
     },
     {
       "source": "NOTIFICATION",
