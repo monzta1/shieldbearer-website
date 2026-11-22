@@ -1,100 +1,100 @@
 {
-  "generatedAt": "2026-11-21T08:00:15.054Z",
+  "generatedAt": "2026-11-22T08:00:15.082Z",
   "period": {
     "label": "November 2026 so far",
     "start": "2026-11-01",
     "end": "2026-11-30"
   },
   "headline": {
-    "sessions": 46,
-    "deltaPct": 17.9,
+    "sessions": 51,
+    "deltaPct": 30.8,
     "comparison": "vs October 2026"
   },
   "channels": [
     {
       "name": "Direct",
-      "sessions": 33,
-      "share": 71.7
+      "sessions": 37,
+      "share": 72.5
     },
     {
       "name": "Organic Search",
-      "sessions": 6,
-      "share": 13
+      "sessions": 7,
+      "share": 13.7
     },
     {
       "name": "Organic Social",
       "sessions": 6,
-      "share": 13
+      "share": 11.8
     }
   ],
   "geography": [
     {
       "name": "United States",
-      "sessions": 28,
-      "share": 60.9
+      "sessions": 31,
+      "share": 60.8
     },
     {
       "name": "(not set)",
       "sessions": 4,
-      "share": 8.7
+      "share": 7.8
     },
     {
       "name": "Finland",
       "sessions": 2,
-      "share": 4.3
+      "share": 3.9
     },
     {
       "name": "France",
       "sessions": 2,
-      "share": 4.3
+      "share": 3.9
+    },
+    {
+      "name": "Vietnam",
+      "sessions": 2,
+      "share": 3.9
     },
     {
       "name": "Argentina",
       "sessions": 1,
-      "share": 2.2
-    },
-    {
-      "name": "Australia",
-      "sessions": 1,
-      "share": 2.2
+      "share": 2
     }
   ],
   "cities": [
     {
       "name": "(not set), Virginia",
       "sessions": 13,
-      "share": 26.5
+      "share": 26
     },
     {
       "name": "(not set)",
       "sessions": 9,
-      "share": 18.4
+      "share": 18
     },
     {
       "name": "Ashburn, Virginia",
       "sessions": 3,
-      "share": 6.1
+      "share": 6
     },
     {
       "name": "Burlington, Vermont",
       "sessions": 2,
-      "share": 4.1
+      "share": 4
     },
     {
       "name": "Lille, Hauts-de-France",
       "sessions": 2,
-      "share": 4.1
+      "share": 4
     },
     {
       "name": "Reston, Virginia",
       "sessions": 2,
-      "share": 4.1
+      "share": 4
     }
   ],
   "events": [
     {
       "name": "scroll_depth",
-      "count": 65,
+      "count": 78,
       "engagedShare": null
     },
     {
