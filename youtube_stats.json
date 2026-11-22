@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T03:35:14.307Z",
+  "generated_at": "2026-11-22T21:35:13.875Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -8,10 +8,10 @@
     "url": "https://www.youtube.com/channel/UCgL4mzUUcYtqxx-0IdjoqIw",
     "published_at": "2025-04-14T03:40:06.969878Z",
     "thumbnail": "https://yt3.ggpht.com/IpsLcp29bRpbou_LxaA2FazbHG9QfOHy_bcBiI8vkg_EBDaje4f78m2f1t4vsaB_gk5wqLLz=s800-c-k-c0x00ffffff-no-rj",
-    "views_lifetime": 245833,
+    "views_lifetime": 245986,
     "subscribers": 12200,
     "subscribers_hidden": false,
-    "video_count": 108
+    "video_count": 109
   },
   "windows": {
     "last_48h": {
@@ -29,14 +29,14 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 127,
-      "watchMinutes": 293,
-      "avgViewDurationSec": 182
+      "views": 246,
+      "watchMinutes": 354,
+      "avgViewDurationSec": 159
     },
     "last_30": {
-      "views": 2156,
-      "watchMinutes": 1567,
-      "avgViewDurationSec": 87
+      "views": 2275,
+      "watchMinutes": 1629,
+      "avgViewDurationSec": 88
     }
   },
   "last_48h_countries": [
@@ -108,7 +108,7 @@
       "videoId": "8khugdipSJM",
       "title": "God Rest Ye Merry Gentlemen (Metal Version) | Shieldbearer - Tidings of Comfort and Joy",
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
-      "views": 8371,
+      "views": 8374,
       "likes": 27,
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM"
@@ -129,7 +129,7 @@
       "thumbnail": "https://i.ytimg.com/vi/LjQZ_m5LqhE/mqdefault.jpg",
       "publishedAt": "2026-10-26T18:18:56Z",
       "url": "https://www.youtube.com/watch?v=LjQZ_m5LqhE",
-      "views": 254
+      "views": 257
     },
     {
       "videoId": "U5PFUAFlUT4",
@@ -145,15 +145,15 @@
       "thumbnail": "https://i.ytimg.com/vi/6tygBKCVVTs/mqdefault.jpg",
       "publishedAt": "2026-11-14T14:33:30Z",
       "url": "https://www.youtube.com/watch?v=6tygBKCVVTs",
-      "views": 124
+      "views": 130
     },
     {
-      "videoId": "2P8VZ1OwF1k",
-      "title": "TONECOMMAND AI building a Soldano SLO-100 inspired preset on my FM9",
-      "thumbnail": "https://i.ytimg.com/vi/2P8VZ1OwF1k/mqdefault.jpg",
-      "publishedAt": "2026-09-06T12:30:38Z",
-      "url": "https://www.youtube.com/watch?v=2P8VZ1OwF1k",
-      "views": 39
+      "videoId": "ZYxVhizyZIQ",
+      "title": "Demon Hunter I'm Done, Metal Cover: The Final Chorus Hits | Shieldbearer #Shorts",
+      "thumbnail": "https://i.ytimg.com/vi/ZYxVhizyZIQ/mqdefault.jpg",
+      "publishedAt": "2026-11-20T17:00:25Z",
+      "url": "https://www.youtube.com/watch?v=ZYxVhizyZIQ",
+      "views": 68
     }
   ],
   "daily_views": [
@@ -596,53 +596,58 @@
       "date": "2026-11-19",
       "views": 35,
       "minutes": 33
+    },
+    {
+      "date": "2026-11-20",
+      "views": 119,
+      "minutes": 61
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "SHORTS",
       "label": "Shorts feed",
-      "views": 1302
+      "views": 1365
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 206
+      "views": 209
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 155
+      "views": 192
     },
     {
       "source": "YT_OTHER_PAGE",
       "label": "Other YouTube page",
-      "views": 108
+      "views": 109
     },
     {
       "source": "RELATED_VIDEO",
       "label": "Related video",
-      "views": 102
-    },
-    {
-      "source": "EXT_URL",
-      "label": "External URL",
-      "views": 88
+      "views": 105
     },
     {
       "source": "YT_CHANNEL",
       "label": "Channel page",
-      "views": 82
+      "views": 89
+    },
+    {
+      "source": "EXT_URL",
+      "label": "External URL",
+      "views": 89
     },
     {
       "source": "NO_LINK_OTHER",
       "label": "No referrer",
-      "views": 54
+      "views": 56
     },
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 51
+      "views": 53
     },
     {
       "source": "NOTIFICATION",
