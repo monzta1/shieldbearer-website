@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T21:35:13.875Z",
+  "generated_at": "2026-11-23T03:35:14.391Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -11,31 +11,31 @@
     "views_lifetime": 245986,
     "subscribers": 12200,
     "subscribers_hidden": false,
-    "video_count": 109
+    "video_count": 110
   },
   "windows": {
     "last_48h": {
-      "start": "2026-11-18",
-      "end": "2026-11-20"
+      "start": "2026-11-19",
+      "end": "2026-11-21"
     },
     "last_7": {
-      "start": "2026-11-15",
-      "end": "2026-11-22"
+      "start": "2026-11-16",
+      "end": "2026-11-23"
     },
     "last_30": {
-      "start": "2026-10-23",
-      "end": "2026-11-22"
+      "start": "2026-10-24",
+      "end": "2026-11-23"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 246,
-      "watchMinutes": 354,
-      "avgViewDurationSec": 159
+      "views": 219,
+      "watchMinutes": 262,
+      "avgViewDurationSec": 142
     },
     "last_30": {
-      "views": 2275,
-      "watchMinutes": 1629,
+      "views": 2259,
+      "watchMinutes": 1605,
       "avgViewDurationSec": 88
     }
   },
@@ -44,7 +44,7 @@
       "code": "US",
       "name": "United States",
       "flag": "🇺🇸",
-      "views": 13
+      "views": 0
     }
   ],
   "last_30d_countries": [
@@ -157,11 +157,6 @@
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-08-24",
-      "views": 2,
-      "minutes": 1
-    },
     {
       "date": "2026-08-25",
       "views": 4,
@@ -617,7 +612,7 @@
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 192
+      "views": 187
     },
     {
       "source": "YT_OTHER_PAGE",
@@ -632,22 +627,22 @@
     {
       "source": "YT_CHANNEL",
       "label": "Channel page",
-      "views": 89
+      "views": 85
     },
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 89
+      "views": 85
     },
     {
       "source": "NO_LINK_OTHER",
       "label": "No referrer",
-      "views": 56
+      "views": 54
     },
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 53
+      "views": 52
     },
     {
       "source": "NOTIFICATION",
