@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T03:35:14.391Z",
+  "generated_at": "2026-11-23T21:35:14.645Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -11,7 +11,7 @@
     "views_lifetime": 245986,
     "subscribers": 12200,
     "subscribers_hidden": false,
-    "video_count": 110
+    "video_count": 111
   },
   "windows": {
     "last_48h": {
@@ -29,14 +29,14 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 219,
-      "watchMinutes": 262,
-      "avgViewDurationSec": 142
+      "views": 316,
+      "watchMinutes": 298,
+      "avgViewDurationSec": 129
     },
     "last_30": {
-      "views": 2259,
-      "watchMinutes": 1605,
-      "avgViewDurationSec": 88
+      "views": 2356,
+      "watchMinutes": 1641,
+      "avgViewDurationSec": 87
     }
   },
   "last_48h_countries": [
@@ -129,7 +129,7 @@
       "thumbnail": "https://i.ytimg.com/vi/LjQZ_m5LqhE/mqdefault.jpg",
       "publishedAt": "2026-10-26T18:18:56Z",
       "url": "https://www.youtube.com/watch?v=LjQZ_m5LqhE",
-      "views": 257
+      "views": 259
     },
     {
       "videoId": "U5PFUAFlUT4",
@@ -153,7 +153,7 @@
       "thumbnail": "https://i.ytimg.com/vi/ZYxVhizyZIQ/mqdefault.jpg",
       "publishedAt": "2026-11-20T17:00:25Z",
       "url": "https://www.youtube.com/watch?v=ZYxVhizyZIQ",
-      "views": 68
+      "views": 112
     }
   ],
   "daily_views": [
@@ -596,38 +596,43 @@
       "date": "2026-11-20",
       "views": 119,
       "minutes": 61
+    },
+    {
+      "date": "2026-11-21",
+      "views": 97,
+      "minutes": 35
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "SHORTS",
       "label": "Shorts feed",
-      "views": 1365
+      "views": 1419
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 209
+      "views": 214
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 187
+      "views": 211
     },
     {
       "source": "YT_OTHER_PAGE",
       "label": "Other YouTube page",
-      "views": 109
+      "views": 117
     },
     {
       "source": "RELATED_VIDEO",
       "label": "Related video",
-      "views": 105
+      "views": 106
     },
     {
       "source": "YT_CHANNEL",
       "label": "Channel page",
-      "views": 85
+      "views": 89
     },
     {
       "source": "EXT_URL",
@@ -642,7 +647,7 @@
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 52
+      "views": 53
     },
     {
       "source": "NOTIFICATION",
