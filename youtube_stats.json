@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T03:35:14.014Z",
+  "generated_at": "2026-11-24T21:35:14.152Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -8,10 +8,10 @@
     "url": "https://www.youtube.com/channel/UCgL4mzUUcYtqxx-0IdjoqIw",
     "published_at": "2025-04-14T03:40:06.969878Z",
     "thumbnail": "https://yt3.ggpht.com/IpsLcp29bRpbou_LxaA2FazbHG9QfOHy_bcBiI8vkg_EBDaje4f78m2f1t4vsaB_gk5wqLLz=s800-c-k-c0x00ffffff-no-rj",
-    "views_lifetime": 245986,
+    "views_lifetime": 246176,
     "subscribers": 12200,
     "subscribers_hidden": false,
-    "video_count": 111
+    "video_count": 112
   },
   "windows": {
     "last_48h": {
@@ -29,13 +29,13 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 300,
-      "watchMinutes": 258,
-      "avgViewDurationSec": 124
+      "views": 364,
+      "watchMinutes": 313,
+      "avgViewDurationSec": 121
     },
     "last_30": {
-      "views": 2348,
-      "watchMinutes": 1613,
+      "views": 2412,
+      "watchMinutes": 1668,
       "avgViewDurationSec": 87
     }
   },
@@ -108,7 +108,7 @@
       "videoId": "8khugdipSJM",
       "title": "God Rest Ye Merry Gentlemen (Metal Version) | Shieldbearer - Tidings of Comfort and Joy",
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
-      "views": 8374,
+      "views": 8376,
       "likes": 27,
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM"
@@ -129,7 +129,7 @@
       "thumbnail": "https://i.ytimg.com/vi/LjQZ_m5LqhE/mqdefault.jpg",
       "publishedAt": "2026-10-26T18:18:56Z",
       "url": "https://www.youtube.com/watch?v=LjQZ_m5LqhE",
-      "views": 259
+      "views": 262
     },
     {
       "videoId": "U5PFUAFlUT4",
@@ -145,7 +145,7 @@
       "thumbnail": "https://i.ytimg.com/vi/6tygBKCVVTs/mqdefault.jpg",
       "publishedAt": "2026-11-14T14:33:30Z",
       "url": "https://www.youtube.com/watch?v=6tygBKCVVTs",
-      "views": 130
+      "views": 134
     },
     {
       "videoId": "ZYxVhizyZIQ",
@@ -153,7 +153,7 @@
       "thumbnail": "https://i.ytimg.com/vi/ZYxVhizyZIQ/mqdefault.jpg",
       "publishedAt": "2026-11-20T17:00:25Z",
       "url": "https://www.youtube.com/watch?v=ZYxVhizyZIQ",
-      "views": 112
+      "views": 126
     }
   ],
   "daily_views": [
@@ -596,23 +596,28 @@
       "date": "2026-11-21",
       "views": 97,
       "minutes": 35
+    },
+    {
+      "date": "2026-11-22",
+      "views": 64,
+      "minutes": 54
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "SHORTS",
       "label": "Shorts feed",
-      "views": 1419
-    },
-    {
-      "source": "SUBSCRIBER",
-      "label": "From subscriptions",
-      "views": 210
+      "views": 1437
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 210
+      "views": 238
+    },
+    {
+      "source": "SUBSCRIBER",
+      "label": "From subscriptions",
+      "views": 220
     },
     {
       "source": "YT_OTHER_PAGE",
@@ -622,7 +627,7 @@
     {
       "source": "RELATED_VIDEO",
       "label": "Related video",
-      "views": 106
+      "views": 107
     },
     {
       "source": "YT_CHANNEL",
@@ -632,17 +637,17 @@
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 83
+      "views": 86
     },
     {
       "source": "NO_LINK_OTHER",
       "label": "No referrer",
-      "views": 53
+      "views": 55
     },
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 53
+      "views": 55
     },
     {
       "source": "NOTIFICATION",
