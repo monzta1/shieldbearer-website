@@ -7,6 +7,11 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.34.1 - November 2026
+- /interviews: Eternal Flames UK's Redemption Q&A (20 Nov 2026, "Redemption:
+  A Liquid Metal Christmas, AI and 105 Revisions") added as the newest
+  featured press card and as item 1 in the press ItemList JSON-LD.
+
 ## v2.34.0 - November 2026
 - The site now says what Shieldbearer stands for: freedom. "Freedom. That's
   the whole rule." opens /about; /process, /faq, /epk, /contact, /gigs,
