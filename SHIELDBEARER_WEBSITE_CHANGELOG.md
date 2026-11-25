@@ -7,6 +7,36 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.34.0 - November 2026
+- The site now says what Shieldbearer stands for: freedom. "Freedom. That's
+  the whole rule." opens /about; /process, /faq, /epk, /contact, /gigs,
+  /story, /for-ai-artists and /open-source rewritten around it. Some songs
+  Moncy plays and sings, some he hands to AI, some run on tools he built
+  (ToneCommand, Bandsoff). The method is his call every song; the message is
+  fixed on Christ.
+- Removed claims that were no longer true ("always tracked by hand", "real
+  bass played live", "never sampled or synthesized", "Is AI writing the songs?
+  No") and the apologetic lines ("a constraint, not a preference", "not an
+  instant-song button", "not legitimate. We are still here").
+- /faq: the AI section cut from about 17 questions to 5 confident ones, with
+  ToneCommand and Bandsoff; FAQPage JSON-LD matches the visible answers.
+  Titles, meta, og and JSON-LD descriptions rewritten on every changed page.
+- Home: the headline, a new subhead ("Any tool, no permission. Christ named
+  plainly, every song.") and Subscribe on YouTube / Listen on Spotify /
+  Follow on Instagram now sit on the first screen. Press strip (Eternal
+  Flames UK, Heaven's Metal) and the live YouTube subscriber count from
+  youtube_stats.json (js/home-stats.js). The AI block is now "Any Tool. One
+  Message."
+- Nav: "AI and Faith" (9 links) split into "Freedom" (4) and "Built Here"
+  (ToneCommand, Bandsoff and Open Source, SentinelBot) on every page and the
+  mobile menu.
+- /music: Redemption, I'm Done and Let My People Go added newest first, plus
+  a Latest Shorts row. Redemption is the featured release (publisher run).
+- Weight: the home Galilean card loads the 768px JPEG lazily (was a 2.7 MB
+  PNG); nav and footer logo now a 31 KB 480px file (was 94 KB 1536px).
+  Every page shares one 270 KB 1200x630 social preview image.
+- New /llms.txt describing the project for AI search.
+
 ## v2.33.0 - November 2026
 - /open-source: two more tools from the workshop, Bandsoff (a hummed idea to
   a mixed and mastered song, checked against 23 rules from the band's own

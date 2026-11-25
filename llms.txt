@@ -1,0 +1,31 @@
+# Shieldbearer
+
+> Shieldbearer (also written Shield Bearer) is independent Christian metal made by Moncy Abraham. The method is free: he uses any tool that carries the message, including his own guitar and voice, AI, and AI tools he built himself (ToneCommand and Bandsoff). The message is fixed: Christ is named plainly in every song.
+
+"It's all about the freedom. The method doesn't matter. The message is the only thing that does." (Moncy Abraham)
+
+- Genre: Christian metal, Scripture at the center
+- Website: https://shieldbearerusa.com/
+- YouTube: https://www.youtube.com/@ShieldbearerUSA
+- Spotify: https://open.spotify.com/artist/21erHgXhVTuSDq5ZOy0XFz
+- Instagram: https://www.instagram.com/shieldbearerusa/
+- Facebook: https://www.facebook.com/shieldbearerusa
+
+## Key pages
+
+- [Home](https://shieldbearerusa.com/): latest release, featured video, how to listen and follow
+- [Music](https://shieldbearerusa.com/music): releases, singles and platform links
+- [Lyrics and song meanings](https://shieldbearerusa.com/song-meanings): lyrics with the Scripture behind each song
+- [Videos](https://shieldbearerusa.com/videos): music videos
+- [About](https://shieldbearerusa.com/about): the artist and the long road behind the music
+- [Story](https://shieldbearerusa.com/story): the story of Shieldbearer
+- [Process](https://shieldbearerusa.com/process): how a song gets made
+- [How It Works](https://shieldbearerusa.com/how-it-works): what is automated, what is human, and why
+- [FAQ](https://shieldbearerusa.com/faq): common questions, including AI and faith
+- [For AI Artists](https://shieldbearerusa.com/for-ai-artists): for musicians who use AI
+- [Open Source](https://shieldbearerusa.com/open-source): free software built by Shieldbearer (ToneCommand, Bandsoff and more)
+- [ToneCommand](https://shieldbearerusa.com/tonecommand): talk to your guitar rig in plain English
+- [Manifesto](https://shieldbearerusa.com/manifesto) and [Creed](https://shieldbearerusa.com/creed): what Shieldbearer stands on
+- [Press](https://shieldbearerusa.com/interviews): interviews and coverage
+- [Press Kit](https://shieldbearerusa.com/epk): EPK for media and bookings
+- [Contact](https://shieldbearerusa.com/contact): bookings, media, collaboration
