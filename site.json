@@ -46,6 +46,13 @@
       "sourceUrl": "https://www.youtube.com/watch?v=LjQZ_m5LqhE",
       "traceId": "youtube:LjQZ_m5LqhE"
     },
+    "monolith": {
+      "id": "TsJvHYh3iJo",
+      "title": "Monolith",
+      "publishedAt": "2026-10-18T00:41:07Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=TsJvHYh3iJo",
+      "traceId": "youtube:TsJvHYh3iJo"
+    },
     "let my people go": {
       "id": "let-my-people-go",
       "title": "Let My People Go",
@@ -1998,6 +2005,25 @@
       "contentHash": ""
     },
     {
+      "songId": "TsJvHYh3iJo",
+      "videoId": "TsJvHYh3iJo",
+      "title": "Monolith",
+      "state": "released",
+      "traceId": "youtube:TsJvHYh3iJo",
+      "publishedAt": "2026-10-18T00:41:07Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=TsJvHYh3iJo",
+      "artwork": "https://img.youtube.com/vi/TsJvHYh3iJo/hqdefault.jpg",
+      "lyrics": "Gods of the river, gods of the stone\nIdols of silver, idols of gold\nThe tribes stand gathered, the choice is made\nWho will you serve when your fathers fade?\n\nJoshua speaks and the people reply\nTheir words rise up beneath the sky\nHe plants a witness beneath the oak\nA stone that heard the words they spoke\n\nScreens full of idols that glitter and burn\nSelling us kingdoms we'll never earn\nA thousand voices demanding the throne\nAnd every one sounds a little like home\n\nI've chased those shadows, I've worn those chains\nI've called them freedom and welcomed the pain\nBut every idol demands its due\nAnd none of them ever died for you\n\nAS FOR ME AND MY HOUSE\nWE WILL SERVE THE LORD\nLet a thousand idols fall\nWe will serve no other god\n\nMONOLITH! MONOLITH!\nLet the stone remember us\nWhen the kingdoms turn to dust\nWE WILL SERVE THE LORD!\n\nTHIS STONE HAS HEARD\nEVERY WORD\nWITNESS AGAINST US\nIF WE DENY OUR GOD\n\nThe years will pass, the names will fade\nThe stone bears witness to vows once made\nLet every generation know\n\nAS FOR ME!\n\nThey led Him out to Calvary\nThe King they nailed upon a tree\nThe earth went dark, the curtain tore\nThey laid Him where none lay before\n\nBut death could never hold its claim\nThe stone was moved, He rose again\nAnd now my children know His name\nThe God of Joshua reigns today\n\nMONOLITH!\nLET IT STAND!\nAS FOR ME AND MY HOUSE\nWE SERVE THE LORD!",
+      "songMeaning": "Monolith is Shieldbearer’s Christian metal song on Joshua 24:15: “As for me and my house, we will serve the LORD.”\n\nAt Shechem, Joshua gathered Israel and confronted them with a choice: the gods of their ancestors, the gods of the nations around them, or the one true God who had delivered them. One stone stood beneath an oak there, bearing witness to their declaration. There was no room for divided allegiance.\n\nThousands of years later, the question remains. Our idols have screens now. They promise happiness, power, and recognition, and they demand our attention, our devotion, and our allegiance. But every idol demands its due, and none of them ever died for you. Jesus Christ did. He bore our sins upon the cross, entered the grave, and on the third day rose again.\n\nThe stone at Shechem witnessed humanity’s promise to God. The stone rolled away from the tomb points to God’s fulfilled promise of salvation through Jesus Christ. Monolith is about that choice: the idols we must abandon, the Savior we must follow, and the faith we hope to pass to our children.",
+      "reference": "Joshua 24:1–27 | John 19–20 | Romans 8:1 | Ephesians 2:8–9",
+      "scripture": {
+        "ref": "Joshua 24:15",
+        "quote": "As for me and my house, we will serve the LORD."
+      },
+      "updatedAt": "2026-11-25T12:03:45.176Z",
+      "contentHash": ""
+    },
+    {
       "songId": "let-my-people-go",
       "videoId": "0lUJcLKIt0o",
       "title": "Let My People Go",
@@ -2019,8 +2045,26 @@
   ],
   "signalCount": 99,
   "comingSoonCount": 1,
-  "releasedCount": 3,
+  "releasedCount": 4,
   "events": [
+    {
+      "id": "TsJvHYh3iJo",
+      "songId": "TsJvHYh3iJo",
+      "eventType": "SONG_RELEASED",
+      "stateAfter": "released",
+      "timestamp": "2026-11-25T12:03:45.176Z",
+      "title": "Monolith",
+      "publishedAt": "2026-10-18T00:41:07Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=TsJvHYh3iJo",
+      "source": "release-detector-youtube",
+      "albumId": "",
+      "albumTitle": "",
+      "albumUrl": "",
+      "videoType": "",
+      "isShort": false,
+      "contentFormat": "full",
+      "excludeFromTimeline": false
+    },
     {
       "id": "6tygBKCVVTs",
       "songId": "6tygBKCVVTs",
