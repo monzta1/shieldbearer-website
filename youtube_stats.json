@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T21:35:14.152Z",
+  "generated_at": "2026-11-25T03:35:14.328Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -15,38 +15,31 @@
   },
   "windows": {
     "last_48h": {
-      "start": "2026-11-20",
-      "end": "2026-11-22"
+      "start": "2026-11-21",
+      "end": "2026-11-23"
     },
     "last_7": {
-      "start": "2026-11-17",
-      "end": "2026-11-24"
+      "start": "2026-11-18",
+      "end": "2026-11-25"
     },
     "last_30": {
-      "start": "2026-10-25",
-      "end": "2026-11-24"
+      "start": "2026-10-26",
+      "end": "2026-11-25"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 364,
-      "watchMinutes": 313,
-      "avgViewDurationSec": 121
+      "views": 342,
+      "watchMinutes": 267,
+      "avgViewDurationSec": 118
     },
     "last_30": {
-      "views": 2412,
-      "watchMinutes": 1668,
-      "avgViewDurationSec": 87
+      "views": 2405,
+      "watchMinutes": 1644,
+      "avgViewDurationSec": 86
     }
   },
-  "last_48h_countries": [
-    {
-      "code": "US",
-      "name": "United States",
-      "flag": "🇺🇸",
-      "views": 0
-    }
-  ],
+  "last_48h_countries": [],
   "last_30d_countries": [
     {
       "code": "US",
@@ -157,11 +150,6 @@
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-08-26",
-      "views": 1,
-      "minutes": 0
-    },
     {
       "date": "2026-08-27",
       "views": 4,
@@ -612,12 +600,12 @@
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 238
+      "views": 236
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 220
+      "views": 219
     },
     {
       "source": "YT_OTHER_PAGE",
@@ -642,12 +630,12 @@
     {
       "source": "NO_LINK_OTHER",
       "label": "No referrer",
-      "views": 55
+      "views": 53
     },
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 55
+      "views": 53
     },
     {
       "source": "NOTIFICATION",
