@@ -1,37 +1,44 @@
 {
-  "generatedAt": "2026-10-30T10:00:29.711Z",
+  "generatedAt": "2026-11-25T02:09:14.905Z",
   "source": "sentinelbot-event-consumer",
   "homepage": {
     "banner": {
-      "title": "Demon Hunter - I'm Done (SHIELDBEARER Cover)",
-      "image": "https://img.youtube.com/vi/LjQZ_m5LqhE/hqdefault.jpg",
-      "sourceUrl": "https://www.youtube.com/watch?v=LjQZ_m5LqhE",
-      "activeReleaseId": "LjQZ_m5LqhE"
+      "title": "Redemption (A Liquid Metal Christmas)",
+      "image": "https://img.youtube.com/vi/6tygBKCVVTs/hqdefault.jpg",
+      "sourceUrl": "https://www.youtube.com/watch?v=6tygBKCVVTs",
+      "activeReleaseId": "6tygBKCVVTs"
     },
     "featuredRelease": {
-      "songId": "LjQZ_m5LqhE",
-      "title": "Demon Hunter - I'm Done (SHIELDBEARER Cover)",
-      "videoId": "LjQZ_m5LqhE",
-      "sourceUrl": "https://www.youtube.com/watch?v=LjQZ_m5LqhE",
-      "artwork": "https://img.youtube.com/vi/LjQZ_m5LqhE/hqdefault.jpg",
-      "lyrics": "CREDITS\nVocals & Lead Guitar: Shieldbearer\nRhythm Guitars, Bass & Drums: Shieldbearer\nProduced, mixed & mastered at Shieldbearer Studio.\nORIGINAL SONG\n\"I'm Done\" by Demon Hunter.",
-      "songMeaning": "Shieldbearer covers \"I'm Done\" by Demon Hunter. Shieldbearer Radio: CREDITS Vocals Lead Guitar: Shieldbearer Rhythm Guitars, Bass Drums: Shieldbearer Produced, mixed mastered at Shieldbearer Studio. Scripture-centered, christ",
+      "songId": "6tygBKCVVTs",
+      "title": "Redemption (A Liquid Metal Christmas)",
+      "videoId": "6tygBKCVVTs",
+      "sourceUrl": "https://www.youtube.com/watch?v=6tygBKCVVTs",
+      "artwork": "https://img.youtube.com/vi/6tygBKCVVTs/hqdefault.jpg",
+      "lyrics": "",
+      "songMeaning": "Redemption (A Liquid Metal Christmas) is Shieldbearer’s metal take on the Terminator theme and Carol of the Bells, released November 14, 2026.\n\nOriginal compositions: \"The Terminator\" main theme by Brad Fiedel (1984) and \"Shchedryk\" (Carol of the Bells) by Mykola Leontovych (1914).",
       "reference": "",
       "scripture": {
         "ref": "",
         "quote": ""
       },
-      "publishedAt": "2026-10-26T18:18:56Z"
+      "publishedAt": "2026-11-14T14:33:30Z"
     },
-    "lastUpdatedAt": "2026-10-30T10:00:29.711Z"
+    "lastUpdatedAt": "2026-11-25T02:09:14.905Z"
   },
   "release": {
-    "id": "LjQZ_m5LqhE",
+    "id": "6tygBKCVVTs",
     "source": "release-detector-youtube",
-    "publishedAt": "2026-10-26T18:18:56Z",
-    "traceId": "youtube:LjQZ_m5LqhE"
+    "publishedAt": "2026-11-14T14:33:30Z",
+    "traceId": "youtube:6tygBKCVVTs"
   },
   "releaseIndex": {
+    "redemption a liquid metal christmas": {
+      "id": "6tygBKCVVTs",
+      "title": "Redemption (A Liquid Metal Christmas)",
+      "publishedAt": "2026-11-14T14:33:30Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=6tygBKCVVTs",
+      "traceId": "youtube:6tygBKCVVTs"
+    },
     "demon hunter i m done shieldbearer cover": {
       "id": "LjQZ_m5LqhE",
       "title": "Demon Hunter - I'm Done (SHIELDBEARER Cover)",
@@ -1953,6 +1960,25 @@
   ],
   "released": [
     {
+      "songId": "6tygBKCVVTs",
+      "videoId": "6tygBKCVVTs",
+      "title": "Redemption (A Liquid Metal Christmas)",
+      "state": "released",
+      "traceId": "youtube:6tygBKCVVTs",
+      "publishedAt": "2026-11-14T14:33:30Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=6tygBKCVVTs",
+      "artwork": "https://img.youtube.com/vi/6tygBKCVVTs/hqdefault.jpg",
+      "lyrics": "",
+      "songMeaning": "Redemption (A Liquid Metal Christmas) is Shieldbearer’s metal take on the Terminator theme and Carol of the Bells, released November 14, 2026.\n\nOriginal compositions: \"The Terminator\" main theme by Brad Fiedel (1984) and \"Shchedryk\" (Carol of the Bells) by Mykola Leontovych (1914).",
+      "reference": "",
+      "scripture": {
+        "ref": "",
+        "quote": ""
+      },
+      "updatedAt": "2026-11-25T02:09:14.905Z",
+      "contentHash": ""
+    },
+    {
       "songId": "LjQZ_m5LqhE",
       "videoId": "LjQZ_m5LqhE",
       "title": "Demon Hunter - I'm Done (SHIELDBEARER Cover)",
@@ -1962,7 +1988,7 @@
       "sourceUrl": "https://www.youtube.com/watch?v=LjQZ_m5LqhE",
       "artwork": "",
       "lyrics": "CREDITS\nVocals & Lead Guitar: Shieldbearer\nRhythm Guitars, Bass & Drums: Shieldbearer\nProduced, mixed & mastered at Shieldbearer Studio.\nORIGINAL SONG\n\"I'm Done\" by Demon Hunter.",
-      "songMeaning": "Shieldbearer covers \"I'm Done\" by Demon Hunter. Shieldbearer Radio: CREDITS Vocals Lead Guitar: Shieldbearer Rhythm Guitars, Bass Drums: Shieldbearer Produced, mixed mastered at Shieldbearer Studio. Scripture-centered, christ",
+      "songMeaning": "Shieldbearer’s cover of \"I’m Done\" by Demon Hunter.",
       "reference": "",
       "scripture": {
         "ref": "",
@@ -1993,8 +2019,26 @@
   ],
   "signalCount": 99,
   "comingSoonCount": 1,
-  "releasedCount": 2,
+  "releasedCount": 3,
   "events": [
+    {
+      "id": "6tygBKCVVTs",
+      "songId": "6tygBKCVVTs",
+      "eventType": "SONG_RELEASED",
+      "stateAfter": "released",
+      "timestamp": "2026-11-25T02:09:14.905Z",
+      "title": "Redemption (A Liquid Metal Christmas)",
+      "publishedAt": "2026-11-14T14:33:30Z",
+      "sourceUrl": "https://www.youtube.com/watch?v=6tygBKCVVTs",
+      "source": "release-detector-youtube",
+      "albumId": "",
+      "albumTitle": "",
+      "albumUrl": "",
+      "videoType": "",
+      "isShort": false,
+      "contentFormat": "full",
+      "excludeFromTimeline": false
+    },
     {
       "id": "LjQZ_m5LqhE",
       "songId": "LjQZ_m5LqhE",
