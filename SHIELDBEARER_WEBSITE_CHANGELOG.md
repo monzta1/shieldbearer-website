@@ -7,6 +7,14 @@ Versioning note:
 - Major bumps track architecture-level changes
 - Always add the newest entry at the top of the file
 
+## v2.34.2 - November 2026
+- /music: Monolith (Joshua 24:15, 18 Oct 2026) card added between I'm Done
+  and Let My People Go. Monolith was never auto-detected (no release keyword
+  in its YouTube title); it is now registered in the songs table and listed
+  in site.json released[] by a publisher run, so its /song-meanings dossier
+  (lyrics, meaning, scripture) renders automatically. Redemption stays the
+  featured release.
+
 ## v2.34.1 - November 2026
 - /interviews: Eternal Flames UK's Redemption Q&A (20 Nov 2026, "Redemption:
   A Liquid Metal Christmas, AI and 105 Revisions") added as the newest
