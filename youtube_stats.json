@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T03:35:14.386Z",
+  "generated_at": "2026-11-27T21:35:15.741Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -29,23 +29,30 @@
   },
   "watch_time": {
     "last_7": {
-      "views": 441,
-      "watchMinutes": 209,
-      "avgViewDurationSec": 78
+      "views": 898,
+      "watchMinutes": 251,
+      "avgViewDurationSec": 39
     },
     "last_30": {
-      "views": 2444,
-      "watchMinutes": 1457,
-      "avgViewDurationSec": 78
+      "views": 2901,
+      "watchMinutes": 1499,
+      "avgViewDurationSec": 68
     }
   },
-  "last_48h_countries": [],
+  "last_48h_countries": [
+    {
+      "code": "US",
+      "name": "United States",
+      "flag": "🇺🇸",
+      "views": 389
+    }
+  ],
   "last_30d_countries": [
     {
       "code": "US",
       "name": "United States",
       "flag": "🇺🇸",
-      "views": 900
+      "views": 1289
     },
     {
       "code": "BR",
@@ -75,7 +82,7 @@
       "title": "Shieldbearer – Pahalgam (A Prayer for India) [Official Audio]",
       "thumbnail": "https://i.ytimg.com/vi/9NQkaZbntUs/mqdefault.jpg",
       "views": 62398,
-      "likes": 317,
+      "likes": 316,
       "publishedAt": "2025-04-26T15:28:11Z",
       "url": "https://www.youtube.com/watch?v=9NQkaZbntUs"
     },
@@ -101,7 +108,7 @@
       "videoId": "8khugdipSJM",
       "title": "God Rest Ye Merry Gentlemen (Metal Version) | Shieldbearer - Tidings of Comfort and Joy",
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
-      "views": 8386,
+      "views": 8387,
       "likes": 27,
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM"
@@ -115,6 +122,14 @@
       "publishedAt": "2026-10-30T16:35:13Z",
       "url": "https://www.youtube.com/watch?v=VEU2PLkmgEQ",
       "views": 1194
+    },
+    {
+      "videoId": "ItogxDwG8ac",
+      "title": "Carol of the Bells Goes Metal: Forged in Liquid Metal | Shieldbearer #Shorts",
+      "thumbnail": "https://i.ytimg.com/vi/ItogxDwG8ac/mqdefault.jpg",
+      "publishedAt": "2026-11-25T19:05:00Z",
+      "url": "https://www.youtube.com/watch?v=ItogxDwG8ac",
+      "views": 424
     },
     {
       "videoId": "U5PFUAFlUT4",
@@ -138,15 +153,7 @@
       "thumbnail": "https://i.ytimg.com/vi/6tygBKCVVTs/mqdefault.jpg",
       "publishedAt": "2026-11-14T14:33:30Z",
       "url": "https://www.youtube.com/watch?v=6tygBKCVVTs",
-      "views": 141
-    },
-    {
-      "videoId": "ZYxVhizyZIQ",
-      "title": "Demon Hunter I'm Done, Metal Cover: The Final Chorus Hits | Shieldbearer #Shorts",
-      "thumbnail": "https://i.ytimg.com/vi/ZYxVhizyZIQ/mqdefault.jpg",
-      "publishedAt": "2026-11-20T17:00:25Z",
-      "url": "https://www.youtube.com/watch?v=ZYxVhizyZIQ",
-      "views": 128
+      "views": 142
     }
   ],
   "daily_views": [
@@ -582,45 +589,50 @@
     },
     {
       "date": "2026-11-23",
-      "views": 111,
+      "views": 108,
       "minutes": 26
     },
     {
       "date": "2026-11-24",
       "views": 52,
       "minutes": 31
+    },
+    {
+      "date": "2026-11-25",
+      "views": 460,
+      "minutes": 41
     }
   ],
   "traffic_sources_30d": [
     {
       "source": "SHORTS",
       "label": "Shorts feed",
-      "views": 1480
+      "views": 1855
     },
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 315
+      "views": 366
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 172
+      "views": 173
     },
     {
       "source": "YT_OTHER_PAGE",
       "label": "Other YouTube page",
-      "views": 120
+      "views": 144
     },
     {
       "source": "RELATED_VIDEO",
       "label": "Related video",
-      "views": 105
+      "views": 106
     },
     {
       "source": "YT_CHANNEL",
       "label": "Channel page",
-      "views": 80
+      "views": 83
     },
     {
       "source": "EXT_URL",
@@ -640,7 +652,7 @@
     {
       "source": "NOTIFICATION",
       "label": "Notifications",
-      "views": 2
+      "views": 4
     },
     {
       "source": "SOUND_PAGE",
