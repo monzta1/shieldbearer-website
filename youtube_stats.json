@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T21:35:14.427Z",
+  "generated_at": "2026-11-27T03:35:14.386Z",
   "source": "YouTube",
   "channel": {
     "channel_id": "UCgL4mzUUcYtqxx-0IdjoqIw",
@@ -8,35 +8,35 @@
     "url": "https://www.youtube.com/channel/UCgL4mzUUcYtqxx-0IdjoqIw",
     "published_at": "2025-04-14T03:40:06.969878Z",
     "thumbnail": "https://yt3.ggpht.com/IpsLcp29bRpbou_LxaA2FazbHG9QfOHy_bcBiI8vkg_EBDaje4f78m2f1t4vsaB_gk5wqLLz=s800-c-k-c0x00ffffff-no-rj",
-    "views_lifetime": 246234,
+    "views_lifetime": 246733,
     "subscribers": 12200,
     "subscribers_hidden": false,
     "video_count": 114
   },
   "windows": {
     "last_48h": {
-      "start": "2026-11-22",
-      "end": "2026-11-24"
+      "start": "2026-11-23",
+      "end": "2026-11-25"
     },
     "last_7": {
-      "start": "2026-11-19",
-      "end": "2026-11-26"
+      "start": "2026-11-20",
+      "end": "2026-11-27"
     },
     "last_30": {
-      "start": "2026-10-27",
-      "end": "2026-11-26"
+      "start": "2026-10-28",
+      "end": "2026-11-27"
     }
   },
   "watch_time": {
     "last_7": {
-      "views": 476,
-      "watchMinutes": 242,
-      "avgViewDurationSec": 83
+      "views": 441,
+      "watchMinutes": 209,
+      "avgViewDurationSec": 78
     },
     "last_30": {
-      "views": 2496,
-      "watchMinutes": 1565,
-      "avgViewDurationSec": 81
+      "views": 2444,
+      "watchMinutes": 1457,
+      "avgViewDurationSec": 78
     }
   },
   "last_48h_countries": [],
@@ -101,7 +101,7 @@
       "videoId": "8khugdipSJM",
       "title": "God Rest Ye Merry Gentlemen (Metal Version) | Shieldbearer - Tidings of Comfort and Joy",
       "thumbnail": "https://i.ytimg.com/vi/8khugdipSJM/mqdefault.jpg",
-      "views": 8384,
+      "views": 8386,
       "likes": 27,
       "publishedAt": "2025-10-24T00:24:36Z",
       "url": "https://www.youtube.com/watch?v=8khugdipSJM"
@@ -130,7 +130,7 @@
       "thumbnail": "https://i.ytimg.com/vi/LjQZ_m5LqhE/mqdefault.jpg",
       "publishedAt": "2026-10-26T18:18:56Z",
       "url": "https://www.youtube.com/watch?v=LjQZ_m5LqhE",
-      "views": 218
+      "views": 179
     },
     {
       "videoId": "6tygBKCVVTs",
@@ -150,11 +150,6 @@
     }
   ],
   "daily_views": [
-    {
-      "date": "2026-08-28",
-      "views": 5,
-      "minutes": 6
-    },
     {
       "date": "2026-08-29",
       "views": 6,
@@ -605,12 +600,12 @@
     {
       "source": "YT_SEARCH",
       "label": "YouTube search",
-      "views": 320
+      "views": 315
     },
     {
       "source": "SUBSCRIBER",
       "label": "From subscriptions",
-      "views": 204
+      "views": 172
     },
     {
       "source": "YT_OTHER_PAGE",
@@ -620,32 +615,32 @@
     {
       "source": "RELATED_VIDEO",
       "label": "Related video",
-      "views": 111
+      "views": 105
     },
     {
       "source": "YT_CHANNEL",
       "label": "Channel page",
-      "views": 82
+      "views": 80
     },
     {
       "source": "EXT_URL",
       "label": "External URL",
-      "views": 80
+      "views": 79
     },
     {
       "source": "PLAYLIST",
       "label": "From a playlist",
-      "views": 50
+      "views": 46
     },
     {
       "source": "NO_LINK_OTHER",
       "label": "No referrer",
-      "views": 43
+      "views": 42
     },
     {
       "source": "NOTIFICATION",
       "label": "Notifications",
-      "views": 3
+      "views": 2
     },
     {
       "source": "SOUND_PAGE",
